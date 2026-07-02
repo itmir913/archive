@@ -1,0 +1,109 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="반복문에 관한 설명이 이번 강좌와 다음 강좌면 끝이 날거라 예상하고 있습니다."><title>반복문에서 부가적인 역할을 하는 continue와 break — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">반복문에서 부가적인 역할을 하는 continue와 break</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-03-02T14:08:02.000Z"> 2013년 3월 2일 </time> <span class="post-category">Programming/Java</span> <a href="https://itmir.tistory.com/169" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">반복문에 관한 설명이 이번 강좌와 다음 강좌면 끝이 날거라 예상하고 있습니다.</p> </header> <div class="post-content"> <p>반복문에 관한 설명이 이번 강좌와 다음 강좌면 끝이 날거라 예상하고 있습니다.</p>
+<p>그러는 동시에 제 java책 챕터5가 끝나게 되지요.</p>
+<p>즉 여러분께선 프로그램에서 흐름을 잡는 if, 스위치, while에 대한 이해가 끝나게 되실겁니다.</p>
+<p><em>돈안내고 책을 본다는 느낌이 들수도..</em></p>
+<p>아무튼 늦은 밤 빨리 써내려가겠습니다.</p>
+<p>오늘 배울 continue와 break는 while과 switch문처럼 반복문은 아니지만,</p>
+<p>이런 반복문 중간에 들어가 작업을 하게 만드는(?) 키워드 입니다.</p>
+<p>먼저 조금 익숙한 break에 대해 알아보겠습니다.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> Break</span></span>
+<span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">  public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">  {</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> Mir</span><span style="color:#D73A49">=</span><span style="color:#005CC5">1</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">    boolean</span><span style="color:#24292E"> number</span><span style="color:#D73A49">=</span><span style="color:#005CC5">false</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    while</span><span style="color:#24292E">(Mir</span><span style="color:#D73A49">&#x3C;</span><span style="color:#005CC5">100</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">    {</span></span>
+<span class="line"><span style="color:#D73A49">      if</span><span style="color:#24292E">(Mir</span><span style="color:#D73A49">%</span><span style="color:#005CC5">3</span><span style="color:#D73A49">==</span><span style="color:#005CC5">0</span><span style="color:#D73A49"> &#x26;&#x26;</span><span style="color:#24292E"> Mir</span><span style="color:#D73A49">%</span><span style="color:#005CC5">7</span><span style="color:#D73A49">==</span><span style="color:#005CC5">0</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">      {</span></span>
+<span class="line"><span style="color:#24292E">        number</span><span style="color:#D73A49">=</span><span style="color:#005CC5">true</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">        break</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">      }</span></span>
+<span class="line"><span style="color:#24292E">      Mir</span><span style="color:#D73A49">++</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E">(number)</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"3과 7의 최소 공배수는 "</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> Mir </span><span style="color:#D73A49">+</span><span style="color:#032F62"> "입니다"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">    else</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"100 미만 3과 7의 최소 공배수를 찾을수 없습니다"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">  }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p><a href="/attachment/cfile6.uf@013B973C513202A32BBC8A.java"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> Break.java</a></p>
+<p>점점 소스의 양이 많아지는걸 느끼시겟나요?</p>
+<p>보시면 간단한 구조로 이루어져 있음을 알 수 있습니다.</p>
+<p>먼저 int와 boolean으로 변수를 선언한 다음 while문으로 반복하고 있습니다.</p>
+<p>“Mir%3==0 &#x26;&#x26; Mir%7==0” 이 부분이 이해가 가지 않으신다면… 뒷 강좌를 다시 보셔야 합니다.</p>
+<p>Mir를(저는 아니고요;;) 3으로 나눈 나머지가 0이고 또한 Mir를 7로 나눈 나머지가 0이 동시에 될 때 &#x26;&#x26;연산에 의해 true가 나오게 되고,</p>
+<p>그 순간 if절이 실행되어 number를 ture로 바꾸고 break로 while반복문을 빠져나오게 되지요.</p>
+<p>여기서 break가 실행될 때 if문 안에 있어서 if문이 끝나는 게 아닌가라는 생각이 드실 수 있으실텐데요.</p>
+<p>반복문은 while, for, do~while등이지 if문이 반복문이라 배우진 않았습니다.</p>
+<p>그러므로 break가 실행되면 가장 가까운, 자신을 감싸는 반복문을 빠져나오게 되는 것 이지요.</p>
+<p>while을 빠져나왔고 number을 true로 바꼈으니 그다음 if절에서는 최소 공배수의 숫자가 나타나게 되는 것 이지요.</p>
+<p>만약 100안에 값이 나오지 않을 경우 while(Mir&#x3C;100)에 의해 반복문을 빠져나오게 될 것이고,</p>
+<p>true로 바뀌지 않았음이므로 마지막 if문에서는 else가 실행되겠죠?</p>
+<p>이렇게 break문은 반복문을 중단하는 역할을 합니다.</p>
+<p>반복문이 중첩되어 있다면(아마 다음 강좌에서 언급할 듯 합니다) 하나의 반복만 빠져나올 수 있는데요.</p>
+<p>그때는 레이블을 설정해 한번에 중첩된 반복을 빠져 나올 수도 있습니다.</p>
+<p>그럼 break에 대한 설명은 끝난 듯 합니다. 쉬워요 ㅎ</p>
+<p>이어서 continue에 대해 설명하겠습니다.</p>
+<p>설명하기전 continue는 오타가 쉽게 나더라고요.. 이해 부탁드리겠습니다..</p>
+<p>continue는 break와는 너무나도 다른 기능을 지니고 있습니다.</p>
+<p>break가 반복문을 끝내는 역할을 한다면,</p>
+<p>continue는 실행되면 아래 반복 영역을 실행하지 않고 조건 검사로 넘기는 역할을 합니다.</p>
+<p><img  src="/archive/_astro/%EC%BA%A1%EC%B2%98.C9mS05D7_Z2hPeqM.webp" alt="" width="220" height="142" loading="lazy" decoding="async"></p>
+<p>그림으로 설명하자면 이렇게 되지요.</p>
+<p>continue가 실행되면 그 반복문의 조건 검사 부분으로 넘어가게 되지요.</p>
+<p>예제를 보겠습니다.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> Continue</span></span>
+<span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">  public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">  {</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> M</span><span style="color:#D73A49">=</span><span style="color:#005CC5">0</span><span style="color:#24292E">, count</span><span style="color:#D73A49">=</span><span style="color:#005CC5">0</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"200이하 숫자중 3과 7의 최소 공배수 목록"</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    while</span><span style="color:#24292E">(M</span><span style="color:#D73A49">++&#x3C;</span><span style="color:#005CC5">200</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">    {</span></span>
+<span class="line"><span style="color:#D73A49">      if</span><span style="color:#24292E">(M</span><span style="color:#D73A49">%</span><span style="color:#005CC5">3</span><span style="color:#D73A49">!=</span><span style="color:#005CC5">0</span><span style="color:#D73A49"> ||</span><span style="color:#24292E"> M</span><span style="color:#D73A49">%</span><span style="color:#005CC5">7</span><span style="color:#D73A49">!=</span><span style="color:#005CC5">0</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#D73A49">        continue</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">      count</span><span style="color:#D73A49">++</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">      System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(M);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"3과 7의 최소 공배수의 수 :"</span><span style="color:#D73A49">+</span><span style="color:#24292E">count);</span></span>
+<span class="line"><span style="color:#24292E">  }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p><a href="/attachment/cfile27.uf@17627B34513205D3025F53.java"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> Continue.java</a></p>
+<p>while문을 보시면 반복 영역이 실행되자 마자 if문이 실행됩니다.</p>
+<p>M%3!=0 || M%7!=0을 보시면 다들 아시죠…?</p>
+<p>다들 아실거라 생각해서 연산의 특성은 생략하겠습니다.</p>
+<p>||연산으로 true가 나오게 되면 continue가 실행되면서 처음 조건 검사로 넘어갑니다.</p>
+<p>그러니 M%3!=0와 M%7!=0가 둘다 false여야 연산 결과가 false가 되며 continue가 실행되지 않습니다.</p>
+<p><em>즉, M%3!=0 || M%7!=0를 M%3==0 &#x26;&#x26; M%7==0이렇게 바꿔도 된다는 결론이 나오게 됩니다</em></p>
+<p>오해의 소지가 있어 글을 수정합니다.</p>
+<p>위의 &#x26;&#x26;을 이용한 최소 공배수 수를 구하는 코드와,</p>
+<p>아래의 ||을 이용한 최소 공배수 수를 구하는 코드를 구분하실 때는 전체적인 코드를 보셔야 합니다.</p>
+<p>위 코드는 if문을 이용해서 100 미만인 3과 7의 최소 공배수를 구하는 코드입니다.</p>
+<p>if문을 보시면 M을 3으로, 7으로 나눈 값이 모두(&#x26;&#x26;) 0일때 break;를 사용해서 반복문을 종료하고 있습니다.</p>
+<p>아래 코드는 if문을 이용하고 있지만, 또한 continue;를 이용해서 200 이하 수 중 3과 7의 최소 공배수를 구하고 있습니다.</p>
+<p>if문을 보시면 M을 3으로 나눈 나머지가 0이 아니거나, 또는 7으로 나눈 나머지가 0이 아니면 continue가 실행되고, 저 if문이 false가 될 때, 즉, M%3!=0도 false, M%7!=0도 false가 될때 if(M%3!=0 || M%7!=0)가 false가 되어 continue;가 실행되지 않고 count++와 System.out.println()이 실행됩니다.</p>
+<p>두 개의 코드는 무엇을 구하는지부터 다릅니다.</p>
+<p>오해의 소지가 있도록 문장을 작성해서 죄송합니다.</p>
+<p>아무튼 본론으로 돌아가서 false가 나오면 continue는 실행되지 않으므로 아래 count++와 println이 실행되는 것이지요.</p>
+<p>그리고 while문은 M++&#x3C;200이 false가 될때까지 반복하게 되지요.</p>
+<p>여기서 M++를 보시면 postfix연산입니다 즉 이 행이 끝나야 값이 늘어나게 되지요.</p>
+<p>그러니 200도 연산결과에 포함되게 됩니다. (이해가 안되신다면 천천히 생각해 보시길 postfix의 연산특성을 생각해 보세요.)</p>
+<p>이렇게 해서 continue를 사용한 예제를 살펴 보았습니다.</p>
+<p>아러ㅏㄴ리ㅓ 이렇게 멘붕하시는 분이 계실까 모르지만 이해하면 완전 쉽습니다. ㅎㅎ</p>
+<p>이제 무한 루프를 배워야 하는데요.</p>
+<p>이번 강좌의 길이가 너무 길어지는 바람에…</p>
+<p>다음 강좌에서 무한 루프부터 반복문의 중첩까지 배워보도록 하겠습니다. ㅎㅎ</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

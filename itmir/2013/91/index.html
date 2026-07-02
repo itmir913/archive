@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="참고로 7번이 boot.img 19번이 recovery.img 입니다"><title>VegaRacer2 SK 순정 boot.img recovery.img — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">VegaRacer2 SK 순정 boot.img recovery.img</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-01-28T04:57:30.000Z"> 2013년 1월 28일 </time> <span class="post-category">Android/Kernel</span> <a href="https://itmir.tistory.com/91" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">참고로 7번이 boot.img 19번이 recovery.img 입니다</p> </header> <div class="post-content"> <p>직접 추출했습니다</p>
+<p>sk 1.34버전의 것이고요</p>
+<p>우분투에서 쪼개본 결과 나눠졌습니다</p>
+<p>참고로 7번이 boot.img 19번이 recovery.img 입니다</p>
+<p>추출 명령어는 귀찮아서 좀있다 추가하겠습니다</p>
+<p>참고 글 <a href="http://cafe.naver.com/tdadevelop/392">http://cafe.naver.com/tdadevelop/392</a></p>
+<p>adb사용할거니 cmd실행</p>
+<p>adb가 있는 위치로 ㄱㄱ</p>
+<p>adb shell</p>
+<p>(그다음 본문엔 mount를 치라 했는대 별상관 없는거 같아서 패스</p>
+<p>아마 partitions부분에서 선택 수고를 덜으려고…?)</p>
+<p>이제 cat /proc/partitions를 친다</p>
+<p>이때 파일이 없다 나오면 탐색기로 /proc 들어가서 파티션 파일의 이름을 확인한다</p>
+<p>여기서 파티션을 찾아야 하는대 1 block은 1kb정도라고 생각하면</p>
+<p>적당한 크기를 골라 추출해야 합니다</p>
+<p>싱글코어는 5mb정도, 듀얼이상은 10mb정도의 파티션을 선택해 둡시다 ㅎㅎ</p>
+<p>선택한다음 su를 쳐준뒤</p>
+<p>dd if=/dev/block/파티션 이름 of=/sdcard/추출한 파일이름.img bs=4096</p>
+<p>이렇게 추출해 주시면 됩니다</p>
+<p>베레2경우 mmcblk0p7, mmcblk0p19</p>
+<p>이제 이걸 모와서 우분투에 들어간뒤 ./split_bootimg.pl 파일이름.img를 하면 분해되는게 2개 있는대 그게 부트이미지와 리커버리 입니다</p>
+<p>둘을 구분하는 방법은 부트이미지 뜯어서 내용물 확인하면 됩니다</p>
+<p><a href="/attachment/cfile22.uf@156A8D505106051E31F6D5.img"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> boot.img</a></p>
+<p><a href="/attachment/cfile28.uf@276E5F505106052328062B.img"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> recovery.img</a></p>
+<p>용량이 딱 10MB ㅋㅋ</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

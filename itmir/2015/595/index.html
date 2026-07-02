@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="매년 우분투가 최신 버전이 릴리즈 되면서 기존 블로그에 작성했던 12.04 버전이 구버전이 되었습니다."><title>Ubuntu 15.10 설치 방법 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">Ubuntu 15.10 설치 방법</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2015-12-05T15:11:45.000Z"> 2015년 12월 6일 </time> <span class="post-category">Computer &amp; PC/Ubuntu</span> <a href="https://itmir.tistory.com/595" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">매년 우분투가 최신 버전이 릴리즈 되면서 기존 블로그에 작성했던 12.04 버전이 구버전이 되었습니다.</p> </header> <div class="post-content"> <p>안녕하세요.</p>
+<p>매년 우분투가 최신 버전이 릴리즈 되면서 기존 블로그에 작성했던 12.04 버전이 구버전이 되었습니다.</p>
+<p>그래서 최신 버전인 우분투 15.10 설치를 포스팅 해보도록 하겠습니다.</p>
+<h2 id="vmware에-우분투-설치하기">VMWare에 우분투 설치하기</h2>
+<p>저는 우분투를 가상머신 프로그램인 VMWare Player에 설치하도록 하겠습니다.</p>
+<p>VMPlayer는 공식 홈페이지에서 쉽게 다운로드 할 수 있으므로 설치 방법은 생략 하도록 하겠습니다.</p>
+<p><a href="http://www.vmware.com/kr">http://www.vmware.com/kr</a></p>
+<p><img  src="/archive/_astro/VMPlayer-01.D6CKTg31_1wueIq.webp" alt="" width="802" height="666" loading="lazy" decoding="async"></p>
+<p>우분투 ISO 파일으로 부팅을 처음 하면 위와 같은 화면이 나타납니다.</p>
+<p>처음은 영어로 되어 있으므로 아래에 있는 한국어로 바꿔주시고 Ubuntu 설치 버튼을 눌러주세요.</p>
+<p><img  src="/archive/_astro/VMPlayer-02.CU1Qs-Ii_1Fj3OJ.webp" alt="" width="802" height="666" loading="lazy" decoding="async"></p>
+<p>여기에서 일반적인 블로그 글에서는 설치 중 업데이트 다운로드를 체크하라고 하지만,</p>
+<p>우분투 서버가 폭주하는 시간대의 경우 오히려 업데이트 설치를 누르면 너무 오랜 시간동안 기다려야 합니다.</p>
+<p>그래서 저는 체크를 하지 않고 설치를 먼저 완료하신다음 나중에 업데이트를 하시는 것을 추천드립니다.</p>
+<p><img  src="/archive/_astro/VMPlayer-03.XXBtyam1_1u7P8B.webp" alt="" width="802" height="666" loading="lazy" decoding="async"></p>
+<p>이 부분에서 우분투를 설치할 디스트의 파티션을 설정할 수 있습니다.</p>
+<p>일반적인 사용자의 경우 파티션을 설정하지 않고 그냥 설치해 주시면 됩니다.</p>
+<p>저는 기타를 선택하여 파티션을 설정하겠습니다.</p>
+<p><img  src="/archive/_astro/VMPlayer-04.u17b4Q7-_Z2aXilD.webp" alt="" width="802" height="666" loading="lazy" decoding="async"></p>
+<p>위 사진과 같이 파티션을 설정하였습니다.</p>
+<ul>
+<li>나중에 /dev/sda1(Mount : /)의 크기를 20GB로 변경하였습니다.</li>
+</ul>
+<p>5GB로는 자바 설치하니 다 차더라고요. ㄷㄷ</p>
+<p><img  src="/archive/_astro/VMPlayer-05.DC0SSKZJ_bo37u.webp" alt="" width="855" height="724" loading="lazy" decoding="async"></p>
+<p>파티션 설정까지 끝났으면 background에서 설치가 진행되고, foreground에서는 사용자 설정이 진행됩니다.</p>
+<p>먼저 지금 위치와 시간대 설정 화면입니다.</p>
+<p><img  src="/archive/_astro/VMPlayer-06.BaC7B47r_1ssgIz.webp" alt="" width="858" height="725" loading="lazy" decoding="async"></p>
+<p>두번째로는 언어와 키보드 설정입니다.</p>
+<p>처음 키보드는 일반적인 키보드 배치이고 두번째 키보드는 노트북용 키보드 배치입니다.</p>
+<p><img  src="/archive/_astro/VMPlayer-07.CTYDvvNn_Z6HSrd.webp" alt="" width="755" height="570" loading="lazy" decoding="async"></p>
+<p>계정 설정부분을 캡쳐 못하고 그냥 넘어가서 사진 얻어왔습니다.</p>
+<p>(출처 : <a href="http://www.techotopia.com/index.php/Installing_Ubuntu_11.04_on_a_Windows_System_(Dual_booting)">http://www.techotopia.com/index.php/Installing_Ubuntu_11.04_on_a_Windows_System_(Dual_booting)</a>)</p>
+<p>여기서 입력한 암호가 sudo를 쓸때 사용되는 암호이므로 꼭 기억하세요!</p>
+<p><img  src="/archive/_astro/VMPlayer-08.C4ESGOAB_NAEV3.webp" alt="" width="760" height="559" loading="lazy" decoding="async"></p>
+<p>이제 기다려줍시다..</p>
+<p><img  src="/archive/_astro/VMPlayer-09.C44Hxlq3_1lGdke.webp" alt="" width="993" height="157" loading="lazy" decoding="async"></p>
+<p>저는 우분투 체험하기로 들어갔다 설치를 했기 때문에 “바뀐 내용이나 저장한 문서를 읽게 됩니다.” 라고 뜨지만</p>
+<p>대부분 그냥 재부팅 하시겠습니까? 라고만 뜰겁니다.</p>
+<p>재부팅 해줍시다.</p>
+<h2 id="우분투-해상도를-위해vmware-tools-설치하기">우분투 해상도를 위해 VMWare Tools 설치하기.</h2>
+<p>재부팅하고 나서 우분투를 보면 해상도가 매우 낮을겁니다.</p>
+<p>이를 해결하기 위해 VMWare Tools를 설치합시다.</p>
+<p>Manage - Install VMWare Tools를 눌러주세요.</p>
+<p><img  src="/archive/_astro/Ubuntu-02.6x2lWR0n_ChC6w.webp" alt="" width="802" height="666" loading="lazy" decoding="async"></p>
+<p>그럼 CD가 하나 뜨게 됩니다.</p>
+<p>CD안에 있는 tar.gz파일을 바탕화면에 복사해서 압축 풀어주세요</p>
+<p><img  src="/archive/_astro/Ubuntu-03.PSkpCpq5_1o84GF.webp" alt="" width="802" height="666" loading="lazy" decoding="async"></p>
+<p>tar.gz 압축 파일을 풀고 나면 위와 같은 파일들이 나타납니다.</p>
+<p>이제 터미널을 열어주세요</p>
+<p>터미널을 여는 단축키는 Ctrl + Alt + T 입니다.</p>
+<p>터미널을 연다음 cd 명령어를 사용해서 아까 압축푼 폴더로 이동해주세요</p>
+<p>그다음 chmod 명령어로 실행 권한을 준다음에 vmware-install.pl 파일을 실행해주면 됩니다.</p>
+<p><img  src="/archive/_astro/Ubuntu-04.D8XbBAEW_Z8gEDK.webp" alt="" width="802" height="666" loading="lazy" decoding="async"></p>
+<p>처음에 Yes 입력해주신다음 중간마다 뜨는 질문에 엔터 또는 yes 입력해주시면 됩니다.</p>
+<p><img  src="/archive/_astro/Ubuntu-05.C_d2TZKL_2r30O8.webp" alt="" width="802" height="666" loading="lazy" decoding="async"></p>
+<p>위 스샷처럼 나타난다면 설치가 모두 완료되었습니다.</p>
+<p>다시 가상머신을 재부팅해 우분투를 실행해보면 해상도가 정상적으로 뜨고 VMWare 크기를 변경하면 자동으로 해상도도 변경됩니다.</p>
+<p><img  src="/archive/_astro/Ubuntu.BNvHGUFZ_1VAnKA.webp" alt="" width="797" height="597" loading="lazy" decoding="async"></p>
+<p>확실히 15.10이 새로운 느낌입니다.</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

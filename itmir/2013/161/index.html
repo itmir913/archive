@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="이번 강좌가 비트 연산자를 끝내는 강좌와 동시에 연산자를 끝내는 강좌일 듯 합니다."><title>비트 연산자, 연산자의 끝을 달려가보자 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">비트 연산자, 연산자의 끝을 달려가보자</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-02-23T08:33:48.000Z"> 2013년 2월 23일 </time> <span class="post-category">Programming/Java</span> <a href="https://itmir.tistory.com/161" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">이번 강좌가 비트 연산자를 끝내는 강좌와 동시에 연산자를 끝내는 강좌일 듯 합니다.</p> </header> <div class="post-content"> <p>이번 강좌가 비트 연산자를 끝내는 강좌와 동시에 연산자를 끝내는 강좌일 듯 합니다.</p>
+<p>잘 따라와 주세요!</p>
+<p>비트 연산자란? 비트 단위로 연산하는 연산자입니다.</p>
+<p>비트는 뭘까요?</p>
+<p>“정보량의 최소 기본 단위. 1비트는 이진수 체계(0, 1)의 한 자리로, 8비트는 1바이트이다.”</p>
+<p>네이버 국어사전 결과입니다.</p>
+<p>여기서 비트 연산자를 사용하려면 무조건 피 연산자가 정수여야 합니다.</p>
+<p>실수를 가지고 비트 연산을 하는 게 의미도 없고, 실수는 값의 표현 체제가 정수랑 완전 다르기 때문입니다.</p>
+<p>아무튼 비트 연산자에 대해 살펴보겠습니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td>연산자 기호</td><td>연산자 기능</td><td>결합 방향</td></tr><tr><td>&#x26;</td><td>비트단위로 &#x26;(AND)연산을 합니다</td><td>→</td></tr><tr><td></td><td></td><td>비트단위로</td></tr><tr><td>^</td><td>비트단위로 ^(XOR)연산을 합니다</td><td>→</td></tr><tr><td>~</td><td>피 연산자의 모든 비트를 반전시켜 나온 결과를 정수로 묶어 반환합니다</td><td>←</td></tr></tbody></table>
+<p>이런 연산자로 비트 연산을 하게 됩니다.</p>
+<p>어디서 많이 본 연산자 아닌가요? 논리 연산자의 기호와 비슷합니다.</p>
+<p>비트 연산자는 비트 단위로 연산을 하며 연산 된 결과를 묶어서 하나의 정수로 계산한 다음 결과를 반환하게 됩니다.</p>
+<p>그럼 하나하나 특징을 살펴보도록 하겠습니다.</p>
+<p>&#x26;연산자는 &#x26;&#x26;연산자와 비슷합니다.</p>
+<p>두 피 연산자(정수)의 비트를 비교하여 비트가 모두 1일 때만 1을 반환하는 연산자 입니다.</p>
+<p><img  src="/archive/_astro/and%EC%97%B0%EC%82%B0%EC%9E%90.D6roxN9E_2p5scD.webp" alt="" width="209" height="136" loading="lazy" decoding="async"></p>
+<p>위 그림을 보시면 이해가 쉬우실겁니다.</p>
+<p>이렇게 피 연산자의 비트를 비교해서 모두 1일때만 1을 반환하게 됩니다.</p>
+<p>|연산자는 ||연산자와 비슷한데요.</p>
+<p>둘 중 하나만 1이 있어도 1을 반환합니다.</p>
+<p><img  src="/archive/_astro/or%EC%97%B0%EC%82%B0%EC%9E%90.BOIKM7kx_1PjiOo.webp" alt="" width="214" height="133" loading="lazy" decoding="async"></p>
+<p>이렇게 말이죠.</p>
+<p>하나라도 1이 있으면 1을 반환하게 되지요.</p>
+<p>^연산자는 두 비트가 다를 경우 1을 반환합니다.</p>
+<p><img  src="/archive/_astro/xor%EC%97%B0%EC%82%B0%EC%9E%90.B1pfPVVH_19fBu2.webp" alt="" width="209" height="131" loading="lazy" decoding="async"></p>
+<p>이렇게 두 비트가 모두 다를때만 1을 반환하는 연산자 입니다.</p>
+<p>마지막으로 ~연산자는 모든 비트를 반전 시킵니다.</p>
+<p><img  src="/archive/_astro/not%EC%97%B0%EC%82%B0%EC%9E%90.D5C1jyqv_Z14Lwov.webp" alt="" width="211" height="96" loading="lazy" decoding="async"></p>
+<p>이렇게 1은 빨간 선처럼 0으로, 0은 노란 선처럼 1로 반전 시키는 연산자 입니다.</p>
+<p>이렇게 해서 비트 연산자에 대한 설명은 마쳤습니다.</p>
+<p>이제 비트 쉬프트 연산자에 대해 알아보겠습니다.</p>
+<p>여기서 쉬프트란 키보드의 (Shift)와 같은 단어입니다. ㅋㅋ</p>
+<p>이 연산자도 비트 연산자와 같이 피 연산자가 모두 정수여야 합니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>연산자 기호</td><td>연산자 기능</td></tr><tr><td>&#x3C;&#x3C;</td><td>피 연산자의 비트열을 왼쪽(←)으로 이동  이동에 따른 빈공간은 0으로 체움</td></tr><tr><td>>></td><td>피 연산자의 비트열을 오른쪽(→)으로 이동  이동에 따른 빈공간은 양수일경우 0으로, 음수일경우 1으로 체움</td></tr><tr><td>>>></td><td>피 연산자의 비트열을 오른쪽(→)으로 이동  이동에 따른 빈공간을 모두 0으로 체움</td></tr></tbody></table>
+<p>그럼 예제를 통해 살펴보겠습니다.</p>
+<blockquote>
+<p>System.out.println(2 &#x3C;&#x3C; 1); //4출력</p>
+<p>System.out.println(2 &#x3C;&#x3C; 2); //8출력</p>
+<p>System.out.println(2 &#x3C;&#x3C; 3); //16출력</p>
+<p>System.out.println(4 >> 1); //2출력</p>
+<p>System.out.println(4 >> 2); //1출력</p>
+</blockquote>
+<p>실행 결과를 보게 되면(주석 참조) &#x3C;&#x3C; 연산자의 실행 결과 2의 비트가 1칸씩 왼쪽으로 이동해서 2의 n배가 되는 모습을 볼 수 있습니다.</p>
+<p>또한 >> 연산자의 실행 결과로 4의 비트가 1칸씩 오른쪽으로 이동해서 2의 n승으로 나눠지는 모습을 확인할 수 있습니다.</p>
+<p>그러므로 비트가 왼쪽으로 n칸씩 가게 되면 그 정수에 2의 n승을 곱한 것과 마찬가지며</p>
+<p>비트가 오른쪽으로 n칸씩 가게 되면 그 정수에 2의 n승으로 나눈 것과 마찬가지란 뜻이 됩니다.</p>
+<p>그러므로 2배, 3배한 결과를 얻을 수 있습니다.</p>
+<p>여기서 >>>연산자는 부호를 결정하는 MSB를 0으로 지워버릴 수 있기 때문에 음수에 >>>연산자를 사용하게 되면 전혀 다른 값이 나올 수 있으니 주의하세요.</p>
+<p>이렇게 비트 연산자에 대한 설명이 끝났습니다.</p>
+<p>연산자 부분은 소스 예)로 확인하지 않고 설명만 해도 된다고 생각했기 때문에 예제 소스의 양이 적을겁니다.</p>
+<p>(전혀 귀찮아서가 아닙니다.)</p>
+<p>다음 강의부터는 if ~ else등 프로그램의 실행 흐름을 제어하는 명령어를 배우게 됩니다.</p>
+<p>저도 이제 책을 보며 좀 더 배워나가야 하고 이해가 점점 어려워 지기 때문에 강의의 흐름을 잡기 위해 노력하겠습니다.</p>
+<p>그러므로 조금 시간이 걸릴 수 있으며 예제를 많이 사용하여 저도 이해하고 여러분도 이해할 수 있도록 글을 써보겠습니다. ㅎㅎ</p>
+<p>그럼 이번 비트 연산자 강좌와 연산자 전체를 마치겠습니다.</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

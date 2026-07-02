@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="이번에는 이클립스와 git을 연동하여 사용해 보도록 하겠습니다"><title>[Git] 이클립스와 Git 연동하여 사용하기 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">[Git] 이클립스와 Git 연동하여 사용하기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-02-08T07:21:03.000Z"> 2014년 2월 8일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/461" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">이번에는 이클립스와 git을 연동하여 사용해 보도록 하겠습니다</p> </header> <div class="post-content"> <p>이번에는 이클립스와 git을 연동하여 사용해 보도록 하겠습니다</p>
+<p>요즘은 안드로이드 앱 프로젝트를 github에 올려두고 작업하는 경우가 많습니다</p>
+<p>이클립스에서 git을 사용하지 않으면 일일히 git add, git commit를 눌러야 하므로 비 효율적입니다</p>
+<p>먼저 이글을 시작하기 전에 자신만의 git이 있어야 합니다</p>
+<p>이에 관해서는 전에 2개의 git사이트를 소개한적이 있으므로 링크로 대신하겠습니다</p>
+<p><a href="http://itmir.tistory.com/38">[Computer/PC] - Github 사용방법</a></p>
+<p><a href="http://itmir.tistory.com/192">[Computer/PC] - Git 사용 방법</a></p>
+<p><a href="http://itmir.tistory.com/397">[Computer/PC] - [Site] Bitbucket, 무료 git 사이트</a></p>
+<ol>
+<li>이클립스 설치</li>
+</ol>
+<p>요즘은 안드로이드 개발 프로그램으로 이클립스를 보통 사용하므로 개발환경을 구축하셨다면 이클립스가 설치되어 있을겁니다</p>
+<p>만약 설치되지 않았다면 이클립스 공식 사이트에서 다운로드 하시길 바랍니다</p>
+<p>이클립스는 32비트와 64비트를 구분해서 다운로드 해야 합니다</p>
+<p><a href="http://eclipse.org/">http://eclipse.org/</a></p>
+<p>또는 필자가 포스팅중인 어플 개발 강좌를 보아도 손색이 없다</p>
+<p><a href="http://itmir.tistory.com/286">[Development/App] - #1 컴퓨터의 개발환경을 구축하자</a></p>
+<p><a href="http://itmir.tistory.com/287">[Development/App] - #2 이클립스 때려서 어플 만들자</a></p>
+<ol start="2">
+<li>EGit 플러그인 설치</li>
+</ol>
+<p>이클립스에서 git사용을 도와주는 플러그인의 이름은 egit입니다 (edit아닙니다 ㅋ)</p>
+<p>공식 사이트는 <a href="http://www.eclipse.org/egit/">http://www.eclipse.org/egit/</a> 이며 설명을 볼수 있습니다</p>
+<p>공식 사이트에서는 설명만 볼수 있고 다운로드는 이클립스로 직접 가능합니다</p>
+<p>Help - Install New Software에 접속해 주세요</p>
+<p><img  src="/archive/_astro/1.m3b81_65_Z1WyB4Q.webp" alt="" width="368" height="281" loading="lazy" decoding="async"></p>
+<p>그다음 아래 스크린샷이 나타날탠대</p>
+<p>Work with: 란에 아래 박스 주소를 입력해 주세요</p>
+<p><a href="http://download.eclipse.org/egit/updates">http://download.eclipse.org/egit/updates</a></p>
+<p>그럼 두개가 나타날탠대 Eclipse Git Team Provider를 체크한뒤 Next!</p>
+<p><img  src="/archive/_astro/2.BaI4w8IN_8zyka.webp" alt="" width="737" height="691" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/3.C-mp1sr2_28G76U.webp" alt="" width="737" height="691" loading="lazy" decoding="async"></p>
+<p>확인후 Next > !</p>
+<p><img  src="/archive/_astro/4.Bewjmpr4_ZaNu4N.webp" alt="" width="737" height="691" loading="lazy" decoding="async"></p>
+<p>라이센스에 동의한후 Finish를 누르면 설치가 됩니다</p>
+<p>설치중인 모습입니다</p>
+<p><img  src="/archive/_astro/5.CuV_UxYz_Zx3OOw.webp" alt="" width="838" height="90" loading="lazy" decoding="async"></p>
+<p>설치가 완료되면 ADT(혹은 이클립스)를 재시작 하라는 알림이 나타나며,</p>
+<p>재시작을 하게 되면 Windows - Show View - Other에 들어가게 되면 Git이라는것이 새로 나타나게 됩니다</p>
+<p><img  src="/archive/_astro/6.CxNJyCy1_tPRgb.webp" alt="" width="321" height="438" loading="lazy" decoding="async"></p>
+<p>Git Repositories를 선택하시면 아래와 같은 화면이 새로 나타납니다</p>
+<p><img  src="/archive/_astro/7.DNmK0ahC_ZlQLqW.webp" alt="" width="291" height="232" loading="lazy" decoding="async"></p>
+<p>3가지를 선택할수 있습니다</p>
+<ol>
+<li>
+<p>이미 다운받은 .git을 추가하는 방법</p>
+</li>
+<li>
+<p>github등에서 clone하는 방법</p>
+</li>
+<li>
+<p>새로 만드는 방법</p>
+</li>
+</ol>
+<p>먼저 1번부터 시도해 보겠습니다</p>
+<p><img  src="/archive/_astro/8-1.CqFw_1GW_2meBAH.webp" alt="" width="535" height="635" loading="lazy" decoding="async"></p>
+<p>git이 담긴 폴더를 선택해 주세요</p>
+<p>그럼 끝입니다 ㅋㅅㅋ</p>
+<p>Git부분에 추가한 repo가 표시됩니다</p>
+<p>두번째로 Clone하는 방법을 알아볼까 합니다</p>
+<p><img  src="/archive/_astro/9-1.DeGWMet1_Z1Sw5xM.webp" alt="" width="525" height="532" loading="lazy" decoding="async"></p>
+<p>저기서 URL만 입력하면 Host나 Repository path는 알아서 입력되는거 같은대요</p>
+<p>URL은 clone 주소 입니다</p>
+<p>github는 이렇게 할수 있네요</p>
+<p><img  src="/archive/_astro/9-2.CLa80tvR_aadta.webp" alt="" width="175" height="89" loading="lazy" decoding="async"></p>
+<p>사용자 ID랑 PW는 private repo일경우 필요합니다</p>
+<p><img  src="/archive/_astro/9-3.DBji7c5q_2eCob9.webp" alt="" width="525" height="532" loading="lazy" decoding="async"></p>
+<p>Clone할 branch를 선택하고 Next</p>
+<p><img  src="/archive/_astro/9-4.e-zgsgfs_1kdQiS.webp" alt="" width="525" height="532" loading="lazy" decoding="async"></p>
+<p>그다음 Finish하면 끝입니다</p>
+<p>이제 Commit을 해볼까요?</p>
+<p>Only3(세번만) 소스를 improt한다음 commit해보겠습니다</p>
+<p><img  src="/archive/_astro/8-2.CGYi85e3_p3gsT.webp" alt="" width="533" height="550" loading="lazy" decoding="async"></p>
+<p>git 설치이후 .git이 있는 프로젝트를 import하면 자동으로 git에 추가되는듯 합니다</p>
+<p>저는 시험삼아 AndroidManifest를 수정했습니다</p>
+<p>”>“라고 보이시죠?</p>
+<p><img  src="/archive/_astro/8-3.BpyArX6-_Z2cacSJ.webp" alt="" width="293" height="581" loading="lazy" decoding="async"></p>
+<p>마우스 오른쪽 - Team - Commit을 누르면 됩니다</p>
+<p><img  src="/archive/_astro/8-4.CcV68NZR_Z2vpJeX.webp" alt="" width="696" height="624" loading="lazy" decoding="async"></p>
+<p>Commit Message를 입력후 완료할수 있습니다</p>
+<p><img  src="/archive/_astro/8-5.qIiwS0sN_HMkxM.webp" alt="" width="642" height="640" loading="lazy" decoding="async"></p>
+<p>Commit은 commit만 하는거고 Commit and Push는 서버에 전송까지 한번에 해주는 겁니다</p>
+<p><img  src="/archive/_astro/9-5.BqBDBHJ6_Z2mvURJ.webp" alt="" width="406" height="177" loading="lazy" decoding="async"></p>
+<p>로그인까지 해주면 완료~~</p>
+<p>이렇게 해서 이클립스랑 git이랑 연동해서 사용하는 방법을 알아보았습니다</p>
+<p>git을 사용하는 유저에게 매우 편리한 방법이라 생각됩니다 ^^</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

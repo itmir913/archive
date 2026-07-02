@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="cm10 디바이스 소스를 이용해 cm10.1을 빌드할때 발생한 오류입니다."><title>Overlay의 문제, &lt;add-resource&gt;를 사용해 해결하자 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">Overlay의 문제, &lt;add-resource&gt;를 사용해 해결하자</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-03-24T04:02:00.000Z"> 2013년 3월 24일 </time> <span class="post-category">Android/Build</span> <a href="https://itmir.tistory.com/182" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">cm10 디바이스 소스를 이용해 cm10.1을 빌드할때 발생한 오류입니다.</p> </header> <div class="post-content"> <p>cm10 디바이스 소스를 이용해 cm10.1을 빌드할때 발생한 오류입니다.</p>
+<p>overlay관련 문제 내용을 보면,</p>
+<blockquote>
+<p>target Export Resources: framework-res (/home/whdghks913/cluster/system/out/target/common/obj/APPS/framework-res_intermediates/package-export.apk)</p>
+<p>device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:30: error: Resource at config_networkLocationProviderPackageName appears in overlay but not in the base package; use <add-resource> to add.</add-resource></p>
+<p>device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:33: error: Resource at config_geocodeProviderPackageName appears in overlay but not in the base package; use <add-resource> to add.</add-resource></p>
+<p>device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:40: error: Resource at config_autoBrightnessButtonKeyboard appears in overlay but not in the base package; use <add-resource> to add.</add-resource></p>
+<p>make: *** [/home/whdghks913/cluster/system/out/target/common/obj/APPS/framework-res_intermediates/package-export.apk] 오류 1</p>
+<p>make: *** 파일 `/home/whdghks913/cluster/system/out/target/common/obj/APPS/framework-res_intermediates/package-export.apk’을(를) 지웁니다</p>
+</blockquote>
+<p>위와 같은 오류가 발생합니다.</p>
+<p>이 오류는 <add-resource>를 이용해 해결할 수 있습니다.</add-resource></p>
+<blockquote>
+<p><add-resource type="string" name="오류난 overlay의 구문 이름"></add-resource></p>
+</blockquote>
+<p>위 박스의 내용을 오류난 구문의 앞에 넣어주시면 됩니다.</p>
+<p>예를 들면,</p>
+<p><string name="testoverlay">overlay</string></p>
+<p>이 부분이 문제가 있다고 합니다.</p>
+<p>이때 아래 부분처럼 <add-resource>를 넣어주시면 해결됩니다.</add-resource></p>
+<p><add-resource type="string" name="testoverlay"></add-resource></p>
+<p><string name="testoverlay">overlay</string></p>
+<p>만약 String이 아니라 bool 등 일경우 type을 적절히 바꿔주시면 되겠죠?</p>
+<p>출처: <a href="http://cafe.naver.com/develoid/165665">http://cafe.naver.com/develoid/165665</a>, 호호</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

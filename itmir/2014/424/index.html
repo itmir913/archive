@@ -1,0 +1,192 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="원래는 2014년 처음에 올리려고 했는데 요즘 심한 감기에 걸려서 쿨럭"><title>#24 Broadcast Receiver로 문자(SMS) 수신해보자 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">#24 Broadcast Receiver로 문자(SMS) 수신해보자</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-01-02T03:39:19.000Z"> 2014년 1월 2일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/424" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">원래는 2014년 처음에 올리려고 했는데 요즘 심한 감기에 걸려서 쿨럭</p> </header> <div class="post-content"> <p>안녕하세요 ㅎ</p>
+<p>원래는 2014년 처음에 올리려고 했는데 요즘 심한 감기에 걸려서 쿨럭</p>
+<p>이번강좌부터는 조금씩 어려워 지고 있습니다</p>
+<p>잘 따라와 주시고 이해가 안되는 부분은 아 그런가 보다~ 라고 생각하시는게 나을때가 많을겁니다 ㅎㅎ…</p>
+<h2 id="24-broadcast-receiver로-문자sms-수신해보자">24. Broadcast Receiver로 문자(SMS) 수신해보자</h2>
+<h3 id="24-1-broadcast-receiver란">24-1 Broadcast Receiver란?</h3>
+<p>브로드 캐스트(브로드캐스트리시버, BroadcastReceiver)란 과연 무엇일까요?</p>
+<p>broadcast : 방송하다</p>
+<p>receiver : 수신기(수신하다)</p>
+<p>각각 이러한 뜻을 가지고 있는데요</p>
+<p>합쳐보면 “방송을 수신한다” 라는 뜻이 됩니다</p>
+<p>안드로이드에서는 어떠한 이벤트(활동)를 스피커에 대고 방송을 합니다</p>
+<p>“핸드폰 화면이 꺼졌어요~”</p>
+<p>그럼 브로드캐스트리시버가 이 방송을 듣습니다</p>
+<p>“아 화면이 꺼졌다, 이러한 코드를 실행해야지”</p>
+<p>이러한 원리로 작동이 되는겁니다</p>
+<p>즉, 안드로이드에서 보내주는 이벤트를 수신해서 처리하는 곳이 바로 브로드캐스트리시버 입니다</p>
+<p>그리고 브로드캐스트리시버는 우선순위에 따라 순차적으로 메세지가 전달됩니다</p>
+<p>가장 우선순위가 높은 리시버에게 이벤트를 보내고, 그아래, 그아래…으로 전달됩니다</p>
+<p>이 BroadcastReceiver는 정적 리시버와 동적 리시버로 나눌수 있는데요</p>
+<p>정적 리시버는 AndroidManifest.xml에 등록하며, 동적 리시버는 매니페스트에 등록하지 않습니다</p>
+<h3 id="24-2-broadcast-receiver에서-받을수-있는-이벤트는-무엇이-있나요">24-2 Broadcast Receiver에서 받을수 있는 이벤트는 무엇이 있나요?</h3>
+<p>브로드캐스트에서 받을수 있는 액션이 무엇이 있는지 조금만 살펴보겠습니다</p>
+<p><strong>ACTION_BOOT_COMPLETED</strong></p>
+<p><strong>부팅이 끝났을 때 (RECEIVE_BOOT_COMPLETED 권한등록 필요)</strong></p>
+<p>ACTION_CAMERA_BUTTON</p>
+<p>카메라 버튼이 눌렸을 때</p>
+<p>ACTION_DATE_CHANGED</p>
+<p>ACTION_TIME_CHANGED</p>
+<p>폰의 날짜, 시간이 수동으로 변했을때 (설정에서 수정했을때)</p>
+<p><strong>ACTION_SCREEN_OFF</strong></p>
+<p><strong>ACTION_SCREEN_ON</strong></p>
+<p><strong>화면 on, off</strong></p>
+<p>ACTION_AIRPLANE_MODE_CHANGED</p>
+<p>비행기 모드</p>
+<p>ACTION_BATTERY_CHANGED</p>
+<p>ACTION_BATTERY_LOW</p>
+<p>ACTION_BATTERY_OKAY</p>
+<p>배터리 상태변화</p>
+<p>ACTION_PACKAGE_ADDED</p>
+<p>ACTION_PACKAGE_CHANGED</p>
+<p>ACTION_PACKAGE_DATA_CLEARED</p>
+<p>ACTION_PACKAGE_INSTALL</p>
+<p>ACTION_PACKAGE_REMOVED</p>
+<p>ACTION_PACKAGE_REPLACED</p>
+<p>ACTION_PACKAGE_RESTARTED</p>
+<p>어플 설치/제거</p>
+<p>ACTION_POWER_CONNECTED</p>
+<p>ACTION_POWER_DISCONNECTED</p>
+<p>충전 관련</p>
+<p>ACTION_REBOOT</p>
+<p>ACTION_SHUTDOWN</p>
+<p>재부팅/종료</p>
+<p>ACTION_TIME_TICK</p>
+<p>매분마다 수신</p>
+<p><strong>android.provider.Telephony.SMS_RECEIVED</strong></p>
+<p><strong>sms 수신 (RECEIVE_SMS 권한 필요)</strong></p>
+<p>(전체중 극히 일부)</p>
+<p>이중에서 굵은 표시가 되어 있는 부팅완료, 화면 on,off, 문자 수신을 가지고 예제를 만들어 보도록 하겠습니다</p>
+<h3 id="24-3-java파일-만들기">24-3 java파일 만들기</h3>
+<p>먼저 java파일을 만들어 줍시다</p>
+<p>이 파일이 우리가 수신한 액션을 처리하는 브로드캐스트리시버 파일이 될것입니다</p>
+<p>이름은 Broadcast.java입니다</p>
+<p>import android.content.BroadcastReceiver;</p>
+<p>import android.content.Context;</p>
+<p>import android.content.Intent;</p>
+<p>public class Broadcast extends <strong>BroadcastReceiver</strong> {</p>
+<p>    @Override</p>
+<p>    public void <strong>onReceive</strong>(Context context, Intent intent) {</p>
+<p>    // 수신한 액션을 이 onReceive메소드에서 처리하게 됩니다</p>
+<p>    }</p>
+<p>}</p>
+<p>달랑 메소드 하나만 있습니다</p>
+<p>저 onReceive메소드에서 액션을 수신하여 처리할 코드를 입력해 주면 되는데요</p>
+<p>액션이 하나라면 문제가 없지만 2개이상일때는 각각 구분해야 할 필요가 있습니다</p>
+<p>intent.getAction()</p>
+<p>으로 어떤 액션인지 알수 있습니다</p>
+<p>예를들어 화면 on, off, 부팅 완료, sms수신의 경우</p>
+<p>if (<strong>Intent.ACTION_BOOT_COMPLETED</strong>.equals(intent.getAction())){</p>
+<p>    // 부팅완료</p>
+<p>}</p>
+<p>if (<strong>Intent.ACTION_SCREEN_ON</strong> == intent.getAction()) {</p>
+<p>    // 화면 켜짐</p>
+<p>}</p>
+<p>if (<strong>Intent.ACTION_SCREEN_OFF</strong> == intent.getAction()) {</p>
+<p>    // 화면 꺼짐</p>
+<p>}</p>
+<p>if (<strong>“android.provider.Telephony.SMS_RECEIVED”</strong>.equals(intent.getAction())) {</p>
+<p>    // sms 수신</p>
+<p>}</p>
+<p>이렇게 if문을 통해 구현해 주시면 됩니다 (이때 ==이나 equals나 상관이 없다고합니다만 잘 모르겠네요)</p>
+<p>참고로 Intent.ACTION_BOOT_COMPLETED이나 “android.intent.action.BOOT_COMPLETED”이나 같다고 합니다만 전자는 java에서, 후자는 xml에서 자주 보이는군요</p>
+<p>이제 각각의 액션을 구분할수 있게 되었습니다</p>
+<p>로그를 찍어서 한번 잘 작동하는지 보겠습니다</p>
+<p>Log.d(“onReceive()”,“부팅완료”);</p>
+<p>Log.d(“onReceive()”,“스크린 ON”);</p>
+<p>Log.d(“onReceive()”,“스크린 OFF”);</p>
+<p>Log.d(“onReceive()”,“문자가 수신되었습니다”);</p>
+<p>각각 if문안에 넣어주세요</p>
+<p>그다음 문자 수신의 경우는 누가 보냈는지와, 어떤 내용인지, 언제 수신했는지등의 정보를 알아야 합니다</p>
+<p>이것은 일단 맨 아래에서 설명해 봅시다</p>
+<p>참고로 우선순위가 낮은 브로드캐스트리시버가 수신을 못하게 하는 방법은</p>
+<p>abortBroadcast();</p>
+<p>를 사용하시면 됩니다</p>
+<p>이제 매니페스트 파일에 등록해 봅시다</p>
+<h3 id="24-4-androidmanifestxml에-등록하자-정적-등록">24-4 AndroidManifest.xml에 등록하자 (정적 등록)</h3>
+<p>정적 등록이라는건 한번 등록하면 수정이 안됩니다 (무조건 수신)</p>
+<p>그러나 java에서 등록하면 xml보다 유동적으로 등록/해제가 가능합니다</p>
+<p>사실 브로드캐스트는 등록할 필요가 그닥 없으며, xml에 등록을 해도 받지 못하는 액션도 있습니다</p>
+<p>그런 액션은 동적으로 등록해야 합니다 (24-5 참조)</p>
+<p>한번 등록해 봅시다</p>
+<receiver android:name="whdghks913.tistory.examplebroadcastreceiver.Broadcast">
+<p>    &#x3C;intent-filter <strong>android:priority=“9999”</strong>></p>
+<p>        <action android:name="**android.intent.action.BOOT\_COMPLETED**"></action></p>
+<p>        <action android:name="**android.provider.Telephony.SMS\_RECEIVED**"></action></p>
+<p>    </p>
+</receiver>
+<p>receiver를 등록하였습니다</p>
+<p>저기서 android:priority는 우선순위로, 숫자가 높을수록 우선순위가 높습니다</p>
+<p>우선순위가 높은 리시버 부터 순차적으로 메세지가 전달됩니다</p>
+<p>그런대 화면 on, off는 없네요?</p>
+<p>그것은 위에서 말했드시 일부 액션은 xml에 등록해도 액션을 받을수 없습니다</p>
+<p>그러므로 아래에서 살펴볼 registerReceiver()메소드를 이용해 등록해야만 합니다</p>
+<p>마지막으로 부팅완료와 sms수신은 권한이 필요합니다</p>
+<uses-permission android:name="android.permission.RECEIVE\_BOOT\_COMPLETED">
+<uses-permission android:name="android.permission.RECEIVE\_SMS">
+<h3 id="24-5-registerreceiver로-등록하자-동적-등록">24-5 registerReceiver()로 등록하자 (동적 등록)</h3>
+<p>24-4에서 등록하지 못한 Screen on과 off는 동적으로 java파일에서만 등록이 가능한 액션의 대표적인 예입니다</p>
+<p>이번에는 동적으로 등록해 보겠습니다</p>
+<p>MainActivity.java를 열어주세요</p>
+<p>BroadcastReceiver myReceiver = new <strong>Broadcast()</strong>;</p>
+<p>Button이나 TextView처럼 추가해 주시면 됩니다</p>
+<p>굵게 표시한 Broadcast()는 java파일의 이름입니다</p>
+<p>그다음 onCreate()에는</p>
+<p><strong>IntentFilter intentFilter</strong> = new IntentFilter(<strong>Intent.ACTION_SCREEN_ON</strong>);</p>
+<p>intentFilter.<strong>addAction</strong>(<strong>Intent.ACTION_SCREEN_OFF</strong>);</p>
+<p>intentFilter.addAction(Intent.ACTION_BOOT_COMPLETED);</p>
+<p>intentFilter.addAction(“android.provider.Telephony.SMS_RECEIVED”);</p>
+<p><strong>registerReceiver</strong>(myReceiver, intentFilter);</p>
+<p>Log.d(“onCreate()”,“브로드캐스트리시버 등록됨”);</p>
+<p>를 입력해 봅시다</p>
+<p>IntentFilter를 통해 액션을 등록한다음, registerReceiver()로 리시버를 등록하고 있습니다</p>
+<p>마지막으로 어플을 종료할때 호출되는 onDestroy()메소드를 만들어 액티비티가 종료되면 등록을 해제합시다</p>
+<p>@Override</p>
+<p>protected void onDestroy() {</p>
+<p>    super.onDestroy();</p>
+<p><strong>unregisterReceiver(myReceiver);</strong></p>
+<p>    Log.d(“onDestory()”,“브로드캐스트리시버 해제됨”);</p>
+<p>}</p>
+<p>unregisterReceiver()로 등록을 해제할수 있습니다</p>
+<p>이렇게 등록된 리시버는 <strong>등록한 액티비티가 사라지거나 하면 등록이 해제되는 단점</strong>이 있어 죽지 않는 서비스에서 등록합니다</p>
+<h3 id="24-6-문자-내용-수신-코드">24-6 문자 내용 수신 코드</h3>
+<p>아래는 문자 내용을 수신하는 코드입니다</p>
+<p>// SMS 메시지를 파싱합니다.</p>
+<p>Bundle bundle = intent.getExtras();</p>
+<p>Object messages[] = (Object[])bundle.get(“pdus”);</p>
+<p>SmsMessage smsMessage[] = new SmsMessage[messages.length];</p>
+<p>for(int i = 0; i &#x3C; messages.length; i++) {</p>
+<p>    // PDU 포맷으로 되어 있는 메시지를 복원합니다.</p>
+<p>    smsMessage[i] = SmsMessage.createFromPdu((byte[])messages[i]);</p>
+<p>}</p>
+<p>// SMS 수신 시간 확인</p>
+<p>Date curDate = new Date(smsMessage[0].getTimestampMillis());</p>
+<p>Log.d(“문자 수신 시간”, curDate.toString());</p>
+<p>// SMS 발신 번호 확인</p>
+<p>String origNumber = smsMessage[0].getOriginatingAddress();</p>
+<p>// SMS 메시지 확인</p>
+<p>String message = smsMessage[0].getMessageBody().toString();</p>
+<p>Log.d(“문자 내용”, “발신자 : “+origNumber+”, 내용 : ” + message);</p>
+<p>그러나 아직 어려우므로 이해하지 말고 그렇구나 하고 넘어갑시다 ㅎ</p>
+<p>출처 : <a href="http://android-town.org/">http://android-town.org/</a></p>
+<h3 id="24-7-완성">24-7 완성!!</h3>
+<p>자, 이제 모든것이 완성되었습니다</p>
+<p>그럼 작동을 확인해 보겠습니다</p>
+<p><img  src="/archive/_astro/%EC%BA%A1%EC%B2%98.BHNkO__S_cutt8.webp" alt="" width="425" height="261" loading="lazy" decoding="async"></p>
+<p>로그를 찍어보면 정상 작동하고 있다는 것이 나타납니다 ㅎㅎ</p>
+<p>이번 강좌는 뭔가 횡설수설한 느낌이 강하네요;</p>
+<p>오타가 많을거 같습니다</p>
+<p>발견하시면 알려주세요 ㅎ</p>
+<p>[ExampleBroadcastReceiver.zip</p>
+<p>다운로드](./file/ExampleBroadcastReceiver.zip)</p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleBroadcastReceiver.zip">ExampleBroadcastReceiver.zip</a> <code>636 KB</code></li>
+</ul></uses-permission></uses-permission> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

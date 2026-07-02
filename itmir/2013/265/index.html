@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="오늘 우분투를 다시 깔아서 필요한 것들을 다시 깔아주는대 ㅇㅅㅇ..."><title>Ubuntu의 저장소를 daum.net으로 바꿔보자 (apt-get 속도향상) — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">Ubuntu의 저장소를 daum.net으로 바꿔보자 (apt-get 속도향상)</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-07-12T10:10:00.000Z"> 2013년 7월 12일 </time> <span class="post-category">Computer &amp; PC/Ubuntu</span> <a href="https://itmir.tistory.com/265" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">오늘 우분투를 다시 깔아서 필요한 것들을 다시 깔아주는대 ㅇㅅㅇ...</p> </header> <div class="post-content"> <p>오늘 우분투를 다시 깔아서 필요한 것들을 다시 깔아주는대 ㅇㅅㅇ…</p>
+<p>kr.archive.ubuntu.com이 포화상태인지 미쳤는지 아무튼 너무 느렸습니다;;</p>
+<p>그래서 우분투 저장소를 빠른 다음 서버로 바꿔주니 속도가 날아다니네요. ㅋㅎㅎㅎㅎㅎㅎ</p>
+<p>역시 제 컴이 느린게 아니었습니다. 하하하하..</p>
+<p>그럼 이제 그 방법을 소개하려 합니다.</p>
+<p>먼저 su권한이 필요합니다. 비번 알아두세요~</p>
+<p>2가지 방법이 있습니다.</p>
+<p>먼저 터미널에 아래와 같이 입력해 주세요.</p>
+<p>sudo gedit /etc/apt/sources.list</p>
+<p><img  src="/archive/_astro/1.BxGfv-el_2cuHP7.webp" alt="" width="569" height="144" loading="lazy" decoding="async"></p>
+<p>이렇게 입력해 주세요.</p>
+<p>그럼 자주보는 Gedit가 나타납니다.</p>
+<p><img  src="/archive/_astro/2.IDyFyW_O_1C7jgk.webp" alt="" width="780" height="446" loading="lazy" decoding="async"></p>
+<p>위에 있는 돋보기+연필 아이콘을 누르면 검색해서 한번에 바꿀수 있는데요. 동그라미 된 아이콘을 누르시면 됩니다.</p>
+<p>kr.archive.ubuntu.com를 ftp.daum.net로 바꿔주셔야 합니다.</p>
+<p>사진과 같이 입력해 주세요 ㅎㅎ</p>
+<p>완료하셨으면 이제 터미널로 돌아와서 아래 명령어를 입력해 주시면 끝입니다.</p>
+<p>sudo apt-get update</p>
+<p>이제 아래 사진처럼 뭐가 막 뜰겁니다.</p>
+<p><img  src="/archive/_astro/3.BQ-w-O1Q_1NgVv.webp" alt="" width="725" height="165" loading="lazy" decoding="async"></p>
+<p>그냥 보고만 있으시면 됩니다. ㅎㅎ</p>
+<p>이제 얼마나 속도가 향상되었는지 볼까요??</p>
+<p><img  src="/archive/_astro/4.DhQ3Y7PW_2kMJAV.webp" alt="" width="729" height="472" loading="lazy" decoding="async"></p>
+<p>필수 프로그램을 설치중입니다…</p>
+<p><img  src="/archive/_astro/5.B9nVbRDP_ZDcC8I.webp" alt="" width="189" height="23" loading="lazy" decoding="async"></p>
+<p>우호호호호호오한ㅇ롷ㄹ호로호롷라활</p>
+<p>역시 국내 서버입니다. ㅋㅋ 속도가 대박이네요. ㅋㅋ</p>
+<p>이렇게 해서 저장소를 국내 서버로 우회하여 속도향상을 꾀하는 방법이었습니다. ㅎㅎ</p>
+<p>나머지 하나는 sed를 이용한 방법인대요.</p>
+<p>sed -i ‘s/kr.archive.ubuntu.com/ftp.daum.net/g’ /etc/apt/sources.list</p>
+<p>을 사용해 주시면 됩니다 ㅎㅎ</p>
+<p>+2013-12-02</p>
+<p>다음 서버가 13.10용 미러를 제공하지 않아서 다른 미러 사이트를 소개해 드립니다.</p>
+<p><strong>ftp.neowiz.com</strong></p>
+<p>13.10에서는 이 서버를 사용해 주시면 되고요.</p>
+<p>방법은 위와 같습니다.</p>
+<p>10.04도 에러가 많이 뜰탠대 그때는 아래로 변경해 주세요.</p>
+<p><strong>old-releases.ubuntu.com</strong></p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

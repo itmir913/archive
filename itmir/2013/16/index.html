@@ -1,0 +1,16 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="이 두개의 사진을 보아 미루어 짐작해볼때,"><title>CM7 포팅 재도전 문제는 Boot.img속 램디스크 추정 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">CM7 포팅 재도전 문제는 Boot.img속 램디스크 추정</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-01-27T05:36:11.000Z"> 2013년 1월 27일 </time> <span class="post-category">Android/Build</span> <a href="https://itmir.tistory.com/16" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">이 두개의 사진을 보아 미루어 짐작해볼때,</p> </header> <div class="post-content"> <p><img  src="/archive/_astro/1.CBqhQRoo_fc3t2.webp" alt="" width="264" height="56" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/2.CE21GP2k_10IVck.webp" alt="" width="139" height="114" loading="lazy" decoding="async"></p>
+<p>이 두개의 사진을 보아 미루어 짐작해볼때,</p>
+<p>cm부팅때 sky로고후 검은화면 + 위 글씨(전과 동일한증상)때의 adb는 잡힙니다.</p>
+<p>logcat의경우 아에 표시할 로그가 없는것 같습니다.</p>
+<p>또한 system을 복원한뒤 재부팅해도 문제가 일어나는것으로 보아</p>
+<p>boot.img의 문제이며 같은 커널을 쓰지만 하나는 cm, 하나는 순정인 부트이미지가 있을때</p>
+<p>cm램디스크인 boot.img에서는 문제발생, 순정 램디스크인 boot.img에서는 정상 부팅인것으로 보아</p>
+<p>cm의 boot.img속 램디스크에 문제가 있는것 같습니다.</p>
+<p>init.rc등을 수정해서 부팅만 이라도 성공해 보고 싶네요 ㅋㅋ</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="hPa님께서 알려주신 통신 오류 해결방법을 정리해 보았습니다"><title>hPa님의 베가N5 CM 통신 오류 해결방법 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">hPa님의 베가N5 CM 통신 오류 해결방법</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-01-27T07:13:47.000Z"> 2013년 1월 27일 </time> <span class="post-category">Android/Build</span> <a href="https://itmir.tistory.com/49" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">hPa님께서 알려주신 통신 오류 해결방법을 정리해 보았습니다</p> </header> <div class="post-content"> <p>hPa님께서 알려주신 통신 오류 해결방법을 정리해 보았습니다</p>
+<p>원본 게시글은 <a href="http://cafe.naver.com/skydevelopers/171224">http://cafe.naver.com/skydevelopers/171224</a> 입니다</p>
+<p>KT 기기 기준으로</p>
+<p>최초 부팅 때는 아주 잠시 통신이 잡혔다가 안테나 다시 사라짐</p>
+<p>IMEI가 00000000000</p>
+<p>자신의 전화번호는 표시됨</p>
+<p>‘긴급 통화만’이 표시됨</p>
+<p>위 증상이 일어날경우 원인은 확실합니다</p>
+<p>원인은 skytestserver에 있습니다.</p>
+<p>skytestserver가 실행되고 있어야 통신이 제대로 되거든요 ’ ’;</p>
+<p>Fix 방법은 다음과 같습니다.</p>
+<p>/system/bin/skytestserver</p>
+<p>/system/lib/libsky_aprlib.so</p>
+<p>/system/lib/libmtc.so</p>
+<p>추가</p>
+<blockquote>
+<p>init.qcom.rc에</p>
+<p>service skytestserver /system/bin/skytestserver</p>
+<p>    class main</p>
+<p>    socket skytest stream 666</p>
+<p>    user root</p>
+</blockquote>
+<p>추가 (위치는 service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post_boot.sh 요 놈 바로 위에가 적당할 겁니다.)</p>
+<p>마지막으로 skytestserver가 libhardware_legacy.so에 다음 두 함수를 원하므로 Dummy로 추가합니다.</p>
+<p>CM9 소스의 hardware/libhardware_legacy/wifi.c에 마지막 줄에</p>
+<blockquote>
+<p>int wifi_load_mfg_driver()</p>
+<p>{</p>
+<p>    return 0;</p>
+<p>}</p>
+<p>int wifi_unload_mfg_driver()</p>
+<p>{</p>
+<p>    return 0;</p>
+<p>}</p>
+</blockquote>
+<p>추가 및 libhardware_legacy.so 빌드</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

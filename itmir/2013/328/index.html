@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="네이버 카페 알림같이 알림을 띄어야 할때가 있습니다"><title>어플 알림(진행중) 띄우기 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">어플 알림(진행중) 띄우기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-09-01T04:24:02.000Z"> 2013년 9월 1일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/328" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">네이버 카페 알림같이 알림을 띄어야 할때가 있습니다</p> </header> <div class="post-content"> <p>네이버 카페 알림같이 알림을 띄어야 할때가 있습니다</p>
+<p>한번 띄워 볼까요?</p>
+<p>private void showNotify(Context context) {</p>
+<p>NotificationManager nm = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);</p>
+<p>// 시스탬 서비스를 호출한다</p>
+<p>Notification notification = new Notification(R.drawable.ic_launcher, “알림이 뜰때 표시”, System.currentTimeMillis());</p>
+<p>// 아이콘을 지정한다, 카카오톡의 “새로운 메세지가 도착했습니다”가 잠깐 표시되는것 같은거</p>
+<p>notification.flags = Notification.FLAG_ONGOING_EVENT;</p>
+<p>// FLAG_AUTO_CANCEL:은 알림(확인하면 지워짐), FLAG_ONGOING_EVENT은 진행중표시</p>
+<p>PendingIntent contentIntent = PendingIntent.getActivity(context, 0, new Intent(context, MainActivity.class), 0);</p>
+<p>// MainActivity.class는 알림을 터치하면 이동할 액티비티이다</p>
+<p>notification.setLatestEventInfo(context, <strong>“제목”, “내용”</strong>, contentIntent);</p>
+<p>nm.notify(1234, notification);</p>
+<p>// 1234는 알림을 구분할 상수이고, 알림을 지울때 이 상수가 필요하다</p>
+<p>}</p>
+<p>이 메소드를 실행하면 됩니다</p>
+<p>이 메소드는 context가 없는 브로드 캐스트 리시버에서 사용한 메소드이므로 다른 메소드에서는 this를 사용하시면 됩니다</p>
+<p>지울때는</p>
+<p>nm.cancel(1234);</p>
+<p>여기서 1234는 알림을 구분할 상수 입니다</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

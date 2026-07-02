@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="안드로이드 어플을 만드는도중 rand라는 것이 하나 필요했습니다."><title>번외 - rand함수를 이해하자 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">번외 - rand함수를 이해하자</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-08-14T08:42:17.000Z"> 2013년 8월 14일 </time> <span class="post-category">Programming/Java</span> <a href="https://itmir.tistory.com/309" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">안드로이드 어플을 만드는도중 rand라는 것이 하나 필요했습니다.</p> </header> <div class="post-content"> <p>안드로이드 어플을 만드는도중 rand라는 것이 하나 필요했습니다.</p>
+<p>이는 “드림나래”의 히든모드와 비슷한 건데요.</p>
+<p>랜덤의 숫자를 얻을수 있습니다.</p>
+<p>자바에서 랜덤숫자를 구하기 위해서는 Math.random();을 사용하면 됩니다.</p>
+<p>이 놈은 특이하게도 다른 언어와 달리 int형이 아닌 double형으로 반환합니다.</p>
+<p>그리고 반환하는 값이 0.0에서 1.0사이입니다.</p>
+<blockquote>
+<p>0.0 &#x3C;= Math.random() &#x3C; 1.0</p>
+</blockquote>
+<p>그렇다면, 어떻게 정수를 얻을수 있을까요?</p>
+<p>int로 형변환을 하면 됩니다.</p>
+<p>아래 순서를 생각하면 됩니다.</p>
+<p>만약 1~10사이의 랜덤 정수를 구하기를 원한다면,</p>
+<blockquote>
+<p>(1) 각 변에 10을 곱합니다</p>
+<p>0.0 &#x3C;= Math.random() * 10 &#x3C; 10.0</p>
+<p>(2) 각 변을 int로 형변환 합니다</p>
+<p>0 &#x3C;= (int)Math.random() *10 &#x3C;10</p>
+<p>(3) 각 변에 1을 더합니다</p>
+<p>1 &#x3C;= (int)Math.random() *10 +1 &#x3C; 11</p>
+</blockquote>
+<p>이렇게 되면 원하는 대로 1부터 10까지의 정수가 반환됩니다.</p>
+<p>만약 n까지의 정수를 구하려면 n을 곱하면 됩니다.</p>
+<p>자바 식으로 세우자면,</p>
+<blockquote>
+<p>double rand = Math.random();</p>
+<p>rand = rand * 10;</p>
+<p>int num = (int)rand;</p>
+<p>num++;</p>
+<p>간단히 줄여보면</p>
+<p>int num= ((int)(Math.random() * 10));</p>
+<p>num++;</p>
+</blockquote>
+<p>이렇게 하면 작동하지 않을까요??ㅎㅎ</p>
+<p>아직 테스트는 안해봤습니다</p>
+<p>작동하는군요. ㅎㅎ</p>
+<blockquote>
+<p>import java.util.Random;</p>
+</blockquote>
+<p>를 해야 합니다.</p>
+<p>출처 : <a href="http://aychoi.tistory.com/8">http://aychoi.tistory.com/8</a></p>
+<p>여기가 가장 명쾌하더군요. ㅎㅎ</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

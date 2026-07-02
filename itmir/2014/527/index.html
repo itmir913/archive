@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="이번 포스팅에서는 PoppyView에 대해 알아볼까 합니다"><title>PoppyView를 사용해보자 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">PoppyView를 사용해보자</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-09-07T08:04:23.000Z"> 2014년 9월 7일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/527" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">이번 포스팅에서는 PoppyView에 대해 알아볼까 합니다</p> </header> <div class="post-content"> <p>안녕하세요~</p>
+<p>이번 포스팅에서는 PoppyView에 대해 알아볼까 합니다</p>
+<p>잘 사용하면 정말 유용한 라이브러리 이므로 꼭 정독해 주세요~</p>
+<h3 id="poppyview란">PoppyView란?</h3>
+<p>혹시 아래로 스크롤을 하면 사라지고, 위로 스크롤을 하면 나타나는 문구를 보신적이 계신가요?</p>
+<p>PoppyView는 이런 작업을 매우 쉽게 구현할수 있는 라이브러리 입니다</p>
+<p>github에 있는 샘플 프로젝트를 실행해본 스크린샷을 봐주세요</p>
+<p><img  src="/archive/_astro/Down.CQDIJsZ__1OY01I.webp" alt="" width="418" height="400" loading="lazy" decoding="async">
+   
+<img  src="/archive/_astro/up.GAd3Trfl_Z2tO3MR.webp" alt="" width="405" height="400" loading="lazy" decoding="async"></p>
+<p>아래로 스크롤을 할때 PoppyView가 표시되었지만 위로 스크롤을 하면 PoppyView가 사라집니다</p>
+<p>이것이 PoppyView입니다</p>
+<h3 id="라이브러리-다운로드">라이브러리 다운로드</h3>
+<p>github에 공개되어 있습니다</p>
+<p><a href="https://github.com/flavienlaurent/poppyview">https://github.com/flavienlaurent/poppyview</a></p>
+<p>[poppyview-master.zip</p>
+<p>다운로드](./file/poppyview-master.zip)</p>
+<p>poppyview-library폴더를 import해주신다음 is Library해주세요</p>
+<p>IsLibrary를 모르시는 분께서는 <a href="http://itmir.tistory.com/526">[Development/App] - FadingActionBar를 사용해 보자 - Play Store UI</a> 글 중간부분에 설명이 나와있습니다</p>
+<p>아래 apk파일은 샘플 프로젝트 입니다 한번 설치해서 구경해 보세요</p>
+<p>[poppyview-sample.apk</p>
+<p>다운로드](./file/poppyview-sample.apk)</p>
+<h3 id="라이브러리-사용하기">라이브러리 사용하기</h3>
+<p>먼저 스크롤마다 나타나고, 사라질 View를 만들어야 합니다</p>
+<p>이글에서는 샘플 프로젝트의 xml을 사용하겠습니다</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;?</span><span style="color:#22863A">xml</span><span style="color:#6F42C1"> version</span><span style="color:#24292E">=</span><span style="color:#032F62">"1.0"</span><span style="color:#6F42C1"> encoding</span><span style="color:#24292E">=</span><span style="color:#032F62">"utf-8"</span><span style="color:#24292E">?></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">TextView</span><span style="color:#6F42C1"> xmlns:android</span><span style="color:#24292E">=</span><span style="color:#032F62">"http://schemas.android.com/apk/res/android"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"match_parent"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:background</span><span style="color:#24292E">=</span><span style="color:#032F62">"@drawable/selector_poppyview"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:clickable</span><span style="color:#24292E">=</span><span style="color:#032F62">"true"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:fontFamily</span><span style="color:#24292E">=</span><span style="color:#032F62">"sans-serif-thin"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:padding</span><span style="color:#24292E">=</span><span style="color:#032F62">"15dp"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:text</span><span style="color:#24292E">=</span><span style="color:#032F62">"Hello, I</span><span style="color:#005CC5">&#x26;apos;</span><span style="color:#032F62">m poppy and I know it"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:textColor</span><span style="color:#24292E">=</span><span style="color:#032F62">"@android:color/white"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:textSize</span><span style="color:#24292E">=</span><span style="color:#032F62">"18sp"</span><span style="color:#24292E"> /></span></span>
+<span class="line"></span></code></pre>
+<p>그냥 추가하시면 android:background=“@drawable/selector_poppyview”부분이 오류가 뜰탠대 샘플프로젝트의 @drawable까지 첨부하기엔 너무 길어지므로 패스하겠습니다</p>
+<p>그다음 PoppyView가 필요한 java파일로 넘어와 주세요</p>
+<p>스크롤이 가능한 스크롤뷰와 리스트뷰를 정식 지원하는것 같습니다</p>
+<p>PoppyViewHelper mPoppyViewHelper = new PoppyViewHelper(this, PoppyViewPosition.TOP);</p>
+<p>View poppyView = mPoppyViewHelper.createPoppyViewOnScrollView(R.id.(View의 ID), R.layout.(poppyview가 정의된 xml이름);</p>
+<p>이렇게 두줄을 작성해 주시면 됩니다</p>
+<p>잠시 첫번째 줄을 말씀드리면</p>
+<p>mPoppyViewHelper = new PoppyViewHelper(this, PoppyViewPosition.TOP);</p>
+<p>이줄에서 PoppyViewPosition.TOP은 넣어줘도 되고 없어도 됩니다</p>
+<p>즉 mPoppyViewHelper = new PoppyViewHelper(this);도 가능합니다 (이경우 Poppyview는 아래에 존재)</p>
+<p>또한 createPoppyViewOnListView에 onScrollListener를 걸어 줄수도 있습니다</p>
+<p>이부분은 new AbsListView.OnScrollListener()를 사용합니다</p>
+<p>나머지 부분은 앱 개발자분께서 자유자재로 사용해 주시면 됩니다</p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/poppyview-master.zip">poppyview-master.zip</a> <code>976 KB</code></li>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/poppyview-sample.apk">poppyview-sample.apk</a> <code>620 KB</code></li>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

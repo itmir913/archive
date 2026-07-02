@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="LG의 기능중 하나가 내 폰과의 대화 라는 기능으로"><title>SMS로 원격 제어하기 예제 (내 폰과의 대화 예제) — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">SMS로 원격 제어하기 예제 (내 폰과의 대화 예제)</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-12-15T06:47:12.000Z"> 2014년 12월 15일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/547" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">LG의 기능중 하나가 내 폰과의 대화 라는 기능으로</p> </header> <div class="post-content"> <p><img  src="/archive/_astro/lg_launcher_ic_ia.o3U7Pp7c_Z2wXARy.webp" alt="" width="200" height="200" loading="lazy" decoding="async"></p>
+<p>안녕하세요</p>
+<p>LG의 기능중 하나가 내 폰과의 대화 라는 기능으로</p>
+<p>이 기능은 문자로 스마트폰을 원격 조정할수 있고 아마 부재중 통화 개수까지 알수 있는 기능을 제공합니다</p>
+<p>이와 관련해서 예제를 준비했습니다</p>
+<p>이 포스팅은 언젠가 부터 올리고 있는 #붙은 강좌가 아니기때문에 자세한 코드 설명은 나와있지 않습니다만</p>
+<p>맨 아래 보시면 이 예제에 포함된 요소 또는 강좌내용이 5개나 들어있습니다</p>
+<p>복습용으로 정말 좋은 예제가 될것 같습니다</p>
+<h3 id="메인-화면">메인 화면</h3>
+<p>내 폰과의 대화처럼 내 스마트폰을 문자로 원격 조정 할수 있는 어플입니다</p>
+<p><img  src="/archive/_astro/Screenshot_2014-12-15-15-22-50.DZENLWgM_9FdIN.webp" alt="" width="394" height="414" loading="lazy" decoding="async"></p>
+<p>레이아웃은 간단한 프리퍼런스 액티비티로 구성했으며</p>
+<p>문자 내용은 사용자가 편집할수 있도록 했습니다</p>
+<h3 id="동작-원리">동작 원리</h3>
+<p>로그인 이라는 문자를 받으면 서비스가 실행되고, 로그아웃이라는 문자를 받으면 종료됩니다</p>
+<p>아래는 작동 원리에 대한 그림입니다</p>
+<p>(그리기 힘드네요…)</p>
+<p><img  src="/archive/_astro/%EA%B5%AC%EC%A1%B0.DlBfezqB_2wXMlh.webp" alt="" width="829" height="570" loading="lazy" decoding="async"></p>
+<p>초록색 박스는 사용자 문자이고</p>
+<p>검은색 박스는 어플내에서 이루어 지는 작업입니다</p>
+<p>나머지 색의 박스는 부연 설명 입니다</p>
+<p>위 그림에는 없지만 한가지 더 말씀드리면</p>
+<p>“명령”문자는 LoginReceiver에서 처리하지 않습니다</p>
+<h3 id="작동-화면">작동 화면</h3>
+<p>아래는 스크린샷 입니다</p>
+<p><img  src="/archive/_astro/Screenshot_2014-12-15-15-41-06.BD-37g6M_1Q6IsC.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<p>이렇게 원격 제어가 가능합니다</p>
+<h3 id="주의점">주의점</h3>
+<p>이러한 어플을 만들때 주의해야 할점이 있는데요</p>
+<p>로그인 상태가 아닐경우 반응하지 말아야 합니다</p>
+<p><img  src="/archive/_astro/Screenshot_2014-12-15-16-03-02.Cub6BqL4_ITRcK.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<p>저 녹색 선을 기준으로 아래부분은 로그아웃 상태이기 때문에 명령어에 반응하지 않는 모습을 확인할수 있습니다</p>
+<p>위 스샷으로 명령어를 변경해도 작동이 되는것을 알수 있습니다</p>
+<h3 id="다운로드-및-안내">다운로드 및 안내</h3>
+<p>[TalkWithMyPhone.apk</p>
+<p>다운로드](./file/TalkWithMyPhone.apk)</p>
+<p>[TalkWithMyPhone.zip</p>
+<p>다운로드](./file/TalkWithMyPhone.zip)</p>
+<p>apk파일도 함께 첨부했습니다</p>
+<p>궁금하신 분께서는 설치해서 꼭 실행하신다음, 테스트해보세요~</p>
+<p>이 예제를 사용하여 상업적, 영리적 이용을 금합니다</p>
+<p>유료로 판매하는 것 등등 모두 허용하지 않습니다</p>
+<h3 id="이-소스를-이해하기-위해-알아아할-기본-지식들">이 소스를 이해하기 위해 알아아할 기본 지식들</h3>
+<p><a href="http://itmir.tistory.com/393">[Development/App] - #21 Preference(프리퍼런스)</a></p>
+<p><a href="http://itmir.tistory.com/414">[Development/App] - #23 Service (서비스)에 대해 알아보자</a></p>
+<p><a href="http://itmir.tistory.com/424">[Development/App] - #24 Broadcast Receiver로 문자(SMS) 수신해보자</a></p>
+<p><a href="http://itmir.tistory.com/458">[Development/App] - #27 어플에서 SMS(문자) 전송 하기</a></p>
+<p><a href="http://itmir.tistory.com/523">[Development/App] - #31 PreferenceActivity를 사용하여 설정(Setting)을 만들어보자</a></p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/TalkWithMyPhone.apk">TalkWithMyPhone.apk</a> <code>315 KB</code></li>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/TalkWithMyPhone.zip">TalkWithMyPhone.zip</a> <code>1.1 MB</code></li>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

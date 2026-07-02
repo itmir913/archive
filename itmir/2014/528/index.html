@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="이 라이브러리를 사용하지 마시고 공개된 com.android.support.design을 사용하세요"><title>Floating Action Button 구현 라이브러리 - Android L — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">Floating Action Button 구현 라이브러리 - Android L</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-09-07T13:22:49.000Z"> 2014년 9월 7일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/528" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">이 라이브러리를 사용하지 마시고 공개된 com.android.support.design을 사용하세요</p> </header> <div class="post-content"> <p>이 라이브러리를 사용하지 마시고 공개된 com.android.support.design을 사용하세요</p>
+<p>안녕하세요</p>
+<p>이글에서는 몇달전에 공개된 Android L의 Floating Action Button을 구현해보도록 하겠습니다</p>
+<p>다른 프로젝트에 몇가지 소스만 넣어주면 바로 구현이 가능합니다</p>
+<h3 id="floating-action-button란">Floating Action Button란?</h3>
+<p>말그대로 떠다니는 버튼입니다</p>
+<p>(네이버에서도 이런 버튼이 생긴 업데이트가 있었는대 비슷해 보이지는 않나요는 기분탓)</p>
+<p>아래 Demo 스크린샷을 확인해 보시면 어떤 기능인지 아실겁니다</p>
+<p><img  src="/archive/_astro/demo.DWI_jRkL_Z12AaN2.webp" alt="" width="360" height="640" loading="lazy" decoding="async"></p>
+<h3 id="시작하기전에">시작하기전에</h3>
+<p>이 글에 사용된 FloatingActionButton은 필자가 입맛대로 수정하고 기능을 추가/개선한 버전입니다</p>
+<p>기본 베이스는 <a href="https://github.com/makovkastar/FloatingActionButton">https://github.com/makovkastar/FloatingActionButton</a> 입니다</p>
+<p>위에서 받은 베이스에 <a href="https://github.com/FaizMalkani/FloatingActionButton">https://github.com/FaizMalkani/FloatingActionButton</a> 의 일부를 참조했습니다</p>
+<p><a href="http://forum.xda-developers.com/tools/programming/library-floating-action-button-android-t2804145">http://forum.xda-developers.com/tools/programming/library-floating-action-button-android-t2804145</a>을 참고했습니다</p>
+<p>기존에는 ListView만 지원했지만 제가 ScrollView까지 지원하도록 기능을 추가했습니다</p>
+<p>그러나 ScrollView의경우 버그가 존재합니다</p>
+<ul>
+<li>
+<p>스크롤을 빠르게 위로 올리면 버튼이 사라짐</p>
+</li>
+<li>
+<p>스크롤을 빠르게 내리면 버튼이 생김 (이 현상은 나중에 맨 아래로 내렸을때 그냥 버튼이 보이도록 수정할까도 생각중입니다, 그냥 보이는게 더 자연스러운거 같아서요)</p>
+</li>
+</ul>
+<h3 id="라이브러리-다운로드">라이브러리 다운로드</h3>
+<p>위에서 말씀드린대로 이글에서 사용할 FloatingActionButton은 필자가 수정한 파일입니다</p>
+<p>아래 박스에서 라이브러리 겸 예제 프로젝트를 다운로드 해주세요</p>
+<p>v1.0 2014-09-07</p>
+<p>[FloatingActionButton.zip</p>
+<p>다운로드](./file/FloatingActionButton.zip)</p>
+<p>압축을 풀으신다음 아래 목록의 파일들을 버튼을 추가하고자 하는 프로젝트에 추가하세요</p>
+<ul>
+<li>
+<p>src/whdghks913/tistory/floatingactionbutton 폴더 전체</p>
+</li>
+<li>
+<p>res/drawable-(모든폴더) 속 각각의 shadow.png</p>
+</li>
+<li>
+<p>res/values/attrs.xml : <declare-styleable name="FloatingActionButton">부분</declare-styleable></p>
+</li>
+<li>
+<p>res/values/dimens.xml : <!-- FloatingActionButton --> 아래부분</p>
+</li>
+</ul>
+<h3 id="how-to-use">How To Use?</h3>
+<p>FloatingActionButton은 다른 View처럼 레이아웃에 정의한다음 java소스에서 불러옵니다</p>
+<p>추가하고자 하는 레이아웃의 xmlns:android밑에 아래 한줄을 추가하세요</p>
+<p>xmlns:fab=“<a href="http://schemas.android.com/apk/res-auto">http://schemas.android.com/apk/res-auto</a>”</p>
+<p>그다음 Button을 추가하세요</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">whdghks913.tistory.floatingactionbutton.FloatingActionButton</span></span>
+<span class="line"><span style="color:#6F42C1">    android:id</span><span style="color:#24292E">=</span><span style="color:#032F62">"@+id/mFloatingActionButton"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:layout_gravity</span><span style="color:#24292E">=</span><span style="color:#032F62">"bottom|right"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:layout_margin</span><span style="color:#24292E">=</span><span style="color:#032F62">"16dp"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:src</span><span style="color:#24292E">=</span><span style="color:#032F62">"@android:drawable/ic_menu_add"</span></span>
+<span class="line"><span style="color:#6F42C1">    fab:fab_colorNormal</span><span style="color:#24292E">=</span><span style="color:#032F62">"#009688"</span></span>
+<span class="line"><span style="color:#6F42C1">    fab:fab_colorPressed</span><span style="color:#24292E">=</span><span style="color:#032F62">"#26a69a"</span><span style="color:#24292E"> /></span></span>
+<span class="line"></span></code></pre>
+<p>그다음 java로 넘어오신다음 코드를 작성해 주시면 됩니다</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">ListView mListView </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (ListView) </span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.mListView);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">FloatingActionButton mFloatingButton </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (FloatingActionButton) </span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.mFloatingActionButton);</span></span>
+<span class="line"><span style="color:#24292E">mFloatingButton.</span><span style="color:#6F42C1">attachToListView</span><span style="color:#24292E">(mListView);</span></span>
+<span class="line"></span></code></pre>
+<p>두줄추가후 프로젝트를 Run하면 리스트를 스크롤할때 나타나거나 사라집니다</p>
+<p>이외에도 많은 설정이 가능합니다</p>
+<p>아래의 더보기를 눌러 전체 API를 확인해 보세요</p>
+<p>API 사용방법 열기</p>
+<p><strong>필수로 설정해야 하는 코드</strong></p>
+<ul>
+<li>mFloatingButton.attachToListView(listView) : 스크롤에 반응할 리스트뷰를 설정합니다</li>
+<li>mFloatingButton.attachToScrollView(mScrollView) : 스크롤에 반응할 스크롤뷰를</li>
+</ul>
+<p>위 두개는 중복 설정이 불가능 합니다</p>
+<p><strong>선택적으로 설정할수 있는 코드</strong></p>
+<ul>
+<li>mFloatingButton.setAnimationEnable(setAnimation) : true로 설정하면 나타나고 사라지는 애니메이션이 나타나며, false는 바로 사라집니다</li>
+<li>mFloatingButton.setAlwaysOnTop(alwaysOnTop) : true로 설정하면 ActionButton이 항상 표시되고 false로 설정하면 스크롤시 사라집니다</li>
+<li>mFloatingButton.setColorNormal(color) : 기본 색을 지정합니다</li>
+<li>mFloatingButton.setColorNormalResId(colorResId) : 기본 색을 지정합니다, R.color.xxx를 사용하는 메소드입니다</li>
+<li>mFloatingButton.setColorPressed(color) : 버튼을 누를때 색을 지정합니다</li>
+<li>mFloatingButton.setColorPressedResId(colorResId) : 버튼을 누를때 색을 지정합니다, R.color.xxx를 사용하는 메소드입니다</li>
+<li>mFloatingButton.setImageResource(resId) : 버튼의 이미지를 변경합니다</li>
+<li>mFloatingButton.setType(type) : FloatingActionButton.TYPE_MINI와 FloatingActionButton.TYPE_NORMAL이 가능하며, 크기를 지정합니다, 크기는 res/dimen.xml에 정의되어 있습니다</li>
+<li>mFloatingButton.setShadow(shadow) : true일경우 그림자를 표시하며, false일경우 표시하지 않습니다</li>
+<li>mFloatingButton.setDuration(Duration) : 애니메이션의 시간이며 줄이면 애니메이션이 빨라지고 커지면 느려집니다, 기본값은 200입니다</li>
+</ul>
+<p><strong>ActionButton을 표시하거나 숨길때 사용하는 메소드</strong></p>
+<ul>
+<li>mFloatingButton.hide()</li>
+<li>mFloatingButton.hide(animate) : true일경우 애니메이션도 표시하며, false일경우 애니메이션을 표시하지 않습니다</li>
+<li>mFloatingButton.show()</li>
+<li>mFloatingButton.show(animate) : true일경우 애니메이션도 표시하며, false일경우 애니메이션을 표시하지 않습니다</li>
+</ul>
+<p><strong>반환하는 메소드</strong></p>
+<ul>
+<li>mFloatingButton.getColorNormal() : 현재 기본 색상값을 반환합니다</li>
+<li>mFloatingButton.getColorPressed() : 현재 선택시 색상값을 반환합니다</li>
+<li>mFloatingButton.getIsAnimation() : 현재 애니메이션을 표시하는지 여부를 반환합니다</li>
+<li>mFloatingButton.hasShadow() : 현재 그림자가 표시되는지 여부를 반환합니다</li>
+</ul>
+<p><strong>사용할수 있는 상수</strong></p>
+<p>public static final int Color_BLUE = -13388315;</p>
+<p>public static final int Color_PURPLE = -5609780;</p>
+<p>public static final int Color_GREEN = -6697984;</p>
+<p>public static final int Color_ORANGE = -17613;</p>
+<p>public static final int Color_RED = -48060;</p>
+<p>각각 색상값을 의미하며, FloatingActionButton.Color_XX로 사용가능합니다</p>
+<p>setColorNormal()등에 사용합니다</p>
+<h3 id="작동-스크린샷">작동 스크린샷</h3>
+<p>스크린샷으로 작동을 확인해보도록 하겠습니다</p>
+<p><img  src="/archive/_astro/device-2014-09-07-221802.NPN1T9ws_RrKnA.webp" alt="" width="400" height="711" loading="lazy" decoding="async">
+    
+<img  src="/archive/_astro/device-2014-09-07-221813.Dd7xRCEY_WoIrY.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/device-2014-09-07-221831.DesPh5az_Z2bmVhE.webp" alt="" width="400" height="711" loading="lazy" decoding="async">
+    
+<img  src="/archive/_astro/device-2014-09-07-221836.C7Dg9qCW_1hX1X0.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<p>스크롤을 하면 오른쪽 아래 버튼이 사라지고/나타나는 모습을 볼수 있습니다</p>
+<p>그리고 스크린샷을 더 찍지는 못했지만 버튼을 클릭/Long클릭 하면 토스트 메세지가 나오는 모습도 볼수 있습니다</p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/FloatingActionButton.zip">FloatingActionButton.zip</a> <code>2.0 MB</code></li>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

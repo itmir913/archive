@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="마켓에 올려진 어플의 버전을 받아서 반환하는 라이브러리 입니다"><title>Android Market Version Checker - 안드로이드 마켓 버전 확인하기 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">Android Market Version Checker - 안드로이드 마켓 버전 확인하기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-09-05T10:06:03.000Z"> 2014년 9월 5일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/524" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">마켓에 올려진 어플의 버전을 받아서 반환하는 라이브러리 입니다</p> </header> <div class="post-content"> <p>![](./images/Google Play Store Logo.png)</p>
+<p>마켓에 올려진 어플의 버전을 받아서 반환하는 라이브러리 입니다</p>
+<p>현재 버전과 비교해서 다를경우 마켓으로 이동후, 업데이트 할수 있도록 코드를 작성할 수 있습니다</p>
+<p>인터넷에 올라와있는 몇가지 방법을 다듬어 라이브러리의 형태로 배포합니다</p>
+<p>원본 java소스도 첨부합니다</p>
+<h3 id="주의하세요">주의하세요</h3>
+<p>구글 마켓 웹사이트를 파싱해서 가져오는 방식입니다</p>
+<p>데이터가 많이 소요됩니다</p>
+<p>어플을 실행할때마다 이 라이브러리를 이용해서 버전을 체크하는 방식은 그닥 추천드리고 싶지는 않네요..</p>
+<p>제 테스트로 한번 가져올때 0.02mb~0.04mb가 소요되었습니다</p>
+<p>참고로 인터넷 권한을 꼭 추가해 주셔야 합니다</p>
+<h3 id="라이브러리-다운로드">라이브러리 다운로드</h3>
+<p>MarketVersionChecker를 사용하기 위해서는 jsoup 라이브러리가 필요합니다</p>
+<p>jsoup라이브러리는 <a href="http://jsoup.org/download">http://jsoup.org/download</a>에서 다운로드가 가능하며, 아래에도 첨부해 두었습니다</p>
+<p>v1 - 2014-09-05 첫 업로드</p>
+<p>[MarketVersionChecker.jar</p>
+<p>다운로드](./file/MarketVersionChecker.jar)</p>
+<p>[MarketVersionChecker.java</p>
+<p>다운로드](./file/MarketVersionChecker.java)</p>
+<p>[jsoup-1.7.3.jar</p>
+<p>다운로드](./file/jsoup-1.7.3.jar)</p>
+<h3 id="사용방법">사용방법</h3>
+<p>static으로 선언하지 않았습니다</p>
+<p>그래서 new 선언후 사용해야 합니다</p>
+<p>MarketVersionChecker mChecker = new MarketVersionChecker();</p>
+<p>마켓 버전을 가져오는 API는 두가지 방법이 있습니다</p>
+<ul>
+<li>getMarketVersion(String packageName)</li>
+<li>getMarketVersionFast(String packageName)</li>
+</ul>
+<p>버전을 가져올 packageName을 전달해주면 WIFI에서 약 0.5<del>2초, 3G에서 약 1</del>3~4초 정도 소요되는것으로 나타났습니다</p>
+<p>메소드 이름에서도 알수있지만 아래에 있는 Fast가 붙은 메소드가 속도면에서 빠른것으로 확인됬습니다</p>
+<p>다만 실제 개발시 속도는 달라질수 있으므로 둘중 하나를 선택해서 사용하시기를 바랍니다</p>
+<p>속도 실험 결과</p>
+<p>getMarketVersion : Wi-Fi에서 1초<del>4초, 3G에서 2</del>4.5초</p>
+<p>getMarketVersionFast : Wi-Fi에서 0.6초<del>1.5초, 3G에서 1</del>3초</p>
+<h3 id="출처">출처</h3>
+<p>getMarketVersion() : <a href="http://www.androidside.com/bbs/board.php?bo%5C_table=B56&#x26;wr%5C_id=24663">http://www.androidside.com/bbs/board.php?bo\_table=B56&#x26;wr\_id=24663</a></p>
+<p>getMarketVersionFast() : <a href="http://www.androidside.com/bbs/board.php?bo%5C_table=B49&#x26;wr%5C_id=135849">http://www.androidside.com/bbs/board.php?bo\_table=B49&#x26;wr\_id=135849</a></p>
+<p>코드를 수정하고, 라이브러리화 하였습니다</p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/jsoup-1.7.3.jar">jsoup-1.7.3.jar</a> <code>290 KB</code></li>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/MarketVersionChecker.jar">MarketVersionChecker.jar</a> <code>2 KB</code></li>
+<li><a href="./files/MarketVersionChecker.java">MarketVersionChecker.java</a></li>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="이번 시간에는 prima wlan을 다운받아 커널소스에 추가해서 빌드해 보겠습니다."><title>Prima Wlan 추가해서 커널 빌드하기 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">Prima Wlan 추가해서 커널 빌드하기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-08-08T08:54:35.000Z"> 2014년 8월 8일 </time> <span class="post-category">Android/Kernel</span> <a href="https://itmir.tistory.com/519" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">이번 시간에는 prima wlan을 다운받아 커널소스에 추가해서 빌드해 보겠습니다.</p> </header> <div class="post-content"> <p>이번 시간에는 prima wlan을 다운받아 커널소스에 추가해서 빌드해 보겠습니다.</p>
+<p>prima는 wifi모듈입니다.</p>
+<p>이게 라이센스 문제로 커널소스에 포함되지 않고 직접 받고 추가해야 하더라고요.</p>
+<p>(그런대 Hour님 말로는 추가되어 있는대 이상한게 되어 있다고…)</p>
+<p>커널소스에 없기 때문에 그냥 추가 없이 커널 소스를 받고 빌드한 다음 바로 적용하면 WIFI 모듈이 달라 정상적으로 무선 wifi가 안됩니다.</p>
+<p>그래서 prima_wlan을 추가해서 빌드하는 방법을 알아보겠습니다.</p>
+<h3 id="코드-오로라에서-소스-다운로드-하기">코드 오로라에서 소스 다운로드 하기</h3>
+<p><img  src="/archive/_astro/codeaurora-logo.ByhDS3bi_1eRNgx.webp" alt="" width="172" height="106" loading="lazy" decoding="async"></p>
+<p>prima wlan 소스는 코드 오로라에 존재합니다.</p>
+<p><a href="https://www.codeaurora.org/cgit/external/wlan/prima/refs/">https://www.codeaurora.org/cgit/external/wlan/prima/refs/</a></p>
+<p>위 링크로 들어가신 다음 스크롤을 조금 내리시면 Tag Download 부분이 보입니다.</p>
+<p><img  src="/archive/_astro/1.BYlKhai-_2cGFVI.webp" alt="" width="318" height="325" loading="lazy" decoding="async"></p>
+<p>버전은 상관 없다고 하지만 알 수 있다면 원래 순정 커널에 있는 버전과 같은 버전의 소스를 다운로드 해서 추가해 줍시다.</p>
+<p>(아무거나 해도 상관은 없다고 합니다.)</p>
+<p>다운 받은 파일을 압축 풀어 /drivers/staging/prima 폴더에 넣어주세요.</p>
+<h3 id="컴파일에-필요한-구문을-추가하자">컴파일에 필요한 구문을 추가하자</h3>
+<p>먼저 /drivers/staging/Kconfig파일을 수정해 줍시다.</p>
+<p>source “drivers/staging/ozwpan/Kconfig”</p>
+<p><strong>source “drivers/staging/prima/Kconfig”</strong></p>
+<p>endif # STAGING</p>
+<p>endif위에 밑줄친 한줄을 추가해 주세요.</p>
+<p>/drivers/staging/Makefile</p>
+<p>obj-$(CONFIG_PRIMA_WLAN) += prima/</p>
+<p>이제 defconfig에 추가해줘야 합니다.</p>
+<p>menuconfig에 들어가서 아래 경로로 들어가 주세요.</p>
+<p>device drivers - staging drivers - Qualcomm Athernos Prima Wlan Module</p>
+<p>저 항목을 “m”으로 설정해 주시면 됩니다.</p>
+<p>또는 직접 defconfig을 수정해도 됩니다.</p>
+<h1 id=""></h1>
+<h1 id="qualcomm-atheros-prima-wlan-module">Qualcomm Atheros Prima WLAN module</h1>
+<h1 id="-1"></h1>
+<p>CONFIG_PRIMA_WLAN=m</p>
+<h3 id="모듈-용량-줄이기">모듈 용량 줄이기</h3>
+<p>컴파일후 나온 모듈의 용량은 매우 큽니다.</p>
+<p>이 큰 용량을 툴체인에 있는 strip을 이용하면 작게 만들 수 있습니다.</p>
+<p>이 파일은 arm-eabi-4.6/arm-eabi/bin/ 에 들어있습니다.</p>
+<p>./strip —strip-unneeded ”./drivers/staging/prima/wlan.ko”</p>
+<p>파일도 따로 올려드립니다.</p>
+<p>[strip</p>
+<p>다운로드](./file/strip)</p>
+<h3 id="필요한-파일들">필요한 파일들</h3>
+<p><strong>/system/lib/modules/prima</strong></p>
+<p>(컴파일된 모듈) wlan.ko, cfg80211.ko</p>
+<p><strong>/system/etc/firmware/wlan/prima</strong></p>
+<p>(커널소스파일) /drivers/staging/prima/firmware_bin/WCNSS_cfg.dat</p>
+<p>(커널소스파일) /drivers/staging/prima/firmware_bin/WCNSS_qcom_nv.bin</p>
+<h3 id="thanks-to">Thanks to</h3>
+<p>NewWorld님</p>
+<p>그리고 요즘 포스팅할 거리가 없었는데 이걸 생각나게 해준 Hour님</p>
+<p>추가 방법이 기록된 Commit : <a href="https://github.com/itmir913/android_kernel_pantech_ef47s/commit/ef1b190f4a6626b8d8efc03d800044468e7a5438">https://github.com/itmir913/android_kernel_pantech_ef47s/commit/ef1b190f4a6626b8d8efc03d800044468e7a5438</a></p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/strip">strip</a> <code>787 KB</code></li>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

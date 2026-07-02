@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="리눅스에서 대표적인 압축 확장자는 tar, tar.gz등이 있습니다."><title>[명령어] &#39;tar&#39; 명령어로 압축하기 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">[명령어] &#39;tar&#39; 명령어로 압축하기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-07-21T02:52:43.000Z"> 2013년 7월 21일 </time> <span class="post-category">Computer &amp; PC/Linux</span> <a href="https://itmir.tistory.com/272" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">리눅스에서 대표적인 압축 확장자는 tar, tar.gz등이 있습니다.</p> </header> <div class="post-content"> <p>리눅스에서 대표적인 압축 확장자는 tar, tar.gz등이 있습니다.</p>
+<p>이번에는 이 tar명령어에 대해 알아보겠습니다.</p>
+<p>먼저 tar의 옵션을 알아보겠습니다.</p>
+<p>-c 파일을 tar로 묶음</p>
+<p>-p 파일 권한을 저장</p>
+<p>-v 묶거나 파일을 풀때 과정을 출력</p>
+<p>-f 파일이름을 지정</p>
+<p>-C 경로를 지정</p>
+<p>-x tar 압축풀기</p>
+<p>-z gzip으로 압축하거나 해제함</p>
+<p>자주 사용하는 옵션들입니다. ㅎㅎ</p>
+<p>그럼 압축 명령어를 알아보겠습니다.</p>
+<p>-그냥 tar으로 압축하기</p>
+<p>tar -cvf (압축 파일명).tar (압축할 폴더 또는 파일)</p>
+<p>-tar.gz로 압축하기</p>
+<p>tar -zcvf (압축될 이름.tar.gz) (압축할 폴더/파일)</p>
+<p>-tgz로 압축하기</p>
+<p>tar -zcvf (압축될 이름.tgz) (압축할 폴더/파일)</p>
+<p>그럼 이번에는</p>
+<p>압축 풀기 명령어를 알아보겠습니다.</p>
+<p>-tar 압축풀기</p>
+<p>tar -xvf (압축파일명).tar</p>
+<p>-tar.gz 압축풀기</p>
+<p>tar -xvzf (압축파일명).tar.gz</p>
+<p>-tgz 압축풀기</p>
+<p>tar -xzvf (압축파일명).tgz</p>
+<p>-C 옵션을 이용하여 다른곳에 압축을 풀수도 있습니다.</p>
+<p>-C (압축풀릴 폴더경로)</p>
+<p>예를 들어 test.tar.gz를 다른곳($HOME/바탕화면/HI)에 넣어보겠습니다.</p>
+<p>tar -xvzf test.tar.gz -C 바탕화면/HI</p>
+<p>맨 위에 있는 옵션을 사용하여자유롭게 사용할 수 있도록 연구하는 자세가 필요할듯 합니다. ㅎㅎ</p>
+<p>옵션의 v를 제거하면 v는 visual의 약자이므로 압축 과정을 화면에 표시하지 않습니다. ㅎㅎ</p>
+<p>파일이 엄청나게 많은경우 v를 생략하게 되면 터미널을 아낄수 있겠지요?(?)</p>
+<p>그냥 tar —help라고 입력하면 많은 예시가 나오니 여기서 제시한 일부 명령어 말고도 많은 명령어를 찾으시길 바랍니다!</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

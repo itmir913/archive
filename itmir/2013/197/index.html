@@ -1,0 +1,153 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="이번에는 ClockWorkMod Recovery에 대해 한번 살펴보도록 하겠습니다"><title>[Dev] ClockWorkMod Recovery 키값과 표시 로고 바꿔보기 [개발자글] — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">[Dev] ClockWorkMod Recovery 키값과 표시 로고 바꿔보기 [개발자글]</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-04-26T07:35:01.000Z"> 2013년 4월 26일 </time> <span class="post-category">Android/Build</span> <a href="https://itmir.tistory.com/197" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">이번에는 ClockWorkMod Recovery에 대해 한번 살펴보도록 하겠습니다</p> </header> <div class="post-content"> <p>이번에는 ClockWorkMod Recovery에 대해 한번 살펴보도록 하겠습니다</p>
+<p>이 글은 약간의 소스를 읽는 능력이 필요합니다</p>
+<p>일반 유저 분께서는 이해하기 힘드실 수도 있는 부분을 다루고 있습니다</p>
+<p><strong>또한 아직 확실하지 않은 부분과 비정확한 내용도 기록되어 있으니 판단해서 받아드리시길 바랍니다</strong></p>
+<p>항상 부족한 부분이 있으면 보충/보완될 예정입니다</p>
+<p>ClockWorkMod Recovery, 줄여서 CWM 이라고도 언급합니다</p>
+<p>이 리버커리는 Koush라는 분께서 작업하시고 계시는 커스텀 리커버리 입니다</p>
+<p>다들 아시다 싶이 CM의 소스를 받으면 bootable/recovery폴더에 CWM관련 파일들이 있지요</p>
+<p><a href="https://github.com/cyanogenmod/android_bootable_recovery">htt</a><a href="https://github.com/cyanogenmod/android_bootable_recovery">ps://github.com/cyanogenmod/android_bootable_recovery</a></p>
+<p>이 링크를 들어가 보셔도 recovery폴더의 내용물을 확인 하실수 있으십니다</p>
+<p>이제 CWM에 대해 하나하나 살펴보도록 하겠습니다 (jellybean(cm10)기준)</p>
+<p><strong>1. CWM-based Recovery말고 내 이름을 넣어보자</strong></p>
+<p>우리는 CWM을 들어가면 아래 나오는 CWM-based-recovery등을 바꿔보고 싶습니다</p>
+<p>Android.mk를 열어봐 주시면 아래와 같은 내용이 있습니다</p>
+<p>ifdef I_AM_KOUSH</p>
+<p><strong>RECOVERY_NAME := ClockworkMod Recovery</strong></p>
+<p>LOCAL_CFLAGS += -DI_AM_KOUSH</p>
+<p>else</p>
+<p>ifndef RECOVERY_NAME</p>
+<p><strong>RECOVERY_NAME := CWM-based Recovery</strong></p>
+<p>endif</p>
+<p>endif</p>
+<p><strong>RECOVERY_VERSION := $(RECOVERY_NAME) v6.0.2.8</strong></p>
+<p><strong>LOCAL_CFLAGS += -DRECOVERY_VERSION=”$(RECOVERY_VERSION)”</strong></p>
+<p>Recovery Name을 설정해 주는 부분이 보이시나요?</p>
+<p>제 생각에는 BoardConfig.mk에 I_AM_KOUSH := true 라면 RECOVERY_NAME은 ClockworkMod Recovery로,</p>
+<p>만약 지정되지 않았거나 false라면 CWM-based Recovery라고 설정되어 진다고 예상할 수 있습니다</p>
+<p>즉 이 부분의 수정이 이루어 진다면 표시되는 이름의 수정이 가능할 것이라는 뜻이 되겠지요</p>
+<p>RECOVERY_VERSION := $(RECOVERY_NAME) v6.0.2.8<br>
+바로 이부분과 RECOVERY_NAME부분을 수정해 주면 재작자의 이름도 넣을수 있을겁니다</p>
+<p><strong>RECOVERY_NAME을 CWM-based Recovery말고 다른 이름으로 수정해서 빌드해 보세요</strong></p>
+<p>아직까지 BoardConfig.mk에 구문을 추가해 이름을 지정하는건 모르겠습니다</p>
+<p><strong>2. Power Off 추가하기</strong></p>
+<p>그냥 빌드하다 보면 버튼이 맞지 않을 경우가 생깁니다</p>
+<p>예를 들자면 볼륨위-아래-위 키를 눌러 활성화 시킨다음에서야 확인이 가능하다는 것이지요</p>
+<p>cwm - 5.x.x.x 버전에서는 default_recovery_ui.c파일이,</p>
+<p>cwm - 6.x.x.x 버전에서는 default_recovery_keys.c파일이 키를 담당하고 있습니다</p>
+<p>그럼 CWM6에서는 ui.c가 없냐? 그건 아닙니다</p>
+<p>소스를 다운받지 않아도 <a href="https://github.com/CyanogenMod/android_bootable_recovery/blob/jellybean/default_recovery_ui.c">github에서 확인</a>해 보시면 default_recovery_ui.c에는</p>
+<p>char* MENU_ITEMS[] = { “reboot system now”,</p>
+<p>                       “install zip from sdcard”,</p>
+<p>                       “install zip from sideload”,</p>
+<p>                       “wipe data/factory reset”,</p>
+<p>                       “wipe cache partition”,</p>
+<p>                       “backup and restore”,</p>
+<p>                       “mounts and storage”,</p>
+<p>                       “advanced”,</p>
+<p>                       “power off”,</p>
+<p>                       NULL };</p>
+<p>이런 부분이 있는대요 짐작해 보컨대 cwm6버전에서는 default_recovery_ui.c는 화면에 표시되는 메뉴를 나타낸다고 짐작할 수 있습니다</p>
+<p>여기서 뭔가를 발견해 보자면 power off 버튼이 사라진것을 눈치 채실수 있으신대요</p>
+<p><a href="https://github.com/CyanogenMod/android_bootable_recovery/commit/cd3705e4aba68274f7033a32bfc0d9b1010a4513">https://github.com/CyanogenMod/android_bootable_recovery/commit/cd3705e4aba68274f7033a32bfc0d9b1010a4513</a></p>
+<p>이 commit을 보면 Koush께서 이 부분을 삭제 하신것을 알수 있습니다</p>
+<p>그런대 메뉴만 삭제하셨지 기능은 제거하지 않으셨는대요</p>
+<p><a href="https://github.com/CyanogenMod/android_bootable_recovery/blob/jellybean/extendedcommands.c">이 파일을 참고해 주시면 됩니다</a> - extendedcommands.c</p>
+<p>선택 버튼만 사라진 거라면 되돌릴수 있겠죠?</p>
+<p>char* MENU_ITEMS[] = { “reboot system now”,</p>
+<p>                       “install zip from sdcard”,</p>
+<p>                       “install zip from sideload”,</p>
+<p>                       “wipe data/factory reset”,</p>
+<p>                       “wipe cache partition”,</p>
+<p>                       “backup and restore”,</p>
+<p>                       “mounts and storage”,</p>
+<p>                       “advanced”,</p>
+<p><strong>“power off”,</strong></p>
+<p>                       NULL };</p>
+<p>이렇게 수정해 주시면 됩니다</p>
+<p><strong>3. 키 바꾸기</strong></p>
+<p>자 이제 막바지에 접어들고 있군요</p>
+<p>참고글 : <a href="http://cafe.naver.com/androidhacker/461">http://cafe.naver.com/androidhacker/461</a></p>
+<p>이번에는 키를 변경해 보도록 하겠습니다</p>
+<p>아까 언급한것처럼 default_recovery_ui.c와 default_recovery_keys.c을 봐주시면 됩니다</p>
+<p>CWM6을 기준으로 설명하고 있으므로 default_recovery_keys.c을 기준으로 설명하겠습니다</p>
+<p>int device_handle_key(int key_code, int visible) {</p>
+<p>    if (visible) {</p>
+<p>        switch (key_code) {</p>
+<p>            case KEY_CAPSLOCK:</p>
+<p>            case KEY_DOWN:</p>
+<p>            case KEY_VOLUMEDOWN:</p>
+<p>            case KEY_MENU:</p>
+<p><strong>return HIGHLIGHT_DOWN;</strong></p>
+<p>            case KEY_LEFTSHIFT:</p>
+<p>            case KEY_UP:</p>
+<p>            case KEY_VOLUMEUP:</p>
+<p>            case KEY_HOME:</p>
+<p><strong>return HIGHLIGHT_UP;</strong></p>
+<p>            case KEY_POWER:</p>
+<p>                if (ui_get_showing_back_button()) {</p>
+<p><strong>return SELECT_ITEM;</strong></p>
+<p>                }</p>
+<p>                if (!get_allow_toggle_display() &#x26;&#x26; !ui_root_menu) {</p>
+<p><strong>return GO_BACK;</strong></p>
+<p>                }</p>
+<p>                break;</p>
+<p>            case KEY_LEFTBRACE:</p>
+<p>            case KEY_ENTER:</p>
+<p>            case BTN_MOUSE:</p>
+<p>            case KEY_CAMERA:</p>
+<p>            case KEY_F21:</p>
+<p>            case KEY_SEND:</p>
+<p><strong>return SELECT_ITEM;</strong></p>
+<p>            case KEY_END:</p>
+<p>            case KEY_BACKSPACE:</p>
+<p>            case KEY_SEARCH:</p>
+<p>                if (ui_get_showing_back_button()) {</p>
+<p><strong>return SELECT_ITEM;</strong></p>
+<p>                }</p>
+<p>                if (!get_allow_toggle_display() &#x26;&#x26; !ui_root_menu) {</p>
+<p><strong>return GO_BACK;</strong></p>
+<p>                }</p>
+<p>            case KEY_BACK:</p>
+<p>                if (!ui_root_menu) {</p>
+<p><strong>return GO_BACK;</strong></p>
+<p>                }</p>
+<p>        }</p>
+<p>    }</p>
+<p>    return NO_ACTION;</p>
+<p>}</p>
+<p>아! 딱 감이 오시는 분들도 계실겁니다</p>
+<p>짤라서 보도록 하겠습니다</p>
+<p>case KEY_LEFTBRACE:</p>
+<p>            case KEY_ENTER:</p>
+<p>            case BTN_MOUSE:</p>
+<p>            case KEY_CAMERA:</p>
+<p>            case KEY_F21:</p>
+<p>            case KEY_SEND:</p>
+<p><strong>return SELECT_ITEM;</strong></p>
+<p>만약 KEY_XXX가 눌려졌을경우 SELECT_ITEM을 반환한다 라는 뜻입니다</p>
+<p>어떠한 키가 눌려졌는지를 확인한 다음 값을 반환해서 작동하는 방식으로 되어 있지요</p>
+<p>그럼 이것을 이용하여 어떤 키가 눌려졌을경우 어떠한 작업을 할지 우리가 직접 정할 수 있습니다</p>
+<p>case KEY_XXX또는 case [버튼의 키코드]를 추가해 주시면 되겠죠?</p>
+<p>키코드는 CWM에서 advanced 부분에 보시면 Key test부분이 있습니다 참고 하시길</p>
+<p>또한 소스를 수정하지 않고 BoardConfig.mk을 통해서 소스를 수정 할 수 있습니다</p>
+<p>BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/[제조사]/[기기명]/recovery_keys.c</p>
+<p>BOARD_CUSTOM_RECOVERY_KEYMAPPING옵션으로 자신이 수정한 key.c를 사용해 주셔도 되지요~</p>
+<p>hPa님의 소스를 보시면 (<a href="https://github.com/985hPaKicK/android%5C_device%5C_pantech%5C_ef46l/blob/jellybean/recovery/recovery%5C_keys.c">https://github.com/985hPaKicK/android\_device\_pantech\_ef46l/blob/jellybean/recovery/recovery\_keys.c</a> )</p>
+<p>if (ui_get_showing_back_button()) {</p>
+<p>                    return SELECT_ITEM;</p>
+<p>                }</p>
+<p>                if (!get_allow_toggle_display() &#x26;&#x26; !ui_root_menu) {</p>
+<p>                    return GO_BACK;</p>
+<p>                }</p>
+<p>                break;</p>
+<p>부분이 없는것을 확인할 수 있습니다</p>
+<p>볼륨위-아래-위를 했을때 변하는 키의 값 같은대요 이런게 필요 없으시다면 지우셔도 될거 같습니다~</p>
+<p>이렇게 해서 ClockWorkMod Recovery에 대해 살펴봤습니다</p>
+<p>CWM으로 할 수 있는 간단한 작업들 3가지를 확인해 보는 시간이었습니다~ 읽어 주셔서 감사합니다 ㅎㅎ</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

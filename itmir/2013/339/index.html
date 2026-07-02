@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="python으로 짜여진 프로그램을 exe화할 때가 있습니다."><title>Python (*.py)를 exe화 하기 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">Python (*.py)를 exe화 하기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-09-12T07:35:21.000Z"> 2013년 9월 12일 </time> <span class="post-category">Computer &amp; PC/Windows</span> <a href="https://itmir.tistory.com/339" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">python으로 짜여진 프로그램을 exe화할 때가 있습니다.</p> </header> <div class="post-content"> <p>python으로 짜여진 프로그램을 exe화할 때가 있습니다.</p>
+<p>예를들면 파이썬이 설치되지 않은 곳에서 실행을 위해서이죠.</p>
+<p>이때 사용하는 프로그램이 있습니다.</p>
+<p>py2exe가 그 주인공 인데요.</p>
+<p>이번에는 그 방법을 알아보겠습니다.</p>
+<p>먼저 python을 받아주세요.</p>
+<p>python은 <a href="http://www.python.org">www.python.org</a>에서 받을 수 있습니다.</p>
+<p>[python-2.7.5.z01</p>
+<p>다운로드](./file/python-2.7.5.z01)</p>
+<p>[python-2.7.5.zip</p>
+<p>다운로드](./file/python-2.7.5.zip)</p>
+<p>첨부로도 올려두겠습니다.</p>
+<p>또한 py2exe라는 프로그램도 설치해야 합니다.</p>
+<p><a href="http://sourceforge.net/projects/py2exe/files/py2exe/0.6.9/">http://sourceforge.net/projects/py2exe/files/py2exe/0.6.9/</a></p>
+<p>여기서 설치한 python에 맞는 py2exe를 받아주세요.</p>
+<p>위에 올려진 python을 설치했다면,</p>
+<p>[py2exe-0.6.9.win32-py2.7.exe</p>
+<p>다운로드](./file/py2exe-0.6.9.win32-py2.7.exe)</p>
+<p>자 모두 설치해주시면 아래를 따라해주세요.</p>
+<p>py파일을 하나 생성해 줍시다.</p>
+<p>이름은 make.py로 해줍시다.</p>
+<p>from distutils.core import setup</p>
+<p>import py2exe</p>
+<p>setup(console=[‘컴파일할파일명.py’])</p>
+<p>내용은 위와 같이 심플합니다. ㅎㅎ</p>
+<p>저기에 있는 컴파일할파일명.py만 조절해 주세요.</p>
+<p>그다음 cmd에서</p>
+<p>C:\Python27\python.exe make.py (만들어질 이름).exe</p>
+<p>그럼 dist폴더에 만들어진 exe가 존재하는데요.</p>
+<p>파일이 많습니다…</p>
+<p>하나의 exe로 만드는 방법은 아래와 같습니다.</p>
+<p>from distutils.core import setup</p>
+<p>import py2exe</p>
+<p>excludes = [</p>
+<p>    “pywin”,</p>
+<p>    “pywin.debugger”,</p>
+<p>    “pywin.debugger.dbgcon”,</p>
+<p>    “pywin.dialogs”,</p>
+<p>    “pywin.dialogs.list”,</p>
+<p>    “win32com.server”,</p>
+<p>]</p>
+<p>options = {</p>
+<p>    “bundle_files”: 1,                 # create singlefile exe</p>
+<p>    “compressed”  : 1,                 # compress the library archive</p>
+<p>    “excludes”    : excludes,</p>
+<p>    “dll_excludes”: [“w9xpopen.exe”]   # we don’t need this</p>
+<p>}</p>
+<p>setup(</p>
+<p>    options = {“py2exe”: options},</p>
+<p>    zipfile = None,</p>
+<p>    console = [“컴파일할파일명.py”]</p>
+<p>)</p>
+<p>아까 만든 make.py의 내용을 위와 같이 바꿔주세요.</p>
+<p>위와 마찬가지로</p>
+<p>C:\Python27\python.exe make.py (만들어질 이름).exe</p>
+<p>이렇게 입력하면 dist폴더에 한개의 exe가 생성됩니다.</p>
+<p>[make.py</p>
+<p>다운로드](./file/make.py)</p>
+<p>출처 : <a href="http://huddling.tistory.com/5">http://huddling.tistory.com/5</a></p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="./files/make.py">make.py</a></li>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

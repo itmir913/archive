@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Zram과 Zcache는 swap의 일종 입니다"><title>커널에 Zram,Zcache를(을) 추가하자 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">커널에 Zram,Zcache를(을) 추가하자</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-01-27T07:24:00.000Z"> 2013년 1월 27일 </time> <span class="post-category">Android/Kernel</span> <a href="https://itmir.tistory.com/53" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">Zram과 Zcache는 swap의 일종 입니다</p> </header> <div class="post-content"> <p>Zram과 Zcache는 swap의 일종 입니다</p>
+<p>램을 압축하여 저장하는 방식이라 알고 있으나 자세히는 모르겠습니다</p>
+<p><a href="https://github.com/edoko/Air_Kernel_for_VR/tree/master/drivers/staging">https://github.com/edoko/Air_Kernel_for_VR/tree/master/drivers/staging</a></p>
+<p>다음 github 주소에서 zram과 zcache를 작업할 소스로 가져와 주십시오!</p>
+<p>그리고 소스 에서 drivers/staging폴더내에 ramzswap을 삭제해 주세요</p>
+<p>그다음 staging폴더안<br>
+Kconfig와 Makefile을 수정해 주세요 (-는 제거, +는 추가를 의미합니다)</p>
+<p>Kconfig</p>
+<p>-source “drivers/staging/ramzswap/Kconfig”</p>
+<p>+source “drivers/staging/zram/Kconfig”</p>
+<p>+source “drivers/staging/zcache/Kconfig”</p>
+<p>Makefile</p>
+<p>-obj-$(CONFIG_RAMZSWAP)+= ramzswap/</p>
+<p>+obj-$(CONFIG_ZRAM) += zram/</p>
+<p>+obj-$(CONFIG_XVMALLOC) += zram/</p>
+<p>+obj-$(CONFIG_ZCACHE) += zcache/</p>
+<p>그뒤</p>
+<p>.config의 옵션인 CONFI_ZRAM, CONFIG_XVMALLOC,CONFIG_ZCACHE을 활성화 해주시거나 또는</p>
+<p>menuconfig에서</p>
+<p>device drivers/staging drivers/Compressed RAM block device support</p>
+<p>를 활성화 시켜주세요</p>
+<p>PS.<br>
+3.x커널부터는 zram이 있기때문에 그냥 활성화만 해주시면 됩니다 ㅎㅎ</p>
+<p>지금까지 Zram을 추가하는 방법에 대해 서술하였습니다<br>
+그럼 활성화를 해야겠지요?</p>
+<p>Zram의 활성화 방법을 알려드리겠습니다</p>
+<p>swap이다보니 기기에 무리가 갈수도 있습니다 주의해서 사용하세요 ㅋ</p>
+<p>Zram을 활성화 시키기 위해선</p>
+<p>1. Zram이 있는 커널</p>
+<ol start="2">
+<li>
+<p>busybox</p>
+</li>
+<li>
+<p>Terminal emulator</p>
+</li>
+</ol>
+<p>이 필요합니다</p>
+<p>/sys/block/zramX가 있는지 확인해 주세요(X는 숫자)</p>
+<p>(만약 저 폴더가 없다면 비활성화, 적용실패;;)</p>
+<p>있다면 터미널에물레이터에 su를 입력합니다</p>
+<p>그리고 입력해 주세요 ㅋ<br>
+echo $((50*1024*1024)) > /sys/block/zram0/disksize </p>
+<p>50Mb를 지정한겁니다 수치를 바꾸고 싶으신 분들은 수치를 바꾸셔도 무방합니다</p>
+<p>(단 너무 큰값은 위험합니다)</p>
+<p>mkswap /dev/block/zramX swapon /dev/block/zramX </p>
+<p>(이 두개 의 명령어를 입력해야 잡히더라구요 mkfs.ext4 /dev/zram1 mount /dev/zram1 /tmp)</p>
+<p>free를 입력하셔서 swap이 잡히는지 확인해 주세요</p>
+<p>그럼 Zram에 대해 마치겠습니다</p>
+<p>PS1. zram을 추가한뒤 오류가 너무 많길래 전 뺐다는..</p>
+<p>PS2. 원본글은 <a href="http://cafe.naver.com/androiddevforum/1315">http://cafe.naver.com/androiddevforum/1315</a> 이고 약간의 정리와 설명을 붙혔습니다</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

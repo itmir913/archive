@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="내가 만든 어플을 멀티 윈도우가 지원되게 바꾸려면?"><title>#번외 멀티 윈도우에 내가 만든 어플을 추가해 보자 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">#번외 멀티 윈도우에 내가 만든 어플을 추가해 보자</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-08-09T10:00:34.000Z"> 2013년 8월 9일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/301" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">내가 만든 어플을 멀티 윈도우가 지원되게 바꾸려면?</p> </header> <div class="post-content"> <p>내가 만든 어플을 멀티 윈도우가 지원되게 바꾸려면?</p>
+<p>&#x3C;application</p>
+<p>android:label=“string/app_name” /></p>
+<p>밑에 아래 구문을 추가합니다</p>
+<blockquote>
+<meta-data android:name="com.sec.android.support.multiwindow" android:value="true">
+<meta-data android:name="com.sec.android.multiwindow.STYLE" android:value="fixedRatio">
+</meta-data></meta-data></blockquote>
+<p>그다음 런처에 아이콘을 표시하려는 액티비티, 즉</p>
+<category android:name="android.intent.category.LAUNCHER">
+<p>밑에</p>
+<blockquote>
+<category android:name="android.intent.category.MULTIWINDOW\_LAUNCHER">
+</category></blockquote>
+<p>추가합니다</p>
+<p>그다음 위에</p>
+<blockquote>
+<p>&#x3C;meta-data android:name=“com.sec.android.multiwindow.DEFAULT_SIZE_W”  android:resource=“@dimen/app_defaultsize_w” /></p>
+<meta-data android:name="com.sec.android.multiwindow.DEFAULT\_SIZE\_H" android:resource="@dimen/app\_defaultsize\_h">
+<meta-data android:name="com.sec.android.multiwindow.MINIMUM\_SIZE\_W" android:resource="@dimen/app\_minimumsize\_w">
+<meta-data android:name="com.sec.android.multiwindow.MINIMUM\_SIZE\_H" android:resource="@dimen/app\_minimumsize\_h">
+</meta-data></meta-data></meta-data></blockquote>
+<p>이 네줄을 추가합니다</p>
+<p>마지막으로 values/dimens.xml에</p>
+<blockquote>
+<p><dimen name="app\_defaultsize\_w">1.0dip</dimen></p>
+<p><dimen name="app\_defaultsize\_h">1.0dip</dimen></p>
+<p><dimen name="app\_minimumsize\_w">1.0dip</dimen></p>
+<p><dimen name="app\_minimumsize\_h">1.0dip</dimen></p>
+</blockquote>
+<p>이 4줄을 추가하면 됩니다</p>
+<p>그럼 작동은 되게 되는대 짤릴수 있습니다</p>
+<p>ScrollView등을 잘 이용하여서 짤려도 스크롤되게, 또는 그냥 보이게 수정해야 합니다</p>
+<p>그건 어플 개발자라면 할줄 있겠죠?</p>
+<p>출처:<a href="http://cafe.naver.com/samfirm/3185">http://cafe.naver.com/samfirm/3185</a></p>
+<p>오리도리(wowo5605)님 감사드립니다~</p></category> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

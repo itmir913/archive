@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="서명 파일 만드는 것을 궁굼해 하시는 분들이 있어 apk-manager 에 적용이 가능한 안드로이드 서명 파일 만드는 방법과 툴을 소개해 드리고자 합니다."><title>나만의 서명파일(sign key)만들기 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">나만의 서명파일(sign key)만들기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-06-05T10:23:49.000Z"> 2013년 6월 5일 </time> <span class="post-category">SmartPhone/Android</span> <a href="https://itmir.tistory.com/232" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">서명 파일 만드는 것을 궁굼해 하시는 분들이 있어 apk-manager 에 적용이 가능한 안드로이드 서명 파일 만드는 방법과 툴을 소개해 드리고자 합니다.</p> </header> <div class="post-content"> <p>서명 파일 만드는 것을 궁굼해 하시는 분들이 있어 apk-manager 에 적용이 가능한 안드로이드 서명 파일 만드는 방법과 툴을 소개해 드리고자 합니다.</p>
+<p>카카오톡 테마 apk 파일이나 어플을 개발시 나의 서명을 삽입하는 방법은 일단 서명 파일을 만들어야 합니다. 한번 만든 서명 파일을 계속 이용하시면 내 어플에 같은 나만의 서명이된 apk 파일을 배포 가능합니다.</p>
+<p>apk-manager에 적용이 가능한 서명 만드는 방법에 대해서 아시는 분들이 없어서 제가 개인적으로 안드로이드 apk에 적용이 가능하도록 배치 파일로 만들어 사용하고 있는 툴을 공개합니다.</p>
+<p>나만의 서명 파일을 만들기 위해서 apk-manager 의 other 폴더의 testkey.pk8, testkey.x509.pem 파일이 apk-manager의 12번 sign 시 적용이 되는 파일입니다. 이 2개의 파일을 생성하려면 첨부한 파일을 다운로드 받아서 C:\에 압축을 해제하면 아래와 같은 파일이 나옵니다. 아래 화면에서와 같은 폴더명과 위치를 사용하세요.</p>
+<p><img  src="/archive/_astro/2012-04-06_%EC%98%A4%ED%9B%84_7-28-01.CXtdmMRz_Eeym7.webp" alt="" width="550" height="216" loading="lazy" decoding="async"></p>
+<p>여기서 <strong>commandprompt.bat</strong>를 실행하시면 CMD 창이 열립니다. 제가 미리 작성해 놓은 키 생성 시키는<strong>keycreate.bat</strong>를 실행합니다. 그럼 아래 화면에서 처럼 나오고 서명에 삽입할 여러가지를 묻는데 묻는 질문에 적당해 적당히 답변해 넣으면 완료가 됩니다.</p>
+<p><img  src="/archive/_astro/2012-04-06_%EC%98%A4%ED%9B%84_7-32-23.BGcw_v-I_2nSTLA.webp" alt="" width="550" height="494" loading="lazy" decoding="async"></p>
+<p>아래 화면에서 보시는 것처럼 아래 2개의 서명키 파일이 생성되며 이 파일을 <strong>apk-manager 의 other 폴더의 서명 파일을 교체</strong>하시면 끝입니다.</p>
+<p><img  src="/archive/_astro/2012-04-06_%EC%98%A4%ED%9B%84_7-34-04.BPwyTrxr_1htsam.webp" alt="" width="550" height="369" loading="lazy" decoding="async"></p>
+<p>참고로 apk 파일의 서명을 교체하고자 한다면 sign.bat 를 이용하시면 생성된 서명을 apk 파일에 서명을 별도로 하실 수 있도록 배치 파일로 만들어 놓았습니다.</p>
+<p>C:\openssl>sign sample.apk 라고 하시면 sample.apk 에 testkey.pk8, testkey.x509.pem 의 서명이 됩니다.</p>
+<p>[openssl.zip</p>
+<p>다운로드](./file/openssl.zip)</p>
+<p>꼭 C:\에 넣어주세요 ㅎㅎ 그래야 파일을 찾을수 없다는 오류가 안뜹니다 ㅇㅅㅇ</p>
+<p>이 글은 <a href="http://blog.naver.com/softdx/60159760190">http://blog.naver.com/softdx/60159760190</a> 이 원본 출처입니다</p>
+<p>툴을 만들어 주신 웃음투자님께 감사드립니다!!</p>
+<p>웃음투자님 블로그에 있는 CCL을 따라 이 글을 작성하였습니다</p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/openssl.zip">openssl.zip</a> <code>853 KB</code></li>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

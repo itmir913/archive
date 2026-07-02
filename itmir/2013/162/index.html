@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="요즘 반 배치다 뭐다 해서 java를 공부하지 못한 관계로..."><title>if~else, 만약 ~이라면 ~을 실행하라 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">if~else, 만약 ~이라면 ~을 실행하라</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-02-27T04:33:16.000Z"> 2013년 2월 27일 </time> <span class="post-category">Programming/Java</span> <a href="https://itmir.tistory.com/162" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">요즘 반 배치다 뭐다 해서 java를 공부하지 못한 관계로...</p> </header> <div class="post-content"> <p>좀 늦어진 감이 없진 않군요.</p>
+<p>요즘 반 배치다 뭐다 해서 java를 공부하지 못한 관계로…</p>
+<p>그래서 빨리 쓰겠습니다.</p>
+<p>이번에는 저번 강좌에서 얘기 한 것과 같이 좀 재미있습니다. ㅋㅋ</p>
+<p>다들 영문법을 배우셨을거라고 생각하는데요 if절에 대한 부분도 배우셨을거라 생각됩니다.</p>
+<p>java에서도 이런 if구문을 제공하고 있습니다.</p>
+<p>바로 if~else구문입니다.</p>
+<p>그래서 이번에는 자바 프로그램의 흐름 제어 역할을 하는 if~else문에 대해 알아보도록 하겠습니다.</p>
+<p>먼저 if구문의 기본 뼈대를 설명하겠습니다.</p>
+<blockquote>
+<p>if(true 또는 false)</p>
+<p>{</p>
+<p>  /* 괄호 값이 true일경우 실행되는 영역 */</p>
+<p>}</p>
+<p>else</p>
+<p>{</p>
+<p>  /* 괄호 값이 false일경우 실행되는 영역 */</p>
+<p>}</p>
+</blockquote>
+<p>이런 구조를 지니고 있습니다.</p>
+<p>괄호 ( ) 안에 true가 오면 true부분이, false가 오면 false부분이 실행되는 것이지요.</p>
+<p>그런대 여기서 괄호 ( )에는 true또는 false만 올 수 있습니다.</p>
+<p>그러므로 true와 fasle를 반환하는 연산자와 boolean 변수도 들어갈 수 있겠죠?</p>
+<p>if절은 구조가 간단해서 별다른 설명은 필요 없을 듯 합니다.</p>
+<p>간단하게 예제를 살펴보도록 하겠습니다.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> Ifelse</span></span>
+<span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49"> public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">  int</span><span style="color:#24292E"> n1</span><span style="color:#D73A49">=</span><span style="color:#005CC5">50</span><span style="color:#24292E">, n2</span><span style="color:#D73A49">=</span><span style="color:#005CC5">80</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#D73A49">  if</span><span style="color:#24292E">(n1</span><span style="color:#D73A49">&#x3C;</span><span style="color:#005CC5">50</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">   System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"n1은 50보다 작다"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">  else</span></span>
+<span class="line"><span style="color:#24292E">   System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"n1은 50이거나 50보다 크다"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">   </span></span>
+<span class="line"><span style="color:#D73A49">  if</span><span style="color:#24292E">(n1</span><span style="color:#D73A49">==</span><span style="color:#24292E">n2 </span><span style="color:#D73A49">&#x26;&#x26;</span><span style="color:#24292E"> n1</span><span style="color:#D73A49">></span><span style="color:#24292E">n2)</span></span>
+<span class="line"><span style="color:#24292E">   System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"n1=n2이며 n1>n2이다"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">  else</span></span>
+<span class="line"><span style="color:#24292E">   System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"n1=n2와 n1>n2가 성립하지 않는다"</span><span style="color:#24292E">); </span></span>
+<span class="line"><span style="color:#24292E"> }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p>[Ifelse.java</p>
+<p>다운로드](./file/Ifelse.java)</p>
+<p>이런 소스가 있습니다.</p>
+<p>int형 변수로 n1과 n2를 선언하고 있군요.</p>
+<p>그다음 첫 번째 if로 n1&#x3C;50을 연산하게 해서 그 결과를 보고 표현하라고 되어 있습니다.</p>
+<p>이 경우 n1&#x3C;50이 성립하지 않으므로 else다음 구문이 실행되게 되는 것입니다.</p>
+<p>두 번째 if에서는 &#x26;&#x26;연산을 진행하고 있는데요.</p>
+<p>n1==n2가 false이므로 SCE에 의해 n1>n2는 연산 되지 않을 것 이라고 생각 할 수 있습니다.</p>
+<p>이 경우에도 마찬가지로 false가 나오게 되므로 else다음 구문이 실행될 것이라 예측할 수 있습니다.</p>
+<p><img  src="/archive/_astro/%EC%BA%A1%EC%B2%98.Cz-Vwq6I_233LEH.webp" alt="" width="268" height="48" loading="lazy" decoding="async"></p>
+<p>실행 결과를 봐도 예상과 같은 결과가 나타나는 것을 확인할 수 있습니다.</p>
+<p>그런대 위 소스를 보면 if~else구문에 중괄호 { }가 빠져 있는 것을 보셨나요?</p>
+<p>이렇게 실행할 구문이 1개일 때는 중괄호를 없애도 문제가 발생하지 않습니다.</p>
+<p>그러나 되도록 실력을 키우기 위해, 자바에서 가독성 높은 코드를 작성하기 위해, 중괄호를 쓰는 것을 추천합니다.</p>
+<p>요즘은 중괄호 {}와 세미클론 ;이 없는 프로그래밍 언어도 있다고 하더라고요..</p>
+<p>참고로 if~else구문은 java에서 낱말이 떨어져 있지만 하나의 구문으로 인식합니다.</p>
+<p>이렇게 if~else에 대해 살펴 보았습니다.</p>
+<p>저는 아주 간단한 예만 들어 설명한 것일 뿐 if문은 아주 유용하게 사용됩니다.</p>
+<p>예를 들면 다중(중첩) if문도 가능하지요.</p>
+<p>그런대 java에서는 if와 성격이 비슷한 연산자가 또 있습니다.</p>
+<p>바로 ? : 기호입니다.</p>
+<p>이것은 조건 연산자 인데요.</p>
+<p>피 연산자가 3개인 유일한 연산자입니다.</p>
+<blockquote>
+<p>int number1=20, number2=30, whyis;</p>
+<p>whyis=(number1>number2)?number1:number2;</p>
+</blockquote>
+<p>자 여길 보시면 ?와 :을 사용한 모습을 보실 수 있습니다.</p>
+<p>이렇게 조건 연산자를 사용했는데요.</p>
+<p>원리를 말씀드리자면,</p>
+<p>?기호 왼쪽에 true가 있다면 :기호의 왼쪽 숫자가 반환,</p>
+<p>?기호 왼쪽에 false가 있다면 :기호의 오른쪽 숫자가 반환됩니다.</p>
+<p>그러므로 위 파란 박스에서는 number1>number2가 false이므로 number2의 값이 반환되겠지요?</p>
+<p>이렇게 해서 if~else구문에 대한 설명이 마쳐졌습니다. ㅎㅎ</p>
+<p>복습겸 이렇게 작성하니 확실히 이해가 잘되네요..ㅎㅎ</p>
+<p>만약 지금 이 글을 보고 계신다면 직접 소스 한번 짜보시는 연습해 보시길 강력 추천드립니다. ㅋㅋ</p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="./files/Ifelse.java">Ifelse.java</a></li>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

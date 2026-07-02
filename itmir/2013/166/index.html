@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="먼저 이 강좌는 SDA, 디벨로이드, ADF카페에 보급(?)되며 티스토리와 네이버의 글양식 차이로 인해 사진과 글씨가 깨져 보일 경우 원본 링크로 와서 감상해 주시길 바랍니다."><title>Switch와 break는 어떻게 사용할 수 있을까? — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">Switch와 break는 어떻게 사용할 수 있을까?</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-03-01T08:05:19.000Z"> 2013년 3월 1일 </time> <span class="post-category">Programming/Java</span> <a href="https://itmir.tistory.com/166" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">먼저 이 강좌는 SDA, 디벨로이드, ADF카페에 보급(?)되며 티스토리와 네이버의 글양식 차이로 인해 사진과 글씨가 깨져 보일 경우 원본 링크로 와서 감상해 주시길 바랍니다.</p> </header> <div class="post-content"> <p>먼저 이 강좌는 SDA, 디벨로이드, ADF카페에 보급(?)되며 티스토리와 네이버의 글양식 차이로 인해 사진과 글씨가 깨져 보일 경우 원본 링크로 와서 감상해 주시길 바랍니다.</p>
+<p>안녕하세요.</p>
+<p>이번에 살펴볼 switch문은 말 그대로 스위치 입니ㅏㄷ. <em>(←고의적 오타)</em></p>
+<p>if~else와 비슷하면서도 다른 문구이니 꼭 숙지해 두시길 바랍니다.</p>
+<p>스위치 문은 case와 default라는 레이블로 구성이 됩니다.</p>
+<p>한번 기본 구성을 살펴보도록 하겠습니다.</p>
+<blockquote>
+<p>switch(Mir)</p>
+<p>{</p>
+<p>  case 1:</p>
+<p>    … .</p>
+<p>  case 2:</p>
+<p>    … .</p>
+<p>  case 3:</p>
+<p>    … .</p>
+<p>  default:</p>
+<p>    … .</p>
+<p>}</p>
+</blockquote>
+<p>이런 구성을 가지고 있습니다.</p>
+<p>Mir의 값이 1이면 case 1:부터 시작되며 값이 3이라면 case 3:부터, 만약 아무것도 포함되어 있지 않다면 default부터 시작되는 것이지요</p>
+<p><img  src="/archive/_astro/%EC%BA%A1%EC%B2%98.BdHtCYn0_i3l9s.webp" alt="" width="589" height="301" loading="lazy" decoding="async"></p>
+<p>제 허접한 그림 솜씨로 한번 표현해 봤습니다. ㅠㅠ 역시 그림에는 절대로 소질이 없네요..</p>
+<p>아무튼 이런 구조로 실행 됩니다.</p>
+<p>case라는 레이블은 switch의 값이 n이라면 여기서부터 시작하세요. 라는 뜻을 가지고 있으며,</p>
+<p>default 레이블은 값 n에 해당하는 레이블(case)이 없다면 여기서 부터 실행하세요!라는 뜻으로 이해하시면 됩니다. ㅎㅎ</p>
+<p>한번 예제를 통해 보도록 하겠습니다.</p>
+<p>이런 종류의 문구는 엄청난 설명보다 하나의 예제가 도움이 더 많이 되는 듯 해요.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> Switchcase</span></span>
+<span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49"> public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">  int</span><span style="color:#24292E"> M</span><span style="color:#D73A49">=</span><span style="color:#005CC5">2</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#D73A49">  switch</span><span style="color:#24292E">(M)</span></span>
+<span class="line"><span style="color:#24292E">  {</span></span>
+<span class="line"><span style="color:#D73A49">  case</span><span style="color:#005CC5"> 1</span><span style="color:#D73A49">:</span></span>
+<span class="line"><span style="color:#24292E">   System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"int형 변수 M의 값은 "</span><span style="color:#D73A49">+</span><span style="color:#24292E">M</span><span style="color:#D73A49">+</span><span style="color:#032F62">" 이며 case1이 실행되었습니다"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">  case</span><span style="color:#005CC5"> 2</span><span style="color:#D73A49">:</span></span>
+<span class="line"><span style="color:#24292E">   System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"int형 변수 M의 값은 "</span><span style="color:#D73A49">+</span><span style="color:#24292E">M</span><span style="color:#D73A49">+</span><span style="color:#032F62">" 이며 case2가 실행되었습니다"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">  case</span><span style="color:#005CC5"> 3</span><span style="color:#D73A49">:</span></span>
+<span class="line"><span style="color:#24292E">   System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"int형 변수 M의 값은 "</span><span style="color:#D73A49">+</span><span style="color:#24292E">M</span><span style="color:#D73A49">+</span><span style="color:#032F62">" 이며 case3이 실행되었습니다"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">  default:</span></span>
+<span class="line"><span style="color:#24292E">   System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"int형 변수 M의 값은 "</span><span style="color:#D73A49">+</span><span style="color:#24292E">M</span><span style="color:#D73A49">+</span><span style="color:#032F62">" 이며 default문이 실행되었습니다"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">  }</span></span>
+<span class="line"><span style="color:#24292E"> }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p><a href="http://whdghks913.tistory.com/attachment/cfile26.uf@25799B3B51305E9E3A0DF8.java"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> Switchcase.java</a></p>
+<p>이렇게 구성했습니다.</p>
+<p>예상을 해보면 M이 2이므로 case2부터 실행될 것임을 알수 있습니다.</p>
+<p>한번 실행 결과를 보도록 하겠습니다.</p>
+<p><img  src="/archive/_astro/%EC%BA%A1%EC%B2%98_1.DYx9UBMd_2oXU8t.webp" alt="" width="430" height="68" loading="lazy" decoding="async"></p>
+<p>이렇게 M의 값이 2 이므로 case 2: 부터 아래로 실행이 되었음을 알 수 있습니다.</p>
+<p>그런대 여기서 잠깐!</p>
+<p>우리가 프로그램을 짜다 보면 값이 2일 경우 case 2만 실행되어야 하는 경우가 있습니다.</p>
+<p>이 경우가 더욱더 많다고 생각하는데요.</p>
+<p>이럴 때는 어떻게 해야 할까요?</p>
+<p>이러한 이유로 만들어 진 것이 바로 break레이블 입니다.</p>
+<p>일단 위 예제에 break를 넣어 만들어 보도록 하겠습니다.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> Switchcasebreak</span></span>
+<span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49"> public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">  int</span><span style="color:#24292E"> M</span><span style="color:#D73A49">=</span><span style="color:#005CC5">2</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#D73A49">  switch</span><span style="color:#24292E">(M)</span></span>
+<span class="line"><span style="color:#24292E">  {</span></span>
+<span class="line"><span style="color:#D73A49">  case</span><span style="color:#005CC5"> 1</span><span style="color:#D73A49">:</span></span>
+<span class="line"><span style="color:#24292E">   System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"int형 변수 M의 값은 "</span><span style="color:#D73A49">+</span><span style="color:#24292E">M</span><span style="color:#D73A49">+</span><span style="color:#032F62">" 이며 case1이 실행되었습니다"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">   break</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">  case</span><span style="color:#005CC5"> 2</span><span style="color:#D73A49">:</span></span>
+<span class="line"><span style="color:#24292E">   System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"int형 변수 M의 값은 "</span><span style="color:#D73A49">+</span><span style="color:#24292E">M</span><span style="color:#D73A49">+</span><span style="color:#032F62">" 이며 case2가 실행되었습니다"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">   break</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">  case</span><span style="color:#005CC5"> 3</span><span style="color:#D73A49">:</span></span>
+<span class="line"><span style="color:#24292E">   System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"int형 변수 M의 값은 "</span><span style="color:#D73A49">+</span><span style="color:#24292E">M</span><span style="color:#D73A49">+</span><span style="color:#032F62">" 이며 case3이 실행되었습니다"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">   break</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">  default:</span></span>
+<span class="line"><span style="color:#24292E">   System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"int형 변수 M의 값은 "</span><span style="color:#D73A49">+</span><span style="color:#24292E">M</span><span style="color:#D73A49">+</span><span style="color:#032F62">" 이며 default문이 실행되었습니다"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">  }</span></span>
+<span class="line"><span style="color:#24292E"> }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p><a href="http://whdghks913.tistory.com/attachment/cfile29.uf@137BAC3B51305FB939A43B.java"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> Switchcasebreak.java</a></p>
+<p>각 case마다 break를 넣었습니다.</p>
+<p>실행 결과를 한번 볼까요?</p>
+<p><img  src="/archive/_astro/%EC%BA%A1%EC%B2%98_2.D2_B6arW_Z7aPMa.webp" alt="" width="399" height="35" loading="lazy" decoding="async"></p>
+<p>이렇게 case 2로 들어간다음 println이 실행되고 break를 만나 switch를 빠져나온 모습을 볼 수 있습니다.</p>
+<p>다시 한 번 그림으로 표현해 보도록 하겠습니다.</p>
+<p><img  src="/archive/_astro/%EC%BA%A1%EC%B2%98_3.D6N9jWbZ_2skXCd.webp" alt="" width="395" height="392" loading="lazy" decoding="async"></p>
+<p>그림이 허접해도 그냥 봐주세요. ㅠㅅㅠ</p>
+<p>이런 그림으로 표현이 가능합니다.</p>
+<p>break문을 만나는 즉시 반복문(switch등)을 빠져나올 수 있지요. ㅋㅋ</p>
+<p>이렇게 switch와 break에 대해 살펴봤습니다.</p>
+<p>이런 구문은 많은 연습이 필요하다 생각합니다. 저 역시 이 강좌를 쓰며 연습하고 있습니다.</p>
+<p>여러분도 많은 연습 하셔서 꼭 마스터 하시길 바랍니다. ㅎㅎ</p>
+<p>다음 강좌에서는 for와 while, do~while에 대해 배워보겠습니다.</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

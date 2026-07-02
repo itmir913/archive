@@ -1,0 +1,270 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="간단하게 파일과 폴더를 읽고, 경로를 확인할수 있는 탐색기 예제를 찾았습니다"><title>[어플] 파일 탐색기 예제 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">[어플] 파일 탐색기 예제</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-10-09T05:59:41.000Z"> 2013년 10월 9일 </time> <span class="post-category">Application</span> <a href="https://itmir.tistory.com/359" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">간단하게 파일과 폴더를 읽고, 경로를 확인할수 있는 탐색기 예제를 찾았습니다</p> </header> <div class="post-content"> <p>간단하게 파일과 폴더를 읽고, 경로를 확인할수 있는 탐색기 예제를 찾았습니다</p>
+<p>저 나름대로 약간 수정을 해서 기초를 다졌기에 포스팅 해봅니다</p>
+<p>출처 : <a href="http://ryulib.tistory.com/90">http://ryulib.tistory.com/90</a></p>
+<p>처음버전</p>
+<p>[FileExplorer.zip</p>
+<p>다운로드](./file/FileExplorer.zip)</p>
+<p>새폴더 생성 추가</p>
+<p>[FileExplorer_AddFolder.zip</p>
+<p>다운로드](./file/FileExplorer_AddFolder.zip)</p>
+<p>원본글</p>
+<h2 id="파일-탐색기-클래스---filelist"><a href="http://ryulib.tistory.com/90">파일 탐색기 클래스 - FileList</a></h2>
+<p><img  src="/archive/_astro/screenshot.Zhi09n8Q_Z2dkwkt.webp" alt="" width="320" height="480" loading="lazy" decoding="async"></p>
+<p>안드로이드에서는 기본으로 제공하는 Delphi의 TOpenDialog 라이브러리가 없습니다.  따라서, 스스로 만들어서 해결해야 하는데, 검색된 소스나 방법들이 제 마음에 들지 않아 아래와 같이 만들어 봤습니다.  (급조한 것이기 때문에 아직 부족한 점이 많습니다.)</p>
+<p>일단 지정된 Path 안에 있는 폴더와 파일의 목록을 보여주는 FileList 클래스를 만들어 봤습니다.  그리고, 사용법은 [소스 1]과 같습니다.</p>
+<p>[소스 1]</p>
+<p><code>01.``package</code> <code>app.main;</code></p>
+<p><code>02.</code></p>
+<p><code>03.``import</code> <code>android.app.Activity;</code></p>
+<p><code>04.``import</code> <code>android.os.Bundle;</code></p>
+<p><code>05.``import</code> <code>android.widget.LinearLayout;</code></p>
+<p><code>06.``import</code> <code>android.widget.TextView;</code></p>
+<p><code>07.</code></p>
+<p><code>08.``public</code> <code>class</code> <code>Main</code> <code>extends</code> <code>Activity {</code></p>
+<p><code>09.``/** Called when the activity is first created. */</code></p>
+<p><code>10.``@Override</code></p>
+<p><code>11.``public</code> <code>void</code> <code>onCreate(Bundle savedInstanceState) {</code></p>
+<p><code>12.``super``.onCreate(savedInstanceState);</code></p>
+<p><code>13.``setContentView(R.layout.main);</code></p>
+<p><code>14.</code></p>
+<p><code>15.``FileList _FileList =</code> <code>new</code> <code>FileList(``this``);</code></p>
+<p><code>16.``_FileList.setOnPathChangedListener(_OnPathChanged);</code></p>
+<p><code>17.``_FileList.setOnFileSelected(_OnFileSelected);</code></p>
+<p><code>18.</code></p>
+<p><code>19.``LinearLayout layout = (LinearLayout) findViewById(R.id.LinearLayout01);</code></p>
+<p><code>20.``layout.addView(_FileList);</code></p>
+<p><code>21.</code></p>
+<p><code>22.``_FileList.setPath(``"/"``);</code></p>
+<p><code>23.``_FileList.setFocusable(``true``);</code></p>
+<p><code>24.``_FileList.setFocusableInTouchMode(``true``);</code></p>
+<p><code>25.</code></p>
+<p><code>26.``}</code></p>
+<p><code>27.</code></p>
+<p><code>28.``private</code> <code>OnPathChangedListener _OnPathChanged =</code> <code>new</code> <code>OnPathChangedListener() {</code></p>
+<p><code>29.``@Override</code></p>
+<p><code>30.``public</code> <code>void</code> <code>onChanged(String path) {</code></p>
+<p><code>31.``((TextView) findViewById(R.id.TextView01)).setText(path);</code></p>
+<p><code>32.``}</code></p>
+<p><code>33.``};</code></p>
+<p><code>34.</code></p>
+<p><code>35.``private</code> <code>OnFileSelectedListener _OnFileSelected =</code> <code>new</code> <code>OnFileSelectedListener() {</code></p>
+<p><code>36.``@Override</code></p>
+<p><code>37.``public</code> <code>void</code> <code>onSelected(String path, String fileName) {</code></p>
+<p><code>38.``// TODO</code></p>
+<p><code>39.``}</code></p>
+<p><code>40.``};</code></p>
+<p><code>41.</code></p>
+<p><code>42.``}</code></p>
+<p>15: FileList 클래스는 ListView를 상속받아서 확장하였습니다.  layout.xml을 통해서 사용 할 수도 있지만, 쉽게 코드를 읽을 수 있도록 동적 생성하였습니다.</p>
+<p>FileList는 두 종류의 이벤트를 지원하고 있습니다.</p>
+<p>OnPathChangedListener는 표시하고 있는 폴더가 변경되면 해당 폴더의 전체 Path를 알려줍니다.  28-33: 라인은 OnPathChangedListener 인터페이스의 멤버 메소드를 구현 한 것 입니다.</p>
+<p>OnFileSelected는 파일을 선택 했을 경우, 선택된 파일과 파일이 속해있는 폴더의 전체 Path를 알려줍니다.  35-40: 라인은 OnFileSelected 인터페이스의 멤버 메소드를 구현 한 것 입니다.</p>
+<p>22: FileList의 setPath(String path) 메소드는 지정된 경로(path) 안에 있는 폴더와 파일 목록을 표시 합니다.</p>
+<p>32: TextView를 통해서 경로(path)명이 변경 될 때마다 표시하고 있습니다.</p>
+<p>38: 라인에는 파일이 선택되었을 경우 실행하고자 하는 코드를 작성하시면 됩니다.</p>
+<p>아래의 FileList 클래스의 소스는 [소스 2]와 같습니다.</p>
+<p>[소스 2]</p>
+<p><code>001.``package</code> <code>app.main;</code></p>
+<p><code>002.</code></p>
+<p><code>003.``import</code> <code>java.io.File;</code></p>
+<p><code>004.``import</code> <code>java.io.IOException;</code></p>
+<p><code>005.``import</code> <code>java.util.ArrayList;</code></p>
+<p><code>006.``import</code> <code>java.util.Collections;</code></p>
+<p><code>007.</code></p>
+<p><code>008.``import</code> <code>android.content.Context;</code></p>
+<p><code>009.``import</code> <code>android.util.AttributeSet;</code></p>
+<p><code>010.``import</code> <code>android.view.View;</code></p>
+<p><code>011.``import</code> <code>android.widget.AdapterView;</code></p>
+<p><code>012.``import</code> <code>android.widget.ArrayAdapter;</code></p>
+<p><code>013.``import</code> <code>android.widget.ListView;</code></p>
+<p><code>014.</code></p>
+<p><code>015.``public</code> <code>class</code> <code>FileList</code> <code>extends</code> <code>ListView {</code></p>
+<p><code>016.</code></p>
+<p><code>017.``public</code> <code>FileList(Context context, AttributeSet attrs,</code> <code>int</code> <code>defStyle) {</code></p>
+<p><code>018.``super``(context, attrs, defStyle);</code></p>
+<p><code>019.</code></p>
+<p><code>020.``init(context);</code></p>
+<p><code>021.``}</code></p>
+<p><code>022.</code></p>
+<p><code>023.``public</code> <code>FileList(Context context, AttributeSet attrs) {</code></p>
+<p><code>024.``super``(context, attrs);</code></p>
+<p><code>025.</code></p>
+<p><code>026.``init(context);</code></p>
+<p><code>027.``}</code></p>
+<p><code>028.</code></p>
+<p><code>029.``public</code> <code>FileList(Context context) {</code></p>
+<p><code>030.``super``(context);</code></p>
+<p><code>031.</code></p>
+<p><code>032.``init(context);</code></p>
+<p><code>033.``}</code></p>
+<p><code>034.</code></p>
+<p><code>035.``private</code> <code>void</code> <code>init(Context context) {</code></p>
+<p><code>036.``_Context = context;</code></p>
+<p><code>037.``setOnItemClickListener(_OnItemClick);</code></p>
+<p><code>038.``}</code></p>
+<p><code>039.</code></p>
+<p><code>040.``private</code> <code>Context _Context =</code> <code>null``;</code></p>
+<p><code>041.``private</code> <code>ArrayList&#x3C;String> _List =</code> <code>new</code> <code>ArrayList&#x3C;String>();</code></p>
+<p><code>042.``private</code> <code>ArrayList&#x3C;String> _FolderList =</code> <code>new</code> <code>ArrayList&#x3C;String>();</code></p>
+<p><code>043.``private</code> <code>ArrayList&#x3C;String> _FileList =</code> <code>new</code> <code>ArrayList&#x3C;String>();</code></p>
+<p><code>044.``private</code> <code>ArrayAdapter&#x3C;String> _Adapter =</code> <code>null``;</code></p>
+<p><code>045.</code></p>
+<p><code>046.``// Property</code></p>
+<p><code>047.``private</code> <code>String _Path =</code> <code>""``;</code></p>
+<p><code>048.</code></p>
+<p><code>049.``// Event</code></p>
+<p><code>050.``private</code> <code>OnPathChangedListener _OnPathChangedListener =</code> <code>null``;</code></p>
+<p><code>051.``private</code> <code>OnFileSelectedListener _OnFileSelectedListener =</code> <code>null``;</code></p>
+<p><code>052.</code></p>
+<p><code>053.``private</code> <code>boolean</code> <code>openPath(String path) {</code></p>
+<p><code>054.``_FolderList.clear();</code></p>
+<p><code>055.``_FileList.clear();</code></p>
+<p><code>056.</code></p>
+<p><code>057.``File file =</code> <code>new</code> <code>File(path);</code></p>
+<p><code>058.``File[] files = file.listFiles();</code></p>
+<p><code>059.``if</code> <code>(files ==</code> <code>null``)</code> <code>return</code> <code>false``;</code></p>
+<p><code>060.</code></p>
+<p><code>061.``for</code> <code>(``int</code> <code>i=``0``; i&#x3C;files.length; i++) {</code></p>
+<p><code>062.``if</code> <code>(files[i].isDirectory()) {</code></p>
+<p><code>063.``_FolderList.add(``"&#x3C;"</code> <code>+ files[i].getName() +</code> <code>">"``);</code></p>
+<p><code>064.``}</code> <code>else</code> <code>{</code></p>
+<p><code>065.``_FileList.add(files[i].getName());</code></p>
+<p><code>066.``}</code></p>
+<p><code>067.``}</code></p>
+<p><code>068.</code></p>
+<p><code>069.``Collections.sort(_FolderList);</code></p>
+<p><code>070.``Collections.sort(_FileList);</code></p>
+<p><code>071.</code></p>
+<p><code>072.``_FolderList.add(``0``,</code> <code>"&#x3C;..>"``);</code></p>
+<p><code>073.</code></p>
+<p><code>074.``return</code> <code>true``;</code></p>
+<p><code>075.``}</code></p>
+<p><code>076.</code></p>
+<p><code>077.``private</code> <code>void</code> <code>updateAdapter() {</code></p>
+<p><code>078.``_List.clear();</code></p>
+<p><code>079.``_List.addAll(_FolderList);</code></p>
+<p><code>080.``_List.addAll(_FileList);</code></p>
+<p><code>081.</code></p>
+<p><code>082.``_Adapter =</code> <code>new</code> <code>ArrayAdapter&#x3C;String>(_Context, android.R.layout.simple_list_item_1, _List);</code></p>
+<p><code>083.``setAdapter(_Adapter);</code></p>
+<p><code>084.``}</code></p>
+<p><code>085.</code></p>
+<p><code>086.``public</code> <code>void</code> <code>setPath(String value) {</code></p>
+<p><code>087.``if</code> <code>(value.length() ==</code> <code>0``) {</code></p>
+<p><code>088.``value =</code> <code>"/"``;</code></p>
+<p><code>089.``}</code> <code>else</code> <code>{</code></p>
+<p><code>090.``String lastChar = value.substring(value.length()-``1``, value.length());</code></p>
+<p><code>091.``if</code> <code>(lastChar.matches(``"/"``) ==</code> <code>false``) value = value +</code> <code>"/"``;</code></p>
+<p><code>092.``}</code></p>
+<p><code>093.</code></p>
+<p><code>094.``if</code> <code>(openPath(value)) {</code></p>
+<p><code>095.``_Path = value;</code></p>
+<p><code>096.``updateAdapter();</code></p>
+<p><code>097.``if</code> <code>(_OnPathChangedListener !=</code> <code>null``) _OnPathChangedListener.onChanged(value);</code></p>
+<p><code>098.``}</code></p>
+<p><code>099.``}</code></p>
+<p><code>100.</code></p>
+<p><code>101.``public</code> <code>String getPath() {</code></p>
+<p><code>102.``return</code> <code>_Path;</code></p>
+<p><code>103.``}</code></p>
+<p><code>104.</code></p>
+<p><code>105.``public</code> <code>void</code> <code>setOnPathChangedListener(OnPathChangedListener value) {</code></p>
+<p><code>106.``_OnPathChangedListener = value;</code></p>
+<p><code>107.``}</code></p>
+<p><code>108.</code></p>
+<p><code>109.``public</code> <code>OnPathChangedListener getOnPathChangedListener() {</code></p>
+<p><code>110.``return</code> <code>_OnPathChangedListener;</code></p>
+<p><code>111.``}</code></p>
+<p><code>112.</code></p>
+<p><code>113.``public</code> <code>void</code> <code>setOnFileSelected(OnFileSelectedListener value) {</code></p>
+<p><code>114.``_OnFileSelectedListener = value;</code></p>
+<p><code>115.``}</code></p>
+<p><code>116.</code></p>
+<p><code>117.``public</code> <code>OnFileSelectedListener getOnFileSelected() {</code></p>
+<p><code>118.``return</code> <code>_OnFileSelectedListener;</code></p>
+<p><code>119.``}</code></p>
+<p><code>120.</code></p>
+<p><code>121.``public</code> <code>String DelteRight(String value, String border) {</code></p>
+<p><code>122.``String list[] = value.split(border);</code></p>
+<p><code>123.</code></p>
+<p><code>124.``String result =</code> <code>""``;</code></p>
+<p><code>125.</code></p>
+<p><code>126.``for</code> <code>(``int</code> <code>i=``0``; i&#x3C;list.length; i++) {</code></p>
+<p><code>127.``result = result + list[i] + border;</code></p>
+<p><code>128.``}</code></p>
+<p><code>129.</code></p>
+<p><code>130.``return</code> <code>result;</code></p>
+<p><code>131.``}</code></p>
+<p><code>132.</code></p>
+<p><code>133.``private</code> <code>String delteLastFolder(String value) {</code></p>
+<p><code>134.``String list[] = value.split(``"/"``);</code></p>
+<p><code>135.</code></p>
+<p><code>136.``String result =</code> <code>""``;</code></p>
+<p><code>137.</code></p>
+<p><code>138.``for</code> <code>(``int</code> <code>i=``0``; i&#x3C;list.length-``1``; i++) {</code></p>
+<p><code>139.``result = result + list[i] +</code> <code>"/"``;</code></p>
+<p><code>140.``}</code></p>
+<p><code>141.</code></p>
+<p><code>142.``return</code> <code>result;</code></p>
+<p><code>143.``}</code></p>
+<p><code>144.</code></p>
+<p><code>145.``private</code> <code>String getRealPathName(String newPath) {</code></p>
+<p><code>146.``String path = newPath.substring(``1``, newPath.length()-``1``);</code></p>
+<p><code>147.</code></p>
+<p><code>148.``if</code> <code>(path.matches(``".."``)) {</code></p>
+<p><code>149.``return</code> <code>delteLastFolder(_Path);</code></p>
+<p><code>150.``}</code> <code>else</code> <code>{</code></p>
+<p><code>151.``return</code> <code>_Path + path +</code> <code>"/"``;</code></p>
+<p><code>152.``}</code></p>
+<p><code>153.``}</code></p>
+<p><code>154.</code></p>
+<p><code>155.``private</code> <code>AdapterView.OnItemClickListener _OnItemClick =</code> <code>new</code> <code>AdapterView.OnItemClickListener() {</code></p>
+<p><code>156.``@Override</code></p>
+<p><code>157.``public</code> <code>void</code> <code>onItemClick(AdapterView&#x3C;?> arg0, View arg1,</code> <code>int</code> <code>position,</code></p>
+<p><code>158.``long</code> <code>id) {</code></p>
+<p><code>159.``String fileName = getItemAtPosition(position).toString();</code></p>
+<p><code>160.``if</code> <code>(fileName.matches(``"&#x3C;.*>"``)) {</code></p>
+<p><code>161.``setPath(getRealPathName(fileName));</code></p>
+<p><code>162.``}</code> <code>else</code> <code>{</code></p>
+<p><code>163.``if</code> <code>(_OnFileSelectedListener !=</code> <code>null``) _OnFileSelectedListener.onSelected(_Path, fileName);</code></p>
+<p><code>164.``}</code></p>
+<p><code>165.``}</code></p>
+<p><code>166.``};</code></p>
+<p><code>167.</code></p>
+<p><code>168.``}</code></p>
+<p>제가 지금 작성하는 어플리케이션의 경우에는 파일을 선택하는 것은 중요한 요소는 아니기 때문에 위에 있는 정도면 충분하여 우선은 여기까지만 작성 해 봅니다.  추후, 다른 용도가 생기면 개선하여 다시 올리도록 하겠습니다.</p>
+<p>마지막으로 위의 예제에서 사용된 layout/main.xml은 아래와 같습니다.</p>
+<p>[소스 3]</p>
+<p><code>01.``&#x3C;?xml version=``"1.0"</code> <code>encoding=``"utf-8"``?></code></p>
+<p><code>02.``&#x3C;LinearLayout xmlns:android=``"http://schemas.android.com/apk/res/android"</code></p>
+<p><code>03.``android:id=``"@+id/LinearLayout01"</code></p>
+<p><code>04.``android:orientation=``"vertical"</code></p>
+<p><code>05.``android:layout_width=``"fill_parent"</code></p>
+<p><code>06.``android:layout_height=``"fill_parent"</code></p>
+<p><code>07.``></code></p>
+<p><code>08.</code></p>
+<p><code>09.``&#x3C;TextView</code></p>
+<p><code>10.``android:text=``"@+id/TextView01"</code></p>
+<p><code>11.``android:id=``"@+id/TextView01"</code></p>
+<p><code>12.``android:layout_width=``"wrap_content"</code></p>
+<p><code>13.``android:layout_height=``"wrap_content"</code></p>
+<p><code>14.``></code></p>
+<p><code>15.``&#x3C;/TextView></code></p>
+<p><code>16.</code></p>
+<p><code>17.``&#x3C;/LinearLayout></code></p>
+<p>첨부파일에 전체 소스가 있습니다.  위에서 설명하지 않은 인터페이스의 경우에는 첨부파일을 참고하시기 바랍니다.</p>
+<p>[FileOpen.zip</p>
+<p>다운로드](./file/FileOpen.zip)</p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/FileExplorer.zip">FileExplorer.zip</a> <code>1.1 MB</code></li>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/FileExplorer_AddFolder.zip">FileExplorer_AddFolder.zip</a> <code>1.1 MB</code></li>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/FileOpen.zip">FileOpen.zip</a> <code>12 KB</code></li>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

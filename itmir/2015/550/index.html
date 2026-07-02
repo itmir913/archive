@@ -1,0 +1,232 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="글을 작성한지 오래 지난 포스팅의 경우 지금과 다른 점이 생길 수 있습니다."><title>티스토리 오류 제보하기 버튼 만들기 - 구글 스프레드 시트 사용 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">티스토리 오류 제보하기 버튼 만들기 - 구글 스프레드 시트 사용</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2015-01-05T06:54:51.000Z"> 2015년 1월 5일 </time> <span class="post-category">Tistory</span> <a href="https://itmir.tistory.com/550" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">글을 작성한지 오래 지난 포스팅의 경우 지금과 다른 점이 생길 수 있습니다.</p> </header> <div class="post-content"> <p><img  src="/archive/_astro/googlesheets-100354189-large.idge.cNwmylf9_1eVuJE.webp" alt="" width="620" height="413" loading="lazy" decoding="async"></p>
+<p>글을 작성한지 오래 지난 포스팅의 경우 지금과 다른 점이 생길 수 있습니다.</p>
+<p>블로그에 글이 조금밖에 없는경우에는 직접 살펴볼수도 있지만 100개만 넘어가도 힘든일인데요.</p>
+<p>어떻게 해야 할까 생각하다 정말 좋은 방법이 있어 알려드리려고 합니다.</p>
+<p>먼저 이 글은 뭐하라님의 <a href="http://nubiz.tistory.com/551">http://nubiz.tistory.com/551</a> 글을 바탕으로 작성된 것임을 말씀드립니다.</p>
+<h3 id="완성된-스크린샷-살펴보기">완성된 스크린샷 살펴보기</h3>
+<p>직접 적용한 스크린샷을 확인해보겠습니다.</p>
+<p><img  src="/archive/_astro/preview-pc.nZZJQIKx_1BiFou.webp" alt="" width="837" height="381" loading="lazy" decoding="async"></p>
+<p>마땅히 넣을 자리가 없어서 댓글 달기 버튼 옆에 넣어주었습니다.</p>
+<p>저 상자를 클릭하게 되면 아래 스크린샷 처럼 스르르 열리며 제보가 가능합니다.</p>
+<p><img  src="/archive/_astro/preview-pc-2.BZk8rOj2_ZjqR5m.webp" alt="" width="169" height="183" loading="lazy" decoding="async"></p>
+<p>제가 적용한 소스는 뭐하라님의 원본 소스를 조금 수정한 것이며, 혼란을 드리지 않기 위해서 이 글은 뭐하라님의 원본 글로 진행했습니다.</p>
+<h3 id="구글-스프레드-시트-만들고-활성화-하기">구글 스프레드 시트 만들고 활성화 하기</h3>
+<p>블로그에서 대부분이 DB로 이루어져 있다고 해도 과언이 아닌데요.</p>
+<p>티스토리도 글, 댓글, 방명록등등이 티스토리만의 DB에 저장될 것입니다.</p>
+<p>이 티스토리 DB는 우리들이 임의로 건들수가 없습니다.</p>
+<p>그래서 방문자가 오류를 제보하면 그것을 저장해주는 저장소가 필요합니다.</p>
+<p>이때 구글 스프레드시트를 데이터 저장 용도로 사용할 예정입니다.</p>
+<p><a href="https://drive.google.com">구글 드라이브(클릭)</a>에 접속하셔서 새로 만들기 - Google 스프레드시트를 선택해주세요.</p>
+<p><img  src="/archive/_astro/google_drive-1.DbTgBz3n_Z13cBj6.webp" alt="" width="283" height="401" loading="lazy" decoding="async"></p>
+<p>또는 바로 <a href="https://docs.google.com/spreadsheets">구글 스프레드시트(클릭)</a>에서 새로 만들기 해주세요.</p>
+<p>새로 만들어졌습니다.</p>
+<p>“제목 없는 스프레드시트”는 나중에 원하시는대로 바꿔주세요.</p>
+<p>초록색 박스로 둘러싼 “시트1”은 아래에서 중요합니다.</p>
+<p>원하는대로 수정하셔도 되지만, 수정한 다음에는 꼭 기억하세요.</p>
+<p><img  src="/archive/_astro/googlesheets_1.F5D3_3Yc_Z9MGzw.webp" alt="" width="852" height="442" loading="lazy" decoding="async"></p>
+<p>A1부터 C1까지를 각각 Timestamp, path, memo로 체워주세요.</p>
+<p><img  src="/archive/_astro/googlesheets_1-2.OKcBTnru_lQBhI.webp" alt="" width="352" height="164" loading="lazy" decoding="async"></p>
+<p>그다음에 도구 - 스트립트 편집기를 눌러주세요.</p>
+<p><img  src="/archive/_astro/googlesheets_2.MS91Is7D_Z2dYO3X.webp" alt="" width="160" height="274" loading="lazy" decoding="async"></p>
+<p>그러면 아래와 같은 창이 뜹니다.</p>
+<p>스크립트 만들기 - 빈 프로젝트를 선택해주세요.</p>
+<p><img  src="/archive/_astro/googlesheets_3._rCClt51_ZRWl1a.webp" alt="" width="610" height="497" loading="lazy" decoding="async"></p>
+<p>그럼 아래와 같은 모습이 나타납니다.</p>
+<p><img  src="/archive/_astro/googlesheets_4.Cxl88hOx_uz60L.webp" alt="" width="881" height="357" loading="lazy" decoding="async"></p>
+<p>저기있는 function myFunction() { } 을 모두 지우고 아래 내용을 복사해서 넣어주세요.</p>
+<p>//  1. Enter sheet name where data is to be written below</p>
+<p>var SHEET_NAME = “<strong>시트1</strong>”;</p>
+<p>//  2. Run > setup</p>
+<p>//</p>
+<p>//  3. Publish > Deploy as web app</p>
+<p>//    - enter Project Version name and click ‘Save New Version’</p>
+<p>//    - set security level and enable service (most likely execute as ‘me’ and access ‘anyone, even anonymously)</p>
+<p>//</p>
+<p>//  4. Copy the ‘Current web app URL’ and post this in your form/script action</p>
+<p>//</p>
+<p>//  5. Insert column names on your destination sheet matching the parameter names of the data you are passing in (exactly matching case)</p>
+<p>var SCRIPT_PROP = PropertiesService.getScriptProperties(); // new property service</p>
+<p>// If you don’t want to expose either GET or POST methods you can comment out the appropriate function</p>
+<p>function doGet(e){</p>
+<p>  return handleResponse(e);</p>
+<p>}</p>
+<p>function doPost(e){</p>
+<p>  return handleResponse(e);</p>
+<p>}</p>
+<p>function handleResponse(e) {</p>
+<p>  // shortly after my original solution Google announced the LockService[1]</p>
+<p>  // this prevents concurrent access overwritting data</p>
+<p>  // [1] <a href="http://googleappsdeveloper.blogspot.co.uk/2011/10/concurrency-and-google-apps-script.html">http://googleappsdeveloper.blogspot.co.uk/2011/10/concurrency-and-google-apps-script.html</a></p>
+<p>  // we want a public lock, one that locks for all invocations</p>
+<p>  var lock = LockService.getPublicLock();</p>
+<p>  lock.waitLock(30000);  // wait 30 seconds before conceding defeat.</p>
+<p>  try {</p>
+<p>    // next set where we write the data - you could write to multiple/alternate destinations</p>
+<p>    var doc = SpreadsheetApp.openById(SCRIPT_PROP.getProperty(“key”));</p>
+<p>    var sheet = doc.getSheetByName(SHEET_NAME);</p>
+<p>    // we’ll assume header is in row 1 but you can override with header_row in GET/POST data</p>
+<p>    var headRow = e.parameter.header_row || 1;</p>
+<p>    var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];</p>
+<p>    var nextRow = sheet.getLastRow()+1; // get next row</p>
+<p>    var row = [];</p>
+<p>    // loop through the header columns</p>
+<p>    for (i in headers){</p>
+<p>      if (headers[i] == “Timestamp”){ // special case if you include a ‘Timestamp’ column</p>
+<p>        row.push(new Date());</p>
+<p>      } else { // else use header name to get data</p>
+<p>        row.push(e.parameter[headers[i]]);</p>
+<p>      }</p>
+<p>    }</p>
+<p>    // more efficient to set values as [][] array than individually</p>
+<p>    sheet.getRange(nextRow, 1, 1, row.length).setValues([row]);</p>
+<p>    // return json success results</p>
+<p>    return ContentService</p>
+<p>          .createTextOutput(JSON.stringify({“result”:“success”, “row”: nextRow}))</p>
+<p>          .setMimeType(ContentService.MimeType.JSON);</p>
+<p>  } catch(e){</p>
+<p>    // if error return this</p>
+<p>    return ContentService</p>
+<p>          .createTextOutput(JSON.stringify({“result”:“error”, “error”: e}))</p>
+<p>          .setMimeType(ContentService.MimeType.JSON);</p>
+<p>  } finally { //release lock</p>
+<p>    lock.releaseLock();</p>
+<p>  }</p>
+<p>}</p>
+<p>function setup() {</p>
+<p>    var doc = SpreadsheetApp.getActiveSpreadsheet();</p>
+<p>    SCRIPT_PROP.setProperty(“key”, doc.getId());</p>
+<p>}</p>
+<p>맨위에 있는 시트1은 오류를 기록할 시트의 이름입니다.</p>
+<p>위에서 수정하셨다면 이것도 바꿔주세요.</p>
+<p>다 하셨다면 저장해주세요.</p>
+<p>이름은 마음대로.. ㅎㅎ..</p>
+<p><img  src="/archive/_astro/googlesheets_5.DMdaDzPE_IlOoN.webp" alt="" width="976" height="475" loading="lazy" decoding="async"></p>
+<p>실행 - Setup을 눌러주세요.</p>
+<p><img  src="/archive/_astro/googlesheets_6.DtYWmNwX_Zk1Y6I.webp" alt="" width="383" height="182" loading="lazy" decoding="async"></p>
+<p>인증이 필요하다고 나옵니다.</p>
+<p><img  src="/archive/_astro/googlesheets_7.CUnGUoZ-_148piN.webp" alt="" width="298" height="179" loading="lazy" decoding="async"></p>
+<p>인증해주세요.</p>
+<p><img  src="/archive/_astro/googlesheets_8.1cIQGeRR_19jEQW.webp" alt="" width="594" height="397" loading="lazy" decoding="async"></p>
+<p>동의 하신다음에 다시한 번 실행 - Setup 해주시면 됩니다.</p>
+<p>마지막으로 게시 - 웹 앱으로 배포…을 눌러주세요.</p>
+<p><img  src="/archive/_astro/googlesheets_9.Bd-qKqhU_ZoO2Jl.webp" alt="" width="342" height="94" loading="lazy" decoding="async"></p>
+<p>프로젝트 버전 옆 새 버전 저장을 눌러주세요.</p>
+<p><img  src="/archive/_astro/googlesheets_10.WTtfccXv_1Qaif4.webp" alt="" width="447" height="425" loading="lazy" decoding="async">
+   
+<img  src="/archive/_astro/googlesheets_10-2.BIavM2dj_Z29q3g7.webp" alt="" width="445" height="421" loading="lazy" decoding="async"></p>
+<p>앱을 실행할 사용자는 ‘나’</p>
+<p>웹에 액세스할 수 있는 사용자는 **누구나(익명 사용자 포함)**으로 꼭 바꿔주세요.</p>
+<p><img  src="/archive/_astro/googlesheets_11.B2y39Ddz_20qEJR.webp" alt="" width="446" height="267" loading="lazy" decoding="async"></p>
+<p>자 이제 구글 스프레드 시트는 끝났습니다.</p>
+<p>현재 웹 앱 URL을 복사해주세요 좀 있다가 필요합니다.</p>
+<p>이어서 티스토리에 관련 소스를 넣어봅시다.</p>
+<h3 id="티스토리-htmlcss-수정하기">티스토리 html/css 수정하기</h3>
+<p>이제 마지막 작업으로 html과 css만 수정해주시면 적용이 완료됩니다.</p>
+<p>오류 제보 버튼 html 소스를 넣고 싶으신 위치에 넣어주시면 됩니다.</p>
+<div id="sendComment">
+<p>  </p><p>오류 제보하기</p><p></p>
+<p>  </p><div><p></p>
+<p>    <input type="checkbox" value="내용상 오류가 있음">내용상 오류가 있음<br></p>
+<p>    <input type="checkbox" value="표시에 문제가 있음">표시에 문제가 있음<br></p>
+<p>    <input type="checkbox" value="기타 수정이 필요함">기타 수정이 필요함<br></p>
+<p>    <textarea placeholder="구체적 내용이나 기타 의견을 남겨주세요."></textarea><br></p>
+<p>    <input type="button" value="보내기" onclick="sendComment();"></p>
+<p>    <a href="http://nubiz.tistory.com/551">(?)</a></p>
+<p>  </p></div><p></p>
+</div>
+<div style="clear:both">
+<p>그다음 skin.html의 부분에 아래 코드를 넣어주시되, 하늘색으로 표시한 부분에는 위에서 복사한 URL을 넣어주세요.</p>
+<p>참고로 맨 위의 첫 줄은 jquery입니다.</p>
+<p>이미 jquery가 적용된 블로그의 경우 맨 윗 줄은 생략하셔야 합니다.</p>
+<script>window.jQuery||document.write('<script src="http://s1.daumcdn.net/svc/original/U03/cssjs/jquery/jquery-1.11.0.min.js"><\/script>');</script>
+<script>
+
+//오류제보하기 - http://nubiz.tistory.com/551
+
+$("#sendComment>p").click(function(){
+
+  $("#sendComment>div").toggle(300);
+
+});
+
+function sendComment (){
+
+  $("#sendComment \*").attr("disabled","");
+
+  var errors = []
+
+  $("#sendComment :checkbox:checked").each(function(i){
+
+    errors[i] = $(this).val();
+
+  });
+
+  var comment = $("#sendComment textarea").val();
+
+  $.ajax({
+
+    url: "**https://script.google.com/macros/s/###############################/exec**",
+
+    data: {
+
+      path: decodeURIComponent(location.pathname),
+
+      memo: errors+" / "+comment
+
+    },
+
+    type: "POST",
+
+    success:function(){
+
+      alert("빠른 시일 내에 검토해보겠습니다.\n감사합니다.");
+
+      $("#sendComment :disabled").removeAttr("disabled");
+
+      $("#sendComment textarea").val('');
+
+      $("#sendComment :checkbox").prop("checked",false);
+
+    }
+
+  });
+
+}
+
+</script>
+<p>마지막으로 style.css에 아래 코드를 넣어주세요.</p>
+<p>#sendComment {</p>
+<p>  width:140px;</p>
+<p>  background:#eee;</p>
+<p>  padding:10px;</p>
+<p>  border:#999 solid 1px;</p>
+<p>  font-size:0.8em;</p>
+<p>  float:right;</p>
+<p>}</p>
+<p>#sendComment p {</p>
+<p>  line-height:2em;</p>
+<p>  padding:0; margin:0;</p>
+<p>}</p>
+<p>#sendComment div {</p>
+<p>  display:none;</p>
+<p>}</p>
+<p>#sendComment a {</p>
+<p>  text-decoration:none;</p>
+<p>  color:#aaa;</p>
+<p>  margin-left:65px;</p>
+<p>}</p>
+<p>그러면 모든 작업이 끝납니다.</p>
+<h3 id="어떻게-기록되나요">어떻게 기록되나요?</h3>
+<p>어떻게 기록되는지 궁금해하실까봐 스샷을 하나 더 준비했습니다.</p>
+<p><img  src="/archive/_astro/test.Bstyi5Dr_2eeF2Q.webp" alt="" width="421" height="114" loading="lazy" decoding="async"></p>
+<p><a href="https://docs.google.com/spreadsheets/d/1BkK9_Yozyrzbbv4OVBFjdUCZw7SdYDPERDUs1uCpkgs/pubhtml">https://docs.google.com/spreadsheets/d/1BkK9_Yozyrzbbv4OVBFjdUCZw7SdYDPERDUs1uCpkgs/pubhtml</a></p>
+<p>테스트 해보고 싶으신 분께서는 이 글에 하셔도 좋지만 꼭 테스트라고 말씀해주세요.. ㅎㅎ</p>
+<h3 id="참조">참조</h3>
+<p><a href="http://nubiz.tistory.com/538">http://nubiz.tistory.com/538</a></p>
+<p><a href="http://nubiz.tistory.com/551">http://nubiz.tistory.com/551</a></p></div> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

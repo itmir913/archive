@@ -1,0 +1,14 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="baksmali-1.3.jar이상부터는 기본적으로 ICS이상에 최적화 되어 있기 때문에 ICS이하 버전은 정상적으로 deodex가 되지 않습니다"><title>baksmali.jar 진저브레드 이하버전 오류 해결 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">baksmali.jar 진저브레드 이하버전 오류 해결</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-06-12T10:58:48.000Z"> 2013년 6월 12일 </time> <span class="post-category">SmartPhone/Android</span> <a href="https://itmir.tistory.com/247" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">baksmali-1.3.jar이상부터는 기본적으로 ICS이상에 최적화 되어 있기 때문에 ICS이하 버전은 정상적으로 deodex가 되지 않습니다</p> </header> <div class="post-content"> <p>baksmali-1.3.jar이상부터는 기본적으로 ICS이상에 최적화 되어 있기 때문에 ICS이하 버전은 정상적으로 deodex가 되지 않습니다</p>
+<p>그러므로 -a를 이용하여 API를 지정해 주어야 합니다</p>
+<blockquote>
+<p>java -jar baksmali.jar -a 10 -d (시스템 파일이 설치된 핸드폰의 framework파일 폴더) -c $BOOTCLASSPATH 프레임워크어플.odex</p>
+</blockquote>
+<p>이렇게 지정해 주시면 됩니다</p>
+<p>저 문구는 진저브레드 버전(API=9~10)기준입니다</p>
+<p>프로요는 8로 하시면 될겁니다</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

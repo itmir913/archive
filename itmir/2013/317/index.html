@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Spannable이라는 것을 이용해서 TextView의 많은 효과를 줄수 있는대요"><title>번외 - ClickableSpan 사용하기 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">번외 - ClickableSpan 사용하기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-08-19T09:42:16.000Z"> 2013년 8월 19일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/317" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">Spannable이라는 것을 이용해서 TextView의 많은 효과를 줄수 있는대요</p> </header> <div class="post-content"> <p>번외글입니다</p>
+<p>Spannable이라는 것을 이용해서 TextView의 많은 효과를 줄수 있는대요</p>
+<p>글자 클릭 이벤트, 일부의 색 변경을 할수 있습니다</p>
+<p>[JAVA]</p>
+<p>Spannable span;</p>
+<p>span = (Spannable) text1.getText();</p>
+<p>[XML]</p>
+<p>android:bufferType=“spannable”</p>
+<p>을 먼저 해주셔야 합니다</p>
+<p>아래는 글자 속성관련 코드입니다</p>
+<p>span.setSpan(new UnderlineSpan(), start, end,</p>
+<p>Spannable.SPAN_INCLUSIVE_INCLUSIVE);</p>
+<p>// 글자 일부만 밑줄</p>
+<p>span.setSpan(new ForegroundColorSpan(0xFF0B76C8), start, end,</p>
+<p>Spannable.SPAN_INCLUSIVE_INCLUSIVE);</p>
+<p>// 글자 일부만 색 변경</p>
+<p>span.setSpan(new BackgroundColorSpan(0xFF0B76C8), start, end,</p>
+<p>Spannable.SPAN_INCLUSIVE_INCLUSIVE);</p>
+<p>// 글자 일부 배경 변경</p>
+<p>UnderlineSpan()는 밑줄 ForegroundColorSpan는 글자색, BackgroundColorSpan는 배경색을 설정합니다</p>
+<p>저기있는 start와 end는 처음부터 적용할 글자의 숫자인대요</p>
+<p>처음글자 0부터 시작해서 글자 하나하나마다 1씩 올라가고 공백도 포함됩니다</p>
+<p>아래는 클릭관련 코드입니다</p>
+<p>private void setClickSpan()</p>
+<p>{</p>
+<p>clickSpan = new ClickableSpan()</p>
+<p>{</p>
+<p>public void onClick(View v)</p>
+<p>{</p>
+<p>Toast.makeText(this, “클릭스팬 발생”, 1000).show();</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>private void setSpan()</p>
+<p>{</p>
+<p>  Spannable span = (Spannable) textView.getText();</p>
+<p>span.setSpan(clickSpan, start, end, Spannable.SPAN_INCLUSIVE_INCLUSIVE);</p>
+<p>}</p>
+<p>출처 : <a href="http://colib.tistory.com/4">http://colib.tistory.com/4</a></p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

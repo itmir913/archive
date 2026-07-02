@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="먼저 이 글은 아로마 인스톨러를 사용하는 롬 개발자 분들을 위한 글 입니다"><title>Aroma Installer의 메뉴박스 터치 (비)활성화 방법 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">Aroma Installer의 메뉴박스 터치 (비)활성화 방법</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-02-21T08:06:39.000Z"> 2013년 2월 21일 </time> <span class="post-category">SmartPhone/Android</span> <a href="https://itmir.tistory.com/154" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">먼저 이 글은 아로마 인스톨러를 사용하는 롬 개발자 분들을 위한 글 입니다</p> </header> <div class="post-content"> <p>먼저 이 글은 아로마 인스톨러를 사용하는 롬 개발자 분들을 위한 글 입니다</p>
+<p>이해가 어려울수 있으나 지극히 정상입니다</p>
+<p>또한 제가 알기로는 이 방법은 어떤 롬에도 쓰이지 않은 오로지 제 아이디어 이며 이렇게 값을 변경하는 방법은 제가 최초라고 생각됩니다</p>
+<p>아마 아로마 인스톨러의 <strong>극한 응용 방법</strong>이 아닐까 생각되는군요..</p>
+<p>그럼 (비)활성화 방법을 살펴보겠습니다</p>
+<p>제가 전에 정말 좋은 아로마 인스톨러 응용법을 생각해 냈습니다</p>
+<p>메뉴박스에서 메뉴를 선택할때 그 메뉴가 비활성화 되어 있으면 활성화를 하고 활성화 안내 알림을 띄우고, 만약 활성화가 되어있었다면 비활성화하고 비활성화 안내 알림을 띄우는 방식입니다</p>
+<p>구조를 나타내면 아래와 같습니다</p>
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th></tr></thead><tbody><tr><td></td></tr></tbody></table>
+<p>그래서 이방법을 구현하기 위해 재미있는 방식을 하나 만들게 되었습니다</p>
+<p>쉘스크립트의 도움과 if ~ else구문의 도움을 받았습니다</p>
+<p>그럼 본격적으로 시작하겠습니다</p>
+<p>먼저 sh를 받아야 합니다</p>
+<p>[FileName_Change_0.sh</p>
+<p>다운로드](./file/FileName_Change_0.sh)</p>
+<p>[FileName_Change_1.sh</p>
+<p>다운로드](./file/FileName_Change_1.sh)</p>
+<p>[FileName_Start.sh</p>
+<p>다운로드](./file/FileName_Start.sh)</p>
+<p>파일 설명을 하자면 FileName_Start.sh파일은 아로마 인스톨러가 시작할때 실행되어야 하는 파일입니다</p>
+<p>FileName_Change_1.sh파일은 값을 0에서 1으로 변경해 주는 스크립트 이며</p>
+<p>마지막으로 FileName_Change_0.sh파일은 0.sh와 반대로 값을 1에서 0으로 바꿔주는 스크립트 입니다.</p>
+<p>이제 이 스크립트를 사용하여 어떻게 이방법을 구현할수 있는지 살펴보도록 하겠습니다</p>
+<p>먼저 스크립트의 내용을 확인해 보도록 하겠습니다</p>
+<p>(각 스크립트 안에는 주석으로 설명해 두었습니다)</p>
+<ol>
+<li>FileName_Start.sh</li>
+</ol>
+<h2 id=""></h2>
+<h1 id="if-the-file-does-not-have-script-will-make-tmp-file">If the file does not have, Script will make tmp file</h1>
+<p>if [ ! -s /tmp/aroma/FileName.prop ]; then</p>
+<h1 id="make-a-tmp-file">Make a tmp file</h1>
+<p>touch /tmp/aroma/FileName.prop</p>
+<h1 id="write-tmp-file-selected10">Write tmp file “selected.1=0”</h1>
+<p>echo “selected.1=0” > /tmp/aroma/FileName.prop</p>
+<p>fi</p>
+<p>#— End Script</p>
+<p>위 코드를 보면 스크립트를 아시는 분은 모두 아실겁니다</p>
+<p>/tmp/aroma/FileName.prop가 없을경우 파일을 생성하고 비활성화 코드인 selected.1=0을 넣어줍니다</p>
+<ol start="2">
+<li>FileName_Change_1.sh</li>
+</ol>
+<h2 id="-1"></h2>
+<h1 id="script-will-change-file-nameprop">Script Will change File name.prop</h1>
+<p>if [ -s /tmp/aroma/FileName.prop ]; then</p>
+<p>cd /tmp/aroma</p>
+<p>cp FileName.prop FileName.prop.bak</p>
+<h1 id="change-selected10-into-selected11">change “selected.1=0” into “selected.1=1”</h1>
+<p>busybox sed -e ‘s/selected.1=*/selected.1=1\n#/g’ FileName.prop.bak > FileName.prop</p>
+<p>fi</p>
+<p>#— End Script</p>
+<p>처음 Start.sh가 실행되어서 비활성화 되어있는 상태입니다</p>
+<p>그러므로 값은 selected.1=0이 들어가 있습니다</p>
+<p>이 스크립트로 값을 0에서 1로 바꿔주는 역활을 하게 됩니다</p>
+<p>그래서 Change_1.sh가 실행되게 되면 “활성화”가 되는것이지요</p>
+<ol start="3">
+<li>FileName_Change_0.sh</li>
+</ol>
+<h2 id="-2"></h2>
+<h1 id="script-will-change-file-nameprop-1">Script Will change File name.prop</h1>
+<p>if [ -s /tmp/aroma/FileName.prop ]; then</p>
+<p>cd /tmp/aroma</p>
+<p>cp FileName.prop FileName.prop.bak</p>
+<h1 id="change-selected11-into-selected10">change “selected.1=1” into “selected.1=0”</h1>
+<p>busybox sed -e ‘s/selected.1=*/selected.1=0\n#/g’ FileName.prop.bak > FileName.prop</p>
+<p>fi</p>
+<p>#— End Script</p>
+<p>마지막으로 selected=1을 0으로 비활성화 하는 스크립트 입니다</p>
+<p>Change_1스크립트가 실행되면 값이 1로 변하며 활성화가 됩니다</p>
+<p>그리고 다시 터치하게 되면 이 스크립트가 실행되면서 값이 0으로 변하고 “비활성화”가 되는거죠</p>
+<p>이제 스크립트의 설명은 끝났습니다</p>
+<p>FileName.sh의 이름은 마음대로 변경 하셔도 됩니다</p>
+<p>또한 /tmp/aroma/Filename.prop도 사용할 이름을 변경하시면 됩니다</p>
+<p>그럼 스크립트를 aroma-config에서 실행하면 끝나게 됩니다</p>
+<p>aroma-config의 첫 부분에 아래 구문을 넣어주세요</p>
+<p>setvar(</p>
+<p>    “resexec_retstatus”,</p>
+<p>    resexec(“sh/FileName_Start.sh”)</p>
+<p>);</p>
+<p>위 구문은 아로마 인스톨러 원문에도 있던 구문입니다</p>
+<p>아로마 인스톨러에서 쉘 스크립트를 실행시키는 방법이 위 문구말고는 없는것 같더라고요..</p>
+<p>꼭 ~box(textbox, menubox)전, intset 바로 아래 등에 넣어줘야 합니다</p>
+<p>config가운데 넣으시면 값이 다시 초기화 될수 있습니다</p>
+<p>참고 - setvar에 대해</p>
+<p>참고로 setvar은 시스탬 정보등을 파악할때 사용하는 스크립트 입니다</p>
+<p>위 코드의 resexec_retstatus은 sh를 실행시킨다음 그곳에 저장하라는 뜻의 코드입니다 (지우지 마세요 ㅋ)</p>
+<p>아무튼 위 코드를 ini_set 코드 아래쯤 넣어주시면 아로마 인스톨러가 처음 시작할때 자동으로 실행됩니다</p>
+<p>그러면서 아로마 인스톨러의 작업폴더인 /tmp/aroma에 FileName.prop가 들어가게 되며 자동으로 비활성화 코드가 들어가게 됩니다</p>
+<p>이제 메뉴 박스를 만들어 주신다음 if절로 메뉴가 선택되면 아래 구문이 실행되도록 만들어 주세요</p>
+<p>if  (prop(“FileName.prop”,“selected.1”)==“0”) then</p>
+<p>    setvar(</p>
+<p>        “Adfree_enable”,</p>
+<p>        resexec(“sh/FileName_Change_1.sh”)</p>
+<p>    );</p>
+<p>    alert(“알림”,“FileName를 활성화 했습니다 - 현재 상태:활성화”, “@info”);</p>
+<p>else</p>
+<p>    setvar(</p>
+<p>        “Adfree_disable”,</p>
+<p>        resexec(“sh/FileName_Change_0.sh”)</p>
+<p>    );</p>
+<p>    alert(“알림”,“FileName를 비활성화 했습니다 - 현재 상태:비활성화”, “@info”);</p>
+<p>endif;</p>
+<p>위 구문을 넣어 주시면 됩니다</p>
+<p>다중 if를 사용해서 구현해야 합니다</p>
+<p>메뉴가 선택될경우 위 파란 상자안 구문이 실행될수 있도록 말이죠</p>
+<p>약간 해석하자면 처음에 Start.sh를 실행해서 현재 값이 0입니다</p>
+<p>if절의 처음을 보면 FileName.prop의 값이 selected.1=0이라면 Change_1.sh를 실행해서 값을 1로 바꾼다음 활성화 하고</p>
+<p>값이 1이라면(값이 0이 아니라면) Change_0.sh를 실행해서 값을 0으로 바꾼다음 비활성화 하는 구조입니다</p>
+<p>처음부분에서 0으로 만들고 사용자가 터치를 한번 하면 1로 바뀌게 되며 또다시 터치를 하게 되면 0으로 바꾸는 방식이 되죠</p>
+<p>이렇게 aroma-config에 들어갈 내용이 마쳐졌습니다</p>
+<p>update(r)-script에는 평소처럼 작업하시면 됩니다</p>
+<p>위와 같은 방법으로 메뉴박스 터치시 (비)활성화 방법을 알아봤습니다</p>
+<p>아로마 인스톨러의 극한의 응용 방법이라 생각되는군요 ㅋ</p>
+<p>이 방법은 제 아이디어로 만들어낸것이며 어떠한 분도 사용한것을 확인하지 못했습니다</p>
+<p>그러므르 제가 최초 개발자(?)가 되는건가요?ㅋㅋㅋ</p>
+<p>아마 위 내용을 한번에 이해하기는 아주 힘들겁니다</p>
+<p>이해하기 힘든 부분이 있다면 덧글로 알려주시면 알려드리겠습니다 ㅎ</p>
+<p>ps. 쉘 스크립트 파일 3개를 한 sh파일에 담아내었습니다만 뭔가 오작동 되는군요</p>
+<p>파일은 완성되었는대.. grep를 사용해서 하는 방법도 있습니다 이방법을 사용하면 sh한 파일로 모든것이 해결되지요..</p>
+<p>나중에 100%완성하겠습니다 ㅋ</p>
+<p>#AROMA #아로마 인스톨러 #아로마 인스톨러 응용 #aroma installer #aroma-config #aroma-ins #aroma-install #/tmp/aroma #비활성화 #메뉴박스</p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="./files/FileName_Change_0.sh">FileName_Change_0.sh</a></li>
+<li><a href="./files/FileName_Change_1.sh">FileName_Change_1.sh</a></li>
+<li><a href="./files/FileName_Start.sh">FileName_Start.sh</a></li>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

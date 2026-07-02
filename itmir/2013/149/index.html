@@ -1,0 +1,109 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="C언어 등 모든 언어에는 주석이 있다고 알고 있습니다."><title>java에서 컴파일이 이루어 지지 않는 주석에 대해 알아보자 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">java에서 컴파일이 이루어 지지 않는 주석에 대해 알아보자</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-02-20T05:03:01.000Z"> 2013년 2월 20일 </time> <span class="post-category">Programming/Java</span> <a href="https://itmir.tistory.com/149" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">C언어 등 모든 언어에는 주석이 있다고 알고 있습니다.</p> </header> <div class="post-content"> <p>C언어 등 모든 언어에는 주석이 있다고 알고 있습니다.</p>
+<p>참고로 쉘 스크립트(.sh)에도 #으로 주석을 표시합니다.</p>
+<p>그리고 HTML에서는 <!-- -->으로 표현한다고 합니다.</p>
+<p>java에서도 당연히 주석이 존재하는데요.</p>
+<p>java에서는 주석을 어떻게 표현하는지 알아보도록 하겠습니다.</p>
+<p>먼저 /* , */ 주석이 있습니다.</p>
+<p>이 주석은 블록 단위로 주석을 설정할 수 있습니다.</p>
+<p>다음 소스를 확인해 보면서 주석을 체험해 봅시다.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#6A737D">/*</span></span>
+<span class="line"><span style="color:#6A737D">파일의 이름: comment.java</span></span>
+<span class="line"><span style="color:#6A737D">만든이: 미르(whdghks913)</span></span>
+<span class="line"><span style="color:#6A737D">만든날짜:2013-02-20 */</span></span>
+<span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> comment</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#24292E">  System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"Mir의 주석 체험기"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">  System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"이것이 바로 주석입니다"</span><span style="color:#24292E">); </span><span style="color:#6A737D">/* 주석을 표시합니다 */</span></span>
+<span class="line"><span style="color:#24292E">  System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">" /* 주석을 표시합니다 */ 표시되는지 봅시다"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">  }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p>[comment.java</p>
+<p>다운로드](./file/comment.java)</p>
+<p>위 소스를 보면 /* */ 주석이 삽입되어 있습니다.</p>
+<p>그럼 이 java파일을 컴파일 하고 실행시켜보겠습니다.</p>
+<p><img  src="/archive/_astro/1.B9eAuF5K_ZCUzVj.webp" alt="" width="332" height="101" loading="lazy" decoding="async"></p>
+<p>처음 class위에 있는 파일 정보 부분은 나타나지 않았습니다.</p>
+<p>또한 System.out.println의 마지막에 있던 주석도 표시되지 않았습니다.</p>
+<p>아에 완전히 저 부분은 무시가 되는 겁니다.</p>
+<p>여기서 알 수 있는 점은 주석은 위치에 관계없이 어디에나 넣을 수 있다는 점입니다.</p>
+<p>그러므로 자신이 코멘트를 넣고 싶은 모든 위치에 넣으면 주석처리가 될 수 있다는 뜻이지요.</p>
+<p>그러나 마지막 System.out.println을 보면 /* */으로 감쌌지만 표시가 된 것을 볼 수 있습니다.</p>
+<p>이처럼 아무리 /* */(주석기호)로 감쌌다고 해도 큰따음표 ""안에 있는 주석은 그냥 표시가 된다는 점을 확인할 수 있습니다.</p>
+<p>두 번째로 // 주석이 있습니다.</p>
+<p>이 주석은 /* */주석처럼 한 블록을 주석 처리 하지 않고 //이 있는 그 한 행만 주석 처리 한다는 점이 차이입니다.</p>
+<p>소스로 직접 확인해 보겠습니다.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#6A737D">//파일의 이름: comment.java</span></span>
+<span class="line"><span style="color:#6A737D">//만든이: 미르(whdghks913)</span></span>
+<span class="line"><span style="color:#6A737D">//만든날짜:2013-02-20</span></span>
+<span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> comment2</span><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">  public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">    System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"Mir의 주석 체험기 두번째!"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">    System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"이것이 바로 주석입니다"</span><span style="color:#24292E">); </span><span style="color:#6A737D">// 주석을 표시합니다</span></span>
+<span class="line"><span style="color:#24292E">    System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"// 주석을 표시합니다 표시되는지 봅시다"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">  }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p>[comment2.java</p>
+<p>다운로드](./file/comment2.java)</p>
+<p>마찬가지로 // 주석을 넣어 파일을 작성하였습니다.</p>
+<p>javac명령어로 컴파일한 다음 실행시켜 보겠습니다.</p>
+<p><img  src="/archive/_astro/2.DGbwdStv_Z2b0XkU.webp" alt="" width="312" height="70" loading="lazy" decoding="async"></p>
+<p>위 /* */주석을 넣었을 때와 마찬가지로 같은 결과가 나타났습니다.</p>
+<p>//을 넣은 주석은 컴파일 되지도 않고 System.out.println의 끝에 넣은 // 주석도 표시 되지 않는군요. ㅎ</p>
+<p>그러나 위와 마찬가지로 큰따음표 "" 안에 넣은 주석은 그대로 표시된다는 점을 알 수 있습니다.</p>
+<p>위 두 개의 주석 기호를 통해 알 수 있는 점을 정리해 보자면,</p>
+<ol>
+<li>
+<p>주석 기호는 /*, */와 //이 있다.</p>
+</li>
+<li>
+<p>주석은 기본적으로는 어디에나 넣을 수 있다..</p>
+</li>
+<li>
+<p>그러나 큰 따옴표 "" 안에 있는 주석은 그대로 나타나며 주석의 역할을 하지 못한다.</p>
+</li>
+</ol>
+<p>이 세 개를 알 수 있습니다.</p>
+<p>여기서 주석을 사용할 때 한 가지 잘못된 점을 짚어보도록 하겠습니다.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> Nocomment</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#6A737D">  /*</span></span>
+<span class="line"><span style="color:#6A737D">    System.out.println("이방법이 될까?");</span></span>
+<span class="line"><span style="color:#6A737D">    //System.out.println("이 문장은 주석처리됨");</span></span>
+<span class="line"><span style="color:#6A737D">  */</span></span>
+<span class="line"><span style="color:#6A737D">  /*</span></span>
+<span class="line"><span style="color:#6A737D">    System.out.println("역시 같은 주석처리됨");</span></span>
+<span class="line"><span style="color:#6A737D">    /* System.out.println("/*주석안 또다른 /*"); */</span></span>
+<span class="line"><span style="color:#D73A49">  */</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p>위 소스를 보면 첫 번째 /* */주석에서 블록 단위 주석안에 행 단위 주석을 넣은 모습을 볼 수 있습니다.</p>
+<p>그리고 두 번째 /* */주석을 보면 블록 단위 주석안에 또 다른 블록 단위 주석을 넣은 모습입니다.</p>
+<p>언뜻 보면 둘 다 맞는 사용법이라 컴파일 오류가 나지 않을 거라 생각됩니다.</p>
+<p>그러나 정작 컴파일 해보면 오류가 발생합니다.</p>
+<p>두 번째 블록 단위 주석에서 오류가 발생하지요.</p>
+<p>/*이 들어가게 되면 그 순간부터 주석으로 인식됩니다 그리고 쭉 진행하다 처음으로 나타나는 */까지를 주석으로 인식해 버립니다.</p>
+<p>그러므로 마지막 */은 주석이 시작하는 /*을 찾지 못한다는 오류가 발생하게 되는 것 입니다.</p>
+<p>노트패드 ++을 보면 주석의 색이 달라져 한번에 확인하기 쉽습니다.</p>
+<p><img  src="/archive/_astro/3.CSOzz3eK_Z3a93h.webp" alt="" width="384" height="163" loading="lazy" decoding="async"></p>
+<p>주석은 녹색으로 표시됩니다.</p>
+<p>그러나 마지막 */을 보면 녹색으로 표시되지 않고 일반 구문 색인 검정색으로 표현되는 것을 알 수 있습니다.</p>
+<p>그러므로 마지막의 */이 짝을 찾을 수 없다고 울어서 오류가 발생하게 되는 것 이지요.</p>
+<p>여기서 알 수 있는 사실은 블록 단위 주석(/* */)안에 행 단위 주석(//)을 넣을 수 있으나.</p>
+<p>블록 단위 주석 안에 또 다른 블록 단위 주석을 넣을 수는 없다는 사실입니다.</p>
+<p>이렇게 java의 주석에 대해 알아봤습니다.</p>
+<p>(강좌 형식으로 작성했는데 이 글을 읽으시는 분이 계실지 모르겠네요.. ㅠㅠ)</p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="./files/comment.java">comment.java</a></li>
+<li><a href="./files/comment2.java">comment2.java</a></li>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

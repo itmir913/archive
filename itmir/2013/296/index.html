@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="정말 오랜만의 java강좌네요. ㅎㅎㅎ"><title>변수의 스코프란? — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">변수의 스코프란?</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-08-04T09:24:29.000Z"> 2013년 8월 4일 </time> <span class="post-category">Programming/Java</span> <a href="https://itmir.tistory.com/296" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">정말 오랜만의 java강좌네요. ㅎㅎㅎ</p> </header> <div class="post-content"> <p>정말 오랜만의 java강좌네요. ㅎㅎㅎ</p>
+<p>책으로는 공부했지만 강좌를 올릴 여건이 안되서. ㅎㅎ;;</p>
+<p>으아 책 진도는 지금 메소드 다 끝났는데 ㅎㅎ;;</p>
+<p>아무튼 빨리 시작하겠습니다.</p>
+<p>스코프란? 영역이라는 뜻입니다.</p>
+<p>자바에서 말하는 스코프란 변수에 대한 접근과 변수가 존재할 수 있는 영역을 의미합니다.</p>
+<p>자바에서 중괄호 { }로 한 영역이 생성된다면 그 영역에 관한 스코프를 형성하게 됩니다.</p>
+<p>예를 들면 메소드를 이루고 있는 것이 { }죠? 각각 다른 메소드에서 같은 이름의 변수 선언이 가능합니다.</p>
+<p>만약 스코프가 없다면 이런 일은 불가능 하지요.</p>
+<p>예제로 확인해 봅시다.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> JavaScope</span></span>
+<span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">  public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">  {</span></span>
+<span class="line"><span style="color:#6A737D">    // Scope에 대해 알아봅시다</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> number</span><span style="color:#D73A49">=</span><span style="color:#005CC5">1</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> ITblog</span><span style="color:#D73A49">=</span><span style="color:#005CC5">1</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(number</span><span style="color:#D73A49">+</span><span style="color:#24292E">ITblog);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">    add</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">  public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> add</span><span style="color:#24292E">()</span></span>
+<span class="line"><span style="color:#24292E">  {</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> number</span><span style="color:#D73A49">=</span><span style="color:#005CC5">3</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> ITblog</span><span style="color:#D73A49">=</span><span style="color:#005CC5">5</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(number</span><span style="color:#D73A49">+</span><span style="color:#24292E">ITblog);</span></span>
+<span class="line"><span style="color:#24292E">  }</span></span>
+<span class="line"><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p>[JavaScope.java</p>
+<p>다운로드](./file/JavaScope.java)</p>
+<p>만약 변수의 스코프가 없다면, 이 소스는 불가능합니다.</p>
+<p>]같은 이름의 변수가 다른 메소드에서 각각 형성되었기 때문입니다.</p>
+<p>그런데 실행결과를 한번 봅시다.</p>
+<p><img  src="/archive/_astro/%EC%BA%A1%EC%B2%98.CpE1mQUr_ZrkY2X.webp" alt="" width="291" height="49" loading="lazy" decoding="async"></p>
+<p>정상적입니다. ㅎㅎ;;</p>
+<p>이것은 변수의 스코프가 없다면 불가능한 일입니다.</p>
+<p>이렇게 간단하게 살펴본 스코프는 몇 가지 특징을 가지고 있습니다.</p>
+<p>하나는 선언된 영역, 즉 {}나 ()를 벗어나면 소멸되어 버립니다.</p>
+<p>만약 자동으로 소멸되지 않는다면 프로그램 실행에 문제가 발생할 수도 있고 메모리 낭비도 심하겠죠?</p>
+<p>이런 변수를 지역변수(local variable)이라 합니다.</p>
+<p>변수의 중요한 특징이니 꼭 알아두시고, 우리는 중괄호를 벗어나면 소멸될 변수를 다른 메소드에서 참조하는 일이 없도록 소스를 만들어야겠습니다.</p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="./files/JavaScope.java">JavaScope.java</a></li>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

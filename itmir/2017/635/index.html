@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="올해 1월 26일경, arter97님의 arktube를 크랙해보았습니다."><title>arter97님의 arktube 크랙 시도 결과 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">arter97님의 arktube 크랙 시도 결과</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2017-03-17T17:20:05.000Z"> 2017년 3월 18일 </time> <span class="post-category">Application</span> <a href="https://itmir.tistory.com/635" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">올해 1월 26일경, arter97님의 arktube를 크랙해보았습니다.</p> </header> <div class="post-content"> <p>올해 1월 26일경, arter97님의 arktube를 크랙해보았습니다.</p>
+<p>블로그에 포스팅하는 시점은 크랙을 시도한 시점보다 2달 정도 늦었지만, 결과 보고와 나중에 다시 시도하기 위한 밑거름으로 쓰기 위해 포스팅합니다.</p>
+<p>결론부터 말씀드리자면.. 저는 arktube를 30% 정도 크랙할 수 있었습니다.</p>
+<p><img  src="/archive/_astro/Screenshot_2017-01-26-17-15-53.DCSHrQvS_1WXbOL.webp" alt="" width="550" height="977" loading="lazy" decoding="async"></p>
+<p>MainActivity의 onCreate()에 조금 장난을 치니 Pro버전 안내 알림을 없애고 비활성화되어 있던 기능들을 설정할 수 있게 되었습니다.</p>
+<p>그러나.. 그다음에 맞닥뜨린 장면은.. 그야말로 충격과 공포..</p>
+<p>아무짓도 안했는데, 구성요소 설치가, 안됩니다.</p>
+<p>루팅한 기기로 /data/data/com.arter97.arktube/files를 확인해보고,</p>
+<p>직접 들어가서 파일 복사도 해보고,</p>
+<p>2시간동안 코드를 훑어보면서 쭉 살펴봐도 구동 원리를 잘 모르겠습니다.</p>
+<p>com/arter97/arktube/b.smali a.smali 파일들과, Utils.smali 이걸 분석해야 한다는 직감은 들었는데..</p>
+<p>더 이상 크랙을 진행하면 정말 삽질하는 단계라서 시도하다가 포기했습니다.</p>
+<p>특히 난독화가 전반적으로 걸쳐 있어서 정말 읽기 힘들었습니다.</p>
+<p>무슨 메소드 이름이 전부 a라서 ;)</p>
+<p>파라미터값이랑 반환값 따져가면서 메소드 찾았네요;</p>
+<p>8_fkYn</p>
+<p>이것도 자주 보였고요. (사실 원본 java소스에는 다른 글자인데 바뀐거라던가? xor연산?)</p>
+<p>a.smali를 볼때는 MD5값부터 쭉 나와 있어서 그때부터 멘탈이 점점 나가기 시작했습니다.</p>
+<p>왜 구성요소 설치가 진행되지 않을까해서 adb 로그를 확인해봤는데요.</p>
+<p>W 3433  arkTube bootstrap: bin/python3.6 is missing</p>
+<p>D 3433  arkTube Removing : /data/data/com.arter97.arktube/files/rList-com.arter97.arktube.MainActivity</p>
+<p>D 3433  arkTube Removing : /data/data/com.arter97.arktube/files/rList-com.arter97.arktube.Intro</p>
+<p>D 3433  arkTube Removing : /data/data/com.arter97.arktube/files</p>
+<p>D 3433  arkTube Device is arm32</p>
+<p>즉, 어떤 이유로 파일이 누락되서 더 이상 설치가 진행되지 않았고,</p>
+<p>상단바 알림을 캔슬하는 코드(구성요소 진행중…알림)가 실행되지 않아서 전원이 꺼질때까지 상태바에 구성요소 설치 알림이 존재하게 되는 상태에 빠지게 되었습니다.</p>
+<p>가장 유력한 검증 방법은 사인키 검사같은데요.</p>
+<p>(확실하게 알아보려면 원본 파일에 사인만 다시해서 설치해보면 됩니다.)</p>
+<p>지금 다시 해보니 사인키 검사는 아닌 것 같습니다. 그럼 뭘까요?; classes.dex 검사인가; <strong>그런데 이게 맞았습니다!</strong> by arter97</p>
+<p>원본 apk 파일을 사인만 다시 해서 설치하면 되는 것 같고.</p>
+<p>apktool -d로 디컴파일 한다음에 다시 컴파일 해서 사인하고 설치하면 안되는 이유는 뭘까요?</p>
+<p>앱을 만들었던 사람으로서 이거 진짜 궁금하네요 ㅋㅋ</p>
+<p>오랜만에 하려니까 진짜 피곤하네요;</p>
+<p>구성요소 설치가 어떻게 일어지는지(assert에는 bootstrap파일이 있는데 python같은건 어디서 나온건지; 인터넷에서 다운받는건가요? 아니면 bootstrap 압축해제일수도)</p>
+<ul>
+<li>Donation app 구해서 어떤 방식인지 확인해봤습니다.</li>
+</ul>
+<p>Broadcast를 이용해서 값을 주고 받는 것 같긴한데..</p>
+<p>정말 크랙하고 싶다면 어떤 값이 오고 가는지를 Log로 찍어보거나 아무튼 그렇게 해봐야 할 것 같습니다.</p>
+<p>개인적으로 저는 언락커를 크랙하는 것 보단 본 앱을 크랙하는걸 더 좋아해서..</p>
+<ul>
+<li>by arter97</li>
+</ul>
+<p>정상적으로 설치될 때 adb 로그 값을 알려주셨습니다. : <a href="http://pastebin.com/wYZPFJND">http://pastebin.com/wYZPFJND</a></p>
+<p>로그값</p>
+<p>01-26 23:11:47.042 13234 13234 D arkTube : Activities count: 1</p>
+<p>01-26 23:11:47.391 13234 13254 W arkTube : bootstrap: bin/python3.6 is missing</p>
+<p>01-26 23:11:47.400 13234 13254 D arkTube : Removing : /data/user/0/com.arter97.arktube/files/.nomedia</p>
+<p>01-26 23:11:47.401 13234 13254 D arkTube : Removing : /data/user/0/com.arter97.arktube/files/ACRA-INSTALLATION</p>
+<p>01-26 23:11:47.404 13234 13254 D arkTube : Removing : /data/user/0/com.arter97.arktube/files</p>
+<p>01-26 23:11:47.686 13234 13254 D arkTube : Device is arm64</p>
+<p>01-26 23:11:47.696 13234 13254 D arkTube : Skipping arm32/</p>
+<p>01-26 23:11:47.696 13234 13254 D arkTube : Skipping arm32/bin/</p>
+<p>01-26 23:11:47.696 13234 13254 D arkTube : Skipping arm32/bin/AtomicParsley</p>
+<p>01-26 23:11:47.720 13234 13254 D arkTube : Skipping arm32/bin/aria2c</p>
+<p>01-26 23:11:47.842 13234 13254 D arkTube : Skipping arm32/bin/ffmpeg</p>
+<p>01-26 23:11:48.084 13234 13254 D arkTube : Skipping arm32/bin/python3.6</p>
+<p>01-26 23:11:48.084 13234 13254 D arkTube : Skipping arm32/lib/</p>
+<p>01-26 23:11:48.084 13234 13254 D arkTube : Skipping arm32/lib/libcrypto.so.1.0.0</p>
+<p>01-26 23:11:48.169 13234 13254 D arkTube : Skipping arm32/lib/libpython3.6m.so</p>
+<p>01-26 23:11:48.451 13234 13254 D arkTube : Skipping arm32/lib/libpython3.so</p>
+<p>01-26 23:11:48.452 13234 13254 D arkTube : Skipping arm32/lib/libssl.so.1.0.0</p>
+<p>01-26 23:11:48.472 13234 13254 D arkTube : Skipping arm32/lib/python3.6/</p>
+<p>01-26 23:11:48.472 13234 13254 D arkTube : Skipping arm32/lib/python3.6/_sysconfigdata_m_linux_arm-linux-androideabi.pyc</p>
+<p>01-26 23:11:48.473 13234 13254 D arkTube : Skipping arm32/lib/python3.6/lib-dynload/</p>
+<p>01-26 23:11:48.473 13234 13254 D arkTube : Skipping arm32/lib/python3.6/lib-dynload/_blake2.cpython-36m-arm-linux-androideabi.so</p>
+<p>01-26 23:11:48.476 13234 13254 D arkTube : Skipping arm32/lib/python3.6/lib-dynload/_hashlib.cpython-36m-arm-linux-androideabi.so</p>
+<p>01-26 23:11:48.477 13234 13254 D arkTube : Skipping arm32/lib/python3.6/lib-dynload/_json.cpython-36m-arm-linux-androideabi.so</p>
+<p>01-26 23:11:48.479 13234 13254 D arkTube : Skipping arm32/lib/python3.6/lib-dynload/_sha3.cpython-36m-arm-linux-androideabi.so</p>
+<p>01-26 23:11:48.481 13234 13254 D arkTube : Skipping arm32/lib/python3.6/lib-dynload/grp.cpython-36m-arm-linux-androideabi.so</p>
+<p>01-26 23:11:48.482 13234 13254 D arkTube : Skipping arm32/lib/python3.6/lib-dynload/termios.cpython-36m-arm-linux-androideabi.so</p>
+<p>01-26 23:11:49.260 13234 13254 I arkTube : Changing permissions for /data/user/0/com.arter97.arktube/files/bin/dec</p>
+<p>01-26 23:11:49.260 13234 13254 I arkTube : Changing permissions for /data/user/0/com.arter97.arktube/files/bin/AtomicParsley</p>
+<p>01-26 23:11:49.260 13234 13254 I arkTube : Changing permissions for /data/user/0/com.arter97.arktube/files/bin/aria2c</p>
+<p>01-26 23:11:49.260 13234 13254 I arkTube : Changing permissions for /data/user/0/com.arter97.arktube/files/bin/ffmpeg</p>
+<p>01-26 23:11:49.260 13234 13254 I arkTube : Changing permissions for /data/user/0/com.arter97.arktube/files/bin/python3.6</p>
+<p>01-26 23:11:49.260 13234 13254 I arkTube : Changing permissions for /data/user/0/com.arter97.arktube/files/bin/download</p>
+<p>01-26 23:11:49.260 13234 13254 I arkTube : Changing permissions for /data/user/0/com.arter97.arktube/files/bin/downloadf</p>
+<p>01-26 23:11:49.260 13234 13254 I arkTube : Changing permissions for /data/user/0/com.arter97.arktube/files/bin/getid</p>
+<p>01-26 23:11:49.260 13234 13254 I arkTube : Changing permissions for /data/user/0/com.arter97.arktube/files/bin/getplaylist</p>
+<p>01-26 23:11:49.261 13234 13254 I arkTube : Changing permissions for /data/user/0/com.arter97.arktube/files/bin/gettitle</p>
+<p>01-26 23:11:49.261 13234 13254 I arkTube : Changing permissions for /data/user/0/com.arter97.arktube/files/bin/parse</p>
+<p>01-26 23:11:49.261 13234 13254 I arkTube : Changing permissions for /data/user/0/com.arter97.arktube/files/bin/sslhelper</p>
+<p>01-26 23:11:49.261 13234 13254 I arkTube : Changing permissions for /data/user/0/com.arter97.arktube/files/bin/youtube_dl</p>
+<p>그리고 classes.dex 검사가 맞다고 합니다.</p>
+<p>웹에서 파이썬 다운받는 방법도 생각해보았지만, 서버 관리유지 문제상 bootstrap파일에 전부 내장시켜두었고(+압축과 암호화까지),</p>
+<p>기존의 압축 포멧 + 개조 + 난독화..</p>
+<p>4-5월쯤 다시 크랙 시도해보고 결과 알려드리겠습니다.</p>
+<p>관련 게시글 : <a href="http://cafe.naver.com/develoid/686161">http://cafe.naver.com/develoid/686161</a></p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

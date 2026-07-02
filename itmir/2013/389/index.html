@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Preference (프리퍼런스) 데이터 백업 복원 하기"><title>Preference (프리퍼런스) 데이터 백업 복원 하기 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">Preference (프리퍼런스) 데이터 백업 복원 하기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-11-24T05:01:04.000Z"> 2013년 11월 24일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/389" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">Preference (프리퍼런스) 데이터 백업 복원 하기</p> </header> <div class="post-content"> <p>Preference (프리퍼런스) 데이터 백업 복원 하기</p>
+<p>Preference를 백업하기 위한 코드 입니다</p>
+<p>private boolean saveSharedPreferencesToFile(File dst) {</p>
+<p>    boolean res = false;</p>
+<p>    ObjectOutputStream output = null;</p>
+<p>    try {</p>
+<p>        output = new ObjectOutputStream(new FileOutputStream(dst));</p>
+<p>        SharedPreferences pref =</p>
+<p>                            getSharedPreferences(prefName, MODE_PRIVATE);</p>
+<p>        output.writeObject(pref.getAll());</p>
+<p>        res = true;</p>
+<p>    } catch (FileNotFoundException e) {</p>
+<p>        e.printStackTrace();</p>
+<p>    } catch (IOException e) {</p>
+<p>        e.printStackTrace();</p>
+<p>    }finally {</p>
+<p>        try {</p>
+<p>            if (output != null) {</p>
+<p>                output.flush();</p>
+<p>                output.close();</p>
+<p>            }</p>
+<p>        } catch (IOException ex) {</p>
+<p>            ex.printStackTrace();</p>
+<p>        }</p>
+<p>    }</p>
+<p>    return res;</p>
+<p>}</p>
+<p>@SuppressWarnings({ “unchecked” })</p>
+<p>private boolean loadSharedPreferencesFromFile(File src) {</p>
+<p>    boolean res = false;</p>
+<p>    ObjectInputStream input = null;</p>
+<p>    try {</p>
+<p>        input = new ObjectInputStream(new FileInputStream(src));</p>
+<p>            Editor prefEdit = getSharedPreferences(prefName, MODE_PRIVATE).edit();</p>
+<p>            prefEdit.clear();</p>
+<p>            Map&#x3C;String, ?> entries = (Map&#x3C;String, ?>) input.readObject();</p>
+<p>            for (Entry&#x3C;String, ?> entry : entries.entrySet()) {</p>
+<p>                Object v = entry.getValue();</p>
+<p>                String key = entry.getKey();</p>
+<p>                if (v instanceof Boolean)</p>
+<p>                    prefEdit.putBoolean(key, ((Boolean) v).booleanValue());</p>
+<p>                else if (v instanceof Float)</p>
+<p>                    prefEdit.putFloat(key, ((Float) v).floatValue());</p>
+<p>                else if (v instanceof Integer)</p>
+<p>                    prefEdit.putInt(key, ((Integer) v).intValue());</p>
+<p>                else if (v instanceof Long)</p>
+<p>                    prefEdit.putLong(key, ((Long) v).longValue());</p>
+<p>                else if (v instanceof String)</p>
+<p>                    prefEdit.putString(key, ((String) v));</p>
+<p>            }</p>
+<p>            prefEdit.commit();</p>
+<p>        res = true;</p>
+<p>    } catch (FileNotFoundException e) {</p>
+<p>        e.printStackTrace();</p>
+<p>    } catch (IOException e) {</p>
+<p>        e.printStackTrace();</p>
+<p>    } catch (ClassNotFoundException e) {</p>
+<p>        e.printStackTrace();</p>
+<p>    }finally {</p>
+<p>        try {</p>
+<p>            if (input != null) {</p>
+<p>                input.close();</p>
+<p>            }</p>
+<p>        } catch (IOException ex) {</p>
+<p>            ex.printStackTrace();</p>
+<p>        }</p>
+<p>    }</p>
+<p>    return res;</p>
+<p>}</p>
+<p>출처 : <a href="http://stackoverflow.com/questions/10864462/how-can-i-backup-sharedpreferences-to-sd-card">http://stackoverflow.com/questions/10864462/how-can-i-backup-sharedpreferences-to-sd-card</a></p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

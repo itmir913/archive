@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="아래 스크린샷은 LucidOS의 베가레이서2 커널 버전입니다."><title>커널버전의 &quot;+&quot; 지우기 (+포함 방지) — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">커널버전의 &quot;+&quot; 지우기 (+포함 방지)</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-01-27T22:00:00.000Z"> 2014년 1월 28일 </time> <span class="post-category">Android/Kernel</span> <a href="https://itmir.tistory.com/453" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">아래 스크린샷은 LucidOS의 베가레이서2 커널 버전입니다.</p> </header> <div class="post-content"> <p>아래 스크린샷은 LucidOS의 베가레이서2 커널 버전입니다.</p>
+<p><img  src="/archive/_astro/%EC%BA%A1%EC%B2%98.CS2COhFQ_1NPg8S.webp" alt="" width="697" height="144" loading="lazy" decoding="async"></p>
+<p>보시면 저기 Mir옆에 + 표시가 있죠?</p>
+<p>이 + 표시를 지우는 방법입니다.</p>
+<p>커널소스의 scripts/setlocalversion 파일을 열어주세요.</p>
+<p>그다음 res=“$res${scm:++}“를 찾아주세요.</p>
+<h1 id="localversion-is-not-specified">LOCALVERSION= is not specified</h1>
+<p>    if test ”${LOCALVERSION+set}” != “set”; then</p>
+<p>        scm=$(scm_version —short)</p>
+<p><strong>res=“$res${scm:++}”</strong></p>
+<p>    fi</p>
+<p>저 부분을 삭제해 주시면 됩니다.</p>
+<p>관련 commit : <a href="https://github.com/itmir913/android_kernel_pantech_ef47s/commit/581747b2023ca16021beff799df7ef585c39923c">https://github.com/itmir913/android_kernel_pantech_ef47s/commit/581747b2023ca16021beff799df7ef585c39923c</a></p>
+<p>참고 : thanks for bestmjh47</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

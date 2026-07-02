@@ -1,0 +1,150 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="자, 이번시간에 배울 내용은 버튼입니다"><title>#6 버튼(Button)을 만들어 보자 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">#6 버튼(Button)을 만들어 보자</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-08-04T02:42:41.000Z"> 2013년 8월 4일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/295" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">자, 이번시간에 배울 내용은 버튼입니다</p> </header> <div class="post-content"> <p>자, 이번시간에 배울 내용은 버튼입니다</p>
+<p>약간 복잡한 내용도 있고 하니 잘 따라 오시길 바랍니다</p>
+<p>버튼에는 일반 버튼, 이미지 버튼이 있는데요 일반 버튼을 마스터 하면 이미지 버튼도 되므로</p>
+<p>이미지 버튼은 생략합니다</p>
+<p>잠깐 강의의 흐름을 보면 버튼을 마스터 한다음에는 EditView의 기초(응용은 좀 뒤에), 이미지 띄우기를 할 예정입니다</p>
+<p>아마 이미지까지 나가게 되면 볼폼 없어도 나만의 앱 하나는 만드실수 있으실 겁니다 ㅎㅎ</p>
+<h2 id="6-버튼button을-만들어-보자">6. 버튼(Button)을 만들어 보자</h2>
+<h3 id="6-1-버튼-생성">6-1 버튼 생성</h3>
+<p>저번 강좌에서 말한대로 프로젝트 생성은 건너 뜁니다</p>
+<p>이름 : Button</p>
+<p>액티비티 : BlankActivity로 만들어 주시면 됩니다</p>
+<p>전 강좌에서 버튼 만드는방법을 잠시나마 배웠습니다</p>
+<p><img  src="/archive/_astro/1.BCpbzI2b_Z2kUCa9.webp" alt="" width="780" height="360" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/1-1.BiJETLOQ_NOOEe.webp" alt="" width="780" height="360" loading="lazy" decoding="async"></p>
+<p>이렇게 드래그 해서 버튼 하나 만들어 주세요</p>
+<p>&#x3C;Button</p>
+<p>android:id=”@+id/button1”</p>
+<p>android:layout_width=“wrap_content”</p>
+<p>android:layout_height=“wrap_content”</p>
+<p>android:layout_alignParentTop=“true”</p>
+<p>android:layout_centerHorizontal=“true”</p>
+<p>android:layout_marginTop=“98dp”</p>
+<p>android:text=“Button” /></p>
+<p>버튼의 소스입니다</p>
+<p>지금까지 제 강좌를 모두 보셨다면 이 소스가 이해가 되실탠데요</p>
+<p>id값부여</p>
+<p>넓이, 높이</p>
+<p>위부터 정렬</p>
+<p>가운데 정렬</p>
+<p>위에서 98dp만큼 떨어져 있다</p>
+<p>라는 뜻이죠</p>
+<p>자, 이렇게 하면 xml상에서의 버튼이 끝났습니다 (?)</p>
+<p>왜냐… 버튼의 속성은 텍스트뷰의 속성과 많이 같습니다</p>
+<p>그러므로 텍스트뷰를 알게되면 버튼의 속성은 비슷하니 그냥 따라올수 있는거죠</p>
+<p>android:background</p>
+<p>뭐 이런 속성은 버튼뿐만 아니라 모든 위젯(TexiView, Button, EditView등등)에서 사용가능하니 총정리 할때쯤 나오고 언급할 필요도 사실 없지요 ㅎㅎ</p>
+<p>사실상 버튼은 xml이 아니라 java에서많이 사용합니다</p>
+<p>그러므로 이번에는 자바에서 다뤄보도록 하겠습니다</p>
+<p>버튼을 누르면 새로운 창이 나타나도록 구현해 볼건데요</p>
+<p>이를 위해서는 새로운 액티비티를 만들어야 합니다</p>
+<p>New - Other - Android Activity를 눌러 액티비티 하나 만듭시다</p>
+<p><img  src="/archive/_astro/1-2.BkNGsdsm_Zd9Oxz.webp" alt="" width="525" height="500" loading="lazy" decoding="async"></p>
+<p>이렇게 선택해 주시면 됩니다</p>
+<p>[미르의 팁]</p>
+<p>-New - Other - Android Activity로만 액티비티를 만들수 있나요?</p>
+<p>아닙니다</p>
+<p>자바 파일을 복사해서 만들수 있습니다</p>
+<p>만 AndroidManifest.xml에 자동등록이 되는 이 방법으로 만드는게 편합니다</p>
+<p><img  src="/archive/_astro/1-3.BRpupqN-_ZG6vuK.webp" alt="" width="525" height="500" loading="lazy" decoding="async"></p>
+<p>Blank Activity를 눌러주시고 다음을 눌러줍시다</p>
+<p><img  src="/archive/_astro/1-4.Lty4J5mG_1qcmQM.webp" alt="" width="626" height="500" loading="lazy" decoding="async"></p>
+<p>자, 이건 액티비티 이름을 설정하는 건데요</p>
+<p>이미 MainActivity는 있으니</p>
+<p>이름을 **ButtonActivity.java (각주: +2014-03-02 수정 : 자바에서 상속 관련때문에 Button과 같은 이름의 java파일을 만들수 없습니다
+예) Service.java, Button.java등의 파일을 만드시면 원하는 동작을 만드실수가 없어요)**으로 해주세요</p>
+<p>정상적으로 액티비티가 만들어 졌습니다~ ㅎㅎ</p>
+<p>이제 버튼을 누르면 저 화면으로 이동하게 해봅시다</p>
+<p>MainActivity에 들어가 봅시다</p>
+<p>버튼을 눌렀을때 어떤 작업을 할껀지를 정해야 합니다</p>
+<p>이때 사용하는 방법은 2가지가 있습니다</p>
+<p>메소드를 이용한 방법과 listener을 이용한 방법인데요</p>
+<p>여기서는 listener을 이용할것이므로 메소드에 관한 내용은 짧게 짚고 넘어갑시다(별로 추천하고 싶지 않은 방법인지라..)</p>
+<p>public void (메소드 이름) (View v) {</p>
+<p>Intent myintent = new Intent(this, (이동할 액티비티 이름).class);</p>
+<p>startActivity(myintent);</p>
+<p>}</p>
+<p>자바코드의 아무데나(그렇다고 onCreate같은대 넣으시면 안되요) 위 메소드를 넣어줍시다</p>
+<p>(메소드 이름)란에는 원하는것을 입력하시면 됩니다</p>
+<p>android:onClick=“(메소드 이름)”</p>
+<p>xm으로 돌아와서 Button에 위 코드를 넣어줍시다</p>
+<p>그럼 버튼을 클릭할경우 (메소드 이름)이라는 메소드를 실행한다 라는 뜻입니다</p>
+<p>이 강좌에서는 listener을 이용할겁니다. xml의 onClick을 이용하는 예제는 다른 위젯을 배울 때 살펴보겠습니다.</p>
+<p>참고로, 저는 onClick을 더 선호합니다.</p>
+<p><img  src="/archive/_astro/1-7.C0HDqUnO_Z2lDpsl.webp" alt="" width="316" height="166" loading="lazy" decoding="async"></p>
+<p>이렇게 추가해 주세요</p>
+<p>public class MainActivity extends Activity {</p>
+<p><strong>Button button1;</strong></p>
+<p>@Override</p>
+<p>protected void onCreate(Bundle savedInstanceState) {</p>
+<p>super.onCreate(savedInstanceState);</p>
+<p>setContentView(R.layout.activity_main);</p>
+<p><strong>button1 = (Button)findViewById(R.id.button1);</strong></p>
+<p><strong>button1.setOnClickListener(listener);</strong></p>
+<p><strong>}</strong></p>
+<p>추가후, Import하는거 잊지 마시길</p>
+<p>그다음 빨간색 ’}‘아래에 아래 소스를 추가합시다</p>
+<p>Button.OnClickListener listener = new Button.OnClickListener()</p>
+<p>{</p>
+<p>public void onClick(View v)</p>
+<p>{</p>
+<p>switch(v.getId()){</p>
+<p>//case문이 들어갑니다</p>
+<p>}</p>
+<p>}</p>
+<p>};</p>
+<p>그다음 또 import해주시고요 ㅎ..</p>
+<p>switch-case문으로 어떤 버튼이 눌려졌는지 판단후 작업을 할겁니다</p>
+<p>case R.id.button1:</p>
+<p>Intent myintent = new Intent(this, (이동할 액티비티 이름).class);</p>
+<p>startActivity(myintent);</p>
+<p>break;</p>
+<p>이런 형태로 구현해 주세요</p>
+<p>완성된 소스를 봅시다</p>
+<p><img  src="/archive/_astro/1-8.By6iLatX_cBydg.webp" alt="" width="373" height="187" loading="lazy" decoding="async"></p>
+<p>여기서 Intent myintent = new Intent(this, Button.class);을 보시면 this앞에 MainActivity.이 있는데요</p>
+<p>만약 그냥 this라고 했을때 오류가 뜬다면 액티비티 이름을 붙혀주시면 오류가 해결됩니다</p>
+<p>완성된 소스를 보면</p>
+<p>public class MainActivity extends Activity {</p>
+<p><strong>Button button1;</strong></p>
+<p>@Override</p>
+<p>protected void onCreate(Bundle savedInstanceState) {</p>
+<p>super.onCreate(savedInstanceState);</p>
+<p>setContentView(R.layout.activity_main);</p>
+<p><strong>button1 = (Button) findViewById(R.id.button1);</strong></p>
+<p><strong>button1.setOnClickListener(listener);</strong></p>
+<p>}</p>
+<p><strong>Button.OnClickListener listener = new Button.OnClickListener()</strong></p>
+<p><strong>{</strong></p>
+<p><strong>public void onClick(View v)</strong></p>
+<p><strong>{</strong></p>
+<p><strong>switch(v.getId()){</strong></p>
+<p><strong>case R.id.button1:</strong></p>
+<p><strong>Intent myintent = new Intent(MainActivity.this, ButtonActivity.class);</strong></p>
+<p><strong>startActivity(myintent);</strong></p>
+<p><strong>break;</strong></p>
+<p><strong>}</strong></p>
+<p><strong>}</strong></p>
+<p><strong>};</strong></p>
+<p>입니다 (굵은 글씨 추가)</p>
+<p>만약 버튼을 2개이상 추가하려면 밑줄친 부분이 반복되겠죠??</p>
+<p><img  src="/archive/_astro/Screenshot_2013-08-04-11-38-25.aSTEVeFo_ZIx2oX.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<p>버튼을 누르면</p>
+<p><img  src="/archive/_astro/Screenshot_2013-08-04-11-38-31.EDjyPz51_nBLaz.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<p>또다른 액티비티가 실행됩니다</p>
+<p>이렇게 해서 버튼에 대해서도 알아봤습니다</p>
+<p>버튼의 글자도 button1.setText();를 이용하여 변경이 가능합니다</p>
+<p>응용은 당신의 몫!</p>
+<p>[Button.zip</p>
+<p>다운로드](./file/Button.zip)</p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/Button.zip">Button.zip</a> <code>527 KB</code></li>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

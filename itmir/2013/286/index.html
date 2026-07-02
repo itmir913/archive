@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="구글에서 이클립스 ADT의 지원을 중단한 뒤로 안드로이드 스튜디오를 이용하셔야 합니다."><title>#1 컴퓨터의 개발환경을 구축하자 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">#1 컴퓨터의 개발환경을 구축하자</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-07-30T13:54:29.000Z"> 2013년 7월 30일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/286" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">구글에서 이클립스 ADT의 지원을 중단한 뒤로 안드로이드 스튜디오를 이용하셔야 합니다.</p> </header> <div class="post-content"> <blockquote>
+<p>구글에서 이클립스 ADT의 지원을 중단한 뒤로 안드로이드 스튜디오를 이용하셔야 합니다.</p>
+<p>이 글에서 ADT를 설치하는 부분 대신 안드로이드 스튜디오를 설치하시면 됩니다.</p>
+<p>#이 붙은 강좌는 이클립스를 기준으로 작성하였지만, 중요한 코드와 핵심 내용은 같습니다.</p>
+</blockquote>
+<p>안녕하세요~ 처음뵙겠습니다. 미르라고 합니다. ㅎㅎ</p>
+<p>이 게시글부터 제가 어플을 만들며 배운 지식을 나누기 위해 작성할 예정인데요.</p>
+<p>많은 강좌가 있지만 밀리지 않기 위해 자세하게 포스팅 해보도록 하겠습니다!</p>
+<p>만약 오타, 잘못된 부분이 있다면 따끔한 지적 부탁드립니다~</p>
+<p>최대한 앱 프로그래밍에 대해 모르시는 분이 봐도 쉽게 이해할 수 있도록,</p>
+<p>한편 한편 자세하고 읽기 쉽게 작성해 보도록 하겠습니다~</p>
+<p><em>강좌의 또다른 목적은 Snails님의 독점을 막기위해(?)</em></p>
+<h2 id="1-어플-개발-환경을-구축하자">1. 어플 개발 환경을 구축하자!</h2>
+<p>일단 어플을 만들기 위한 개발 환경을 구축해야 합니다.</p>
+<p>어플을 만들기 위해서 필요한것은? 자바와 이클립스, SDK입니다. ㅎㅎ</p>
+<h3 id="1-1-자바를-깔자">1-1 자바를 깔자</h3>
+<p>일단 자바를 깔아볼까요?</p>
+<p>자바 다운로드 사이트 <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html</a></p>
+<p>으로 이동하셔서 자바를 깔아주세요.</p>
+<p><img  src="/archive/_astro/1.BzL9wofe_Z1aUMeG.webp" alt="" width="555" height="427" loading="lazy" decoding="async"></p>
+<p>라이센스에 동의한다는 체크를 해주시면 아래와 같이 글자가 변경됩니다.</p>
+<p><img  src="/archive/_astro/2.D7zY3FzU_ZOHtGl.webp" alt="" width="535" height="42" loading="lazy" decoding="async"></p>
+<p>아래에서 각 OS에 맞게 깔아주시면 됩니다. ㅎㅎ</p>
+<p>[미르의 팁]</p>
+<p>-OS버전을 어떻게 알수 있나요?</p>
+<p>Windows의 경우 컴퓨터 - 속성을 들어가시면 몇 비트인지 알수 있습니다.</p>
+<p><img  src="/archive/_astro/3.8TRv2v9K_ojfMN.webp" alt="" width="514" height="185" loading="lazy" decoding="async"></p>
+<p>리눅스의 경우 System - About Ubuntu에 들어가서 확인하거나 uname -a으로 확인 (i686 = 32bit, x86/64 = 64bit)</p>
+<p>만약 페이지를 찾지 못했다는 오류가 발생할경우 <a href="http://www.oracle.com">http://www.oracle.com</a>에서 찾아주시면 됩니다.</p>
+<h3 id="1-2-이클립스와-sdk">1-2 이클립스와 SDK</h3>
+<p>자바를 깔으셨다면 이제 이클립스와 SDK를 설치해야 합니다.</p>
+<p>이 두가지는 따로따로 설치할수 있으나 불편합니다 따로 설정해야 하고…</p>
+<p>그러므로 이 포스팅에서는 한번에 통합되어 있는 파일을 받아보도록 하겠습니다.</p>
+<p><a href="http://developer.android.com/sdk/index.html">http://developer.android.com/sdk/index.html</a></p>
+<p>구글 안드로이드 개발자 사이트의 sdk항목입니다.</p>
+<p>들어가신다음 ADT Bundle을 받아주세요.</p>
+<p>[미르의 팁]</p>
+<p>-ADT란 Android Developer Tools의 약자입니다</p>
+<p>ADT Bundle을 받는 이유는</p>
+<p>Eclipse + ADT plugin (이클립스와 ADT 플러그인이 합처져 있습니다)</p>
+<p>Android SDK Tools (SDK가 통합되어 있습니다)</p>
+<p>Android Platform-tools (Platform-tools이 내장되어 있습니다)</p>
+<p>The latest Android platform (최신버전의 SDK가 탑재되었습니다)</p>
+<p>The latest Android system image for the emulator 최신버전의 SDK가 탑재되었습니다)</p>
+<p>이 4가지의 이유로 ADT 번들을 받는답니다~</p>
+<p>+2015-02-03 내용 추가</p>
+<p>안드로이드 스튜디오가 ADT를 밀어내고 공식 IDE가 되었습니다</p>
+<p>그래서 이제 안드로이드 공식 홈페이지에서 이클립스를 받을수 없습니다</p>
+<p>이클립스의 다운로드는 중단되었지만 사용은 가능합니다</p>
+<p>미잘서버에 ADT를 올려두었으니 필요하신 분께서는 다운로드 해주세요</p>
+<p><a href="http://fs.mzl.kr/_etc/ADT/">http://fs.mzl.kr/_etc/ADT/</a></p>
+<p>32비트 : adt-bundle-windows-x86-20140702.zip</p>
+<p>64비트 : adt-bundle-windows-x86_64-20140702.zip</p>
+<p>공식 홈페이지에서 이클립스 다운 중단됨</p>
+<p><img  src="/archive/_astro/4.jkLW7ZXl_8E90Y.webp" alt="" width="304" height="344" loading="lazy" decoding="async"></p>
+<p>윈도우 환경이라면 이런 버튼을 눌러주세요.</p>
+<p><img  src="/archive/_astro/4-3.DUu1-6OR_Zdek5k.webp" alt="" width="394" height="113" loading="lazy" decoding="async"></p>
+<p>약관에 동의합니다 체크하신다음,</p>
+<p>운영체제의 비트를 선택해주세요 그럼 아래 버튼이 활성화됩니다.</p>
+<p>[미르의 팁]</p>
+<p>-만약 다른 운영체제라면?</p>
+<p><img  src="/archive/_astro/4-1.zD0rx79E_Z1KLCQU.webp" alt="" width="295" height="21" loading="lazy" decoding="async"></p>
+<p>이 글자를 클릭하시면 아래와 같이 나타납니다</p>
+<p><img  src="/archive/_astro/4-2.BxTKYkVV_Z1VBKvB.webp" alt="" width="763" height="292" loading="lazy" decoding="async">
+각 OS에 맞는 ADT를 선택해서 다운로드 하시면 됩니다~</p>
+<p>다운로드하신다음 아무데다 압축 풀으시면 끝입니다. ㅎㅎ</p>
+<h3 id="1-3-sdk">1-3 SDK</h3>
+<p>압축푼 폴더에 들어간다음 SDK Manager.exe를 실행해주세요.</p>
+<p><img  src="/archive/_astro/5.BnPYxM7p_ZG5R0x.webp" alt="" width="115" height="66" loading="lazy" decoding="async"></p>
+<p>도스창이 하나 뜬다음 아래와 같은 창이 뜹니다.</p>
+<p><img  src="/archive/_astro/5-1.CM-GXpB2_ZVelMJ.webp" alt="" width="700" height="500" loading="lazy" decoding="async"></p>
+<p>만들 어플이 지원할 안드로이드 버전(API)를 선택한다음 설치해주세요.</p>
+<p>만약 어플이 진저브레드와 ICS JB에서 돌아가게 하려면 GB, ICS, JB를 다운로드 해주셔야 합니다.</p>
+<p>[미르의 팁]</p>
+<p>-모든 API를 받아야 하나요?</p>
+<p>그럴 필요는 없습니다.</p>
+<p>자신에게 필요한, 또는 어플에게 필요한 API만 받으셔도 됩니다.</p>
+<p>저는 젤리빈에서 작동하는 어플을 만들 예정이므로 API 17과 16을 받았습니다.</p>
+<p><img  src="/archive/_astro/5-2.CL3nLweb_23ziJB.webp" alt="" width="740" height="470" loading="lazy" decoding="async"></p>
+<p>저는 이미 설치해서 이렇게 뜨지만 창은 같습니다.</p>
+<p>Accept Licence를 체크해 주신다음 Install을 눌러주세요.</p>
+<p>자, 이제 SDK도 다운로드가 끝났습니다!</p>
+<p>이제 당신의 PC에서도 어플을 개발할 수 있습니다!</p>
+<p>뭔 개발환경 구축이 이렇게 빨리 끝나냐고요?</p>
+<p>ADT Bundle의 힘입니다. 하하…</p>
+<p>다음 강좌에서는 이클립스를 실행해 보고 기본적인 인터페이스에 대해 알아보겠습니다.</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

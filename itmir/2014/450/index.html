@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="AOSP (Android Open Source Project) 소스를 받고 빌드해보자"><title>4) AOSP (Android Open Source Project) 소스를 받고 빌드해보자 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">4) AOSP (Android Open Source Project) 소스를 받고 빌드해보자</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-01-26T08:10:52.000Z"> 2014년 1월 26일 </time> <span class="post-category">Android/Build</span> <a href="https://itmir.tistory.com/450" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">AOSP (Android Open Source Project) 소스를 받고 빌드해보자</p> </header> <div class="post-content"> <p><strong>AOSP (Android Open Source Project) 소스를 받고 빌드해보자</strong></p>
+<p>이번에는 순수 안드로이드인 AOSP를 다운받고, 빌드해보는 시간을 가져보겠습니다</p>
+<p>AOSP와 CM는 빌드소스와 방식부분에서 조금 차이를 보일수 있으므로 cm소스 그대로 AOSP가 빌드되는것은 아닙니다</p>
+<p><strong>0. 사전 필독 글들 &#x26;&#x26; 관련 글들</strong></p>
+<p>필독글</p>
+<p><a href="http://itmir.tistory.com/220">[Android Build] - 1) 안드로이드를 빌드하기 전에 빌드 환경을 구축하자</a></p>
+<p>권장글</p>
+<p><a href="http://itmir.tistory.com/221">[Android Build] - 2) CyanogenMod 소스를 받고 빌드해 보자</a></p>
+<p><a href="http://itmir.tistory.com/265">[Ubuntu] - Ubuntu의 저장소를 daum.net으로 바꿔보자 (apt-get 속도향상)</a></p>
+<p><strong>1. repo 설정</strong></p>
+<p>aosp는 cm과 다르므로 다시 폴더를 만들고 repo를 설정해 주어야 합니다</p>
+<p>mkdir ~/aosp</p>
+<p>cd ~/aosp</p>
+<p>그다음 repo를 설정해 주세요</p>
+<p>repo init -u <a href="https://android.googlesource.com/platform/manifest">https://android.googlesource.com/platform/manifest</a></p>
+<p>명령어 뒤에 -b를 붙힌후 원하는 버전을 다운받을수도 있습니다</p>
+<p>android-2.3.7_r1</p>
+<p>android-4.0.4_r2</p>
+<p>android-4.1.1_r6</p>
+<p>android-4.1.2_r2</p>
+<p>android-4.2.1_r1</p>
+<p>android-4.2.2_r1</p>
+<p>android-4.3_r3</p>
+<p>android-4.4_r1</p>
+<p>android-4.4.1_r1</p>
+<p>android-4.4.2_r1</p>
+<p>참고 : <a href="https://android.googlesource.com/platform/manifest/+refs">https://android.googlesource.com/platform/manifest/+refs</a></p>
+<p>최신버전인 4.4.2 버전을 받는다고 한다면</p>
+<p>repo init -u <a href="https://android.googlesource.com/platform/manifest">https://android.googlesource.com/platform/manifest</a> -b android-4.4.2_r1</p>
+<p>이렇게 입력해 주세요</p>
+<p>repo has been initialized in /home/whdghks913/aosp</p>
+<p>이런 문장이 나타난다면 완료된것입니다</p>
+<p><strong>2. repo sync</strong></p>
+<p>이제 소스를 받아봅시다</p>
+<p>repo sync</p>
+<p>명령어 뒤에 -j옵션을 붙혀 더 빠르게 받을수 있습니다</p>
+<p>repo sync -j4</p>
+<p>2, 4, 8, 16정도에서 골라주시길 바라며 숫자가 크다고 더 빠른건 아닙니다</p>
+<p><img  src="/archive/_astro/%EC%BA%A1%EC%B2%98.DX11nxPP_Z2vfJyP.webp" alt="" width="628" height="89" loading="lazy" decoding="async"></p>
+<p>완료후 한번더 repo sync를 해서 수정된 내역을 한번 확인해 주세요</p>
+<p><strong>3. 디바이스 소스 생성</strong></p>
+<p>AOSP도 device폴더에 들어가보면 원하는 기기 소스가 없을겁니다</p>
+<p>CyanogenMod와 비슷하지요</p>
+<p>이것도 몇가지 방법이 있습니다</p>
+<p>(1) 정식 지원기기</p>
+<p>구글에서 정식 지원하는 기기는 소스 다운받을때 device/(제조사)에 소스가 들어있습니다</p>
+<p>예를들어 넥서스s의 경우 4.1.2의 manifest를 보면</p>
+<project path="device/samsung/crespo" name="device/samsung/crespo">
+<p><a href="https://android.googlesource.com/platform/manifest/+/refs/heads/android-4.1.2_r2.1/default.xml">https://android.googlesource.com/platform/manifest/+/refs/heads/android-4.1.2_r2.1/default.xml</a></p>
+<p>그러므로 따로 소스 준비는 필요 없습니다</p>
+<p>(2) 지원이 끊긴 레퍼 / CyanogenMod 정식 기기</p>
+<p>예를들어 넥서스s는 4.1.2가 끝입니다</p>
+<p>4.1.2를 빌드할때는 아래에서 소스코드를 다운로드할수 있습니다</p>
+<p><a href="https://android.googlesource.com/device/samsung/crespo">https://android.googlesource.com/device/samsung/crespo</a></p>
+<p>그러나 그 위 버전은 구글 aosp소스로는 힘들수 있습니다</p>
+<p>가장 대표적으로 CyanogenMod에서 가져온다음 파일을 수정하면 됩니다</p>
+<p><a href="https://github.com/cyanogenmod/android%5C_device%5C_samsung%5C_crespo">https://github.com/cyanogenmod/android\_device\_samsung\_crespo</a></p>
+<p>수정해야 하는 파일은 따로 정리하겠습니다</p>
+<p>(빌드를 진행하다 보면 ~파일을 찾을수 없습니다 라던지 ~가 정의되지 않았습니다 같은게 나옵니다</p>
+<p>그걸 수정해야 합니다.. 제가 aosp소스가 지금 없어서..)</p>
+<p>구글 레퍼런스는 아니지만 CyanogenMod 지원기기도</p>
+<p>cm 디바이스 소스를 aosp로 바꿔주면 되는대요</p>
+<p>따로 포스팅 할 예정입니다</p>
+<p>(3) CM소스를 AOSP소스로 바꾸기</p>
+<p>다음편에 이어집니다</p>
+<p>(3) 소스 직접 만들기</p>
+<p>이건… AOSP는 찾아보니 CyanogenMod처럼 소스를 만드는 스크립트도 존재하지 않는것 같습니다</p>
+<p>따라서 먼저 cm소스를 만든다음 aosp로 바꾸던지, 아니면 일일히 노가다 하면서 만들어야 합니다</p>
+<p>cm소스를 만드는 것은 <a href="http://itmir.tistory.com/221">[Android Build] - 2) CyanogenMod 소스를 받고 빌드해 보자</a> 를 참고해 주세요</p>
+<p><strong>4. 빌드하기</strong></p>
+<p>cm은 brunch라는것으로 빌드가 가능하지만 aosp는 이게 없는걸로 알고있습니다</p>
+<p>그래서 make명령어로 빌드해 주어야 합니다</p>
+<p>. build/envsetup.sh</p>
+<p>lunch 또는 lunch (기기명)</p>
+<p>make -j4 otapackage</p>
+<p>lunch를 하면 번호가 쭉 나올탠데 이때 원하는 기기의 번호를 눌러주시면 됩니다</p>
+<p>제 기억으론 lunch (기기명) (예를들면 lunch crespo)해도 된거 같습니다</p>
+<p>그다음 cm과 다르게 make otapackage를 입력해 주세요</p>
+<p>꼭 otapackage를 입력해 주세요 그냥 make만 칠경우 구글 호환성 검사부터 모두 빌드하는것 같습니다</p>
+<p>끝입니다~ AOSP를 즐기시면 됩니다</p>
+<p>다음편은 CM소스를 AOSP로 바꿔서 빌드하는 것을 해보겠습니다</p>
+<p>조금 시간이 걸릴수도 있겠네요..</p></project> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

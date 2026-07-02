@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="PowerAmp(파워앰프)는 난공불락의 철벽처럼 그 보안을 뚫는것이 매우 어렵습니다"><title>PowerAmp (파워앰프)의 사인키(Signature) 변조 검사를 뚫다 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">PowerAmp (파워앰프)의 사인키(Signature) 변조 검사를 뚫다</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-02-09T11:17:35.000Z"> 2014년 2월 9일 </time> <span class="post-category">Application</span> <a href="https://itmir.tistory.com/463" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">PowerAmp(파워앰프)는 난공불락의 철벽처럼 그 보안을 뚫는것이 매우 어렵습니다</p> </header> <div class="post-content"> <p>PowerAmp(파워앰프)는 난공불락의 철벽처럼 그 보안을 뚫는것이 매우 어렵습니다</p>
+<p>난독화/파일 이름 부터 디컴파일부터 불가능하게 막아둔 보안과, 개발사가 예상한건지는 모르겠는대</p>
+<p>컴파일까지도 안됩니다 ㅇㅅㅇ..;;</p>
+<p>그리고 파일을 수정하지 않고 사인키만 변경해도 앱 실행을 중지시켜 버립니다</p>
+<p>엄청난 난공불락의 앱이죠</p>
+<p>그래서 대부분의 유명어플은 크래커에 의해 크랙어플이 등장합니다만</p>
+<p>파워앰프는 특이하게도 럭키패쳐를 이용한 방법 외에는 unlocker설치후 라이센스 오류뜰때마다 다시 까는 방법외에는 없습니다</p>
+<p>그런대 오늘 제가 그 엄청난 보안중의 하나인 사인키 검사(Signature)를 뚫었습니다 ㅋㅋㅋ</p>
+<p>사실 악의적인 목적으로 뚫은것이 아니라 저도 NDK를 이용한 사인키 검사를 통해 유료어플의 크랙을 막아보려는 생각을 가지고 있고, 일부 성공하였기 때문입니다</p>
+<p>사인키 검사하면 대표적으로 파워앰프가 있어 몇시간동안 뚫어 봤는대 뚫리네요…;;</p>
+<p>아래 두개의 스샷은 인증 사진입니다</p>
+<p>어플의 버전명을 변경하고 설치하면 사인키가 변경되어 여러분께서 직접 해보시면</p>
+<p>“Sorry, can’t run the modified APK. Please try to reinstall Poweramp from the Google Play or official website.”</p>
+<p>이라는 오류가 나타날겁니다</p>
+<p>아래 스샷에는 제 블로그 주소가 표시되어 있어 장난이 아님을 보이고 있습니다</p>
+<p><img  src="/archive/_astro/Screenshot_2014-02-09-19-49-37.BtGHMT22_ZA6pnr.webp" alt="" width="400" height="666" loading="lazy" decoding="async">
+    
+<img  src="/archive/_astro/Screenshot_2014-02-09-19-48-51.OeBxkuR6_7WoCx.webp" alt="" width="400" height="666" loading="lazy" decoding="async"></p>
+<p>사인키 변조 확인후, 종료되는 현상만 건너뛴것이기때문인지는 몰라도 모든게 아에 안되네요;</p>
+<p>실행만 됩니다</p>
+<p>그냥 사인키 변조 우회에 의의를 가지며…</p>
+<p>—개발자용 메모</p>
+<p>invoke-virtual {v0, v3, v4}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;</p>
+<p>move-result-object v0</p>
+<p>iget-object v0, v0, Landroid/content/pm/PackageInfo;-><strong>signatures</strong>:[Landroid/content/pm/Signature;</p>
+<p>// 이부분이 signature을 가져오는 부분이예요</p>
+<p>array-length v3, v0</p>
+<p>if-lez v3, :cond_c</p>
+<p>const/4 v3, 0x0</p>
+<p>aget-object v0, v0, v3</p>
+<p>invoke-virtual {v0}, Landroid/content/pm/Signature;->toByteArray()[B</p>
+<p>move-result-object v5</p>
+<p>const/4 v0, 0x5</p>
+<p>sget-object v3, Lcom/maxmpz/audioplayer/Application;->ah:[B</p>
+<p>array-length v6, v3</p>
+<p>move v3, v0</p>
+<p>move v0, v2</p>
+<p>:goto_0</p>
+<p>if-ge v0, v6, :cond_c</p>
+<p>add-int/lit8 v4, v3, 0x1</p>
+<p>aget-byte v3, v5, v3</p>
+<p>sget-object v7, Lcom/maxmpz/audioplayer/Application;->ah:[B</p>
+<p>aget-byte v7, v7, v0</p>
+<p>:try_end_0</p>
+<p>.catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0</p>
+<p>if-eq v3, v7, :cond_b</p>
+<p>move v0, v2</p>
+<p>:goto_1</p>
+<p>if-nez v0, :cond_1</p>
+<p>// smali의 if문법에 따르면 not equals zero (0이 아니면) cond_1(아래부분)으로 넘어갑니다</p>
+<p>// 이부분에서 true(0이 아니다)가 나와서 아래 ”?컙”을 패스해야 되요!!</p>
+<p><strong>if-eqz v0, :cond_1</strong></p>
+<p>// equals zero(0이면) 을 추가해 0이든 0이 아니든 cond_1으로 넘어가게 만듭니다</p>
+<p>sput-boolean v1, Lcom/maxmpz/audioplayer/Application;->0xF1:Z</p>
+<p><strong>invoke-static {p0}, Lcom/maxmpz/audioplayer/Application;->?컙(Landroid/content/Context;)V</strong></p>
+<p>// 이부분이 실행되면 Sorry~ 가 뜨며 앱이 종료되요</p>
+<p>.line 723</p>
+<p>:cond_1</p>
+<p>invoke-virtual {p0}, Lcom/maxmpz/audioplayer/Application;->?컙()V</p>
+<p>완벽한 보안은 없네요…;</p>
+<p>그럼 전 다시 체험판 파워앰프를 설치하러 갑니다..</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

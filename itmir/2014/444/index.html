@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="먼저 홈런처 어플의 패키지명을 구해서 String[]으로 반환하는 메소드입니다"><title>PackageManager를 이용한 홈런처(Launcher)어플 PackageName구하기 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">PackageManager를 이용한 홈런처(Launcher)어플 PackageName구하기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-01-22T17:00:00.000Z"> 2014년 1월 23일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/444" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">먼저 홈런처 어플의 패키지명을 구해서 String[]으로 반환하는 메소드입니다</p> </header> <div class="post-content"> <p>먼저 홈런처 어플의 패키지명을 구해서 String[]으로 반환하는 메소드입니다</p>
+<p>private String[] getHomeLauncher(){</p>
+<p>    String[] HomeLauncher;</p>
+<p>    PackageManager pm =  getPackageManager();</p>
+<p>    Intent homeIntent = new Intent(Intent.ACTION_MAIN);</p>
+<p>    homeIntent.addCategory(Intent.CATEGORY_HOME);</p>
+<p>    List<resolveinfo> homeApps = pm.queryIntentActivities(homeIntent, PackageManager.GET_ACTIVITIES);</resolveinfo></p>
+<p>    HomeLauncher = new String[homeApps.size()];</p>
+<p>    for(int i=0; i&#x3C;homeApps.size(); i++){</p>
+<p>        ResolveInfo info = homeApps.get(i);</p>
+<p>        HomeLauncher[i] = info.activityInfo.packageName;</p>
+<p>    }</p>
+<p>    return HomeLauncher;</p>
+<p>}</p>
+<p>java안 아무데다 추가해 주시고</p>
+<p>이 메소드를 사용하는 방법은 아래와 같습니다</p>
+<p>String[] home = getHomeLauncher();</p>
+<p>for(int i=0 ; i&#x3C;home.length ; i++ ){</p>
+<p>    if(home[i].equals(<strong>packageName</strong>)){</p>
+<p>        // 이 어플이 홈런처 일경우 실행됨</p>
+<p>        break;</p>
+<p>    }</p>
+<p>}</p>
+<p>굵은 글시로 표시되어 있는 <strong>packageName</strong>에 런처인지 확인하고자 하는 어플의 패키지 명을 집어넣어 주시면</p>
+<p>그 어플이 런처일경우 할 작업을 써주시면 됩니다</p>
+<p>참고 : <a href="http://chonggi7.tistory.com/entry/PackageManager-%ED%99%88-%ED%99%94%EB%A9%B4-Launcher-PackageName-%EA%B5%AC%ED%95%98%EA%B8%B0">http://chonggi7.tistory.com/entry/PackageManager-홈-화면-Launcher-PackageName-구하기</a></p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

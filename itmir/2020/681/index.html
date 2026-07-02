@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="신형 노트북을 구매하면서, 이전까지 사용하던 윈도우 태블릿은 이제 구형 기기가 되었습니다."><title>윈도우 태블릿에 Android-x86 설치 후기 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">윈도우 태블릿에 Android-x86 설치 후기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2020-11-24T15:39:15.000Z"> 2020년 11월 25일 </time> <span class="post-category">Computer &amp; PC</span> <a href="https://itmir.tistory.com/681" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">신형 노트북을 구매하면서, 이전까지 사용하던 윈도우 태블릿은 이제 구형 기기가 되었습니다.</p> </header> <div class="post-content"> <h2 id="서론">서론</h2>
+<p>신형 노트북을 구매하면서, 이전까지 사용하던 윈도우 태블릿은 이제 구형 기기가 되었습니다.</p>
+<p>약 7년 동안 썼던 기기이다보니 액정에 하얀 멍도 있고 상태가 그리 좋다고 말할 수 없습니다. 그렇기 때문에 중고로 처분한다고 하더라도 얼마 받지 못하더라고요.</p>
+<p>따라서 구석에 계속 처박혀 있을 예정이었던 기기였습니다.</p>
+<p>그러던 중 android-x86 이라는 프로젝트를 알게 되었습니다. 구형 x86 기기에 안드로이드를 부팅시키는 프로젝트입니다.</p>
+<h2 id="android-x86-iso-설치-usb-만들기">Android-x86 iso 설치 USB 만들기</h2>
+<p><a href="https://www.android-x86.org/download.html">www.android-x86.org/download.html</a></p>
+<p>위 사이트를 통해 android-x86.iso 파일을 다운 받습니다.</p>
+<p>이후 <a href="https://rufus.ie/">Rufus</a>라는 프로그램을 통해 빈 usb에 Android-x86 설치 USB를 만들어주면 됩니다.</p>
+<p><img  src="/archive/_astro/img.CTL6CL5F_23RvJo.webp" alt="" width="301" height="84" loading="lazy" decoding="async"></p>
+<p>이후, 바이오스 부팅 옵션을 설정하여 방금 만든 부팅 USB를 통해 부팅하면 1단계가 끝납니다.</p>
+<p>USB로 부팅하기 전에 Android-x86을 설치할 파티션을 미리 윈도우에서 만들어주는 것을 추천합니다.</p>
+<p>윈도우에서 GUI로 파티션을 설정하는게 텍스트를 입력하여 설정하는 것보다 더 편하기 때문입니다.</p>
+<p>이렇게 파티션을 따로 만들면 윈도우와 안드로이드를 오가며 부팅할 수 있습니다.</p>
+<p>윈도우를 깔끔하게 지우고 설치하실 분은 파티션을 미리 잡아두지 않아도 됩니다.</p>
+<h2 id="android-x86-설치하기">Android-x86 설치하기</h2>
+<p>이제 Android-x86을 본격적으로 설치해봅시다.</p>
+<p><img  src="/archive/_astro/img_1.DoxfyQTJ_Z1eWIfE.webp" alt="" width="1821" height="1111" loading="lazy" decoding="async"></p>
+<p>윈도우에서 이미 파티션을 잡아두었다면 그걸 바로 선택하시면 되고,</p>
+<p>그렇지 않다면 Create/Modify pertitions 메뉴를 선택하여 파티션을 편집해줍시다.</p>
+<p><img  src="/archive/_astro/img_2.B-qrCe_5_Z2rlNRz.webp" alt="" width="1733" height="1130" loading="lazy" decoding="async"></p>
+<p>저는 윈도우에서 빈 공간(free space)만 잡아두었고, 파티션을 만들지는 않았습니다.</p>
+<p>New 메뉴를 선택하여 빈 공간에 파티션을 잡아주고, Write를 통해 변경 내용을 실제로 적용합니다.</p>
+<p><img  src="/archive/_astro/img_3.IRuZv6RJ_Z1rGHT4.webp" alt="" width="1794" height="1122" loading="lazy" decoding="async"></p>
+<p>이제 unknown이라는 빈 볼륨이 만들어졌는데요.</p>
+<p>이 파티션을 선택해주면 포맷 방식을 결정하고 다음 단계로 넘어갑니다.</p>
+<p><img  src="/archive/_astro/img_4.BXtpUpn9_ZvF4b.webp" alt="" width="1849" height="1138" loading="lazy" decoding="async"></p>
+<p>/system에 접근할 수 있도록 할 것인지 선택하는 부분입니다.</p>
+<p>저는 Yes를 선택하여 /system 쓰기 권한을 얻기로 결정했습니다.</p>
+<p><img  src="/archive/_astro/img_5.Cq6ZtjJB_Z1WW3a3.webp" alt="" width="1786" height="1119" loading="lazy" decoding="async"></p>
+<p>이제 선택한 파티션에 Android가 설치되기 시작합니다.</p>
+<p>용량이 크지 않아 윈도우보다 훨씬 빠르게 설치되므로 화장실 한 번 갔다 오시면 설치가 거의 끝나갈 겁니다.</p>
+<p><img  src="/archive/_astro/img_6.Cy6P-6ix_Z11GA5C.webp" alt="" width="1731" height="1066" loading="lazy" decoding="async"></p>
+<p>이제 설치가 완료되었다는 문장이 나왔습니다.</p>
+<p>Run LineageOS를 선택하여 안드로이드를 부팅해봅시다.</p>
+<p>참고로 LineageOS의 전신이 CyanogenMod 입니다. 커스텀 롬으로 유명했던 CyanogenMod가 맞습니다.</p>
+<p><img  src="/archive/_astro/img_7.Dg_vdAlt_RVgbA.webp" alt="" width="1765" height="1119" loading="lazy" decoding="async"></p>
+<p>부팅을 조금 기다리면 아래처럼 초기 설정 화면이 나옵니다.</p>
+<p>화면의 멍 자국이 신경쓰이네요. ㅠㅠ</p>
+<p><img  src="/archive/_astro/img_8.BgjEajXr_ZLvw1V.webp" alt="" width="2000" height="1316" loading="lazy" decoding="async">
+<img  src="/archive/_astro/img.BsGpUMOe_Z2bXl5J.webp" alt="" width="4032" height="3024" loading="lazy" decoding="async">
+<img  src="/archive/_astro/img_9.BScag-Bc_1yhciQ.webp" alt="" width="1937" height="1215" loading="lazy" decoding="async"></p>
+<p>이렇게 초기 설정을 끝내면, 드디어 홈 화면이 나오며 설치가 끝납니다.</p>
+<h2 id="android-x86-구동-화면">Android-x86 구동 화면</h2>
+<p>드디어 안드로이드를 윈도우 태블릿에 부팅했습니다.</p>
+<p><img  src="/archive/_astro/img_10.CmWY4Jlq_so076.webp" alt="" width="1280" height="800" loading="lazy" decoding="async"></p>
+<p>위 스크린샷은 제가 각종 앱을 설치한 후 캡쳐한 홈 화면입니다.</p>
+<p>안드로이드 태블릿이 하나 늘어난 기분이네요.</p>
+<p><img  src="/archive/_astro/img_11.DvMGk9aD_Z1JGXTs.webp" alt="" width="1280" height="800" loading="lazy" decoding="async"></p>
+<p>안드로이드 버전은 7.1.2 입니다.</p>
+<h2 id="앱-호환성-및-버그-목록">앱 호환성 및 버그 목록</h2>
+<p>아쉽게도 모든 앱이 호환되지는 않습니다.</p>
+<p>arm으로 빌드된 앱은 대부분 작동하지 않는 것 같으며, 어떤 앱은 아예 실행되지도 않았습니다.</p>
+<p>그래서 작동하는 기능과 작동하지 않는 기능을 분류해보았습니다.</p>
+<h4 id="working">Working</h4>
+<p>물리버튼(전원,볼륨키)</p>
+<p>터치디스플레이</p>
+<p>내장스피커</p>
+<p>마이크로 USB포트</p>
+<p>SD카드</p>
+<p>전원충전</p>
+<p>3.5파이이어폰잭</p>
+<p>Wi-Fi</p>
+<p>Bluetooth</p>
+<h4 id="notworking">Not Working</h4>
+<p>전후면카메라</p>
+<p>내장마이크</p>
+<p>가속도계센서(화면회전)</p>
+<p>일부앱호환성</p>
+<h4 id="unknown">Unknown</h4>
+<p>hdmi화면출력포트</p>
+<p>스크린샷과 Working 리스트를 보면 Wi-Fi가 잡힌다는 것을 알 수 있는데요.</p>
+<p>첫 부팅시에는 저도 인터넷이 잡히지 않았습니다.</p>
+<p>그래서 구글링을 해본 결과, <a href="https://www.youtube.com/watch?v=o4cVjTT_oJo">이러한 영상</a>을 발견할 수 있었습니다.</p>
+<p>부팅 시에 Android-x86 (Debug) 모드로 진입하신 다음, 텍스트가 주르르 내려가다가 멈추면 exit를 두 번 입력하여 디버그 모드를 빠져나옵니다.</p>
+<p>이러하니 Wi-Fi가 잡히기 시작했습니다…(도대체 무슨 원리인지는 모르겠습니다.)</p>
+<h2 id="유튜브-영상-스크린샷">유튜브 영상 스크린샷</h2>
+<p>무엇을 찍을까 생각하다가, 유튜브를 찍어보았습니다.</p>
+<p><img  src="/archive/_astro/img_1.Dp-TDEz8_Z1lr4Lf.webp" alt="" width="4032" height="3024" loading="lazy" decoding="async">
+<img  src="/archive/_astro/img_2.nluU5gxp_sbrY4.webp" alt="" width="4032" height="3024" loading="lazy" decoding="async"></p>
+<p>몇 년 전부터 계속 듣던 Neal K님의 자작곡 영상입니다.</p>
+<p>화면만 멀쩡하다면, 유튜브 머신으로 상당히 쓸만한 것 같네요</p>
+<h2 id="결론">결론</h2>
+<p>카메라 드라이버가 잡히지 않아서 작동 LED가 계속 켜져있습니다.</p>
+<p>배터리도 생각보다 빨리 닳아서 실사용하기에는 약간 무리가 있다고 봅니다.</p>
+<p>장난감으로 쓰기에는 상당히 쓸만한 안드로이드 태블릿이 되었네요.</p>
+<p>구형 기기의 생명이 연장되었습니다.</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

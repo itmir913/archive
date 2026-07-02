@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="이 글에서는 GCM을 사용하는 방법과, 실제로 기기에 Push메세지를 보내는 방법을 알아보겠습니다"><title>GCM(Google Cloud Messaging)을 사용하여 Push알림을 줘보자 - 개발자 등록편 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">GCM(Google Cloud Messaging)을 사용하여 Push알림을 줘보자 - 개발자 등록편</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-02-18T13:33:55.000Z"> 2014년 2월 18일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/478" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">이 글에서는 GCM을 사용하는 방법과, 실제로 기기에 Push메세지를 보내는 방법을 알아보겠습니다</p> </header> <div class="post-content"> <p><img  src="/archive/_astro/gcm-logo.3PlA7zb-_Z2tD6Xx.webp" alt="" width="374" height="214" loading="lazy" decoding="async"></p>
+<p>이 글에서는 GCM을 사용하는 방법과, 실제로 기기에 Push메세지를 보내는 방법을 알아보겠습니다</p>
+<p>몇개의 큰 목차로 나눠지며, GCM를 사용하려면 구글 개발자 API를 활성화 한뒤 API Key를 발급받아야 합니다</p>
+<p>지금부터 GCM의 매력에 빠져보도록 하겠습니다!</p>
+<p><strong>1. GCM(Google Cloud Messaging)이란??</strong></p>
+<p>Google Cloud Messaging, 줄여서 GCM은 구글 서버를 이용해서 “무료”로 Push알림을 보낼수 있도록 해주는 서비스 입니다</p>
+<p>구글 2012 I/O에서 그전까지 사용한 C2DM대신 GCM을 들고 나왔습니다</p>
+<p>그뒤 구글은 C2DM의 신규 가입을 중단하고, GCM만 사용하도록 권장하고 있습니다</p>
+<p>참고 : <a href="http://developer.android.com/google/gcm/index.html">http://developer.android.com/google/gcm/index.html</a></p>
+<p>GCM이 구글 계정을 사용하고, 그 때문에 API 8 (프로요)이상부터만 사용이 가능합니다</p>
+<p>최근에 GCM Library가 deprecate되고 Google Play Service로 통합되었습니다</p>
+<p>이 강좌에서는 deprecate된 GCM.jar을 사용할것이고, Google Play Service를 사용한 방법은 나중에 따로 소개하겠습니다</p>
+<p>참고 : <a href="http://blog.hibrainapps.net/143">http://blog.hibrainapps.net/143</a></p>
+<p>그럼 아래부터 GCM을 활성화 하는 방법을 알아보겠습니다</p>
+<p><strong>2. GCM 활성화 하기</strong></p>
+<p>먼저 Google APIs Console에 접속후 구글 계정으로 로그인 해주세요</p>
+<p><a href="https://code.google.com/apis/console/">https://code.google.com/apis/console/</a></p>
+<p>구글 API를 사용한 적이 없으면 아래처럼 나타납니다</p>
+<p>Create Project를 클릭해 주세요</p>
+<p><img  src="/archive/_astro/1.CFaIh-XE_1RBXW4.webp" alt="" width="372" height="347" loading="lazy" decoding="async"></p>
+<p>New Project에서 프로젝트 이름과, 프로젝트 ID를 모두 입력한뒤 Create를 눌러주시면 완료입니다</p>
+<p><img  src="/archive/_astro/3.B4v0ug7S_Z1wd56T.webp" alt="" width="642" height="324" loading="lazy" decoding="async"></p>
+<p>그다음 APIs &#x26; auth부분의 APIs에 접속하신다음</p>
+<p>Google Cloud Messaging for Android를 찾아주세요</p>
+<p>스샷이 짤렸지만 오른쪽의 OFF를 클릭해 ON으로 변경해야 합니다</p>
+<p><img  src="/archive/_astro/4.B0BBAHH0_cg5Ei.webp" alt="" width="771" height="368" loading="lazy" decoding="async"></p>
+<p>약관 동의가 나오면 Accept를 눌러주세요</p>
+<p><img  src="/archive/_astro/5.CKsiZMoY_NJKHe.webp" alt="" width="818" height="235" loading="lazy" decoding="async"></p>
+<p>정상적으로 활성화된 모습입니다</p>
+<p><img  src="/archive/_astro/6.CJlP8Mvk_Z1nab4k.webp" alt="" width="860" height="73" loading="lazy" decoding="async"></p>
+<p>이제 아래 스샷을 보시면</p>
+<p>Overview에 접속하시면 Project Number가 있습니다</p>
+<p>이 숫자를 메모해 두시거나 복사해 주세요</p>
+<p>저 숫자는 <strong>PROJECT_ID</strong>입니다</p>
+<p><img  src="/archive/_astro/7.IEods9Vt_ZhS6Ym.webp" alt="" width="447" height="121" loading="lazy" decoding="async"></p>
+<p>이제 GCM Server Key를 생성해야 합니다</p>
+<p>APIs &#x26; auth의 Credentials에 들어가 주세요</p>
+<p>그다음 Public API access의 Create New Key를 눌러주세요</p>
+<p><img  src="/archive/_astro/8.CFvhts_Y_ZquMTm.webp" alt="" width="453" height="423" loading="lazy" decoding="async"></p>
+<p>나타나는 창에는 Server Key를 선택해 주시면 됩니다</p>
+<p><img  src="/archive/_astro/9.CkdnP0Kg_1FkTg4.webp" alt="" width="491" height="222" loading="lazy" decoding="async"></p>
+<p>아래 스샷은 허용할 IP를 입력하는 곳입니다</p>
+<p>아무것도 안쓰면 모든 IP를 허용합니다</p>
+<p>아무것도 쓰지 않고 Create를 눌러주세요</p>
+<p><img  src="/archive/_astro/10.DNvF4_M4_pPKY8.webp" alt="" width="698" height="383" loading="lazy" decoding="async"></p>
+<p>이제 Public API access를 다시 보시면 Key for server applications가 생겼을겁니다</p>
+<p>이곳의 API Key도 따로 복사해 주세요</p>
+<p>이 API Key는 <strong>GOOGLE_API_KEY</strong>입니다</p>
+<p><img  src="/archive/_astro/11.Bcx4btu1_JcfCd.webp" alt="" width="768" height="232" loading="lazy" decoding="async"></p>
+<p>이제 API를 활성화 하는 일이 모두 마무리 되었습니다</p>
+<p>다음편부터는 이 API키를 가지고 실제로 GCM을 날려보도록 하겠습니다</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

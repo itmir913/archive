@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="중3이 되는 바람에 제대로 포스팅을 하지 못했습니다.. ;"><title>무한루프(無限Loop)와 그 유용성에 대해 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">무한루프(無限Loop)와 그 유용성에 대해</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-03-08T11:04:24.000Z"> 2013년 3월 8일 </time> <span class="post-category">Programming/Java</span> <a href="https://itmir.tistory.com/171" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">중3이 되는 바람에 제대로 포스팅을 하지 못했습니다.. ;</p> </header> <div class="post-content"> <p>안녕하세요. ㅎ</p>
+<p>중3이 되는 바람에 제대로 포스팅을 하지 못했습니다.. ;</p>
+<p>그래도 제 java공부는 계속 이어갑니다!</p>
+<p>아무튼 이번에는 무한 루프와 그 유용성에 대해 알아보겠습니다.</p>
+<p>제목에 있는 한자와 영어 無限Loop, 다들 아시죠?</p>
+<p>‘무한’이란건 말 그대로 한이 없다는 뜻입니다.</p>
+<p>java에서는 반복문의 반복 조건이 true로 되어 있을 경우 무한 루프가 되지요.</p>
+<blockquote>
+<p>while(true)</p>
+<p>{</p>
+<p>…</p>
+<p>}</p>
+<p>또는</p>
+<p>do</p>
+<p>{</p>
+<p>…</p>
+<p>}while(true)</p>
+<p>또는</p>
+<p>for( ; ; )</p>
+<p>{</p>
+<p>…</p>
+<p>}</p>
+</blockquote>
+<p>이렇게 반복 조건 부분에 true를 집어넣으면 무한 루프가 형성되게 됩니다.</p>
+<p>보시면 아시다싶이 for문은 true를 넣지 않고 공백으로 둬도 무한 루프가 되므로 이렇게 하는 것이 일반적이라 합니다.</p>
+<p>이런 무한 루프는 존재 자체만으로는 의미를 생각할 수 없지만, break문을 만나서 사용하는 것이 일반적인 무한 루프의 사용법이라 생각됩니다.</p>
+<p>아래 최소 공배수를 구하는 예제를 보겠습니다.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> EndlessLoop</span></span>
+<span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">  public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">  {</span></span>
+<span class="line"><span style="color:#24292E">    System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"7과 15의 최소 공배수를 찾고 있습니다"</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> M</span><span style="color:#D73A49">=</span><span style="color:#005CC5">1</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">    do</span></span>
+<span class="line"><span style="color:#24292E">    {</span></span>
+<span class="line"><span style="color:#D73A49">      if</span><span style="color:#24292E">(M</span><span style="color:#D73A49">%</span><span style="color:#005CC5">7</span><span style="color:#D73A49">==</span><span style="color:#005CC5">0</span><span style="color:#D73A49"> &#x26;&#x26;</span><span style="color:#24292E"> M</span><span style="color:#D73A49">%</span><span style="color:#005CC5">15</span><span style="color:#D73A49">==</span><span style="color:#005CC5">0</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#D73A49">        break</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">      M</span><span style="color:#D73A49">++</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    }</span><span style="color:#D73A49">while</span><span style="color:#24292E">(</span><span style="color:#005CC5">true</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"최소 공배수 :"</span><span style="color:#D73A49">+</span><span style="color:#24292E">M);</span></span>
+<span class="line"><span style="color:#24292E">  }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p><a href="/attachment/cfile10.uf@2244BD385139C3E20628A6.java"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> EndlessLoop.java</a></p>
+<p>7과 15의 최소 공배수를 구하는 예제입니다. <em>(제가 응용해서 만들어 봤어요)</em></p>
+<p>int M=1;으로 변수를 선언하고 있습니다.</p>
+<p>그리고 do~while문으로 최소 공배수를 찾고 있는데요.</p>
+<p>if(M%7==0 &#x26;&#x26; M%15==0)</p>
+<p>즉 7로 나누고 15로 나눠도 나머지가 0인 값, 즉 최소 공배수일때 break를 통해 무한 루프를 빠져나오게 되는 겁니다.</p>
+<p><img  src="/archive/_astro/%EC%BA%A1%EC%B2%98.Dd6eKC09_Z1wY9lI.webp" alt="" width="388" height="50" loading="lazy" decoding="async"></p>
+<p>실행 결과를 보시면 if(M%7==0 &#x26;&#x26; M%15==0)가 만족하는 순간 break로 빠져나온다음 최소공배수를 표시하게 됩니다.</p>
+<p>만약 무한루프로 구현하지 않았다면 어떻게 해야 할까요?</p>
+<p>반복 조건에 들어가는 true대신 조건을 넣어야 하는데요.</p>
+<p>이경우 최소 공배수의 크기를 예측해야하는 필요성이 있습니다.</p>
+<p>만약 200미만 숫자중 최소공배수가 있는가? 라는 프로그램을 만들고 싶다면 무한루프로 구현하시면 안되고 반복 조건에 M&#x3C;200등의 기호를 넣어 줘야 한다는 것이 됩니다.</p>
+<p>무한 루프는 유용하게 사용 할 수 있습니다.</p>
+<p>하지만 명령문을 잘못 구성할 경우 계속 무한 루프가 돌아가게 되어 프로그램이 종료되지 못하는 경우가 발생할 수 있으니 주의하셔야 합니다.</p>
+<p>예를 들면 위 예제에서 break가 없었다면 계속 do~while이 돌아가게 되겠죠?</p>
+<p>그럴 때는 프로그램이 먹통이 될 겁니다.</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

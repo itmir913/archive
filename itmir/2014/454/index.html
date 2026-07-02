@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="리눅스(Linux)에서 빌드시간을 단축하는대 사용되는 가장 대표적인 방법은 ccache와 distcc입니다."><title>Ubuntu 빌드 시간 단축하기 - ccache — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">Ubuntu 빌드 시간 단축하기 - ccache</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-01-27T04:46:40.000Z"> 2014년 1월 27일 </time> <span class="post-category">Computer &amp; PC/Ubuntu</span> <a href="https://itmir.tistory.com/454" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">리눅스(Linux)에서 빌드시간을 단축하는대 사용되는 가장 대표적인 방법은 ccache와 distcc입니다.</p> </header> <div class="post-content"> <p>리눅스(Linux)에서 빌드시간을 단축하는대 사용되는 가장 대표적인 방법은 ccache와 distcc입니다.</p>
+<p>ccache는 빌드결과를 모와뒀다가 재빌드시 빌드 시간을 줄여주는 것이고,</p>
+<p>distcc는 컴퓨터 두 대 이상을 사용하여 “분산”빌드 하는 형식입니다.</p>
+<p>일단 설명하는것과 사용하기 편한 ccache를 먼저 다뤄보겠습니다.</p>
+<p>공식 사이트는 <a href="http://ccache.samba.org/">http://ccache.samba.org/</a> 입니다.</p>
+<h2 id="1-ccache설치하기">1. ccache설치하기</h2>
+<p>리눅스중 fedora는 이미 기본 설치되어 있다고 하고요 Ubuntu는 따로 설치해야 합니다.</p>
+<p>Ubuntu도 apt-get로 손쉽게 설치할수 있습니다.</p>
+<p><img  src="/archive/_astro/1.C-vDiWDs_Yd6uN.webp" alt="" width="726" height="467" loading="lazy" decoding="async"></p>
+<p>sudo apt-get install ccache</p>
+<p>이 명령어 하나로 ccache설치가 완료되었습니다.</p>
+<h2 id="2-path설정하기">2. PATH설정하기</h2>
+<p>ccache를 활용하기 위해서는 PATH설정이 필요합니다.</p>
+<p>(1) 한 사용자 계정만 적용할경우</p>
+<p>sudo gedit ~/.bashrc</p>
+<p>한다음 아래 문구 추가.</p>
+<p>export PATH=“/usr/lib/ccache:$PATH”</p>
+<p>(2) 모든 계정에 적용할경우</p>
+<p>sudo gedit /etc/environment</p>
+<p>한다음 아래 스크린샷처럼 파란박스 추가.</p>
+<p>/usr/lib/ccache:</p>
+<p><img  src="/archive/_astro/2.BEIHkyyS_2oyonz.webp" alt="" width="558" height="424" loading="lazy" decoding="async"></p>
+<h2 id="3-툴체인-환경">3. 툴체인 환경</h2>
+<p>툴체인을 사용할경우 심링크를 걸어주면 됩니다.</p>
+<p>cd /usr/lib/ccache</p>
+<p>sudo ln -s ../../bin/ccache powerpc-tuxbox-linux-gnu-cc</p>
+<p>sudo ln -s ../../bin/ccache powerpc-tuxbox-linux-gnu-c++</p>
+<p>sudo ln -s ../../bin/ccache powerpc-tuxbox-linux-gnu-gcc</p>
+<p>sudo ln -s ../../bin/ccache powerpc-tuxbox-linux-gnu-g++</p>
+<h2 id="4-ccache-확인--clean--max-cache-size-수정">4. ccache 확인 / Clean / Max cache Size 수정</h2>
+<p>ccache설치가 완료되었으면 상태를 확인해 봅시다.</p>
+<p>ccache -s</p>
+<p>캐쉬 폴더와 현재 캐쉬 파일 크기, 최대 캐쉬파일 크기를 확인할수 있습니다.</p>
+<p><img  src="/archive/_astro/3.D1TUaEbu_Z2k6qP7.webp" alt="" width="547" height="145" loading="lazy" decoding="async"></p>
+<p>빌드 결과가 이상하여 캐쉬를 지우고 싶을경우에는,</p>
+<p>ccache -C</p>
+<p>이렇게 하면 현재 저장된 캐쉬가 지워집니다.</p>
+<p><img  src="/archive/_astro/4.L651bqUU_2igWLc.webp" alt="" width="274" height="34" loading="lazy" decoding="async"></p>
+<p>최대 캐쉬 크기를 변경하고 싶다면 아래를 입력하세요.</p>
+<p>ccache -M (크기)</p>
+<p>예를들어 최대 캐쉬 크기를 2GB로 변경하고 싶다면,</p>
+<p>ccache -M 2GB</p>
+<p>이제 ccache -s로 상태를 확인해 보면 최대 캐쉬 크기가 변경된것을 확인할수 있습니다.</p>
+<p><img  src="/archive/_astro/5.DmysOCnT_1AGcSm.webp" alt="" width="545" height="179" loading="lazy" decoding="async"></p>
+<p>참조: <a href="http://whatwant.tistory.com/421">http://whatwant.tistory.com</a><a href="http://whatwant.tistory.com/421">/421</a></p>
+<p><a href="http://ccache.samba.org/">http://ccache.samba.org/</a></p>
+<p><a href="http://blog.naver.com/accdar/150173403764">http://blog.naver.com/accdar/150173403764</a></p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="unpackbootimg오류등 우분투 64비트버전에서 32비트의 응응 프로그램을 사용하기가 어렵습니다."><title>64Bit 우분투에서 32Bit 바이너리/프로그램 이용하기 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">64Bit 우분투에서 32Bit 바이너리/프로그램 이용하기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-01-27T06:20:28.000Z"> 2013년 1월 27일 </time> <span class="post-category">Computer &amp; PC/Ubuntu</span> <a href="https://itmir.tistory.com/35" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">unpackbootimg오류등 우분투 64비트버전에서 32비트의 응응 프로그램을 사용하기가 어렵습니다.</p> </header> <div class="post-content"> <p>unpackbootimg오류등 우분투 64비트버전에서 32비트의 응응 프로그램을 사용하기가 어렵습니다.</p>
+<p>그렇다고 64비트로 설치한것을 다시 32비트로 내려오기도 힘든 상황이죠…</p>
+<p>이럴 때 다음을 설치하여 사용할 수 있습니다.</p>
+<p>ia32-libs</p>
+<p>lib32asound2</p>
+<p>lib32gcc1</p>
+<p>lib32ncurses5</p>
+<p>lib32nss-mdns</p>
+<p>lib32stdc++6</p>
+<p>lib32z1</p>
+<p>libc6-i386</p>
+<p>위 목록을 sudo apt-get install으로 각각 설치할수도 있습니다만,</p>
+<p>한번에 설치할수 있는 스크립트를 올려드릴테니</p>
+<p>다운받으셔서 터미널로 실행을 하시면 sudo비번을 친뒤 자동으로 설치하게 됩니다.</p>
+<p>그후 unpackbootimg등의 32비트 바이너리도 정상적으로 값이 나왔습니다.</p>
+<p>[32bit 64bit.sh</p>
+<p>다운로드](./file/32bit 64bit.sh)</p>
+<p>참고: <a href="http://blog.naver.com/01191879872/10071037107">http://blog.naver.com/01191879872/10071037107</a></p>
+<p><strong>주의: 스크립트 파일을 실행한뒤 Yes, as I say등의 문구 혹은 다음 패키지가 지워집니다 라는 문구가 있을경우 절대 스크립트 파일을 실행하지 말고 터미널의 창을 닫으세요. 잘못했다간 우분투 날라갑니다. 절대 Yes하지 마세요.</strong></p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li>[32bit 64bit.sh](./files/32bit 64bit.sh)</li>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

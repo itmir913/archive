@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="커널 마이너 패치 또는 버전 업을 하기 위해서는 먼저 patch파일을 만들어 사용해야 합니다."><title>커널(Kernel) 마이너 패치/버전업 하기 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">커널(Kernel) 마이너 패치/버전업 하기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-01-20T03:43:53.000Z"> 2014년 1월 20일 </time> <span class="post-category">Android/Kernel</span> <a href="https://itmir.tistory.com/438" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">커널 마이너 패치 또는 버전 업을 하기 위해서는 먼저 patch파일을 만들어 사용해야 합니다.</p> </header> <div class="post-content"> <p>커널 마이너 패치 또는 버전 업을 하기 위해서는 먼저 patch파일을 만들어 사용해야 합니다.</p>
+<p>diff -urpN (원본폴더명) (수정된폴더명) > (파일이름).patch</p>
+<p>이렇게 하면 원본 폴더와 수정된 폴더의 파일을 비교하여 차이점을 상세하게 분석한 patch파일이 만들어 집니다.</p>
+<p>이 파일을 원본 커널 폴더에 집어넣은 다음,</p>
+<p>patch -p1 &#x3C; (파일이름).patch</p>
+<p>이렇게 하시면 됩니다.</p>
+<p>diff를 쉽게 하기 위해 스크립트를 만들었습니다.</p>
+<p>원본폴더명과 수정된 폴더명, 파일 이름을 입력하면 patch파일이 만들어 집니다.</p>
+<p>[diff.sh</p>
+<p>다운로드](./file/diff.sh)</p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="./files/diff.sh">diff.sh</a></li>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

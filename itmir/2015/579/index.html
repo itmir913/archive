@@ -1,0 +1,157 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="나이스에서 오픈 API로 급식 정보를 공개함에 따라, 급식 파싱 라이브러리의 지원을 공식적으로 중단합니다.지금까지 제 라이브러리를 사용해주신 모든 분들께 감사의 말씀을 드리며, 아래 사이트로 접속하여 정부에서 공개한 API 정보를 확인하시기…"><title>Android Meal Library - 학교 급식 파싱 가이드 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">Android Meal Library - 학교 급식 파싱 가이드</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2015-05-25T06:37:48.000Z"> 2015년 5월 25일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/579" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">나이스에서 오픈 API로 급식 정보를 공개함에 따라, 급식 파싱 라이브러리의 지원을 공식적으로 중단합니다.지금까지 제 라이브러리를 사용해주신 모든 분들께 감사의 말씀을 드리며, 아래 사이트로 접속하여 정부에서 공개한 API 정보를 확인하시기…</p> </header> <div class="post-content"> <h2 id="android-meal-library-guide">Android Meal Library Guide</h2>
+<p>나이스에서 오픈 API로 급식 정보를 공개함에 따라, 급식 파싱 라이브러리의 지원을 공식적으로 중단합니다.</p>
+<p>지금까지 제 라이브러리를 사용해주신 모든 분들께 감사의 말씀을 드리며, 아래 사이트로 접속하여 정부에서 공개한 API 정보를 확인하시기 바랍니다.</p>
+<p><a href="https://open.neis.go.kr/portal/data/dataset/searchDatasetPage.do">https://open.neis.go.kr/portal/data/dataset/searchDatasetPage.do</a></p>
+<p>나이스의 보안프로그램 적용으로 급식 파싱 라이브러리 사용이 제한될 수 있으며, 영구적으로 사용이 불가능할 수도 있습니다.</p>
+<p>자세한 내용은 <a href="http://itmir.tistory.com/614">[Application] - 나이스 보안 프로그램과 현재 급식 파싱 불가능 관련</a>을 참고하세요</p>
+<p>MealLibrary.java의 사용은 자유입니다. MealLibrary.java만 사용한다면 오픈소스를 표기해야 하는 제약은 없습니다.</p>
+<p>그러나 급식 위젯과 급식 자동 업데이트를 제 앱을 참고해서 기능을 만드시려면 <strong>꼭(강제) 오픈소스 라이센스를 표기해야 합니다.</strong></p>
+<p>오픈소스 라이센스는 가급적 어플 내에 표기하세요.</p>
+<p>부탁드립니다.</p>
+<p><strong>이 라이브러리는 처음에 <a href="http://blog.naver.com/rimal">토스트</a>님께서 만드셨고, 이후 나이스 홈페이지에 맞게 제가 패치하고 있습니다.</strong></p>
+<p>AndroidMealLibrary가 적용된 대표적인 프로젝트를 살펴보세요!</p>
+<p><a href="https://github.com/itmir913/wondanghighschool">https://github.com/itmir913/wondanghighschool</a></p>
+<p>이 글보다 더 자세하게 설명하고 있는 README를 살펴보세요!</p>
+<p><a href="https://github.com/itmir913/wondanghighschool">https://github.com/itmir913/wondanghighschool</a> (README 위치 : app/src/main/java/toast/library/meal)</p>
+<p><a href="https://github.com/itmir913/androidmeallibrary">https://github.com/itmir913/androidmeallibrary</a></p>
+<p>학교 급식 파싱 라이브러리를 어떻게 사용하는지 궁금하신 분들을 위해 가이드라인을 작성했습니다.</p>
+<p>잘 따라오시면 자신만의 학교앱을 만들수 있으실겁니다.</p>
+<blockquote>
+<p>이 글을 읽고 복사+붙혀넣기 하실 사람께서는 뒤로가기를 눌러주세요</p>
+<p>가장 간단한 급식 파싱만 이 글에서 다룰것이고, 이에 대해서는 샘플 프로젝트도 제공합니다.</p>
+<p>앞으로는 제 개인 메일로 급식 파싱에 대해서 질문하지 말아주세요. 부탁드립니다.</p>
+<p>기본적인 급식 파싱에 대해서는 샘플 프로젝트를 참고해 주시고, 급식 위젯처럼 심화된 내용은 스스로 구현 하셔야 합니다.</p>
+<p>비슷한 질문 메일을 받게 된다면, 저는 메일을 삭제하겠습니다.</p>
+</blockquote>
+<p>급식 파싱을 하기 전에 필수로 준비해야 할 것.</p>
+<ol>
+<li>
+<p>jericho-html.jar 추가 <a href="http://itmir.tistory.com/486">(클릭)</a></p>
+</li>
+<li>
+<p>인터넷 권한 추가</p>
+</li>
+<li>
+<p>MealLibrary.java 추가 <a href="https://github.com/itmir913/wondanghighschool">(클릭 후 app/src/main/java/toast/library/meal 폴더로 진입하세요.)</a></p>
+</li>
+<li>
+<p>자신의 학교 코드 정보</p>
+</li>
+</ol>
+<p>이 글에서 설명하고 있는 앱의 전체 소스는 아래에서 받을 수 있습니다.</p>
+<p><a href="https://github.com/itmir913/androidmeallibrary">https://github.com/itmir913/androidmeallibrary</a></p>
+<p>프로젝트를 다운받으신다음 아래를 진행하세요.</p>
+<h3 id="1-자신의-프로젝트에-필요한-파일을-추가해주세요">1. 자신의 프로젝트에 필요한 파일을 추가해주세요</h3>
+<p>위치 : (AndroidMealLibrary / app / src / main / java / com / tistory / itmir / example / androidmeallibrary)</p>
+<p>(AndroidMealLibrary / app / src / main / res)</p>
+<p>ProcessTask.java</p>
+<p>MainActivity.java</p>
+<p>BapListAdapter.java</p>
+<p>BapTool.java<br>
+Preference.java</p>
+<p>Tools.java</p>
+<p>activity_main.xml</p>
+<p>row_bap_item.xml</p>
+<p>string.xml</p>
+<p>background_corners.xml</p>
+<p>무조건 수정해야 하는 것</p>
+<p>수정해도 좋지만 안해도 상관 없는것</p>
+<p>수정할 필요가 없는 것</p>
+<h3 id="2-수정해야-하는-파일을-수정합시다">2. 수정해야 하는 파일을 수정합시다.</h3>
+<p>ProcessTask.java를 열어 자신의 학교에 맞는 정보를 입력하세요.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> abstract</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> ProcessTask</span><span style="color:#D73A49"> extends</span><span style="color:#6F42C1"> AsyncTask</span><span style="color:#24292E">&#x3C;</span><span style="color:#D73A49">Integer</span><span style="color:#24292E">, </span><span style="color:#D73A49">Integer</span><span style="color:#24292E">, </span><span style="color:#D73A49">Long</span><span style="color:#24292E">> {</span></span>
+<span class="line"><span style="color:#D73A49">    final</span><span style="color:#24292E"> Context mContext;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * TODO 원하는 학교의 정보를 입력하세요</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#D73A49">    final</span><span style="color:#24292E"> String CountryCode </span><span style="color:#D73A49">=</span><span style="color:#032F62"> "yourCountryCode"</span><span style="color:#24292E">; </span><span style="color:#6A737D">// 접속 할 교육청 도메인</span></span>
+<span class="line"><span style="color:#D73A49">    final</span><span style="color:#24292E"> String schulCode </span><span style="color:#D73A49">=</span><span style="color:#032F62"> "yourSchulCode"</span><span style="color:#24292E">; </span><span style="color:#6A737D">// 학교 고유 코드</span></span>
+<span class="line"><span style="color:#D73A49">    final</span><span style="color:#24292E"> String schulCrseScCode </span><span style="color:#D73A49">=</span><span style="color:#032F62"> "yourSchulCrseScCode"</span><span style="color:#24292E">; </span><span style="color:#6A737D">// 학교 종류 코드 1</span></span>
+<span class="line"><span style="color:#D73A49">    final</span><span style="color:#24292E"> String schulKndScCode </span><span style="color:#D73A49">=</span><span style="color:#032F62"> "yourSchulKndScCode"</span><span style="color:#24292E">; </span><span style="color:#6A737D">// 학교 종류 코드 2</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">...</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p>ProcessTask.java는 필수로 수정하셔야 합니다.</p>
+<p>수정해도 상관 없는 파일들을 자신의 입맛에 맞게 수정해줍시다.</p>
+<p>수정할 부분에 TODO로 주석을 달아뒀습니다.</p>
+<p>자신의 입맛에 맛게 어플을 커스텀 할때 필요한 부분들입니다.</p>
+<p>수정할 필요가 없는 파일들은 구조를 이해할때만 열어주시고 나머지 경우에는 건들 필요가 없습니다.</p>
+<h3 id="3-프로젝트를-실행해봅시다">3. 프로젝트를 실행해봅시다.</h3>
+<p>프로젝트를 실행하면 정상적으로 급식이 로드됩니다.</p>
+<p><img  src="/archive/_astro/Screenshot_2015-05-25-14-33-08.3HlnNg9S_Z1llbES.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<h3 id="4-구조-이해">4. 구조 이해</h3>
+<p><img  src="/archive/_astro/%EA%B5%AC%EC%A1%B0.D1ariXYY_Z7zlgA.webp" alt="" width="1000" height="359" loading="lazy" decoding="async"></p>
+<p>대충 이런 구조를 가지고 있습니다만</p>
+<p>일부 잘못되어 있는 부분이 있어서 직접 파일을 분석해서 확인하시는게 편합니다.</p>
+<p>그림에서 BapTool이 Preference와 상속관계라고 되어 있는데 정확하게 말하면 BapTool에서 Preference를 사용하는 겁니다.</p>
+<h3 id="5-더-자세한-예제">5. 더 자세한 예제</h3>
+<p>자신이 그래도 실력이 있다 생각하시면 샘플 프로젝트 분석을 건너뛰시고 바로 제 학교앱 분석에 들어가셔도 됩니다.</p>
+<p>상급자용 : <a href="https://github.com/itmir913/wondanghighschool">https://github.com/itmir913/wondanghighschool</a></p>
+<p>기초예제 : <a href="https://github.com/itmir913/androidmeallibrary">https://github.com/itmir913/androidmeallibrary</a></p>
+<p>위에서 언급한 것 처럼 상급자용 분석은 질문하셔도 답변을 하지 않을 예정입니다.</p>
+<p>먼저 기초 예제를 완전히 끝내신 다음 기본 지식이 충분할때 도전해주세요</p>
+<p>기초 예제도 조금의 시간을 투자한다면 누구나 구현이 가능하도록 주석을 상세하게 달아두었기 때문에 간단한 질문은 사양합니다.</p>
+<p>제 학교앱(상급자용)에는 <strong>급식 자동 업데이트</strong>, <strong>급식 위젯</strong>, <strong>특정한 날짜의 급식 정보를 가져오는 기능</strong>, 한번 불러온 급식 데이터 자동 저장(이 기능은 기초예제에도 포함)등의 기능이 모두 포함되어 있습니다.</p>
+<p>기초 예제를 구현하신다음 시간이 되시면 다양한 기능도 구현해보시기 바랍니다.</p>
+<p>직접 제 학교앱 어플을 실행해보고 싶으신 분께서는 마켓에 “원당고”라고 검색하시면 됩니다.</p>
+<h3 id="6-meallibraryjava-변수-설명">6. MealLibrary.java 변수 설명</h3>
+<p>MealLibrary에서 사용되는 변수에 대한 설명입니다.</p>
+<ul>
+<li>CountryCode : 학교 교육청 코드, nice홈페이지 도메인의 과 같습니다</li>
+</ul>
+<p>경상 북도는 gbe.kr이며, 경상도는 .kr, 다른 교육청은 go.kr 도메인을 사용합니다</p>
+<p>EX) 인천 : ice.go.kr</p>
+<ul>
+<li>schulCode : 학교 고유 코드번호 입니다</li>
+</ul>
+<p>교육청에서 학교를 구분할때, 학교에 공문을 내릴때 사용하며 아래 참조에서 코드를 찾을수도 있습니다</p>
+<p>EX) 인천의 학교 코드 검색 : <a href="http://hes.ice.go.kr/sts%5C_sci%5C_si00%5C_001.do">http://hes.ice.go.kr/sts\_sci\_si00\_001.do</a> (학교 검색후 E10000xxxx 부분)</p>
+<ul>
+<li>schulCrseScCode는 학교 분류입니다</li>
+</ul>
+<p>“1” : 병설유치원</p>
+<p>“2” : 초등학교</p>
+<p>“3” : 중학교</p>
+<p>“4” : 고등학교</p>
+<p>분류번호랑 종류랑 안맞으면 급식을 가져올 수 없습니다.</p>
+<ul>
+<li>schulKndScCode는 학교 종류입니다</li>
+</ul>
+<p>“01” : 유치원</p>
+<p>“02” : 초등학교</p>
+<p>“03” : 중학교</p>
+<p>“04” : 고등학교</p>
+<ul>
+<li>schMmealScCode : 식사 값을 의미합니다</li>
+</ul>
+<p>조식 : “1”</p>
+<p>중식 : “2”</p>
+<p>석식 : “3”</p>
+<ul>
+<li>schYmd : (일주일치 정보를 얻어오는 메소드에서) 원하는 날짜의 급식 정보를 얻기 위해 필요합니다 - 사용하지 않습니다.</li>
+</ul>
+<p>String 형식 : 년.월.일</p>
+<p>EX) “2014.03.16”</p>
+<ul>
+<li>schYm : (한달치 정보를 얻어오는 메소드에서) 원하는 달의 급식 정보를 얻기 위해 필요합니다 - 사용하지 않습니다.</li>
+</ul>
+<p>String 형식 : 년.월</p>
+<p>EX) “2014.03”</p>
+<ul>
+<li>year, month, day : schYmd와 schYm의 정보를 세분화 해서 각각 정보를 넘겨줄때 사용합니다</li>
+</ul>
+<p>EX) year = “2014”, month = “03”, day = “16”</p>
+<blockquote>
+<p>이 글에서 다룬 내용은 간단하게 자신의 학교의 급식정보를 받아와서 리스트뷰에 뿌려주는 내용입니다.</p>
+<p>급식 위젯과 자동 업데이트는 이 글에서 다루지 않고, 따로 메일로 질문주셔도 받지 않겠습니다.</p>
+<p>저는 심화된 내용을 스스로 도전해서 성공하는 기쁨까지 뺏고싶지는 않습니다.</p>
+</blockquote> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

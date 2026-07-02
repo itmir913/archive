@@ -1,0 +1,393 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="강좌가 등록되는 시간 주기가 초반에는 하루였는대 요즘은 보름~한달 되는거 같아요"><title>#28 WebView로 인터넷을 해보자 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">#28 WebView로 인터넷을 해보자</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-02-13T05:46:31.000Z"> 2014년 2월 13일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/468" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">강좌가 등록되는 시간 주기가 초반에는 하루였는대 요즘은 보름~한달 되는거 같아요</p> </header> <div class="post-content"> <p>안녕하세요</p>
+<p>강좌가 등록되는 시간 주기가 초반에는 하루였는대 요즘은 보름~한달 되는거 같아요</p>
+<p>천천히 강좌를 써서 여러분이 빨리 따라올수있도록 배려하는거랍니다~(?)</p>
+<p>그리고 이번강좌 부터는 모바일에서의 가독성 향상을 위해 소스코드를 사진으로 캡쳐해서 올리겠습니다</p>
+<p>복사할수있는 소스코드는 “코드보기”버튼을 누르면 볼수 있으며, 티스토리에서만 볼수있습니다 (네이버는 지원을 안하므로..)</p>
+<h2 id="28-webview로-인터넷을-해보자">28. WebView로 인터넷을 해보자</h2>
+<h3 id="28-1-인터넷을-하기-위해서는-권한이-필요해요">28-1 인터넷을 하기 위해서는 권한이 필요해요</h3>
+<p>웹뷰 예제를 따라하다 마지막에 “잘못한게 없는거 같은데 강제종료 되요”라는 덧글이 올라올까봐 처음부터 언급하겠습니다</p>
+<p>인터넷을 하기 위해서는 AndroidManifest.xml에 인터넷 권한을 추가해 주어야만 합니다</p>
+<p>그래야 이 어플을 설치하기 전에 아 인터넷에 접속할수 있구나 라는걸 사용자에게 알릴수가 있답니다</p>
+<uses-permission android:name="android.permission.INTERNET">
+<h3 id="28-2-레이아웃을-만들어-보자">28-2 레이아웃을 만들어 보자</h3>
+<p>오랜만에 레이아웃을 만드는거 같습니다(?)</p>
+<p>이번시간에 만들 레이아웃은 아래와 같습니다</p>
+<p><img  src="/archive/_astro/1.BRTU2s-U_Z1kTOUh.webp" alt="" width="325" height="532" loading="lazy" decoding="async"></p>
+<p>평소 사용하던 RelativeLayout을 사용하면 힘들수 있으므로 이번에는 리니어 레이아웃을 사용해 보겠습니다</p>
+<p>잠깐 LinearLayout에 대해 설명하자면..</p>
+<p>이 레이아웃은 추가된 하위뷰들(EditText)을 순서대로 위에서 아래로, 또는 왼쪽에서 오른쪽으로 배열합니다</p>
+<p>저 사진에서 ProgressBar는 0으로 설정해야 하고요</p>
+<p>레이아웃 xml은 아래와 같습니다</p>
+<p><img  src="/archive/_astro/0.Cp0qf9be_Z6TLVr.webp" alt="" width="421" height="678" loading="lazy" decoding="async"></p>
+<p>코드 보기</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">LinearLayout</span><span style="color:#6F42C1"> xmlns:android</span><span style="color:#24292E">=</span><span style="color:#032F62">"http://schemas.android.com/apk/res/android"</span></span>
+<span class="line"><span style="color:#6F42C1">    xmlns:tools</span><span style="color:#24292E">=</span><span style="color:#032F62">"http://schemas.android.com/tools"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"fill_parent"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"fill_parent"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:orientation</span><span style="color:#24292E">=</span><span style="color:#032F62">"vertical"</span></span>
+<span class="line"><span style="color:#6F42C1">    tools:context</span><span style="color:#24292E">=</span><span style="color:#032F62">".MainActivity"</span><span style="color:#24292E"> ></span></span>
+<span class="line"><span style="color:#24292E">    </span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">LinearLayout</span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"match_parent"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:focusable</span><span style="color:#24292E">=</span><span style="color:#032F62">"true"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:focusableInTouchMode</span><span style="color:#24292E">=</span><span style="color:#032F62">"true"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:orientation</span><span style="color:#24292E">=</span><span style="color:#032F62">"horizontal"</span><span style="color:#24292E"> ></span></span>
+<span class="line"><span style="color:#24292E">        </span></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#22863A">EditText</span></span>
+<span class="line"><span style="color:#6F42C1">            android:id</span><span style="color:#24292E">=</span><span style="color:#032F62">"@+id/addressInput"</span></span>
+<span class="line"><span style="color:#6F42C1">            android:inputType</span><span style="color:#24292E">=</span><span style="color:#032F62">"textUri"</span></span>
+<span class="line"><span style="color:#6F42C1">            android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">            android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">            android:layout_weight</span><span style="color:#24292E">=</span><span style="color:#032F62">"1"</span></span>
+<span class="line"><span style="color:#6F42C1">            android:singleLine</span><span style="color:#24292E">=</span><span style="color:#032F62">"true"</span></span>
+<span class="line"><span style="color:#6F42C1">            android:textSize</span><span style="color:#24292E">=</span><span style="color:#032F62">"20sp"</span><span style="color:#24292E"> /></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#22863A">Button</span></span>
+<span class="line"><span style="color:#6F42C1">            android:id</span><span style="color:#24292E">=</span><span style="color:#032F62">"@+id/goBtn"</span></span>
+<span class="line"><span style="color:#6F42C1">            android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">            android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">            android:background</span><span style="color:#24292E">=</span><span style="color:#032F62">"#00ffffff"</span></span>
+<span class="line"><span style="color:#6F42C1">            android:layout_weight</span><span style="color:#24292E">=</span><span style="color:#032F62">"0"</span></span>
+<span class="line"><span style="color:#6F42C1">            android:onClick</span><span style="color:#24292E">=</span><span style="color:#032F62">"GoButton"</span></span>
+<span class="line"><span style="color:#6F42C1">            android:text</span><span style="color:#24292E">=</span><span style="color:#032F62">"GO"</span><span style="color:#24292E"> /></span></span>
+<span class="line"><span style="color:#24292E">    </span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;/</span><span style="color:#22863A">LinearLayout</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">ProgressBar</span></span>
+<span class="line"><span style="color:#6F42C1">        android:id</span><span style="color:#24292E">=</span><span style="color:#032F62">"@+id/progressBar"</span></span>
+<span class="line"><span style="color:#6F42C1">        style</span><span style="color:#24292E">=</span><span style="color:#032F62">"?android:attr/progressBarStyleHorizontal"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"match_parent"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"10dp"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:max</span><span style="color:#24292E">=</span><span style="color:#032F62">"100"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:progress</span><span style="color:#24292E">=</span><span style="color:#032F62">"0"</span><span style="color:#24292E"> /></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">WebView</span></span>
+<span class="line"><span style="color:#6F42C1">        android:id</span><span style="color:#24292E">=</span><span style="color:#032F62">"@+id/webView"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"match_parent"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"match_parent"</span><span style="color:#24292E"> /></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">LinearLayout</span><span style="color:#24292E">></span></span>
+<span class="line"></span></code></pre>
+<p>두번째 리니어 레이아웃을 보면</p>
+<p>focusable과 focusableInTouchMode이 있는데요</p>
+<p>처음에 액티비티에 EditText가 있을경우 포커스가 EditText로 먼저 가므로 이를 방지하기 위해 넣어줬습니다</p>
+<p>이 두개가 없을경우 앱을 실행하면 키보드가 나타나요</p>
+<p>더 자세한 설명보다 직접 보는게 이해가 빠르므로 설명은 생략하겠습니다</p>
+<p>(앱 예제안 주석에 달아두겠습니다)</p>
+<h3 id="28-3-mainactivityjava">28-3 MainActivity.java</h3>
+<p>이번 강좌에서는 선언해야 할것이 조금 많습니다</p>
+<p><img  src="/archive/_astro/1_1.Day5t0k5_KI9Cq.webp" alt="" width="340" height="107" loading="lazy" decoding="async"></p>
+<p>코드 보기</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">private</span><span style="color:#24292E"> String mAddress </span><span style="color:#D73A49">=</span><span style="color:#032F62"> "http://itmir.tistory.com/"</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">private</span><span style="color:#24292E"> WebView mWebView;</span></span>
+<span class="line"><span style="color:#D73A49">private</span><span style="color:#24292E"> WebSettings mWebSettings;</span></span>
+<span class="line"><span style="color:#D73A49">private</span><span style="color:#24292E"> EditText mEditText;</span></span>
+<span class="line"><span style="color:#D73A49">private</span><span style="color:#24292E"> ProgressBar mProgressBar;</span></span>
+<span class="line"><span style="color:#D73A49">private</span><span style="color:#24292E"> InputMethodManager mInputMethodManager;</span></span>
+<span class="line"></span></code></pre>
+<p>가독성 향상을 위해 사진을 사용했습니다</p>
+<p>코드를 보기 위해서는 “코드보기”버튼을 눌러주세요~~</p>
+<p>이제 onCreate()로 와주세요</p>
+<p>id값과 InputMethodManager의 경우는 시스탬 서비스를 호출해야 합니다</p>
+<p><img  src="/archive/_astro/2.CbLfpcRO_ZBjpPL.webp" alt="" width="567" height="79" loading="lazy" decoding="async"></p>
+<p>코드보기</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">mInputMethodManager </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (InputMethodManager) </span><span style="color:#6F42C1">getSystemService</span><span style="color:#24292E">(Context.INPUT_METHOD_SERVICE);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">mEditText </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (EditText) </span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.addressInput);</span></span>
+<span class="line"><span style="color:#24292E">mProgressBar </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (ProgressBar) </span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.progressBar);</span></span>
+<span class="line"><span style="color:#24292E">mWebView </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (WebView) </span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.webView);</span></span>
+<span class="line"></span></code></pre>
+<p>첫번째 줄을 보시면 InputMethodManager가 처음 나왔는데요 이것을 사용하는 이유는 이동할 주소를 입력한뒤 이동 버튼을 누르면</p>
+<p>키보드가 숨겨져야 하죠? 그래서 InputMethodManager를 사용합니다</p>
+<p>이제 WebSettings에 대해 설명할 차례가 왔습니다</p>
+<p><img  src="/archive/_astro/3.fN5FMVBJ_Z1JLNg6.webp" alt="" width="345" height="92" loading="lazy" decoding="async"></p>
+<p>코드보기</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">mWebSettings </span><span style="color:#D73A49">=</span><span style="color:#24292E"> mWebView.</span><span style="color:#6F42C1">getSettings</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">mWebSettings.</span><span style="color:#6F42C1">setSaveFormData</span><span style="color:#24292E">(</span><span style="color:#005CC5">false</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">mWebSettings.</span><span style="color:#6F42C1">setJavaScriptEnabled</span><span style="color:#24292E">(</span><span style="color:#005CC5">true</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">mWebSettings.</span><span style="color:#6F42C1">setSupportZoom</span><span style="color:#24292E">(</span><span style="color:#005CC5">true</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">mWebSettings.</span><span style="color:#6F42C1">setBuiltInZoomControls</span><span style="color:#24292E">(</span><span style="color:#005CC5">true</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">mWebSettings.</span><span style="color:#6F42C1">setCacheMode</span><span style="color:#24292E">(WebSettings.LOAD_NO_CACHE);</span></span>
+<span class="line"></span></code></pre>
+<p>첫번째 줄이 WebView의 설정을 불러오는 부분입니다</p>
+<p>3번째 라인은 Form데이터를 저장할지 여부이며,</p>
+<p>4번째는 java스크립트 사용여부</p>
+<p>5~6번째는 멀티터치로 화면을 늘릴지 여부를 설정하고,</p>
+<p>7번줄은 캐쉬 사용 모드를 나타내고 있습니다</p>
+<p>CacheMode에는 아래중 하나가 들어갈수 있습니다</p>
+<ul>
+<li>WebSettings.LOAD_DEFAULT</li>
+<li>WebSettings.LOAD_NORMAL</li>
+<li>WebSettings.LOAD_CACHE_ELSE_NETWORK</li>
+<li>WebSettings.LOAD_NO_CACHE</li>
+<li>WebSettings.LOAD_CACHE_ONLY</li>
+</ul>
+<p>여기서 LOAD_CACHE_ELSE_NETWORK에 대해 부가 설명을 하면</p>
+<p>캐쉬를 사용할수 있는경우 기간이 만료되도 사용합니다, 사용할수 없으면 네트워크를 사용합니다</p>
+<p>(API 원문 : Use cached resources when they are available, even if they have expired. Otherwise load resources from the network.)</p>
+<p>이제 아래 문구를 또 넣어주세요</p>
+<p><img  src="/archive/_astro/4.CCGc7KTa_FyjwQ.webp" alt="" width="323" height="34" loading="lazy" decoding="async"></p>
+<p>코드 보기</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">mWebView.</span><span style="color:#6F42C1">setWebChromeClient</span><span style="color:#24292E">(</span><span style="color:#D73A49">new</span><span style="color:#6F42C1"> webViewChrome</span><span style="color:#24292E">());</span></span>
+<span class="line"><span style="color:#24292E">mWebView.</span><span style="color:#6F42C1">setWebViewClient</span><span style="color:#24292E">(</span><span style="color:#D73A49">new</span><span style="color:#6F42C1"> webViewClient</span><span style="color:#24292E">());</span></span>
+<span class="line"></span></code></pre>
+<p>그러면 new ~()부분에 빨간 밑줄이 나타날겁니다</p>
+<p><img  src="/archive/_astro/4-1.iONOM74J_1XM7UX.webp" alt="" width="397" height="33" loading="lazy" decoding="async"></p>
+<p>당황하지 마시고 아래의 클래스를 추가해 주면 되는데요</p>
+<p>onCreate()아래에 추가해 주시면 됩니다</p>
+<p>설명까지 한번에 이어서 하겠습니다</p>
+<p>먼저 webChromeClient입니다</p>
+<p><img  src="/archive/_astro/5.B5JJATbP_Z1wIAvA.webp" alt="" width="382" height="181" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/11.MWAjuy6D_Z2nmEvv.webp" alt="" width="323" height="257" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/12.D5ilYud-_Z22NdVX.webp" alt="" width="477" height="291" loading="lazy" decoding="async"></p>
+<p>코드 보기</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> webViewChrome</span><span style="color:#D73A49"> extends</span><span style="color:#6F42C1"> WebChromeClient</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> onProgressChanged</span><span style="color:#24292E">(WebView </span><span style="color:#E36209">view</span><span style="color:#24292E">, </span><span style="color:#D73A49">int</span><span style="color:#E36209"> newProgress</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#005CC5">        super</span><span style="color:#24292E">.</span><span style="color:#6F42C1">onProgressChanged</span><span style="color:#24292E">(view, newProgress);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E">(newProgress </span><span style="color:#D73A49">&#x3C;</span><span style="color:#005CC5"> 100</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">            mProgressBar.</span><span style="color:#6F42C1">setProgress</span><span style="color:#24292E">(newProgress);</span></span>
+<span class="line"><span style="color:#24292E">        }</span><span style="color:#D73A49">else</span><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#24292E">            mProgressBar.</span><span style="color:#6F42C1">setVisibility</span><span style="color:#24292E">(View.INVISIBLE);</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p>이 onProgressChanged()메소드는 페이지를 로딩할때, 프로그래스가 달라질때마다 호출됩니다</p>
+<p>그러므로 ProgressBar를 설정하는 부분을 이곳에 넣어주면 됩니다~</p>
+<p>onReceivedIcon()는 웹페이지의 아이콘이 변경될때마다 호출되는데요</p>
+<p><img  src="/archive/_astro/%EC%BA%A1%EC%B2%98.B0oudgTB_1q5WgA.webp" alt="" width="199" height="29" loading="lazy" decoding="async"></p>
+<p>이게 아이콘 입니다</p>
+<p>onReceivedTitle()는 웹페이지의 제목이 변경될때마다,</p>
+<p>onJsAlert()와 onJsConfirm()는 자바스크립트 알림/경고를 표시할지 여부를 설정해줍니</p>
+<p>아래는 webViewClient입니다</p>
+<p><img  src="/archive/_astro/6.2hUkwcNu_2sYOmz.webp" alt="" width="413" height="253" loading="lazy" decoding="async"></p>
+<p>코드 보기</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> webViewClient</span><span style="color:#D73A49"> extends</span><span style="color:#6F42C1"> WebViewClient</span><span style="color:#24292E"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> onPageFinished</span><span style="color:#24292E">(WebView </span><span style="color:#E36209">view</span><span style="color:#24292E">, String </span><span style="color:#E36209">url</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#005CC5">        super</span><span style="color:#24292E">.</span><span style="color:#6F42C1">onPageFinished</span><span style="color:#24292E">(view, url);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">        mEditText.</span><span style="color:#6F42C1">setText</span><span style="color:#24292E">(url);</span></span>
+<span class="line"><span style="color:#24292E">     }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> boolean</span><span style="color:#6F42C1"> shouldOverrideUrlLoading</span><span style="color:#24292E">(WebView </span><span style="color:#E36209">mView</span><span style="color:#24292E">, String </span><span style="color:#E36209">url</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">        mProgressBar.</span><span style="color:#6F42C1">setVisibility</span><span style="color:#24292E">(View.VISIBLE);</span></span>
+<span class="line"><span style="color:#24292E">        mView.</span><span style="color:#6F42C1">loadUrl</span><span style="color:#24292E">(url);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#005CC5"> super</span><span style="color:#24292E">.</span><span style="color:#6F42C1">shouldOverrideUrlLoading</span><span style="color:#24292E">(mView, url);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p>위에 있는 4번째 줄의 onPageFinished()는 페이지 로딩이 끝났을때 호출됩니다</p>
+<p>아래 shouldOverriedUrlLoading()메소드는 한 페이지에서 다른 페이지로 넘어갈때 호출되므로</p>
+<p>13줄의 loadUrl()을 통해 페이지를 이동합니다</p>
+<p>여기까지 하셨다면 아까 빨간줄은 없어졌을겁니다</p>
+<p>이제 마지막으로 onCreate()의 맨 마지막에 아래 문구만 추가해 주면 끝입니다</p>
+<p><img  src="/archive/_astro/7.Cc6E_Xg8_Z1HLQUw.webp" alt="" width="174" height="36" loading="lazy" decoding="async"></p>
+<p>코드 보기</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">mWebView.</span><span style="color:#6F42C1">loadUrl</span><span style="color:#24292E">(mAddress);</span></span>
+<span class="line"><span style="color:#24292E">mEditText.</span><span style="color:#6F42C1">setText</span><span style="color:#24292E">(mAddress);</span></span>
+<span class="line"></span></code></pre>
+<p>이제 Layout에서 버튼을 누르면 할 작업을 만들어 줘야 되요~</p>
+<p>onClick에서 GoButton으로 했기 때문에 GoButton이라는 메소드를 만들어 줍시다</p>
+<p><img  src="/archive/_astro/8.YTDEYjxj_2pS7EE.webp" alt="" width="478" height="303" loading="lazy" decoding="async"></p>
+<p>코드 보기</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> GoButton</span><span style="color:#24292E">(View v){</span></span>
+<span class="line"><span style="color:#24292E">    mInputMethodManager.</span><span style="color:#6F42C1">hideSoftInputFromWindow</span><span style="color:#24292E">(mEditText.</span><span style="color:#6F42C1">getWindowToken</span><span style="color:#24292E">(), </span><span style="color:#005CC5">0</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">    mAddress </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> httpaddressCheck</span><span style="color:#24292E">(mEditText.</span><span style="color:#6F42C1">getText</span><span style="color:#24292E">().</span><span style="color:#6F42C1">toString</span><span style="color:#24292E">());</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E">(mAddress </span><span style="color:#D73A49">==</span><span style="color:#005CC5"> null</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    mWebView.</span><span style="color:#6F42C1">loadUrl</span><span style="color:#24292E">(mAddress);</span></span>
+<span class="line"><span style="color:#24292E">    mEditText.</span><span style="color:#6F42C1">setText</span><span style="color:#24292E">(mAddress);</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">private</span><span style="color:#24292E"> String </span><span style="color:#6F42C1">httpaddressCheck</span><span style="color:#24292E">(String inputUrl) {</span></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E">(inputUrl.</span><span style="color:#6F42C1">length</span><span style="color:#24292E">()</span><span style="color:#D73A49">==</span><span style="color:#005CC5">0</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#005CC5"> null</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E">(inputUrl.</span><span style="color:#6F42C1">indexOf</span><span style="color:#24292E">(</span><span style="color:#032F62">"http://"</span><span style="color:#24292E">)  </span><span style="color:#D73A49">!=</span><span style="color:#D73A49"> -</span><span style="color:#005CC5">1</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> inputUrl;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    else</span><span style="color:#D73A49"> return</span><span style="color:#032F62"> "http://"</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> inputUrl;</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p>2번째 줄에서버튼을 누르면 일단 키보드를 숨겨줍니다</p>
+<p>그다음에 httpaddressCheck()라는 메소드를 호출하는데요</p>
+<p>이 메소드는 “http://“라는 글자가 주소에 없을경우 추가해주는 메소드입니다</p>
+<p>8번 라인에서 입력한 주소로 이동하는 모습을 볼수 있어요</p>
+<p>마지막으로 뒤로가기 키를 누르면 이전 페이지로 가는 코드를 넣어줍시다</p>
+<p><img  src="/archive/_astro/9.CYzvkA1-_2kpv34.webp" alt="" width="430" height="199" loading="lazy" decoding="async"></p>
+<p>코드 보기</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">@</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> boolean</span><span style="color:#6F42C1"> onKeyDown</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> keyCode, KeyEvent event){</span></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E">(keyCode </span><span style="color:#D73A49">==</span><span style="color:#24292E"> KeyEvent.KEYCODE_BACK </span><span style="color:#D73A49">&#x26;&#x26;</span><span style="color:#24292E"> event.</span><span style="color:#6F42C1">getRepeatCount</span><span style="color:#24292E">() </span><span style="color:#D73A49">==</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E">(mWebView.</span><span style="color:#6F42C1">canGoBack</span><span style="color:#24292E">()){</span></span>
+<span class="line"><span style="color:#24292E">            mWebView.</span><span style="color:#6F42C1">goBack</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">        }</span><span style="color:#D73A49">else</span><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#24292E">            mWebView.</span><span style="color:#6F42C1">clearCache</span><span style="color:#24292E">(</span><span style="color:#005CC5">false</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#6F42C1">            finish</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#005CC5"> true</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#005CC5"> super</span><span style="color:#24292E">.</span><span style="color:#6F42C1">onKeyDown</span><span style="color:#24292E">(keyCode, event);</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p>4번줄의 canGoBack()은 이전 페이지가 있으면 true, 없으면 false를 반환합니다</p>
+<p>뒤로 갈수 있는 페이지가 있으면 goBack()을 통해 이전페이지로 이동하고,</p>
+<p>없으면 어플을 종료합니다</p>
+<p>어플 스크린샷은 아래와 같습니다</p>
+<p><img  src="/archive/_astro/device-2014-02-13-144443.BpN6AK2D_ZkmW9z.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<p>이렇게 해서 기본적인 웹뷰 사용법을 알아봤습니다</p>
+<p>더 많은 API는 기회가 되면 알아보도록 하겠습니다</p>
+<p>MainActivity.java</p>
+<p>package lee.whdghks913.examplewebview;</p>
+<p>import android.app.Activity;</p>
+<p>import android.content.Context;</p>
+<p>import android.graphics.Bitmap;</p>
+<p>import android.os.Bundle;</p>
+<p>import android.view.KeyEvent;</p>
+<p>import android.view.View;</p>
+<p>import android.view.inputmethod.InputMethodManager;</p>
+<p>import android.webkit.JsResult;</p>
+<p>import android.webkit.WebChromeClient;</p>
+<p>import android.webkit.WebSettings;</p>
+<p>import android.webkit.WebView;</p>
+<p>import android.webkit.WebViewClient;</p>
+<p>import android.widget.EditText;</p>
+<p>import android.widget.ProgressBar;</p>
+<p>public class MainActivity extends Activity {</p>
+<p>    private String mAddress = “<a href="http://itmir.tistory.com/">http://itmir.tistory.com/</a>”;</p>
+<p>    private WebView mWebView;</p>
+<p>    private WebSettings mWebSettings;</p>
+<p>    private EditText mEditText;</p>
+<p>    private ProgressBar mProgressBar;</p>
+<p>    private InputMethodManager mInputMethodManager;</p>
+<p>    @Override</p>
+<p>    protected void onCreate(Bundle savedInstanceState) {</p>
+<p>        super.onCreate(savedInstanceState);</p>
+<p>        setContentView(R.layout.activity_main);</p>
+<p>        mInputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);</p>
+<p>        mEditText = (EditText) findViewById(R.id.addressInput);</p>
+<p>        mProgressBar = (ProgressBar) findViewById(R.id.progressBar);</p>
+<p>        mWebView = (WebView) findViewById(R.id.webView);</p>
+<p>        mWebSettings = mWebView.getSettings();</p>
+<p>        // setSavePassword(false)는 이제 사라질 API이기 때문에 사용하지 않습니다</p>
+<p>//        mWebSettings.setSavePassword(false);</p>
+<p>//        mWebSettings.setAppCacheMaxSize(10000);</p>
+<p>        mWebSettings.setSaveFormData(false);</p>
+<p>        mWebSettings.setJavaScriptEnabled(true);</p>
+<p>        mWebSettings.setSupportZoom(true);</p>
+<p>        mWebSettings.setBuiltInZoomControls(true);</p>
+<p>        mWebSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);</p>
+<p>        mWebView.setWebChromeClient(new webViewChrome());</p>
+<p>        mWebView.setWebViewClient(new webViewClient());</p>
+<p>        mWebView.loadUrl(mAddress);</p>
+<p>        mEditText.setText(mAddress);</p>
+<p>    }</p>
+<p>    public void GoButton(View v){</p>
+<p>        mInputMethodManager.hideSoftInputFromWindow(mEditText.getWindowToken(), 0);</p>
+<p>        mAddress = httpaddressCheck(mEditText.getText().toString());</p>
+<p>         if(mAddress == null)</p>
+<p>             return;</p>
+<p>         mWebView.loadUrl(mAddress);</p>
+<p>         mEditText.setText(mAddress);</p>
+<p>    }</p>
+<p>    private String httpaddressCheck(String inputUrl) {</p>
+<p>        if(inputUrl.length()==0)</p>
+<p>            return null;</p>
+<p>        if(inputUrl.indexOf(“http://”)  != -1)</p>
+<p>            return inputUrl;</p>
+<p>        else return “http://” + inputUrl;</p>
+<p>    }</p>
+<p>    public class webViewChrome extends WebChromeClient {</p>
+<p>        @Override</p>
+<p>        public void onProgressChanged(WebView view, int newProgress) {</p>
+<p>            super.onProgressChanged(view, newProgress);</p>
+<p>            if(newProgress &#x3C; 100) {</p>
+<p>                mProgressBar.setProgress(newProgress);</p>
+<p>            }else{</p>
+<p>                mProgressBar.setVisibility(View.INVISIBLE);</p>
+<p>            }</p>
+<p>        }</p>
+<p>        /**</p>
+<p>         * 홈페이지 아이콘이 변경되었을때 호출됩니다</p>
+<p>         * icon은 홈페이지 아이콘</p>
+<p>         */</p>
+<p>        @Override</p>
+<p>        public void onReceivedIcon(WebView view, Bitmap icon) {</p>
+<p>        super.onReceivedIcon(view, icon);</p>
+<p>        }</p>
+<p>        /**</p>
+<p>         * 홈페이지의 제목에 변경이 있을때 호출됩니다</p>
+<p>         * title은 <title>타이틀</title> 에서 “타이틀” 입니다</p>
+<p>         */</p>
+<p>        @Override</p>
+<p>        public void onReceivedTitle(WebView view, String title) {</p>
+<p>        super.onReceivedTitle(view, title);</p>
+<p>        }</p>
+<p>        /**</p>
+<p>         * 자바스크립트 경고(알림)를 표시할지 여부</p>
+<p>         */</p>
+<p>        @Override</p>
+<p>        public boolean onJsAlert(WebView mView, String url, String message, JsResult result) {</p>
+<p>        result.confirm();</p>
+<p>        return true;</p>
+<p>        }</p>
+<p>        /**</p>
+<p>         * 자바스크립트의 확인 대화상자를 표시할지 여부</p>
+<p>         */</p>
+<p>        @Override</p>
+<p>        public boolean onJsConfirm(WebView view, String url, String msg, JsResult result){</p>
+<p>        result.confirm();</p>
+<p>        return true;</p>
+<p>        }</p>
+<p>    }</p>
+<p>    public class webViewClient extends WebViewClient {</p>
+<p>        @Override</p>
+<p>        public void onPageFinished(WebView view, String url) {</p>
+<p>            super.onPageFinished(view, url);</p>
+<p>            mEditText.setText(url);</p>
+<p>        }</p>
+<p>        @Override</p>
+<p>        public boolean shouldOverrideUrlLoading(WebView mView, String url) {</p>
+<p>            mProgressBar.setVisibility(View.VISIBLE);</p>
+<p>            mView.loadUrl(url);</p>
+<p>            return super.shouldOverrideUrlLoading(mView, url);</p>
+<p>        }</p>
+<p>    }</p>
+<p>    @Override</p>
+<p>    public boolean onKeyDown(int keyCode, KeyEvent event){</p>
+<p>        if(keyCode == KeyEvent.KEYCODE_BACK &#x26;&#x26; event.getRepeatCount() == 0){</p>
+<p>            if(mWebView.canGoBack()){</p>
+<p>                mWebView.goBack();</p>
+<p>            }else{</p>
+<p>                mWebView.clearCache(false);</p>
+<p>                finish();</p>
+<p>            }</p>
+<p>            return true;</p>
+<p>        }</p>
+<p>        return super.onKeyDown(keyCode, event);</p>
+<p>    }</p>
+<p>}</p>
+<p>[ExampleWebView.zip</p>
+<p>다운로드](./file/ExampleWebView.zip)</p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleWebView.zip">ExampleWebView.zip</a> <code>584 KB</code></li>
+</ul></uses-permission> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

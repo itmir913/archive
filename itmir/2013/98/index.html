@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="오늘은 커널에 스케쥴러를 추가해 보도록 하겠습니다."><title>커널에 Sio, Deadline등의 스케쥴러를 추가해 보자 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">커널에 Sio, Deadline등의 스케쥴러를 추가해 보자</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-01-30T03:09:26.000Z"> 2013년 1월 30일 </time> <span class="post-category">Android/Kernel</span> <a href="https://itmir.tistory.com/98" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">오늘은 커널에 스케쥴러를 추가해 보도록 하겠습니다.</p> </header> <div class="post-content"> <p>안녕하세요.</p>
+<p>오늘은 커널에 스케쥴러를 추가해 보도록 하겠습니다.</p>
+<p>좀 오래전(약 3달전)에 한 작업이라 사진이 극히 적으니 잘따라와 주세요.</p>
+<p>구문은 다음 첨부파일을 확인해 주시면 감사드리겠습니다.</p>
+<p><a href="/attachment/cfile4.uf@116CE94451088F612C095D.txt"><img src="http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/txt.gif" alt=""> Kconfig.txt</a></p>
+<p><a href="/attachment/cfile7.uf@026CAE4451088F6129ABD4.txt"><img src="http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/txt.gif" alt=""> Makefile.txt</a></p>
+<p>(제가 올려둔 Github의 commit를 확인해 보시려면</p>
+<p><a href="https://github.com/itmir913/Mir-kernel/commit/d745d917209323bcac7ce117d7d6842a88e25678">https://github.com/itmir913/Mir-kernel/commit/d745d917209323bcac7ce117d7d6842a88e25678</a> 사이트를 방문해 주세요.)</p>
+<p><strong>1. 스케쥴러의 소스를 구하자</strong></p>
+<p>일단 추가할 스케쥴러의 소스를 구해야겠죠?</p>
+<p>구하는 방법은 여러가지 입니다.</p>
+<p>먼저 Github에서 구하는 방법이 있습니다 <a href="https://github.com">https://github.com</a> 사이트에서 원하는 스케쥴러의 소스를 가져오시면 됩니다.</p>
+<p>또한 구글링도 방법인대요 방대한 자료를 담고있는 구글에게 구해보는 겁니다.</p>
+<p>마지막으로 누가 올려둔 소스를 보는 방법입니다.</p>
+<p>제가 제 커널에 추가한 소스를 올려둘태니 참고하시면 될듯 합니다. ㅎㅎ</p>
+<p><a href="/attachment/cfile25.uf@20054B36510886AE11FB2F.c"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> deadline-iosched.c</a></p>
+<p><a href="/attachment/cfile4.uf@03795C36510886AE1B268F.c"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> noop-iosched.c</a></p>
+<p><a href="/attachment/cfile9.uf@2515CE36510886AF072152.c"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> sio-iosched.c</a></p>
+<p><a href="/attachment/cfile5.uf@247CEA36510886AF17C74E.c"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> vr-iosched.c</a></p>
+<p>기본적으로 deadline이나 noop는 커널소스에 있을겁니다. sio나 vr만 받으셔도 될듯.</p>
+<p><strong>2. 커널을 수정하자 - .c파일 추가편</strong></p>
+<p>io 스케쥴러는 커널소스/block 폴더에 위치합니다.</p>
+<p>이 폴더에 가져온 소스를 모두 넣어주시면 됩니다.</p>
+<p>이름을 까먹을수 있으니 메모장이나 그런 프로그램에 이름만 저장해 두시면 편합니다.</p>
+<p><strong>3. 커널을 수정하자 - 소스 수정편 -</strong> <strong>Kconfig.iosched</strong></p>
+<p>우리가 수정해야 하는 파일은 Kconfig.iosched와 Makefile입니다.</p>
+<p>일단 이 강좌에서는 sio와 vr만 추가하려 하기 때문에 이 두가지에 관한 내용만 서술하겠습니다.</p>
+<p>다른 스케쥴러의 경우 Github에서 검색하보시면 다른 분께서 작성해 둔 소스를 살펴보시면 됩니다.</p>
+<p>먼저 Kconfig.iosched부터 수정해 볼까요?</p>
+<p>choice를 찾아주세요.</p>
+<p>그 구문 위를 보시면 config DEFAULT_CFQ 와 같은 구문이 있을겁니다.</p>
+<p>그럼 그부분에 아래 구문을 넣어주시면 됩니다.</p>
+<blockquote>
+<p>config IOSCHED_SIO</p>
+<p>    tristate “Simple I/O scheduler”</p>
+<p>    default y</p>
+<p>    ---help---</p>
+<p>    The Simple I/O scheduler is an extremely simple scheduler,</p>
+<p>    based on noop and deadline, that relies on deadlines to</p>
+<p>    ensure fairness. The algorithm does not do any sorting but</p>
+<p>    basic merging, trying to keep a minimum overhead. It is aimed</p>
+<p>    mainly for aleatory access devices (eg: flash devices).</p>
+<p>config IOSCHED_VR</p>
+<p>    tristate “V(R) I/O scheduler”</p>
+<p>    default y</p>
+<p>    ---help---</p>
+<p>     Requests are chosen according to SSTF with a penalty of rev_penalty</p>
+<p>     for switching head direction.</p>
+</blockquote>
+<p>어려우시다면 아래 사진을 봐주시면 이해가 빠르실겁니다.</p>
+<p><img  src="/archive/_astro/io1.Bde4HzgZ_DebIW.webp" alt="" width="591" height="356" loading="lazy" decoding="async"></p>
+<p>위 사진처럼 choice 위에 그냥 넣어주시기만 하시면 됩니다ㅋㅋ</p>
+<p>그럼 다음으로 진행해 보겠습니다.</p>
+<p>Kconfig에서 choice밑에 보시면 config DEFAULT가 있습니다.</p>
+<p>이게 끝나는 부분에 아래 구절을 넣어주시면 됩니다.</p>
+<blockquote>
+<p>config DEFAULT_SIO</p>
+<p>    bool “SIO” if IOSCHED_SIO=y</p>
+<p>config DEFAULT_VR</p>
+<p>    bool “VR” if IOSCHED_VR=y</p>
+</blockquote>
+<p>아래 사진처럼 choice밑부분에 config DEFAULT를 넣어주시면 완료됩니다.</p>
+<p><img  src="/archive/_astro/io2.DlxxZihP_ZPzE6w.webp" alt="" width="547" height="412" loading="lazy" decoding="async"></p>
+<p>이렇게 구문을 넣어주시면 완료됩니다. ㅎㅎ</p>
+<p>Kconfig를 수정하는것은 대부분 완료되었습니다 이제 하나만 하면 됩니다.</p>
+<p>커널에서 디폴트 스케쥴러를 설정할수 있게 해줘야 겠죠?</p>
+<p>이번엔 endchoice를 찾아주세요.</p>
+<p>endchoice밑에 default “cfq”의 문구가 있습니다.</p>
+<p>이것도 마찬가지로 아래 구문을 넣어 주시면 됩니다.</p>
+<blockquote>
+<p>default “sio” if DEFAULT_SIO</p>
+<p>default “vr” if DEFAULT_VR</p>
+</blockquote>
+<p><img  src="/archive/_astro/io3.navyawq7_Z1rLnIK.webp" alt="" width="342" height="198" loading="lazy" decoding="async"></p>
+<p>이렇게 말이죠.</p>
+<p>endcohoice밑 config DEFAULT_IOSCHED에 구절을 넣어주시면 완료되는 것이지요!</p>
+<p>아무 수정도 하지 않은 Kconfig.iosched를 보시면 눈치가 빠르신 분들은 아 이런 구문을 넣으면 되는구나~ 라는 생각이 드실겁니다. ㅎㅎ</p>
+<p>그냥 단순 복붙만 하면 되지요. ㅋ</p>
+<p><strong>3. 커널을 수정하자 - 소스 수정편 - Makefile</strong></p>
+<p>kconfig에서 이런 소스가 있구나~ 라는 것을 알아듣게 때렸으니 makefile에서 컴파일 되도록 구문을 추가해 줘야겠죠?</p>
+<p>이건 수정이 완전 쉽습니다. ㅋㅋ</p>
+<p>그냥 맨 아래에</p>
+<blockquote>
+<p>obj-$(CONFIG_IOSCHED_SIO) += sio-iosched.o</p>
+<p>obj-$(CONFIG_IOSCHED_VR) += vr-iosched.o</p>
+</blockquote>
+<p>을 추가해주시면 됩니다.</p>
+<p><img  src="/archive/_astro/io4.DifSnqZr_2ngB1u.webp" alt="" width="419" height="62" loading="lazy" decoding="async"></p>
+<p>위 사진처럼 말이죠. ㅋ</p>
+<p>이제 모든 파일을 저장한다음 커널 컴파일 해주시면 됩니다.</p>
+<p>혹시 모르니 menuconfig명령으로 스케쥴러가 정상적으로 추가 되어있는지 확인해 보시려면</p>
+<p>menuconfig에서 Enable the block layer/IO Schedulers를 찾아가시면 확인하실수 있습니다~</p>
+<p><img  src="/archive/_astro/1.CrukuyU8_1b9A21.webp" alt="" width="210" height="71" loading="lazy" decoding="async"></p>
+<p>그럼 위 사진처럼 정상적으로 컴파일 되는 모습을 지켜보실수 있습니다. ㅎㅎ</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

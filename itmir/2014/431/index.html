@@ -1,0 +1,165 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Xor연산을 이용하여 int, String, long, short, byte, char, File를 암호화 할수 있는 library입니다"><title>Xor 암호화 라이브러리 (SecurityXOR.jar) 다운로드/API 가이드 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">Xor 암호화 라이브러리 (SecurityXOR.jar) 다운로드/API 가이드</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-01-14T02:25:07.000Z"> 2014년 1월 14일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/431" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">Xor연산을 이용하여 int, String, long, short, byte, char, File를 암호화 할수 있는 library입니다</p> </header> <div class="post-content"> <p>Xor연산을 이용하여 int, String, long, short, byte, char, File를 암호화 할수 있는 library입니다</p>
+<p>안드로이드 어플리케이션에 jar 파일을 추가한다음 사용하시면 됩니다</p>
+<hr>
+<p>[DownLoad]</p>
+<p>jar library와 javadoc</p>
+<p>Version : v1.0, 2014-01-14</p>
+<p>[SecurityXOR.jar</p>
+<p>다운로드](./file/SecurityXOR.jar)</p>
+<p>[javadoc.zip</p>
+<p>다운로드](./file/javadoc.zip)</p>
+<p>2014-09-11 원본 java소스 첨부</p>
+<p>[SecurityXORLibrary.java</p>
+<p>다운로드](./file/SecurityXORLibrary.java)</p>
+<hr>
+<p><strong>API 가이드 (KO - EN)</strong></p>
+<p>필요한 import</p>
+<p>Necessary import</p>
+<p>import com.whdghks913.xor.SecurityXOR;</p>
+<p>Xor.jar library를 사용하기 위한 선언</p>
+<p>Declaration to use the Xor.jar library</p>
+<p>SecurityXOR securityXOR = new SecurityXOR();</p>
+<p>사용할수 있는 메소드</p>
+<p>Available methods</p>
+<p>getSecurityXOR(), securityFileXOR(), remainingTime(), getIsFileSize(), getTotalFileSize(), getJarVersion()</p>
+<p>getSecurityXOR()메소드 가이드</p>
+<p><strong>getSecurityXOR(int Code, int XorCode)</strong></p>
+<p>-반환형(Return value type) : int</p>
+<p>: Code-원본값(original value), XorCode-xor비밀번호(xor Password)</p>
+<p>XorCode가 0일경우 0을 반환합니다</p>
+<p><strong>getSecurityXOR(String Code, int XorCode)</strong></p>
+<p>-반환형(Return value type) : String</p>
+<p>: Code-원본값(original value), XorCode-xor비밀번호(xor Password)</p>
+<p>XorCode가 0일경우 0을 반환합니다</p>
+<p><strong>getSecurityXOR(String Code, byte XorKey[])</strong></p>
+<p>-반환형(Return value type) : String</p>
+<p>: Code-원본값(original value), XorCode[]-xor비밀번호 배열(xor password arrangement)</p>
+<p><strong>getSecurityXOR(long Code, int XorCode)</strong></p>
+<p>-반환형(Return value type) : long</p>
+<p>: Code-원본값(original value), XorCode-xor비밀번호(xor Password)</p>
+<p>Xorcode가 0일경우 null을 반환합니다</p>
+<p><strong>getSecurityXOR(long Code, long XorCode)</strong></p>
+<p>-반환형(Return value type) : long</p>
+<p>: Code-원본값(original value), XorCode-xor비밀번호(xor Password)</p>
+<p>XorCode가 0일경우 0을 반환합니다</p>
+<p><strong>getSecurityXOR(short Code, int XorCode)</strong></p>
+<p>-반환형(Return value type) : int</p>
+<p>: Code-원본값(original value), XorCode-xor비밀번호(xor Password)</p>
+<p>XorCode가 0일경우 0을 반환합니다</p>
+<p><strong>getSecurityXOR(byte Code, int XorCode)</strong></p>
+<p>-반환형(Return value type) : int</p>
+<p>: Code-원본값(original value), XorCode-xor비밀번호(xor Password)</p>
+<p>XorCode가 0일경우 0을 반환합니다</p>
+<p><strong>getSecurityXOR(char Code, int XorCode)</strong></p>
+<p>-반환형(Return value type) : char</p>
+<p>: Code-원본값(original value), XorCode-xor비밀번호(xor Password)</p>
+<p>XorCode가 0일경우 0을 반환합니다</p>
+<p>securityFileXOR()메소드 가이드</p>
+<p><strong>securityFileXOR(File originFile, File securityFile, int XorCode)</strong></p>
+<p>-반환형(Return value type) : boolean</p>
+<p>: originFile-암호화할 File, securityFile-xor암호화후 File, XorCode-비밀번호</p>
+<p>securityFile이 존재하면 true, 없으면 false를 반환합니다</p>
+<p><strong>securityFileXOR(File originFile, File securityFile, int XorCode, ProgressBar progressBar)</strong></p>
+<p>-반환형(Return value type) : boolean</p>
+<p>: originFile-암호화할 File, securityFile-xor암호화후 File, XorCode-비밀번호, progressBar-진행상황 표시</p>
+<p>진행상황을 표시하려면 이 메소드를 사용하세요</p>
+<p>securityFile이 존재하면 true, 없으면 false를 반환합니다</p>
+<p><strong>stopFileSecurity()</strong></p>
+<p>-반환형(Return value type) : void</p>
+<p>: 파일 암호화를 중단합니다</p>
+<p><strong>remainingTime()</strong></p>
+<p>-반환형(Return value type) : int</p>
+<p>: 남은시간을 초 단위로 반환합니다</p>
+<p>쓰래드를 이용하여 1초마다 사용해 주세요</p>
+<p><strong>getIsFileSize()</strong></p>
+<p>-반환형(Return value type) : int</p>
+<p>: 현재 xor연산이 완료된 파일 크기를 byte단위로 반환합니다</p>
+<p><strong>getTotalFileSize()</strong></p>
+<p>-반환형(Return value type) : int</p>
+<p>: 전체 파일 크기를 byte단위로 반환합니다</p>
+<p><strong>getJarVersion()</strong></p>
+<p>-반환형(Return value type) : String</p>
+<p>jar버전을 String으로 반환합니다</p>
+<hr>
+<p><strong>자바 API 예제</strong></p>
+<p>[DownLoad]</p>
+<p>[SecurityXor.java</p>
+<p>다운로드](./file/SecurityXor.java)</p>
+<p>이클립스(eclipse)에서 jar library를 추가하세요 (Add SecurityXOR.jar)</p>
+<p>[CMD]</p>
+<p>—ExampleSecurityXor—</p>
+<p>—byte</p>
+<p>securityXOR.getSecurityXOR(5, 12) : 9</p>
+<p>—char</p>
+<p>securityXOR.getSecurityXOR(‘A’, 5) : D</p>
+<p>—int</p>
+<p>securityXOR.getSecurityXOR(25, 854) : 847</p>
+<p>—long(int)</p>
+<p>securityXOR.getSecurityXOR(85L, 852) : 769</p>
+<p>—long(long)</p>
+<p>securityXOR.getSecurityXOR(85258L, 85L) : 85343</p>
+<p>—short</p>
+<p>securityXOR.getSecurityXOR(56, 582) : 638</p>
+<p>—String(byte[])</p>
+<p>securityXOR.getSecurityXOR(“Hi XOR”, { 5, 8, 9 }) : Ma)]G[</p>
+<p>—String(int)</p>
+<p>securityXOR.getSecurityXOR(“JAR FILE”, 251) : 군⒪쉿렙</p>
+<p>—File</p>
+<p>securityXOR.securityFileXOR(new File(“C:/java/test.txt”), new File(“C:/java/test_xor.txt”), 8547)</p>
+<p>Success : true, Fail : false</p>
+<p>—TotalSize</p>
+<p>securityXOR.getTotalFileSize() : 0byte(바이트)</p>
+<p>—JarVersion</p>
+<p>securityXOR.getJarVersion() : SecurityXOR by Mir(whdghks913), v1.0</p>
+<p>—remaining Time</p>
+<p>securityXOR.remainingTime() : 4Sec(초)</p>
+<p>—isFileSize</p>
+<p>securityXOR.getIsFileSize() : 322859byte(바이트)</p>
+<p>—remaining Time</p>
+<p>securityXOR.remainingTime() : 3Sec(초)</p>
+<p>—isFileSize</p>
+<p>securityXOR.getIsFileSize() : 480423byte(바이트)</p>
+<p>—remaining Time</p>
+<p>securityXOR.remainingTime() : 2Sec(초)</p>
+<p>—isFileSize</p>
+<p>securityXOR.getIsFileSize() : 638265byte(바이트)</p>
+<p>—remaining Time</p>
+<p>securityXOR.remainingTime() : 1Sec(초)</p>
+<p>—isFileSize</p>
+<p>securityXOR.getIsFileSize() : 802051byte(바이트)</p>
+<p>—remaining Time</p>
+<p>securityXOR.remainingTime() : 0Sec(초)</p>
+<p>—isFileSize</p>
+<p>securityXOR.getIsFileSize() : 967356byte(바이트)</p>
+<p>—File</p>
+<p>securityXOR.securityFileXOR(new File(“C:/java/test.txt”), new File(“C:/java/test_xor.txt”), 8547)</p>
+<p>Success : true, Fail : false</p>
+<p>Result : true</p>
+<p>정상적으로 실행이 되면 나타나는 구문들 입니다</p>
+<p>jar으로 사용할수 있는 모든 API들을 담았습니다</p>
+<hr>
+<p><strong>어플 API 예제 (KO)</strong></p>
+<p>[DownLoad]</p>
+<p>api사용을 담은 예제 어플 소스 / number, String, File을 암호화 할수 있는 예제 소스</p>
+<p>Version : v1.0, 2014-01-14</p>
+<p>[ExampleSecurityXor.zip</p>
+<p>다운로드](./file/ExampleSecurityXor.zip)</p>
+<p><img  src="/archive/_astro/Screenshot_2014-01-14-11-11-59.Dm4hoHqU_1bjjqD.webp" alt="" width="400" height="822" loading="lazy" decoding="async">
+    
+<img  src="/archive/_astro/Screenshot_2014-01-14-11-13-29.qtXyS9Um_1okkQG.webp" alt="" width="400" height="829" loading="lazy" decoding="async"></p>
+<hr>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleSecurityXor.zip">ExampleSecurityXor.zip</a> <code>645 KB</code></li>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/javadoc.zip">javadoc.zip</a> <code>39 KB</code></li>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/SecurityXOR.jar">SecurityXOR.jar</a> <code>3 KB</code></li>
+<li><a href="./files/SecurityXor.java">SecurityXor.java</a></li>
+<li><a href="./files/SecurityXORLibrary.java">SecurityXORLibrary.java</a></li>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="일단 젤리빈에서는 sk와 kt의 루팅 방법이 아직까지는 존재하지 않습니다"><title>[dev] 베가레이서 부트로더에 대하여 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">[dev] 베가레이서 부트로더에 대하여</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-05-01T09:42:39.000Z"> 2013년 5월 1일 </time> <span class="post-category">SmartPhone/Android</span> <a href="https://itmir.tistory.com/201" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">일단 젤리빈에서는 sk와 kt의 루팅 방법이 아직까지는 존재하지 않습니다</p> </header> <div class="post-content"> <p>일단 젤리빈에서는 sk와 kt의 루팅 방법이 아직까지는 존재하지 않습니다</p>
+<p>fastboot와 adb의 보안 결함등이 발견되지 않는 이상 순정 젤리빈에서는 아마 힘들다 생각되는 군요</p>
+<p>뭘 건들면 될지도 모르지만 아직까지는 발견되지 않았습니다</p>
+<p>S/W업그레이드 화면에서 밀어 넣어 버리거나 BINX를 합치는 방법을 개발해 넣는 방법이 있겠지요?</p>
+<p>su_ky님께서 BINX로 만드는 방법을 알려주신다면 아마 쉽게 이루어 질듯 합니다…만 부트로더에서 체크섬을 확인해서 막아버린다면 방법이 아주 힘들겠지요..</p>
+<p>제가 젤리빈의 루팅을 위해 아샌으로 다운그레이드 한다음 업뎃집을 수정하여 설치하면 루팅이 정상적으로 됩니다</p>
+<p>이왕 하는 김에 아까 올린 pantech_server도 적용했고 제가 젤리빈 커널을 가져와서 만든 리커버리도 넣어봤는대 안됩니다..</p>
+<p>아마 cmdline을 잘못 설정한거 같은대 좀있다 다시 시도해 보도록 하겠습니다</p>
+<p>아무튼 지금은 부트로더에 관해 한번 서술해 보도록 하겠습니다</p>
+<p>결론부터 말하자면 아샌에도 oem unlock가 됩니다 즉 아샌버전에도 부트로더 락이 걸려있다는 뜻이겠죠?</p>
+<p>또 젤리빈에서는 확인을 못해봤지만 아샌에서는 oem lock도 작동하더라고요</p>
+<p>즉 여기서 알수 있는건 부트로더에는 변동이 없는듯 합니다</p>
+<p>fastboot만 막힌거 같은대… 아샌과 젤리빈 모두 lock이 되어 있고 언락이 가능합니다</p>
+<p>차이점이라면 아샌에서는 fastboot boot가 가능했지만 젤리빈으로 올라온다음 fastboot가 막혔다는 것입니다</p>
+<p>여기서 할수 있는 작업이 하나 생기는대요</p>
+<p>부트로더를 아샌버전으로 다운그레이드 시키는 겁니다</p>
+<p>만약 첫번째 부트로고와 일부만 수정되었다면 젤리빈에서 아샌 부트로더를 올려도 작동 할것입니다</p>
+<p>하지만 많은 변동점이 있다면 부팅이 안되겠죠? 무한 재부팅 이던지 오류가 발생할 것 입니다</p>
+<p>여기서 드는 제 의문점, 부트로더를 건들여 무한 재붓등이 일어날경우 셀프 업그레이드로 해결이 가능한가요?</p>
+<p>만약 가능하지 않다면 이는 매우 위험한 작업이 될것이며 센터말고는 가능성이 적습니다</p>
+<p>이 위험한 작업이지만 꼭 해봐야 하는 작업인대..</p>
+<p>아샌 부트로더가 젤리빈에서 작동한다면 fastboot로 바로 루팅이 가능할겁니다</p>
+<p>정리하자면</p>
+<p>아샌은 언락되어 있는것이 아니라 아샌부터 락 되어 있었으며 젤리빈 업뎃 이후 fastboot등이 막힌듯 합니다</p>
+<p>순정 boot.img는 설치가 된다 라는 말로 미루어 볼때 부트로더에서 img의 체크섬을 확인하던지 고유 정보를 확인하는 부분이 있을겁니다</p>
+<p>그렇다면 boot.img가 변경되면 확인값도 변경되어야 하는대 스카이 스테이션 업데이트가 나오고 boot.img가 수정되는 부분이 있다면 업뎃집 분석으로 어디에 저장되는지도 알수 있지 않을까요?</p>
+<p>아무튼 어떤 작업이든 fastboot를 뚫던가 부트로더를 뚫어야 한다는 점은 동일할겁니다</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

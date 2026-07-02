@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="오류 정보이 오류는 git pull으로 서버에 저장된 commit을 받아오지 않은 상태에서 push를 할 때 발생한다.아래는 오류의 전체 상황이다.입력한 명령어 부분을 굵은 글씨로 표시했다.Microsoft Windows [Version 10.0.10240](c)…"><title>This is usually caused by another repository pushing — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">This is usually caused by another repository pushing</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2016-01-04T09:00:15.000Z"> 2016년 1월 4일 </time> <span class="post-category">Programming</span> <a href="https://itmir.tistory.com/605" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">오류 정보이 오류는 git pull으로 서버에 저장된 commit을 받아오지 않은 상태에서 push를 할 때 발생한다.아래는 오류의 전체 상황이다.입력한 명령어 부분을 굵은 글씨로 표시했다.Microsoft Windows [Version 10.0.10240](c)…</p> </header> <div class="post-content"> <p>오류 정보</p>
+<p>이 오류는 git pull으로 서버에 저장된 commit을 받아오지 않은 상태에서 push를 할 때 발생한다.</p>
+<p>아래는 오류의 전체 상황이다.</p>
+<p>입력한 명령어 부분을 굵은 글씨로 표시했다.</p>
+<p>Microsoft Windows [Version 10.0.10240]</p>
+<p>(c) 2015 Microsoft Corporation. All rights reserved.</p>
+<p><strong>C:\Users\whdghks913>cd /d D:\Android\AndroidStudio\WondangHighSchool</strong></p>
+<p><strong>D:\Android\AndroidStudio\WondangHighSchool>git status</strong></p>
+<p>On branch master</p>
+<p>Your branch is up-to-date with ‘origin/master’.</p>
+<p>Changes not staged for commit:</p>
+<p>  (use “git add <file>…” to update what will be committed)</file></p>
+<p>  (use “git checkout — <file>…” to discard changes in working directory)</file></p>
+<p>        modified:   build.gradle</p>
+<p>no changes added to commit (use “git add” and/or “git commit -a”)</p>
+<p><strong>D:\Android\AndroidStudio\WondangHighSchool>git add -A</strong></p>
+<p>warning: CRLF will be replaced by LF in build.gradle.</p>
+<p>The file will have its original line endings in your working directory.</p>
+<p><strong>D:\Android\AndroidStudio\WondangHighSchool>git commit -m “Plugin is too old, please update to a more recent version, or set ANDROID_DAILY_OVERRIDE environment variable”</strong></p>
+<p>[master warning: CRLF will be replaced by LF in build.gradle.</p>
+<p>The file will have its original line endings in your working directory.</p>
+<p>99e0db2] Plugin is too old, please update to a more recent version, or set ANDROID_DAILY_OVERRIDE environment variable</p>
+<p>warning: CRLF will be replaced by LF in build.gradle.</p>
+<p>The file will have its original line endings in your working directory.</p>
+<p> 1 file changed, 1 insertion(+), 1 deletion(-)</p>
+<p><strong>D:\Android\AndroidStudio\WondangHighSchool>git push origin master</strong></p>
+<p>Username for ‘<a href="https://github.com">https://github.com</a>’:</p>
+<p>Password for ‘<a href="https://itmir913@github.com">https://itmir913@github.com</a>’:</p>
+<p>To <a href="https://github.com/itmir913/wondanghighschool">https://github.com/itmir913/wondanghighschool</a></p>
+<p> ! [rejected]        master -> master (fetch first)</p>
+<p>error: failed to push some refs to ‘<a href="https://github.com/itmir913/wondanghighschool">https://github.com/itmir913/wondanghighschool</a>’</p>
+<p>hint: Updates were rejected because the remote contains work that you do</p>
+<p>hint: not have locally. This is usually caused by another repository pushing</p>
+<p>hint: to the same ref. You may want to first integrate the remote changes</p>
+<p>hint: (e.g., ‘git pull …’) before pushing again.</p>
+<p>hint: See the ‘Note about fast-forwards’ in ‘git push —help’ for details.</p>
+<p><strong>D:\Android\AndroidStudio\WondangHighSchool>git pull</strong></p>
+<p>remote: Counting objects: 4, done.</p>
+<p>remote: Compressing objects: 100% (4/4), done.</p>
+<p>remote: Total 4 (delta 3), reused 0 (delta 0)</p>
+<p>Unpacking objects: 100% (4/4), done.</p>
+<p>From <a href="https://github.com/itmir913/wondanghighschool">https://github.com/itmir913/wondanghighschool</a></p>
+<p>   5bb3741..6917361  master     -> origin/master</p>
+<p>Removing app/app.iml</p>
+<p>Removing WondangHighSchool.iml</p>
+<p>Merge made by the ‘recursive’ strategy.</p>
+<p> .gitignore            |   1 +</p>
+<p> WondangHighSchool.iml |  19 ---------</p>
+<p> app/app.iml           | 110 --------------------------------------------------</p>
+<p> 3 files changed, 1 insertion(+), 129 deletions(-)</p>
+<p> delete mode 100644 WondangHighSchool.iml</p>
+<p> delete mode 100644 app/app.iml</p>
+<p><strong>D:\Android\AndroidStudio\WondangHighSchool>git push origin master</strong></p>
+<p>Username for ‘<a href="https://github.com">https://github.com</a>’:</p>
+<p>Password for ‘<a href="https://itmir913@github.com">https://itmir913@github.com</a>’:</p>
+<p>Counting objects: 5, done.</p>
+<p>Delta compression using up to 4 threads.</p>
+<p>Compressing objects: 100% (5/5), done.</p>
+<p>Writing objects: 100% (5/5), 648 bytes | 0 bytes/s, done.</p>
+<p>Total 5 (delta 3), reused 0 (delta 0)</p>
+<p>To <a href="https://github.com/itmir913/wondanghighschool">https://github.com/itmir913/wondanghighschool</a></p>
+<p>   6917361..8e8881a  master -> master</p>
+<p>해결 방법</p>
+<p>git pull</p>
+<p>출처 / 팁</p>
+<p>You may want to first integrate the remote changes (e.g., ‘git pull …’) before pushing again.</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

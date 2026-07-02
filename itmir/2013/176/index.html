@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="지금까지 배운것 다 안까먹으셨기를 바라며.. 총정리를 해보도록 하겠습니다."><title>총정리 / 루트와 String — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">총정리 / 루트와 String</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-03-13T08:42:09.000Z"> 2013년 3월 13일 </time> <span class="post-category">Programming/Java</span> <a href="https://itmir.tistory.com/176" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">지금까지 배운것 다 안까먹으셨기를 바라며.. 총정리를 해보도록 하겠습니다.</p> </header> <div class="post-content"> <p>지금까지 배운것 다 안까먹으셨기를 바라며.. 총정리를 해보도록 하겠습니다.</p>
+<p>아마 지금까지 배운 내용은 하나씩 들어 있을거라 생각되네요.</p>
+<p>새로 배우시는 것도 있으니 파일 다운로드 하신 다음에 집중해 주세요.</p>
+<p><a href="/attachment/cfile4.uf@2473193F514035D21F98D7.java"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> point.java</a></p>
+<p>자 오늘은 예제의 길이가 아주 긴 관계로 하나씩 끊어서 살펴봐야 합니다.</p>
+<p>그러므로 전체 소스를 올리지는 않도록 하겠습니다.</p>
+<p>또한 이해가 안되는 부분이 있을까봐 저 파일에는 주석을 사용해서 부가 설명을 하고 있습니다. 이 글에서는 주석을 제거하였습니다.</p>
+<p>그럼 시작해 보겠습니다.</p>
+<p>먼저 처음 부분입니다.</p>
+<blockquote>
+<p>import java.lang.Math;</p>
+</blockquote>
+<p>맨날 지겹게 보는 public static void String([] args)는 지금은 이해하기 힘든 부부도 있으므로 생략하겠습니다.</p>
+<p>improt는 처음보는 명령어 입니다.</p>
+<p>이번 강좌에서 루트를 사용하는 일이 있는데, 이때 명시해 줘야 하는 부분입니다.</p>
+<p>‘난 정말 JAVA’책에는 아직까지 나오지 않았습니다만 미리 알아두셔도 좋겠죠?</p>
+<p>라이브러리를 호출하는 명령어라 생각하시면 될 듯 합니다.</p>
+<p>저도 아직 이 부분을 배우지 않았기에 명쾌한 설명을 드리기는 어려울듯하고, 그냥 루트를 사용할 때 필요한 것이다라고 생각해 주세요.</p>
+<p>참고: package 개념을 배우시면 import에 대해 이해하실 수 있습니다!</p>
+<p>이제 다음을 봅시다.</p>
+<blockquote>
+<p>System.out.println(“Root 225를 구해보겠습니다”);</p>
+<p>double Root225=Math.sqrt(225);</p>
+<p>System.out.println(“Root 225는 “+Root225+“입니다”);</p>
+</blockquote>
+<p>보시면 루트를 사용하고 있습니다.</p>
+<p>수학적 기호 √, 중3이면 아실겁니다. 이 루트를 java에서는 Math.sqrt(값); 으로 표시하고 있습니다.</p>
+<p>즉 Math.sqrt(225); 는 루트 225, √225가 됩니다.</p>
+<p>여기서 double변수를 사용하고 있는데, 루트를 넣기 위해서는 double을 사용합니다.</p>
+<p>전에 모든 실수는 이 변수를 사용한다 라고 했지요?</p>
+<p>만약 float에 넣고 싶다면 명시적 형변환 표시를 해줘야 합니다.</p>
+<blockquote>
+<p>System.out.println(“소숫점을 제거해 보겠습니다”);</p>
+<p>int Root=(int)Root225;</p>
+<p>System.out.println(“소숫점을 제거한 값은 “+Root+“입니다”);</p>
+</blockquote>
+<p>여기서 명시적 형 변환을 해주고 있습니다.</p>
+<p>루트 225는 15입니다 그런대 double을 사용하고 있으므로 15.0으로 표시됩니다.</p>
+<p>소숫점을 날리기 위해 int형으로 형 변환을 해주면 15만 나타나게 되지요.</p>
+<p>이렇게 명시적 형 변환은 ‘(변수)’ 이렇게 표시하므로 가능합니다.</p>
+<p>이번에는 char을 사용해 보겠습니다.</p>
+<blockquote>
+<p>System.out.println(“루트 225를 기호로 표시해 보겠습니다”);</p>
+<p>char root=’√’;</p>
+<p>System.out.println(root+“225”);</p>
+</blockquote>
+<p>설마 루트기호 √가 들어갈줄은 몰랐는데요. 들어갑니다. ㅋㅋㅋ</p>
+<p>실행해보면 √225가 표시됩니다.</p>
+<p>문자를 작은따음표 ‘로 묶어 표시하면 됩니다.</p>
+<p>이번엔 e표기법을 사용한 예를 보겠습니다.</p>
+<blockquote>
+<p>System.out.println(“e표기법을 사용하여 10의제곱을 해봅시다”);</p>
+<p>int square=(int)16e2;</p>
+<p>System.out.println(“16 X (10의 2제곱 즉 100)은? “+square);</p>
+</blockquote>
+<p>까먹으셨을수도 있는데, e표기법은 10의 제곱을 나타냅니다.</p>
+<p>음…설마 언급을 안한 내용인가요?..ㅠ</p>
+<p><img  src="/archive/_astro/%EC%BA%A1%EC%B2%98.DKhr5Gxj_ZtHMel.webp" alt="" width="91" height="85" loading="lazy" decoding="async"></p>
+<p>이렇게 나타내는 것을 e표기법을 이용해 사용하는 것이지요.</p>
+<p>e+3은 10+3제곱을, e-3은 10-3제곱을 뜻합니다.</p>
+<p>예제를 보시면 +가 생략된 걸 볼 수 있는데요 이렇게 생략할 수도 있습니다.</p>
+<p>이번에는 char변수 말고 문장을 저장해 봅시다.</p>
+<blockquote>
+<p>System.out.println(“문장을 저장해 봅시다”);</p>
+<p>String fighting=“파이팅!”;</p>
+<p>System.out.println(“우리모두 “+fighting);</p>
+</blockquote>
+<p>char는 작은따음표 ‘로 한 글자만 저장했다면,</p>
+<p>String는 큰따음표 “로 문장을 저장할 수 있습니다.</p>
+<p>이 역시 아직 나오지 않은 부분으로 언제 한 번 본격적으로 탐구할 시간이 있을겁니다.</p>
+<p>마지막으로 반복문을 이용해 구구단을 해보겠습니다.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">Sysem.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"구구단을 해봅시다"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">for</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> N</span><span style="color:#D73A49">=</span><span style="color:#005CC5">2</span><span style="color:#24292E"> ; N</span><span style="color:#D73A49">&#x3C;</span><span style="color:#005CC5">4</span><span style="color:#24292E"> ; N</span><span style="color:#D73A49">++</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#24292E">System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(N</span><span style="color:#D73A49">+</span><span style="color:#032F62">"단 목록"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">for</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> M</span><span style="color:#D73A49">=</span><span style="color:#005CC5">1</span><span style="color:#24292E"> ; M</span><span style="color:#D73A49">&#x3C;</span><span style="color:#005CC5">10</span><span style="color:#24292E"> ; M</span><span style="color:#D73A49">++</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(N</span><span style="color:#D73A49">+</span><span style="color:#032F62">"x"</span><span style="color:#D73A49">+</span><span style="color:#24292E">M</span><span style="color:#D73A49">+</span><span style="color:#032F62">"="</span><span style="color:#D73A49">+</span><span style="color:#24292E">N</span><span style="color:#D73A49">*</span><span style="color:#24292E">M);</span></span>
+<span class="line"><span style="color:#24292E">System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">""</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p>오랜만에 보시나요?ㅋㅋ</p>
+<p>두 개의 for반복문을 이용해 구구단을 표시하고 있습니다.</p>
+<p>N이 곱할수, M이 곱해지는 수 입니다.</p>
+<p>즉 N*M이 되지요.</p>
+<p>for반복문은 자주 쓰입니다. 꼭 익숙해 져야 합니다.</p>
+<p>for문의 구조를 보면,</p>
+<p>for ( [변수선언] ; [반복 조건] ; [값의 변화] )</p>
+<p>라는 구조를 가지고 있습니다.</p>
+<ol>
+<li>
+<p>변수선언 - 반복조건확인 - 반복영역 실행 - 값 변화</p>
+</li>
+<li>
+<p>반복조건확인 - 반복영역 실행 - 값 변화</p>
+</li>
+<li>
+<p>…</p>
+</li>
+</ol>
+<p>*. 반복조건확인 - false이므로 for문 탈출</p>
+<p>이렇게 실행이 된다는 점도 아시겠죠?</p>
+<p>이 예제를 실행시키면 아래와 같은 결과가 나타납니다.</p>
+<p><img  src="/archive/_astro/%EC%BA%A1%EC%B2%98_1.DDBV9AS7_LuSdp.webp" alt="" width="310" height="592" loading="lazy" decoding="async"></p>
+<p>예제도 긴 만큼 결과도 깁니다.</p>
+<p>이렇게 해서 총정리를 해봤습니다.</p>
+<p>혹시 까먹으신건 아니시겠죠? ㅋㅋ</p>
+<p>많은 진도보다 한번씩 쉬어가는게 좋다 생각해서 정리를 해봤습니다.</p>
+<p>허허 생각보다 많은걸 배웠군요ㅡ;;</p>
+<p>다시한 번 스스로 복습해 보시고 다음편에서 만나요~</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

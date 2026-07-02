@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="일반적으로 커널 컴파일(빌드)시 사용되는 arm-eabi-4.6 툴체인외 arm기기에 최적화 되어 있다고 알려진"><title>리나로(linaro) 툴체인으로 빌드하기 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">리나로(linaro) 툴체인으로 빌드하기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-01-20T10:04:25.000Z"> 2014년 1월 20일 </time> <span class="post-category">Android/Kernel</span> <a href="https://itmir.tistory.com/439" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">일반적으로 커널 컴파일(빌드)시 사용되는 arm-eabi-4.6 툴체인외 arm기기에 최적화 되어 있다고 알려진</p> </header> <div class="post-content"> <p>일반적으로 커널 컴파일(빌드)시 사용되는 arm-eabi-4.6 툴체인외 arm기기에 최적화 되어 있다고 알려진</p>
+<p>linaro툴체인을 이용하여 빌드하는 방법입니다.</p>
+<p>이때 arm-eabi툴체인을 사용할때는 Warning으로 처리하여 그냥 넘어가던 경고가 linaro툴체인에서는 Error로 처리되어 진행이 되지 않을 때도 있습니다.</p>
+<p>먼저 linaro를 사용하는 방법부터 살펴보겠습니다.</p>
+<p><strong>1. Linaro툴체인 다운받기</strong></p>
+<p>툴체인을 다운로드 하는 경로는 다양합니다.</p>
+<p>(1) 미르의 IT 정복기</p>
+<p><a href="http://itmir.tistory.com/349">[Kernel] - Android Toolchain (툴체인) 모음</a></p>
+<p>(2) 공식 홈페이지</p>
+<p><a href="http://www.linaro.org/downloads/">http://www.linaro.org/downloads/</a></p>
+<p>공식 홈페이지에서 안드로이드 버전에 맞게 다운로드 하면 됩니다.</p>
+<p><img  src="/archive/_astro/%EC%BA%A1%EC%B2%98.DggYSc1P_Z1snvkh.webp" alt="" width="767" height="290" loading="lazy" decoding="async"></p>
+<p>4.6버전은 GB와 ICS에서, 4.7은 ICS와 JB에서, 4.8은 시험버전인듯 합니다.</p>
+<p>(3) XDA 포럼 링크</p>
+<p><a href="http://forum.xda-developers.com/showthread.php?t=2098133">http://forum.xda-developers.com/showthread.php?t=2098133</a></p>
+<p><strong>2. Linaro툴체인 설치하기</strong></p>
+<p>이전글 : <a href="http://itmir.tistory.com/51">[Kernel] - 커널 컴파일을 위한 기본 설정 구축하기</a></p>
+<p>에서 arm-eabi툴체인을 설치하지 말고 linaro툴체인을 설치하면 됩니다.</p>
+<p>툴체인을 다운받아 아래 경로에 넣어주세요.</p>
+<p>/home/계정명/</p>
+<p>폴더의 이름은 다르게 해도 좋지만 저는 linaro-toolchain으로 했습니다.</p>
+<p>터미널에서</p>
+<p>chmod -R 777 linaro-toolchain</p>
+<p>그다음 .bashrc를 다시 수정해야 합니다.</p>
+<p>gedit ~/.bashrc</p>
+<p>export CROSS_COMPILE=$HOME/linaro-toolchain/bin/arm-eabi-</p>
+<p>export PATH=$PATH:$HOME/linaro-toolchain/bin/</p>
+<p>이런씩으로 경로를 바꿔주세요.</p>
+<p><strong>3. Compile Error Fix</strong></p>
+<p>error: variable ‘c’ set but not used [-Werror=unused-but-set-variable]</p>
+<p>cc1: all warnings being treated as errors</p>
+<p>이런 오류가 발생할겁니다. (아니면 와우~~~하면 되고요 ㅋㅋ)</p>
+<p>이제 kernel폴더 최상위에 있는 MakeFile을 열어주세요.</p>
+<p>그다음 KBUILD_CFLAGS를 검색해 주세요</p>
+<p>KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \</p>
+<p>  -Werror \</p>
+<p>  -fno-strict-aliasing -fno-common \</p>
+<p>  -Werror-implicit-function-declaration \</p>
+<p>  -Wno-format-security \</p>
+<p>  -fno-delete-null-pointer-checks</p>
+<p>위 문구를 아래로 바꿔주세요</p>
+<p>KBUILD_CFLAGS   := -Wundef -Wstrict-prototypes -Wno-trigraphs \</p>
+<p>  -Werror \</p>
+<p>  -fno-strict-aliasing -fno-common \</p>
+<p>  -Werror-implicit-function-declaration \</p>
+<p>  -Wno-format-security \</p>
+<p>  -Wno-unused-but-set-variable \</p>
+<p>  -fno-delete-null-pointer-checks</p>
+<p>수정된 부분 강조</p>
+<p>KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \</p>
+<p>  -Werror \</p>
+<p>  -fno-strict-aliasing -fno-common \</p>
+<p>  -Werror-implicit-function-declaration \</p>
+<p>  -Wno-format-security \</p>
+<p>*<em>-Wno-unused-but-set-variable *</em></p>
+<p>  -fno-delete-null-pointer-checks</p>
+<p>만약 MakeFile에서 “CROSS_COMPILE”이라고 검색했을때 있다면,</p>
+<p>경로를 linaro툴체인으로 알맞게 변경해 주세요.</p>
+<p>warning: ‘offset.un’ may be used uninitialized in this function [-W<strong>uninitialized</strong>]</p>
+<p>이런 종류의 경고는 아래형식으로 처리가 가능합니다.</p>
+<p>$(call cc-disable-warning,(Warning이름),)</p>
+<p>위 에러에서 밑줄 굵게 표시된 부분이 에러 이름입니다.</p>
+<p>$(call cc-disable-warning,uninitialized,)</p>
+<p>이것을 MakeFile의 KBUILD_CFLAGS에 넣어주세요.</p>
+<p>예를 들면 아래와 같습니다.</p>
+<p>KBUILD_CFLAGS   := -Wundef -Wstrict-prototypes -Wno-trigraphs \</p>
+<p>  -Werror \</p>
+<p>  -fno-strict-aliasing -fno-common \</p>
+<p>  -Werror-implicit-function-declaration \</p>
+<p>  -Wno-format-security \</p>
+<p>  -Wno-unused-but-set-variable \</p>
+<p>  -fno-delete-null-pointer-checks *<em>*</em></p>
+<p><strong>$(call cc-disable-warning,uninitialized,)</strong></p>
+<p>In function ‘s5ptvfb_set_par’:</p>
+<p>error: lvalue required as left operand of assignment</p>
+<p>문제된 파일 s5p_stda_grp.c을 열어주세요.</p>
+<p>((struct fb_var_screeninfo) (s5ptv_status.fb->var)).bits_per_pixel = ((struct fb_var_screeninfo) (fb->var)).bits_per_pixel;</p>
+<p>위 줄을 아래로 바꿔주세요.</p>
+<p>(s5ptv_status.fb->var).bits_per_pixel = (fb->var).bits_per_pixel;</p>
+<p>error: arch/arm/boot/compressed/piggy.lzo.o: Unknown CPU architecture</p>
+<p>linaro툴체인 문제입니다.</p>
+<p>아래 주소에 있는 툴체인을 받아 사용해 주세요.</p>
+<p><a href="https://github.com/itmir913/linaro-4.7-modifed">https://github.com/itmir913/linaro-4.7-modifed</a></p>
+<p>출처: <a href="http://cafe.naver.com/skydevelopers/302917">http://cafe.naver.com/skydevelopers/302917</a></p>
+<p><a href="http://forum.xda-developers.com/showthread.php?t=2376286">http://forum.xda-developers.com/showthread.php?t=2376286</a></p>
+<p><a href="https://gitorious.org/replicant/kernel%5C_samsung%5C_aries/commit/f385c89f3b03e9ee69dd45b185bc790dc23e191c?diffmode=sidebyside">https://gitorious.org/replicant/kernel\_samsung\_aries/commit/f385c89f3b03e9ee69dd45b185bc790dc23e191c?diffmode=sidebyside</a></p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

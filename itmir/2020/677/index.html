@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="VMWare를 전체화면으로 사용했을 때, 보통 툴바가 자동으로 사라지도록 설정한다."><title>VMware 전체화면 툴바(Toolbar) 없애기 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">VMware 전체화면 툴바(Toolbar) 없애기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2020-11-04T02:40:36.000Z"> 2020년 11월 4일 </time> <span class="post-category">Computer &amp; PC</span> <a href="https://itmir.tistory.com/677" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">VMWare를 전체화면으로 사용했을 때, 보통 툴바가 자동으로 사라지도록 설정한다.</p> </header> <div class="post-content"> <h2 id="서론">서론</h2>
+<p>VMWare를 전체화면으로 사용했을 때, 보통 툴바가 자동으로 사라지도록 설정한다.</p>
+<p>그런데 문제는 1px ~ 2px 정도 툴바가 자리를 차지한다는 점이다.</p>
+<p>즉, 전체화면에서 툴바가 완전히 사라지지 않는다는 문제가 있다.</p>
+<p>아래는 툴바가 완전히 사라지지 않고 자리를 차지하고 있는 모습을 스크린샷으로 찍은 사진이다.</p>
+<p><img  src="/archive/_astro/img.CDEeEJSZ_ZF5WGn.webp" alt="" width="1920" height="315" loading="lazy" decoding="async"></p>
+<p>사진 상으로는 잘 안 보일 수도 있는데, 중앙 상단에 하얀 툴바가 그대로 남아 있는 것을 확인할 수 있다.</p>
+<h2 id="preferencesini-수정하기">Preferences.ini 수정하기</h2>
+<p>이를 해결하기 위해서는 vmware의 설정 파일을 수정하면 된다.</p>
+<p>파일 경로는 다음과 같다.</p>
+<p>C:\Users(User Name)\AppData\Roaming\VMware\preferences.ini</p>
+<p>이 파일을 메모장과 같은 텍스트 에디터로 연 다음, 맨 아래에 한 줄을 추가해주자.</p>
+<p><img  src="/archive/_astro/img.BLh9OzGU_Z3A74d.webp" alt="" width="974" height="587" loading="lazy" decoding="async"></p>
+<p>pref.vmplayer.fullscreen.nobar = “TRUE”</p>
+<p>이 한 줄만 추가해준 다음 VM을 다시 실행하면 전체 화면에서 툴바가 완전히 사라진 것을 확인할 수 있다.</p>
+<p><img  src="/archive/_astro/img_1.C8zAWVU4_Z2ngcQX.webp" alt="" width="1920" height="313" loading="lazy" decoding="async"></p>
+<p>다만, 이럴경우 툴바를 이용하여 전체 화면을 종료하는 게 불가능해진다.</p>
+<p>전체 화면에서 빠져나오는 방법은 다음과 같다.</p>
+<ol>
+<li>
+<p>먼저 Ctrl + Alt를 눌러 VM에서 호스트 컴퓨터로 빠져나온다.</p>
+</li>
+<li>
+<p>이후 Ctrl + Alt + Enter를 눌러 전체 화면을 종료한다.</p>
+</li>
+</ol>
+<p>이제 VM을 열심히 사용하면 된다.</p>
+<h2 id="참고">참고</h2>
+<p><a href="https://superuser.com/questions/246644/can-i-completely-hide-toolbar-in-vmware-workstation">https://superuser.com/questions/246644/can-i-completely-hide-toolbar-in-vmware-workstation</a></p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

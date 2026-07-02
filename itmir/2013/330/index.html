@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="이번에는 값을 반환하는 메소드에 대해 알아보도록 할까 합니다."><title>값을 반환하는 메소드 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">값을 반환하는 메소드</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-09-07T03:20:18.000Z"> 2013년 9월 7일 </time> <span class="post-category">Programming/Java</span> <a href="https://itmir.tistory.com/330" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">이번에는 값을 반환하는 메소드에 대해 알아보도록 할까 합니다.</p> </header> <div class="post-content"> <p>안녕하세요~ 오랜만이네요~</p>
+<p>이번에는 값을 반환하는 메소드에 대해 알아보도록 할까 합니다.</p>
+<p>값을 반환한다… 무슨뜻일까요?</p>
+<p>주로 계산 작업, 확인의 기능을 수행하는 메소드를 분리할 때, 그리고 그 기능이 자주 쓰일.때 우리는 메소드로 분리를 합니다.</p>
+<p>우리는 메소드를 실행하는 방법을 이미 배웠는데요.</p>
+<p>메소드를 실행할때 값을 전달해 주면, 실행된 메소드가 값을 리턴하는 경우가 상당히 많이 쓰입니다.</p>
+<p>한번 알아볼까요?</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> Return</span><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">	public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">		int</span><span style="color:#24292E"> values </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> Add</span><span style="color:#24292E">(</span><span style="color:#005CC5">1</span><span style="color:#24292E">, </span><span style="color:#005CC5">3</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">		System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"1+3="</span><span style="color:#D73A49">+</span><span style="color:#24292E">values);</span></span>
+<span class="line"><span style="color:#24292E">	}</span></span>
+<span class="line"><span style="color:#24292E">	</span></span>
+<span class="line"><span style="color:#D73A49">	public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> int</span><span style="color:#6F42C1"> Add</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> num1</span><span style="color:#24292E">, </span><span style="color:#D73A49">int</span><span style="color:#E36209"> num2</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">		int</span><span style="color:#24292E"> result </span><span style="color:#D73A49">=</span><span style="color:#24292E"> num1</span><span style="color:#D73A49">+</span><span style="color:#24292E">num2;</span></span>
+<span class="line"><span style="color:#D73A49">		return</span><span style="color:#24292E"> result;</span></span>
+<span class="line"><span style="color:#24292E">	}</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p>[Return.java</p>
+<p>다운로드](./file/Return.java)</p>
+<p>이런 예제가 있습니다.</p>
+<p>(이번 강좌부터는 소스의 가독성을 높이기 위한 방법이 들어가 있습니다. ㅎㅎ</p>
+<p>원본 티스토리글에서 확인이 가능합니다(네이버는 자바 스크립트를 허용하지 않으므로…))</p>
+<p>2번째줄의 void는 어떤의미일까요?</p>
+<p>void란?, 아무것도 반환하지 않겠다. 라는 뜻입니다.</p>
+<p>그렇다면 7번째줄의 int는 예상을 해보면,</p>
+<p>int형 자료를 반환하겠다 라는 뜻이 되겠지요??</p>
+<p>이처럼 메소드의 이름 바로 왼쪽에는 그 메소드의 반환형이 들어가게 됩니다.</p>
+<blockquote>
+<p>void(아무것도 반환하지 않음), double(double형 자료를 반환), int(int형 자료를 반환), boolean(논리값 T또는 F을 반환함)</p>
+</blockquote>
+<p>위 처럼 들어갈 수 있다는 점 꼭 알아두세요~</p>
+<p>이 외에도 조금 더 배우신다면 다양한 내용, 심지어 class까지도 던질(반환)수 있습니다!</p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="./files/Return.java">Return.java</a></li>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

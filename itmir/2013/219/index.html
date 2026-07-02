@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="make: *** `/home/whdghks913/cluster/system/out/target/common/obj/APPS/Apollo_intermediates/classes-full-debug.jar'에서 필요로 하는 타겟…"><title>android_stubs_current_intermediates/javalib.jar 만들 규칙 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">android_stubs_current_intermediates/javalib.jar 만들 규칙</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-05-24T11:52:40.000Z"> 2013년 5월 24일 </time> <span class="post-category">Android/Build</span> <a href="https://itmir.tistory.com/219" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">make: *** `/home/whdghks913/cluster/system/out/target/common/obj/APPS/Apollo_intermediates/classes-full-debug.jar&#39;에서 필요로 하는 타겟…</p> </header> <div class="post-content"> <p>make: *** <code>/home/whdghks913/cluster/system/out/target/common/obj/APPS/Apollo\_intermediates/classes-full-debug.jar'에서 필요로 하는 타겟 </code>/home/whdghks913/cluster/system/out/target/common/obj/JAVA_LIBRARIES/android_stubs_current_intermediates/javalib.jar’를 만들 규칙이 없습니다. 멈춤.</p>
+<p>이상하게 cluster을 빌드하면 이런 오류가 나는군요</p>
+<p>이 롬의 기반 소스인 cm-10.1을 빌드해 보면 이런 오류는 없습니다</p>
+<p>즉 cluster소스가 꼬였다던지 등의 문제로 빌드가 안되는 겁니다</p>
+<p>그래서 해결법을 알아보던중 cm-10.1에서 빌드한 파일을 가져오니 정상적으로 진행하더군요..</p>
+<p>또 문제가 일어났던 Apollo어플의 Android.mk에 있는</p>
+<p>LOCAL_SRC_FILES += $(call all-java-files-under, src)</p>
+<p>을 주석처리 하였습니다</p>
+<p>아직은 빌드가 완료된것이 아니라 잘은 모르겠지만 아무튼 파일은 올립니다</p>
+<p>out/target/common/obj/JAVA_LIBRARIES</p>
+<p>out/target/common/obj/APPS</p>
+<p>이 위치에 넣어주세요~</p>
+<p>[Apollo_intermediates.zip</p>
+<p>다운로드](./file/Apollo_intermediates.zip)</p>
+<p>[JAVA_LIBRARIES.zip</p>
+<p>다운로드](./file/JAVA_LIBRARIES.zip)</p>
+<ul>
+<li>2013-05-25 추가</li>
+</ul>
+<p>빌드된(?)파일 올립니다</p>
+<p>반디집으로 7z 분활압축 했습니다</p>
+<p>[android_stubs_current_intermediates.7z.001</p>
+<p>다운로드](./file/android_stubs_current_intermediates.7z.001)</p>
+<p>[android_stubs_current_intermediates.7z.002</p>
+<p>다운로드](./file/android_stubs_current_intermediates.7z.002)</p>
+<p>[android_stubs_current_intermediates.7z.003</p>
+<p>다운로드](./file/android_stubs_current_intermediates.7z.003)</p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/Apollo_intermediates.zip">Apollo_intermediates.zip</a> <code>37 KB</code></li>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/JAVA_LIBRARIES.zip">JAVA_LIBRARIES.zip</a> <code>256 KB</code></li>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

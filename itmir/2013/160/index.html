@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="이번에는 단항 연산자에 대해 알아보겠습니다."><title>단항 연산자는 이항연산자와 무슨 차이가 있지? — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">단항 연산자는 이항연산자와 무슨 차이가 있지?</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-02-23T07:34:50.000Z"> 2013년 2월 23일 </time> <span class="post-category">Programming/Java</span> <a href="https://itmir.tistory.com/160" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">이번에는 단항 연산자에 대해 알아보겠습니다.</p> </header> <div class="post-content"> <p>안녕하십니까?</p>
+<p>이번에는 단항 연산자에 대해 알아보겠습니다.</p>
+<p>저번 2편으로 이항 연산자에 대한 설명을 끝냈습니다.</p>
+<p>이제 단항 연산자와 비트 연산자 이 두 가지가 남았는데요.</p>
+<p>이 부분은 이항 연산자보단 쉽다고 느끼실거예요.</p>
+<p>참고로 단항 연산자란 피 연산자가 1개인 연산자입니다. 저번에 논리 연산자 배우면서 !에 대해 배우며 언급을 했죠?</p>
+<p>그럼 부호 연산자로 사용되는 +와 -를 배워보도록 하겠습니다.</p>
+<p>저번시간에 +와-는 이항 연산자로 덧셈과 뺄셈을 하는 역할을 한다고 배웠습니다.</p>
+<p>그런대 이 두 연산자는 부호 연산자로도 쓰입니다.</p>
+<p>부호 연산이라는 단어가 약간 이해가 안될 수도 있는데,</p>
+<blockquote>
+<p>-(-6), -(+9)</p>
+</blockquote>
+<p>이 두 정수를 수학적으로 계산해 보도록 하겠습니다.</p>
+<p>-에 -가 오면 +가 되어 +6이 되고</p>
+<p>+에 -가 오면 -가 되어 -9가 된다는 건 너무 나도 뻔하고 쉬운 소리입니다 (만약 이해가 안되시면 중학교 1학년을 마치시면 이해가 되실겁니다.)</p>
+<p>부호 연산자는 이 의미와 동일합니다.</p>
+<p>그러므로 단항 연산자 -는 부호를 바꿔주는 역할을 합니다.</p>
+<p>그러면 +는 무슨 역할을 할까요? 저도 딱히 하는 일은 없다고 생각합니다.</p>
+<p>그냥 음수가 아니다는 것을 강조하기 위해 생긴건가요?</p>
+<p>그럼 +는 무시되거나 연산이 안되는 주석 같은 연산자는 아닐까요?</p>
+<blockquote>
+<p>short m1=6;</p>
+<p>short m2=+m1;</p>
+</blockquote>
+<p>위 코드를 컴파일 하면 에러가 발생합니다.</p>
+<p>모든 정수는 java에 의해 int형으로 형 변환이 이루어 진다고 했습니다.</p>
+<p>그러므로 +가 연산자로 기능을 하게 된다면 +6을 계산하기 위해 int형으로의 변환이 필요한 겁니다.</p>
+<p>그런대 여기서 int형을 short에 저장할 수 없으므로 컴파일 오류가 발생하는 것 입니다.</p>
+<p>(short)로 명시적 형 변환을 해줘야 에러가 발생하지 않는 것 이지요.</p>
+<p>이처럼 +연산자도 주석 같은 연산자가 아닌 실제로 연산을 하는 연산자라는 사실을 확인해 봤습니다. 하는일은 없는 것 같지만요. ㅋㅋㅋㅋㅋㅋ</p>
+<p>그럼 이번에는 값을 더하고, 빼는 연산자를 알아보도록 하겠습니다.</p>
+<p>그냥 단도직입적으로 말하자면 ++와 —가 연산자의 기호입니다.</p>
+<p>“뭔 +를 두번쓰고 -를 두번쓰는게 연산자예요 ㅋㅋㅋㅋㅋㅋㅋ”</p>
+<p>라고 하시면 안됩니다.</p>
+<p>이 연산자는 피 연산자의 앞과 뒤에 올 수 있습니다.</p>
+<blockquote>
+<p>++number1</p>
+<p>number++</p>
+</blockquote>
+<p>이렇게 말이죠.</p>
+<p>그런대 이 두 가지의 뜻은 완전 다릅니다.</p>
+<p>먼저 피 연산자 앞에 있는 ++를 prefix연산자라 합니다. 접두사 연산자라고 번역해야 하나요?</p>
+<p>그러면 뒤에 오는 연산자는 뭐라 할까요?</p>
+<p>postfix연산자라 쓰고 접미사 연산자라 읽습니다.</p>
+<p>prefix연산자는 피 연산자 앞에 오는데요.</p>
+<p>기능은 피 연산자의 값을 1 증가(감소)시킵니다</p>
+<p>또한 postfix연산자도 피 연산자의 값을 1 증가(감소)시킵니다</p>
+<p>그런대 postfix는 그 행이 끝난 다음 값이 적용이 됩니다.</p>
+<blockquote>
+<p>int number1=10, number2, number3;</p>
+<p>number2=—number1</p>
+<p>number3=number1—</p>
+</blockquote>
+<p>이런 구문이 있다고 합니다.</p>
+<p>처음에 number1,2,3를 선언하고 number1은 선언과 동시에 초기화를 하고 있습니다.</p>
+<p>두 번째 행에서는 number1의 수를 1감소 시킵니다 그러므로 10-1=9가 number2에 들어가게 됩니다.</p>
+<p>마지막에서 number1의 수를 1감소 시키라고 합니다. 그런데 postfix연산자는 그 다음 행에서 값을 적용하므로 number3에도 9가 들어가게 됩니다.</p>
+<p>만약 마지막에 또 다른 행이 있다고 한다면 그 행부터 number1의 값은 8이 되겠죠?</p>
+<p>정리하자면,</p>
+<p>prefix연산자는 : 연산자 앞에 위치하며 피 연산자의 값을 1 증가(감소)시킨다.</p>
+<p>postfix연산자는: 연산자 뒤에 위치하며 피 연산자의 값을 1 증가(감소)시킨다. 단, 증가(감소)가 일어난 행에서는 이전 값으로 인식하고 다음 행에서부터 증가(감소)된 값으로 인식한다.</p>
+<p>헷갈릴 수 있습니다. 잘 정리해 두세요.</p>
+<p>이렇게 해서 단항 연산자에 대한 설명을 마치겠습니다.</p>
+<p>다음 한 강좌로 비트 연산자를 끝낼 수 있을 듯 하네요.</p>
+<p>그리고 연산자도 마치게 되는.. ㅎㅎㅎㅎㅎㅎㅎㅎㅎ</p>
+<p>연산자가 끝나면 그때부터 저랑 진도가 비슷해 지는군요. ㅋㅋ</p>
+<p>다음 강좌로 비트 연산자 끝내고 그 다음 강좌에서는 프로그래밍의 하이라이트라고 할 수 있는 if~else에 대해 알아볼겁니다.</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

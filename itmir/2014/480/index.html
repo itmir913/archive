@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="팬택에서 베가 LTE-A, 시크릿 노트, 시크릿 업 세 개의 기기에서 사용이 가능한 지문인식 SDK를 배포하였습니다"><title>베가(Vega) 지문인식 SDK 공개 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">베가(Vega) 지문인식 SDK 공개</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-02-20T04:34:47.000Z"> 2014년 2월 20일 </time> <span class="post-category">SmartPhone/Android</span> <a href="https://itmir.tistory.com/480" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">팬택에서 베가 LTE-A, 시크릿 노트, 시크릿 업 세 개의 기기에서 사용이 가능한 지문인식 SDK를 배포하였습니다</p> </header> <div class="post-content"> <p>팬택에서 베가 LTE-A, 시크릿 노트, 시크릿 업 세 개의 기기에서 사용이 가능한 지문인식 SDK를 배포하였습니다</p>
+<p>SDK는 github에 배포하였으며, 약 1시간 전에 SDK v1.0버전이 push되었습니다</p>
+<p><a href="https://github.com/pantechfingerprint/PantechFingerSDK">https://github.com/pantechfingerprint/PantechFingerSDK</a></p>
+<p>제가 알기로는 지문인식 관련 SDK를 배포한것은 최초라고 생각됩니다</p>
+<p>그래서, 이번 포스팅에서는 지문인식 관련 스크린샷과, SDK에 들어있는 샘플 프로젝트에 대한 분석을 해보겠습니다</p>
+<p>먼저 지문 인식 관련 스크린샷 입니다</p>
+<p><img  src="/archive/_astro/1.CAdEk0fw_Z1DwFKw.webp" alt="" width="381" height="649" loading="lazy" decoding="async">
+    
+<img  src="/archive/_astro/2.BTyjOAaI_ZmrHrW.webp" alt="" width="381" height="651" loading="lazy" decoding="async"></p>
+<p>지문인식이 탑재된 폰에서 처음에 나오는 인식 안내 화면입니다</p>
+<p>아트릭스도 처음에 지문을 사용하려고 하면 안내 문구가 나타났던걸로 기억하네요~</p>
+<p><img  src="/archive/_astro/3.Bl27yIW2_UPXqG.webp" alt="" width="400" height="681" loading="lazy" decoding="async">
+    
+<img  src="/archive/_astro/4.Dtwe5NnE_20sibG.webp" alt="" width="400" height="683" loading="lazy" decoding="async"></p>
+<p>지문 인식을 위해서는 4번의 스와이프가 필요합니다</p>
+<p>왜 4번인지는 모르겠어요 5번도 될수도 있고 3번도 할수 있을탠대 음…</p>
+<p>이렇게 지문인식 관련 스크린샷을 확인해 봤습니다</p>
+<p>(항상 느끼는거지만 베가 UI의 밝은 색은 마음에 드네요 ㅋ)</p>
+<p>이제부턴 샘플 프로젝트를 살펴보겠습니다</p>
+<p>[SampleActivity.apk</p>
+<p>다운로드](./file/SampleActivity.apk)</p>
+<p>[SampleFingerScan 주석.zip</p>
+<p>다운로드](./file/SampleFingerScan 주석.zip)</p>
+<p>[PantechFingerSDK-master.zip</p>
+<p>다운로드](./file/PantechFingerSDK-master.zip)</p>
+<p>apk파일은 github에서 샘플 프로젝트를 받아 직접 빌드한것이며,</p>
+<p>SampleFingerScan 주석.zip파일은 소스의 설명을 필자가 직접 기록한것 입니다</p>
+<p>마지막 파일은 github 프로젝트를 다운받아 첨부한 파일입니다</p>
+<p><img  src="/archive/_astro/Screenshot_2014-02-20-12-29-34.DZxx9sjN_Z1MaKa.webp" alt="" width="400" height="711" loading="lazy" decoding="async">
+    
+<img  src="/archive/_astro/Screenshot_2014-02-20-12-29-47.BS5zREXv_Zuo9Kf.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<p>샘플 프로젝트의 실행 화면 입니다</p>
+<p>(일부 화면이 안보여 밝기를 조절했습니다)</p>
+<p>베가 LTE-A등 지문인식이 가능한 베가 기종 유저분들께서는 한번 테스트 해보심이 어떨가요?ㅋ</p>
+<p>S3에서는 당연히 센서가 없기 때문에 알림이 나타납니다</p>
+<p>팬택에서는 이 지문인식 SDK를 사용할 개발자들을 위해 README를 통해 설명하고 있습니다</p>
+<p>아래는 github의 README를 캡쳐한 스크린샷 입니다</p>
+<p><img  src="/archive/_astro/README.D0Wh1PAb_Z5kEF3.webp" alt="" width="792" height="2796" loading="lazy" decoding="async"></p>
+<p>또한 VEGA 지문인식 SDK 설치 가이드도 제공하고 있습니다</p>
+<p><a href="https://docs.google.com/document/d/1-VbIo_Bh5JpGWfXwZUunf3sG63w6Nooz-4QXdR6WHbg">https://docs.google.com/document/d/1-VbIo_Bh5JpGWfXwZUunf3sG63w6Nooz-4QXdR6WHbg</a></p>
+<p>[VEGA 지문인식 SDK 설치 가이드.pdf</p>
+<p>다운로드](./file/VEGA 지문인식 SDK 설치 가이드.pdf)</p>
+<p>최초 지문인식을 적용한 아트릭스는 단지 시기가 안맞은것 뿐이라 생각합니다</p>
+<p>이제 지문인식등의 생체 인식 기술이 적용된 스마트폰이 많이 등장했으면 좋겠고</p>
+<p>지문인식을 이용한 어플들도 많이 생겼으면 합니다~</p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/PantechFingerSDK-master.zip">PantechFingerSDK-master.zip</a> <code>425 KB</code></li>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/SampleActivity.apk">SampleActivity.apk</a> <code>247 KB</code></li>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/480-SampleFingerScan-commented.zip">SampleFingerScan 주석.zip</a> <code>348 KB</code></li>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/480-VEGA-fingerprint-SDK-guide.pdf">VEGA 지문인식 SDK 설치 가이드.pdf</a> <code>465 KB</code></li>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

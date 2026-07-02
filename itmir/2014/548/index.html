@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="몇달만이지 모르겠습니다만.. 이번에는 최상위에 떠 있는 뷰를 만들어 보겠습니다"><title>#32 최상위에 떠있는 뷰 만들기 (WindowManager) — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">#32 최상위에 떠있는 뷰 만들기 (WindowManager)</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-12-17T09:01:35.000Z"> 2014년 12월 17일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/548" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">몇달만이지 모르겠습니다만.. 이번에는 최상위에 떠 있는 뷰를 만들어 보겠습니다</p> </header> <div class="post-content"> <p>안녕하세요</p>
+<p>몇달만이지 모르겠습니다만.. 이번에는 최상위에 떠 있는 뷰를 만들어 보겠습니다</p>
+<p>최상위에 떠있는 뷰란.. Q슬라이드나 뭐 이런거 처럼 화면에 떠 있는 뷰를 뜻합니다</p>
+<h3 id="프로젝트-생성-및-레이아웃은">프로젝트 생성 및 레이아웃은?</h3>
+<p>최상위에 떠있는 뷰는 액티비티를 종료해도 화면 위에 남아야 합니다</p>
+<p>그러므로 꼭 서비스를 이용해서 만들어야 합니다</p>
+<p>메인 레이아웃은 서비스 시작/종료 버튼만 만들어 줍시다</p>
+<p>(원래 시작/종료를 2개 만들어서 터치O서비스, 터치X서비스 이렇게 만들어야 하지만 코드의 간결성을 위해 하나만 했습니다, 아래에 언급할겁니다)</p>
+<p><img  src="/archive/_astro/1.g3iaw_Z3_2eSM1s.webp" alt="" width="316" height="173" loading="lazy" decoding="async"></p>
+<p>코드 보기</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">LinearLayout</span><span style="color:#6F42C1"> xmlns:android</span><span style="color:#24292E">=</span><span style="color:#032F62">"http://schemas.android.com/apk/res/android"</span></span>
+<span class="line"><span style="color:#6F42C1">    xmlns:tools</span><span style="color:#24292E">=</span><span style="color:#032F62">"http://schemas.android.com/tools"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"match_parent"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"match_parent"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:orientation</span><span style="color:#24292E">=</span><span style="color:#032F62">"vertical"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:paddingBottom</span><span style="color:#24292E">=</span><span style="color:#032F62">"@dimen/activity_vertical_margin"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:paddingLeft</span><span style="color:#24292E">=</span><span style="color:#032F62">"@dimen/activity_horizontal_margin"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:paddingRight</span><span style="color:#24292E">=</span><span style="color:#032F62">"@dimen/activity_horizontal_margin"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:paddingTop</span><span style="color:#24292E">=</span><span style="color:#032F62">"@dimen/activity_vertical_margin"</span></span>
+<span class="line"><span style="color:#6F42C1">    tools:context</span><span style="color:#24292E">=</span><span style="color:#032F62">".MainActivity"</span><span style="color:#24292E"> ></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">Button</span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:onClick</span><span style="color:#24292E">=</span><span style="color:#032F62">"mStart"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:text</span><span style="color:#24292E">=</span><span style="color:#032F62">"시작하기"</span><span style="color:#24292E"> /></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">Button</span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:onClick</span><span style="color:#24292E">=</span><span style="color:#032F62">"mStop"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:text</span><span style="color:#24292E">=</span><span style="color:#032F62">"종료하기"</span><span style="color:#24292E"> /></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">LinearLayout</span><span style="color:#24292E">></span></span>
+<span class="line"></span></code></pre>
+<p>그리고.. 최상위에 떠다니는 “뷰” 이므로 화면위에 있을 “뷰”를 만들어 줘야 하는데요</p>
+<p>두가지로 나눌수 있습니다</p>
+<p>하나는 터치가 되는 뷰, 나머지는 터치가 안되는 뷰</p>
+<p>전자는 터치이벤트를 받을수 있어서 팝업 동영상등에, 뒤는 터치를 못받으므로 스크린필터? 이런 용도로 씁니다</p>
+<p>물론 둘다 만들어 볼겁니다 ㅎㅎ</p>
+<p>터치이벤트를 못받는 뷰와 관련된 레이아웃 파일 입니다</p>
+<p>이름 : always_on_top_view_not_touch.xml</p>
+<p><img  src="/archive/_astro/2.CPFP3QqC_aexsU.webp" alt="" width="319" height="100" loading="lazy" decoding="async"></p>
+<p>코드 보기</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">LinearLayout</span><span style="color:#6F42C1"> xmlns:android</span><span style="color:#24292E">=</span><span style="color:#032F62">"http://schemas.android.com/apk/res/android"</span></span>
+<span class="line"><span style="color:#6F42C1">    xmlns:tools</span><span style="color:#24292E">=</span><span style="color:#032F62">"http://schemas.android.com/tools"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:orientation</span><span style="color:#24292E">=</span><span style="color:#032F62">"vertical"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:paddingBottom</span><span style="color:#24292E">=</span><span style="color:#032F62">"@dimen/activity_vertical_margin"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:paddingLeft</span><span style="color:#24292E">=</span><span style="color:#032F62">"@dimen/activity_horizontal_margin"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:paddingRight</span><span style="color:#24292E">=</span><span style="color:#032F62">"@dimen/activity_horizontal_margin"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:paddingTop</span><span style="color:#24292E">=</span><span style="color:#032F62">"@dimen/activity_vertical_margin"</span><span style="color:#24292E"> ></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">TextView</span></span>
+<span class="line"><span style="color:#6F42C1">        android:id</span><span style="color:#24292E">=</span><span style="color:#032F62">"@+id/mTextView"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:text</span><span style="color:#24292E">=</span><span style="color:#032F62">"이 TextView는 항상 떠있습니다"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:textSize</span><span style="color:#24292E">=</span><span style="color:#032F62">"20sp"</span><span style="color:#24292E"> /></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">LinearLayout</span><span style="color:#24292E">></span></span>
+<span class="line"></span></code></pre>
+<p>간결하게 TextView 하나만 있습니다</p>
+<p>이 TextView는 나중에 중앙에 항상 뜨도록 만들겠습니다</p>
+<p>또하나는 터치를 받을수 있는 뷰인데요</p>
+<p>간단하게 이미지뷰 하나만 뒀습니다</p>
+<p>이름 : always_on_top_view_touch.xml</p>
+<p><img  src="/archive/_astro/3.GCTy4lfz_1Q6ey0.webp" alt="" width="317" height="121" loading="lazy" decoding="async"></p>
+<p>터치 이벤트를 받아서 뭐할건가.. 생각해봤는데요</p>
+<p>그냥 움직여보겠습니다</p>
+<h3 id="최상단-액티비티를-띄우려면-권한이-필요해요">최상단 액티비티를 띄우려면 권한이 필요해요</h3>
+<p>화면에 뷰를 추가하기 위한 권한을 추가해 줍시다</p>
+<uses-permission android:name="android.permission.SYSTEM\_ALERT\_WINDOW">
+<h3 id="서비스-생성하기">서비스 생성하기</h3>
+<p>최상단 뷰를 만들기 위해 서비스를 사용해야 합니다</p>
+<p>이 강좌에서는 터치가 되는것, 안되는것 두가지를 만들 예정이므로 서비스를 2개 생성해야 합니다</p>
+<p>구체적인 생성법은 아래 링크를 참고해 주세요</p>
+<p><a href="http://itmir.tistory.com/414">[Development/App] - #23 Service (서비스)에 대해 알아보자</a></p>
+<p>[java] : 파일 생성</p>
+<p>AlwaysTopServiceTouch.java - 서비스 생성 (링크 참조해서 생성하세요)</p>
+<p>AlwaysTopServiceNotTouch.java - 서비스 생성 (링크 참조해서 생성하세요)</p>
+<p>[AndroidManifest.xml] : 코드 추가</p>
+<service android:name="itmir.tistory.examplewindowview.AlwaysTopServiceNotTouch">
+<service android:name="itmir.tistory.examplewindowview.AlwaysTopServiceTouch">
+<p>[MainActivity.java] : 메소드 추가</p>
+<p>public void mStart(View v) {</p>
+<p>    startService(new Intent(this, AlwaysTopServiceNotTouch.class));</p>
+<p>}</p>
+<p>public void mStop(View v) {</p>
+<p>    stopService(new Intent(this, AlwaysTopServiceNotTouch.class));</p>
+<p>}</p>
+<h3 id="alwaystopservicenottouch-서비스를-봐주세요">AlwaysTopServiceNotTouch 서비스를 봐주세요</h3>
+<p>자… 서비스까지 잘 생성하셨으리라 믿고 넘어가겠습니다</p>
+<p>본격적으로 자바소스를 알아보기 전에 그림으로 알아볼까 합니다</p>
+<p><img  src="/archive/_astro/%EA%B7%B8%EB%A6%BC.CDK4GV1-_ZOkaLL.webp" alt="" width="1000" height="439" loading="lazy" decoding="async"></p>
+<p>모식도(?)입니다</p>
+<p>private View mView;</p>
+<p>private WindowManager mManager;</p>
+<p>화면에 최상단 뷰를 추가하기 위해서 WindowMananger를 사용할겁니다</p>
+<p>서비스의 onCreate()메소드 입니다</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">@</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> onCreate</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#005CC5">    super</span><span style="color:#24292E">.</span><span style="color:#6F42C1">onCreate</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    LayoutInflater mInflater </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (LayoutInflater) </span><span style="color:#6F42C1">getSystemService</span><span style="color:#24292E">(Context.LAYOUT_INFLATER_SERVICE);</span></span>
+<span class="line"><span style="color:#24292E">    mView </span><span style="color:#D73A49">=</span><span style="color:#24292E"> mInflater.</span><span style="color:#6F42C1">inflate</span><span style="color:#24292E">(R.layout.always_on_top_view_not_touch, </span><span style="color:#005CC5">null</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    WindowManager.LayoutParams mParams </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#24292E"> WindowManager.</span><span style="color:#6F42C1">LayoutParams</span><span style="color:#24292E">(</span></span>
+<span class="line"><span style="color:#24292E">            WindowManager.LayoutParams.WRAP_CONTENT,</span></span>
+<span class="line"><span style="color:#24292E">            WindowManager.LayoutParams.WRAP_CONTENT,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">            WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">            WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">            PixelFormat.TRANSLUCENT);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    mManager </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (WindowManager) </span><span style="color:#6F42C1">getSystemService</span><span style="color:#24292E">(WINDOW_SERVICE);</span></span>
+<span class="line"><span style="color:#24292E">    mManager.</span><span style="color:#6F42C1">addView</span><span style="color:#24292E">(mView, mParams);</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p>하나씩 확인해 보겠습니다</p>
+<p>5~6번은 전에 본적이 있으실겁니다</p>
+<p>커스텀 알림때 배운 레이아웃 인플레이터입니다</p>
+<p><a href="http://itmir.tistory.com/358">[Development/App] - #17 커스텀 알림(Alert) 띄우기</a></p>
+<p>![](./images/레이아웃 인플레이터.jpg)</p>
+<p>(이제야 우려먹네요;)</p>
+<p>19~20부분에서 뷰를 추가하는데요</p>
+<p>그림이 뭐낙 잘만들어서(?) 이해하시는데 큰 어려움은 없을거라 믿고…</p>
+<p>8~17이 문제네요</p>
+<p>API를 봅시다</p>
+<p>WindowManager.LayoutParams mParams = new WindowManager.LayoutParams(w, h, _type, _flags, _format)</p>
+<p>저 순서대로 집어넣어 주는건데요</p>
+<ul>
+<li>WindowManager.LayoutParams.WRAP_CONTENT</li>
+</ul>
+<p>이건 WRAP_CONTENT가 눈에 잘 들어오실탠대 생각하시는 그거 맞습니다</p>
+<ul>
+<li>WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY</li>
+</ul>
+<p>이건 항상 최상위에 있도록 해주는 타입입니다</p>
+<p>반대로 아래에서 사용하게될 WindowManager.LayoutParams.TYPE_PHONE은 터치 이벤트도 받을수 있습니다</p>
+<ul>
+<li>WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH</li>
+</ul>
+<p>이건 뷰를 제외한 나머지 부분의 터치를 가능하게 해준다…라고 알고있습니다</p>
+<ul>
+<li>PixelFormat.TRANSLUCENT</li>
+</ul>
+<p>이건 API를 보면 _format이라 되어있는데 dev.android.com찾아봐도 뭔지 모르겠네요</p>
+<p>(아시는분 계시다면 덧글로 꼭 알려주세요!)</p>
+<p>그럼.. 이제 터치 못받는건 마무리 해볼께요</p>
+<p>아래는 스크린샷 입니다</p>
+<p><img  src="/archive/_astro/device-2014-12-17-174604.C8ZFxtmN_Z1tcfQO.webp" alt="" width="400" height="711" loading="lazy" decoding="async">
+   
+<img  src="/archive/_astro/device-2014-12-17-174616.BSEvqIfG_vemFh.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<h3 id="alwaystopservicetouch-서비스를-봐주세요">AlwaysTopServiceTouch 서비스를 봐주세요</h3>
+<p>중요한건 위에서 다 언급했기 때문에 바뀐 점만 언급하고 마치려 합니다</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">mView.</span><span style="color:#6F42C1">setOnTouchListener</span><span style="color:#24292E">(mViewTouchListener);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">mParams </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#24292E"> WindowManager.</span><span style="color:#6F42C1">LayoutParams</span><span style="color:#24292E">(</span></span>
+<span class="line"><span style="color:#24292E">        WindowManager.LayoutParams.WRAP_CONTENT,</span></span>
+<span class="line"><span style="color:#24292E">        WindowManager.LayoutParams.WRAP_CONTENT,</span></span>
+<span class="line"><span style="color:#24292E">        WindowManager.LayoutParams.TYPE_PHONE,</span></span>
+<span class="line"><span style="color:#24292E">        WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,</span></span>
+<span class="line"><span style="color:#24292E">        PixelFormat.TRANSLUCENT);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">mParams.gravity </span><span style="color:#D73A49">=</span><span style="color:#24292E"> Gravity.TOP </span><span style="color:#D73A49">|</span><span style="color:#24292E"> Gravity.LEFT;</span></span>
+<span class="line"></span></code></pre>
+<p>TYPE_PHONE과 FLAG가 변경되었네요</p>
+<ul>
+<li>WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE</li>
+</ul>
+<p>포커스를 가지지 않게 합니다</p>
+<p>그리고 mView.setOnTouchListener(mViewTouchListener); 이부분에서 mViewTouchListener를 언급하지 않았네요</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">private</span><span style="color:#D73A49"> float</span><span style="color:#24292E"> mTouchX, mTouchY;</span></span>
+<span class="line"><span style="color:#D73A49">private</span><span style="color:#D73A49"> int</span><span style="color:#24292E"> mViewX, mViewY;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">private</span><span style="color:#24292E"> OnTouchListener mViewTouchListener </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> OnTouchListener</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> boolean</span><span style="color:#6F42C1"> onTouch</span><span style="color:#24292E">(View </span><span style="color:#E36209">v</span><span style="color:#24292E">, MotionEvent </span><span style="color:#E36209">event</span><span style="color:#24292E">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">        switch</span><span style="color:#24292E"> (event.</span><span style="color:#6F42C1">getAction</span><span style="color:#24292E">()) {</span></span>
+<span class="line"><span style="color:#D73A49">        case</span><span style="color:#24292E"> MotionEvent.ACTION_DOWN</span><span style="color:#D73A49">:</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">            mTouchX </span><span style="color:#D73A49">=</span><span style="color:#24292E"> event.</span><span style="color:#6F42C1">getRawX</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">            mTouchY </span><span style="color:#D73A49">=</span><span style="color:#24292E"> event.</span><span style="color:#6F42C1">getRawY</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">            mViewX </span><span style="color:#D73A49">=</span><span style="color:#24292E"> mParams.x;</span></span>
+<span class="line"><span style="color:#24292E">            mViewY </span><span style="color:#D73A49">=</span><span style="color:#24292E"> mParams.y;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">            break</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">        case</span><span style="color:#24292E"> MotionEvent.ACTION_UP</span><span style="color:#D73A49">:</span></span>
+<span class="line"><span style="color:#D73A49">            break</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">        case</span><span style="color:#24292E"> MotionEvent.ACTION_MOVE</span><span style="color:#D73A49">:</span></span>
+<span class="line"><span style="color:#D73A49">            int</span><span style="color:#24292E"> x </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (</span><span style="color:#D73A49">int</span><span style="color:#24292E">) (event.</span><span style="color:#6F42C1">getRawX</span><span style="color:#24292E">() </span><span style="color:#D73A49">-</span><span style="color:#24292E"> mTouchX);</span></span>
+<span class="line"><span style="color:#D73A49">            int</span><span style="color:#24292E"> y </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (</span><span style="color:#D73A49">int</span><span style="color:#24292E">) (event.</span><span style="color:#6F42C1">getRawY</span><span style="color:#24292E">() </span><span style="color:#D73A49">-</span><span style="color:#24292E"> mTouchY);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">            mParams.x </span><span style="color:#D73A49">=</span><span style="color:#24292E"> mViewX </span><span style="color:#D73A49">+</span><span style="color:#24292E"> x;</span></span>
+<span class="line"><span style="color:#24292E">            mParams.y </span><span style="color:#D73A49">=</span><span style="color:#24292E"> mViewY </span><span style="color:#D73A49">+</span><span style="color:#24292E"> y;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">            mManager.</span><span style="color:#6F42C1">updateViewLayout</span><span style="color:#24292E">(mView, mParams);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">            break</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#005CC5"> true</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">};</span></span>
+<span class="line"></span></code></pre>
+<p>뭐.. 이런구조인데요</p>
+<p>중요한건 터치이벤트 리스너를 받을수 있고, 그 이벤트를 받아서 mParams을 수정하고, updateViewLayout()로 위치를 수정한다 라는 원리입니다</p>
+<p><img  src="/archive/_astro/Screenshot_2014-12-17-17-47-51.B3tY1sM6_ZNXT0K.webp" alt="" width="400" height="711" loading="lazy" decoding="async">
+   
+<img  src="/archive/_astro/Screenshot_2014-12-17-17-48-11.CuyMoyOY_175ntg.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<h3 id="예제-다운로드">예제 다운로드</h3>
+<p>[ExampleWindowView.zip</p>
+<p>다운로드](./file/ExampleWindowView.zip)</p>
+<h3 id="마치며">마치며</h3>
+<p>강좌 완성도를 점차 올리고 싶은데 시간도 없고.. 내용도 어렵고 해서 강좌를 자주 올리지 못하네요..</p>
+<p>그리고 제 필력이 약해서 정확하게 이해하실수 있으실지도 모르겠습니다</p>
+<p>예제소스도 함께 첨부했으니 이해가 안되신다면 소스 확인해보세요~</p>
+<p>글 한번 쓰는거 너무 오래걸리고 힘드네요…</p>
+<p>특히 그림 만드는거..</p>
+<p>이 글이 유용하시다면 덧글과 제 블로그에 있는 수입원(?) 한번씩 터치해주시면 감사드리겠습니다..</p>
+<p>미밴드 사고싶어서 빨리 모였으면 하네요 ㅎㅎ..</p>
+<h3 id="참조">참조</h3>
+<p><a href="http://blog.daum.net/mailss/18">http://blog.daum.net/mailss/18</a></p>
+<p><a href="http://blog.daum.net/mailss/35">http://blog.daum.net/mailss/35</a></p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleWindowView.zip">ExampleWindowView.zip</a> <code>1.7 MB</code></li>
+</ul></service></service></uses-permission> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

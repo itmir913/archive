@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="cm10까지는 ramdisk_offset이라는것을 작성하지 않아도 그냥 빌드가 되었지만 cm10.1로 오면서 많은 변화가 나타났습니다"><title>ramdisk_offset 만들기 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">ramdisk_offset 만들기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-07-20T15:57:09.000Z"> 2013년 7월 21일 </time> <span class="post-category">Android/Build</span> <a href="https://itmir.tistory.com/271" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">cm10까지는 ramdisk_offset이라는것을 작성하지 않아도 그냥 빌드가 되었지만 cm10.1로 오면서 많은 변화가 나타났습니다</p> </header> <div class="post-content"> <p>cm10까지는 ramdisk_offset이라는것을 작성하지 않아도 그냥 빌드가 되었지만 cm10.1로 오면서 많은 변화가 나타났습니다</p>
+<p>이것이 왜 필요한지는 모르겟습니다.. 아마 mkbootimg 바이너리 파일의 소스가 변경된듯 합니다</p>
+<p>제 기억으로는 ramdisk_offset이 있는 소스가 낡은 소스로 알고 있는대 아닐지도 모르지만 왜 cm-10.1에서는 이 소스로 mkbootimg를 만들어 사용하는지 원…</p>
+<p>아무튼 빌드하다 보면 아래와 같은 오류가 나타나며 빌드가 안됩니다</p>
+<p>Target boot image: /home/whdghks913/cm_lucid/system/out/target/product/ef46l/boot.img</p>
+<p>usage: mkbootimg</p>
+<p>       —kernel <filename></filename></p>
+<p>       —ramdisk <filename></filename></p>
+<p>       [ —second &#x3C;2ndbootloader-filename> ]</p>
+<p>       [ —cmdline <kernel-commandline> ]</kernel-commandline></p>
+<p>       [ —board <boardname> ]</boardname></p>
+<p>       [ —base </p><address> ]<p></p>
+<p>       [ —pagesize <pagesize> ]</pagesize></p>
+<p>       [ —ramdisk_offset </p><address> ]<p></p>
+<p>       -o|—output <filename></filename></p>
+<p>make: *** [/home/whdghks913/cm_lucid/system/out/target/product/ef46l/boot.img] 오류 1</p>
+<p>어이가 없죠… 갑자기 mkbootimg의 usage가 나오다니..</p>
+<p>이건 ramdisk_offset을 지정하지 않았기 때문에 발생합니다</p>
+<p>BoardConfig.mk을 수정해야만 합니다</p>
+<p>BOARD_FORCE_RAMDISK_ADDRESS</p>
+<p>이 구문을 찾아주세요</p>
+<p>이건 램디스크 주소(Ramdisk address)를 저장하는 값입니다</p>
+<p>그러나 이 구문은 cm10까지만 쓰일수 있고 cm10.1부터는 이 구문을 사용할수 없습니다</p>
+<p>다만 아래 구문을 사용하라는 메모가 나타납니다</p>
+<p>BOARD_MKBOOTIMG_ARGS</p>
+<p>그러나 위 구문을 사용한다 해도 RAMDISK_ADDRESS에 맞는 값을 그냥 넣으면 맨 위에 있는 usags가 나타납니다 -_- 어쩌라는 건지 원…</p>
+<p>이 구문에는 ramdisk_offset이 들어가야만 합니다</p>
+<p>지금부터 이 값을 구하는 방법을 알려드리겠습니다</p>
+<p>정리된게 없더라고요 이 곳에서 정확한 답을 찾아가셨으면 합니다 ㅎㅎ</p>
+<p><strong>Ramdisk_offset = Ramdisk address - kernel base</strong></p>
+<p>입니다;;</p>
+<p>즉 우리가 cm10.1에서 부터 필요한 offset값은 기존 address값에서 base값을 빼주면 되는거였습니다;;</p>
+<p>그러나 그냥 빼주면 안됩니다</p>
+<p>각 값은 16진수 이나 뺄셈을 하기 위해 10진수로 변환한뒤 다시 16진수로 변환해야 합니다</p>
+<p>그럼 계산 순서를 말씀드리겠습니다</p>
+<ol>
+<li>
+<p>ramdisk address값을 10진수로 변환한다</p>
+</li>
+<li>
+<p>kernel base값을 10진수로 변환한다</p>
+</li>
+<li>
+<p>address값에서 base값을 뺀다, 즉 address - base</p>
+</li>
+</ol>
+<p>에를 들면 address가 10이고(그럴일은 절대 없겠지만 예시 입니다) base값이 4라면 address - base = 6 이 되는 겁니다</p>
+<ol start="4">
+<li>
+<p>뺀 값을 다시 16진수로 변환한다</p>
+</li>
+<li>
+<p>4번에서 16진수로 변환한 값이 최종 ramdisk_offset의 값이다!!</p>
+</li>
+</ol>
+<p>자, 좀 복잡하기도 합니다..</p>
+<p>마켓에 진수 변환이 가능한 어플도 있고 편법으로 윈도우7에 내장되어 있는 기본 계산기로도 진수 변환은 가능하나 자세한 언급은 생략하겠습니다</p>
+<p>이제 최종 ramdisk_offset의 값을 필요로 하는 BOARD_MKBOOTIMG_ARGS에 넣어줘야 하는대요</p>
+<p>이것도 그냥</p>
+<p>BOARD_MKBOOTIMG_ARGS := 나온 값</p>
+<p>이렇게 넣어줘 버리면 안됩니다</p>
+<p>BOARD_MKBOOTIMG_ARGS := —ramdisk_offset 나온값</p>
+<p>이렇게 해서 넣어주세요</p>
+<p>예를 들면</p>
+<p>BOARD_MKBOOTIMG_ARGS := —ramdisk_offset 0x02400001</p>
+<p>이렇게 지정해 주시면 됩니다 ㅎㅎ</p>
+<p>이렇게 해서 귀찮은 ramdisk_offset을 구하는 방법에 대해 알아보았습니다~</p>
+<p>도움이 되셨다면 추천 부탁드리고 널리 퍼트려 주세요~</p>
+<p>참고</p>
+<p>Sleepy님의 4.1.2 디바이스 소스로 4.2.1 빌드하기</p></address></address> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

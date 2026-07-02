@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="윈도우를 쓰다 가장 어이 없는일.. 바로 로그온(로그인)암호를 잊어버리는 일입니다."><title>[NTPWED] 윈도우의 로그인 암호를 분실했을때, 변경해보자 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">[NTPWED] 윈도우의 로그인 암호를 분실했을때, 변경해보자</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-02-22T10:25:04.000Z"> 2013년 2월 22일 </time> <span class="post-category">Computer &amp; PC/Windows</span> <a href="https://itmir.tistory.com/159" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">윈도우를 쓰다 가장 어이 없는일.. 바로 로그온(로그인)암호를 잊어버리는 일입니다.</p> </header> <div class="post-content"> <p>다들 윈도우 잘쓰시고 계시나요?</p>
+<p>윈도우를 쓰다 가장 어이 없는일.. 바로 로그온(로그인)암호를 잊어버리는 일입니다.</p>
+<p>잊어버렸다고 혹시 윈도우 재설치를 하시진 않으신가요?</p>
+<p>이럴때 쓰는 정말 좋은 프로그램이 있습니다.</p>
+<p>바로 ntpwed입니다.</p>
+<p>이 프로그램으로 윈도우의 암호를 변경/제거할수 있습니다.</p>
+<p>(하지만 <strong>암호 해독은 불가능</strong> 한점 알아두세요ㅋㅋ)</p>
+<p>원리를 설명하자면,</p>
+<p>C:\WINDOWS\SYSTEM32\CONFIG\SAM파일이 윈도우 암호를 저장하고 있습니다.</p>
+<p>ntpwed 프로그램으로 SAM파일을 수정해서 로그인 암호를 변경할 수 있는겁니다.</p>
+<p>그러나 윈도우를 돌리고 있을때는 이 파일이 사용 중이기 때문에 접근과 변경이 불가능합니다.</p>
+<p>그러므로 부팅 CD혹은 부팅 USB를 이용하여 프로그램을 실행한 후 접근하는 방법을 사용하는 경우가 대다수입니다.</p>
+<p>일단 이 프로그램을 사용하기 위한 환경이 갖춰져야 합니다.</p>
+<blockquote>
+<ol>
+<li>
+<p>윈도우 설치 CD/USB에 ntpwed프로그램이 들어있는경우</p>
+</li>
+<li>
+<p>응급 복구 모드으로 부팅해서 접근할수 있는 경우</p>
+</li>
+<li>
+<p>하드디스크는 같은데 다른파티션에 설치된 윈도우로 부팅할수 있는경우</p>
+</li>
+</ol>
+</blockquote>
+<p>이 세 가지 중에서 만족하는 경우로 접속하시면 됩니다.</p>
+<p>그냥 ntpwed프로그램을 실행할 수만 있으면 됩니다.</p>
+<p>그러므로 저는 윈도우7 설치 USB를 이용하여 암호를 제거해 보도록 하겠습니다.</p>
+<p>(필수로 USB등에 ntpwed 프로그램을 넣어주셔야 합니다.)</p>
+<p>부트 메뉴/바이오스등으로 USB(CD)로 부팅해 주세요.</p>
+<p><img  src="/archive/_astro/IMG_20130222_183854.DlojDFpM_ZaHpRG.webp" alt="" width="360" height="138" loading="lazy" decoding="async"></p>
+<p>윈도우 설치 CD로 진입하는 화면입니다.</p>
+<p><img  src="/archive/_astro/IMG_20130222_183936.BUTSYmN1_Z1Mupua.webp" alt="" width="288" height="480" loading="lazy" decoding="async"></p>
+<p>이런 화면이 뜨실겁니다.</p>
+<p>이때 <strong>Shift키</strong>와 <strong>F10</strong>을 눌러 명령 프롬프트를 실행해 주세요.</p>
+<p><img  src="/archive/_astro/IMG_20130222_184002.D18ItXAi_1EGnDf.webp" alt="" width="288" height="480" loading="lazy" decoding="async"></p>
+<p>이렇게 명령 프롬프트가 나타났습니다.</p>
+<p>이제 ntpwed프로그램을 실행해야 합니다.</p>
+<p>명령 프롬프트로 프로그램을 실행해야 합니다.</p>
+<p>EX) (파티션 경로):\ntpwed.exe</p>
+<p>지금 연결된 파티션을 확인해 보겠습니다.</p>
+<p><img  src="/archive/_astro/IMG_20130222_184117.788LfiId_25m1G4.webp" alt="" width="288" height="480" loading="lazy" decoding="async"></p>
+<p><strong>diskpart</strong>를 입력하신다음 <strong>list vol</strong>을 또다시 입력하시면 연결된 파티션이 나타납니다.</p>
+<p>ntpwed프로그램이 들어있는 디스크를 찾아 주세요.</p>
+<p>제경우 F 디스크에 들어있습니다.</p>
+<p><img  src="/archive/_astro/IMG_20130222_184352.DCAqbLYl_Z17AzJ8.webp" alt="" width="288" height="480" loading="lazy" decoding="async"></p>
+<p>명령 프롬프트에 <strong>F:\ntpwed.exe</strong> 이런씩으로 프로그램이 있는 경로를 입력해 주시면 프로그램이 실행됩니다.</p>
+<p>처음 프로그램을 실행하면 아무것도 안뜨게 됩니다. (Re)open을 눌러보세요.</p>
+<p>그래도 나타나지 않을경우 […]을 눌러 파일을 찾아봅시다.</p>
+<p><img  src="/archive/_astro/IMG_20130222_184405.B6NNKfm7_1BBtTJ.webp" alt="" width="288" height="480" loading="lazy" decoding="async"></p>
+<p>대소문자를 구분하지 말고 C:\WINDOWS\SYSTEM32\CONFIG에 들어가 SAM을 열어주시면 됩니다.</p>
+<p><img  src="/archive/_astro/IMG_20130222_184414.DZKHmh_4_gWLiV.webp" alt="" width="288" height="480" loading="lazy" decoding="async"></p>
+<p>그럼 유저 정보가 나타나게 되는데요.</p>
+<p>편집하고자 하는 계정을 클릭하여 Change password를 클릭해 주시면 됩니다.</p>
+<p><img  src="/archive/_astro/IMG_20130222_184428.BYb3V7fr_1pvd4j.webp" alt="" width="288" height="480" loading="lazy" decoding="async"></p>
+<p>새로운 비밀번호를 입력해 주신다음 OK를 눌러주시면 됩니다.</p>
+<p>말씀드린것 처럼 변경은 가능하지만 암호 해독은 불가능합니다.</p>
+<p><img  src="/archive/_astro/IMG_20130222_184444.BoOamgkW_Z2nRsEX.webp" alt="" width="288" height="480" loading="lazy" decoding="async"></p>
+<p>이렇게 변경이 끝났습니다.</p>
+<p>또한 Administrator계정의 비활성화/활성화도 가능합니다.</p>
+<p>모든 작업이 끝났다면 Exit버튼을 눌러 닫으신다음 재부팅 하시면 됩니다.</p>
+<p>그럼 모두 암호를 뚫기 바라며 글 마치도록 하겠습니다. ㅋㅋ</p>
+<p>[ntpwed04.zip</p>
+<p>다운로드](./file/ntpwed04.zip)</p>
+<p>04버전으로 64비트 버전이 포함되어 있습니다</p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/ntpwed04.zip">ntpwed04.zip</a> <code>109 KB</code></li>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="안드로이드를 빌드하기 전에 빌드 환경을 구축하자"><title>1) 안드로이드를 빌드하기 전에 빌드 환경을 구축하자 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">1) 안드로이드를 빌드하기 전에 빌드 환경을 구축하자</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-05-25T09:30:55.000Z"> 2013년 5월 25일 </time> <span class="post-category">Android/Build</span> <a href="https://itmir.tistory.com/220" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">안드로이드를 빌드하기 전에 빌드 환경을 구축하자</p> </header> <div class="post-content"> <p><strong>안드로이드를 빌드하기 전에 빌드 환경을 구축하자</strong></p>
+<p>오랜만에 쓰는 커널/빌드 강좌 이군요 ㅇㅅㅇ</p>
+<p>이제 몇일에서 몇달간에 걸쳐 제가 알게된 모든 방법을 이 게시판에 강좌로 올려볼려고 합니다~</p>
+<p>이 글을 보실 분이 계실지 모르겠습니다만 쉽고 재미있게 써보도록 하겠습니다~</p>
+<p>오래된 정보 안내</p>
+<p>이글은 2013년도에 작성된 글입니다.</p>
+<p>글 작성시에는 최신 정보라고 해도 2년동안 많은것이 달라졌으므로 (예를들어 우분투 버전등)</p>
+<p>어떤 순서로 이루어지는지만 알아두시고 자세한 지침은</p>
+<p>구글에서 “android build ubuntu 14.04”와 같은 검색어로 찾아보신다음 진행해주시면 감사드리겠습니다</p>
+<p><strong>0. 빌드를 위한 준비물</strong></p>
+<p>이 부분은 앞으로 진행될 모든 강좌에서 공통으로 필요한 부분입니다</p>
+<p>꼭 진행해 주세요~</p>
+<p>먼저 빌드를 할 우분투 OS가 필요합니다</p>
+<p>Ubuntu의 용량은 넉넉하게 50GB이상으로 잡아주세요 빌드시 용량이 많이 필요합니다</p>
+<p>권장하는 버전은 10.04와 12.04 LTS 64Bit 입니다 꼭 64Bit로 설치해 주셔야 합니다!</p>
+<ul>
+<li>2015-11-14 추가</li>
+</ul>
+<p>이 글은 13년도에 작성된 글로, 당시 12.04가 최신버전이었습니다.</p>
+<p>지금 최신은 15버전이거나 그 이상이고, 12버전은 지원이 끊겼으므로 사용하지 마시고 최신버전으로 설치하세요</p>
+<p>저는 12.04 LTS 64Bit를 사용중에 있습니다 이 강좌는 12.04를 기준으로 작성되어 집니다~</p>
+<p>우분투를 멀티부팅이든 가상머신이든 설치해 주세요 Wubi는 저는 권장하지 않습니다 ㅎ</p>
+<p>이 방법은 네이버에 엄청나게 널려있으니 생략하겠습니다~</p>
+<p>설치가 완료되었으면 터미널을 켜 주세요</p>
+<p><strong>1. 빌드에 필요한 파일 설치</strong></p>
+<p><strong>(1) JAVA 설치</strong></p>
+<p>먼저 안드로이드는 달빅캐쉬라는 자바를 이용해 돌아가므로 풀 소스도 .java라는 확장자를 가진 파일들이 많이 있습니다</p>
+<p>그러므로 이를 위해 java를 설치해야 하는대요</p>
+<p>구글 소스 다운로드 가이드에서 제공하고 있는 방법을 택할경우</p>
+<p>$ sudo add-apt-repository “deb <a href="http://archive.canonical.com/">http://archive.canonical.com/</a> lucid partner”</p>
+<p>$ sudo apt-get update</p>
+<p>$ sudo apt-get install sun-java6-jdk</p>
+<p>하지만 이 방법은 국내에서는 잘 되지 않는다고 합니다</p>
+<p>그래서 Bridge(htchoi2839)님께서 알려주신 방법을 택하실경우 (<a href="http://cafe.naver.com/develoid/67579">http://cafe.naver.com/develoid/67579</a>)</p>
+<p>$ sudo add-apt-repository “deb <a href="http://archive.ubuntu.com/ubuntu">http://archive.ubuntu.com/ubuntu</a> hardy main multiverse”</p>
+<p>$ sudo add-apt-repository “deb <a href="http://archive.ubuntu.com/ubuntu">http://archive.ubuntu.com/ubuntu</a> hardy-updates main multiverse”</p>
+<p>$ sudo apt-get update</p>
+<p>$ sudo apt-get install sun-java6-jdk</p>
+<p>이 명령어를 입력하시면 됩니다</p>
+<p>하지만 제 경우 전에 java오류에서 엄청난 fail을 격은적이 있습니다..</p>
+<p>그래서 아래 방법으로 java를 설치하였습니다</p>
+<p>$ sudo add-apt-repository ppa:webupd8team/java</p>
+<p>$ sudo apt-get update</p>
+<p>$ sudo apt-get install oracle-java6-installer</p>
+<p>위 박스안 명령어를 입력하시면 자동으로 파일을 받아 java가 설치됩니다</p>
+<p>(출처 : <a href="http://thedaneshproject.com/posts/how-to-install-java-7-on-ubuntu-12-04-lts/">http://thedaneshproject.com/posts/how-to-install-java-7-on-ubuntu-12-04-lts/</a>, thanks for hPa)</p>
+<p>설치가 완료된 다음 터미널에 java -version이라 입력할경우 java 버전이 나오면 정상입니다</p>
+<p><strong>(2) Android SDK 설치</strong></p>
+<p>adb와 fastboot를 설치하면 우분투에서 바로 스마트폰의 상태를 확인할 수도 있고 adb명령어가 쓸만한게 많습니다</p>
+<p>필요 없으시면 건너뛰셔도 무관합니다.</p>
+<p><a href="http://developer.android.com/sdk/index.html">http://developer.android.com/sdk/index.html</a></p>
+<p>위 사이트에 방문 하셔서 SDK를 받으신후 압축 해제해 주시면 됩니다</p>
+<p><img  src="/archive/_astro/0.C6QsMqwA_Z1yK11P.webp" alt="" width="301" height="29" loading="lazy" decoding="async"></p>
+<p>이 버튼을 눌르신 다음</p>
+<p><img  src="/archive/_astro/1.BWSDYotj_Z4WrFi.webp" alt="" width="769" height="287" loading="lazy" decoding="async"></p>
+<p>SDK Tools Only박스에서 Linux 32 &#x26; 64-bit를 받아주시면 됩니다</p>
+<p>다운이 완료되면 자신의 홈 폴더, 즉 ~/에 압축해제 해주세요</p>
+<p>바탕화면, 다운로드폴더의 전 폴더 입니다</p>
+<p>이제 터미널에 아래와 같이 입력해 주세요</p>
+<p>$ export PATH=${PATH}:~/(폴더명)/tools</p>
+<p>$ export PATH=${PATH}:~/(폴더명)/platform-tools</p>
+<p>$ export PATH=${PATH}:~/bin</p>
+<p>$ PATH=“$HOME/(폴더명)/tools:$HOME/(폴더명)/platform-tools:$PATH”</p>
+<p>$ android</p>
+<p>android를 입력한다음에는 SDK manager메뉴가 나타나야 합니다</p>
+<p>만약 나타나지 않을경우 (폴더명)/tools에 있는 android를 실행해 주시면 됩니다</p>
+<p>실행후 가장 위에 있는 Android Tools관련만 설치해 주세요</p>
+<p>전부 설치하시면 시간도 오래걸리고 용량도 많이 잡아먹습니다 (빌드하면 용량이 부족할수도 있으므로)</p>
+<p>설치가 다 되면 platform-tools안에 adb와 fastboot등의 파일이 있을겁니다</p>
+<p>위 초록 박스의 명령어를 입력한후 터미널을 닫지 않으면 adb가 될겁니다</p>
+<p>하지만 새로 터미널을 닫을경우 adb가 안되는대 이때는 ~/.bashrc등에 SDK를 PATH에 추가해 주시면 됩니다</p>
+<p><strong>(3) 빌드에 필요한 패키지 설치</strong></p>
+<p>이제는 터미널을 사용하여 패키지를 설치해 봅시다</p>
+<p>$ sudo apt-get install python</p>
+<p>$ sudo apt-get install git-core</p>
+<p>위 두줄을 입력해 주신다음</p>
+<p><strong>10.04는 아래 구문을 입력해 주세요</strong></p>
+<p>$ sudo apt-get install git-core gnupg flex bison gperf build-essential \</p>
+<p>  zip curl zlib1g-dev libc6-dev lib32ncurses5-dev ia32-libs \</p>
+<p>  x11proto-core-dev libx11-dev lib32readline5-dev lib32z-dev \</p>
+<p>  libgl1-mesa-dev g++-multilib mingw32 tofrodos python-markdown \</p>
+<p>  libxml2-utils</p>
+<p><strong>11.10은 10.04구문 입력후 아래 구문을 또 입력해 주세요</strong></p>
+<p>$ sudo ln -s /usr/lib/i386-linux-gnu/libX11.so.6 /usr/lib/i386-linux-gnu/libX11.so</p>
+<p><strong>12.04는 아래 구문을 입력해 주세요</strong></p>
+<p>$ sudo apt-get install git-core gnupg flex bison gperf build-essential \</p>
+<p>  zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev \</p>
+<p>  libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386 \</p>
+<p>  libgl1-mesa-dev g++-multilib mingw32 openjdk-6-jdk tofrodos \</p>
+<p>  python-markdown libxml2-utils xsltproc zlib1g-dev:i386</p>
+<p>$ sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/i386-linux-gnu/libGL.so</p>
+<p><strong>(3) USB 드라이버 설치</strong></p>
+<p>gksudo gedit /etc/udev/rules.d/51-android.rules</p>
+<p>이 명령어를 입력하시면 아무것도 입력되지 않은 빈 파일이 gedit 편집기에 뜰겁니다</p>
+<p>아래 회색 박스를 모두 기입해 주세요 (필요한 부분만 기입해도 됩니다)</p>
+<p>#Acer</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“0502”, MODE=“0666”</p>
+<p>#ASUS</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“0b05”, MODE=“0666”</p>
+<p>#Dell</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“413c”, MODE=“0666”</p>
+<p>#Foxconn</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“0489”, MODE=“0666”</p>
+<p>#Garmin-Asus</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“091E”, MODE=“0666”</p>
+<p>#Google</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“18d1”, MODE=“0666”</p>
+<p>#HTC</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“0bb4”, MODE=“0666”</p>
+<p>#Huawei</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“12d1”, MODE=“0666”</p>
+<p>#K-Touch</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“24e3”, MODE=“0666”</p>
+<p>#KT Tech</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“2116”, MODE=“0666”</p>
+<p>#Kyocera</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“0482”, MODE=“0666”</p>
+<p>#Lenevo</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“17EF”, MODE=“0666”</p>
+<p>#LG</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“1004”, MODE=“0666”</p>
+<p>#Motorola</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“22b8”, MODE=“0666”</p>
+<p>#NEC</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“0409”, MODE=“0666”</p>
+<p>#Nook</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“2080”, MODE=“0666”</p>
+<p>#Nvidia</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“0955”, MODE=“0666”</p>
+<p>#OTGV</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“2257”, MODE=“0666”</p>
+<p>#Pantech</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“10A9”, MODE=“0666”</p>
+<p>#Philips</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“0471”, MODE=“0666”</p>
+<p>#PMC-Sierra</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“04da”, MODE=“0666”</p>
+<p>#Qualcomm</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“05c6”, MODE=“0666”</p>
+<p>#SK Telesys</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“1f53”, MODE=“0666”</p>
+<p>#Samsung</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“04e8”, MODE=“0666”</p>
+<p>#Sharp</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“04dd”, MODE=“0666”</p>
+<p>#Sony Ericsson</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“0fce”, MODE=“0666”</p>
+<p>#Toshiba</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“0930”, MODE=“0666”</p>
+<p>#ZTE</p>
+<p>SUBSYSTEM==“usb”, ATTR{idVendor}==“19D2”, MODE=“0666”</p>
+<p>이제 USB 드라이버 관련 파일을 생성하였습니다</p>
+<p>adb를 작동시켜 보세요 작동이 될겁니다</p>
+<p>만약 작동이 안된다면 Android SDK를 확인해 보세요</p>
+<p><strong>(4) Repo 받기</strong></p>
+<p>repo는 안드로이드의 소스를 받는대 필요한 파일 입니다</p>
+<p>이 repo를 받기를 위해서는 curl이라는 프로그램이 필요한대요</p>
+<p>우리는 이 프로그램을 위에서 설치했습니다</p>
+<p>그러므로 그냥 진행하셔도 됩니다</p>
+<p>$ mkdir ~/bin</p>
+<p>$ export PATH=~/bin:$PATH</p>
+<p>$ curl <a href="https://dl-ssl.google.com/dl/googlesource/git-repo/repo">https://dl-ssl.google.com/dl/googlesource/git-repo/repo</a> > ~/bin/repo</p>
+<p>$ chmod a+x ~/bin/repo</p>
+<p>~/bin이라는 폴더에 repo를 받는 명령어 입니다</p>
+<p>위에도 언급했지만 repo를 찾을수 없다는 오류가 뜰경우 PATH를 확인해 주세요</p>
+<p>repo를 다운받는 주소가 변경되었습니다</p>
+<p>curl <a href="http://commondatastorage.googleapis.com/git-repo-downloads/repo">http://commondatastorage.googleapis.com/git-repo-downloads/repo</a> > ~/bin/repo</p>
+<p>안내 : <a href="http://stackoverflow.com/questions/19126603/android-source-repo-gpg-public-key-not-found">http://stackoverflow.com/questions/19126603/android-source-repo-gpg-public-key-not-found</a></p>
+<p><strong>(5) Hosts를 수정하여 소스 다운중 오류를 줄임</strong></p>
+<p>$ gksudo gedit /etc/hosts</p>
+<p>이 명령어를 입력하신 다음 아래 회색 박스의 내용을 IPv4부분에 넣어주시면 됩니다</p>
+<p>#Google Source</p>
+<p>74.125.128.82 google.com source.android.com android.googlesource.com</p>
+<p>74.125.128.99 google.com source.android.com android.googlesource.com</p>
+<p>74.125.128.139 google.com source.android.com android.googlesource.com​</p>
+<p>#gitHub</p>
+<p>207.97.227.239 github.com wiki.github.com gist.github.com assets0.github.com assets1.github.com assets2.github.com assets3.github.com</p>
+<p>+2014-01-20 추가</p>
+<p>fatal: unable to connect to github.com:</p>
+<p>github.com[0: 207.97.227.239]: errno=??? ???</p>
+<p>hosts에 추가한 내용을 모두 지워주세요</p>
+<p>이글을 쓰면서 참조한 글</p>
+<p><a href="http://forum.xda-developers.com/showthread.php?t=1762641">http://forum.xda-developers.com/showthread.php?t=1762641</a></p>
+<p><a href="http://cafe.naver.com/develoid/67579">http://cafe.naver.com/develoid/67579</a></p>
+<p><a href="http://source.android.com/source/initializing.html">http://source.android.com/source/initializing.html</a></p>
+<p><a href="http://siryua.sloud.kr/168177004">http://siryua.sloud.kr/168177004</a></p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

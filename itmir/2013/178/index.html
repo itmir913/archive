@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="CPU 100%!!CPU 100%!!"><title>svchost.exe CPU 100%를 해결하자 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">svchost.exe CPU 100%를 해결하자</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-03-17T00:27:53.000Z"> 2013년 3월 17일 </time> <span class="post-category">Computer &amp; PC/Windows</span> <a href="https://itmir.tistory.com/178" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">CPU 100%!!CPU 100%!!</p> </header> <div class="post-content"> <p><strong>CPU 100%!!CPU 100%!!</strong></p>
+<p>이 문제만큼 짜증나는건 없을겁니다</p>
+<p>작업관리자를 보면 svchost.exe라는 놈이 CPU자원을 캐먹고 있는대요</p>
+<p>이거 바이러스가 아닌가 할수도 있습니다</p>
+<p>하지만 svchost.exe는 정상 파일 입니다</p>
+<p>“Svchost.exe는 DLL(동적 연결 라이브러리)에서 실행되는 서비스에 대한 일반적인 호스트 프로세스 이름입니다.” (각주: 출처 : <a href="http://support.microsoft.com/kb/314056/ko">http://support.microsoft.com/kb/314056/ko</a>)</p>
+<p>그럼 어떻게 해서 svchost.exe를 해결할 수 있을까요?</p>
+<p>이 글에서는 몇가지 방법을 소개하려 합니다</p>
+<p>먼저 inf파일을 설치하는 방법입니다</p>
+<p><a href="http://whdghks913.oa.to/attachment/cfile22.uf@0340BC4951450B14027087.inf"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> svchost.exe.inf</a></p>
+<p>inf파일이란? 설치 정보가 담긴 파일으로 마우스 오른쪽으로 설치 명령을 내릴 수 있습니다</p>
+<p>svchost.inf를 받으신다음 마우스 오른쪽 키를 눌러 설치(I)키를 눌러주세요</p>
+<p>![](./images/inf 설치.png)</p>
+<p>설치(I) 버튼을 클릭해 주시면 됩니다</p>
+<p>두번째 방법은 Windows Updater 패치로 해결하는 방법입니다</p>
+<p>참고 문서는 <a href="http://support.microsoft.com/kb/932494/ko">http://support.microsoft.com/kb/932494/ko</a> 입니다</p>
+<p>업데이트 패치를 받은다음 설치하고 Windows Updater을 실행시켜 업데이트 해주면 됩니다</p>
+<p>공식 문서에서는 이 문제는 Windows Update Agent 3.0과 업데이트 927891에서 이 문제가 해결되었다고 합니다</p>
+<p>마지막 방법은 네트워크 방식을 바꿔주는 방법 (각주: 출처 : <a href="http://2geonchang.blog.me/100148142425)%EC%9D%B8%EB%8D%B0%EC%9A%94">http://2geonchang.blog.me/100148142425)인데요</a></p>
+<p>홈 네트워크를 공용 네트워크로 바꿔주면 된다 합니다</p>
+<p>이 방법은 실제 효과가 있는지는 잘 모르겠네요..</p>
+<p>이렇게 해서 인터넷에 떠돌아 다니는 대표적인 3가지 방법에 대해 살펴 봤습니다 ㅎㅎ</p>
+<p>다시는 CPU자원을 잡아먹지 않게 다들 패치하세요~</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

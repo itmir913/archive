@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="현재는 막혔다고 합니다 통신사에서 이방법으로 접속하는것을 막아버린것 같네요.."><title>커롬 올리면 나의 통신사 와이파이를 쓰는 방법은 없나? — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">커롬 올리면 나의 통신사 와이파이를 쓰는 방법은 없나?</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-01-27T07:24:54.000Z"> 2013년 1월 27일 </time> <span class="post-category">SmartPhone/Android</span> <a href="https://itmir.tistory.com/54" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">현재는 막혔다고 합니다 통신사에서 이방법으로 접속하는것을 막아버린것 같네요..</p> </header> <div class="post-content"> <p><strong>현재는 막혔다고 합니다 통신사에서 이방법으로 접속하는것을 막아버린것 같네요..</strong></p>
+<p>우리들은 매일 CM과 MIUI등의 커스텀롬, 줄여 커롬을 올립니다</p>
+<p>이 커롬이 아주 안정화가 잘되어 있다고 해도 딱 한가지 흠…</p>
+<p>바로 통신사의 와이파이를 쓸수 없는대요</p>
+<p>이것을 해결하기 위해 몇가지만 추가해 주시면 됩니다!</p>
+<p>바로</p>
+<p>system/etc/wifi/wpa_supplicant.conf</p>
+<p>이 파일을 수정하면 되는것!</p>
+<blockquote>
+<p>#SKT T WiFi Zone</p>
+<p>network={</p>
+<p>    ssid=“T wifi zone_secure”</p>
+<p>    key_mgmt=WPA-EAP IEEE8021X</p>
+<p>    eap=AKA</p>
+<p>    priority=2</p>
+<p>}</p>
+<p>network={</p>
+<p>    ssid=“T wifi zone”</p>
+<p>    key_mgmt=NONE</p>
+<p>    priority=1</p>
+<p>}</p>
+<p>#KT Olleh WiFi Zone</p>
+<p>network={</p>
+<p>    ssid=“ollehWiFi”</p>
+<p>    key_mgmt=WPA-EAP IEEE8021X</p>
+<p>    eap=AKA</p>
+<p>    priority=1</p>
+<p>}</p>
+</blockquote>
+<p>이 구문을 넣고 재부팅하게 되시면 기본 프로파일에 들어와 있을겁니다 ㅎㅎ</p>
+<p>출처: <a href="http://siryua.sloud.kr/163967719">http://siryua.sloud.kr/163967719</a></p>
+<p>저 구문은 첨부파일에 올려져 있습니다</p>
+<p><a href="/attachment/cfile7.uf@032935425104D6301903BB.txt"><img src="http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/txt.gif" alt=""> 통신사 와이파이.txt</a></p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

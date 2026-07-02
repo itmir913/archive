@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="상수라는 용어는 이 강좌에서 처음 등장한 것이 아닙니다."><title>자료형을 기반으로 메모리 공간에 저장되는 상수! — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">자료형을 기반으로 메모리 공간에 저장되는 상수!</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-02-20T12:49:53.000Z"> 2013년 2월 20일 </time> <span class="post-category">Programming/Java</span> <a href="https://itmir.tistory.com/153" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">상수라는 용어는 이 강좌에서 처음 등장한 것이 아닙니다.</p> </header> <div class="post-content"> <p>상수라는 용어는 이 강좌에서 처음 등장한 것이 아닙니다.</p>
+<p>우리들은 전 강좌에서 상수를 사용했습니다.</p>
+<blockquote>
+<p>int no1=7777;</p>
+<p>ini no2=4+5;</p>
+</blockquote>
+<p>전 강좌에서 자주 본 구문들입니다.</p>
+<p>위 구문에도 상수가 존재하는데요. 7777과 4와 5 총 3개의 상수가 등장하였습니다.</p>
+<p>이처럼 상수는 처음 등장한 개념이 아닙니다.</p>
+<p>그렇다면 왜 이름이 상수일까요? 변수도 있는데 말이죠..</p>
+<p>이유는 변수처럼 메모리 공간에 할당되어 저장은 되지만 변수처럼 한번 정하면 값을 이리저리 바꾸지 못하기 때문입니다.</p>
+<p>이름이 주어지지 않기 때문에 값을 변경할 수도 없습니다.</p>
+<p>그리고 상수는 필요가 없어지게 되면 바로 제거 됩니다.</p>
+<p>메모리 공간에 남아있는 변수와는 다른 상수만의 특징이 되겠습니다.</p>
+<p>그렇다면 상수는 어떻게 메모리 공간에 저장이 될까요?</p>
+<p>전 강좌에서 정수를 저장할 때는 int자료형을, 실수를 저장할 때는 double자료형으로 작업한다고 했습니다.</p>
+<p>그러므로 java는 모든 정수형 상수를 int 자료형으로 메모리 공간에 저장합니다.</p>
+<p>마찬가지로 모든 실수형 상수를 double 자료형으로 저장하겠죠?</p>
+<p>그럼 여기서 문제를 하나 내보도록 하겠습니다.</p>
+<p>10000000000은 어떻게 메모리 공간에 저장할까요?</p>
+<p>전 강좌에서 언급을 하진 않았지만 int형의 값 표현 범위는 -2147483648 ~ 2147483648 까지의 숫자만 저장할 수 있습니다.</p>
+<p>그러므로 10000000000은 int형에는 저장할 수 없는 너무 큰 숫자인 것이지요.</p>
+<p>값의 표현 범위를 넘어서기 때문에 우리는 int보다 표현 범위가 넓은 long형 변수에 저장해야 합니다.</p>
+<p>만약 int형에 저 숫자를 넣게 되면 바로 오류가 발생하며 프로그램이 중지될 것입니다.</p>
+<blockquote>
+<p>long number=10000000000;</p>
+</blockquote>
+<p>이렇게 변수 선언을 하면 정상적으로 컴파일이 될까요?</p>
+<p>아닙니다 10000000000은 long변수에 넣을 수 있음에도 컴파일러는 오류를 뿜는군요.</p>
+<p>그 이유를 간단히 설명해 드리자면 java는 별도의 표시가 없으면 무조건 정수는 int형, 실수는 double으로 표현한다는 것입니다.</p>
+<p>그래서 long형 변수를 선언했음에도 불구하고 java는 int형에 넣으려 하는 것 이지요.</p>
+<p>이런 이유로 ‘이 숫자를 long형 변수에 넣을 것 이다’라는 별도의 문구를 넣어줘야 합니다.</p>
+<blockquote>
+<p>long number=10000000000L;</p>
+</blockquote>
+<p>이렇게 숫자 마지막에 접미사 L을 넣어주시면 컴파일 에러가 발생하지 않습니다.</p>
+<p>이 접미사 L은 소문자로 써도 되며 이 정수를 long형 변수로 표현하겠습니다. 라는 뜻이 됩니다.</p>
+<p>마찬가지로 float변수에도 위와 같은 문제가 발생하게 됩니다.</p>
+<blockquote>
+<p>float number=5.73;</p>
+</blockquote>
+<p>이런 구문이 있는 java파일을 컴파일 해보면 또 문제가 발생합니다.</p>
+<p>5.73은 float에도 저장될 수 있는 값인데 말이죠..</p>
+<p>이 경우에도 java는 무조건 실수는 double으로 표현하려 하기 때문에 오류가 발생하는 것 입니다.</p>
+<blockquote>
+<p>float number=5.73F;</p>
+</blockquote>
+<p>이렇게 float변수에도 마지막에 F를 넣어서 이 실수를 float에 넣겠다는 표시를 해야만 오류가 없이 진행됩니다.</p>
+<p>이때 F도 소문자로 표현해도 가능합니다.</p>
+<p>한번 소스를 보며 정리해 보도록 하겠습니다.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> doubleint</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">  public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">  {</span></span>
+<span class="line"><span style="color:#D73A49">    double</span><span style="color:#24292E"> n1</span><span style="color:#D73A49">=</span><span style="color:#005CC5">4.32</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">    float</span><span style="color:#24292E"> n2</span><span style="color:#D73A49">=</span><span style="color:#005CC5">3.65f</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">    long</span><span style="color:#24292E"> n3</span><span style="color:#D73A49">=</span><span style="color:#005CC5">10000000000L</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">    long</span><span style="color:#24292E"> n4</span><span style="color:#D73A49">=</span><span style="color:#005CC5">32</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(n1);</span></span>
+<span class="line"><span style="color:#24292E">    System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(n4);</span></span>
+<span class="line"><span style="color:#24292E">  }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p>[doubleint.java</p>
+<p>다운로드](./file/doubleint.java)</p>
+<p>소스를 보게 되면 float 변수의 마지막에 f를 붙이는 것을 알 수 있습니다.</p>
+<p>또한 long n3에서도 L을 붙여 long형 변수로 표시할 거라는 것을 알려주고 있습니다.</p>
+<p><img  src="/archive/_astro/1.CBZ9OLlr_1Qnlfo.webp" alt="" width="341" height="51" loading="lazy" decoding="async"></p>
+<p>이렇게 말이죠. ㅋㅋ</p>
+<p>(System.out.println을 귀찮아서 많이 안 만들었습니다.)</p>
+<p>여기서 long n4=32를 보면 변수(long)와 변수를 초기화 하는 상수의 자료형(int)가 일치하지 않는 것을 볼 수 있습니다.</p>
+<p>하지만 컴파일과 실행은 정상적으로 됩니다.</p>
+<p>왜 그럴까요? 오류가 발생해야 할 텐데..</p>
+<p>그 이유는 나중에 자동 형 변환 이라는 것을 배우게 되면 이해하실 수 있으실 겁니다.</p>
+<p>지금은 int형 자료형이 자동으로 long으로 변환되었다는것만 알아두세요. ㅎㅎ</p>
+<p>이렇게 상수에 대해 알아보고 상수를 저장하는 방법이 자동으로 바뀌며 어떤 경우는 접미사를 붙여야 된다는 점을 알게 되었습니다.</p>
+<p>원래는 이어서 아래에 자료형의 변환에 대해 알아봐야 하지만 강좌가 길어지는 바람에 다음 편에서 포스팅 하도록 하겠습니다. ㅎㅎ</p>
+<p>그럼 오늘은 이만 ~</p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="./files/doubleint.java">doubleint.java</a></li>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

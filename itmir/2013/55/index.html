@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="진저사용자 분들 이런 설정창 부러우셨나요?"><title>GB 설정(Setting.apk) ICS화 하기 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">GB 설정(Setting.apk) ICS화 하기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-01-27T07:28:02.000Z"> 2013년 1월 27일 </time> <span class="post-category">SmartPhone/Android</span> <a href="https://itmir.tistory.com/55" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">진저사용자 분들 이런 설정창 부러우셨나요?</p> </header> <div class="post-content"> <p><img  src="/archive/_astro/ICSSet1.DK3k4POQ_1VBjlk.webp" alt="" width="320" height="533" loading="lazy" decoding="async"></p>
+<p>진저사용자 분들 이런 설정창 부러우셨나요?</p>
+<p>우리들도 저런 창을 만들수 있습니다</p>
+<p>하지만 켜기/끄기는 되지 않지만요…</p>
+<p>그럼 다음을 준비해 주세요</p>
+<p>settings.apk</p>
+<p>apk manager</p>
+<p>노트패드++</p>
+<p>이렇게 준비해 주시면 됩니다</p>
+<ol>
+<li>디컴파일하기</li>
+</ol>
+<p>apk manager로 디컴파일 해줍시다</p>
+<p>따로 언급하지 않겠습니다</p>
+<ol start="2">
+<li>res/vaules 에 들어가서 strings.xml를 엽니다</li>
+</ol>
+<p><string name="settings\_ics\_radio">WIRELESS &#x26; NETWORKS</string></p>
+<p><string name="settings\_radio\_more">More…</string></p>
+<p><string name="settings\_ics\_device">DEVICE</string></p>
+<p><string name="settings\_ics\_personal">PERSONAL</string></p>
+<p><string name="settings\_ics\_system\_cap">SYSTEM</string></p>
+<p><string name="settings\_battery">Battery</string></p>
+<p>이것을 추가하세요</p>
+<p>vaules-ko에도 들어가서 strings.xml를 엽니다</p>
+<p><string name="settings\_ics\_radio">무선 및 네트워크</string></p>
+<p><string name="settings\_radio\_more">더보기…</string></p>
+<p><string name="settings\_ics\_device">디바이스</string></p>
+<p><string name="settings\_ics\_personal">개인</string></p>
+<p><string name="settings\_ics\_system\_cap">시스템</string></p>
+<p><string name="settings\_battery">배터리</string></p>
+<p>이 두개의 공통점에서 string name은 마음대로 하셔도 됩니다만 수정하실때 모두 같아야만 합니다</p>
+<p><img  src="/archive/_astro/ICSSet2.sXWO1tsf_Z1UsGp8.webp" alt="" width="550" height="435" loading="lazy" decoding="async"></p>
+<p>형태는 위 사진과 같습니다</p>
+<ol start="3">
+<li>Settings.xml (경로: res\xml\settings.xml)</li>
+</ol>
+<p>이제 좀 중요합니다 Settings.xml을 열어주세요 (잘못하면 설정어플 맛이 갑니다)</p>
+<p>&#x3C;com.android.settings.IconPreferenceScreen android:title=“타이틀 string값” android:key=“call_settings” settings:icon=“사용될 사진”> <intent android:targetpackage="com.android.settings" android:action="android.intent.action.MAIN" android:targetclass="명령"> &#x3C;/com.android.settings.IconPreferenceScreen></intent></p>
+<p>이것이 한 구분선 입니다</p>
+<p>이제 저 양식을 체워야 합니다</p>
+<p>타이틀 string값에 들어갈 내용은</p>
+<p>@string/값</p>
+<p>입니다 여기서 값은 res/vaules/strings.xml에서 settings_ics_radio와 같습니다</p>
+<p>그렇다면 @string/settings_ics_radio 이렇게 작성해서 넣으면 되지요</p>
+<p>사용될 사진에 들어갈 내용는</p>
+<p>@drawable/사진</p>
+<p>입니다 drawable-hdpi같은 폴더에 넣은 사진명을 확장자까지 넣어주시면 됩니다</p>
+<p>마지막으로 명령에 들어갈 내용은</p>
+<p>Wi-Fi: com.android.settings.wifi.WifiSettings</p>
+<p>블루투스: com.android.settings.bluetooth.BluetoothSettings</p>
+<p>배터리: com.android.settings.fuelgauge.PowerUsageSummary</p>
+<p>위 세개중 아무거나 넣으시면 됩니다 ㅎ</p>
+<p>지금까지는 새로운 설정탭을 만드는 방법이었습니다</p>
+<p>이제는 구분선을 넣는 방법을 설명하겠습니다</p>
+<preferencecategory android:title="@string/값">
+<p>위 구문을 넣어주시면 됩니다</p>
+<p>아까한 방법과 마찬가지로 @string/값에는 settings_ics_radio등 아주 위에서 만든것을 넣으시면 됩니다</p>
+<p>이제 컴파일하신후 적용하시면 됩니다</p>
+<p>그럼 마치겠습니다</p>
+<p>출처: <a href="http://forum.xda-developers.com/showthread.php?p=24317850">http://forum.xda-developers.com/showthread.php?p=24317850</a></p>
+<p><a href="/attachment/cfile22.uf@1224D0415104D6ED177420.txt"><img src="http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/txt.gif" alt=""> 설정창 ICS.txt</a></p>
+<p>ps. 다른 강좌에는</p>
+<p>&#x3C;intent android:targetPackage=“com.android.phone”</p>
+<p>아마 이렇게 되어 있습니다</p>
+<p>하지만 이럴 경우 기능이 재대로 작동하지 않는대요</p>
+<p>&#x3C;intent android:targetPackage=“com.android.settings”</p>
+<p>다음과 같이 바꿔주시면 정상적으로 기능이 활성화 됩니다.</p></preferencecategory> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

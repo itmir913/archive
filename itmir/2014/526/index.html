@@ -1,0 +1,133 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="오늘은 추석 전날이네요~ 모두 차 안막히고 빨리 가시기를.."><title>FadingActionBar를 사용해 보자 - Play Store UI — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">FadingActionBar를 사용해 보자 - Play Store UI</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-09-07T07:15:50.000Z"> 2014년 9월 7일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/526" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">오늘은 추석 전날이네요~ 모두 차 안막히고 빨리 가시기를..</p> </header> <div class="post-content"> <p>안녕하세요</p>
+<p>오늘은 추석 전날이네요~ 모두 차 안막히고 빨리 가시기를..</p>
+<p>그래서 오늘은 FadingActionBar에 대해 알아보겠습니다</p>
+<h3 id="구글-마켓에서-찾은fadingactionbar">구글 마켓에서 찾은 FadingActionBar</h3>
+<p>이게 뭔지 모르시는 분이 계실까봐 예시 사진을 가져왔어요</p>
+<p>구글 Play Store의 UI가 바로 FadingActionBar입니다</p>
+<p><img  src="/archive/_astro/%EB%A7%88%EC%BC%931.BcJ0z0Xg_24iICh.webp" alt="" width="400" height="366" loading="lazy" decoding="async">
+    
+<img  src="/archive/_astro/%EB%A7%88%EC%BC%932.Bp2KbW2f_2bfECP.webp" alt="" width="400" height="365" loading="lazy" decoding="async"></p>
+<p>아래로 스크롤을 내리면 액션바 부분이 불투명해집니다 이부분을 FadingActionBar으로 구현할수 있습니다</p>
+<h3 id="오픈소스-라이브러리-다운로드">오픈소스 라이브러리 다운로드</h3>
+<p>FadingActionBar는 github에 소스가 올라와 있습니다</p>
+<p>링크 접속해서 다운받아 주시거나, 아래 첨부된 파일의 압축을 풀어주세요 그다음 이클립스에서 import해주세요</p>
+<p><a href="https://github.com/ManuelPeinado/FadingActionBar">https://github.com/ManuelPeinado/FadingActionBar</a></p>
+<p>[FadingActionBarLibrary.zip</p>
+<p>다운로드](./file/FadingActionBarLibrary.zip)</p>
+<p>gitbub에서 받으신경우 필수적으로 필요한 폴더는 library입니다</p>
+<h3 id="라이브러리-추가하기">라이브러리 추가하기</h3>
+<p>FadingActionBar를 압축풀어보시면 .jar파일이 아닙니다</p>
+<p>어떻게 라이브러리에 추가해야 할까요?</p>
+<p>추가한 FadingActionBar 프로젝트 마우스 오른쪽 - Properties에 들어가 주세요</p>
+<p>![](./images/01 Properties.jpg)</p>
+<p>그다음 Library탭의 Is Library를 클릭해 주세요</p>
+<p>이미 체크되있는경우 패스합니다</p>
+<p>![](./images/02 isLibrary.png)</p>
+<p>이제 FadingActionBar를 추가하고자 하는 프로젝트로 돌아온다음 위에서는 is Library를 체크했지만 지금은 Add - (추가한 프로젝트)를 클릭합니다</p>
+<p>![](./images/03 라이브러리추가.png)</p>
+<h3 id="라이브러리-사용방법">라이브러리 사용방법</h3>
+<p>github에 함께 올라와있는 samples-stock폴더를 확인해 보시면 더 자세한 사용방법을 확인해 보실수 있습니다</p>
+<p>아래 apk파일은 samples-stock폴더를 빌드한 어플입니다</p>
+<p>설치하신다음 살펴보시고 보시면 더 이해가 잘되실겁니다</p>
+<p>[SampleFadingActionBar.apk</p>
+<p>다운로드](./file/SampleFadingActionBar.apk)</p>
+<p>FadingActionBar는 FadingActionBarHelper를 이용합니다</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">FadingActionBarHelper helper </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> FadingActionBarHelper</span><span style="color:#24292E">()</span></span>
+<span class="line"><span style="color:#24292E">    .</span><span style="color:#6F42C1">actionBarBackground</span><span style="color:#24292E">(R.drawable.ab_background)</span></span>
+<span class="line"><span style="color:#24292E">    .</span><span style="color:#6F42C1">headerLayout</span><span style="color:#24292E">(R.layout.header)</span></span>
+<span class="line"><span style="color:#24292E">    .</span><span style="color:#6F42C1">contentLayout</span><span style="color:#24292E">(R.layout.activity_listview);</span></span>
+<span class="line"><span style="color:#6F42C1">setContentView</span><span style="color:#24292E">(helper.</span><span style="color:#6F42C1">createView</span><span style="color:#24292E">(</span><span style="color:#005CC5">this</span><span style="color:#24292E">));</span></span>
+<span class="line"><span style="color:#24292E">helper.</span><span style="color:#6F42C1">initActionBar</span><span style="color:#24292E">(</span><span style="color:#005CC5">this</span><span style="color:#24292E">);</span></span>
+<span class="line"></span></code></pre>
+<ul>
+<li>actionBarBackground : 스크롤이 내려가면 나타날 액션바의 색상, 또는 이미지를 결정합니다</li>
+<li>headerLayout : 액션바의 헤더부분의 레이아웃을 설정합니다</li>
+<li>contentLayout : 기존 레이아웃을 설정합니다</li>
+</ul>
+<p>기존에는 setContentView(R.layout.xxx)를 이용했지만 Fading을 이용하면 조금 방식이 달라진다는점을 확인해 볼수 있습니다</p>
+<p>사진으로 비교해 보겠습니다</p>
+<p>![](./images/코드와 UI비교.png)</p>
+<p>색을 구분하여 알아보기 쉽도록 만들었습니다</p>
+<p>여기서 한가지 팁을 드리자면..</p>
+<p>actionBarBackground는 리소스아이디(R.drawable.xx)를 받을수도 있고 그냥 이미지(Drawable)도 받을수 있습니다</p>
+<p>원하는 컬러가 있는대 이미지는 없다면 ColorDrawable를 이용해 보세요</p>
+<p>.actionBarBackground(new ColorDrawable(Color.parseColor(“#ffffff”)))</p>
+<p>또한 위 코드에는 없지만 parallax(true)이라는 속성도 있습니다</p>
+<p><img  src="/archive/_astro/parallax.CchtDW7u_gcz0B.webp" alt="" width="811" height="303" loading="lazy" decoding="async"></p>
+<p>이 옵션이 false라면 스크롤시 위부터 사라지지만 true라면 중앙으로 압축(?)되며 사라집니다</p>
+<p>기본은 true입니다</p>
+<p>이제 header.xml을 살펴보겠습니다</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;?</span><span style="color:#22863A">xml</span><span style="color:#6F42C1"> version</span><span style="color:#24292E">=</span><span style="color:#032F62">"1.0"</span><span style="color:#6F42C1"> encoding</span><span style="color:#24292E">=</span><span style="color:#032F62">"utf-8"</span><span style="color:#24292E">?></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">ImageView</span><span style="color:#6F42C1"> xmlns:android</span><span style="color:#24292E">=</span><span style="color:#032F62">"http://schemas.android.com/apk/res/android"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:id</span><span style="color:#24292E">=</span><span style="color:#032F62">"@+id/image_header"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"match_parent"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:adjustViewBounds</span><span style="color:#24292E">=</span><span style="color:#032F62">"true"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:scaleType</span><span style="color:#24292E">=</span><span style="color:#032F62">"centerCrop"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:src</span><span style="color:#24292E">=</span><span style="color:#032F62">"@drawable/ny"</span><span style="color:#24292E"> /></span></span>
+<span class="line"></span></code></pre>
+<p>간단하게 이미지뷰만 있군요</p>
+<p>헤더부분에 다른 뷰를 추가해도 됩니다 그런대 무슨짓을 해도 터치이벤트를 받지 못하더군요;</p>
+<p>플레이스토어를 보면 동영상을 터치하면 유튜브로 넘어가던대 혹시 아시는분께서는 덧글 남겨주시면 감사드리겠습니다</p>
+<p>마지막으로 contentLayout부분을 보시면 원래 레이아웃을 넣어주고 있습니다</p>
+<p>특이하게도 리스트뷰는 android:id=“@android:id/list”((ListView) findViewById(android.R.id.list);)를 사용해야 됩니다</p>
+<p>이부분도 이유를 정확하게 알고있는 부분이 아니므로.. 아시는분께서는 덧글로 남겨주시면 감사드리겠습니다</p>
+<p>이제 앱을 실행해 보시면 조금 이상하게 나타날겁니다</p>
+<p><img  src="/archive/_astro/device-2014-09-07-154318.B8oFzgXH_Z6z6ry.webp" alt="" width="400" height="302" loading="lazy" decoding="async"></p>
+<p>탭이랑 header부분이랑 합쳐지지 못했기 때문인대요</p>
+<p>이를 해결하기위해 테마설정을 해주어야 합니다</p>
+<p>style.xml에 아래 코드를 입력해 주세요</p>
+<p>AppTheme이 중복이라고 경고가 뜨면 기존 코드는 삭제해 주세요</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">style</span><span style="color:#6F42C1"> name</span><span style="color:#24292E">=</span><span style="color:#032F62">"Widget"</span><span style="color:#24292E"> /></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">style</span><span style="color:#6F42C1"> name</span><span style="color:#24292E">=</span><span style="color:#032F62">"Widget.ActionBar"</span><span style="color:#6F42C1"> parent</span><span style="color:#24292E">=</span><span style="color:#032F62">"@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse"</span><span style="color:#24292E"> /></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">style</span><span style="color:#6F42C1"> name</span><span style="color:#24292E">=</span><span style="color:#032F62">"Widget.Light"</span><span style="color:#24292E"> /></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">style</span><span style="color:#6F42C1"> name</span><span style="color:#24292E">=</span><span style="color:#032F62">"Widget.Light.ActionBar"</span><span style="color:#6F42C1"> parent</span><span style="color:#24292E">=</span><span style="color:#032F62">"@android:style/Widget.Holo.Light.ActionBar.Solid"</span><span style="color:#24292E"> /></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">style</span><span style="color:#6F42C1"> name</span><span style="color:#24292E">=</span><span style="color:#032F62">"Widget.ActionBar.Transparent"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">item</span><span style="color:#6F42C1"> name</span><span style="color:#24292E">=</span><span style="color:#032F62">"android:background"</span><span style="color:#24292E">>@android:color/transparent&#x3C;/</span><span style="color:#22863A">item</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">style</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">style</span><span style="color:#6F42C1"> name</span><span style="color:#24292E">=</span><span style="color:#032F62">"Widget.Light.ActionBar.Transparent"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">item</span><span style="color:#6F42C1"> name</span><span style="color:#24292E">=</span><span style="color:#032F62">"android:background"</span><span style="color:#24292E">>@android:color/transparent&#x3C;/</span><span style="color:#22863A">item</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">style</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">style</span><span style="color:#6F42C1"> name</span><span style="color:#24292E">=</span><span style="color:#032F62">"AppTheme"</span><span style="color:#6F42C1"> parent</span><span style="color:#24292E">=</span><span style="color:#032F62">"@android:style/Theme.Holo.Light.DarkActionBar"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">item</span><span style="color:#6F42C1"> name</span><span style="color:#24292E">=</span><span style="color:#032F62">"android:actionBarStyle"</span><span style="color:#24292E">>@style/Widget.ActionBar&#x3C;/</span><span style="color:#22863A">item</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">style</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">style</span><span style="color:#6F42C1"> name</span><span style="color:#24292E">=</span><span style="color:#032F62">"AppTheme.TranslucentActionBar"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">item</span><span style="color:#6F42C1"> name</span><span style="color:#24292E">=</span><span style="color:#032F62">"android:actionBarStyle"</span><span style="color:#24292E">>@style/Widget.ActionBar.Transparent&#x3C;/</span><span style="color:#22863A">item</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">item</span><span style="color:#6F42C1"> name</span><span style="color:#24292E">=</span><span style="color:#032F62">"android:windowActionBarOverlay"</span><span style="color:#24292E">>true&#x3C;/</span><span style="color:#22863A">item</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">item</span><span style="color:#6F42C1"> name</span><span style="color:#24292E">=</span><span style="color:#032F62">"android:windowContentOverlay"</span><span style="color:#24292E">>@null&#x3C;/</span><span style="color:#22863A">item</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">style</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">style</span><span style="color:#6F42C1"> name</span><span style="color:#24292E">=</span><span style="color:#032F62">"AppTheme.Light.TranslucentActionBar"</span><span style="color:#6F42C1"> parent</span><span style="color:#24292E">=</span><span style="color:#032F62">"@android:style/Theme.Holo.Light"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">item</span><span style="color:#6F42C1"> name</span><span style="color:#24292E">=</span><span style="color:#032F62">"android:actionBarStyle"</span><span style="color:#24292E">>@style/Widget.Light.ActionBar.Transparent&#x3C;/</span><span style="color:#22863A">item</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">item</span><span style="color:#6F42C1"> name</span><span style="color:#24292E">=</span><span style="color:#032F62">"android:windowActionBarOverlay"</span><span style="color:#24292E">>true&#x3C;/</span><span style="color:#22863A">item</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">item</span><span style="color:#6F42C1"> name</span><span style="color:#24292E">=</span><span style="color:#032F62">"android:windowContentOverlay"</span><span style="color:#24292E">>@null&#x3C;/</span><span style="color:#22863A">item</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">style</span><span style="color:#24292E">></span></span>
+<span class="line"></span></code></pre>
+<p>그다음 AndroidManifest.xml에 아래 코드를 넣어주세요</p>
+<p>android:theme=“@style/AppTheme.TranslucentActionBar”</p>
+<p>android:theme=“@style/AppTheme.Light.TranslucentActionBar”</p>
+<p>두개중 하나 넣어주시면 됩니다</p>
+<p>이제 Run해보시면 아름다운 FadingAcrionbar가 나타납니다 ㅎㅎ</p>
+<p><img  src="/archive/_astro/device-2014-09-07-154709.V6LbNvSo_ZBhqaP.webp" alt="" width="400" height="244" loading="lazy" decoding="async"></p>
+<h3 id="마치며">마치며..</h3>
+<p>안드로이드 L 프리뷰 버전이 공개된후 구글에서 많은 UI수정이 있었던것 같습니다</p>
+<p>개발자들이 풀어야 하는 숙제가 하나더 생긴거 같네요…</p>
+<p>저는 디자인을 정말 못하므로… 공부좀 해야겠습니다</p>
+<p>그리고 시간 될때마다 오픈소스 라이브러리 하나씩 소개하도록 할께요 ㅎ</p>
+<p>이 글을 쓰기위해 만든 예제입니다</p>
+<p>github예제보다 떨어지므로 다운로드를 권하지 않습니다</p>
+<p>[ExampleFadingActionBar.zip</p>
+<p>다운로드](./file/ExampleFadingActionBar.zip)</p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleFadingActionBar.zip">ExampleFadingActionBar.zip</a> <code>809 KB</code></li>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/FadingActionBarLibrary.zip">FadingActionBarLibrary.zip</a> <code>14 KB</code></li>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/SampleFadingActionBar.apk">SampleFadingActionBar.apk</a> <code>1.9 MB</code></li>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

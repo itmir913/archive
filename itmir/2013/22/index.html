@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="다음 사진처럼 CWM 화면이 나타납니다."><title>빌드한 ClockWorkMod Recovery - 화면 안짤림 - 기기명 ef32k (KT미라크A) — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">빌드한 ClockWorkMod Recovery - 화면 안짤림 - 기기명 ef32k (KT미라크A)</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-01-27T05:43:32.000Z"> 2013년 1월 27일 </time> <span class="post-category">Android/Build</span> <a href="https://itmir.tistory.com/22" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">다음 사진처럼 CWM 화면이 나타납니다.</p> </header> <div class="post-content"> <p><img  src="/archive/_astro/IMG_20130121_1319161.mWaHXUpR_ZGwuIP.webp" alt="" width="320" height="533" loading="lazy" decoding="async"></p>
+<p>다음 사진처럼 CWM 화면이 나타납니다.</p>
+<p>중국 포럼에서 받은 리커버리대신 제가 빌드한 리커버리를 사용해 주세요(?)</p>
+<p>이 리커버리의 기기명이 ef32k로 빌드되어 제가 만든 CM7이 정상적으로 설치됩니다.</p>
+<p>(중국포럼에서 받은 리커버리는 설치 오류가 납니다.)</p>
+<p>다음은 패치에 도움된 삽질님의 덧글 내용(수정)입니다.</p>
+<ol>
+<li>디바이스 소스-삼성 폴더에 들어가시면 cooper이라는 폴더가 있는데요.</li>
+</ol>
+<p>(이것은 갤럭시 Ace의 코드네임 입니다.)</p>
+<p>이 다바이스 소스안 recovery폴더에 있는 graphics.c를 가져와 자신의 디바이스 폴더에 넣습니다.</p>
+<ol start="2">
+<li>
+<p>자신이 만든 logo.rle를 포팅하려는 기기의 소스폴더안에 넣습니다</p>
+</li>
+<li>
+<p>device_기기명.mk에 다음과 같은 내용을 추가합니다.</p>
+</li>
+</ol>
+<h1 id="logorle">Logo.rle</h1>
+<p>PRODUCT_COPY_FILES += \</p>
+<p>device/제조사/기기명/logo.rle:root/logo.rle \</p>
+<p>device/제조사/기기명/logo.rle:root/initlogo.rle</p>
+<h1 id="custom-graphics">Custom Graphics</h1>
+<p>BOARD_CUSTOM_GRAPHICS := ../../../device/제조사/기기명/graphics.c</p>
+<ol start="4">
+<li>make clobber을 해줍니다.</li>
+</ol>
+<p>(보드컨픽이 수정되었기 때문에 꼭 해주셔야 합니다)</p>
+<ol start="5">
+<li>빌드를 합니다 (make -j4 recoveryimage)</li>
+</ol>
+<p><a href="/attachment/cfile10.uf@1578B1405104BE751CA1AE.img"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> recovery.img</a></p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

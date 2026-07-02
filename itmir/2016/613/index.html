@@ -1,0 +1,281 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="저번 편에서 구글 스프레드 시트를 데이터베이스로 이용하는 방법의 첫번째로 스크립트를 작성하였습니다."><title>구글 스프레드 시트를 데이터베이스로 사용하기 - 앱에서 전송편 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">구글 스프레드 시트를 데이터베이스로 사용하기 - 앱에서 전송편</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2016-03-13T12:43:11.000Z"> 2016년 3월 13일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/613" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">저번 편에서 구글 스프레드 시트를 데이터베이스로 이용하는 방법의 첫번째로 스크립트를 작성하였습니다.</p> </header> <div class="post-content"> <p><img  src="/archive/_astro/googlesheets-db.CyhTS5Yd_2hfECs.webp" alt="" width="400" height="443" loading="lazy" decoding="async"></p>
+<p>안녕하세요.</p>
+<p>저번 편에서 구글 스프레드 시트를 데이터베이스로 이용하는 방법의 첫번째로 스크립트를 작성하였습니다.</p>
+<p>스크립트를 작성한 이유는 앱에서 정보를 입력한 뒤 구글 서버로 보내주면 마지막 줄에 정보를 추가해주기위해서 입니다.</p>
+<h3 id="안내">안내</h3>
+<p>참고 java파일 : .activity.bap.star.BapStarActivity.java, class HttpTask</p>
+<p>선행된 작업 : <a href="http://itmir.tistory.com/598">[Development/App] - 구글 스프레드 시트를 데이터베이스로 사용하기 - 스크립트편</a></p>
+<p>전 강좌의 작업을 모두 완료하신다음 얻어지는 url 경로를 저장하세요.</p>
+<p><img  src="/archive/_astro/googlesheets_13.DBXd6tTG_1IYsS5.webp" alt="" width="446" height="267" loading="lazy" decoding="async"></p>
+<p>위 스샷의 검은 박스 부분의 URL이 필요합니다.</p>
+<h3 id="앱에서-http-post를-보내는-소스">앱에서 HTTP POST를 보내는 소스</h3>
+<p>바로 결론부터 말씀드리면 http post를 보내는 소스는 BapStarActivity.java파일의 class HttpTask의 doInBackground 메소드안에 들어있는 코드들 입니다.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">HttpPost postRequest </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> HttpPost</span><span style="color:#24292E">(</span><span style="color:#032F62">"URL"</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">//전달할 값들</span></span>
+<span class="line"><span style="color:#24292E">Vector&#x3C;</span><span style="color:#D73A49">NameValuePair</span><span style="color:#24292E">> nameValue </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#24292E"> Vector&#x3C;>();</span></span>
+<span class="line"><span style="color:#24292E">nameValue.</span><span style="color:#6F42C1">add</span><span style="color:#24292E">(</span><span style="color:#D73A49">new</span><span style="color:#6F42C1"> BasicNameValuePair</span><span style="color:#24292E">(</span><span style="color:#032F62">"sheet_name"</span><span style="color:#24292E">, </span><span style="color:#032F62">"시트1"</span><span style="color:#24292E">));</span></span>
+<span class="line"><span style="color:#24292E">nameValue.</span><span style="color:#6F42C1">add</span><span style="color:#24292E">(</span><span style="color:#D73A49">new</span><span style="color:#6F42C1"> BasicNameValuePair</span><span style="color:#24292E">(</span><span style="color:#032F62">"type"</span><span style="color:#24292E">, params[</span><span style="color:#005CC5">0</span><span style="color:#24292E">]));</span></span>
+<span class="line"><span style="color:#24292E">nameValue.</span><span style="color:#6F42C1">add</span><span style="color:#24292E">(</span><span style="color:#D73A49">new</span><span style="color:#6F42C1"> BasicNameValuePair</span><span style="color:#24292E">(</span><span style="color:#032F62">"rate"</span><span style="color:#24292E">, params[</span><span style="color:#005CC5">1</span><span style="color:#24292E">]));</span></span>
+<span class="line"><span style="color:#24292E">nameValue.</span><span style="color:#6F42C1">add</span><span style="color:#24292E">(</span><span style="color:#D73A49">new</span><span style="color:#6F42C1"> BasicNameValuePair</span><span style="color:#24292E">(</span><span style="color:#032F62">"memo"</span><span style="color:#24292E">, params[</span><span style="color:#005CC5">2</span><span style="color:#24292E">]));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">//웹 접속 - UTF-8으로</span></span>
+<span class="line"><span style="color:#24292E">HttpEntity Entity </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> UrlEncodedFormEntity</span><span style="color:#24292E">(nameValue, </span><span style="color:#032F62">"UTF-8"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">postRequest.</span><span style="color:#6F42C1">setEntity</span><span style="color:#24292E">(Entity);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">HttpClient mClient </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> DefaultHttpClient</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">mClient.</span><span style="color:#6F42C1">execute</span><span style="color:#24292E">(postRequest);</span></span>
+<span class="line"></span></code></pre>
+<p>위 코드가 http post를 전송해 줍니다.</p>
+<p>물론 당연히 인터넷 권한이 필요합니다.</p>
+<p>1번째 줄의 URL을 전 글에서 얻으신 url으로 바꿔주시면 되고, 값을 넣어주는 코드는 아래와 같습니다.</p>
+<p>nameValue.add(new BasicNameValuePair(“NAME”, VALUE));</p>
+<p>NAME 부분은 전 강좌에서 말씀드렸던 것 처럼 시트의 맨 첫번째 라인을 말합니다.</p>
+<p>VALUE 부분은 입력될 값들 입니다.</p>
+<p>예를 들어 보충 설명하겠습니다.</p>
+<p><img  src="/archive/_astro/googlesheets_14.DcLqKAm4_Z7JyLV.webp" alt="" width="426" height="71" loading="lazy" decoding="async"></p>
+<p>이렇게 시트를 작성하셨고,</p>
+<p>Vector<namevaluepair> nameValue = new Vector&#x3C;>();</namevaluepair></p>
+<p>nameValue.add(new BasicNameValuePair(“Timestamp”, “2016-03-13”));</p>
+<p>nameValue.add(new BasicNameValuePair(“title”, “안녕하세요!”));</p>
+<p>nameValue.add(new BasicNameValuePair(“message”, “강좌가 늦어서 죄송합니다!”));</p>
+<p>이렇게 작성하시면</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td>Timestamp</td><td>title</td><td>message</td></tr><tr><td>2016-03-13</td><td>안녕하세요!</td><td>강좌가 늦어서 죄송합니다!</td></tr></tbody></table>
+<p>이렇게 시트에 저장됩니다.</p>
+<p>한번 더 박스의 코드를 실행하면 아래 표처럼 저장되겠죠?</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td>Timestamp</td><td>title</td><td>message</td></tr><tr><td>2016-03-13</td><td>안녕하세요!</td><td>강좌가 늦어서 죄송합니다!</td></tr><tr><td>2016-03-13</td><td>안녕하세요!</td><td>강좌가 늦어서 죄송합니다!</td></tr></tbody></table>
+<h3 id="주의점">주의점</h3>
+<p>nameValue.add(new BasicNameValuePair(“sheet_name”, “시트1”));</p>
+<p>시트1과 관련된 내용입니다.</p>
+<p>전 강좌를 그대로 따라오셨다면 아래와 같은 문구를 기억하실 수 있으실 겁니다.</p>
+<blockquote>
+<p>기본적인 내용은 오류 제보와 차이가 없지만</p>
+<p>위 박스의 코드는 시트 이름을 정의하지 않습니다.</p>
+<p>그대신 한가지 차이점이 있다면 html post의 sheet_name을 가져옵니다.</p>
+<p>그래서 시트를 많이 만든뒤 각각의 시트에 html post를 따로 넣고 싶다면</p>
+<p>sheet_name만 바꿔서 post를 날려주면 됩니다.</p>
+</blockquote>
+<p>이게 처음에 뭔말인지 궁긍하셨을겁니다.</p>
+<p>구글 스프레드 시트의 첫 발생은 뭐하라님께서 알려주신 티스토리 오류 제보였습니다.</p>
+<p><a href="http://itmir.tistory.com/550">[Tistory] - 티스토리 오류 제보하기 버튼 만들기 - 구글 스프레드 시트 사용</a></p>
+<p>이 오류 제보 기능은 시트를 하나만 사용했습니다. (2개 이상의 시트를 쓸 이유가 없죠)</p>
+<p>그런데 저는 공지사항과 급식 별점처럼 2개 이상의 시트를 이용해야 하기 때문에 시트이름까지 앱에서 넣어주는 방식을 사용했습니다.</p>
+<p>그냥 파일을 두개로 찢으면 안되나? 하실 수도 있는데요.</p>
+<p>저는 유지보수를 중요시하기 때문에 한 파일과 한 스크립트로 처리하기 위해 이런 방법을 사용했습니다.</p>
+<p>그래서 시트 이름을 넣어줘야 합니다.</p>
+<p>Vector<namevaluepair> nameValue = new Vector&#x3C;>();</namevaluepair></p>
+<p>nameValue.add(new BasicNameValuePair(“sheet_name”, “시트1”));</p>
+<p>이런식으로 말이죠.</p>
+<blockquote>
+<p>var SHEET_NAME = e.parameter[“sheet_name”];</p>
+<p>…</p>
+<p>그대신 한가지 차이점이 있다면 html post의 sheet_name을 가져옵니다.</p>
+<p>그래서 시트를 많이 만든뒤 각각의 시트에 html post를 따로 넣고 싶다면</p>
+<p>sheet_name만 바꿔서 post를 날려주면 됩니다.</p>
+</blockquote>
+<p>오류제보와 이 스크립트가 다른점은 스크립트에서 시트 이름이 정의되지 않고 HTTP POST로 넣어줄 시트 이름을 받아온다는 점입니다.</p>
+<h3 id="앱에서-구현-방법">앱에서 구현 방법</h3>
+<p>이제 앱에서 어떻게 구현해야 하는지 알아봅시다.</p>
+<p>사람들마다 소스 구조가 다르니까 응용하기 쉽게 뼈대를 알려드리겠습니다.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> postStar</span><span style="color:#24292E">(View v) {</span></span>
+<span class="line"><span style="color:#6A737D">    // 0 : Lunch, 1 : Dinner</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> position </span><span style="color:#D73A49">=</span><span style="color:#24292E"> mGiveStarType.</span><span style="color:#6F42C1">getSelectedItemPosition</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E"> (BapTool.</span><span style="color:#6F42C1">canPostStar</span><span style="color:#24292E">(</span><span style="color:#6F42C1">getApplicationContext</span><span style="color:#24292E">(), position)) {</span></span>
+<span class="line"><span style="color:#D73A49">        float</span><span style="color:#24292E"> rate </span><span style="color:#D73A49">=</span><span style="color:#24292E"> mPostRatingBar.</span><span style="color:#6F42C1">getRating</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">        (</span><span style="color:#D73A49">new</span><span style="color:#6F42C1"> HttpTask</span><span style="color:#24292E">()).</span><span style="color:#6F42C1">execute</span><span style="color:#24292E">(String.</span><span style="color:#6F42C1">valueOf</span><span style="color:#24292E">(position), String.</span><span style="color:#6F42C1">valueOf</span><span style="color:#24292E">(rate), </span><span style="color:#005CC5">null</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">    } </span><span style="color:#D73A49">else</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">        AlertDialog.Builder builder </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#24292E"> AlertDialog.</span><span style="color:#6F42C1">Builder</span><span style="color:#24292E">(</span><span style="color:#005CC5">this</span><span style="color:#24292E">, R.style.AppCompatErrorAlertDialogStyle);</span></span>
+<span class="line"><span style="color:#24292E">        builder.</span><span style="color:#6F42C1">setTitle</span><span style="color:#24292E">(R.string.bap_star_once_title);</span></span>
+<span class="line"><span style="color:#24292E">        builder.</span><span style="color:#6F42C1">setMessage</span><span style="color:#24292E">(R.string.bap_star_once_message);</span></span>
+<span class="line"><span style="color:#24292E">        builder.</span><span style="color:#6F42C1">setPositiveButton</span><span style="color:#24292E">(android.R.string.ok, </span><span style="color:#005CC5">null</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">        builder.</span><span style="color:#6F42C1">show</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p>위 메소드는 전송! 버튼을 누르면 호출되는 메소드입니다.</p>
+<p>3번째 줄에서 가져오는 int값은 Spinner에서 가져오는데요.</p>
+<p>첫번째 Spinner는 점심, 두번재는 저녁으로 설정되어 있습니다.</p>
+<p>5번째 줄이 존재하는 이유는 하루당 점심, 저녁 한번만 전송할 수 있도록 막아둔 코드입니다.</p>
+<p>BapTool.canPostStar(getApplicationContext(), position)</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> boolean</span><span style="color:#6F42C1"> canPostStar</span><span style="color:#24292E">(Context mContext, </span><span style="color:#D73A49">int</span><span style="color:#24292E"> type) {</span></span>
+<span class="line"><span style="color:#24292E">    Calendar mCalendar </span><span style="color:#D73A49">=</span><span style="color:#24292E"> Calendar.</span><span style="color:#6F42C1">getInstance</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> year </span><span style="color:#D73A49">=</span><span style="color:#24292E"> mCalendar.</span><span style="color:#6F42C1">get</span><span style="color:#24292E">(Calendar.YEAR);</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> month </span><span style="color:#D73A49">=</span><span style="color:#24292E"> mCalendar.</span><span style="color:#6F42C1">get</span><span style="color:#24292E">(Calendar.MONTH);</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> day </span><span style="color:#D73A49">=</span><span style="color:#24292E"> mCalendar.</span><span style="color:#6F42C1">get</span><span style="color:#24292E">(Calendar.DAY_OF_MONTH);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    Preference mPref </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> Preference</span><span style="color:#24292E">(mContext, </span><span style="color:#032F62">"RateStarInfo"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">    String lunchKey </span><span style="color:#D73A49">=</span><span style="color:#032F62"> "LunchStar_"</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> year </span><span style="color:#D73A49">+</span><span style="color:#24292E"> month </span><span style="color:#D73A49">+</span><span style="color:#24292E"> day;</span></span>
+<span class="line"><span style="color:#24292E">    String dinnerKey </span><span style="color:#D73A49">=</span><span style="color:#032F62"> "DinnerStar_"</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> year </span><span style="color:#D73A49">+</span><span style="color:#24292E"> month </span><span style="color:#D73A49">+</span><span style="color:#24292E"> day;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#24292E"> ((type </span><span style="color:#D73A49">==</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">) </span><span style="color:#D73A49">&#x26;&#x26;</span><span style="color:#24292E"> mPref.</span><span style="color:#6F42C1">getBoolean</span><span style="color:#24292E">(lunchKey, </span><span style="color:#005CC5">true</span><span style="color:#24292E">)) </span><span style="color:#D73A49">||</span><span style="color:#24292E"> ((type </span><span style="color:#D73A49">==</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">) </span><span style="color:#D73A49">&#x26;&#x26;</span><span style="color:#24292E"> mPref.</span><span style="color:#6F42C1">getBoolean</span><span style="color:#24292E">(dinnerKey, </span><span style="color:#005CC5">true</span><span style="color:#24292E">));</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p>소스 코드는 위와 같습니다.</p>
+<p>다시 postStar(View v)메소드로 돌아와서,</p>
+<p>6-7번째 줄에서 AsyncTask를 실행하는 모습입니다.</p>
+<p>else 이하는 말 안해도 아실꺼라 믿습니다.</p>
+<p>7번째 줄의</p>
+<p>(new HttpTask()).execute(String.valueOf(position), String.valueOf(rate), null);</p>
+<p>이부분은 position값과 rate값을 String으로 형 변환하여 execute메소드에 넣어주고 있는데요.</p>
+<p>AsyncTask를 아신다면 바로 이해가 가능하고, 모르신다고 해도 값을 넣어준다 정도로 이해하시면 됩니다.</p>
+<p>자세히 궁금하신 분께서는 AsyncTask의 작동원리를 찾아보시길 바랍니다.</p>
+<p>이제 HttpTask class를 분석해봅시다.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">private</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> HttpTask</span><span style="color:#D73A49"> extends</span><span style="color:#6F42C1"> AsyncTask</span><span style="color:#24292E">&#x3C;</span><span style="color:#D73A49">String</span><span style="color:#24292E">, </span><span style="color:#D73A49">Void</span><span style="color:#24292E">, </span><span style="color:#D73A49">Integer</span><span style="color:#24292E">> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">    protected</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> onPreExecute</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#005CC5">        super</span><span style="color:#24292E">.</span><span style="color:#6F42C1">onPreExecute</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">        mDialog </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> ProgressDialog</span><span style="color:#24292E">(BapStarActivity.this);</span></span>
+<span class="line"><span style="color:#24292E">        mDialog.</span><span style="color:#6F42C1">setIndeterminate</span><span style="color:#24292E">(</span><span style="color:#005CC5">true</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">        mDialog.</span><span style="color:#6F42C1">setMessage</span><span style="color:#24292E">(</span><span style="color:#6F42C1">getString</span><span style="color:#24292E">(R.string.post_bap_star_posting));</span></span>
+<span class="line"><span style="color:#24292E">        mDialog.</span><span style="color:#6F42C1">setCanceledOnTouchOutside</span><span style="color:#24292E">(</span><span style="color:#005CC5">false</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">        mDialog.</span><span style="color:#6F42C1">show</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">    protected</span><span style="color:#24292E"> Integer </span><span style="color:#6F42C1">doInBackground</span><span style="color:#24292E">(String... </span><span style="color:#E36209">params</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">        try</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">            HttpPost postRequest </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> HttpPost</span><span style="color:#24292E">(</span><span style="color:#032F62">"URL"</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">            //전달할 값들</span></span>
+<span class="line"><span style="color:#24292E">            Vector&#x3C;</span><span style="color:#D73A49">NameValuePair</span><span style="color:#24292E">> nameValue </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#24292E"> Vector&#x3C;>();</span></span>
+<span class="line"><span style="color:#24292E">            nameValue.</span><span style="color:#6F42C1">add</span><span style="color:#24292E">(</span><span style="color:#D73A49">new</span><span style="color:#6F42C1"> BasicNameValuePair</span><span style="color:#24292E">(</span><span style="color:#032F62">"sheet_name"</span><span style="color:#24292E">, </span><span style="color:#032F62">"시트1"</span><span style="color:#24292E">));</span></span>
+<span class="line"><span style="color:#24292E">            nameValue.</span><span style="color:#6F42C1">add</span><span style="color:#24292E">(</span><span style="color:#D73A49">new</span><span style="color:#6F42C1"> BasicNameValuePair</span><span style="color:#24292E">(</span><span style="color:#032F62">"type"</span><span style="color:#24292E">, params[</span><span style="color:#005CC5">0</span><span style="color:#24292E">]));</span></span>
+<span class="line"><span style="color:#24292E">            nameValue.</span><span style="color:#6F42C1">add</span><span style="color:#24292E">(</span><span style="color:#D73A49">new</span><span style="color:#6F42C1"> BasicNameValuePair</span><span style="color:#24292E">(</span><span style="color:#032F62">"rate"</span><span style="color:#24292E">, params[</span><span style="color:#005CC5">1</span><span style="color:#24292E">]));</span></span>
+<span class="line"><span style="color:#24292E">            nameValue.</span><span style="color:#6F42C1">add</span><span style="color:#24292E">(</span><span style="color:#D73A49">new</span><span style="color:#6F42C1"> BasicNameValuePair</span><span style="color:#24292E">(</span><span style="color:#032F62">"memo"</span><span style="color:#24292E">, params[</span><span style="color:#005CC5">2</span><span style="color:#24292E">]));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">            //웹 접속 - UTF-8으로</span></span>
+<span class="line"><span style="color:#24292E">            HttpEntity Entity </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> UrlEncodedFormEntity</span><span style="color:#24292E">(nameValue, </span><span style="color:#032F62">"UTF-8"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">            postRequest.</span><span style="color:#6F42C1">setEntity</span><span style="color:#24292E">(Entity);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">            HttpClient mClient </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> DefaultHttpClient</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">            mClient.</span><span style="color:#6F42C1">execute</span><span style="color:#24292E">(postRequest);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">            return</span><span style="color:#24292E"> Integer.</span><span style="color:#6F42C1">parseInt</span><span style="color:#24292E">(params[</span><span style="color:#005CC5">0</span><span style="color:#24292E">]);</span></span>
+<span class="line"><span style="color:#24292E">        } </span><span style="color:#D73A49">catch</span><span style="color:#24292E"> (Exception </span><span style="color:#E36209">e</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">            e.</span><span style="color:#6F42C1">printStackTrace</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#D73A49"> -</span><span style="color:#005CC5">1</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    protected</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> onPostExecute</span><span style="color:#24292E">(Integer </span><span style="color:#E36209">value</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#005CC5">        super</span><span style="color:#24292E">.</span><span style="color:#6F42C1">onPostExecute</span><span style="color:#24292E">(value);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E"> (mDialog </span><span style="color:#D73A49">!=</span><span style="color:#005CC5"> null</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">            mDialog.</span><span style="color:#6F42C1">dismiss</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">            mDialog </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> null</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E"> (value </span><span style="color:#D73A49">==</span><span style="color:#D73A49"> -</span><span style="color:#005CC5">1</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">            AlertDialog.Builder builder </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#24292E"> AlertDialog.</span><span style="color:#6F42C1">Builder</span><span style="color:#24292E">(BapStarActivity.this, R.style.AppCompatErrorAlertDialogStyle);</span></span>
+<span class="line"><span style="color:#24292E">            builder.</span><span style="color:#6F42C1">setTitle</span><span style="color:#24292E">(R.string.post_bap_star_title);</span></span>
+<span class="line"><span style="color:#24292E">            builder.</span><span style="color:#6F42C1">setMessage</span><span style="color:#24292E">(R.string.post_bap_star_failed);</span></span>
+<span class="line"><span style="color:#24292E">            builder.</span><span style="color:#6F42C1">setPositiveButton</span><span style="color:#24292E">(android.R.string.ok, </span><span style="color:#005CC5">null</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">            builder.</span><span style="color:#6F42C1">show</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">        } </span><span style="color:#D73A49">else</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">            AlertDialog.Builder builder </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#24292E"> AlertDialog.</span><span style="color:#6F42C1">Builder</span><span style="color:#24292E">(BapStarActivity.this, R.style.AppCompatAlertDialogStyle);</span></span>
+<span class="line"><span style="color:#24292E">            builder.</span><span style="color:#6F42C1">setTitle</span><span style="color:#24292E">(R.string.post_bap_star_title);</span></span>
+<span class="line"><span style="color:#24292E">            builder.</span><span style="color:#6F42C1">setMessage</span><span style="color:#24292E">(R.string.post_bap_star_success);</span></span>
+<span class="line"><span style="color:#24292E">            builder.</span><span style="color:#6F42C1">setPositiveButton</span><span style="color:#24292E">(android.R.string.ok, </span><span style="color:#005CC5">null</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">            builder.</span><span style="color:#6F42C1">show</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">            BapTool.</span><span style="color:#6F42C1">todayPostStar</span><span style="color:#24292E">(</span><span style="color:#6F42C1">getApplicationContext</span><span style="color:#24292E">(), value);</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p>AsyncTask의 구조를 아신다면 쉽지만 모르시는 분들을 위해 설명드리면</p>
+<p>onPreExecute(), doInBackground(), onPostExecute()순으로 메소드가 실행됩니다.</p>
+<p>onPreExecute() 메소드에서는 전송중 알림을 띄워주는거니 패스, 마지막 onPostExecute() 메소드도 성공 실패 여부에 따라 알림을 띄워주는거니 맨 마지막 코드를 제외하면 전부 아실겁니다.</p>
+<p>doInBackground() 메소드도 try-catch로 묶여있는 부분은 전부 위에서 반복된 내용입니다.</p>
+<p>그러니 63번째 줄만 설명하겠습니다. (태블릿 배터리가 없어서요)</p>
+<p>BapTool.todayPostStar(getApplicationContext(), value);</p>
+<p>이 것도 간단합니다.</p>
+<p>전송이 완료되면 Preference에 값을 저장하는거죠.</p>
+<p>BapTool.canPostStar()와 연동됩니다.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> todayPostStar</span><span style="color:#24292E">(Context mContext, </span><span style="color:#D73A49">int</span><span style="color:#24292E"> type) {</span></span>
+<span class="line"><span style="color:#24292E">    Calendar mCalendar </span><span style="color:#D73A49">=</span><span style="color:#24292E"> Calendar.</span><span style="color:#6F42C1">getInstance</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> year </span><span style="color:#D73A49">=</span><span style="color:#24292E"> mCalendar.</span><span style="color:#6F42C1">get</span><span style="color:#24292E">(Calendar.YEAR);</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> month </span><span style="color:#D73A49">=</span><span style="color:#24292E"> mCalendar.</span><span style="color:#6F42C1">get</span><span style="color:#24292E">(Calendar.MONTH);</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> day </span><span style="color:#D73A49">=</span><span style="color:#24292E"> mCalendar.</span><span style="color:#6F42C1">get</span><span style="color:#24292E">(Calendar.DAY_OF_MONTH);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    Preference mPref </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> Preference</span><span style="color:#24292E">(mContext, </span><span style="color:#032F62">"RateStarInfo"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">    String lunchKey </span><span style="color:#D73A49">=</span><span style="color:#032F62"> "LunchStar_"</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> year </span><span style="color:#D73A49">+</span><span style="color:#24292E"> month </span><span style="color:#D73A49">+</span><span style="color:#24292E"> day;</span></span>
+<span class="line"><span style="color:#24292E">    String dinnerKey </span><span style="color:#D73A49">=</span><span style="color:#032F62"> "DinnerStar_"</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> year </span><span style="color:#D73A49">+</span><span style="color:#24292E"> month </span><span style="color:#D73A49">+</span><span style="color:#24292E"> day;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E"> (type </span><span style="color:#D73A49">==</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">        mPref.</span><span style="color:#6F42C1">putBoolean</span><span style="color:#24292E">(lunchKey, </span><span style="color:#005CC5">false</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">    } </span><span style="color:#D73A49">else</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">        mPref.</span><span style="color:#6F42C1">putBoolean</span><span style="color:#24292E">(dinnerKey, </span><span style="color:#005CC5">false</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p>간단한 원리입니다.</p>
+<h3 id="끝나며">끝나며</h3>
+<p>이렇게 해서 앱에서 구글 스프레드 시트로 데이터를 전송하는 기능을 알아보았습니다.</p>
+<p>이 기능은 급식 별점뿐만 아니라 앱의 버그 리포트를 받거나, 문의사항을 받을 때 유용하게 사용 가능합니다.</p>
+<p>서버를 만들 필요도 없고, 이메일 주소를 포함하는 것도 아닌 그냥 전송 버튼만 누르면 스프레드 시트에 저장되니까요.</p>
+<p>마지막이 될 강좌(=파싱)는 소스가 더럽습니다.</p>
+<p>“구글 스프레드 시트를 데이터베이스로 사용하기” 글이 늦게 나온 원인이기도 합니다.</p>
+<p>(좀 더 간단하게 시트의 내용을 가져올 수 있는 방법을 찾다가 안나와서 그냥 포기한 케이스)</p>
+<p>구글 스프레드 시트를 파싱하기 위해 자체 class를 만들고 (itmir.tistory.com.spreadsheets.GoogleSheetTask) 이를 또 상속받아 (extends GoogleSheetTask) 만든 class가 바로 BapStarActivity.java파일의 class getStarRateDownloadTask 입니다.</p>
+<p>간단히 다음 강좌의 요약을 해드리면</p>
+<p>첫번째로 구글 스프레드 시트를 파싱해서 데이터 베이스로 저장합니다.</p>
+<p>맨 첫번째 라인(Timestamp, title, message같은거)이 Column이 됩니다.</p>
+<p>그다음 db에 저장된 내용을 다시 가져오는 부분이 두번째 입니다.</p>
+<p>머리가 심하게 아프고 복잡한 내용이므로 SQLite를 좀 알아두시길 추천드립니다.</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

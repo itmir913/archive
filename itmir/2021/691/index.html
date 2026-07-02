@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="프로그래밍 언어를 배우면서 표준입출력을 배운 후에 꼭 하는 일이 있다."><title>[C] printf로 *(별) 피라미드 출력하기 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">[C] printf로 *(별) 피라미드 출력하기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2021-04-03T16:07:47.000Z"> 2021년 4월 4일 </time> <span class="post-category">Programming/C</span> <a href="https://itmir.tistory.com/691" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">프로그래밍 언어를 배우면서 표준입출력을 배운 후에 꼭 하는 일이 있다.</p> </header> <div class="post-content"> <h1 id="서론">서론</h1>
+<p>프로그래밍 언어를 배우면서 표준입출력을 배운 후에 꼭 하는 일이 있다.</p>
+<p>바로 *(별)으로 피라미드를 쌓는 것이다.</p>
+<p>아마 대부분의 교수님들께서 이 동일한 과제를 내는 것으로 봤을 때, print 문과 반복 구조를 시험하기에 피라미드 쌓기 문제만큼 효과적인 게 없는 게 아닐까?</p>
+<h1 id="피라미드-쌓기">피라미드 쌓기</h1>
+<p>별(*)으로 피라미드를 어떻게 쌓아야 하는가는 사람마다 다르지만, 보통 이러한 출력을 콘솔창에 띄울 수 있으면 된다.</p>
+<p><img  src="/archive/_astro/img.Cov-LV2I_Z1rhtMk.webp" alt="" width="116" height="146" loading="lazy" decoding="async"></p>
+<p>여기서 포인트는 피라미드가 가운데 정렬되어야 한다는 사실이다.</p>
+<p>다행히 별의 오른쪽에 공백을 출력할 필요는 없었다.</p>
+<p>즉, 아래처럼 출력하면 감점 사유가 된다.</p>
+<p><img  src="/archive/_astro/img_1.BDIU07bX_1lOjoF.webp" alt="" width="113" height="140" loading="lazy" decoding="async"></p>
+<h1 id="문제-해결-알고리즘">문제 해결 알고리즘</h1>
+<p>필자는 이 문제를 해결하기 위해 몇 가지 생각을 거쳤다.</p>
+<p>일단 입력받는 숫자는 피라미드의 층 수이다.</p>
+<p>그리고 가장 처음에 출력되는 별이 정확하게 가운데 있기 위해서는 공백(” “)까지 출력해줘야 한다.</p>
+<p>별의 개수와 공백의 개수는 피라미드의 층 수에 따라 달라지므로, 이 둘 사이의 관계를 찾으면 문제 구상이 끝나며 코딩만 남는다.</p>
+<p>피라미드의 층 수를 num이라 하고, 한 층에 출력되는 *(별)의 개수와 공백의 개수 사이의 관계를 찾아보자.</p>
+<p>이를 위해 위에서 언급한 6층 짜리 피라미드를 살펴보자.</p>
+<p>6층 - 별1개, 공백 5개</p>
+<p>5층 - 별3개, 공백 4개</p>
+<p>4층 - 별5개, 공백 3개</p>
+<p>3층 - 별7개, 공백 2개</p>
+<p>2층 - 별9개, 공백 1개</p>
+<p>1층 - 별11개, 공백 0개</p>
+<p>즉, 피라미드 층 수가 내려갈수록,</p>
+<p>별의 개수는 첫 항이 1이고 공차가 2인 등차수열을 따르고,</p>
+<p>공백의 개수는 하나씩 감소하여 가장 아래 층에서는 0이 된다.</p>
+<p>이 관계를 프로그래밍 언어로 구현하면 끝이다.</p>
+<h1 id="c로-구현한-피라미드-쌓기-문제">C로 구현한 피라미드 쌓기 문제</h1>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>#include &#x3C;stdio.h></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>int main(void) {</span></span>
+<span class="line"><span>    int num;</span></span>
+<span class="line"><span>//    FILE * fp = fopen("pyramid.txt", "w");</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    printf("피라미드 층수를 입력하세요:");</span></span>
+<span class="line"><span>    scanf("%d", &#x26;num);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    if (num &#x3C;= 0) {</span></span>
+<span class="line"><span>        printf("(오류) 자연수를 입력해야합니다.");</span></span>
+<span class="line"><span>        return -1;</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    for (int i = 0; i &#x3C; num; i++) {</span></span>
+<span class="line"><span>        int star_number = 2 * (i + 1) - 1;</span></span>
+<span class="line"><span>        int blank_number = (num - 1) - i;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        for (int p = 0; p &#x3C; blank_number; p++) {</span></span>
+<span class="line"><span>//            fprintf(fp, " ");</span></span>
+<span class="line"><span>            printf(" ");</span></span>
+<span class="line"><span>        }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        for (int q = 0; q &#x3C; star_number; q++) {</span></span>
+<span class="line"><span>//            fprintf(fp, "*");</span></span>
+<span class="line"><span>            printf("*");</span></span>
+<span class="line"><span>        }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>//        fprintf(fp, "\n");</span></span>
+<span class="line"><span>        printf("\n");</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>//    fclose(fp);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    return 0;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
+<p><img  src="/archive/_astro/img_2.CjD-Pezd_ZpCwJD.webp" alt="" width="935" height="353" loading="lazy" decoding="async"></p>
+<p>잘 출력되었다.</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

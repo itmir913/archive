@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="퀵패널의 Olleh등의 통신사 문구를 변경하여 봅시다."><title>상단바 퀵패널의 통신사 문구 변경방법 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">상단바 퀵패널의 통신사 문구 변경방법</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-01-27T07:30:54.000Z"> 2013년 1월 27일 </time> <span class="post-category">SmartPhone/Android</span> <a href="https://itmir.tistory.com/56" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">퀵패널의 Olleh등의 통신사 문구를 변경하여 봅시다.</p> </header> <div class="post-content"> <p>퀵패널의 Olleh등의 통신사 문구를 변경하여 봅시다.</p>
+<p>대부분 태마의 저작권 표시 또는 간지용으로 하실것 같네요. ㅋㅋ</p>
+<p>준비물 : SystemUI.apk, 노트패드 ++, apk manager</p>
+<p>노트패드 ++는 기본적으로 그냥 깔아두시는것도 좋아요.</p>
+<ol>
+<li>SystemUI를 디컴파일 해줍시다.</li>
+</ol>
+<p>우리는 classes.dex 이파일을 수정해야 하므로 일단 디컴파일 ㄱ</p>
+<ol start="2">
+<li>디컴파일된 폴더에 들어가서</li>
+</ol>
+<p>smali—com-android-systemui-statusbar</p>
+<p>위 경로로 이동해 주세요.</p>
+<ol start="3">
+<li>CarrierLabel.smali 이라는 파일을 찾아 열어주신후</li>
+</ol>
+<p>컨트롤키+F로 .line 108을 검색해 주세요.</p>
+<ol start="4">
+<li>우리는 .line 108부분을 수정해야 합니다.</li>
+</ol>
+<p>순정이라면 move-result-object이 line 108부분에 있을겁니다.</p>
+<p><img  src="/archive/_astro/1.DQS6t8nJ_2e7xiN.webp" alt="" width="550" height="60" loading="lazy" decoding="async"></p>
+<p>이부분을 지워주시고 const-string v2, “내용”</p>
+<p>이렇게 바꿔 주세요.</p>
+<p><img  src="/archive/_astro/2.D6Pb3Yqv_Z2oFOyT.webp" alt="" width="550" height="96" loading="lazy" decoding="async"></p>
+<ol start="5">
+<li>
+<p>만약 한글을 집어넣으실려면 유니코드 변환하셔서 넣으시면 된다고 합니다 .</p>
+</li>
+<li>
+<p>이제 SystemUI를 컴파일 해주세요.</p>
+</li>
+<li>
+<p>언사인된 UI에 있는 classes.dex를 원본 UI에 덮어쓰기 해주세요. (중요)</p>
+</li>
+<li>
+<p>이제 적용해 보시면 됩니다. ㅎㅎ</p>
+</li>
+</ol> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

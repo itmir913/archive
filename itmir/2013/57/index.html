@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="CWM Recovery를 설치하는 방법에 대해 포스팅 해보도록 하겠습니다"><title>커스텀 리커버리 (CWM)설치방법 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">커스텀 리커버리 (CWM)설치방법</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-01-27T07:35:38.000Z"> 2013년 1월 27일 </time> <span class="post-category">SmartPhone/Android</span> <a href="https://itmir.tistory.com/57" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">CWM Recovery를 설치하는 방법에 대해 포스팅 해보도록 하겠습니다</p> </header> <div class="post-content"> <p>CWM Recovery를 설치하는 방법에 대해 포스팅 해보도록 하겠습니다</p>
+<p>먼저 준비물이 필요한대요</p>
+<p>1). 첨부파일 (새폴더님 게시글 첨부파일 이용)</p>
+<p>2). Vega USB 드라이버</p>
+<p>3). 루트 익스플로러</p>
+<p>4). 터미널 에뮬레이터 (따로 Fastboot로 진입할수 있는 기기는 없어도 됩니다)</p>
+<p>5). Fastboot드라이버</p>
+<p>6). 기기의 recovery.img 파일</p>
+<p>이 모든것을 준비해 주시길 바랍니다</p>
+<p>그럼 시작하겠습니다</p>
+<ol>
+<li>Vega USB 드라이버 설치</li>
+</ol>
+<p><a href="http://www.vegaservice.co.kr/down/software/main.sky">이 링크</a>를 클릭하여 자신의 기기에 맞는 USB드라이버를 설치해 주세요</p>
+<p>따로 사진과 언급은 하지 않겠습니다…</p>
+<ol start="2">
+<li>루트익스플로러로 파일 삭제</li>
+</ol>
+<p>/system에 있는 boot-from-recovery.p 파일과</p>
+<p>/system/etc/install-recovery.sh파일을 제거해 주셔야 합니다</p>
+<p>파일의 이름만 바꾸셔도 되고 백업해 두셔도 됩니다</p>
+<p>이 파일들은 순정 리커버리로 되돌리는 역활을 하기 때문에 지우셔야 합니다</p>
+<ol start="3">
+<li>Fastboot모드로 재부팅</li>
+</ol>
+<p>스마트폰 자체에 fastboot로 진입할수 있는 키가 있다면 진입해 주세요</p>
+<p>만약 없다면 터미널 에뮬레이터를 열어 주신뒤 다음과 같이 입력해 주세요</p>
+<p>su</p>
+<p>reboot fastboot</p>
+<p>그럼 fastboot로 재부팅 하게 됩니다</p>
+<p>검은 화면에 SKY든 하얀화면의 SKY든 fastboot는 기기마다 모양이 조금씩 다릅니다</p>
+<p>아니면 adb-windows reboot fastboot 명령어로 진입하셔도 됩니다</p>
+<ol start="4">
+<li>컴퓨터와 연결</li>
+</ol>
+<p>이상태에서 바로 USB로 컴퓨터와 연결해 주세요</p>
+<p>윈도우7이신분들은 대부분 기기를 자동으로 인식하고 설치할겁니다</p>
+<p>만약 드라이버가 설치되지 않았다는 표시가 뜨면 fastboot드라이버를 설치해야 합니다</p>
+<p>인식되신 분들은 바로 5번으로 넘어가 주세요</p>
+<p>그리고 첨부파일의 fastboot를 압축푼뒤 기기의 recovery파일을 그 폴더에 넣어주세요</p>
+<p>fastboot드라이버를 설치하는 방법입니다 (참고: <a href="http://cafe.naver.com/skydevelopers/5870">http://cafe.naver.com/skydevelopers/5870</a>)</p>
+<p>fastboot 드라이버 설치방법</p>
+<p>첨부파일중 fastboot driver을 받아주신뒤 제어판에서 장치관리자를 들어가시면 ?Android가 있을겁니다</p>
+<p>마우스 오른쪽 클릭, 드라이버 업데이트를 눌러줍시다</p>
+<p><img  src="/archive/_astro/1.V0pNx0Ee_ZMr9Os.webp" alt="" width="375" height="277" loading="lazy" decoding="async"><br>
+이 사진은 XP의 사진으로 추정됩니다</p>
+<p>다음을 눌러주세요<br>
+<img  src="/archive/_astro/2.DivKc7LS_lsRrM.webp" alt="" width="366" height="236" loading="lazy" decoding="async"><br>
+특정 위치에서 설치를 눌러주신후<br>
+<img  src="/archive/_astro/3.B-whKCob_ZUEkkJ.webp" alt="" width="528" height="59" loading="lazy" decoding="async"><br>
+직접 찾아야 합니다<br>
+<img  src="/archive/_astro/4.3P1KEyhN_Z1BWaUW.webp" alt="" width="496" height="73" loading="lazy" decoding="async"><br>
+모든 장치 표시를 선택해 주세요<br>
+<img  src="/archive/_astro/5.CazuXtn1_ZJtSdf.webp" alt="" width="154" height="56" loading="lazy" decoding="async"><br>
+그 다음에서 디스크 있음을 눌러주신뒤<br>
+<img  src="/archive/_astro/6.BYNYuWkZ_1d0PU.webp" alt="" width="426" height="57" loading="lazy" decoding="async"><br>
+찾아보기를 눌러서<br>
+<img  src="/archive/_astro/7.CpCdbKXR_ZTpGjw.webp" alt="" width="537" height="303" loading="lazy" decoding="async"><br>
+Fastboot Drivers폴더에 들어간뒤 android_winusb를 클릭/열기 해주시면 완료됩니다<br>
+<img  src="/archive/_astro/8.Rf56Vy4z_1CgKqR.webp" alt="" width="354" height="73" loading="lazy" decoding="async"></p>
+<p>그럼 설치가 끝나게 됩니다</p>
+<p>윈도우7도 위와 비슷합니다</p>
+<p>나중에 사진을 더 추가하도록 하겠습니다</p>
+<ol start="5">
+<li>CMD열기</li>
+</ol>
+<p>시작-실행-cmd를 열어줍시다</p>
+<p>그뒤 fastboot폴더가 있는 위치로 이동해 주세요</p>
+<p>이동방법은 cd c:\fastboot</p>
+<p>위와 같은 명령어 또는</p>
+<p>압축푼 폴더를 Shift키+마우스 오른쪽키를 누르시면 여기서 명령창 열기라는 메뉴가 생기는대요 이걸로 가셔도 됩니다</p>
+<p>아무튼 폴더로 이동하시고</p>
+<p>fastboot-windows devices</p>
+<p>fastboot-windows flash recovery recovery.img</p>
+<p>를 입력하시면 됩니다</p>
+<p>waiting for device이 개속 뜨면 드라이버가 재대로 설치되지 않아서 그런겁니다</p>
+<p>Send … OK</p>
+<p>Write … OK</p>
+<p>가 뜨게되면 완료입니다</p>
+<ol start="6">
+<li>완료</li>
+</ol>
+<p>이재 리커버리로 재부팅 하세요</p>
+<p>정상적으로 뜨게되면 완료입니다 ㅎ</p>
+<p>명령어는 txt로 올려두었습니다</p>
+<p><a href="http://itmir.tistory.com/attachment/cfile30.uf@251FA84B5104D8BC311E26.txt"><img src="http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/txt.gif" alt=""> CWM 설치 명령어.txt</a></p>
+<p><a href="http://itmir.tistory.com/attachment/cfile9.uf@1528354B5104D8C020B14B.zip"><img src="http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif" alt=""> Fastboot Driver.zip</a></p>
+<p><a href="http://itmir.tistory.com/attachment/cfile7.uf@151CD84B5104D8C4357833.zip"><img src="http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif" alt=""> Fastboot.zip</a></p>
+<p><a href="http://itmir.tistory.com/27">2013/01/27 - [강좌/팁/SmartPhone 강좌] - Boot.img Recovery.img 원클릭 적용툴</a></p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="git을 시작하기 위한 간편 안내서. 어렵지 않아요 ;)"><title>Git 사용 방법 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">Git 사용 방법</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-04-16T08:14:12.000Z"> 2013년 4월 16일 </time> <span class="post-category">Computer &amp; PC</span> <a href="https://itmir.tistory.com/192" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">git을 시작하기 위한 간편 안내서. 어렵지 않아요 ;)</p> </header> <div class="post-content"> <h1 id="git---간편-안내서">git - 간편 안내서</h1>
+<p>git을 시작하기 위한 간편 안내서. 어렵지 않아요 ;)</p>
+<p><a href="https://www.twitter.com/rogerdudler">Roger Dudler</a>가 만들었어요.<br>
+(<a href="http://www.twitter.com/tfnico">@tfnico</a>, <a href="http://www.twitter.com/fhd">@fhd</a>와 <a href="http://www.namics.com/">Namics</a>의 도움을 받았지요.)<br>
+번역은 <a href="https://twitter.com/rkjun">Juntai Park</a>과 <a href="https://alpha.app.net/ArdieFox">Ardie Hwang</a>이 담당했습니다.<br>
+문제 보고는 <a href="https://github.com/rogerdudler/git-guide/issues">여기(github)</a>로 해주세요!</p>
+<p>다른 언어판도 읽어보세요!<br>
+<a href="http://rogerdudler.github.io/git-guide/index.html">English</a>, <a href="http://rogerdudler.github.io/git-guide/index.de.html">Deutsch</a>, <a href="http://rogerdudler.github.io/git-guide/index.es.html">Español</a>, <a href="http://rogerdudler.github.io/git-guide/index.fr.html">Français</a>, <a href="http://rogerdudler.github.io/git-guide/index.it.html">Italiano</a>, <a href="http://rogerdudler.github.io/git-guide/index.ja.html">日本語</a>,<br>
+<a href="http://rogerdudler.github.io/git-guide/index.my.html">မြန်မာ</a>, <a href="http://rogerdudler.github.io/git-guide/index.nl.html">Nederlands</a>, <a href="http://rogerdudler.github.io/git-guide/index.pt_BR.html">Português</a>, <a href="http://rogerdudler.github.io/git-guide/index.ru.html">Русский</a>, <a href="http://rogerdudler.github.io/git-guide/index.tr.html">Türkçe</a>, <a href="http://rogerdudler.github.io/git-guide/index.zh.html">中文</a></p>
+<p><img src="http://rogerdudler.github.io/git-guide/img/arrow.png" alt="자, 갑시다!"></p>
+<h2 id="설치">설치</h2>
+<p><a href="http://code.google.com/p/git-osx-installer/downloads/list?can=3">OS X용 git 다운로드</a></p>
+<p><a href="http://code.google.com/p/msysgit/downloads/list?can=3">Windows용 git 다운로드</a></p>
+<p><a href="http://book.git-scm.com/2_installing_git.html">Linux용 git 다운로드</a></p>
+<h2 id="새로운-저장소-만들기">새로운 저장소 만들기</h2>
+<p>폴더를 하나 만들고, 그 안에서 아래 명령을 실행하세요.<br>
+<code>git init</code><br>
+새로운 git 저장소가 만들어집니다.</p>
+<h2 id="저장소-받아오기">저장소 받아오기</h2>
+<p>로컬 저장소를 복제(clone)하려면 아래 명령을 실행하세요.<br>
+<code>git clone /로컬/저장소/경로</code><br>
+원격 서버의 저장소를 복제하려면 아래 명령을 실행하세요.<br>
+<code>git clone 사용자명@호스트:/원격/저장소/경로</code></p>
+<h2 id="작업의-흐름">작업의 흐름</h2>
+<p>여러분의 로컬 저장소는 git이 관리하는 세 그루의 나무로 구성돼있어요.<br>
+첫번째 나무인 <code>작업 디렉토리(Working directory)</code>는<br>
+실제 파일들로 이루어져있고, 두번째 나무인 <code>인덱스(Index)</code>는<br>
+준비 영역(staging area)의 역할을 하며, 마지막 나무인 <code>HEAD</code>는<br>
+최종 확정본(commit)을 나타네요.</p>
+<p><img src="http://rogerdudler.github.io/git-guide/img/trees.png" alt="로컬 저장소는 이렇게 생겼어요."></p>
+<h2 id="추가와-확정commit">추가와 확정(commit)</h2>
+<p>변경된 파일은 아래 명령어로 (<strong>인덱스</strong>에) 추가할 수 있어요.<br>
+<code>git add &#x3C;파일 이름></code><br>
+<code>git add *</code><br>
+이것이 바로 git의 기본 작업 흐름에서 첫 단계에 해당돼요.<br>
+하지만 실제로 변경 내용을 확정하려면 아래 명령을 내려야 한답니다.<br>
+<code>git commit -m "이번 확정본에 대한 설명"</code><br>
+자, 이제 변경된 파일이 <strong>HEAD</strong>에 반영됐어요.<br>
+하지만, 원격 저장소에는 아직 반영이 안 됐답니다.</p>
+<h2 id="변경-내용-발행push하기">변경 내용 발행(push)하기</h2>
+<p>현재의 변경 내용은 아직 로컬 저장소의 <strong>HEAD</strong> 안에 머물고 있어요.<br>
+이제 이 변경 내용을 원격 서버로 올려봅시다. 아래 명령을 실행하세요.<br>
+<code>git push origin master</code><br>
+(다른 가지를 발행하려면 <em>master</em>를 원하는 가지 이름으로 바꿔주세요.)</p>
+<p>만약 기존에 있던 원격 저장소를 복제한 것이 아니라면,<br>
+원격 서버의 주소를 git에게 알려줘야 해요.<br>
+<code>git remote add origin &#x3C;원격 서버 주소></code><br>
+이제 변경 내용을 원격 서버로 발행할 수 있어요.</p>
+<h2 id="가지branch치기">가지(branch)치기</h2>
+<p>가지는 안전하게 격리된 상태에서 무언가를 만들 때 사용해요.<br>
+여러분이 저장소를 새로 만들면 기본으로 <em>master 가지</em>가 만들어집니다.<br>
+이제 다른 가지를 이용해서 개발을 진행하고, 나중에 개발이 완료되면<br>
+master 가지로 돌아와 병합하면 돼요.</p>
+<p><img src="http://rogerdudler.github.io/git-guide/img/branches.png" alt="가지치기 예제를 보여드리죠."></p>
+<p>아래 명령으로 “feature_x”라는 이름의 가지를 만들고 갈아탑니다.<br>
+<code>git checkout -b feature_x</code><br>
+아래 명령으로 master 가지로 돌아올 수 있어요.<br>
+<code>git checkout master</code><br>
+아래 명령으로는 가지를 삭제할 수 있어요.<br>
+<code>git branch -d feature_x</code><br>
+여러분이 새로 만든 가지를 원격 저장소로 전송하기 전까지는<br>
+<em>다른 사람들이 접근할 수 없어요</em>.<br>
+<code>git push origin &#x3C;가지 이름></code></p>
+<h2 id="갱신과-병합merge">갱신과 병합(merge)</h2>
+<p>여러분의 로컬 저장소를 원격 저장소에 맞춰 갱신하려면<br>
+아래 명령을 실행하세요.<br>
+<code>git pull</code><br>
+이렇게 하면 원격 저장소의 변경 내용이 로컬 작업 디렉토리에<br>
+<em>받아지고(fetch)</em>, *병합(merge)*된답니다.<br>
+다른 가지에 있는 변경 내용을 현재 가지(예를 들면, master 가지)에<br>
+병합하려면 아래 명령을 실행하세요.<br>
+<code>git merge &#x3C;가지 이름></code><br>
+첫번째 명령이든 두번째 명령이든, git은<br>
+자동으로 변경 내용을 병합하려고 시도해요.<br>
+문제는, 항상 성공하는 게 아니라 가끔<br>
+*충돌(conflicts)*이 일어나기도 한다는 거예요.<br>
+이렇게 충돌이 발생하면, git이 알려주는 파일의 충돌 부분을<br>
+여러분이 직접 수정해서 병합이 가능하도록 해야 하죠.<br>
+충돌을 해결했다면, 아래 명령으로 git에게<br>
+아까의 파일을 병합하라고 알려주세요.<br>
+<code>git add &#x3C;파일 이름></code><br>
+변경 내용을 병합하기 전에, 어떻게 바뀌었는지 비교해볼 수도 있어요.<br>
+<code>git diff &#x3C;원래 가지> &#x3C;비교 대상 가지></code></p>
+<h2 id="꼬리표tag-달기">꼬리표(tag) 달기</h2>
+<p>소프트웨어의 새 버전을 발표할 때마다 꼬리표를 달아놓으면 좋아요.<br>
+(물론 꼬리표는 SVN 등에 이미 존재하는 기능이지요.)<br>
+아래 명령을 실행하면 새로운 꼬리표인 <em>1.0.0</em>을 달 수 있어요.<br>
+<code>git tag 1.0.0 1b2e1d63ff</code><br>
+위 명령에서 <em>1b2e1d63ff</em> 부분은 꼬리표가 가리킬 확정본 식별자입니다.<br>
+아래 명령으로 확정본 식별자를 얻을 수 있어요.<br>
+<code>git log</code><br>
+확정본 식별자의 앞부분 일부만 입력해도 꼬리표를 붙일 수 있지만,<br>
+그 일부분이 반드시 고유하다는 조건이 필요해요.</p>
+<h2 id="로컬-변경-내용-되돌리기">로컬 변경 내용 되돌리기</h2>
+<p>만약 여러분이 (물론 그럴 일은 없겠지만 ;) 실수로 무언가 잘못한 경우,<br>
+아래 명령으로 로컬의 변경 내용을 되돌릴 수 있어요.<br>
+<code>git checkout -- &#x3C;파일 이름></code><br>
+위 명령은 로컬의 변경 내용을 변경 전 상태(HEAD)로 되돌려줘요.<br>
+다만, 이미 인덱스에 추가된 변경 내용과<br>
+새로 생성한 파일은 그대로 남는답니다.</p>
+<p>만약, 로컬에 있는 모든 변경 내용과 확정본을 포기하려면,<br>
+아래 명령으로 원격 저장소의 최신 이력을 가져오고,<br>
+로컬 master 가지가 저 이력을 가리키도록 할 수 있어요.<br>
+<code>git fetch origin</code><br>
+<code>git reset --hard origin/master</code></p>
+<h2 id="유용한-힌트">유용한 힌트</h2>
+<p>git의 내장 GUI<br>
+<code>gitk</code><br>
+콘솔에서 git output을 컬러로 출력하기<br>
+<code>git config color.ui true</code><br>
+이력(log)에서 확정본 1개를 딱 한 줄로만 표시하기<br>
+<code>git config format.pretty oneline</code><br>
+파일을 추가할 때 대화식으로 추가하기<br>
+<code>git add -i</code></p>
+<h2 id="링크--자료">링크 &#x26; 자료</h2>
+<h3 id="그래픽-클라이언트">그래픽 클라이언트</h3>
+<ul>
+<li><a href="http://gitx.laullon.com/">GitX (L) (OS X용, 오픈 소스 소프트웨어)</a></li>
+<li><a href="http://www.git-tower.com/">Tower (OS X용)</a></li>
+<li><a href="http://www.sourcetreeapp.com/">Source Tree (OS X용, 무료)</a></li>
+<li><a href="http://mac.github.com/">GitHub for Mac (OS X용, 무료)</a></li>
+<li><a href="https://itunes.apple.com/kr/app/gitbox/id403388357?mt=12">Gitbox (OS X용, App Store)</a></li>
+</ul>
+<h3 id="안내서-영문">안내서 (영문!)</h3>
+<ul>
+<li><a href="http://book.git-scm.com/">Git Community Book</a></li>
+<li><a href="http://progit.org/book/">Pro Git</a></li>
+<li><a href="http://think-like-a-git.net/">Think like a git</a></li>
+<li><a href="http://help.github.com/">GitHub Help</a></li>
+<li><a href="http://marklodato.github.com/visual-git-guide/index-en.html">A Visual Git Guide</a></li>
+</ul>
+<p><strong>출처 :</strong> <a href="http://rogerdudler.github.io/git-guide/index.ko.html"><strong>http://rogerdudler.github.io/git-guide/index.ko.html</strong></a></p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

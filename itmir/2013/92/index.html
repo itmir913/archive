@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Vega 1:1 상담에서 베가 레이서2의 커널 컴파일 방법에 대한 문의를 넣었습니다"><title>VegaRacer2 Kernel 컴파일 sh — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">VegaRacer2 Kernel 컴파일 sh</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-01-28T04:58:01.000Z"> 2013년 1월 28일 </time> <span class="post-category">Android/Kernel</span> <a href="https://itmir.tistory.com/92" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">Vega 1:1 상담에서 베가 레이서2의 커널 컴파일 방법에 대한 문의를 넣었습니다</p> </header> <div class="post-content"> <p>Vega 1:1 상담에서 베가 레이서2의 커널 컴파일 방법에 대한 문의를 넣었습니다</p>
+<p>----------------------------------------------------------------- start</p>
+<p>팬택 오픈소스 사이트에서 A830S에 대한 커널소스를 받아 압축을 풀어봤습니다</p>
+<p>내용물중 README에는 빌드방법이 나와 있는대요</p>
+<p>대충 보니까 툴체인 4.4.0은 깔려 있고 그런대요</p>
+<p>미라크a소스에는 ./build_kernel.sh를 이용하라 되어있는대 이 파일에는</p>
+<p>make CONFIG_DEBUG_SECTION_MISMATCH=y ARCH=arm arm msm8960_ef47s_tp30_defconfig</p>
+<p>make CONFIG_DEBUG_SECTION_MISMATCH=y ARCH=arm</p>
+<p>이렇게만 되어있네요 이게 바로 빌드 명령어 인가요?</p>
+<p>자세하게 좀 알려주세요 어떤 파일을 사용해서 빌드하는지</p>
+<p>아니면 make명령어로 바로 되는지 자세히 알려드리기 바랍니다</p>
+<p>ps. 제가 알고싶은건 어떤 명령어로 커널소스 빌드가 가능한지 입니다</p>
+<p>----------------------------------------------------------------- end</p>
+<p>이와 관련하여 오늘 답변이 도착하였습니다</p>
+<p>문의 주셨던 커널소스 빌드 방법에 대해</p>
+<p>이메일 주소로 별도의 메일(첨부파일 포함) 발송해드렸으니</p>
+<p>확인 부탁드립니다.</p>
+<p>그래서 메일을 확인해 보니 다음과 같은 메일이 도착하였습니다.</p>
+<p>----------------------------------------------------------------- start</p>
+<p>안녕하세요? 고객님.</p>
+<p>온라인상담 운영자 입니다.</p>
+<p>커널소스 빌드방법에 대해 관련부서를 통해 확인한 내용 답변드립니다.</p>
+<p>run.sh 파일 첨부합니다.</p>
+<p>Kernel 폴더에서 실행하시면 됩니다.</p>
+<p>사용하는 툴체인 버전(4.4.X)에 따른 수정만 해주시면 큰 차이는 없습니다.</p>
+<p>4.4.1, 4.4.3에서 확인했습니다.</p>
+<p>파일 첨부해드리니 문의해주신 내용에 대해 도움이 되기를 바랍니다.</p>
+<p>감사합니다.</p>
+<p>----------------------------------------------------------------- end</p>
+<p>첨부파일에 있는 run.sh를 열어보니 config설정부터 모두 작성되어 있었습니다</p>
+<p>Vega에서 보내주신 run.sh파일을 첨부합니다</p>
+<p>다음 커널부터는 이렇게 sh파일으로 작성해 주셔서 동봉해 주시면 사용자가 더욱 편리할것 같습니다</p>
+<p><a href="/attachment/cfile22.uf@187D2C4D510605563C269C.sh"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> run.sh</a></p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

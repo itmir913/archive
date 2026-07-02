@@ -1,0 +1,61 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="AMD 컴퓨터에서 Android Emulator를 돌리려고 했다."><title>Android Emulator Hypervisor Driver for AMD Processors installation failed. — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">Android Emulator Hypervisor Driver for AMD Processors installation failed.</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2020-10-16T17:42:07.000Z"> 2020년 10월 17일 </time> <span class="post-category">Programming</span> <a href="https://itmir.tistory.com/667" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">AMD 컴퓨터에서 Android Emulator를 돌리려고 했다.</p> </header> <div class="post-content"> <h2 id="서론">서론</h2>
+<p>AMD 컴퓨터에서 Android Emulator를 돌리려고 했다.</p>
+<p>그런데 Android Emulator Hypervisor Driver for AMD Processors를 설치하려고 하면 다음과 같은 오류 메세지가 발생하였다.</p>
+<p><img  src="/archive/_astro/img.BjN8M270_ZKLPfS.webp" alt="" width="1061" height="668" loading="lazy" decoding="async"></p>
+<p>필자는 이 오류 화면을 캡쳐하는 것을 까먹고 있어서 위 스크린샷은 아래 사이트에서 퍼왔다.</p>
+<p>이미지 출처 : <a href="https://stackoverflow.com/questions/63218262/unable-to-install-android-emulator-hypervisor-driver-for-amd-processor">https://stackoverflow.com/questions/63218262/unable-to-install-android-emulator-hypervisor-driver-for-amd-processor</a></p>
+<h2 id="hyper-v-등을-비활성화-하라는-구글-신의-답변">Hyper-V 등을 비활성화 하라는 구글 신의 답변</h2>
+<p>구글에 쳐보니 Hyper-V 기능을 끄면 된다고 하였다.</p>
+<p>Windows 기능 켜기/끄기에서 다음과 같은 항목을 끄라는 답변을 얻었다.</p>
+<p><img  src="/archive/_astro/img_1.BC86YgNH_2tJAR4.webp" alt="" width="484" height="753" loading="lazy" decoding="async"></p>
+<p>Hyper-V</p>
+<p>Windows 샌드박스</p>
+<p>Windows 하이퍼바이저 플랫폼</p>
+<p>가상 머신 플랫폼</p>
+<p>구글에서 얻은 해결책을 합집합하면 위에서 언급한 네가지 항목을 끈 다음 재부팅하고 다시 시도하라는 결론을 얻는다.</p>
+<p>그러나 필자는 분명 저 네 개를 껏음에도 계속 오류가 발생하였다.</p>
+<p>다음과 같은 오류가 발생하며 자꾸 설치가 되지 않는 것이다.</p>
+<p>[SC] ControlService 실패 1062:</p>
+<p>서비스가 시작되지 않았습니다.</p>
+<p>[SC] DeleteService 성공</p>
+<p>[SC] 4294967201 오류가 발생하여 StartService이(가) 실패했습니다.</p>
+<p>Android Emulator Hypervisor Driver for AMD Processors installation failed. To install Android Emulator Hypervisor Driver for AMD Processors follow the instructions found at: <a href="https://github.com/google/android-emulator-hypervisor-driver-for-amd-processors">https://github.com/google/android-emulator-hypervisor-driver-for-amd-processors</a></p>
+<p>Done</p>
+<p>혹시나 싶어서 VMWare나 투몬 SE같은 가상화를 이용하는 프로그램까지 모두 지워봤지만 역시 해결되지 않았다.</p>
+<h2 id="emulator-checkexe로-hyper-v-확인하기">emulator-check.exe로 hyper-v 확인하기</h2>
+<p>안드로이드 SDK 안에는 emulator-check 라는 툴이 있어서 hyper-v 여부를 확인할 수 있다고 한다.</p>
+<p>(SDK 설치 위치)\emulator 폴더 안의 emulator-check.exe를 통해 hyper-v 여부를 확인해볼 수 있다.</p>
+<p>설치 위치를 변경하지 않았다면 대부분 C:\Users(사용자이름)\AppData\Local\Android\Sdk\emulator 일 것이다.</p>
+<p>cmd로 저 폴더에 이동한 다음, 아래 명령어를 입력한다.</p>
+<p>emulator-check hyper-v</p>
+<p>그랬더니 hyper-v가 설치되어 있다고 나왔다…;;</p>
+<p><img  src="/archive/_astro/img_2.CFN6pCta_ZJ7gMu.webp" alt="" width="826" height="272" loading="lazy" decoding="async"></p>
+<p>분명히 Windows 기능 켜기/끄기에서 체크 박스를 해제했는데도 emulator-check에는 hyper-v가 활성화되어 있다고 나온 것이다.</p>
+<h2 id="해결책">해결책</h2>
+<p>윈도우를 포멧하고 다시 깔아야 하나 싶던 도중, 해결책은 생각치 못한 곳에서 나왔다.</p>
+<p><a href="https://support.bluestacks.com/hc/ko/articles/115004254383-Hyper-V-%EA%B8%B0%EB%8A%A5%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%98%EC%A7%80-%EC%95%8A%EC%9C%BC%EB%A0%A4%EB%A9%B4-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%84%A4%EC%A0%95%ED%95%B4%EC%95%BC-%ED%95%A9%EB%8B%88%EA%B9%8C-">https://support.bluestacks.com/hc/ko/articles/115004254383-Hyper-V-기능을-사용하지-않으려면-어떻게-설정해야-합니까-</a></p>
+<p><img  src="/archive/_astro/img_3.Dxapxql9_Zouu0d.webp" alt="" width="1030" height="148" loading="lazy" decoding="async"></p>
+<p>이 페이지의 마지막 문단에는 위 스크린샷과 같은 문장이 적혀 있었다.</p>
+<p>필자는 “<a href="http://cdn3.bluestacks.com/nilanshu/hyper_v.reg">이 레지스트리 파일</a>”을 다운로드 한 다음, 관리자 권한으로 실행한 뒤 재부팅하였다.</p>
+<p>그러니 emulator-check에서도 Hyper-V is not installed라고 나왔으며, 정상적으로 sdk가 설치되었다.</p>
+<p><img  src="/archive/_astro/img_4.BOwNg6IZ_ZEhR5a.webp" alt="" width="917" height="264" loading="lazy" decoding="async"></p>
+<p>필자와 같은 오류 때문에 골머리를 썩을 분들을 위해 기록을 남긴다.</p>
+<p>저 페이지가 없어질 경우를 대비하여 파일을 첨부하겠다.</p>
+<p>[hyper_v.zip</p>
+<p>0.00MB](./file/hyper_v.zip)</p>
+<p>추후 티스토리나 카카오에서 악성코드라고 오인하여 파일이 내려갈 가능성을 대비하기 위해 암호를 1234로 걸었다.</p>
+<p>파일이 이상할까 걱정되는 분은 아래 더보기를 누른 다음 텍스트를 메모장에 붙여넣은 다음, hyper_v.reg로 저장하면 된다.</p>
+<p>Windows Registry Editor Version 5.00</p>
+<p>[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard]</p>
+<p>“RequireMicrosoftSignedBootChain”=dword:00000000</p>
+<p>[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios]</p>
+<p>[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity]</p>
+<p>“WasEnabledBy”=dword:00000000</p>
+<p>“Enabled”=dword:00000000</p>
+<p>이렇게 오류 해결 기록을 마친다.</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

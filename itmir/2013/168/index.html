@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="이번 포스팅에서는 안드로이드 젤리빈에서 추가된 Google Now(구글 나우)에 관해 살펴보며, ICS(아샌, 아이스크림 샌드위치)에서 구글 나우를 사용하는 방법에 대해 알아보겠습니다"><title>ICS(아샌)에서 Google Now(구글 나우)를 사용해 보자 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">ICS(아샌)에서 Google Now(구글 나우)를 사용해 보자</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-03-01T12:23:51.000Z"> 2013년 3월 1일 </time> <span class="post-category">Application</span> <a href="https://itmir.tistory.com/168" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">이번 포스팅에서는 안드로이드 젤리빈에서 추가된 Google Now(구글 나우)에 관해 살펴보며, ICS(아샌, 아이스크림 샌드위치)에서 구글 나우를 사용하는 방법에 대해 알아보겠습니다</p> </header> <div class="post-content"> <p>이번 포스팅에서는 안드로이드 젤리빈에서 추가된 Google Now(구글 나우)에 관해 살펴보며, ICS(아샌, 아이스크림 샌드위치)에서 구글 나우를 사용하는 방법에 대해 알아보겠습니다</p>
+<p>구글 나우를 한마디로 정리해 본다면</p>
+<p>“검색하지 않아도 정보를 보여주는 비서” 라고 할 수 있지 않을까요?</p>
+<p>이런 구글 나우를 ICS에서는 사용할 수 없다는 점이 큰 단점이라 할 수 있습니다</p>
+<p>그러므로 시중에 유통되는(?) 대표적인 2가지 방법을 소개하려 합니다</p>
+<p>먼저 준비물이 필요합니다</p>
+<p>ICS가 올려진 루팅된 안드로이드 기기</p>
+<p>CWM등의 커스텀 리커버리 &#x26; 루트 익스플로러등 시스탬에 접근할 수 있는 루트 탐색기</p>
+<p>기본 루트 상식</p>
+<p>준비를 완료하셨다면 잘 따라오시길 바랍니다 ㅎ</p>
+<p>먼저 블로거에서 많이 유통된(?) 방법입니다</p>
+<p>젤리빈에서 추출한 파일을 설치하는 방법인대요</p>
+<p>박스를 따라하시면 됩니다</p>
+<blockquote>
+<ol>
+<li>
+<p>루트 익스플로러로 /system폴더에 접근하여 r/w모드로 변경</p>
+</li>
+<li>
+<p>Build.prop를 텍스트 에디터(Text Editor)으로 열기</p>
+</li>
+<li>
+<p>ro.build.version.sdk를 찾아 값을 16으로 변경후 저장</p>
+</li>
+<li>
+<p>/system/app으로 들어가 GoogleQuickSerachBox.apk어플의 이름을 GoogleQuickSerachBox1.apk로 변경</p>
+</li>
+</ol>
+<p>즉, GoogleQuickSerachBox.apk을 백업하란 소리입니다</p>
+<ol start="5">
+<li>
+<p>재부팅 한뒤 첨부 파일을 다운받아 설치</p>
+</li>
+<li>
+<p>언어를 영어로 변경후 구글 나우 활성화</p>
+</li>
+<li>
+<p>활성화가 확인되면 언어를 원상복구 한뒤 Build.prop를 열어 ro.build.version.sdk의 값을 15로 변경</p>
+</li>
+</ol>
+<p>원본 XDA 게시글 : <a href="http://forum.xda-developers.com/showthread.php?t=1749045">http://forum.xda-developers.com/showthread.php?t=1749045</a></p>
+</blockquote>
+<p><a href="/attachment/cfile10.uf@131219455130956F13A440.apk"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> Velvet.apk</a></p>
+<p>이것이 첫번째 방법입니다</p>
+<p>이 방법은 음성 인식 기능이 지원되지 않는다 하네요 원본 게시글을 보시면 <strong>VOICE SEARCH IS NOT WORKING</strong>이 있습니다</p>
+<p>그럼 두번째 방법을 설명드리겠습니다</p>
+<p>위 방법과 마찬가지로 ICS를 탑제한 루팅된 기기가 필요하며 deodex롬만 가능하다 합니다</p>
+<p>역시 CWM등의 커스텀 리커버리는 있어야지요</p>
+<p>그럼 아래 파일을 받아주세요</p>
+<p>-On/Offline 버전</p>
+<p><a href="/attachment/cfile21.uf@1155D23351309BCD1E4F27.zip"><img src="http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif" alt=""> M7_Offline.zip</a></p>
+<p><a href="/attachment/cfile21.uf@1343C33351309BB0351151.z01"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> M7_Offline.z01</a></p>
+<p><a href="/attachment/cfile26.uf@265E1D3351309BBA155C3C.z02"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> M7_Offline.z02</a></p>
+<p><a href="/attachment/cfile22.uf@1860163351309BC5122B76.z03"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> M7_Offline.z03</a></p>
+<p>-Only Online 버전</p>
+<p><a href="/attachment/cfile3.uf@0370003351309BE301D7C7.zip"><img src="http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif" alt=""> M7_Online.zip</a></p>
+<p><a href="/attachment/cfile30.uf@194ACE3351309BDA2E75DB.z01"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> M7_Online.z01</a></p>
+<p>zip분활압축하여 올려두었습니다</p>
+<p>원본 링크는 <a href="http://www.mediafire.com/download.php?hsos53699wq2ttm">Offline링크</a> / <a href="http://www.mediafire.com/download.php?g55mv3df79s6rez">On</a><a href="http://www.mediafire.com/download.php?g55mv3df79s6rez">line링크</a> 입니다</p>
+<p>이 파일을 받아 압축 풀으신다음 CWM리커버리에서 설치 해주시면 됩니다 ㅎㅎ</p>
+<p>그럼 ICS에서 구글 나우 기능을 재대로 사용하실수 있으실겁니다 ㅋ</p>
+<p>원본 XDA 게시글 : <a href="http://forum.xda-developers.com/showthread.php?t=1747224">http://forum.xda-developers.com/showthread.php?t=1747224</a></p>
+<p>검정 배경의 구글 나우 버전</p>
+<p>색이 반전된, 검은 테마의 구글 나우도 있습니다</p>
+<p>설치방법은 위와 같습니다</p>
+<p><a href="/attachment/cfile26.uf@19126E4C51309D7E2F2567.z01"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> inverted_M7_Offline.z01</a></p>
+<p><a href="/attachment/cfile10.uf@171C184C51309D8B2359A9.z02"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> inverted_M7_Offline.z02</a></p>
+<p><a href="/attachment/cfile23.uf@251BC84C51309D97244FC8.z03"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> inverted_M7_Offline.z03</a></p>
+<p><a href="/attachment/cfile3.uf@1118A04C51309DA227FA29.zip"><img src="http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif" alt=""> inverted_M7_Offline.zip</a></p>
+<p><a href="/attachment/cfile25.uf@161A894C51309DAF238602.z01"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> inverted_M7_Online.z01</a></p>
+<p><a href="/attachment/cfile29.uf@2031734C51309DB605F8FA.zip"><img src="http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif" alt=""> inverted_M7_Online.zip</a></p>
+<p>인증샷!</p>
+<p><img  src="/archive/_astro/Screenshot_2013-03-01-21-31-11.Bf20pdZd_Z1GXENK.webp" alt="" width="480" height="800" loading="lazy" decoding="async"></p>
+<p>상태바를 보시면 젤리빈이 아니란걸 아실수 있으실겁니다</p>
+<p>젤리빈은 터치시 파랗게 빛나죠</p>
+<p><img  src="/archive/_astro/Screenshot_2013-03-01-21-31-21.BhmWv9b3_ZLwCD6.webp" alt="" width="480" height="800" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/Screenshot_2013-03-01-21-31-33.CIeuwOwU_188nnO.webp" alt="" width="400" height="666" loading="lazy" decoding="async"></p>
+<p>ICS기기에 구글 나우가 추가된것을 볼 수 있습니다 ㅋ</p>
+<p>이렇게 해서 ICS기기에 구글 나우 사용방법을 살펴보았습니다 ㅎㅎ</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

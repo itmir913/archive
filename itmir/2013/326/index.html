@@ -1,0 +1,22 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="서비스가 실행중인지 알아야 할때가 있습니다"><title>안드로이드 현재 서비스가 실행중인지 확인하기 — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">안드로이드 현재 서비스가 실행중인지 확인하기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-08-30T09:55:28.000Z"> 2013년 8월 30일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/326" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">서비스가 실행중인지 알아야 할때가 있습니다</p> </header> <div class="post-content"> <p>서비스가 실행중인지 알아야 할때가 있습니다</p>
+<p>예제소스를 찾았고, 약간 수정해서 올려드립니다~</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> boolean</span><span style="color:#6F42C1"> isServiceRunningCheck</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#24292E">	    	ActivityManager manager </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (ActivityManager) </span><span style="color:#005CC5">this</span><span style="color:#24292E">.</span><span style="color:#6F42C1">getSystemService</span><span style="color:#24292E">(Activity.ACTIVITY_SERVICE);</span></span>
+<span class="line"><span style="color:#D73A49">	    	for</span><span style="color:#24292E"> (RunningServiceInfo service </span><span style="color:#D73A49">:</span><span style="color:#24292E"> manager.</span><span style="color:#6F42C1">getRunningServices</span><span style="color:#24292E">(Integer.MAX_VALUE)) {</span></span>
+<span class="line"><span style="color:#D73A49">	    	    if</span><span style="color:#24292E"> (</span><span style="color:#032F62">"ServiceName"</span><span style="color:#24292E">.</span><span style="color:#6F42C1">equals</span><span style="color:#24292E">(service.service.</span><span style="color:#6F42C1">getClassName</span><span style="color:#24292E">())) {</span></span>
+<span class="line"><span style="color:#D73A49">	    	        return</span><span style="color:#005CC5"> true</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	    	    }</span></span>
+<span class="line"><span style="color:#24292E">	    	}</span></span>
+<span class="line"><span style="color:#D73A49">	    	return</span><span style="color:#005CC5"> false</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	}</span></span>
+<span class="line"></span></code></pre>
+<p>ServiceName에 검사하기 윈하는 서비스 이름을 적어주면 됩니다</p>
+<p>package이름+서비스 이름</p>
+<p>예를 들면 com.example.service.myservice</p>
+<p>출처 : <a href="http://darkcher.tistory.com/184"></a><a href="http://darkcher.tistory.com/184">http://darkcher.tistory.com/184</a>, 본인 수정</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

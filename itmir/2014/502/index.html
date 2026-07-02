@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="저번에 저는 베가 아이언2의 루팅용 boot.img만들기를 시도하였습니다"><title>최신 스마트폰의 boot.img 분해/조립시 dt.img가 필요하다?! — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">최신 스마트폰의 boot.img 분해/조립시 dt.img가 필요하다?!</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-06-06T13:51:04.000Z"> 2014년 6월 6일 </time> <span class="post-category">SmartPhone/Android</span> <a href="https://itmir.tistory.com/502" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">저번에 저는 베가 아이언2의 루팅용 boot.img만들기를 시도하였습니다</p> </header> <div class="post-content"> <p>저번에 저는 베가 아이언2의 루팅용 boot.img만들기를 시도하였습니다</p>
+<p>참고글 : <a href="http://itmir.tistory.com/207">[Ubuntu] - [Dev] 루팅용 Boot.img 만들기 강좌</a></p>
+<p>루팅용 boot.img만들기는 베가레이서2 젤리빈때 만들고 처음이므로 많이 지났네요 ㅎㅎ;</p>
+<p>그런대 모든 과정을 정상적으로 따랐지만 fastboot boot에서 failed (remote : dtb not found)라는 메세지와 함께 부팅이 되지 않았습니다</p>
+<p>원본 boot.img는 잘 됬는대 말이죠.. &#x3C;— 이를통해 fastboot가 막힌건 아니라는 사실을 알수 있습니다</p>
+<p>구글링을 해보면 dtb에 대해 아래와 같은 정보를 알아낼수 있었습니다</p>
+<p><a href="http://forum.xda-developers.com/showthread.php?t=2428117">http://forum.xda-developers.com/showthread.php?t=2428117</a> 등등</p>
+<p>그리고 mkbootimg 바이너리를 업데이트해서 ‘—dt’ 옵션을 만드신 한분의 github도 발견했습니다</p>
+<p><a href="https://github.com/osm0sis/mkbootimg">https://github.com/osm0sis/mkbootimg</a></p>
+<p>아래는 .c파일에서 볼수 있는 mkbootimg의 사용방법 설명 입니다</p>
+<p>usage: mkbootimg”</p>
+<p>       —kernel <filename>”</filename></p>
+<p>       —ramdisk <filename>”</filename></p>
+<p>       [ —second &#x3C;2ndbootloader-filename> ]”</p>
+<p>       [ —cmdline <kernel-commandline> ]”</kernel-commandline></p>
+<p>       [ —board <boardname> ]”</boardname></p>
+<p>       [ —base </p><address> ]”<p></p>
+<p>       [ —pagesize <pagesize> ]”</pagesize></p>
+<p>       [ —kernel_offset <base offset=""> ]”</p>
+<p>       [ —ramdisk_offset <base offset=""> ]”</p>
+<p>       [ —second_offset <base offset=""> ]”</p>
+<p>       [ —tags_offset <base offset=""> ]”</p>
+<p>       [ —dt <filename> ]”</filename></p>
+<p>       -o|—output <filename>”</filename></p>
+<p><a href="https://github.com/osm0sis/mkbootimg/blob/master/mkbootimg.c">https://github.com/osm0sis/mkbootimg/blob/master/mkbootimg.c</a></p>
+<p>처음보는 옵션들이 많네요..</p>
+<p><a href="https://github.com/osm0sis">https://github.com/osm0sis</a> 의 파일을 make하면 unpackbootimg도 나오는대 이때 offset도 알려주더라고요</p>
+<p>직접 해본 결과입니다</p>
+<p>Page size: 2048 (0x00000800)</p>
+<p>Kernel size: 6373800 (0x006141a8)</p>
+<p>Ramdisk size: 969088 (0x000ec980)</p>
+<p>Second size: 0 (0x00000000)</p>
+<p>Board name:</p>
+<p>Command line: console=NULL,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 vmalloc=260M loglevel=0</p>
+<p>Writing boot.img-kernel … complete.</p>
+<p>Writing boot.img-ramdisk.gz … complete.</p>
+<p>whdghks913@Ubuntu:~/바탕화면/iron2root2222$ ./unpackbootimg -i boot.img</p>
+<p>BOARD_KERNEL_CMDLINE console=NULL,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 vmalloc=260M loglevel=0</p>
+<p><strong>BOARD_KERNEL_BASE 00000000</strong></p>
+<p>BOARD_PAGE_SIZE 2048</p>
+<p>BOARD_KERNEL_OFFSET 00008000</p>
+<p>BOARD_RAMDISK_OFFSET 01000000</p>
+<p>BOARD_TAGS_OFFSET 00000100</p>
+<p>BOARD_DT_SIZE 223232</p>
+<p>특이하게 베가 아이언2의 커널 base값이 ‘00000000’ 이더라고요;;;</p>
+<p>그럼 dt.img는 어떻게 만드냐??</p>
+<p>일단 이 img는 파티션은 아닙니다 부탁드려서 확인해보니 파티션은 아니더라고요</p>
+<p>그리고 구글링 결과 이 dt.img파일은 커널소스에서 만들어 내는듯 합니다</p>
+<p>만들어 내는 툴의 이름은 dtbTool입니다</p>
+<p><a href="http://forum.xda-developers.com/showthread.php?t=2469510">http://forum.xda-developers.com/showthread.php?t=2469510</a></p>
+<p>./dtbTool -o ~/dt_files/dt.img -s 2048 -p ./scripts/dtc/ ./arch/arm/boot/</p>
+<p>이렇게 만들어진 dt.img는 mkbootimg와 함께 아래 처럼 쓰입니다</p>
+<p>./mkbootimg —base 0x00000000 —kernel zImage —ramdisk_offset 0x02000000 —tags_offset 0x01E00000 —pagesize 2048 —cmdline “androidboot.hardware=qcom user_debug=31 maxcpus=2 msm_rtb.filter=0x3F ehci-hcd.park=3 msm_rtb.enable=0 lpj=192598 dwc3.maximum_speed=high dwc3_msm.prop_chg_detect=Y” —ramdisk initrd.img <strong>—dt dt.img</strong> -o boot.img</p>
+<p>그렇지만 dt.img가 뭔지는 모르겟습니다…</p>
+<p><a href="http://forum.xda-developers.com/showthread.php?t=2428117">http://forum.xda-developers.com/showthread.php?t=2428117</a></p>
+<p>위 링크에서 받을수 있는 split_bootimg_dtb.pl 내용을 보면</p>
+<p>+-----------------+</p>
+<p>|    boot header     |</p>
+<p>+-----------------+</p>
+<p>|    kernel             |</p>
+<p>+-----------------+</p>
+<p>|    ramdisk           |</p>
+<p>+-----------------+</p>
+<p>|    second stage  |</p>
+<p>+-----------------+</p>
+<p>|    dtb                 |</p>
+<p>+-----------------+</p>
+<p>이렇게 나와 있습니다</p>
+<p>기존까지 쓰던 split_bootimg.pl 파일은 dtb가 없는 second stage까지만 있었습니다</p>
+<p>커널소스로 부터 얻을수 있고(dtbTool) fastboot boot가 안되게 하고, mkbootimg 바이너리의 수정이 필요하며, 추가된 dtb는 무엇일까요?</p>
+<p>베가 아이언2의 루팅 펌웨어는 커널소스가 나온후 dt.img를 만들고 나서 다시 시도해 봐야 겠습니다</p>
+<p>[dtbTool</p>
+<p>다운로드](./file/dtbTool)</p>
+<p>[mkbootimg</p>
+<p>다운로드](./file/mkbootimg)</p>
+<p>[mkbootimg-master.zip</p>
+<p>다운로드](./file/mkbootimg-master.zip)</p>
+<p>[split_bootimg_dtb.pl</p>
+<p>다운로드](./file/split_bootimg_dtb.pl)</p>
+<p>[unpackbootimg</p>
+<p>다운로드](./file/unpackbootimg)</p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/dtbTool">dtbTool</a> <code>26 KB</code></li>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/502-mkbootimg">mkbootimg</a> <code>883 KB</code></li>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/mkbootimg-master.zip">mkbootimg-master.zip</a> <code>47 KB</code></li>
+<li><a href="./files/split_bootimg_dtb.pl">split_bootimg_dtb.pl</a></li>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/502-unpackbootimg">unpackbootimg</a> <code>868 KB</code></li>
+</ul></address> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>

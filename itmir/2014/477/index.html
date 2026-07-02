@@ -1,0 +1,342 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="이강좌가 고등학교에 등교하기전 2월에 쓰는 마지막 강좌가 될것 같습니다."><title>#29 커스텀 리스트뷰 (Custom ListView) - View Holder — luminousky archive</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/archive/_astro/index.DqShn5ji.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">#29 커스텀 리스트뷰 (Custom ListView) - View Holder</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-02-18T02:56:43.000Z"> 2014년 2월 18일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/477" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">이강좌가 고등학교에 등교하기전 2월에 쓰는 마지막 강좌가 될것 같습니다.</p> </header> <div class="post-content"> <p>안녕하세요.</p>
+<p>이강좌가 고등학교에 등교하기전 2월에 쓰는 마지막 강좌가 될것 같습니다.</p>
+<p>벌써 29번째 강좌입니다.</p>
+<p>이번에는 그동안 배우지 못했던 리스트뷰에 대해 알아보겠습니다.</p>
+<p>이 강좌에서 배우는 리스트뷰는 커스텀한 리스트뷰이며, 단지 Text만 표시하려면 이 복잡한 방법을 사용하지 않아도 됩니다.</p>
+<h2 id="29-커스텀-리스트뷰-custom-listview---view-holder">29. 커스텀 리스트뷰 (Custom ListView) - View Holder</h2>
+<h3 id="29-1-리스트뷰listview의-중요성">29-1 리스트뷰(ListView)의 중요성</h3>
+<p>강좌를 시작하기 전에 이번에 배우는 리스트뷰의 중요성에 대해 알아보겠습니다.</p>
+<p>리스트뷰는 매우매우 중요합니다..!</p>
+<p>루트 익스플로러 같은 파일 탐색기 앱에, 메세지 목록을 표시해야 하는 SMS앱, 설치된 어플 목록을 표시할때 등</p>
+<p>대부분의 앱에서 한번씩 사용되는 정말 유용하고, 중요한 뷰입니다.</p>
+<p>그런대 왜 28번의 강좌동안 이 리스트뷰에 대해 배우지 않았고, 언급이 없었냐…</p>
+<p>일단 리스트뷰가 매우 중요하지만 이걸 한번에 이해하시는 분은 없을겁니다.</p>
+<p>그리고 먼저 제가 이 리스트뷰를 이해하지 못하고 있었기 때문이라고도 변명할수 있겠습니다…;</p>
+<p>아무튼 이번 강좌는 눈으로 대충 본다 라고 생각하시는것이 정신건강에 매우 도움이 될것입니다.</p>
+<h3 id="29-2-리스트뷰란">29-2 리스트뷰란?</h3>
+<p>29-1에서는 리스트뷰가 이해하기 조금 어렵다고 설명하였습니다.</p>
+<p>왜 리스트뷰를 이해하기 어려울까요?</p>
+<p>그건 리스트뷰는 일반 위젯(TextView등)이 아니라 선택 위젯이기 때문이며,</p>
+<p>선택 위젯은 직접 데이터를 설정할수가 없습니다.</p>
+<p>Adapter(어댑터)라는 패턴을 사용해야 하고, 이 어댑터에서 만들어주는 뷰(getView())를 이용해 아이템을 표시합니다.</p>
+<p>아래는 일반 위젯의 대표적인 TextView와 선택위젯의 ListView의 데이터 설정 방법을 비교한 그림입니다.</p>
+<p><img  src="/archive/_astro/TextView.BaWUNM2k_1jwA31.webp" alt="" width="648" height="397" loading="lazy" decoding="async"></p>
+<p>(일반 위젯의 데이터 설정방법 - setText()등 데이터를 직접 설정할수 있다.)</p>
+<p>![](./images/ListView Adapter.png)</p>
+<p>(선택 위젯의 데이터 설정방법 - 직접 설정이 불가능 하고 데이터가 담긴 Adapter를 이용한다.)</p>
+<p>이해가 되셨나요?</p>
+<p>ListView를 이해하려면 먼저 이 Adapter를 이해해야만 합니다.</p>
+<p>한마디로 리스트뷰는 어댑터를 사용하여 데이터를 표시하는 View입니다.</p>
+<h3 id="29-3-레이아웃">29-3 레이아웃</h3>
+<p>29-1과 29-2에서 리스트뷰는 어뎁터를 이용하여 아이템을 표시한다 라고 배웠습니다.</p>
+<p>따라서 리스트뷰는 다른 뷰와는 달리 “한 아이템을 표시할 layout이 따로 필요합니다.”</p>
+<p>먼저 메인 레이아웃에는 ListView만 넣어주면 됩니다.</p>
+<p><img  src="/archive/_astro/1.Bs_TQhhN_Z18nflS.webp" alt="" width="424" height="255" loading="lazy" decoding="async"></p>
+<p>코드 보기</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">LinearLayout</span><span style="color:#6F42C1"> xmlns:android</span><span style="color:#24292E">=</span><span style="color:#032F62">"http://schemas.android.com/apk/res/android"</span></span>
+<span class="line"><span style="color:#6F42C1">    xmlns:tools</span><span style="color:#24292E">=</span><span style="color:#032F62">"http://schemas.android.com/tools"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:paddingBottom</span><span style="color:#24292E">=</span><span style="color:#032F62">"@dimen/activity_vertical_margin"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:paddingLeft</span><span style="color:#24292E">=</span><span style="color:#032F62">"@dimen/activity_horizontal_margin"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:paddingRight</span><span style="color:#24292E">=</span><span style="color:#032F62">"@dimen/activity_horizontal_margin"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:paddingTop</span><span style="color:#24292E">=</span><span style="color:#032F62">"@dimen/activity_vertical_margin"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"fill_parent"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"fill_parent"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:orientation</span><span style="color:#24292E">=</span><span style="color:#032F62">"vertical"</span></span>
+<span class="line"><span style="color:#6F42C1">    tools:context</span><span style="color:#24292E">=</span><span style="color:#032F62">".MainActivity"</span><span style="color:#24292E"> ></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">ListView</span></span>
+<span class="line"><span style="color:#6F42C1">        android:id</span><span style="color:#24292E">=</span><span style="color:#032F62">"@+id/mList"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"match_parent"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span><span style="color:#24292E"> /></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">LinearLayout</span><span style="color:#24292E">></span></span>
+<span class="line"></span></code></pre>
+<p>이제 리스트뷰의 한 아이템에 표시될 레이아웃을 정의해야 합니다.</p>
+<p>이 레이아웃 파일의 이름은 listview_item.xml으로 합시다.</p>
+<p>![](./images/item xml.png)</p>
+<p>이렇게 리스트뷰의 한 아이템에는 위 그림처럼 정보가 배열될것입니다.</p>
+<p><img  src="/archive/_astro/2.S-tGf3zi_1VKC4f.webp" alt="" width="429" height="557" loading="lazy" decoding="async"></p>
+<p>코드보기</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;?</span><span style="color:#22863A">xml</span><span style="color:#6F42C1"> version</span><span style="color:#24292E">=</span><span style="color:#032F62">"1.0"</span><span style="color:#6F42C1"> encoding</span><span style="color:#24292E">=</span><span style="color:#032F62">"utf-8"</span><span style="color:#24292E">?></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">LinearLayout</span><span style="color:#6F42C1"> xmlns:android</span><span style="color:#24292E">=</span><span style="color:#032F62">"http://schemas.android.com/apk/res/android"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"match_parent"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"match_parent"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:orientation</span><span style="color:#24292E">=</span><span style="color:#032F62">"horizontal"</span><span style="color:#24292E"> ></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">ImageView</span></span>
+<span class="line"><span style="color:#6F42C1">        android:id</span><span style="color:#24292E">=</span><span style="color:#032F62">"@+id/mImage"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:src</span><span style="color:#24292E">=</span><span style="color:#032F62">"@drawable/ic_launcher"</span></span>
+<span class="line"><span style="color:#24292E">        /></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">LinearLayout</span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_marginLeft</span><span style="color:#24292E">=</span><span style="color:#032F62">"5dp"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:orientation</span><span style="color:#24292E">=</span><span style="color:#032F62">"vertical"</span><span style="color:#24292E"> ></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#22863A">TextView</span></span>
+<span class="line"><span style="color:#6F42C1">            android:id</span><span style="color:#24292E">=</span><span style="color:#032F62">"@+id/mText"</span></span>
+<span class="line"><span style="color:#6F42C1">            android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">            android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">            android:text</span><span style="color:#24292E">=</span><span style="color:#032F62">"Text"</span></span>
+<span class="line"><span style="color:#6F42C1">            android:textAppearance</span><span style="color:#24292E">=</span><span style="color:#032F62">"?android:attr/textAppearanceLarge"</span></span>
+<span class="line"><span style="color:#24292E">            /></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#22863A">TextView</span></span>
+<span class="line"><span style="color:#6F42C1">            android:id</span><span style="color:#24292E">=</span><span style="color:#032F62">"@+id/mDate"</span></span>
+<span class="line"><span style="color:#6F42C1">            android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">            android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">            android:text</span><span style="color:#24292E">=</span><span style="color:#032F62">"Date"</span></span>
+<span class="line"><span style="color:#24292E">            /></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;/</span><span style="color:#22863A">LinearLayout</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">LinearLayout</span><span style="color:#24292E">></span></span>
+<span class="line"></span></code></pre>
+<h3 id="29-4-mainactivity">29-4 MainActivity</h3>
+<p>먼저 처음에 아래를 추가해 주세요.</p>
+<p><img  src="/archive/_astro/3.CQW0gDhk_Z2dT6vB.webp" alt="" width="233" height="31" loading="lazy" decoding="async"></p>
+<p>코드 보기</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">private</span><span style="color:#24292E"> ListView mListView </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> null</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">private</span><span style="color:#24292E"> ListViewAdapter mAdapter </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> null</span><span style="color:#24292E">;</span></span>
+<span class="line"></span></code></pre>
+<p>그럼 ListViewAdapter에 빨간 줄이 생길겁니다.</p>
+<p>당황하지 마시고 아직 Adapter class를 작성하지 않아서 생긴 문제이므로 넘어가 주세요.</p>
+<p>그다음에 ViewHolder라는 class를 작성해 봅시다.</p>
+<p>onCreate()아래에 추가해 주세요.</p>
+<p><img  src="/archive/_astro/4.B94y3Ps0_1BqsGu.webp" alt="" width="163" height="103" loading="lazy" decoding="async"></p>
+<p>코드 보기</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">private</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> ViewHolder</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#24292E"> ImageView mIcon;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#24292E"> TextView mText;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#24292E"> TextView mDate;</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p>설명은 아래에서 이어서 하겠습니다.</p>
+<p>이제는 어댑터를 작성해 봅시다.</p>
+<p>어댑터를 통해 리스트뷰의 한 아이템에 표시될 정보를 설정할수 있습니다.</p>
+<p><img  src="/archive/_astro/5.Bz_juIKJ_1snBK9.webp" alt="" width="416" height="437" loading="lazy" decoding="async"></p>
+<p>코드 보기</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">private</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> ListViewAdapter</span><span style="color:#D73A49"> extends</span><span style="color:#6F42C1"> BaseAdapter</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#24292E"> Context mContext </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> null</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#24292E"> ArrayList&#x3C;</span><span style="color:#D73A49">ListData</span><span style="color:#24292E">> mListData </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#24292E"> ArrayList&#x3C;</span><span style="color:#D73A49">ListData</span><span style="color:#24292E">>();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#6F42C1"> ListViewAdapter</span><span style="color:#24292E">(Context </span><span style="color:#E36209">mContext</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#005CC5">        super</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#005CC5">        this</span><span style="color:#24292E">.mContext </span><span style="color:#D73A49">=</span><span style="color:#24292E"> mContext;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> int</span><span style="color:#6F42C1"> getCount</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> mListData.</span><span style="color:#6F42C1">size</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#24292E"> Object </span><span style="color:#6F42C1">getItem</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> position</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> mListData.</span><span style="color:#6F42C1">get</span><span style="color:#24292E">(position);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> long</span><span style="color:#6F42C1"> getItemId</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> position</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> position;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#24292E"> View </span><span style="color:#6F42C1">getView</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> position</span><span style="color:#24292E">, View </span><span style="color:#E36209">convertView</span><span style="color:#24292E">, ViewGroup </span><span style="color:#E36209">parent</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#005CC5"> null</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p>위 코드가 어뎁터 class의 기본 뼈대입니다.</p>
+<p>이제 이 뼈대를 가지고 살을 체워나가야 합니다.</p>
+<p>위 소스도 아래 부분에서 빨간줄이 있을겁니다.</p>
+<p>private ArrayList&#x3C;<strong>ListData</strong>> mListData = new ArrayList&#x3C;<strong>ListData</strong>>();</p>
+<p>ListData에 빨간 줄이 그어 있을탠데요.</p>
+<p>이것도 class를 만들지 않아서 생긴 오류입니다.</p>
+<p>먼저 Class를 하나 만들어 봅시다.</p>
+<p><img  src="/archive/_astro/ListData.java.Dh9DT9-0_19HY3B.webp" alt="" width="256" height="128" loading="lazy" decoding="async"></p>
+<p>이렇게 ListData.java라는 파일을 만들어주세요.</p>
+<p>이 파일의 내용은 아래와 같습니다.</p>
+<p><img  src="/archive/_astro/6.BTHXWxU0_egEEJ.webp" alt="" width="555" height="439" loading="lazy" decoding="async"></p>
+<p>코드 보기</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> lee.whdghks913.customlistview;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.text.Collator;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.util.Comparator;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> android.graphics.drawable.Drawable;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> ListData</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * 리스트 정보를 담고 있을 객체 생성</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#6A737D">    // 아이콘</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#24292E"> Drawable mIcon;</span></span>
+<span class="line"><span style="color:#24292E">    </span></span>
+<span class="line"><span style="color:#6A737D">    // 제목</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#24292E"> String mTitle;</span></span>
+<span class="line"><span style="color:#24292E">    </span></span>
+<span class="line"><span style="color:#6A737D">    // 날짜</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#24292E"> String mDate;</span></span>
+<span class="line"><span style="color:#24292E">    </span></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * 알파벳 이름으로 정렬</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> final</span><span style="color:#24292E"> Comparator&#x3C;</span><span style="color:#D73A49">ListData</span><span style="color:#24292E">> ALPHA_COMPARATOR </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#24292E"> Comparator&#x3C;</span><span style="color:#D73A49">ListData</span><span style="color:#24292E">>() {</span></span>
+<span class="line"><span style="color:#D73A49">        private</span><span style="color:#D73A49"> final</span><span style="color:#24292E"> Collator sCollator </span><span style="color:#D73A49">=</span><span style="color:#24292E"> Collator.</span><span style="color:#6F42C1">getInstance</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">        </span></span>
+<span class="line"><span style="color:#24292E">        @</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">        public</span><span style="color:#D73A49"> int</span><span style="color:#6F42C1"> compare</span><span style="color:#24292E">(ListData </span><span style="color:#E36209">mListDate_1</span><span style="color:#24292E">, ListData </span><span style="color:#E36209">mListDate_2</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">            return</span><span style="color:#24292E"> sCollator.</span><span style="color:#6F42C1">compare</span><span style="color:#24292E">(mListDate_1.mTitle, mListDate_2.mTitle);</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    };</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p>한 아이템의 정보를 담고 있을 java파일을 만들었습니다.</p>
+<p>아래에 있는 ALPHA_COMPARATOR는 리스트뷰의 아이템을 쇼트(알파벳 순서대로 정렬)하기 위한 메소드이며, AppInfo예제를 참조했습니다.</p>
+<p>다시 MainActivity.java로 돌아와 보면 빨간줄이 사라져 있을겁니다.</p>
+<p>이제 getView()를 손봐줍시다.</p>
+<p><img  src="/archive/_astro/7.9sEvG_X1_ZcTrsP.webp" alt="" width="607" height="485" loading="lazy" decoding="async"></p>
+<p>코드 보기</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">@</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#24292E"> View </span><span style="color:#6F42C1">getView</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> position, View convertView, ViewGroup parent) {</span></span>
+<span class="line"><span style="color:#24292E">    ViewHolder holder;</span></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E"> (convertView </span><span style="color:#D73A49">==</span><span style="color:#005CC5"> null</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">        holder </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> ViewHolder</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">        LayoutInflater inflater </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (LayoutInflater) mContext.</span><span style="color:#6F42C1">getSystemService</span><span style="color:#24292E">(Context.LAYOUT_INFLATER_SERVICE);</span></span>
+<span class="line"><span style="color:#24292E">        convertView </span><span style="color:#D73A49">=</span><span style="color:#24292E"> inflater.</span><span style="color:#6F42C1">inflate</span><span style="color:#24292E">(R.layout.listview_item, </span><span style="color:#005CC5">null</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">        holder.mIcon </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (ImageView) convertView.</span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.mImage);</span></span>
+<span class="line"><span style="color:#24292E">        holder.mText </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (TextView) convertView.</span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.mText);</span></span>
+<span class="line"><span style="color:#24292E">        holder.mDate </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (TextView) convertView.</span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.mDate);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">        convertView.</span><span style="color:#6F42C1">setTag</span><span style="color:#24292E">(holder);</span></span>
+<span class="line"><span style="color:#24292E">    }</span><span style="color:#D73A49">else</span><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#24292E">        holder </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (ViewHolder) convertView.</span><span style="color:#6F42C1">getTag</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    ListData mData </span><span style="color:#D73A49">=</span><span style="color:#24292E"> mListData.</span><span style="color:#6F42C1">get</span><span style="color:#24292E">(position);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E"> (mData.mIcon </span><span style="color:#D73A49">!=</span><span style="color:#005CC5"> null</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">        holder.mIcon.</span><span style="color:#6F42C1">setVisibility</span><span style="color:#24292E">(View.VISIBLE);</span></span>
+<span class="line"><span style="color:#24292E">        holder.mIcon.</span><span style="color:#6F42C1">setImageDrawable</span><span style="color:#24292E">(mData.mIcon);</span></span>
+<span class="line"><span style="color:#24292E">    }</span><span style="color:#D73A49">else</span><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#24292E">        holder.mIcon.</span><span style="color:#6F42C1">setVisibility</span><span style="color:#24292E">(View.GONE);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    holder.mText.</span><span style="color:#6F42C1">setText</span><span style="color:#24292E">(mData.mTitle);</span></span>
+<span class="line"><span style="color:#24292E">    holder.mDate.</span><span style="color:#6F42C1">setText</span><span style="color:#24292E">(mData.mDate);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#24292E"> convertView;</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p>4번째 줄의 if문을 봐주세요.</p>
+<p>getView는 한 아이템에 들어갈 레이아웃을 지정해 주는 메소드라고 배웠습니다.</p>
+<p>넘어오는 값은 int position과 View convertView등이 있는데요.</p>
+<p>position은 리스트뷰의 순서입니다. (아이템의 순서)</p>
+<p>convertView는 한 아이템의 화면 인데요.</p>
+<p>convertView가 어떻게 null이 될수 있을까요?</p>
+<p>getView는 각각의 아이템 화면을 반환합니다.</p>
+<p>만약 리스트가 100개 있다면 100번 반환하는데요.</p>
+<p>사용자가 스크롤을 하면 또 getView가 사용되고, 이때 잠시 버벅일수 있습니다.</p>
+<p>그래서 convertView가 null이면 새로 레이아웃을 생성하고, <strong>null이 아니면 이미 만들어진 View를 재사용 하는거죠.</strong></p>
+<p>아래 부분은 지금까지 제 강좌를 모두 마스터 하셨다면 이해하는대 문제가 없을거라 생각되어 생략합니다.</p>
+<p>마지막으로 Adapter에게 필수는 아니지만 사용하면서 필요한 메소드를 추가해 봅시다.</p>
+<p><img  src="/archive/_astro/8.DcDg1qRd_10qauj.webp" alt="" width="360" height="348" loading="lazy" decoding="async"></p>
+<p>코드 보기</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> addItem</span><span style="color:#24292E">(Drawable icon, String mTitle, String mDate){</span></span>
+<span class="line"><span style="color:#24292E">    ListData addInfo </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> null</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    addInfo </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> ListData</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">    addInfo.mIcon </span><span style="color:#D73A49">=</span><span style="color:#24292E"> icon;</span></span>
+<span class="line"><span style="color:#24292E">    addInfo.mTitle </span><span style="color:#D73A49">=</span><span style="color:#24292E"> mTitle;</span></span>
+<span class="line"><span style="color:#24292E">    addInfo.mDate </span><span style="color:#D73A49">=</span><span style="color:#24292E"> mDate;</span></span>
+<span class="line"><span style="color:#24292E">            </span></span>
+<span class="line"><span style="color:#24292E">    mListData.</span><span style="color:#6F42C1">add</span><span style="color:#24292E">(addInfo);</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> remove</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> position){</span></span>
+<span class="line"><span style="color:#24292E">    mListData.</span><span style="color:#6F42C1">remove</span><span style="color:#24292E">(position);</span></span>
+<span class="line"><span style="color:#6F42C1">    dataChange</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> sort</span><span style="color:#24292E">(){</span></span>
+<span class="line"><span style="color:#24292E">    Collections.</span><span style="color:#6F42C1">sort</span><span style="color:#24292E">(mListData, ListData.ALPHA_COMPARATOR);</span></span>
+<span class="line"><span style="color:#6F42C1">    dataChange</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> dataChange</span><span style="color:#24292E">(){</span></span>
+<span class="line"><span style="color:#24292E">    mAdapter.</span><span style="color:#6F42C1">notifyDataSetChanged</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<p>각각 사용처는 아래와 같습니다.</p>
+<p>addItem() : 아이템을 추가할때 사용합니다.</p>
+<p>remove() : 아이템을 제거합니다.</p>
+<p>sort() : 아이템을 바르게 배열합니다.</p>
+<p>dataChange() : 데이터를 변경한후 호출해야 합니다.</p>
+<p>이 4개의 메소드는 다른 어플을 만들때 개발자가 편의상 만드는 기능들 입니다.</p>
+<p>마지막으로 onCreate()메소드 안 코드를 작성합니다.</p>
+<p><img  src="/archive/_astro/9.FLpbcgsb_22gtch.webp" alt="" width="478" height="481" loading="lazy" decoding="async"></p>
+<p>코드 보기</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">mListView </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (ListView) </span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.mList);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">mAdapter </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> ListViewAdapter</span><span style="color:#24292E">(</span><span style="color:#005CC5">this</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">mListView.</span><span style="color:#6F42C1">setAdapter</span><span style="color:#24292E">(mAdapter);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">mAdapter.</span><span style="color:#6F42C1">addItem</span><span style="color:#24292E">(</span><span style="color:#6F42C1">getResources</span><span style="color:#24292E">().</span><span style="color:#6F42C1">getDrawable</span><span style="color:#24292E">(R.drawable.ok),</span></span>
+<span class="line"><span style="color:#032F62">        "확인이 완료되었습니다"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">        "2014-02-18"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">mAdapter.</span><span style="color:#6F42C1">addItem</span><span style="color:#24292E">(</span><span style="color:#6F42C1">getResources</span><span style="color:#24292E">().</span><span style="color:#6F42C1">getDrawable</span><span style="color:#24292E">(R.drawable.idonknow),</span></span>
+<span class="line"><span style="color:#032F62">        "난 몰라요 ㅠㅠ"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">        "2014-02-01"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">mAdapter.</span><span style="color:#6F42C1">addItem</span><span style="color:#24292E">(</span><span style="color:#6F42C1">getResources</span><span style="color:#24292E">().</span><span style="color:#6F42C1">getDrawable</span><span style="color:#24292E">(R.drawable.supersu),</span></span>
+<span class="line"><span style="color:#032F62">        "슈퍼유저~~"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">        "2014-02-04"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">mAdapter.</span><span style="color:#6F42C1">addItem</span><span style="color:#24292E">(</span><span style="color:#005CC5">null</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">        "이미지가 null이면..."</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">        "2014-02-15"</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">mListView.</span><span style="color:#6F42C1">setOnItemClickListener</span><span style="color:#24292E">(</span><span style="color:#D73A49">new</span><span style="color:#6F42C1"> OnItemClickListener</span><span style="color:#24292E">() {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> onItemClick</span><span style="color:#24292E">(AdapterView&#x3C;</span><span style="color:#D73A49">?</span><span style="color:#24292E">> </span><span style="color:#E36209">parent</span><span style="color:#24292E">, View </span><span style="color:#E36209">v</span><span style="color:#24292E">, </span><span style="color:#D73A49">int</span><span style="color:#E36209"> position</span><span style="color:#24292E">, </span><span style="color:#D73A49">long</span><span style="color:#E36209"> id</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#24292E">        ListData mData </span><span style="color:#D73A49">=</span><span style="color:#24292E"> mAdapter.mListData.</span><span style="color:#6F42C1">get</span><span style="color:#24292E">(position);</span></span>
+<span class="line"><span style="color:#24292E">        Toast.</span><span style="color:#6F42C1">makeText</span><span style="color:#24292E">(MainActivity.this, mData.mTitle, Toast.LENGTH_SHORT).</span><span style="color:#6F42C1">show</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">});</span></span>
+<span class="line"></span></code></pre>
+<p>아까 Adapter에 추가한 addItem()메소드를 onCreate()안에서 사용하여 아이템을 추가하였습니다.</p>
+<p>또한 리스트뷰를 터치하면 터치한 아이템의 제목이 나타나도록 하였습니다.</p>
+<p>스크린샷을 보겠습니다.</p>
+<p><img  src="/archive/_astro/Screenshot_2014-02-18-11-51-02.BOVVcD-m_2kLG20.webp" alt="" width="400" height="711" loading="lazy" decoding="async">
+    
+<img  src="/archive/_astro/Screenshot_2014-02-18-11-51-09.rtZzcoRv_Z15YJBs.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<p>정상적으로 아이템이 나타나며, 터치할경우 제목이 나타나는것을 확인할 수 있습니다.</p>
+<ul>
+<li>2015-08-30 내용 보충</li>
+</ul>
+<p>여기서 R.drawable.ok 부분은 이미지 파일이며, 직접 이미지를 추가하셔야 합니다.</p>
+<p>이 강좌에서 소개한 리스트뷰의 기능은 극히 일부 입니다.</p>
+<p>아이템을 터치하면 확장되는 리스트뷰.</p>
+<p>스와이프로 아이템 삭제가능한 리스트뷰. - <a href="http://itmir.tistory.com/455">[Development/App] - ListView에서 Swipe To Dismiss(밀어서 삭제) 사용하기</a></p>
+<p>삭제 취소가 가능한 리스트뷰.</p>
+<p>CheckBox가 있어 동시선택이 가능한 리스트뷰.</p>
+<p>등 정말 많이 응용이 가능합니다.</p>
+<p>여러분의 입맛에 맞게 다양하게 사용하셨으면 합니다~</p>
+<p>[CustomListView.zip</p>
+<p>다운로드](./file/CustomListView.zip)</p>
+<hr>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/CustomListView.zip">CustomListView.zip</a> <code>564 KB</code></li>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>
