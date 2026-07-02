@@ -1,0 +1,16 @@
+﻿<html>
+<head>
+<script type="text/javascript">
+    pathArray = window.location.pathname.split( '/' );
+    document.write("<meta http-equiv=\"Refresh\" content=\"1\;url=http:\/\/변경된주소\/", pathArray[1], "\">");
+</script>
+<title>블로그 주소가 변경되었습니다.</title>
+</head>
+<body>
+블로그 주소가 <a href="http://변경된주소">http://변경된주소</a>로 옮겨졌습니다.</br>
+1초 뒤에 <script type="text/javascript">
+pathArray = window.location.pathname.split( '/' );
+document.write("<a href=\"http:\/\/변경된주소\/", pathArray[1], "\">http:\/\/변경된주소\/", pathArray[1], "<\/a>");
+</script>로 자동 이동됩니다.</br>
+</body>
+</html>

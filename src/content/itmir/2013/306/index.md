@@ -1,0 +1,250 @@
+---
+title: "#7 EditText는 완전 쉬워요~"
+date: "2013-08-14T09:59:42+09:00"
+category: "Android/App"
+tags: []
+description: "이 EditText란?, 글자를 입력할수 있는 공간을 만드는 겁니다"
+draft: false
+original_url: "https://itmir.tistory.com/306"
+---
+
+안녕하세요~
+
+이번에는 EditText입니다
+
+이 EditText란?, 글자를 입력할수 있는 공간을 만드는 겁니다
+
+속성이 이 EditText에서 추가할수 있는 게 몇게 있는데요 그것 위주로 설명하도록 하겠습니다
+
+## 7. EditText는 완전 쉬워요~
+
+### 7-1 일단 프로젝트를 만들자
+
+Ctrl+N을 누르면 새로운 프로젝트를 만드는 창이 뜹니다
+
+![](./images/1.png)
+
+ 자 저는 이렇게 설정했습니다
+
+![](./images/1-1.png)
+
+이번엔 특별히 아이콘을 지정해 보겠습니다
+
+위에 있는 Clipart를 누르면 안드로이드 기본 아이콘이 나오는데요
+
+저는 연필을 골랐습니다 ㅎㅎ
+
+### 7-2 일단 추가하자
+
+![](./images/1-2.png)
+
+ㅎㅎㅎㅎㅎ 만들어 졌어요 ㅎㅎ
+
+이번에는 EditTexit를 만들것 이기 때문에 옆에 있는 Text Fields를 눌러주세요
+
+![](./images/1-3.jpg)
+
+ Plain Text를 드래그해줍시다
+
+[미르의 팁]
+
+-제 이클립스 아이콘이 달라요
+
+SDK를 업데이트 하면 아이콘과 글자, 위젯의 배치가 달라질때가 있습니다
+
+여유가 되시면 한번 업데이트 하시길 ㅎㅎ..
+
+![](./images/1-3.png)
+
+자~ 생겼습니다
+
+![](./images/1-4.png)
+
+소스를 보면 이렇게 나와 있습니다
+
+그럼 여기에다가 전까지 많이 쓰던 android:text를 추가해 봅시다
+
+![](./images/1-5.png)
+
+확인해 보면
+
+![](./images/1-6.png)
+
+EditText에 글자가 체워져 있습니다 ㅎㅎ
+
+그런대 우리가 EditText를 보면 글자가 들어있긴 한대 포커스를 대면(커서를 대면)사라지는 글자가 있습니다
+
+속성은
+
+android:hint
+
+입니다 ㅎㅎ
+
+![](./images/1-7.png)
+
+이렇게 추가해 주면
+
+![](./images/1-8.png)
+
+색이 회색으로 바꼈고 어플에서 커서를 대면 저 글자는 사라집니다
+
+그리고 EditText소스를 보면
+
+<requestFocus />
+
+라는게 있는데요
+
+이는 처음에 커서가 어디 있을거냐 라는것을 설정해 주는 겁니다
+
+![](./images/1-9.png)
+
+마지막으로 EditText에 들어갈 문장을 제한할수도 있습니다
+
+android:inputType
+
+이라는 속성인데요
+
+""에 커서를 둔다음 Ctrl+스페이스바를 누르면 무엇이 들어갈수 있는지 확인이 가능합니다
+
+![](./images/1-10.jpg)
+
+EditText에 어떤 종류만 들어갈수 있는지를 제한할수도 있습니다
+
+저는 알기 쉽게 number으로 설정해 보겠습니다
+
+android:ems라는 속성도 있습니다.
+
+android:ems
+
+저는 귀납적인 방법으로 ems라는 속성이 글자수 제한이 아닐까?라고 생각했지만, 확실하게 ems속성이 무슨 뜻인지는 잘 모르겠습니다.
+
+자 이렇게 해서 EditText의 xml속성을 확인해봤습니다.
+
+그럼 간단한 코드를 이용하여 입력한 값을 토스트로 띄어 보도록 하겠습니다. ㅎㅎ
+
+토스트는 다음시간쯤 배울 코드입니다.
+
+일단 버튼 하나 추가해 주세요.
+
+<Button  
+        android:id="@+id/button1"  
+        android:layout\_width="wrap\_content"  
+        android:layout\_height="wrap\_content"  
+        android:layout\_below="@+id/editText1"  
+        android:layout\_centerHorizontal="true"  
+        android:text="Button" />
+
+이렇게 추가해 주시면 됩니다 ㅎㅎ
+
+-src/(패키지 이름)/MainActivity.java
+
+public class MainActivity extends Activity {  
+ +EditText edittext;  
+ +Button button;
+
+@Override
+
+이렇게 EditText와 Button을 추가해 주세요 (+표시는 추가하라는 표시로 +까지 추가하시는 분은 없길...)
+
+그다음 onCreate안에 아래 코드를 넣어봅시다
+
+edittext = (EditText) findViewById(R.id.editText1);  
+button = (Button) findViewById(R.id.button1);  
+    
+button.setOnClickListener(new View.OnClickListener() { // 한 버튼만 OnClickListener를 연결합니다  
+       public void onClick(View v) { //버튼을 눌렀을때 어떤 작업을 할지 선언합니다  
+        String inPutText = edittext.getText().toString();  
+        Toast.makeText(MainActivity.this, inPutText,Toast.LENGTH\_SHORT).show();  
+       }});
+
+지금까지 제 강좌를 "모두" 정독하시고 외운정도까지 된다면 위에 있는 두 줄은 이해가 되실겁니다
+
+하지만 아래 있는 setOnClickListener는 처음보는 타입이죠 ㅎㅎ..
+
+원랜 버튼 배울때 언급했어야 하는데요 잠깐 언급하자면
+
+버튼을 누르면 동작하는 방식에는 크게 2가지가 있습니다
+
+세세히 나누면 3가지가 있지요
+
+하나는 메소드를 이용한 방법, 또하나는 listener을 이용한 방법인데요
+
+listener을 이용한 방법이 두가지로 나눠집니다
+
+하난 버튼 전체를 리스너로 연결하는것 button.setOnClickListener(listener);으로 리스너에 연결할수 있지요
+
+나머지는 버튼 하나의 리스터를 연결하는 겁니다
+
+위처럼 특정 버튼 하나에만 한 리스너를 만드는 방식입니다
+
+버튼 하나만 리스너에 연결해 봤습니다
+
+그리고 한번 코드를 잘 살펴보면 이해가 안되는 코드 2줄이 있어야 합니다
+
+String inPutText = edittext.getText().toString();
+
+Toast.makeText(MainActivity.this, inPutText,Toast.LENGTH\_SHORT).show();
+
+여기서 아래에 있는 토스트는 다음시간쯤 더 자세히 배우니 여기서는 그렇구나 하고 넘어가 주세요
+
+위에 있는 String inPutText = edittext.getText().toString();은 여기서 꼭 짚고 갈겁니다
+
+자바에서(사실 대부분의 언어가) 변수를 지정하는 방법은 다음과 같습니다
+
+[변수타입] [변수 이름] = [대입할 변수값]
+
+자바에서 =연산자는 오른쪽 값을 왼쪽에 대입한다 라는 뜻입니다
+
+자세한건 이쪽으로~
+
+[2013/02/22 - [미르의 개발 이야기/Java 배움터] - 계산을 할수 있는 연산자에 대해 알아보자! - 1편](http://itmir.tistory.com/157)
+
+[2013/02/22 - [미르의 개발 이야기/Java 배움터] - 계산을 할수 있는 연산자에 대해 알아보자! - 2편](http://itmir.tistory.com/158)
+
+그럼 다시 돌아와서 저 줄을 확인해 보면
+
+String(변수타입) inPutText(변수이름) = edittext.getText().toString();(변수값)
+
+이 됩니다
+
+String은 자바에서 문장을 저장하는 변수형(자바강좌를 참조하시길)이며 inPutText는 제가 임의로 지정하는 변수의 이름입니다
+
+'=' 오른쪽에 있는 값들은 inPutText에 저장될 변수의 값이라는 것이죠
+
+그럼 변수값을 봐야겠죠
+
+edittext(edittext라는 EditText에서 참조한다).getText()(입력한 글자를 얻어온다).toString()(얻어온 글자를 스트링의 형태로 바꾼다)
+
+라는 뜻입니다
+
+getText().toString()는 각각 EditText에서 사용가능한 메소드라는 것만 알아두시고 지금은 그렇구나 하고 넘어갑시다 ㅎㅎ
+
+자 EditText에서 꼭 알아야할 코드를 살펴봤습니다
+
+테스트 해볼까요?
+
+![](./images/Screenshot_2013-08-14-09-55-48.png)
+
+ 정상적으로 hint가 나옵니다 ㅎㅎ
+
+![](./images/Screenshot_2013-08-14-09-55-56.png)
+
+아까 inputtype를 number으로 설정하였기 때문에 저 EditText에는 숫자만 들어갑니다
+
+그리고 버튼을 눌렀더니 입력한 값이랑 똑같게 토스트 메세지가 나오는 모습을 확인해 봤습니다 ㅎㅎ
+
+오늘 배운 EditText는 아주 많이 쓰입니다
+
+안드로이드에서 글자 입력하는 모든 부분에 이 EditText가 쓰인다고 할수 있으니 꼭 아셔야 합니다!!
+
+예제 소스 : 네이버 카페에서는 다운이 제한됩니다
+
+[ExampleEditText.zip
+
+다운로드](./file/ExampleEditText.zip)
+
+---
+
+## 첨부파일
+
+- [ExampleEditText.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleEditText.zip) `1.1 MB`

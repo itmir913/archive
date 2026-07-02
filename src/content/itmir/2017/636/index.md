@@ -1,0 +1,69 @@
+---
+title: "iOS의 자동화 프로그램, Workflow를 사용해보았습니다."
+date: "2017-04-05T19:43:08+09:00"
+category: "Application"
+tags: []
+description: "최근에, 애플이 iOS의 자동화 프로그램 중 하나인, Workflow를 인수해서, 무료로 풀었습니다."
+draft: false
+original_url: "https://itmir.tistory.com/636"
+---
+
+안녕하세요.
+
+최근에, 애플이 iOS의 자동화 프로그램 중 하나인, Workflow를 인수해서, 무료로 풀었습니다.
+
+Workflow는 안드로이드의 테스커와 비슷한 어플으로, 아이폰에서 몇 가지 작업을 자동화할 수 있습니다.
+
+![](./images/Workflow_main.jpg)
+
+테스커 어플처럼 자신이 원하는 동작을 지정한 뒤, 연달아 실행할 수 있습니다.
+
+다만, 안드로이드의 테스커처럼 wifi, bluetooth와 같은 설정에는 접근하지 못하고,
+
+이에 따라 일부 작업은 만들 수 없는 한계가 존재합니다.
+
+예를 들어, 테스커에서는, 아니 안드로이드에서는 특정 블루투스 이어폰이 연결되면 음악을 자동으로 실행할 수 있지만,
+
+아이폰에서 동작하는 Workflow는 iOS에서 외부 앱에게 개방하지 않는 API를 사용할 수 없습니다.
+
+반면, 아이폰에서 동작하는 Workflow이기 때문에 가능한 기능들도 있습니다.
+
+바로 지금 재생 중인 노래의 정보를 가져와서 Youtube에서 검색하는 기능입니다.
+
+![](./images/Find_song_on_Youtube.png)
+
+지금 재생 중인 곡의 정보를 불러와서 아티스트와 제목을 추출한 뒤, 이를 유튜브 검색 url 링크로 만들어 url을 실행하는 작업을 포함하고 있습니다.
+
+정성하 기타리스트의 노래를 듣다 보면, 다른 사람들의 커버 영상도 보고 싶을 때도 있고, 공식 jwcfree에 올라온 정성하의 연주 영상을 보고 싶을 때가 있습니다.
+
+이럴 때 정말 매우 유용하게 사용하고 있는 Workflow 입니다.
+
+Find Song on Youtube 자세히 보기
+
+![](./images/Workflow_find_song_on_youtube.png)
+
+그리고 자신에게 필요한 작업을 직접 만들 수도 있지만, 이미 만들어진 Workflow들을 그냥 바로 추가할 수도 있습니다.
+
+앱의 상단 My Workflows 탭 옆에 있는 Gallery를 터치하면, 다양한 기능들을 추가할 수 있습니다.
+
+지금은 애플이 무료로 풀었기 때문에 앱스토어에서 무료로 받을 수 있는 앱이지만, 저는 Find song on Youtube 기능이 매우 편리하기 때문에 유료라도 적절한 가격이었다면 구입했을 것 같습니다.
+
+한번 다운로드 하신 다음 직접 사용해보세요~
+
+<https://itunes.apple.com/app/workflow-powerful-automation/id915249334>
+
+제가 사용 중인 모든 Workflow 기능 목록은 아래 '전체 Workflow 보기'를 누르시면 볼 수 있습니다.
+
+전체 Workflow 보기
+
+![](./images/Workflow_main_full.png)
+
+구글에서 'Workflow 모음' 등으로 검색하면 모두 찾을 수 있거나, 간단히 만들 수 있습니다.
+
+http://www.clien.net/cs2/bbs/board.php?bo\_table=cm\_iphonien&wr\_id=3167127
+
+http://yoonjiman.net/2014/12/17/useful-workflow/
+
+http://blog.naver.com/PostView.nhn?blogId=helledge&logNo=220580029277
+
+공식 홈페이지 : <https://workflow.is/>

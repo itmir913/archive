@@ -1,0 +1,32 @@
+﻿sudo apt-get install git-core gnupg flex bison gperf libsdl1.2-dev libesd0-dev build-essential zip curl
+libncurses5-dev zlib1g-dev valgrind
+
+
+sudo add-apt-repository "deb http://kr.archive.ubuntu.com/ubuntu/ hardy multiverse"
+sudo add-apt-repository "deb 
+http://kr.archive.ubuntu.com/ubuntu/ hardy-updates multiverse"
+
+sudo apt-get update
+sudo apt-get install sun-java6-jdk
+
+
+http://www.mediafire.com/file/msmnxt8n6xj6ayf/arm-eabi-4.4.0.zip 
+
+
+cd ~/arm-eabi-4.4.0/bin
+chmod +x ./*
+cd ~/arm-eabi-4.4.0/arm-eabi/bin
+chmod +x ./*
+cd ~/arm-eabi-4.4.0/libexec/gcc/arm-eabi/4.4.0
+chmod +x ./*
+cd ~/arm-eabi-4.4.0/libexec/gcc/arm-eabi/4.4.0/install-tools
+chmod +x ./*
+
+
+gedit ~/.bashrc
+
+export JAVA_HOME=/usr/lib/jvm/java-1.6.0-sun
+export ANDROID_JAVA_HOME=$JAVA_HOME
+export CROSS_COMPILE=$HOME/arm-eabi-4.4.0/bin/arm-eabi-
+export PATH=$PATH:$HOME/arm-eabi-4.4.0/bin/
+export ARCH=arm

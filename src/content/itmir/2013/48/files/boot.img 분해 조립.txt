@@ -1,0 +1,23 @@
+﻿Boot.img 분해/조립 강좌
+
+cd ~/바탕화면/boot
+
+chmod 777 unpackbootimg
+chmod 777 split_bootimg.pl
+chmod 777 mkbootimg
+
+./split_bootimg.pl boot.img
+
+./unpackbootimg -i boot.img
+
+gzip -d boot.img-ramdisk.gz
+
+cpio -i -F boot.img-ramdisk
+
+find . | cpio -o -H newc -O ../ramdisk
+
+cd ..
+
+gzip ramdisk
+
+./mkbootimg --cmdline "(아까 얻은 Command line값)" --base 0x(아까 얻은 base값) --pagesize (아까 얻은 pagesize 값) --kernel boot.img-kernel --ramdisk ramdisk.gz -o make-boot.img

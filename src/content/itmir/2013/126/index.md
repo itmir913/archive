@@ -1,0 +1,51 @@
+---
+title: "[3편] 구글 애드센스 광고에 테두리를 넣어보자!"
+date: "2013-02-12T18:15:47+09:00"
+category: "Tistory"
+tags: []
+description: "광고를 강조하기 위한 소스로 오인받아 구글 애드센스 계정이 정지될 수 있으므로 따라하지 마시오."
+draft: false
+original_url: "https://itmir.tistory.com/126"
+---
+
+광고를 강조하기 위한 소스로 오인받아 구글 애드센스 계정이 정지될 수 있으므로 따라하지 마시오.
+
+사용 금지
+
+안녕하세요~
+
+원랜 2부에서 마치려 했는대... 유용한 정보가 하나 더 있어서 3부까지 만들게 되었습니다 ㅎㅎ
+
+이 강좌와 관련된 또다른 강좌 입니다 잘 봐주세요 ㅎㅎ
+
+[2013/02/17 - [강좌/팁/티스토리 강좌] - [4편] 메인 페이지에 애드센스 광고를 넣어보자!](http://whdghks913.tistory.com/139)
+
+[2013/02/06 - [강좌/팁/티스토리 강좌] - [2편] 모바일 티스토리에 구글 애드센스 (Google Adsense)를 넣어보자](http://whdghks913.tistory.com/111)
+
+[2013/02/05 - [강좌/팁/티스토리 강좌] - [1편] 티스토리에 구글 애드센스 (Google Adsense)를 넣어보자](http://whdghks913.tistory.com/110)
+
+이번에는 구글 애드센스 광고와 본문등이 어울리게 만들고 또 광고를 구분할수 있게 만들수 있는 테두리를 넣어보도록 하겠습니다 ㅎㅎ
+
+다음 코드를 넣어 주시면 됩니다 ㅎㅎ
+
+<div style="border:2px solid #d3d3d3; text-align:center; padding-top:20px; padding-bottom:20px;">
+
+애드센스 광고 소스
+
+</dev>
+
+위 div코드를 광고 코드에 씌워주시면(?) 됩니다
+
+[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/txt.gif) 소스.txt](http://whdghks913.tistory.com/attachment/cfile3.uf@14210D3B511A07F0101B88.txt)
+
+border:2px에는 테두리의 두께를 선택하시는 것이고요
+
+#d3d3d3은 테두리의 색을 나타냅니다 ㅎㅎ
+
+![](./images/1.png)
+
+이 사진은 위 소스를 적용한 스샷입니다 ㅎㅎ
+
+저렇게 앏은 테두리가 들어가서 광고와 본문을 구분할수 있습니다!
+
+그럼 유용하게 사용하셨으면 합니다 ㅋ
