@@ -1,0 +1,3 @@
+﻿# in device/samsung/msm8660-common
+
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/msm8660-common/bluetooth

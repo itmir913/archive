@@ -1,0 +1,148 @@
+<div style="border:2px solid #d3d3d3; text-align:center; padding-top:10px; padding-bottom:10px;">
+<center>
+<TABLE border="0" cellspacing="5" cellpadding="5" height=280 width=680 >
+<TR>
+       <TD align = "left"  width = 260>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2101171143847248";
+/* 티스토리 본문 상단 좌 */
+google_ad_slot = "1813360470";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+ </TD>
+ <TD width = 0 >
+ </TD>
+       <TD align = "left" width = 260>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2101171143847248";
+/* 티스토리 본문 상단 우 */
+google_ad_slot = "6103959276";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script >
+ </TD>
+</TR>
+<TR>
+
+</TABLE>
+</div>
+
+</br>
+</center>
+
+
+
+
+
+<center>
+<div style="border:2px solid #d3d3d3; text-align:center; padding-top:5px; padding-bottom:5px;">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2101171143847248";
+/* 티스토리 본문 하단 */
+google_ad_slot = "7301490876";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</center>
+
+
+
+
+
+<div style="border:2px solid #d3d3d3; text-align:center; padding-top:10px; padding-bottom:10px;">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2101171143847248";
+/* 티스토리 티에디션 */
+google_ad_slot = "5456327677";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+
+
+
+
+
+<div style="border:2px solid #d3d3d3; text-align:center; padding-top:10px; padding-bottom:10px;">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2101171143847248";
+/* 티스토리 티에디션 상 */
+google_ad_slot = "2369933677";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+
+
+
+
+
+
+
+(function() {
+    var currentM;
+    currentM = location.href.split("/")[3]; //<-- // 구분자로 짤라와서
+    if(currentM=='m'){
+        document.writeln('<sc' + 'ript type="text/javascript">');
+        document.writeln('<!--');
+        document.writeln('google_ad_client = "ca-pub-2101171143847248";');
+        document.writeln('/* 티스토리 모바일 아래 */');
+        document.writeln('google_ad_slot = "3151676073";');
+        document.writeln('google_ad_width = 300;');
+        document.writeln('google_ad_height = 250;');
+        document.writeln('//-->');
+        document.writeln('</s' + 'cript>');
+        document.writeln('<sc' + 'ript type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></s' + 'cript>');
+   }
+})();
+
+
+
+
+
+
+
+
+
+
+(function() {
+    var currentM;
+    currentM = location.href.split("/")[3]; //<-- // 구분자로 짤라와서
+    if(currentM=='m'){
+        document.writeln('<sc' + 'ript type="text/javascript">');
+        document.writeln('<!--');
+        document.writeln('google_ad_client = "ca-pub-2101171143847248";');
+        document.writeln('/* 티스토리 모바일 */');
+        document.writeln('google_ad_slot = "1254957278";');
+        document.writeln('google_ad_width = 300;');
+        document.writeln('google_ad_height = 250;');
+        document.writeln('//-->');
+        document.writeln('</s' + 'cript>');
+        document.writeln('<sc' + 'ript type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></s' + 'cript>');
+		document.writeln('<sc' + 'ript src="http://adsystem.kr/adinfo/mysense.js.html?id=whdghks913&time=12&count=4&bmode=hide" type="text/javascript"></s' + 'cript>');
+   }
+})();

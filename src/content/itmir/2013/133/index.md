@@ -1,0 +1,127 @@
+---
+title: "무음 카메라/동영상 만들기"
+date: "2013-02-15T18:44:38+09:00"
+category: "SmartPhone/Android"
+tags: []
+description: "제블로그가 너무 어려운 내용만 담고 있는것 같아서 분위기 전환겸 After Rooting 강좌 시리즈를 개속 만들려고 합니다"
+draft: false
+original_url: "https://itmir.tistory.com/133"
+---
+
+안녕하세요
+
+제블로그가 너무 어려운 내용만 담고 있는것 같아서 분위기 전환겸 After Rooting 강좌 시리즈를 개속 만들려고 합니다
+
+After Rooting 시리즈는 루팅후 대중적으로 많이 하는 부분을 다룰 예정입니다
+
+그럼 이번에는 무음 카메라를 만들어 보도록 하겠습니다
+
+무음 카메라란?
+
+찰칵 소리를 제거해 주는 작업입니다
+
+대부분의 스마트폰의 경우 도촬(?)을 예방하기 위해 찰칵소리를 나도록 만들었는대요
+
+도서관등에서 이런 소리가 시끄러우신 분들을 위한 팁입니다
+
+절대 악용하시면 안됩니다!
+
+그럼 시작하겠습니다
+
+[camera\_click.ogg
+
+다운로드](./file/camera_click.ogg)
+
+[VideoRecord.ogg
+
+다운로드](./file/VideoRecord.ogg)
+
+이 두파일을 받아주세요
+
+무음 처리된 파일입니다
+
+부팅 음도 무음으로 만들고 싶으시다면 더보기를 클릭!
+
+더보기
+
+[부팅 무음.zip
+
+다운로드](./file/부팅 무음.zip)
+
+파일을 추가로 받은다음 압축을 풀어서
+
+/system/media에 644퍼미션으로 넣어주시면 됩니다
+
+camera\_click.ogg와 VideoRecord.ogg를 sdcard에 넣어주세요
+
+폰을 연결해 주신다음 넣어주시면 됩니다
+
+![](./images/1.png)
+
+이 알림이 뜨는경우 (MTD방식은 이런 알림이 뜹니다) 모든 파일에 적용에 체크하신다음 예.를 클릭하시면 됩니다
+
+그다음 휴대폰에서 루트 익스플로러를 실행해 주세요
+
+Root explorer이 아니어도 시스탬 폴더에 접근할수 있는 모든 탐색기 어플이 가능합니다
+
+![](./images/Screenshot_2013-02-15-18-22-24.png)
+
+다중선택을 눌러 복사해 주시면 됩니다
+
+![](./images/Screenshot_2013-02-15-18-22-29.png)
+
+넣으신 ogg파일을 체크한다음 복사를 터치!
+
+![](./images/Screenshot_2013-02-15-18-22-35.png)
+
+최상단 루트폴더 ( / )로 빠져나와 system폴더에 진입해 주세요
+
+![](./images/Screenshot_2013-02-15-18-23-10.png)
+
+/system/media/audio/ui폴더에 진입해 주신다음 붙여넣기를 해주세요
+
+만약 마운트 문제가 나타난다면
+
+![](./images/Screenshot_2013-02-15-18-22-44.jpg)
+
+위 마운트 R/W를 터치하여
+
+![](./images/Screenshot_2013-02-15-18-22-50.jpg)
+
+[r/w 마운트 R/O] 가 되도록 만들어 줍시다
+
+![](./images/Screenshot_2013-02-15-18-23-15.png)
+
+이제 권한을 줍시다
+
+꾹 누르고 있으면 옵션 탭이 나옵니다 "권한"을 눌러 권한(퍼미션)을 줍시다
+
+![](./images/Screenshot_2013-02-15-18-23-26.png)
+
+위 사진과 같은 모양으로 체크해 주세요
+
+OOX
+
+OXX
+
+OXX
+
+이 모양이 퍼미션 644입니다
+
+자주 사용할 권한이니 꼭 외워 두세요!
+
+camera\_click.ogg와 VideoRecord.ogg 모두 퍼미션 644를 주시면 됩니다
+
+rw-r--r--
+
+이 것(644퍼미션)을 확인하셨으면 이제 카메라 어플로 돌아가서 무음처리가 되었나 확인해 주시면 됩니다 ㅎㅎ
+
+그럼 After Rooting [1편] - 무음 카메라/동영상 만들기 강좌를 마치도록 하겠습니다~
+
+---
+
+## 첨부파일
+
+- [camera_click.ogg](https://github.com/itmir913/archive/releases/download/itmir-attachments/camera_click.ogg) `4 KB`
+- [VideoRecord.ogg](https://github.com/itmir913/archive/releases/download/itmir-attachments/VideoRecord.ogg) `4 KB`
+- [부팅 무음.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/부팅 무음.zip) `66 KB`
