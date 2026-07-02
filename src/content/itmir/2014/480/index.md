@@ -98,5 +98,5 @@ S3에서는 당연히 센서가 없기 때문에 알림이 나타납니다
 
 - [PantechFingerSDK-master.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/PantechFingerSDK-master.zip) `425 KB`
 - [SampleActivity.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/SampleActivity.apk) `247 KB`
-- [SampleFingerScan 주석.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/SampleFingerScan 주석.zip) `348 KB`
-- [VEGA 지문인식 SDK 설치 가이드.pdf](https://github.com/itmir913/archive/releases/download/itmir-attachments/VEGA 지문인식 SDK 설치 가이드.pdf) `465 KB`
+- [SampleFingerScan 주석.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/480-SampleFingerScan-commented.zip) `348 KB`
+- [VEGA 지문인식 SDK 설치 가이드.pdf](https://github.com/itmir913/archive/releases/download/itmir-attachments/480-VEGA-fingerprint-SDK-guide.pdf) `465 KB`

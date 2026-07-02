@@ -144,7 +144,7 @@ Vega기종은 for Vega를 받아주세요
 
 ## 첨부파일
 
-- [20140522-VEGAIME for VEGA.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/20140522-VEGAIME for VEGA.apk) `4.9 MB`
+- [20140522-VEGAIME for VEGA.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/20140522-VEGAIME-for-VEGA.apk) `4.9 MB`
 - [20140522-VEGAIME.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/20140522-VEGAIME.apk) `4.9 MB`
-- [20140525-VEGAIME for Not Root.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/20140525-VEGAIME for Not Root.apk) `4.9 MB`
-- [20140525-VEGAIME for VEGA Not Root.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/20140525-VEGAIME for VEGA Not Root.apk) `4.9 MB`
+- [20140525-VEGAIME for Not Root.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/20140525-VEGAIME-for-Not-Root.apk) `4.9 MB`
+- [20140525-VEGAIME for VEGA Not Root.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/20140525-VEGAIME-for-VEGA-Not-Root.apk) `4.9 MB`

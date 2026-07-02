@@ -273,4 +273,4 @@ original_url: "https://itmir.tistory.com/352"
 ## 첨부파일
 
 - [language.ini](./files/language.ini)
-- [퀴우360.hwp](https://github.com/itmir913/archive/releases/download/itmir-attachments/퀴우360.hwp) `2.4 MB`
+- [퀴우360.hwp](https://github.com/itmir913/archive/releases/download/itmir-attachments/352-qhoo360.hwp) `2.4 MB`

@@ -54,5 +54,5 @@ original_url: "https://itmir.tistory.com/429"
 
 ## 첨부파일
 
-- [캘린더 Beta.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/캘린더 Beta.apk) `2.0 MB`
-- [할일 Beta.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/할일 Beta.apk) `2.5 MB`
+- [캘린더 Beta.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/429-calendar-beta.apk) `2.0 MB`
+- [할일 Beta.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/429-todo-beta.apk) `2.5 MB`

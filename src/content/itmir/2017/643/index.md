@@ -36,4 +36,4 @@ original_url: "https://itmir.tistory.com/643"
 
 ## 첨부파일
 
-- [지구과학1 오답문제.pdf](https://github.com/itmir913/archive/releases/download/itmir-attachments/지구과학1 오답문제.pdf) `2.3 MB`
+- [지구과학1 오답문제.pdf](https://github.com/itmir913/archive/releases/download/itmir-attachments/643-earth-science1-review.pdf) `2.3 MB`

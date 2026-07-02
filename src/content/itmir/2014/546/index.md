@@ -134,5 +134,5 @@ original_url: "https://itmir.tistory.com/546"
 
 ## 첨부파일
 
-- [절대로 못하는 게임 - 복사본.exe](https://github.com/itmir913/archive/releases/download/itmir-attachments/절대로 못하는 게임 - 복사본.exe) `2.4 MB`
-- [절대로 못하는 게임.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/절대로 못하는 게임.zip) `120 KB`
+- [절대로 못하는 게임 - 복사본.exe](https://github.com/itmir913/archive/releases/download/itmir-attachments/546-impossible-game-copy.exe) `2.4 MB`
+- [절대로 못하는 게임.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/546-impossible-game.zip) `120 KB`

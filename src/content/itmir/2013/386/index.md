@@ -26,4 +26,4 @@ original_url: "https://itmir.tistory.com/386"
 
 ## 첨부파일
 
-- [연사카메라 v2.2.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/연사카메라 v2.2.apk) `276 KB`
+- [연사카메라 v2.2.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/386-burst-camera-v2.2.apk) `276 KB`

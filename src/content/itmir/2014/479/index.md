@@ -54,4 +54,4 @@ TV에서 한번은 들어보셨을거라 생각합니다
 
 ## 첨부파일
 
-- [광대역 LTE 이야기 벨소리 (30초).zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/광대역 LTE 이야기 벨소리 (30초).zip) `959 KB`
+- [광대역 LTE 이야기 벨소리 (30초).zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/479-LTE-ringtone-30s.zip) `959 KB`

@@ -102,4 +102,4 @@ adb restore이 지원되는 adb로 변경
 
 ## 첨부파일
 
-- [ADB Backup & Restore.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ADB Backup & Restore.zip) `911 KB`
+- [ADB Backup & Restore.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ADB-Backup-Restore.zip) `911 KB`

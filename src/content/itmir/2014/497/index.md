@@ -82,7 +82,7 @@ java.lang.NoSuchFieldError: android.view.WindowManager$LayoutParams.oemFlags
 
 ## 첨부파일
 
-- [2014-05-18 PM 7-34 VEGAMusicPlayer.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/2014-05-18 PM 7-34 VEGAMusicPlayer.apk) `4.2 MB`
-- [oemFlags 수정 VEGAMusicPlayer.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/oemFlags 수정 VEGAMusicPlayer.apk) `4.2 MB`
+- [2014-05-18 PM 7-34 VEGAMusicPlayer.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/2014-05-18-PM-7-34-VEGAMusicPlayer.apk) `4.2 MB`
+- [oemFlags 수정 VEGAMusicPlayer.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/497-oemFlags-VEGAMusicPlayer.apk) `4.2 MB`
 
 - [VEGAMusicPlayer.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/497-VEGAMusicPlayer.apk) `4.2 MB`

@@ -50,7 +50,7 @@ original_url: "https://itmir.tistory.com/390"
 
 ## 첨부파일
 
-- [Asus LiveWallpaper.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/Asus LiveWallpaper.apk) `812 KB`
-- [Cola LiveWallpaper.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/Cola LiveWallpaper.apk) `973 KB`
-- [Martini LiveWallpaper.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/Martini LiveWallpaper.apk) `326 KB`
-- [Orange LiveWallpaper.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/Orange LiveWallpaper.apk) `580 KB`
+- [Asus LiveWallpaper.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/Asus-LiveWallpaper.apk) `812 KB`
+- [Cola LiveWallpaper.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/Cola-LiveWallpaper.apk) `973 KB`
+- [Martini LiveWallpaper.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/Martini-LiveWallpaper.apk) `326 KB`
+- [Orange LiveWallpaper.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/Orange-LiveWallpaper.apk) `580 KB`

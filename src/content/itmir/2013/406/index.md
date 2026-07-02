@@ -48,4 +48,4 @@ original_url: "https://itmir.tistory.com/406"
 
 ## 첨부파일
 
-- [티스토리 초대장 배포 적합.xlsx](https://github.com/itmir913/archive/releases/download/itmir-attachments/티스토리 초대장 배포 적합.xlsx) `48 KB`
+- [티스토리 초대장 배포 적합.xlsx](https://github.com/itmir913/archive/releases/download/itmir-attachments/406-tistory-invite.xlsx) `48 KB`

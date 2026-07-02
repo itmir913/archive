@@ -384,5 +384,5 @@ C:\Program Files\baidu\BaiduYunGuanjia
 
 ## 첨부파일
 
-- [바이두.hwp](https://github.com/itmir913/archive/releases/download/itmir-attachments/바이두.hwp) `1.0 MB`
+- [바이두.hwp](https://github.com/itmir913/archive/releases/download/itmir-attachments/353-baidu.hwp) `1.0 MB`
 

@@ -94,4 +94,4 @@ original_url: "https://itmir.tistory.com/508"
 
 ## 첨부파일
 
-- [애드센스 필수 가이드북.pdf](https://github.com/itmir913/archive/releases/download/itmir-attachments/애드센스 필수 가이드북.pdf) `893 KB`
+- [애드센스 필수 가이드북.pdf](https://github.com/itmir913/archive/releases/download/itmir-attachments/508-adsense-guide.pdf) `893 KB`

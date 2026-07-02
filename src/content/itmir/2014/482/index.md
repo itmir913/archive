@@ -168,6 +168,6 @@ The concept of Git 열기
 
 ## 첨부파일
 
-- [git - 간편 안내서 - 어렵지 않아요!.pdf](https://github.com/itmir913/archive/releases/download/itmir-attachments/git - 간편 안내서 - 어렵지 않아요!.pdf) `257 KB`
-- [SVN & Git.pdf](https://github.com/itmir913/archive/releases/download/itmir-attachments/SVN & Git.pdf) `1.6 MB`
-- [The concept of Git.pdf](https://github.com/itmir913/archive/releases/download/itmir-attachments/The concept of Git.pdf) `4.4 MB`
+- [git - 간편 안내서 - 어렵지 않아요!.pdf](https://github.com/itmir913/archive/releases/download/itmir-attachments/482-git-guide.pdf) `257 KB`
+- [SVN & Git.pdf](https://github.com/itmir913/archive/releases/download/itmir-attachments/SVN-Git.pdf) `1.6 MB`
+- [The concept of Git.pdf](https://github.com/itmir913/archive/releases/download/itmir-attachments/The-concept-of-Git.pdf) `4.4 MB`

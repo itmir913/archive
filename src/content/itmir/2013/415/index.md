@@ -98,4 +98,4 @@ original_url: "https://itmir.tistory.com/415"
 
 ## 첨부파일
 
-- [whdghks913.tistory.com 총결산.xlsx](https://github.com/itmir913/archive/releases/download/itmir-attachments/whdghks913.tistory.com 총결산.xlsx) `178 KB`
+- [whdghks913.tistory.com 총결산.xlsx](https://github.com/itmir913/archive/releases/download/itmir-attachments/415-tistory-summary.xlsx) `178 KB`

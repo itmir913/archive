@@ -49,9 +49,9 @@
     {
       "post": "133",
       "source_path": "133\\file\\부팅 무음.zip",
-      "release_filename": "부팅 무음.zip",
+      "release_filename": "133-boot-silence.zip",
       "size_bytes": 67312,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/부팅 무음.zip"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/133-boot-silence.zip"
     },
     {
       "post": "155",
@@ -273,9 +273,9 @@
     {
       "post": "206",
       "source_path": "206\\file\\배넘식 미니 윈도우.zip",
-      "release_filename": "배넘식 미니 윈도우.zip",
+      "release_filename": "206-mini-window.zip",
       "size_bytes": 3200895,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/배넘식 미니 윈도우.zip"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/206-mini-window.zip"
     },
     {
       "post": "207",
@@ -294,9 +294,9 @@
     {
       "post": "214",
       "source_path": "214\\file\\touchscreen backup.zip",
-      "release_filename": "touchscreen backup.zip",
+      "release_filename": "touchscreen-backup.zip",
       "size_bytes": 3698,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/touchscreen backup.zip"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/touchscreen-backup.zip"
     },
     {
       "post": "215",
@@ -455,30 +455,30 @@
     {
       "post": "237",
       "source_path": "237\\file\\Bullo Middle School 3-11 Update Photo.apk",
-      "release_filename": "Bullo Middle School 3-11 Update Photo.apk",
+      "release_filename": "Bullo-Middle-School-3-11-Update-Photo.apk",
       "size_bytes": 5788516,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/Bullo Middle School 3-11 Update Photo.apk"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/Bullo-Middle-School-3-11-Update-Photo.apk"
     },
     {
       "post": "237",
       "source_path": "237\\file\\Bullo Middle School 3-11 Update Photo.zip",
-      "release_filename": "Bullo Middle School 3-11 Update Photo.zip",
+      "release_filename": "Bullo-Middle-School-3-11-Update-Photo.zip",
       "size_bytes": 8868491,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/Bullo Middle School 3-11 Update Photo.zip"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/Bullo-Middle-School-3-11-Update-Photo.zip"
     },
     {
       "post": "237",
       "source_path": "237\\file\\Bullo Middle School 3-11.apk",
-      "release_filename": "Bullo Middle School 3-11.apk",
+      "release_filename": "Bullo-Middle-School-3-11.apk",
       "size_bytes": 5103531,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/Bullo Middle School 3-11.apk"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/Bullo-Middle-School-3-11.apk"
     },
     {
       "post": "237",
       "source_path": "237\\file\\Bullo Middle School 3-11.zip",
-      "release_filename": "Bullo Middle School 3-11.zip",
+      "release_filename": "Bullo-Middle-School-3-11.zip",
       "size_bytes": 7924221,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/Bullo Middle School 3-11.zip"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/Bullo-Middle-School-3-11.zip"
     },
     {
       "post": "238",
@@ -497,16 +497,16 @@
     {
       "post": "241",
       "source_path": "241\\file\\수정한pmic8xxx-pwrkey.zip",
-      "release_filename": "수정한pmic8xxx-pwrkey.zip",
+      "release_filename": "241-modified-pmic8xxx-pwrkey.zip",
       "size_bytes": 3534,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/수정한pmic8xxx-pwrkey.zip"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/241-modified-pmic8xxx-pwrkey.zip"
     },
     {
       "post": "241",
       "source_path": "241\\file\\순정pmic8xxx-pwrkey.zip",
-      "release_filename": "순정pmic8xxx-pwrkey.zip",
+      "release_filename": "241-stock-pmic8xxx-pwrkey.zip",
       "size_bytes": 2292,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/순정pmic8xxx-pwrkey.zip"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/241-stock-pmic8xxx-pwrkey.zip"
     },
     {
       "post": "245",
@@ -539,9 +539,9 @@
     {
       "post": "250",
       "source_path": "250\\file\\승휘.mp3",
-      "release_filename": "승휘.mp3",
+      "release_filename": "250-seunghwi.mp3",
       "size_bytes": 1985306,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/승휘.mp3"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/250-seunghwi.mp3"
     },
     {
       "post": "251",
@@ -644,9 +644,9 @@
     {
       "post": "294",
       "source_path": "294\\file\\LucidOS Kernel.7z",
-      "release_filename": "LucidOS Kernel.7z",
+      "release_filename": "LucidOS-Kernel.7z",
       "size_bytes": 8935716,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/LucidOS Kernel.7z"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/LucidOS-Kernel.7z"
     },
     {
       "post": "295",
@@ -672,23 +672,23 @@
     {
       "post": "310",
       "source_path": "310\\file\\ExampleToast&Rand.apk",
-      "release_filename": "ExampleToast&Rand.apk",
+      "release_filename": "ExampleToastRand.apk",
       "size_bytes": 257948,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleToast&Rand.apk"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleToastRand.apk"
     },
     {
       "post": "310",
       "source_path": "310\\file\\ExampleToast&Rand.zip",
-      "release_filename": "ExampleToast&Rand.zip",
+      "release_filename": "ExampleToastRand.zip",
       "size_bytes": 1348514,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleToast&Rand.zip"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleToastRand.zip"
     },
     {
       "post": "310",
       "source_path": "310\\file\\ExampleToast&Rand_1.zip",
-      "release_filename": "ExampleToast&Rand_1.zip",
+      "release_filename": "ExampleToastRand_1.zip",
       "size_bytes": 1349179,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleToast&Rand_1.zip"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleToastRand_1.zip"
     },
     {
       "post": "314",
@@ -763,16 +763,16 @@
     {
       "post": "338",
       "source_path": "338\\file\\PC용 한글화.zip",
-      "release_filename": "PC용 한글화.zip",
+      "release_filename": "338-PC-korean.zip",
       "size_bytes": 100065,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/PC용 한글화.zip"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/338-PC-korean.zip"
     },
     {
       "post": "338",
       "source_path": "338\\file\\텐센트.hwp",
-      "release_filename": "텐센트.hwp",
+      "release_filename": "338-tencent.hwp",
       "size_bytes": 1959936,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/텐센트.hwp"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/338-tencent.hwp"
     },
     {
       "post": "339",
@@ -826,9 +826,9 @@
     {
       "post": "352",
       "source_path": "352\\file\\퀴우360.hwp",
-      "release_filename": "퀴우360.hwp",
+      "release_filename": "352-qhoo360.hwp",
       "size_bytes": 2490368,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/퀴우360.hwp"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/352-qhoo360.hwp"
     },
     {
       "post": "353",
@@ -847,9 +847,9 @@
     {
       "post": "353",
       "source_path": "353\\file\\바이두.hwp",
-      "release_filename": "바이두.hwp",
+      "release_filename": "353-baidu.hwp",
       "size_bytes": 1076224,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/바이두.hwp"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/353-baidu.hwp"
     },
     {
       "post": "353",
@@ -875,9 +875,9 @@
     {
       "post": "356",
       "source_path": "356\\file\\ADB Backup & Restore.zip",
-      "release_filename": "ADB Backup & Restore.zip",
+      "release_filename": "ADB-Backup-Restore.zip",
       "size_bytes": 933204,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/ADB Backup & Restore.zip"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/ADB-Backup-Restore.zip"
     },
     {
       "post": "358",
@@ -952,9 +952,9 @@
     {
       "post": "371",
       "source_path": "371\\file\\Halo))).apk",
-      "release_filename": "Halo))).apk",
+      "release_filename": "Halo.apk",
       "size_bytes": 49149,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/Halo))).apk"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/Halo.apk"
     },
     {
       "post": "377",
@@ -1008,9 +1008,9 @@
     {
       "post": "386",
       "source_path": "386\\file\\연사카메라 v2.2.apk",
-      "release_filename": "연사카메라 v2.2.apk",
+      "release_filename": "386-burst-camera-v2.2.apk",
       "size_bytes": 282507,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/연사카메라 v2.2.apk"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/386-burst-camera-v2.2.apk"
     },
     {
       "post": "387",
@@ -1036,30 +1036,30 @@
     {
       "post": "390",
       "source_path": "390\\file\\Asus LiveWallpaper.apk",
-      "release_filename": "Asus LiveWallpaper.apk",
+      "release_filename": "Asus-LiveWallpaper.apk",
       "size_bytes": 831993,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/Asus LiveWallpaper.apk"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/Asus-LiveWallpaper.apk"
     },
     {
       "post": "390",
       "source_path": "390\\file\\Cola LiveWallpaper.apk",
-      "release_filename": "Cola LiveWallpaper.apk",
+      "release_filename": "Cola-LiveWallpaper.apk",
       "size_bytes": 996165,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/Cola LiveWallpaper.apk"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/Cola-LiveWallpaper.apk"
     },
     {
       "post": "390",
       "source_path": "390\\file\\Martini LiveWallpaper.apk",
-      "release_filename": "Martini LiveWallpaper.apk",
+      "release_filename": "Martini-LiveWallpaper.apk",
       "size_bytes": 333985,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/Martini LiveWallpaper.apk"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/Martini-LiveWallpaper.apk"
     },
     {
       "post": "390",
       "source_path": "390\\file\\Orange LiveWallpaper.apk",
-      "release_filename": "Orange LiveWallpaper.apk",
+      "release_filename": "Orange-LiveWallpaper.apk",
       "size_bytes": 593545,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/Orange LiveWallpaper.apk"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/Orange-LiveWallpaper.apk"
     },
     {
       "post": "391",
@@ -1092,58 +1092,58 @@
     {
       "post": "401",
       "source_path": "401\\file\\QR-[2013.12.05]-161803.wav",
-      "release_filename": "QR-[2013.12.05]-161803.wav",
+      "release_filename": "401-QR-20131205-161803.wav",
       "size_bytes": 2926124,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/QR-[2013.12.05]-161803.wav"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/401-QR-20131205-161803.wav"
     },
     {
       "post": "401",
       "source_path": "401\\file\\QR-[2013.12.05]-182800.wav",
-      "release_filename": "QR-[2013.12.05]-182800.wav",
+      "release_filename": "401-QR-20131205-182800.wav",
       "size_bytes": 1040684,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/QR-[2013.12.05]-182800.wav"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/401-QR-20131205-182800.wav"
     },
     {
       "post": "401",
       "source_path": "401\\file\\QR-[2013.12.05]-183005.wav",
-      "release_filename": "QR-[2013.12.05]-183005.wav",
+      "release_filename": "401-QR-20131205-183005.wav",
       "size_bytes": 3233324,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/QR-[2013.12.05]-183005.wav"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/401-QR-20131205-183005.wav"
     },
     {
       "post": "401",
       "source_path": "401\\file\\QR-[2013.12.05]-183430.wav",
-      "release_filename": "QR-[2013.12.05]-183430.wav",
+      "release_filename": "401-QR-20131205-183430.wav",
       "size_bytes": 2292524,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/QR-[2013.12.05]-183430.wav"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/401-QR-20131205-183430.wav"
     },
     {
       "post": "401",
       "source_path": "401\\file\\QR-[2013.12.05]-183624.wav",
-      "release_filename": "QR-[2013.12.05]-183624.wav",
+      "release_filename": "401-QR-20131205-183624.wav",
       "size_bytes": 2269484,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/QR-[2013.12.05]-183624.wav"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/401-QR-20131205-183624.wav"
     },
     {
       "post": "401",
       "source_path": "401\\file\\QR-[2013.12.05]-184210.wav",
-      "release_filename": "QR-[2013.12.05]-184210.wav",
+      "release_filename": "401-QR-20131205-184210.wav",
       "size_bytes": 4650284,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/QR-[2013.12.05]-184210.wav"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/401-QR-20131205-184210.wav"
     },
     {
       "post": "401",
       "source_path": "401\\file\\QR-[2013.12.05]-184552.wav",
-      "release_filename": "QR-[2013.12.05]-184552.wav",
+      "release_filename": "401-QR-20131205-184552.wav",
       "size_bytes": 4070444,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/QR-[2013.12.05]-184552.wav"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/401-QR-20131205-184552.wav"
     },
     {
       "post": "406",
       "source_path": "406\\file\\티스토리 초대장 배포 적합.xlsx",
-      "release_filename": "티스토리 초대장 배포 적합.xlsx",
+      "release_filename": "406-tistory-invite.xlsx",
       "size_bytes": 49508,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/티스토리 초대장 배포 적합.xlsx"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/406-tistory-invite.xlsx"
     },
     {
       "post": "409",
@@ -1204,9 +1204,9 @@
     {
       "post": "415",
       "source_path": "415\\file\\whdghks913.tistory.com 총결산.xlsx",
-      "release_filename": "whdghks913.tistory.com 총결산.xlsx",
+      "release_filename": "415-tistory-summary.xlsx",
       "size_bytes": 181762,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/whdghks913.tistory.com 총결산.xlsx"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/415-tistory-summary.xlsx"
     },
     {
       "post": "424",
@@ -1232,16 +1232,16 @@
     {
       "post": "429",
       "source_path": "429\\file\\캘린더 Beta.apk",
-      "release_filename": "캘린더 Beta.apk",
+      "release_filename": "429-calendar-beta.apk",
       "size_bytes": 2050468,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/캘린더 Beta.apk"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/429-calendar-beta.apk"
     },
     {
       "post": "429",
       "source_path": "429\\file\\할일 Beta.apk",
-      "release_filename": "할일 Beta.apk",
+      "release_filename": "429-todo-beta.apk",
       "size_bytes": 2661558,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/할일 Beta.apk"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/429-todo-beta.apk"
     },
     {
       "post": "431",
@@ -1407,9 +1407,9 @@
     {
       "post": "479",
       "source_path": "479\\file\\광대역 LTE 이야기 벨소리 (30초).zip",
-      "release_filename": "광대역 LTE 이야기 벨소리 (30초).zip",
+      "release_filename": "479-LTE-ringtone-30s.zip",
       "size_bytes": 981505,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/광대역 LTE 이야기 벨소리 (30초).zip"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/479-LTE-ringtone-30s.zip"
     },
     {
       "post": "480",
@@ -1428,16 +1428,16 @@
     {
       "post": "480",
       "source_path": "480\\file\\SampleFingerScan 주석.zip",
-      "release_filename": "SampleFingerScan 주석.zip",
+      "release_filename": "480-SampleFingerScan-commented.zip",
       "size_bytes": 356356,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/SampleFingerScan 주석.zip"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/480-SampleFingerScan-commented.zip"
     },
     {
       "post": "480",
       "source_path": "480\\file\\VEGA 지문인식 SDK 설치 가이드.pdf",
-      "release_filename": "VEGA 지문인식 SDK 설치 가이드.pdf",
+      "release_filename": "480-VEGA-fingerprint-SDK-guide.pdf",
       "size_bytes": 476649,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/VEGA 지문인식 SDK 설치 가이드.pdf"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/480-VEGA-fingerprint-SDK-guide.pdf"
     },
     {
       "post": "481",
@@ -1463,23 +1463,23 @@
     {
       "post": "482",
       "source_path": "482\\file\\git - 간편 안내서 - 어렵지 않아요!.pdf",
-      "release_filename": "git - 간편 안내서 - 어렵지 않아요!.pdf",
+      "release_filename": "482-git-guide.pdf",
       "size_bytes": 263206,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/git - 간편 안내서 - 어렵지 않아요!.pdf"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/482-git-guide.pdf"
     },
     {
       "post": "482",
       "source_path": "482\\file\\SVN & Git.pdf",
-      "release_filename": "SVN & Git.pdf",
+      "release_filename": "SVN-Git.pdf",
       "size_bytes": 1651722,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/SVN & Git.pdf"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/SVN-Git.pdf"
     },
     {
       "post": "482",
       "source_path": "482\\file\\The concept of Git.pdf",
-      "release_filename": "The concept of Git.pdf",
+      "release_filename": "The-concept-of-Git.pdf",
       "size_bytes": 4620011,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/The concept of Git.pdf"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/The-concept-of-Git.pdf"
     },
     {
       "post": "486",
@@ -1491,16 +1491,16 @@
     {
       "post": "487",
       "source_path": "487\\file\\2014 KOI 운영계획.hwp",
-      "release_filename": "2014 KOI 운영계획.hwp",
+      "release_filename": "487-2014-KOI-plan.hwp",
       "size_bytes": 58368,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/2014 KOI 운영계획.hwp"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/487-2014-KOI-plan.hwp"
     },
     {
       "post": "487",
       "source_path": "487\\file\\제31회 한국정보올림피아드 세부계획 (홈페이지게시용).hwp",
-      "release_filename": "제31회 한국정보올림피아드 세부계획 (홈페이지게시용).hwp",
+      "release_filename": "487-KOI31-schedule.hwp",
       "size_bytes": 47104,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/제31회 한국정보올림피아드 세부계획 (홈페이지게시용).hwp"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/487-KOI31-schedule.hwp"
     },
     {
       "post": "493",
@@ -1526,16 +1526,16 @@
     {
       "post": "497",
       "source_path": "497\\file\\2014-05-18 PM 7-34 VEGAMusicPlayer.apk",
-      "release_filename": "2014-05-18 PM 7-34 VEGAMusicPlayer.apk",
+      "release_filename": "2014-05-18-PM-7-34-VEGAMusicPlayer.apk",
       "size_bytes": 4379820,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/2014-05-18 PM 7-34 VEGAMusicPlayer.apk"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/2014-05-18-PM-7-34-VEGAMusicPlayer.apk"
     },
     {
       "post": "497",
       "source_path": "497\\file\\oemFlags 수정 VEGAMusicPlayer.apk",
-      "release_filename": "oemFlags 수정 VEGAMusicPlayer.apk",
+      "release_filename": "497-oemFlags-VEGAMusicPlayer.apk",
       "size_bytes": 4379817,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/oemFlags 수정 VEGAMusicPlayer.apk"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/497-oemFlags-VEGAMusicPlayer.apk"
     },
     {
       "post": "497",
@@ -1561,9 +1561,9 @@
     {
       "post": "499",
       "source_path": "499\\file\\20140522-VEGAIME for VEGA.apk",
-      "release_filename": "20140522-VEGAIME for VEGA.apk",
+      "release_filename": "20140522-VEGAIME-for-VEGA.apk",
       "size_bytes": 5095017,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/20140522-VEGAIME for VEGA.apk"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/20140522-VEGAIME-for-VEGA.apk"
     },
     {
       "post": "499",
@@ -1575,16 +1575,16 @@
     {
       "post": "499",
       "source_path": "499\\file\\20140525-VEGAIME for Not Root.apk",
-      "release_filename": "20140525-VEGAIME for Not Root.apk",
+      "release_filename": "20140525-VEGAIME-for-Not-Root.apk",
       "size_bytes": 5095794,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/20140525-VEGAIME for Not Root.apk"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/20140525-VEGAIME-for-Not-Root.apk"
     },
     {
       "post": "499",
       "source_path": "499\\file\\20140525-VEGAIME for VEGA Not Root.apk",
-      "release_filename": "20140525-VEGAIME for VEGA Not Root.apk",
+      "release_filename": "20140525-VEGAIME-for-VEGA-Not-Root.apk",
       "size_bytes": 5095568,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/20140525-VEGAIME for VEGA Not Root.apk"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/20140525-VEGAIME-for-VEGA-Not-Root.apk"
     },
     {
       "post": "501",
@@ -1624,9 +1624,9 @@
     {
       "post": "508",
       "source_path": "508\\file\\애드센스 필수 가이드북.pdf",
-      "release_filename": "애드센스 필수 가이드북.pdf",
+      "release_filename": "508-adsense-guide.pdf",
       "size_bytes": 914735,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/애드센스 필수 가이드북.pdf"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/508-adsense-guide.pdf"
     },
     {
       "post": "515",
@@ -1750,16 +1750,16 @@
     {
       "post": "546",
       "source_path": "546\\file\\절대로 못하는 게임 - 복사본.exe",
-      "release_filename": "절대로 못하는 게임 - 복사본.exe",
+      "release_filename": "546-impossible-game-copy.exe",
       "size_bytes": 2471377,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/절대로 못하는 게임 - 복사본.exe"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/546-impossible-game-copy.exe"
     },
     {
       "post": "546",
       "source_path": "546\\file\\절대로 못하는 게임.zip",
-      "release_filename": "절대로 못하는 게임.zip",
+      "release_filename": "546-impossible-game.zip",
       "size_bytes": 123177,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/절대로 못하는 게임.zip"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/546-impossible-game.zip"
     },
     {
       "post": "547",
@@ -1834,23 +1834,23 @@
     {
       "post": "642",
       "source_path": "642\\file\\물리1 오답문제.pdf",
-      "release_filename": "물리1 오답문제.pdf",
+      "release_filename": "642-physics1-review.pdf",
       "size_bytes": 3022416,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/물리1 오답문제.pdf"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/642-physics1-review.pdf"
     },
     {
       "post": "643",
       "source_path": "643\\file\\지구과학1 오답문제.pdf",
-      "release_filename": "지구과학1 오답문제.pdf",
+      "release_filename": "643-earth-science1-review.pdf",
       "size_bytes": 2418732,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/지구과학1 오답문제.pdf"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/643-earth-science1-review.pdf"
     },
     {
       "post": "646",
       "source_path": "646\\file\\정시 점수 공개 (2018.01.11).xlsx",
-      "release_filename": "정시 점수 공개 (2018.01.11).xlsx",
+      "release_filename": "646-2018.01.11.xlsx",
       "size_bytes": 47392,
-      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/정시 점수 공개 (2018.01.11).xlsx"
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/646-2018.01.11.xlsx"
     },
     {
       "post": "659",

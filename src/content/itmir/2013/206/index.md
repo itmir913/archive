@@ -66,4 +66,4 @@ VEGACamera.apk를 넣지 않으시면 카메라가 활성화 되지 않습니다
 
 - [AOTDialer.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/AOTDialer.apk) `221 KB`
 
-- [배넘식 미니 윈도우.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/배넘식 미니 윈도우.zip) `3.1 MB`
+- [배넘식 미니 윈도우.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/206-mini-window.zip) `3.1 MB`

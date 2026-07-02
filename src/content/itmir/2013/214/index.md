@@ -24,4 +24,4 @@ Lucid OS의 커널에 반영되어 있습니다.
 
 ## 첨부파일
 
-- [touchscreen backup.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/touchscreen backup.zip) `4 KB`
+- [touchscreen backup.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/touchscreen-backup.zip) `4 KB`

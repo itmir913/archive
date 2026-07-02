@@ -124,4 +124,4 @@ rw-r--r--
 
 - [camera_click.ogg](https://github.com/itmir913/archive/releases/download/itmir-attachments/camera_click.ogg) `4 KB`
 - [VideoRecord.ogg](https://github.com/itmir913/archive/releases/download/itmir-attachments/VideoRecord.ogg) `4 KB`
-- [부팅 무음.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/부팅 무음.zip) `66 KB`
+- [부팅 무음.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/133-boot-silence.zip) `66 KB`

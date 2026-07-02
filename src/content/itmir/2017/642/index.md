@@ -36,4 +36,4 @@ original_url: "https://itmir.tistory.com/642"
 
 ## 첨부파일
 
-- [물리1 오답문제.pdf](https://github.com/itmir913/archive/releases/download/itmir-attachments/물리1 오답문제.pdf) `2.9 MB`
+- [물리1 오답문제.pdf](https://github.com/itmir913/archive/releases/download/itmir-attachments/642-physics1-review.pdf) `2.9 MB`

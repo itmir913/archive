@@ -276,5 +276,5 @@ original_url: "https://itmir.tistory.com/338"
 
 ## 첨부파일
 
-- [PC용 한글화.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/PC용 한글화.zip) `98 KB`
-- [텐센트.hwp](https://github.com/itmir913/archive/releases/download/itmir-attachments/텐센트.hwp) `1.9 MB`
+- [PC용 한글화.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/338-PC-korean.zip) `98 KB`
+- [텐센트.hwp](https://github.com/itmir913/archive/releases/download/itmir-attachments/338-tencent.hwp) `1.9 MB`
