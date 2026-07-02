@@ -8,7 +8,7 @@ draft: false
 original_url: "https://itmir.tistory.com/415"
 ---
 
-![](./images/Mir'sTistory.png)
+![](./images/MirsTistory.png)
 
 제가 티스토리 블로그를 시작한지도 벌써 1년이 다되어 가네요~
 

@@ -1,0 +1,174 @@
+---
+import '../styles/global.css';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="luminousky digital archive" />
+    <title>luminousky / archive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="archive-landing">
+    <main class="landing-main">
+      <header class="landing-header">
+        <p class="landing-brand">luminousky</p>
+        <h1 class="landing-title">archive</h1>
+      </header>
+
+      <div class="chapter-list">
+        <a href={`${base}/itmir/`} class="chapter chapter--active">
+          <div class="chapter-left">
+            <span class="chapter-num">CHAPTER 1</span>
+            <span class="chapter-name">ITMir</span>
+          </div>
+          <div class="chapter-right">
+            <span class="chapter-period">2013 – 2021</span>
+            <span class="chapter-arrow">→</span>
+          </div>
+        </a>
+
+        <div class="chapter chapter--soon">
+          <div class="chapter-left">
+            <span class="chapter-num">CHAPTER 2</span>
+            <span class="chapter-name">luminousky</span>
+          </div>
+          <div class="chapter-right">
+            <span class="chapter-period">coming soon</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <style>
+      .archive-landing {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+      }
+
+      .landing-main {
+        width: 100%;
+        max-width: 640px;
+        padding: 2rem 1.5rem;
+      }
+
+      .landing-header {
+        margin-bottom: 3rem;
+      }
+
+      .landing-brand {
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #9ca3af;
+        margin: 0 0 0.3rem;
+      }
+
+      .landing-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        letter-spacing: -0.04em;
+        color: #111827;
+        margin: 0;
+        line-height: 1;
+      }
+
+      .chapter-list {
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid #e5e7eb;
+      }
+
+      .chapter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem 0;
+        border-bottom: 1px solid #e5e7eb;
+        text-decoration: none;
+        transition: background 0.1s;
+      }
+
+      .chapter-left {
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+      }
+
+      .chapter-right {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .chapter-num {
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #9ca3af;
+        white-space: nowrap;
+      }
+
+      .chapter-name {
+        font-size: 1.4rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        color: #111827;
+      }
+
+      .chapter-period {
+        font-size: 0.8rem;
+        color: #9ca3af;
+      }
+
+      .chapter-arrow {
+        font-size: 1rem;
+        color: #9ca3af;
+        transition: transform 0.15s, color 0.15s;
+      }
+
+      .chapter--active:hover .chapter-arrow {
+        transform: translateX(4px);
+        color: #2563eb;
+      }
+
+      .chapter--active:hover .chapter-name {
+        color: #2563eb;
+      }
+
+      .chapter--active:hover {
+        text-decoration: none;
+      }
+
+      .chapter--soon .chapter-name {
+        color: #d1d5db;
+      }
+
+      .chapter--soon .chapter-num {
+        color: #d1d5db;
+      }
+
+      .chapter--soon {
+        cursor: default;
+      }
+
+      @media (max-width: 480px) {
+        .landing-title { font-size: 2rem; }
+        .chapter-name { font-size: 1.2rem; }
+      }
+    </style>
+  </body>
+</html>

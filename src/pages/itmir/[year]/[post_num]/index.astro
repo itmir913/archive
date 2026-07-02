@@ -1,0 +1,73 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('itmir');
+  return posts.map((post) => {
+    const [year, post_num] = post.slug.split('/');
+    return {
+      params: { year, post_num },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+function formatDate(d: Date) {
+  return d.toLocaleDateString('ko-KR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'Asia/Seoul',
+  });
+}
+---
+
+<BaseLayout title={post.data.title} description={post.data.description || post.data.title}>
+  <article>
+    <header class="post-header">
+      <a href={`${base}/itmir/`} class="post-back">← 목록으로</a>
+
+      <h1 class="post-title">{post.data.title}</h1>
+
+      <div class="post-meta">
+        <time class="post-meta-date" datetime={post.data.date.toISOString()}>
+          {formatDate(post.data.date)}
+        </time>
+        {post.data.category && (
+          <span class="post-category">{post.data.category}</span>
+        )}
+        {post.data.original_url && (
+          <a
+            href={post.data.original_url}
+            class="post-original"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            원본 보기 ↗
+          </a>
+        )}
+      </div>
+
+      {post.data.description && (
+        <p class="post-description">{post.data.description}</p>
+      )}
+    </header>
+
+    <div class="post-content">
+      <Content />
+    </div>
+
+    {post.data.tags.length > 0 && (
+      <div class="post-tags">
+        {post.data.tags.map((tag) => (
+          <span class="tag">#{tag}</span>
+        ))}
+      </div>
+    )}
+  </article>
+</BaseLayout>

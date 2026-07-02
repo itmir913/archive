@@ -1,0 +1,71 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const allPosts = await getCollection('itmir', ({ data }) => !data.draft);
+// 최신순 정렬: 연도 내에서도 최신(12월)이 위, 오래된 것(1월)이 아래
+allPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+// Group by year, most recent year first
+const byYear = new Map<string, typeof allPosts>();
+for (const post of allPosts) {
+  const year = post.slug.split('/')[0];
+  if (!byYear.has(year)) byYear.set(year, []);
+  byYear.get(year)!.push(post);
+}
+const years = [...byYear.keys()].sort((a, b) => Number(b) - Number(a));
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+function formatDate(d: Date) {
+  const mm = String(d.getMonth() + 1).padStart(2, '0');
+  const dd = String(d.getDate()).padStart(2, '0');
+  return `${mm}-${dd}`;
+}
+---
+
+<BaseLayout title="ITMir 아카이브">
+  <h1 class="page-title">ITMir 아카이브</h1>
+  <p class="page-description">
+    itmir.tistory.com · 2013–2021 · 총 {allPosts.length}개 포스트
+  </p>
+
+  <nav class="year-nav" aria-label="연도별 이동">
+    {years.map((year) => (
+      <a href={`#year-${year}`}>{year}</a>
+    ))}
+  </nav>
+
+  {years.map((year) => {
+    const posts = byYear.get(year)!;
+    return (
+      <section class="year-section" id={`year-${year}`}>
+        <h2 class="year-heading">
+          {year}
+          <span class="year-count">({posts.length})</span>
+        </h2>
+        <ul class="post-list">
+          {posts.map((post) => {
+            const [postYear, postNum] = post.slug.split('/');
+            return (
+              <li class="post-item">
+                <span class="post-date">{formatDate(post.data.date)}</span>
+                <div class="post-title-row">
+                  <a
+                    href={`${base}/itmir/${postYear}/${postNum}/`}
+                    class="post-title-link"
+                  >
+                    {post.data.title}
+                  </a>
+                  {post.data.category && (
+                    <span class="post-category">{post.data.category}</span>
+                  )}
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    );
+  })}
+</BaseLayout>
