@@ -10,9 +10,7 @@ original_url: "https://itmir.tistory.com/215"
 
 20130513에 한 컴퓨터 활용능력 방과후입니다
 
-[0513.xlsx
-
-다운로드](./file/0513.xlsx)
+[0513.xlsx](./file/0513.xlsx)
 
 ---
 

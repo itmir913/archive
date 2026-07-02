@@ -113,9 +113,7 @@ ntpwed프로그램이 들어있는 디스크를 찾아 주세요.
 
 그럼 모두 암호를 뚫기 바라며 글 마치도록 하겠습니다. ㅋㅋ
 
-[ntpwed04.zip
-
-다운로드](./file/ntpwed04.zip)
+[ntpwed04.zip](./file/ntpwed04.zip)
 
 04버전으로 64비트 버전이 포함되어 있습니다
 

@@ -34,9 +34,7 @@ https://play.google.com/store/apps/details?id=com.jovasoft.defylens
 
 그래서 구글링을 통해 apk를 찾아냈습니다
 
-[DefyLens.apk
-
-다운로드](https://t1.daumcdn.net/cfile/tistory/2559B046522BFBF512)
+[DefyLens.apk](https://t1.daumcdn.net/cfile/tistory/2559B046522BFBF512)
 
 아주 힘들게 찾은 만큼 공유 안하려고 했었는대 혹시 필요하신 분들이 계실까 해서 지금이라도 올립니다 ㅎㅎ
 

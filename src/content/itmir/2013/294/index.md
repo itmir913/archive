@@ -8,9 +8,7 @@ draft: false
 original_url: "https://itmir.tistory.com/294"
 ---
 
-[LucidOS Kernel.7z
-
-다운로드](./file/LucidOS Kernel.7z)
+[LucidOS Kernel.7z](./file/LucidOS Kernel.7z)
 
 마지막 커널 일지도 모르겠습니다. ㅇㅅㅇ..
 

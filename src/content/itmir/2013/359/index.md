@@ -16,15 +16,11 @@ original_url: "https://itmir.tistory.com/359"
 
 처음버전
 
-[FileExplorer.zip
-
-다운로드](./file/FileExplorer.zip)
+[FileExplorer.zip](./file/FileExplorer.zip)
 
 새폴더 생성 추가
 
-[FileExplorer\_AddFolder.zip
-
-다운로드](./file/FileExplorer_AddFolder.zip)
+[FileExplorer\_AddFolder.zip](./file/FileExplorer_AddFolder.zip)
 
 원본글
 
@@ -518,9 +514,7 @@ OnFileSelected는 파일을 선택 했을 경우, 선택된 파일과 파일이 
 
 첨부파일에 전체 소스가 있습니다.  위에서 설명하지 않은 인터페이스의 경우에는 첨부파일을 참고하시기 바랍니다.
 
-[FileOpen.zip
-
-다운로드](./file/FileOpen.zip)
+[FileOpen.zip](./file/FileOpen.zip)
 
 ---
 

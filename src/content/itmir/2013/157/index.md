@@ -115,9 +115,7 @@ class calculation
 }
 ```
 
-[calculation.java
-
-다운로드](./file/calculation.java)
+[calculation.java](./file/calculation.java)
 
 위 코드를 보면 위에서 배운 연산자를 가지고 작업(?)하는 모습을 볼 수 있습니다.
 

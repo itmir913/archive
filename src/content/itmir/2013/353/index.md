@@ -132,9 +132,7 @@ QR코드 :       ![](./images/바이두QR.jpg)
 
 **바이두 클라우드 한글화 앱 다운로드 :   [BaiduCloud(SPAPA).apk](http://spapa1004.tistory.com/attachment/cfile5.uf@2453A247522E884834A3E7.apk)**
 
-[BaiduCloud\_fix(SPAPA).apk
-
-다운로드](./file/BaiduCloud_fix(SPAPA).apk)
+[BaiduCloud\_fix(SPAPA).apk](./file/BaiduCloud_fix(SPAPA).apk)
 
 **PC클라이언트 프로그램을 한글화하신분이 계셔서 링크 같이 남겨드립니다.**
 
@@ -206,9 +204,7 @@ HEX에디터와 파일비교등등으로 겨우 이정도까지 했습니다.
 
 [![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) 바이두클라우드한글패치.zip](http://w3tech.tistory.com/attachment/cfile22.uf@2764C04C522D04200C359C.zip)
 
-[바이두클라우드한글패치.zip
-
-다운로드](./file/바이두클라우드한글패치.zip)
+[바이두클라우드한글패치.zip](./file/바이두클라우드한글패치.zip)
 
 접기
 
@@ -240,9 +236,7 @@ HEX에디터와 파일비교등등으로 겨우 이정도까지 했습니다.
 
 [![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) 바이두동기화한글패치.zip](http://w3tech.tistory.com/attachment/cfile3.uf@2617814C523AAB8817C9A7.zip)
 
-[바이두동기화한글패치.zip
-
-다운로드](./file/바이두동기화한글패치.zip)
+[바이두동기화한글패치.zip](./file/바이두동기화한글패치.zip)
 
 경로
 
@@ -282,21 +276,15 @@ C:\Program Files\baidu\BaiduYunGuanjia
 
 블로그에서 클라이언트 다운로드
 
-[BaiduYun\_3.8.0.exe
+[BaiduYun\_3.8.0.exe](./file/BaiduYun_3.8.0.exe)
 
-다운로드](./file/BaiduYun_3.8.0.exe)
-
-[BaiduYunGuanjia\_4.1.0.exe
-
-다운로드](./file/BaiduYunGuanjia_4.1.0.exe)
+[BaiduYunGuanjia\_4.1.0.exe](./file/BaiduYunGuanjia_4.1.0.exe)
 
 **패쳐 다운로드 ↓↓↓↓**
 
 [![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) BaiduCloud\_Korean\_130928.zip](http://w3tech.tistory.com/attachment/cfile4.uf@2427D43852469E13083E64.zip)
 
-[BaiduCloud\_Korean\_130928.zip
-
-다운로드](./file/BaiduCloud_Korean_130928.zip)
+[BaiduCloud\_Korean\_130928.zip](./file/BaiduCloud_Korean_130928.zip)
 
 **제목 : 바이두 클라우드 한국어 패치 프로그램 AHK로 만들기**
 
@@ -330,17 +318,13 @@ C:\Program Files\baidu\BaiduYunGuanjia
 
 아래는 실행파일과 패치파일이 포함된 압축 파일입니다.
 
-[BaiduCloud\_Korean\_130928.zip
-
-다운로드](./file/BaiduCloud_Korean_130928_1.zip)
+[BaiduCloud\_Korean\_130928.zip](./file/BaiduCloud_Korean_130928_1.zip)
 
 실행한 화면입니다.
 
 ![](./images/kor.png)
 
-[바이두.hwp
-
-다운로드](./file/바이두.hwp)
+[바이두.hwp](./file/바이두.hwp)
 
 ## [바이두 클라우드 서비스 모바일 앱 업데이트버전(5.1.1) 한글화](http://spapa1004.tistory.com/96)
 
@@ -364,9 +348,7 @@ C:\Program Files\baidu\BaiduYunGuanjia
 
 **업데이트버전(5.1.1) 한글화 앱 :**
 
-**[BaiduCloud\_5.1.1(SPAPA).apk
-
-다운로드](./file/BaiduCloud_5.1.1(SPAPA).apk)**
+**[BaiduCloud\_5.1.1(SPAPA).apk](./file/BaiduCloud_5.1.1(SPAPA).apk)**
 
 **\* 대용량 클라우드 서비스**
 

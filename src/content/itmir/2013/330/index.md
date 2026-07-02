@@ -36,9 +36,7 @@ class Return{
 }
 ```
 
-[Return.java
-
-다운로드](./file/Return.java)
+[Return.java](./file/Return.java)
 
 이런 예제가 있습니다.
 

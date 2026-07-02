@@ -251,9 +251,7 @@ execute값에 9를 넣어줬기 때문에 1부터 9까지의 곱이 result값으
 
 ### 예제 다운로드
 
-[ExampleAsyncTask.zip
-
-다운로드](./file/ExampleAsyncTask.zip)
+[ExampleAsyncTask.zip](./file/ExampleAsyncTask.zip)
 
 이번 강좌부터는 예제 앱 소스가 이클립스 버전이 아닌 안드로이드 스튜디오에서 작업한 버전으로 올라갑니다.
 

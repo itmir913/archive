@@ -38,9 +38,7 @@ public static void main(String[] args){
 }
 ```
 
-[comment.java
-
-다운로드](./file/comment.java)
+[comment.java](./file/comment.java)
 
 위 소스를 보면 /\* \*/ 주석이 삽입되어 있습니다.
 
@@ -81,9 +79,7 @@ class comment2{
 }
 ```
 
-[comment2.java
-
-다운로드](./file/comment2.java)
+[comment2.java](./file/comment2.java)
 
 마찬가지로 // 주석을 넣어 파일을 작성하였습니다.
 

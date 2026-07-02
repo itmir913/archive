@@ -80,13 +80,9 @@ original_url: "https://itmir.tistory.com/499"
 
 -2014-05-22
 
-[20140522-VEGAIME.apk
+[20140522-VEGAIME.apk](./file/20140522-VEGAIME.apk)
 
-다운로드](./file/20140522-VEGAIME.apk)
-
-[20140522-VEGAIME for VEGA.apk
-
-다운로드](./file/20140522-VEGAIME for VEGA.apk)
+[20140522-VEGAIME for VEGA.apk](./file/20140522-VEGAIME for VEGA.apk)
 
 Vega기종은 for Vega를 받아주세요
 
@@ -100,13 +96,9 @@ Vega기종은 for Vega를 받아주세요
 
 -2014-05-25
 
-[20140525-VEGAIME for Not Root.apk
+[20140525-VEGAIME for Not Root.apk](./file/20140525-VEGAIME for Not Root.apk)
 
-다운로드](./file/20140525-VEGAIME for Not Root.apk)
-
-[20140525-VEGAIME for VEGA Not Root.apk
-
-다운로드](./file/20140525-VEGAIME for VEGA Not Root.apk)
+[20140525-VEGAIME for VEGA Not Root.apk](./file/20140525-VEGAIME for VEGA Not Root.apk)
 
 이제 더이상의 업데이트는 없을것 같습니다
 

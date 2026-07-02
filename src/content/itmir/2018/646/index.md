@@ -34,9 +34,7 @@ original_url: "https://itmir.tistory.com/646"
 
 ### 다운로드
 
-[정시 점수 공개 (2018.01.11).xlsx
-
-다운로드](./file/정시 점수 공개 (2018.01.11).xlsx)
+[정시 점수 공개 (2018.01.11).xlsx](./file/정시 점수 공개 (2018.01.11).xlsx)
 
 파일이 업데이트 될 경우, <http://itmir.tistory.com/646>에서 확인해주세요.
 

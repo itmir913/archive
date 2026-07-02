@@ -281,9 +281,7 @@ setContentView(R.layout.activity\_main);
 
 응용은 당신의 몫!
 
-[Button.zip
-
-다운로드](./file/Button.zip)
+[Button.zip](./file/Button.zip)
 
 ---
 

@@ -78,9 +78,7 @@ MTP로 설정되어 있다면 아래와 같은 알림이 뜨며 PTP설정을 할
 
 (2013-11-29 기준 최신)
 
-[CarbonSetup.zip
-
-다운로드](./file/CarbonSetup.zip)
+[CarbonSetup.zip](./file/CarbonSetup.zip)
 
 어플내에서는 아래와 같은 알림이 뜨며 기다리고 있습니다.
 

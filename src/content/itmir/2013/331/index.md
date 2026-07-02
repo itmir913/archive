@@ -20,9 +20,7 @@ original_url: "https://itmir.tistory.com/331"
 
 언루팅
 
-[UnRooting.zip
-
-다운로드](./file/UnRooting.zip)
+[UnRooting.zip](./file/UnRooting.zip)
 
 CWM에서 롬을 설치하시듯이 설치하시면 됩니다
 
@@ -32,9 +30,7 @@ CWM에서 롬을 설치하시듯이 설치하시면 됩니다
 
 위 링크에서 받을수 있지만 따로 첨부파일로 올려드리도록 하겠습니다
 
-[UPDATE-SuperSU-v1.60.zip
-
-다운로드](https://t1.daumcdn.net/cfile/tistory/221CD350522B25BF25)
+[UPDATE-SuperSU-v1.60.zip](https://t1.daumcdn.net/cfile/tistory/221CD350522B25BF25)
 
 비지박스 제거
 
@@ -48,9 +44,7 @@ CWM에서 롬을 설치하시듯이 설치하시면 됩니다
 
 아래 zip파일을 사용하지면 됩니다
 
-[Busybox Uninstall.zip
-
-다운로드](./file/Busybox Uninstall.zip)
+[Busybox Uninstall.zip](./file/Busybox Uninstall.zip)
 
 다시 설치하실때는 마켓에 있는 busybox installer어플을 이용하시면 될듯 합니다~
 

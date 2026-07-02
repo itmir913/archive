@@ -433,9 +433,7 @@ onCreate()안에서 위젯 id를 가져오는 소스입니다
 
 ### 다운로드
 
-> [ExampleWidget.zip
->
-> 다운로드](./file/ExampleWidget.zip)
+> [ExampleWidget.zip](./file/ExampleWidget.zip)
 
 혹시 문제 있으시다면 덧글 남겨주세요~
 

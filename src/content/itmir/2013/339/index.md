@@ -22,13 +22,9 @@ py2exe가 그 주인공 인데요.
 
 python은 [www.python.org](http://www.python.org)에서 받을 수 있습니다.
 
-[python-2.7.5.z01
+[python-2.7.5.z01](./file/python-2.7.5.z01)
 
-다운로드](./file/python-2.7.5.z01)
-
-[python-2.7.5.zip
-
-다운로드](./file/python-2.7.5.zip)
+[python-2.7.5.zip](./file/python-2.7.5.zip)
 
 첨부로도 올려두겠습니다.
 
@@ -40,9 +36,7 @@ python은 [www.python.org](http://www.python.org)에서 받을 수 있습니다.
 
 위에 올려진 python을 설치했다면,
 
-[py2exe-0.6.9.win32-py2.7.exe
-
-다운로드](./file/py2exe-0.6.9.win32-py2.7.exe)
+[py2exe-0.6.9.win32-py2.7.exe](./file/py2exe-0.6.9.win32-py2.7.exe)
 
 자 모두 설치해주시면 아래를 따라해주세요.
 
@@ -120,9 +114,7 @@ C:\Python27\python.exe make.py (만들어질 이름).exe
 
 이렇게 입력하면 dist폴더에 한개의 exe가 생성됩니다.
 
-[make.py
-
-다운로드](./file/make.py)
+[make.py](./file/make.py)
 
 출처 : <http://huddling.tistory.com/5>
 

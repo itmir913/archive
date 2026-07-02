@@ -162,9 +162,7 @@ original_url: "https://itmir.tistory.com/338"
 
 미르의 미러 첨부파일
 
-[TencentCloud\_fix2(SPAPA).apk
-
-다운로드](./file/TencentCloud_fix2(SPAPA).apk)
+[TencentCloud\_fix2(SPAPA).apk](./file/TencentCloud_fix2(SPAPA).apk)
 
 한글화 앱 추가수정 (초보자 가이드 한글화, 몇몇 부분 수정)
 
@@ -172,9 +170,7 @@ original_url: "https://itmir.tistory.com/338"
 
  미르의 미러 첨부파일
 
-[PC용 한글화.zip
-
-다운로드](./file/PC용 한글화.zip)
+[PC용 한글화.zip](./file/PC용 한글화.zip)
 
 **PC 클라이언트 설치파일 :**<http://dldir1.qq.com/weiyun/weiyun_windows_1.6.0.514.exe>
 
@@ -216,9 +212,7 @@ original_url: "https://itmir.tistory.com/338"
 
 **업데이트버전(1.6.0.360) 한글화 앱 :   [TencentCloud\_1.6.0.360(SPAPA).apk](http://spapa1004.tistory.com/attachment/cfile3.uf@236BAA345245B17E185402.apk)**
 
-[Tencent\_Cloud\_1.6.0.360(SPAPA).apk
-
-다운로드](./file/Tencent_Cloud_1.6.0.360(SPAPA).apk)
+[Tencent\_Cloud\_1.6.0.360(SPAPA).apk](./file/Tencent_Cloud_1.6.0.360(SPAPA).apk)
 
 **\* 대용량 클라우드 서비스**
 
@@ -232,9 +226,7 @@ original_url: "https://itmir.tistory.com/338"
 
 **링크를 통해서만 공유 부탁드립니다.**
 
-[텐센트.hwp
-
-다운로드](./file/텐센트.hwp)
+[텐센트.hwp](./file/텐센트.hwp)
 
 ## [텐센트 클라우드 서비스 모바일 앱 업데이트버전(1.6.0.360) 한글화파일 배포](http://spapa1004.tistory.com/87)
 
@@ -256,9 +248,7 @@ original_url: "https://itmir.tistory.com/338"
 
 **업데이트버전(1.6.0.360) 한글화 앱 :   [TencentCloud\_1.6.0.360(SPAPA).apk](http://spapa1004.tistory.com/attachment/cfile3.uf@236BAA345245B17E185402.apk)**
 
-[Tencent\_Cloud\_1.6.0.360(SPAPA).apk
-
-다운로드](./file/Tencent_Cloud_1_1.6)
+[Tencent\_Cloud\_1.6.0.360(SPAPA).apk](./file/Tencent_Cloud_1_1.6)
 
 **\* 대용량 클라우드 서비스**
 

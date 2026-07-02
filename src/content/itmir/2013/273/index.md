@@ -18,9 +18,7 @@ ramdiskaddr이란 램디스크의 주소 값인데요.
 
 먼저 헥스 에디터가 필요합니다.
 
-[HxDkor.zip
-
-다운로드](./file/HxDkor.zip)
+[HxDkor.zip](./file/HxDkor.zip)
 
 헥스 에디터 포터블 한글판입니다.
 

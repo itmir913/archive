@@ -26,6 +26,4 @@ PC프로그램인 Google Earth가 어플화 되었습니다
 
 버전은 7.0.0.7386버전입니다
 
-[Google Earth 7.0.0.7386.apk
-
-다운로드](./file/Google Earth 7.0.0.7386.apk)
+[Google Earth 7.0.0.7386.apk](./file/Google Earth 7.0.0.7386.apk)

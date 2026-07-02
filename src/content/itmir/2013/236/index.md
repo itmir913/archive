@@ -30,13 +30,9 @@ original_url: "https://itmir.tistory.com/236"
 
 소스랑 어플 올립니다
 
-[LucidOSChooser.zip
+[LucidOSChooser.zip](./file/LucidOSChooser.zip)
 
-다운로드](./file/LucidOSChooser.zip)
-
-[LucidOSChooser.apk
-
-다운로드](./file/LucidOSChooser.apk)
+[LucidOSChooser.apk](./file/LucidOSChooser.apk)
 
 ---
 

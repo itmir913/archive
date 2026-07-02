@@ -47,9 +47,7 @@ License: public domain.
 
 Jar Library
 
-[WebArchiveReader.jar
-
-다운로드](./file/WebArchiveReader.jar)
+[WebArchiveReader.jar](./file/WebArchiveReader.jar)
 
 jar파일은 라이브러리 파일이며, zip은 소스파일 입니다
 
@@ -93,13 +91,9 @@ jar파일만 받으신후 프로젝트/libs에 넣어주세요
 
 예제 어플 소스
 
-[ExampleWebArchiveReader.apk
+[ExampleWebArchiveReader.apk](./file/ExampleWebArchiveReader.apk)
 
-다운로드](./file/ExampleWebArchiveReader.apk)
-
-[ExampleWebArchiveReader.zip
-
-다운로드](./file/ExampleWebArchiveReader.zip)
+[ExampleWebArchiveReader.zip](./file/ExampleWebArchiveReader.zip)
 
 WebArchiveReader 라이브러리를 이용한 예제 어플입니다
 

@@ -637,9 +637,7 @@ public class MainActivity extends Activity {
 
 }
 
-[ExampleWebView.zip
-
-다운로드](./file/ExampleWebView.zip)
+[ExampleWebView.zip](./file/ExampleWebView.zip)
 
 ---
 

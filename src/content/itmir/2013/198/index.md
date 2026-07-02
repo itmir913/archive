@@ -30,21 +30,13 @@ original_url: "https://itmir.tistory.com/198"
 
 그럼 오늘 하루도 파이팅!!
 
-[cwm.img
+[cwm.img](./file/cwm.img)
 
-다운로드](./file/cwm.img)
+[cwm\_pink.img](./file/cwm_pink.img)
 
-[cwm\_pink.img
+[twrp.img](./file/twrp.img)
 
-다운로드](./file/cwm_pink.img)
-
-[twrp.img
-
-다운로드](./file/twrp.img)
-
-[twrp\_pink.img
-
-다운로드](./file/twrp_pink.img)
+[twrp\_pink.img](./file/twrp_pink.img)
 
 참고로 pink 리커버리는 아래와 같이 생겼습니다
 

@@ -34,9 +34,7 @@ saveArchive()를 불러오는 부분이 제가 짠게 아니라 github에서 프
 
 **라이브러리**
 
-[WebViewAllCapture.jar
-
-다운로드](./file/WebViewAllCapture.jar)
+[WebViewAllCapture.jar](./file/WebViewAllCapture.jar)
 
 2014-02-13 : v1 첫 릴리즈
 
@@ -83,13 +81,9 @@ Boolean result = mAllCapture.onWebViewAllCapture()
 
 **어플 예제 소스**
 
-[ExampleWebViewAllCapture.zip
+[ExampleWebViewAllCapture.zip](./file/ExampleWebViewAllCapture.zip)
 
-다운로드](./file/ExampleWebViewAllCapture.zip)
-
-[ExampleWebViewAllCapture.apk
-
-다운로드](./file/ExampleWebViewAllCapture.apk)
+[ExampleWebViewAllCapture.apk](./file/ExampleWebViewAllCapture.apk)
 
 저번에 배운 WebView예제에 전체화면 캡쳐 소스를 추가한 소스입니다
 

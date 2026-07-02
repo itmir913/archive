@@ -30,9 +30,7 @@ original_url: "https://itmir.tistory.com/191"
 
 베레2도 베레1처럼 base값을 바꿔야 부팅되는건 아니겠죠???
 
-[boot.img
-
-다운로드](./file/boot.img)
+[boot.img](./file/boot.img)
 
 ---
 

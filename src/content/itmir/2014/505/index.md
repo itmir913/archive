@@ -65,9 +65,7 @@ document.write("<a href=\"http:\/\/변경된주소\/", pathArray[1], "\">http:\/
 </html>
 ```
 
-[블로그주소이동.txt
-
-다운로드](./file/블로그주소이동.txt)
+[블로그주소이동.txt](./file/블로그주소이동.txt)
 
 이때 "변경된 주소" 부분을 바꾼 주소인 B로 바꿔주세요.
 

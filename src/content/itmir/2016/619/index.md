@@ -108,13 +108,9 @@ java.lang.NoSuchMethodError: java.lang.System.arraycopy
 
 따라서 마시멜로 이하에서 작동을 보증할 수 없습니다.
 
-[com.pantech.res.apk
+[com.pantech.res.apk](./file/com.pantech.res.apk)
 
-다운로드](./file/com.pantech.res.apk)
-
-[VEGAIME\_by\_Mir.apk
-
-다운로드](./file/VEGAIME_by_Mir.apk)
+[VEGAIME\_by\_Mir.apk](./file/VEGAIME_by_Mir.apk)
 
 저에겐 최신의 안드로이드를 탑재한 기기가 없습니다.... 갤넥 CM12에서만 작동을 확인했기 때문에
 

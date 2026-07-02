@@ -22,17 +22,11 @@ original_url: "https://itmir.tistory.com/206"
 
 그래서 한번 제 베레2에 넣어보도록 하겠습니다
 
-[VEGACamera.zip
+[VEGACamera.zip](./file/VEGACamera.zip)
 
-다운로드](./file/VEGACamera.zip)
+[배넘식 미니 윈도우.zip](./file/배넘식 미니 윈도우.zip)
 
-[배넘식 미니 윈도우.zip
-
-다운로드](./file/배넘식 미니 윈도우.zip)
-
-[AOTDialer.apk
-
-다운로드](./file/AOTDialer.apk)
+[AOTDialer.apk](./file/AOTDialer.apk)
 
 미니 다이얼을 업데이트 하였습니다
 

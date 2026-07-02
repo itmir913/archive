@@ -14,9 +14,7 @@ original_url: "https://itmir.tistory.com/181"
 
 그래서 구글링을 하다보니 좋은 자료를 찾았습니다
 
-[mkbootimg
-
-다운로드](./file/mkbootimg)
+[mkbootimg](./file/mkbootimg)
 
 만약 확장자 bin이 붙는다면 제거해 주세요 ㅎㅎ
 

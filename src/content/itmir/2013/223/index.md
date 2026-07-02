@@ -71,10 +71,6 @@ original_url: "https://itmir.tistory.com/223"
 
 그전에 받으신 분들은 업데이트하시기 바랍니다.
 
-[S\_Translator\_CSLi\_v0.8.8\_ported\_softdx.apk
+[S\_Translator\_CSLi\_v0.8.8\_ported\_softdx.apk](./file/S_Translator_CSLi_v0.8.8_ported_softdx.apk)
 
-다운로드](./file/S_Translator_CSLi_v0.8.8_ported_softdx.apk)
-
-[Samsungsvc\_v1.4.0.108.apk
-
-다운로드](./file/Samsungsvc_v1.4.0.108.apk)
+[Samsungsvc\_v1.4.0.108.apk](./file/Samsungsvc_v1.4.0.108.apk)

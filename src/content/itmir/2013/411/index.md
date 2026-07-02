@@ -28,10 +28,6 @@ UI는 아래와 같습니다
 
 [DownLoad]
 
-[VEGAMusicFX.apk
+[VEGAMusicFX.apk](https://t1.daumcdn.net/cfile/tistory/2649434552AEC4460C)
 
-다운로드](https://t1.daumcdn.net/cfile/tistory/2649434552AEC4460C)
-
-[VEGAMusicPlayer.apk
-
-다운로드](./file/VEGAMusicPlayer.apk)
+[VEGAMusicPlayer.apk](./file/VEGAMusicPlayer.apk)

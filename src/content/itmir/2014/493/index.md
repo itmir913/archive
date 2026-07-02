@@ -92,9 +92,7 @@ original_url: "https://itmir.tistory.com/493"
 
 2014-05-04 : v1 첫 업로드
 
-[20140504-VEGAIME.apk
-
-다운로드](./file/20140504-VEGAIME.apk)
+[20140504-VEGAIME.apk](./file/20140504-VEGAIME.apk)
 
 티스토리 블로그에서만 파일을 받으실수 있습니다 (추후 업데이트시 일일히 첨부파일을 교체하는 부담 덜음)
 

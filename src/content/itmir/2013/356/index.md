@@ -94,9 +94,7 @@ C:\에다가 풀고 하라는 이유가 이것입니다
 
 adb restore이 지원되는 adb로 변경
 
-[ADB Backup & Restore.zip
-
-다운로드](./file/ADB Backup & Restore.zip)
+[ADB Backup & Restore.zip](./file/ADB Backup & Restore.zip)
 
 ---
 

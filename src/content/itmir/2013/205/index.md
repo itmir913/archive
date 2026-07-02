@@ -24,9 +24,7 @@ thanks for hPa
 
 사용법 : 첨부파일을 받아 압축을 풀으신다음 Start.bat파일을 실행하세요
 
-[Easy\_Root\_for\_VegaRacer2.zip
-
-다운로드](./file/Easy_Root_for_VegaRacer2.zip)
+[Easy\_Root\_for\_VegaRacer2.zip](./file/Easy_Root_for_VegaRacer2.zip)
 
 자주 묻는 질문
 

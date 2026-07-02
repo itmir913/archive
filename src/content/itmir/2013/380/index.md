@@ -14,16 +14,10 @@ original_url: "https://itmir.tistory.com/380"
 
 Iron
 
-[Iron MusicPlayer.apk
+[Iron MusicPlayer.apk](./file/Iron MusicPlayer.apk)
 
-다운로드](./file/Iron MusicPlayer.apk)
-
-[SkyMusicFX.apk
-
-다운로드](./file/SkyMusicFX.apk)
+[SkyMusicFX.apk](./file/SkyMusicFX.apk)
 
 Note
 
-[Secret Note MusicPlayer.apk
-
-다운로드](./file/Secret Note MusicPlayer.apk)
+[Secret Note MusicPlayer.apk](./file/Secret Note MusicPlayer.apk)

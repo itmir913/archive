@@ -24,9 +24,7 @@ diff를 쉽게 하기 위해 스크립트를 만들었습니다.
 
 원본폴더명과 수정된 폴더명, 파일 이름을 입력하면 patch파일이 만들어 집니다.
 
-[diff.sh
-
-다운로드](./file/diff.sh)
+[diff.sh](./file/diff.sh)
 
 ---
 

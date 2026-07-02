@@ -14,10 +14,6 @@ google-usb-driver와 x64, x86버전의 드라이버 입니다
 
 출처는 어디서 구했는지 까먹었네요.... 나중에 찾아서 보충하겠습니다
 
-[Fastboot드라이버.zip
+[Fastboot드라이버.zip](./file/Fastboot드라이버.zip)
 
-다운로드](./file/Fastboot드라이버.zip)
-
-[google-usb\_driver.zip
-
-다운로드](./file/google-usb_driver.zip)
+[google-usb\_driver.zip](./file/google-usb_driver.zip)

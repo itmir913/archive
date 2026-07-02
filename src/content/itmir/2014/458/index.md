@@ -407,17 +407,13 @@ originText.setText(originSmsText);
 
 이번 강좌 예제는 심플 문자앱(?)으로도 쓸수 있을거 같아서 apk파일은 미리 올려드립니다 ㅎ
 
-[ExampleSendSMS.apk
-
-다운로드](./file/ExampleSendSMS.apk)
+[ExampleSendSMS.apk](./file/ExampleSendSMS.apk)
 
 이 강좌의 예제소스는 28번 강좌가 나오는 즉시 업로드 됩니다
 
 카페에서는 원본글에서만 다운로드가 가능합니다
 
-[ExampleSendSMS.zip
-
-다운로드](./file/ExampleSendSMS.zip)
+[ExampleSendSMS.zip](./file/ExampleSendSMS.zip)
 
 참조 : http://developer.android.com/reference/android/telephony/gsm/SmsManager.html
 

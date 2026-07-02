@@ -22,9 +22,7 @@ original_url: "https://itmir.tistory.com/382"
 
 [예제소스 다운로드]
 
-[AppsList.zip
-
-다운로드](./file/AppsList.zip)
+[AppsList.zip](./file/AppsList.zip)
 
 [스크린샷]
 
@@ -46,9 +44,7 @@ original_url: "https://itmir.tistory.com/382"
 
 [예제소스 다운로드]
 
-[AppInfo.zip
-
-다운로드](./file/AppInfo.zip)
+[AppInfo.zip](./file/AppInfo.zip)
 
 [스크린샷]
 

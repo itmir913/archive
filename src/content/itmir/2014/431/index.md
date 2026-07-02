@@ -20,19 +20,13 @@ jar library와 javadoc
 
 Version : v1.0, 2014-01-14
 
-[SecurityXOR.jar
+[SecurityXOR.jar](./file/SecurityXOR.jar)
 
-다운로드](./file/SecurityXOR.jar)
-
-[javadoc.zip
-
-다운로드](./file/javadoc.zip)
+[javadoc.zip](./file/javadoc.zip)
 
 2014-09-11 원본 java소스 첨부
 
-[SecurityXORLibrary.java
-
-다운로드](./file/SecurityXORLibrary.java)
+[SecurityXORLibrary.java](./file/SecurityXORLibrary.java)
 
 ---
 
@@ -178,9 +172,7 @@ jar버전을 String으로 반환합니다
 
 [DownLoad]
 
-[SecurityXor.java
-
-다운로드](./file/SecurityXor.java)
+[SecurityXor.java](./file/SecurityXor.java)
 
 이클립스(eclipse)에서 jar library를 추가하세요 (Add SecurityXOR.jar)
 
@@ -296,9 +288,7 @@ api사용을 담은 예제 어플 소스 / number, String, File을 암호화 �
 
 Version : v1.0, 2014-01-14
 
-[ExampleSecurityXor.zip
-
-다운로드](./file/ExampleSecurityXor.zip)
+[ExampleSecurityXor.zip](./file/ExampleSecurityXor.zip)
 
 ![](./images/Screenshot_2014-01-14-11-11-59.png)
     

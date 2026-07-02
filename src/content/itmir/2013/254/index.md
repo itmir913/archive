@@ -20,6 +20,4 @@ AutoShutDown은 일정시간후 프로그램을 종료시켜 줍니다.
 
 그럼 저는 이만..
 
-[AutoShutDown.exe
-
-다운로드](./file/AutoShutDown.exe)
+[AutoShutDown.exe](./file/AutoShutDown.exe)

@@ -52,6 +52,4 @@ exe변환/한글화 : 미르
 
 시험삼아 받아보니 이런게 뜨네요;
 
-[getOTA.exe
-
-다운로드](./file/getOTA.exe)
+[getOTA.exe](./file/getOTA.exe)

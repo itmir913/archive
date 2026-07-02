@@ -32,27 +32,17 @@ original_url: "https://itmir.tistory.com/207"
 
 1. 부트이미지 언/패킹에 필요한 파일들
 
-[mkbootimg
+[mkbootimg](./file/mkbootimg)
 
-다운로드](./file/mkbootimg)
+[split\_bootimg.pl](./file/split_bootimg.pl)
 
-[split\_bootimg.pl
-
-다운로드](./file/split_bootimg.pl)
-
-[unpackbootimg
-
-다운로드](./file/unpackbootimg)
+[unpackbootimg](./file/unpackbootimg)
 
 2. 루팅 파일들
 
-[init.rooting.sh
+[init.rooting.sh](./file/init.rooting.sh)
 
-다운로드](./file/init.rooting.sh)
-
-[Root.zip
-
-다운로드](https://t1.daumcdn.net/cfile/tistory/2143884551837C3A19)
+[Root.zip](https://t1.daumcdn.net/cfile/tistory/2143884551837C3A19)
 
 나참; 어이 없네요.
 

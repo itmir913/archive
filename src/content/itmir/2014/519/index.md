@@ -84,9 +84,7 @@ CONFIG\_PRIMA\_WLAN=m
 
 파일도 따로 올려드립니다.
 
-[strip
-
-다운로드](./file/strip)
+[strip](./file/strip)
 
 ### 필요한 파일들
 

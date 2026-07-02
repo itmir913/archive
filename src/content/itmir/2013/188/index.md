@@ -58,9 +58,7 @@ device/samsung/msm8660-common 또는 msm8660-common에 들어간 다음 bluetoot
 >
 > #endif
 
-[bdroid\_buildcfg.h
-
-다운로드](./file/bdroid_buildcfg.h)
+[bdroid\_buildcfg.h](./file/bdroid_buildcfg.h)
 
 파란 박스안의 소스를 저장하여 bdroid\_buildcfg.h으로 만드시던가 첨부파일을 받아 주시면 됩니다
 
@@ -74,9 +72,7 @@ device/samsung/msm8660-common 또는 msm8660-common에 들어간 다음 bluetoot
 
 이 구문을 넣어 주세요
 
-[BOARD.txt
-
-다운로드](./file/BOARD.txt)
+[BOARD.txt](./file/BOARD.txt)
 
 구문을 txt로 저장했습니다
 

@@ -28,9 +28,7 @@ original_url: "https://itmir.tistory.com/643"
 
 기출 문제에서 중요한 문제만 선별된 자료라고 생각합니다.
 
-[지구과학1 오답문제.pdf
-
-다운로드](./file/지구과학1 오답문제.pdf)
+[지구과학1 오답문제.pdf](./file/지구과학1 오답문제.pdf)
 
 ---
 

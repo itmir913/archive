@@ -18,9 +18,7 @@ Dropdown, FixedTabs + Swipe, Scroll Tab 3개의 예제를 만들었습니다
 
 ### ExampleDropdown
 
-[ExampleDropdown.zip
-
-다운로드](./file/ExampleDropdown.zip)
+[ExampleDropdown.zip](./file/ExampleDropdown.zip)
 
 ![](./images/drop.png)
 
@@ -28,9 +26,7 @@ Dropdown, FixedTabs + Swipe, Scroll Tab 3개의 예제를 만들었습니다
 
 ### ExampleFixedTabsSwipe
 
-[ExampleFixedTabsSwipe.zip
-
-다운로드](./file/ExampleFixedTabsSwipe.zip)
+[ExampleFixedTabsSwipe.zip](./file/ExampleFixedTabsSwipe.zip)
 
 ![](./images/Fixed.png)
 
@@ -40,9 +36,7 @@ Dropdown, FixedTabs + Swipe, Scroll Tab 3개의 예제를 만들었습니다
 
 ### ExampleScrollTab
 
-[ExampleScrollTab.zip
-
-다운로드](./file/ExampleScrollTab.zip)
+[ExampleScrollTab.zip](./file/ExampleScrollTab.zip)
 
 ![](./images/ScrollTab.png)
 

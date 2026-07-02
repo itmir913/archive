@@ -66,9 +66,7 @@ original_url: "https://itmir.tistory.com/434"
 
 연습문제 정답지 :
 
-[정답.txt
-
-다운로드](./file/정답.txt)
+[정답.txt](./file/정답.txt)
 
 ---
 

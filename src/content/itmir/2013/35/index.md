@@ -38,9 +38,7 @@ libc6-i386
 
 그후 unpackbootimg등의 32비트 바이너리도 정상적으로 값이 나왔습니다.
 
-[32bit 64bit.sh
-
-다운로드](./file/32bit 64bit.sh)
+[32bit 64bit.sh](./file/32bit 64bit.sh)
 
 참고: <http://blog.naver.com/01191879872/10071037107>
 

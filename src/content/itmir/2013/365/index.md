@@ -291,9 +291,7 @@ Log.d("pattern index", "0:"+pattern[0]+" 1:"+pattern[1]+" 2:"+pattern[2]+" 3:"+p
 
 예제소스 다운로드 :
 
-[ExampleVibration.zip
-
-다운로드](./file/ExampleVibration.zip)
+[ExampleVibration.zip](./file/ExampleVibration.zip)
 
 ---
 

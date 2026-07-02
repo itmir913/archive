@@ -30,16 +30,10 @@ original_url: "https://itmir.tistory.com/410"
 
 [DownLoad]
 
-[VegaID.apk
+[VegaID.apk](./file/VegaID.apk)
 
-다운로드](./file/VegaID.apk)
+[VEGAPush.apk](./file/VEGAPush.apk)
 
-[VEGAPush.apk
-
-다운로드](./file/VEGAPush.apk)
-
-[CloudLive.zip
-
-다운로드](./file/CloudLive.zip)
+[CloudLive.zip](./file/CloudLive.zip)
 
 베가 시크릿 노트에서 추출한 파일 입니다

@@ -340,9 +340,7 @@ Auto\_LogIn.setChecked(true);
 
 예제소스 다운로드 :
 
-[ExamplePreference.zip
-
-다운로드](./file/ExamplePreference.zip)
+[ExamplePreference.zip](./file/ExamplePreference.zip)
 
 (ps. 몇일뒤에 20번 강좌 핸들러 메모리 릭을 수정한 강좌를 올릴 계획입니다만 변경될수 있습니다)
 

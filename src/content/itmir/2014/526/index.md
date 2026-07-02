@@ -34,9 +34,7 @@ FadingActionBar는 github에 소스가 올라와 있습니다
 
 https://github.com/ManuelPeinado/FadingActionBar
 
-[FadingActionBarLibrary.zip
-
-다운로드](./file/FadingActionBarLibrary.zip)
+[FadingActionBarLibrary.zip](./file/FadingActionBarLibrary.zip)
 
 gitbub에서 받으신경우 필수적으로 필요한 폴더는 library입니다
 
@@ -68,9 +66,7 @@ github에 함께 올라와있는 samples-stock폴더를 확인해 보시면 더
 
 설치하신다음 살펴보시고 보시면 더 이해가 잘되실겁니다
 
-[SampleFadingActionBar.apk
-
-다운로드](./file/SampleFadingActionBar.apk)
+[SampleFadingActionBar.apk](./file/SampleFadingActionBar.apk)
 
 FadingActionBar는 FadingActionBarHelper를 이용합니다
 
@@ -201,9 +197,7 @@ android:theme="@style/AppTheme.Light.TranslucentActionBar"
 
 github예제보다 떨어지므로 다운로드를 권하지 않습니다
 
-[ExampleFadingActionBar.zip
-
-다운로드](./file/ExampleFadingActionBar.zip)
+[ExampleFadingActionBar.zip](./file/ExampleFadingActionBar.zip)
 
 ---
 

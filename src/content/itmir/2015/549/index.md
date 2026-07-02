@@ -22,9 +22,7 @@ original_url: "https://itmir.tistory.com/549"
 
 앱을 통해 새해 인사를 드리고 싶습니다. ㅎㅎ
 
-[Hi2015.apk
-
-다운로드](./file/Hi2015.apk)
+[Hi2015.apk](./file/Hi2015.apk)
 
 스샷보기
 
@@ -36,9 +34,7 @@ original_url: "https://itmir.tistory.com/549"
 
 소스 보기
 
-[Hi2015.zip
-
-다운로드](https://t1.daumcdn.net/cfile/tistory/2779A94554A8E3AC19)
+[Hi2015.zip](https://t1.daumcdn.net/cfile/tistory/2779A94554A8E3AC19)
 
 다른곳에서의 배포를 금지하며, <http://itmir.tistory.com/549> 링크만 허용합니다.
 

@@ -70,9 +70,7 @@ Sign을  하기위해 개속 찾아봤는대요 ㅋㅋ
 
 이렇게 나타나게 됩니다 ㅋㅋ
 
-[zipsign.zip
-
-다운로드](./file/zipsign.zip)
+[zipsign.zip](./file/zipsign.zip)
 
 signapk.jar은 안드로이드 풀 소스에 포함되어 있는 소스로
 

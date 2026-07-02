@@ -20,13 +20,9 @@ Androidmanifest.xml을 건들이니 오류가 게속 났지만
 
 어플의 소스와 apk올립니다
 
-[choose.apk
+[choose.apk](./file/choose.apk)
 
-다운로드](./file/choose.apk)
-
-[choose.zip
-
-다운로드](./file/choose.zip)
+[choose.zip](./file/choose.zip)
 
 ---
 

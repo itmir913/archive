@@ -12,9 +12,7 @@ original_url: "https://itmir.tistory.com/253"
 
 노트북 같은경우 단축키 Fn과 연동되어 사용하면 좋은 프로그램이네요. ㅎㅎ
 
-[CloseAll.zip
-
-다운로드](./file/CloseAll.zip)
+[CloseAll.zip](./file/CloseAll.zip)
 
 CloseAll.exe라는 프로그램을 실행하는 즉시 모든 창이 닫아집니다.
 

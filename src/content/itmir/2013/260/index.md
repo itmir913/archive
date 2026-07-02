@@ -82,6 +82,4 @@ A에서 B로 영상을 실시간 전송하는 기능을 합니다
 
 개인 소장 부탁드립니다~
 
-[IP Webcam KO.apk
-
-다운로드](./file/IP Webcam KO.apk)
+[IP Webcam KO.apk](./file/IP Webcam KO.apk)

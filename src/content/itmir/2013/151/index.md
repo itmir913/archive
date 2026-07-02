@@ -48,9 +48,7 @@ class Variable {
 }
 ```
 
-[Variable.java
-
-다운로드](./file/Variable.java)
+[Variable.java](./file/Variable.java)
 
 위 소스를 보겠습니다.
 

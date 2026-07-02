@@ -72,9 +72,7 @@ ps. 이번 수정은 조금 어려웠어요 ㅠㅠ
 
 [DOWNLOAD]
 
-[20140104-VEGAIME.apk
-
-다운로드](./file/20140104-VEGAIME.apk)
+[20140104-VEGAIME.apk](./file/20140104-VEGAIME.apk)
 
 -2014-05-04 킷캣 최신 버전으로 업데이트 되었습니다
 

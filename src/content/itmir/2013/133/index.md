@@ -28,13 +28,9 @@ After Rooting 시리즈는 루팅후 대중적으로 많이 하는 부분을 다
 
 그럼 시작하겠습니다
 
-[camera\_click.ogg
+[camera\_click.ogg](./file/camera_click.ogg)
 
-다운로드](./file/camera_click.ogg)
-
-[VideoRecord.ogg
-
-다운로드](./file/VideoRecord.ogg)
+[VideoRecord.ogg](./file/VideoRecord.ogg)
 
 이 두파일을 받아주세요
 
@@ -44,9 +40,7 @@ After Rooting 시리즈는 루팅후 대중적으로 많이 하는 부분을 다
 
 더보기
 
-[부팅 무음.zip
-
-다운로드](./file/부팅 무음.zip)
+[부팅 무음.zip](./file/부팅 무음.zip)
 
 파일을 추가로 받은다음 압축을 풀어서
 

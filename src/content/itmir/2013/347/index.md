@@ -258,9 +258,7 @@ getWindow().setAttributes(params);
 
 즉 이 Text아래에 첨부되어 집니다
 
-[ExampleSeekbar.zip
-
-다운로드](./file/ExampleSeekbar.zip)
+[ExampleSeekbar.zip](./file/ExampleSeekbar.zip)
 
 [참고] - 시스탬 화면 밝기를 조절하는 방법은 무엇일까요?
 

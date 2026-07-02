@@ -30,22 +30,12 @@ original_url: "https://itmir.tistory.com/340"
 
 허락 받았습니다 ㅎㅎ
 
-[Weiyun.z01
+[Weiyun.z01](./file/Weiyun.z01)
 
-다운로드](./file/Weiyun.z01)
+[Weiyun.z02](./file/Weiyun.z02)
 
-[Weiyun.z02
+[Weiyun.z03](./file/Weiyun.z03)
 
-다운로드](./file/Weiyun.z02)
+[Weiyun.z04](./file/Weiyun.z04)
 
-[Weiyun.z03
-
-다운로드](./file/Weiyun.z03)
-
-[Weiyun.z04
-
-다운로드](./file/Weiyun.z04)
-
-[Weiyun.zip
-
-다운로드](./file/Weiyun.zip)
+[Weiyun.zip](./file/Weiyun.zip)

@@ -32,9 +32,7 @@ http://blog.naver.com/pluulove84/100153350054
 
 이로써 더이상 설치된 어플 리스트를 얻기 위해 저처럼 쌩고생 하시는 분이 더이상 안계시기를 바랍니다..
 
-[ExampleAppInfo.zip
-
-다운로드](./file/ExampleAppInfo.zip)
+[ExampleAppInfo.zip](./file/ExampleAppInfo.zip)
 
 ---
 

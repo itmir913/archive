@@ -16,33 +16,25 @@ original_url: "https://itmir.tistory.com/390"
 
 ![](./images/Screenshot_2013-11-24-16-13-29.png)
 
-[Orange LiveWallpaper.apk
-
-다운로드](./file/Orange LiveWallpaper.apk)
+[Orange LiveWallpaper.apk](./file/Orange LiveWallpaper.apk)
 
 [Martini]
 
 ![](./images/Screenshot_2013-11-24-16-13-43.png)
 
-[Martini LiveWallpaper.apk
-
-다운로드](./file/Martini LiveWallpaper.apk)
+[Martini LiveWallpaper.apk](./file/Martini LiveWallpaper.apk)
 
 [Cola]
 
 ![](./images/Screenshot_2013-11-24-16-13-59.jpg)
 
-[Cola LiveWallpaper.apk
-
-다운로드](./file/Cola LiveWallpaper.apk)
+[Cola LiveWallpaper.apk](./file/Cola LiveWallpaper.apk)
 
 [Asus]
 
 ![](./images/Screenshot_2013-11-24-16-14-10.png)
 
-[Asus LiveWallpaper.apk
-
-다운로드](./file/Asus LiveWallpaper.apk)
+[Asus LiveWallpaper.apk](./file/Asus LiveWallpaper.apk)
 
 배터리 잔량에 따라 물의 높이가 달라지고, 기기를 움직이면 높이가 달라집니다 ㅎ
 

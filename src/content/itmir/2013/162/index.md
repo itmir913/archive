@@ -74,9 +74,7 @@ class Ifelse
 }
 ```
 
-[Ifelse.java
-
-다운로드](./file/Ifelse.java)
+[Ifelse.java](./file/Ifelse.java)
 
 이런 소스가 있습니다.
 

@@ -189,9 +189,7 @@ System.out.println("유니코드 77은? "+hangul5);
 }
 ```
 
-[Hangultest.java
-
-다운로드](./file/Hangultest.java)
+[Hangultest.java](./file/Hangultest.java)
 
 위 사진처럼 소스를 짜봤습니다.
 

@@ -14,13 +14,9 @@ original_url: "https://itmir.tistory.com/155"
 
 Mir\_Rom\_Brave버전에 포함되어 있는 updater-script와 aroma-config을 첨부해 두었습니다
 
-[aroma-config
+[aroma-config](./file/aroma-config)
 
-다운로드](./file/aroma-config)
-
-[updater-script
-
-다운로드](./file/updater-script)
+[updater-script](./file/updater-script)
 
 ---
 

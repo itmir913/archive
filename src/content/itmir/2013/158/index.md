@@ -111,9 +111,7 @@ class Source
 }
 ```
 
-[Source.java
-
-다운로드](./file/Source.java)
+[Source.java](./file/Source.java)
 
 ![](./images/캡처.png)
 
@@ -154,9 +152,7 @@ class SCE
 }
 ```
 
-[SCE.java
-
-다운로드](./file/SCE.java)
+[SCE.java](./file/SCE.java)
 
 출력 결과를 예상하자면 첫번째 println에서는 M1은 30, M2는 50이 되어야 합니다.
 

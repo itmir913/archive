@@ -346,9 +346,7 @@ Thread.sleep(1000);으로 인해 1초씩 건너서 쉬므로
 
 예제소스 다운로드 :
 
-[ExampleSoundPlayer.zip
-
-다운로드](https://t1.daumcdn.net/cfile/tistory/26061635526BD7E408)
+[ExampleSoundPlayer.zip](https://t1.daumcdn.net/cfile/tistory/26061635526BD7E408)
 
 다음 강좌는 진동에 대해 살펴볼 생각입니다
 

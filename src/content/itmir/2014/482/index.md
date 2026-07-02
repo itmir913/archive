@@ -18,9 +18,7 @@ SVN & Git 열기
 
 **SVN & Git**
 
-[SVN & Git.pdf
-
-다운로드](./file/SVN & Git.pdf)
+[SVN & Git.pdf](./file/SVN & Git.pdf)
 
 ![](./images/SVN & Git-1.jpg)
 
@@ -132,9 +130,7 @@ Git 초간단 사용 안내서 열기
 
 **git 간편 안내서**
 
-[git - 간편 안내서 - 어렵지 않아요!.pdf
-
-다운로드](./file/git - 간편 안내서 - 어렵지 않아요!.pdf)
+[git - 간편 안내서 - 어렵지 않아요!.pdf](./file/git - 간편 안내서 - 어렵지 않아요!.pdf)
 
 ![](./images/git - 간편 안내서 - 어렵지 않아요!-1.jpg)
 
@@ -160,9 +156,7 @@ Git 초간단 사용 안내서 열기
 
 The concept of Git 열기
 
-[The concept of Git.pdf
-
-다운로드](./file/The concept of Git.pdf)
+[The concept of Git.pdf](./file/The concept of Git.pdf)
 
 ---
 

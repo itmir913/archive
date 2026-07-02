@@ -32,9 +32,7 @@ original_url: "https://itmir.tistory.com/137"
 
 관리자 모드 - HTML/CSS 편집에 들어가 <html>위 에 넣어주시면 됩니다
 
-[gzip 코드.txt
-
-다운로드](./file/gzip 코드.txt)
+[gzip 코드.txt](./file/gzip 코드.txt)
 
 ![](./images/캡처.png)
 

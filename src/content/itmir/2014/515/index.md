@@ -462,9 +462,7 @@ public void onAnimationRepeat(Animation animation) {
 
 });
 
-[ExampleTweenAnimation.zip
-
-다운로드](./file/ExampleTweenAnimation.zip)
+[ExampleTweenAnimation.zip](./file/ExampleTweenAnimation.zip)
 
 머리가 아파서 횡설수설한거같네요;
 

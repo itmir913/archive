@@ -150,25 +150,15 @@ BOARD\_DT\_SIZE 223232
 
 베가 아이언2의 루팅 펌웨어는 커널소스가 나온후 dt.img를 만들고 나서 다시 시도해 봐야 겠습니다
 
-[dtbTool
+[dtbTool](./file/dtbTool)
 
-다운로드](./file/dtbTool)
+[mkbootimg](./file/mkbootimg)
 
-[mkbootimg
+[mkbootimg-master.zip](./file/mkbootimg-master.zip)
 
-다운로드](./file/mkbootimg)
+[split\_bootimg\_dtb.pl](./file/split_bootimg_dtb.pl)
 
-[mkbootimg-master.zip
-
-다운로드](./file/mkbootimg-master.zip)
-
-[split\_bootimg\_dtb.pl
-
-다운로드](./file/split_bootimg_dtb.pl)
-
-[unpackbootimg
-
-다운로드](./file/unpackbootimg)
+[unpackbootimg](./file/unpackbootimg)
 
 ---
 

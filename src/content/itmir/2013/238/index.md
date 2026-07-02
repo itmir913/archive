@@ -16,13 +16,9 @@ original_url: "https://itmir.tistory.com/238"
 
 다음에는 좀더 보완하였으면 하는군요 ㅎ
 
-[BulloSchool.apk
+[BulloSchool.apk](./file/BulloSchool.apk)
 
-다운로드](./file/BulloSchool.apk)
-
-[BulloSchool.zip
-
-다운로드](./file/BulloSchool.zip)
+[BulloSchool.zip](./file/BulloSchool.zip)
 
 ---
 

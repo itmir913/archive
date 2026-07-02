@@ -8,17 +8,11 @@ draft: false
 original_url: "https://itmir.tistory.com/314"
 ---
 
-[Tmoney\_inapp.apk
+[Tmoney\_inapp.apk](./file/Tmoney_inapp.apk)
 
-다운로드](./file/Tmoney_inapp.apk)
+[Tmoney.z01](./file/Tmoney.z01)
 
-[Tmoney.z01
-
-다운로드](./file/Tmoney.z01)
-
-[Tmoney.zip
-
-다운로드](./file/Tmoney.zip)
+[Tmoney.zip](./file/Tmoney.zip)
 
 kt모델에서 사용가능한(skt는 모릅니다)(올레마켓에서 다운받음) 티머니를 업로드 합니다
 

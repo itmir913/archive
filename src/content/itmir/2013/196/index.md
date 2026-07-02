@@ -10,49 +10,27 @@ original_url: "https://itmir.tistory.com/196"
 
 방과후 학교에서 배운 컴퓨터 활용 능력 관련 엑셀 파일 입니다
 
-[0401.xlsx
+[0401.xlsx](./file/0401.xlsx)
 
-다운로드](./file/0401.xlsx)
+[0403.xlsx](./file/0403.xlsx)
 
-[0403.xlsx
+[0408.xlsx](./file/0408.xlsx)
 
-다운로드](./file/0403.xlsx)
+[0410.xlsx](./file/0410.xlsx)
 
-[0408.xlsx
+[0411-2.xlsx](./file/0411-2.xlsx)
 
-다운로드](./file/0408.xlsx)
+[0411.xlsx](./file/0411.xlsx)
 
-[0410.xlsx
+[0415.xlsx](./file/0415.xlsx)
 
-다운로드](./file/0410.xlsx)
+[0418.xlsx](./file/0418.xlsx)
 
-[0411-2.xlsx
+[0422.xlsx](./file/0422.xlsx)
 
-다운로드](./file/0411-2.xlsx)
+[0424.xlsx](./file/0424.xlsx)
 
-[0411.xlsx
-
-다운로드](./file/0411.xlsx)
-
-[0415.xlsx
-
-다운로드](./file/0415.xlsx)
-
-[0418.xlsx
-
-다운로드](./file/0418.xlsx)
-
-[0422.xlsx
-
-다운로드](./file/0422.xlsx)
-
-[0424.xlsx
-
-다운로드](./file/0424.xlsx)
-
-[0425.xlsx
-
-다운로드](./file/0425.xlsx)
+[0425.xlsx](./file/0425.xlsx)
 
 ---
 

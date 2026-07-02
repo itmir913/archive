@@ -64,9 +64,7 @@ original_url: "https://itmir.tistory.com/440"
 
 ![](./images/Best2013.png)
 
-[Best2013.zip
-
-다운로드](./file/Best2013.zip)
+[Best2013.zip](./file/Best2013.zip)
 
 ---
 

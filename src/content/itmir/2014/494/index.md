@@ -22,13 +22,9 @@ original_url: "https://itmir.tistory.com/494"
 
 [필요한 프로그램]
 
-[sgs2img.exe
+[sgs2img.exe](./file/sgs2img.exe)
 
-다운로드](./file/sgs2img.exe)
-
-[ext2explore v2.2.71.zip
-
-다운로드](./file/ext2explore v2.2.71.zip)
+[ext2explore v2.2.71.zip](./file/ext2explore v2.2.71.zip)
 
 ---
 

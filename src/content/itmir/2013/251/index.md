@@ -10,17 +10,11 @@ original_url: "https://itmir.tistory.com/251"
 
 베가 아이언 SK기종에게서 추출한 MusicPlayer입니다
 
-[miniMusic.apk
+[miniMusic.apk](./file/miniMusic.apk)
 
-다운로드](./file/miniMusic.apk)
+[MusicPlayer.apk](./file/MusicPlayer.apk)
 
-[MusicPlayer.apk
-
-다운로드](./file/MusicPlayer.apk)
-
-[SkyMusicFX.apk
-
-다운로드](./file/SkyMusicFX.apk)
+[SkyMusicFX.apk](./file/SkyMusicFX.apk)
 
 ps. miniMusic.apk는 미니 윈도우 버전의 음악이며 베레2같은 기종은 AOTMusic.apk으로 이름을 바꿔서 사용하시면 됩니다
 

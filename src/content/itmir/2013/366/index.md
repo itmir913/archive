@@ -612,15 +612,11 @@ br />
 
 예제소스 다운로드 :
 
-[ExampleThreadHandler.zip
-
-다운로드](./file/ExampleThreadHandler.zip)
+[ExampleThreadHandler.zip](./file/ExampleThreadHandler.zip)
 
 메모리 릭 발생 오류 수정 예제
 
-[ExampleThreadHandler-Memoryleaks.zip
-
-다운로드](./file/ExampleThreadHandler-Memoryleaks.zip)
+[ExampleThreadHandler-Memoryleaks.zip](./file/ExampleThreadHandler-Memoryleaks.zip)
 
 ---
 

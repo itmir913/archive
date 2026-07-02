@@ -28,9 +28,7 @@ original_url: "https://itmir.tistory.com/52"
 
 [2013/01/27 - [강좌/팁/Kernel/Build 강좌] - 커널 컴파일을 위한 기본 설정 구축하기](http://itmir.tistory.com/51)
 
-[kernel 구축.sh
-
-다운로드](./file/kernel 구축.sh)
+[kernel 구축.sh](./file/kernel 구축.sh)
 
 ---
 

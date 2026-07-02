@@ -28,9 +28,7 @@ original_url: "https://itmir.tistory.com/324"
 
 공식 홈페이지 <http://alexgorbatchev.com/SyntaxHighlighter>에서 받아도 되고, 아래 첨부파일을 받아도 됩니다.
 
-[syntaxhighlighter\_3.0.83.zip
-
-다운로드](./file/syntaxhighlighter_3.0.83.zip)
+[syntaxhighlighter\_3.0.83.zip](./file/syntaxhighlighter_3.0.83.zip)
 
 첨부하였습니다. 바로 받아주세요~ 2013-08-28 기준 최신 파일입니다.
 

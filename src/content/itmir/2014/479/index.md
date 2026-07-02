@@ -28,13 +28,9 @@ TV에서 한번은 들어보셨을거라 생각합니다
 
 이렇게 되지 말길...(?)
 
-[광대역 LTE 이야기 벨소리 (30초).zip
+[광대역 LTE 이야기 벨소리 (30초).zip](./file/광대역 LTE 이야기 벨소리 (30초).zip)
 
-다운로드](./file/광대역 LTE 이야기 벨소리 (30초).zip)
-
-[광대역 LTE 이야기 벨소리 (60초).zip
-
-다운로드](https://t1.daumcdn.net/cfile/tistory/2477A539530470081D)
+[광대역 LTE 이야기 벨소리 (60초).zip](https://t1.daumcdn.net/cfile/tistory/2477A539530470081D)
 
 미리 들어보시라고 동영상으로 만들어 첨부합니다
 

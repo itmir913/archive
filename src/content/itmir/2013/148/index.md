@@ -31,9 +31,7 @@ class First {
 
 그 다음 파일 이름과 확장자를 각각 First와 .java로 지정해 주세요.
 
-[First.java
-
-다운로드](./file/First.java)
+[First.java](./file/First.java)
 
 아직 저도 정확한 용어의 뜻을 배우지 않은 상태이기 때문에 천천히 알아가겠습니다.
 
