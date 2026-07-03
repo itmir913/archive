@@ -24,19 +24,23 @@ original_url: "https://itmir.tistory.com/48"
 
 다음 명령어로 폴더에 들어갑니다.
 
+```bash
 cd ~/바탕화면/boot
+```
 
 그뒤 권한을 부여해줘야 합니다.
 
+```bash
 chmod 777 unpackbootimg
-
-chmod 777 split\_bootimg.pl
-
+chmod 777 split_bootimg.pl
 chmod 777 mkbootimg
+```
 
 권한을 모두 주셨으면 본격적으로 작업에 들어갈까요?ㅎ
 
-./split\_bootimg.pl boot.img
+```bash
+./split_bootimg.pl boot.img
+```
 
 입력하시게 되면 Page size, Command line이 나타나게 됩니다.
 
@@ -44,13 +48,17 @@ chmod 777 mkbootimg
 
 그 다음
 
+```bash
 ./unpackbootimg -i boot.img
+```
 
 을 입력하시게 되면 BOARD\_KERNEL\_BASE이 나타납니다. 이것도 중요합니다!
 
 이제 램디스크 압축을 풀어봅시다.
 
+```bash
 gzip -d boot.img-ramdisk.gz
+```
 
 위 명령어를 입력하게 되면, cpio가 나타나게 됩니다.
 
@@ -58,7 +66,9 @@ gzip -d boot.img-ramdisk.gz
 
 cd ramdisk 명령어를 쳐서 ramdisk 폴더로 이동합니다.
 
+```bash
 cpio -i -F boot.img-ramdisk
+```
 
 이제 위 명령어를 입력하시면, cpio의 내용물이 풀려지게 됩니다.
 
@@ -72,17 +82,19 @@ cpio -i -F boot.img-ramdisk
 
 램디스크 파일이 들어있는 폴더속에서
 
+```bash
 find . | cpio -o -H newc -O ../ramdisk
-
 cd ..
-
 gzip ramdisk
+```
 
 를 입력하시면 램디스크 파일이 나타나게 됩니다.
 
 이제 커널과 램디스크 파일을 합쳐야 합니다.
 
+```bash
 ./mkbootimg --cmdline "(아까 얻은 Command line값)" --base 0x(아까 얻은 base값) --pagesize (아까 얻은 pagesize 값) --kernel boot.img-kernel --ramdisk ramdisk.gz -o make-boot.img
+```
 
 (위 mkbootimg명령어는 길어보이지만 한줄로 한번에 입력하셔야 합니다)
 

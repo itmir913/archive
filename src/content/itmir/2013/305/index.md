@@ -12,10 +12,13 @@ assets안에 있는 파일을 옮기는 소스입니다.
 
 onCreate등에서 아래 메소드 호출문으로 실행할수 있습니다.
 
+```java
 assetsFileCopy("이동할 파일 이름");
+```
 
 아래 코드는 넣어주시면 됩니다. ㅎㅎ
 
+```java
 private void assetsFileCopy(String file) {
 
 if (!new File("/data/data/(패키지명)/(파일이 들어갈 폴더)/"+file).exists()) {
@@ -48,7 +51,7 @@ if (!new File("/data/data/(패키지명)/(파일이 들어갈 폴더)/"+file).ex
 
  try{
 
-  in = aman.open(fname,AssetManager.ACCESS\_BUFFER);
+  in = aman.open(fname,AssetManager.ACCESS_BUFFER);
 
   filesize = in.available();
 
@@ -86,7 +89,7 @@ alert.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
 
    } });
 
-alert.setMessage(R.string.no\_db);
+alert.setMessage(R.string.no_db);
 
 alert.show();
 
@@ -95,28 +98,31 @@ alert.show();
 }
 
 }
+```
 
 만약 파일이 1mb가 넘어갈경우 안드로이드 상의 메모리 제한으로 인해 불가능 하니 1mb로 분활해서 합쳐야 합니다..
 
-static String[] INPUT\_ASSET\_NAMES;
-
-static String OUTPUT\_PATH;
+```java
+static String[] INPUT_ASSET_NAMES;
+static String OUTPUT_PATH;
+```
 
 class안에 이 두개 구문을 넣어주자.
 
 static선언으로 모든 메소드에서 사용가능하도록 만들었다.
 
+```java
 public void BigFile(){
 
-// INPUT\_ASSET\_NAMES 병합할 assets 의 파일명을 나열합니다.
+// INPUT_ASSET_NAMES 병합할 assets 의 파일명을 나열합니다.
 
-INPUT\_ASSET\_NAMES = new String[]{
+INPUT_ASSET_NAMES = new String[]{
 
 "(이름).zip.001", "(이름).zip.002", "(이름).zip.003", "(이름).004" };
 
-// OUTPUT\_PATH에는 병합한 결과로 생성될 파일의 경로를 할당합니다.
+// OUTPUT_PATH에는 병합한 결과로 생성될 파일의 경로를 할당합니다.
 
-OUTPUT\_PATH = Environment.getExternalStorageDirectory().getAbsolutePath()+"/(파일이름)";
+OUTPUT_PATH = Environment.getExternalStorageDirectory().getAbsolutePath()+"/(파일이름)";
 
 combineFiles();
 
@@ -136,7 +142,7 @@ Environment.getExternalStorageDirectory().getAbsolutePath()가 자동으로 /sdc
 
 private void combineFiles(){
 
-  final File OUTPUT = new File(OUTPUT\_PATH);
+  final File OUTPUT = new File(OUTPUT_PATH);
 
   InputStream is = null;
 
@@ -152,9 +158,9 @@ private void combineFiles(){
 
   bos = new BufferedOutputStream(fos);
 
-  for(int i=0;i<INPUT\_ASSET\_NAMES.length;i++){
+  for(int i=0;i<INPUT_ASSET_NAMES.length;i++){
 
-  is = getApplicationContext().getAssets().open(INPUT\_ASSET\_NAMES[i]);
+  is = getApplicationContext().getAssets().open(INPUT_ASSET_NAMES[i]);
 
   bis = new BufferedInputStream(is);
 
@@ -187,5 +193,6 @@ private void combineFiles(){
   }
 
 }
+```
 
 1mb분활 소스는 <http://hyeongkyu.net/110090943249>를 참고했으며 내가 조금 수정한 상태이다.(만 뭐 중요소스는 수정하지도 않았다.)

@@ -40,25 +40,18 @@ original_url: "https://itmir.tistory.com/315"
 
 알림을 띄우는 코드를 확인해 보겠습니다
 
+```java
 AlertDialog.Builder alert = new AlertDialog.Builder(this);
-
 alert.setTitle("경고");
-
 alert.setPositiveButton("확인", new DialogInterface.OnClickListener() {
-
-    @Override
-
-    public void onClick(DialogInterface dialog, int which) {
-
+    @Override
+    public void onClick(DialogInterface dialog, int which) {
 dialog.dismiss();
-
-    }
-
+    }
 });
-
 alert.setMessage("내용");
-
 alert.show();
+```
 
 위부터 setTitle은 알림의 제목을 지정하는 부분이죠?
 
@@ -68,7 +61,9 @@ setPositiveButton는 오른쪽에 위치하는 버튼을 설정하는 건대, �
 
 아무 작업도 안시킬꺼라면 null을 주면 되는데요
 
+```java
 alert.setNegativeButton("취소", null);
+```
 
 이런식으로 해주시면 됩니다
 
@@ -94,63 +89,42 @@ setNeutralButton
 
 activity\_main.xml
 
+```xml
 <Button
-
-        android:id="@+id/button1"
-
-        android:layout\_width="wrap\_content"
-
-        android:layout\_height="wrap\_content"
-
-        android:layout\_centerHorizontal="true"
-
-        android:layout\_centerVertical="true"
-
-        android:onClick="alert"
-
-        android:text="알림표시" />
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:onClick="alert"
+        android:text="알림표시" />
+```
 
 버튼 하나만 지정하고 onClick줍시다
 
 MainActivity.java
 
+```java
 public void alert(View v){
-
 AlertDialog.Builder alert = new AlertDialog.Builder(this);
-
 alert.setTitle("알림!!");
-
 alert.setPositiveButton("확인", new DialogInterface.OnClickListener() {
-
-   @Override
-
-   public void onClick(DialogInterface dialog, int which) {
-
-    Toast.makeText(MainActivity.this, "확인 버튼이 눌렸습니다",Toast.LENGTH\_SHORT).show();
-
-   }
-
+   @Override
+   public void onClick(DialogInterface dialog, int which) {
+    Toast.makeText(MainActivity.this, "확인 버튼이 눌렸습니다",Toast.LENGTH_SHORT).show();
+   }
 });
-
-alert.setIcon(R.drawable.ic\_launcher);
-
+alert.setIcon(R.drawable.ic_launcher);
 alert.setNegativeButton("취소", new DialogInterface.OnClickListener() {
-
-   @Override
-
-   public void onClick(DialogInterface dialog, int which) {
-
-    Toast.makeText(MainActivity.this, "취소 버튼이 눌렸습니다",Toast.LENGTH\_SHORT).show();
-
-   }
-
+   @Override
+   public void onClick(DialogInterface dialog, int which) {
+    Toast.makeText(MainActivity.this, "취소 버튼이 눌렸습니다",Toast.LENGTH_SHORT).show();
+   }
 });
-
 alert.setMessage("안녕하십니까? 알림 예제소스 학습중 입니다");
-
 alert.show();
-
 }
+```
 
 처음에 배운 예제랑 달라진것은 NegativeButton이 추가되었고 setIcon을 지정하였다는 점입니다
 

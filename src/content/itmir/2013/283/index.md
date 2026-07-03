@@ -1,4 +1,4 @@
-﻿---
+---
 title: "안드로이드 탭을 구현해 보자, Fragment"
 date: "2013-07-29T09:27:04+09:00"
 category: "Android/App"
@@ -54,13 +54,12 @@ res/layout/fragment\_main\_dummy.xml
 
 MainActivity
 
+```java
 package com.tistory.whdghks913.exampletabs;
-
 import 생략
-
-public class MainActivity extends **FragmentActivity** implements
-
+public class MainActivity extends FragmentActivity implements
 ActionBar.TabListener {
+```
 
 /\*\*
 
@@ -410,39 +409,28 @@ return getString(**R.string.title\_section1**).toUpperCase(l);
 
 아무렇게나 BlankActivity를 만들어 주신다음 소스를 확인해 봅시다.
 
+```java
 package com.tistory.whdghks913.exampletabs;
 
 import android.os.Bundle;
-
 import android.app.Activity;
-
 import android.view.Menu;
 
 public class Tabs1 extends Activity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_tabs1);
+    }
 
-@Override
-
-protected void onCreate(Bundle savedInstanceState) {
-
-super.onCreate(savedInstanceState);
-
-setContentView(R.layout.activity\_tabs1);
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.tabs1, menu);
+        return true;
+    }
 }
-
-@Override
-
-public boolean onCreateOptionsMenu(Menu menu) {
-
-// Inflate the menu; this adds items to the action bar if it is present.
-
-getMenuInflater().inflate(R.menu.tabs1, menu);
-
-return true;
-
-}
-
-}
+```
 
 너무 간단합니다. ㅎㅎ...;
 
@@ -450,47 +438,34 @@ return true;
 
 자 아래와 같이 그냥 수정해 주세요.
 
+```java
 package com.tistory.whdghks913.exampletabs;
 
 import android.annotation.SuppressLint;
-
 import android.content.Context;
-
 import android.os.Bundle;
-
 import android.support.v4.app.Fragment;
-
 import android.view.LayoutInflater;
-
 import android.view.View;
-
 import android.view.ViewGroup;
 
-**@SuppressLint("ValidFragment")**
+@SuppressLint("ValidFragment")
+public class Tabs1 extends Fragment {
 
-public class Tabs1 extends **Fragment** {
+    Context mContext;
 
-**Context mContext;**
+    public Tabs1(Context context) {
+        mContext = context;
+    }
 
-**public Tabs1(Context context) {**
-
-**mContext = context;**
-
-**}**
-
-**@Override**
-
-**public View onCreateView(LayoutInflater inflater,**
-
-**ViewGroup container, Bundle savedInstanceState) {**
-
-**View view = inflater.inflate(R.layout.activity\_tabs1****, null);**
-
-**return view;**
-
-**}**
-
+    @Override
+    public View onCreateView(LayoutInflater inflater,
+            ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_tabs1, null);
+        return view;
+    }
 }
+```
 
 위 원본 소스의 취소선은 삭제된 부분, 아래 소스의 굵은 부분은 추가, 수정된 부분입니다.
 
@@ -508,21 +483,16 @@ MainActivity는 FragmentActivity를 상속하지만 탭에 들어갈 내용들�
 
 모든 탭의 구성이 끝났다면 아까 MainActivity에서 건너뛰었던 부분으로 돌아가 이름을 지정해야하는데요.
 
+```java
 switch(position) {
-
 case 0:
-
-return new 첫번째탭에들어갈내용이담긴액티비티이름(mContext);
-
+    return new 첫번째탭에들어갈내용이담긴액티비티이름(mContext);
 case 1:
-
-return new 두번째탭에들어갈내용이담긴액티비티이름(mContext);
-
+    return new 두번째탭에들어갈내용이담긴액티비티이름(mContext);
 case 2:
-
-return new 세번째탭에들어갈내용이담긴액티비티이름(mContext);
-
+    return new 세번째탭에들어갈내용이담긴액티비티이름(mContext);
 }
+```
 
 위 세 개의 문구를 만드신 Activity의 이름으로 변경해 주시면 됩니다.
 
@@ -532,9 +502,10 @@ return new 세번째탭에들어갈내용이담긴액티비티이름(mContext);
 
 우리가 탭을 구현하기 위해 쓴것은 Fragment, 그런대 Fragment에서는 findViewById가 잘 작동하지 않습니다.
 
+```java
 Button button1;
-
-button1 = (Button) **view.**findViewById(R.id.button1);
+button1 = (Button) view.findViewById(R.id.button1);
+```
 
 이렇게 구현하시면 쉽게 작동됩니다. ㅎㅎ
 

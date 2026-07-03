@@ -1,4 +1,4 @@
-﻿---
+---
 title: "#6 버튼(Button)을 만들어 보자"
 date: "2013-08-04T11:42:41+09:00"
 category: "Android/App"
@@ -38,21 +38,16 @@ original_url: "https://itmir.tistory.com/295"
 
 이렇게 드래그 해서 버튼 하나 만들어 주세요
 
+```xml
 <Button
-
-android:id="@+id/button1"
-
-android:layout\_width="wrap\_content"
-
-android:layout\_height="wrap\_content"
-
-android:layout\_alignParentTop="true"
-
-android:layout\_centerHorizontal="true"
-
-android:layout\_marginTop="98dp"
-
-android:text="Button" />
+    android:id="@+id/button1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="98dp"
+    android:text="Button" />
+```
 
 버튼의 소스입니다
 
@@ -131,19 +126,20 @@ MainActivity에 들어가 봅시다
 
 여기서는 listener을 이용할것이므로 메소드에 관한 내용은 짧게 짚고 넘어갑시다(별로 추천하고 싶지 않은 방법인지라..)
 
+```java
 public void (메소드 이름) (View v) {
-
-Intent myintent = new Intent(this, (이동할 액티비티 이름).class);
-
-startActivity(myintent);
-
+    Intent myintent = new Intent(this, (이동할 액티비티 이름).class);
+    startActivity(myintent);
 }
+```
 
 자바코드의 아무데나(그렇다고 onCreate같은대 넣으시면 안되요) 위 메소드를 넣어줍시다
 
 (메소드 이름)란에는 원하는것을 입력하시면 됩니다
 
+```xml
 android:onClick="(메소드 이름)"
+```
 
 xm으로 돌아와서 Button에 위 코드를 넣어줍시다
 
@@ -157,57 +153,44 @@ xm으로 돌아와서 Button에 위 코드를 넣어줍시다
 
 이렇게 추가해 주세요
 
+```java
 public class MainActivity extends Activity {
-
-**Button button1;**
-
+Button button1;
 @Override
-
 protected void onCreate(Bundle savedInstanceState) {
-
 super.onCreate(savedInstanceState);
-
-setContentView(R.layout.activity\_main);
-
-**button1 = (Button)findViewById(R.id.button1);**
-
-**button1.setOnClickListener(listener);**
-
-**}**
+setContentView(R.layout.activity_main);
+button1 = (Button)findViewById(R.id.button1);
+button1.setOnClickListener(listener);
+}
+```
 
 추가후, Import하는거 잊지 마시길
 
 그다음 빨간색 '}'아래에 아래 소스를 추가합시다
 
+```java
 Button.OnClickListener listener = new Button.OnClickListener()
-
 {
-
-public void onClick(View v)
-
-{
-
-switch(v.getId()){
-
-//case문이 들어갑니다
-
-}
-
-}
-
+    public void onClick(View v)
+    {
+        switch(v.getId()){
+            //case문이 들어갑니다
+        }
+    }
 };
+```
 
 그다음 또 import해주시고요 ㅎ..
 
 switch-case문으로 어떤 버튼이 눌려졌는지 판단후 작업을 할겁니다
 
+```java
 case R.id.button1:
-
-Intent myintent = new Intent(this, (이동할 액티비티 이름).class);
-
-startActivity(myintent);
-
-break;
+    Intent myintent = new Intent(this, (이동할 액티비티 이름).class);
+    startActivity(myintent);
+    break;
+```
 
 이런 형태로 구현해 주세요
 
@@ -221,47 +204,29 @@ break;
 
 완성된 소스를 보면
 
+```java
 public class MainActivity extends Activity {
-
-**Button button1;**
-
+Button button1;
 @Override
-
 protected void onCreate(Bundle savedInstanceState) {
-
 super.onCreate(savedInstanceState);
-
-setContentView(R.layout.activity\_main);
-
-**button1 = (Button) findViewById(R.id.button1);**
-
-**button1.setOnClickListener(listener);**
-
+setContentView(R.layout.activity_main);
+button1 = (Button) findViewById(R.id.button1);
+button1.setOnClickListener(listener);
 }
-
-**Button.OnClickListener listener = new Button.OnClickListener()**
-
-**{**
-
-**public void onClick(View v)**
-
-**{**
-
-**switch(v.getId()){**
-
-**case R.id.button1:**
-
-**Intent myintent = new Intent(MainActivity.this, ButtonActivity.class);**
-
-**startActivity(myintent);**
-
-**break;**
-
-**}**
-
-**}**
-
-**};**
+Button.OnClickListener listener = new Button.OnClickListener()
+{
+public void onClick(View v)
+{
+switch(v.getId()){
+case R.id.button1:
+Intent myintent = new Intent(MainActivity.this, ButtonActivity.class);
+startActivity(myintent);
+break;
+}
+}
+};
+```
 
 입니다 (굵은 글씨 추가)
 

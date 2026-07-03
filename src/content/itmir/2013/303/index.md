@@ -26,15 +26,21 @@ original_url: "https://itmir.tistory.com/303"
 
 전에보니 멀티윈도우에 추가하기 위해서는
 
+```xml
 <category android:name="android.intent.category.LAUNCHER" />
+```
 
 밑에
 
-<category android:name="android.intent.category.MULTIWINDOW\_LAUNCHER" />
+```xml
+<category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
+```
 
 을 추가해야 하더군요
 
+```xml
 <category android:name="android.intent.category.LAUNCHER" />
+```
 
 이 구문은 한 액티비티를 아이콘과 함께 런처에 표시하게 하겠다~라는 구문입니다
 
@@ -42,7 +48,9 @@ original_url: "https://itmir.tistory.com/303"
 
 멀티윈도우도 하나의 런처라 생각하면
 
-<category android:name="android.intent.category.MULTIWINDOW\_LAUNCHER" />
+```xml
+<category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
+```
 
 이라는 구문이 있는 어플만 저 화면에 뜨게 되는것 이지요  
 검색해보면 smali\com\sec\android\app\FlashBarService\FlashBarInfo.smali에서 담당하고 있습니다

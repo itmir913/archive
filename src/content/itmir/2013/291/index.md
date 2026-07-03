@@ -358,9 +358,10 @@ setContentView메소드는 화면에 나타낼 뷰를 지정하는 역할을 하
 
 그럼
 
-Btn\_change = (Button) findViewById(R.id.button1);
-
+```java
+Btn_change = (Button) findViewById(R.id.button1);
 textview = (TextView) findViewById(R.id.textView1);
+```
 
 을 적당한 공백을 두고 추가 하시면 됩니다
 
@@ -374,35 +375,27 @@ textview = (TextView) findViewById(R.id.textView1);
 
 onCreate메소드에
 
-Btn\_change.setOnClickListener(listener);
+```java
+Btn_change.setOnClickListener(listener);
+```
 
 을, onCreate메소드가 끝나고 빈 공간에
 
+```java
 Button.OnClickListener listener = new Button.OnClickListener()
-
 {
-
- public void onClick(View v)//버튼을 클릭 하면 ...
-
- {
-
-    switch(v.getId()){
-
-    case R.id.button1:
-
-    textview.setText("미르의 It정복기 예제 소스"); // 또는 R.string.(이름)
-
-    textview.setTextSize(50);
-
-    textview.setTextColor(Color.GREEN); // 또는 RGB(255, 255, 255)
-
-    break;
-
-    }
-
- }
-
-     };
+public void onClick(View v)//버튼을 클릭 하면 ...
+{
+switch(v.getId()){
+case R.id.button1:
+textview.setText("미르의 It정복기 예제 소스"); // 또는 R.string.(이름)
+textview.setTextSize(50);
+textview.setTextColor(Color.GREEN); // 또는 RGB(255, 255, 255)
+break;
+}
+}
+};
+```
 
 을 추가해 주신다음 import해주세요
 
@@ -422,11 +415,11 @@ Button.OnClickListener란, 버튼이 눌렸을때 실행되며 그안에 onClick
 
 우리가 주의깊게 봐야할건
 
+```java
 textview.setText("미르의 It정복기 예제 소스");
-
 textview.setTextSize(50);
-
 textview.setTextColor(Color.GREEN);
+```
 
 입니다
 

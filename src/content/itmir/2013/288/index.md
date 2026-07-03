@@ -34,17 +34,23 @@ original_url: "https://itmir.tistory.com/288"
 
 AndroidManifest.xml에서 모든 Activity부분에
 
+```xml
 android:configChanges="keyboardHidden|orientation|"
+```
 
 또는
 
+```xml
 android:configChanges="keyboardHidden|orientation|screenSize"
+```
 
 을 추가해 주세요
 
 만약 안드로이드 3.2 허니콤(APU 13)이상이라면
 
+```xml
 android:configChanges="keyboardHidden|orientation|screenSize"
+```
 
 을 추가해 주셔야만 합니다
 
@@ -76,29 +82,24 @@ android:configChanges="keyboardHidden|orientation|screenSize"
 
 그럼 이제 MainActivity에 아래 메소드를 추가해 줍시다
 
+```java
 public void onConfigurationChanged(Configuration newConfig) {
-
-        super.onConfigurationChanged(newConfig);
-
-        (이곳에 작업 내용을 적습니다, 생략 가능)
-
+    super.onConfigurationChanged(newConfig);
+    (이곳에 작업 내용을 적습니다, 생략 가능)
 }
+```
 
 만약 화면 전환시 알림을 뜨게 하고 싶다면
 
-if (newConfig.orientation == Configuration.ORIENTATION\_LANDSCAPE)
-
+```java
+if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE)
 {
-
-// 기기가 가로로 회전할때 할 작업
-
-} else if (newConfig.orientation == Configuration.ORIENTATION\_PORTRAIT)
-
+    // 기기가 가로로 회전할때 할 작업
+} else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT)
 {
-
-// 기기가 세로로 회전할때 할 작업
-
+    // 기기가 세로로 회전할때 할 작업
 }
+```
 
 이런식으로 작성해 주시면 됩니다
 

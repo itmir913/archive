@@ -148,65 +148,53 @@ public class MainActivity extends Activity {
 
 밑에 아래를 추가해 주세요
 
+```java
 ImageView up, down;
-
 Button change;
-
 int count=0;
+```
 
 이미지뷰와 버튼을 정의하고 아래 있는 int count와 if를 이용해 버튼을 누를때 마다 바뀌도록 설정할겁니다
 
 마찬가지로 onCreate()안에 추가해 주세요
 
+```java
 up = (ImageView) findViewById(R.id.up);
-
 down = (ImageView) findViewById(R.id.down);
-
 change = (Button) findViewById(R.id.button1);
+```
 
 id값을 연결해 주는거죠?ㅎㅎ
 
 위 코드를 입력하고 바로 아래에 아래 코드를 복붙하면 됩니다
 
+```java
 change.setOnClickListener(new View.OnClickListener() {
-
-      public void onClick(View v) {
-
-      if (count==0){
-
-      up.setImageResource(R.drawable.down);
-
-          down.setImageResource(R.drawable.up);
-
-          up.invalidate();
-
-          down.invalidate();
-
-          count++;
-
-      }else{
-
-      up.setImageResource(R.drawable.up);
-
-          down.setImageResource(R.drawable.down);
-
-          up.invalidate();
-
-          down.invalidate();
-
-          count--;
-
-      }
-
-      }});
+      public void onClick(View v) {
+      if (count==0){
+      up.setImageResource(R.drawable.down);
+          down.setImageResource(R.drawable.up);
+          up.invalidate();
+          down.invalidate();
+          count++;
+      }else{
+      up.setImageResource(R.drawable.up);
+          down.setImageResource(R.drawable.down);
+          up.invalidate();
+          down.invalidate();
+          count--;
+      }
+      }});
+```
 
 코드설명을 해보겠습니다
 
 onClickListener는 전에 배웠으므로 Pass
 
+```java
 up.setImageResource(R.drawable.down);
-
 down.setImageResource(R.drawable.up);
+```
 
 이 코드를 봅시다
 
@@ -216,9 +204,10 @@ count가 0일때는 (처음이므로)up은 down이미지로, down은 up이미지
 
 그다음
 
+```java
 up.invalidate();
-
 down.invalidate();
+```
 
 을 보면 이미지를 갱신하는, 즉 다시 화면에 뿌려주는 역할을 합니다
 

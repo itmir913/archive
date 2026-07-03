@@ -14,7 +14,8 @@ original_url: "https://itmir.tistory.com/293"
 
 번외편으로 설치된 어플을 확인해보겠습니다
 
-private static final String CHECK\_PACKAGE\_NAME = "(확인하려는 어플의패키지명 대문자)";
+```java
+private static final String CHECK_PACKAGE_NAME = "(확인하려는 어플의패키지명 대문자)";
 
 // Package 설치여부 확인
 
@@ -22,25 +23,23 @@ PackageManager pm = getPackageManager();
 
 try {
 
-pm.getApplicationInfo(CHECK\_PACKAGE\_NAME.toLowerCase(),
+    pm.getApplicationInfo(CHECK_PACKAGE_NAME.toLowerCase(),
+            PackageManager.GET_META_DATA);
 
-PackageManager.GET\_META\_DATA);
+    // 패키지가 있을경우 실행할 내용
 
-// 패키지가 있을경우 실행할 내용
-
-Toast.makeText(this,
-
-"PACKAGE 명 = " + CHECK\_PACKAGE\_NAME.toLowerCase(),
-
-Toast.LENGTH\_SHORT).show();
+    Toast.makeText(this,
+            "PACKAGE 명 = " + CHECK_PACKAGE_NAME.toLowerCase(),
+            Toast.LENGTH_SHORT).show();
 
 } catch (NameNotFoundException e) {
 
-// 패키지가 없을경우 실행할 내용
+    // 패키지가 없을경우 실행할 내용
 
-Toast.makeText(this, "PACKAGE 가 설치 되지 않았습니다.", Toast.LENGTH\_SHORT).show();
+    Toast.makeText(this, "PACKAGE 가 설치 되지 않았습니다.", Toast.LENGTH_SHORT).show();
 
 }
+```
 
 이정도만 써도 아실겁니다 ㅎㅎ
 

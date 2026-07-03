@@ -10,23 +10,17 @@ original_url: "https://itmir.tistory.com/313"
 
 어플에서 apk를 설치하는 소스는 다음과 같습니다
 
+```java
 public void apkInstall(File apkfile){
-
 Uri apkUri = Uri.fromFile(apkfile);
-
 try {
-
-Intent packageinstaller = new Intent(Intent.ACTION\_VIEW);
-
-      packageinstaller.setDataAndType( apkUri, "application/vnd.android.package-archive");
-
-    startActivity(packageinstaller);
-
+Intent packageinstaller = new Intent(Intent.ACTION_VIEW);
+      packageinstaller.setDataAndType( apkUri, "application/vnd.android.package-archive");
+    startActivity(packageinstaller);
 } catch (Exception e) {
-
 }
-
 }
+```
 
 apkinstall이라는 메소드입니다
 
@@ -34,9 +28,10 @@ apkinstall이라는 메소드입니다
 
 메소드를 실행할땐 아래 코드를 사용합니다
 
+```java
 File apkfile = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/(파일이름).apk");
-
 apkInstall(apkfile);
+```
 
 Environment.getExternalStorageDirectory().getAbsolutePath()가 /sdcard를 만들고 +, apk경로를 입력하시면 됩니다
 

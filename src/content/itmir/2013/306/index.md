@@ -90,7 +90,9 @@ android:hint
 
 그리고 EditText소스를 보면
 
+```xml
 <requestFocus />
+```
 
 라는게 있는데요
 
@@ -126,21 +128,25 @@ android:ems
 
 일단 버튼 하나 추가해 주세요.
 
-<Button  
-        android:id="@+id/button1"  
-        android:layout\_width="wrap\_content"  
-        android:layout\_height="wrap\_content"  
-        android:layout\_below="@+id/editText1"  
-        android:layout\_centerHorizontal="true"  
-        android:text="Button" />
+```xml
+<Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText1"
+        android:layout_centerHorizontal="true"
+        android:text="Button" />
+```
 
 이렇게 추가해 주시면 됩니다 ㅎㅎ
 
 -src/(패키지 이름)/MainActivity.java
 
-public class MainActivity extends Activity {  
- +EditText edittext;  
- +Button button;
+```java
+public class MainActivity extends Activity {
+ +EditText edittext;
+ +Button button;
+```
 
 @Override
 
@@ -148,14 +154,19 @@ public class MainActivity extends Activity {
 
 그다음 onCreate안에 아래 코드를 넣어봅시다
 
-edittext = (EditText) findViewById(R.id.editText1);  
-button = (Button) findViewById(R.id.button1);  
-    
-button.setOnClickListener(new View.OnClickListener() { // 한 버튼만 OnClickListener를 연결합니다  
-       public void onClick(View v) { //버튼을 눌렀을때 어떤 작업을 할지 선언합니다  
-        String inPutText = edittext.getText().toString();  
-        Toast.makeText(MainActivity.this, inPutText,Toast.LENGTH\_SHORT).show();  
-       }});
+```java
+edittext = (EditText) findViewById(R.id.editText1);
+button = (Button) findViewById(R.id.button1);
+button.setOnClickListener(new View.OnClickListener() { // 한 버튼만 OnClickListener를 연결합니다
+       public void onClick(View v) { //버튼을 눌렀을때 어떤 작업을 할지 선언합니다
+        ```java
+String inPutText = edittext.getText().toString();
+```
+        ```java
+Toast.makeText(MainActivity.this, inPutText, Toast.LENGTH_SHORT).show();
+```
+       }});
+```
 
 지금까지 제 강좌를 "모두" 정독하시고 외운정도까지 된다면 위에 있는 두 줄은 이해가 되실겁니다
 
@@ -181,13 +192,19 @@ listener을 이용한 방법이 두가지로 나눠집니다
 
 그리고 한번 코드를 잘 살펴보면 이해가 안되는 코드 2줄이 있어야 합니다
 
+```java
 String inPutText = edittext.getText().toString();
+```
 
-Toast.makeText(MainActivity.this, inPutText,Toast.LENGTH\_SHORT).show();
+```java
+Toast.makeText(MainActivity.this, inPutText, Toast.LENGTH_SHORT).show();
+```
 
 여기서 아래에 있는 토스트는 다음시간쯤 더 자세히 배우니 여기서는 그렇구나 하고 넘어가 주세요
 
-위에 있는 String inPutText = edittext.getText().toString();은 여기서 꼭 짚고 갈겁니다
+위에 있는 ```java
+String inPutText = edittext.getText().toString();
+```은 여기서 꼭 짚고 갈겁니다
 
 자바에서(사실 대부분의 언어가) 변수를 지정하는 방법은 다음과 같습니다
 
