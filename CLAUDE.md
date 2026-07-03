@@ -68,6 +68,10 @@ original_url: "https://itmir.tistory.com/300"
 `itmir-1-1/` 폴더(별도 zip 백업)에 변환 스크립트 보관:
 `convert.py` → `compress_images.py` → `add_attachments.py` → `validate.py`
 
+## Git 규칙
+
+- 커밋 메시지에 `Co-Authored-By:` 등 AI 공동 작성자 표기 금지
+
 ## 알려진 사항
 
 - post 152, 250, 669: validate.py "빈 본문" false positive — 정상 포스트
