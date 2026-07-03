@@ -85,7 +85,7 @@
 <p>또한 각각의 버튼에는 android:onClick옵션을 달아주세요</p>
 <p>저 EditText는 직접 mp3 경로를 입력하는 공간입니다~</p>
 <p>xml파일은 따로 올리지 않겠습니다 ㅎ</p>
-<p>참조 : <a href="http://itmir.tistory.com/295">[Development/App] - #6 버튼을 만들어 보자</a></p>
+<p>참조 : <a href="/archive/itmir/2013/295">[Development/App] - #6 버튼을 만들어 보자</a></p>
 <p>저는 각각의 버튼의 onClick옵션을</p>
 <p>android:onClick=“startServiceMethod”</p>
 <p>android:onClick=“stopServiceMethod”</p>
@@ -126,7 +126,7 @@
 <p>editText1 = (EditText) findViewById(R.id.editText1);</p>
 <h3 id="23-4-서비스로-어떤-예제를-만드나요">23-4 서비스로 어떤 예제를 만드나요?</h3>
 <p>전에 음악 재생 강좌 기억하시나요?</p>
-<p><a href="http://itmir.tistory.com/364">[Development/App] - #18 소리를 재생해 보자 - MusicPlayer</a></p>
+<p><a href="/archive/itmir/2013/364">[Development/App] - #18 소리를 재생해 보자 - MusicPlayer</a></p>
 <p>이 예제의 문제점이라면 어플을 종료할경우 소리가 꺼지는 문제가 있습니다</p>
 <p>그러나 서비스를 배운다면 백그라운드에서도 노래가 흘러나오는 시중 뮤직 플레이어와 같은 기능을 만들수 있습니다</p>
 <p>그래서 이번에는 저 예제를 좀더 심화 시켜보겠습니다</p>
@@ -138,9 +138,9 @@
 <p>그럼 우리가 만들고자 하는것은 백그라운드에서 동작하는 뮤직 어플이므로 한번 구현해보겠습니다</p>
 <p>이번에는 우리가 직접 경로를 입력하여 소리를 재생할수 있도록 해봅시다</p>
 <p>이번 예제는 이전 강의의 완벽한 학습을 필요로 합니다 꼭 마스터 한다음 진행하세요</p>
-<p><a href="http://itmir.tistory.com/366">[Development/App] - #20 쓰레드(Thread)와 핸들러(Handler)</a></p>
-<p><a href="http://itmir.tistory.com/364">[Development/App] - #18 소리를 재생해 보자 - MusicPlayer</a></p>
-<p><a href="http://itmir.tistory.com/295">[Development/App] - #6 버튼을 만들어 보자</a></p>
+<p><a href="/archive/itmir/2013/366">[Development/App] - #20 쓰레드(Thread)와 핸들러(Handler)</a></p>
+<p><a href="/archive/itmir/2013/364">[Development/App] - #18 소리를 재생해 보자 - MusicPlayer</a></p>
+<p><a href="/archive/itmir/2013/295">[Development/App] - #6 버튼을 만들어 보자</a></p>
 <p>처음에 아래 문구를 추가해 주세요</p>
 <p>MediaPlayer music;</p>
 <p>String FilePath;</p>
@@ -176,7 +176,7 @@
 <p>mp3File.exists()은 얻은 파일의 경로가 존재할경우 true, 없을경우 false를 반환합니다</p>
 <p>그런대 앞에 ! 연산자가 있으니 반대가 되겠죠?</p>
 <p>저 경우는 있을경우 false, 없을경우 true가 됩니다</p>
-<p>참조 : <a href="http://itmir.tistory.com/158">[Development/Java] - 계산을 할수 있는 연산자에 대해 알아보자! - 2편</a></p>
+<p>참조 : <a href="/archive/itmir/2013/158">[Development/Java] - 계산을 할수 있는 연산자에 대해 알아보자! - 2편</a></p>
 <p>파일이 없을경우 없다는 알림을 띄우고 서비스를 종료합니다</p>
 <p>그러나 파일이 존재할경우 쓰래드를 실행합니다</p>
 <p>onStartCommand()메소드가 끝난지점 바로 아래에 추가해 주세요</p>

@@ -4,8 +4,6 @@
 <p>오늘은 커널에 스케쥴러를 추가해 보도록 하겠습니다.</p>
 <p>좀 오래전(약 3달전)에 한 작업이라 사진이 극히 적으니 잘따라와 주세요.</p>
 <p>구문은 다음 첨부파일을 확인해 주시면 감사드리겠습니다.</p>
-<p><a href="/attachment/cfile4.uf@116CE94451088F612C095D.txt"><img src="http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/txt.gif" alt=""> Kconfig.txt</a></p>
-<p><a href="/attachment/cfile7.uf@026CAE4451088F6129ABD4.txt"><img src="http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/txt.gif" alt=""> Makefile.txt</a></p>
 <p>(제가 올려둔 Github의 commit를 확인해 보시려면</p>
 <p><a href="https://github.com/itmir913/Mir-kernel/commit/d745d917209323bcac7ce117d7d6842a88e25678">https://github.com/itmir913/Mir-kernel/commit/d745d917209323bcac7ce117d7d6842a88e25678</a> 사이트를 방문해 주세요.)</p>
 <p><strong>1. 스케쥴러의 소스를 구하자</strong></p>
@@ -15,10 +13,6 @@
 <p>또한 구글링도 방법인대요 방대한 자료를 담고있는 구글에게 구해보는 겁니다.</p>
 <p>마지막으로 누가 올려둔 소스를 보는 방법입니다.</p>
 <p>제가 제 커널에 추가한 소스를 올려둘태니 참고하시면 될듯 합니다. ㅎㅎ</p>
-<p><a href="/attachment/cfile25.uf@20054B36510886AE11FB2F.c"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> deadline-iosched.c</a></p>
-<p><a href="/attachment/cfile4.uf@03795C36510886AE1B268F.c"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> noop-iosched.c</a></p>
-<p><a href="/attachment/cfile9.uf@2515CE36510886AF072152.c"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> sio-iosched.c</a></p>
-<p><a href="/attachment/cfile5.uf@247CEA36510886AF17C74E.c"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> vr-iosched.c</a></p>
 <p>기본적으로 deadline이나 noop는 커널소스에 있을겁니다. sio나 vr만 받으셔도 될듯.</p>
 <p><strong>2. 커널을 수정하자 - .c파일 추가편</strong></p>
 <p>io 스케쥴러는 커널소스/block 폴더에 위치합니다.</p>

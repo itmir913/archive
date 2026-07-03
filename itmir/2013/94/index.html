@@ -5,7 +5,6 @@
 <p>일단 포팅의 맛보기로 CWM을 포팅하는 방법을 적은 강좌를 작성해 보도록 하겠습니다</p>
 <p>어디까지나 초보자를 위한 글이기 때문에 어려운 용어는 되도록 사용하지 않도록 하겠습니다</p>
 <p>이 블로그는 마우스 오른쪽을 지원하지 않을 예정이기 때문에 명령어는 첨부해 두도록 하겠습니다</p>
-<p><a href="/attachment/cfile21.uf@017FDB4851065504075C1F.txt"><img src="http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/txt.gif" alt=""> CWM Porting.txt</a></p>
 <p>또한 이글은 부족한 자료가 있을경우 보충될 예정입니다 ㅎㅎ</p>
 <p>시작하기전 손가락 한번만 눌러주시면 감사드리겟습니다 ㅠㅠ</p>
 <p>그럼 시작하겠습니다 잘따라와 주세요!</p>
@@ -80,10 +79,10 @@
 <p>위 명령어를 입력하시되 (숫자)부분에 진짜 숫자를 넣으셔서 다운받으시면 됩니다</p>
 <p>EX) repo sync -j4</p>
 <p>그럼 쭉쭉 받게 됩니다</p>
-<p>아마 많이 끊길탠대요 <a href="http://itmir.tistory.com/33">http://itmir.tistory.com/33</a> 이 게시글을 살펴주시면 감사드리겠습니다</p>
+<p>아마 많이 끊길탠대요 /archive/itmir/2013/33 이 게시글을 살펴주시면 감사드리겠습니다</p>
 <p>단 repo로 받게되면 몇몇 기기정보가 누락되어 받아집니다</p>
 <p>그래서 제가 직접 누락된것을 보충하여 cm7소스를 배포하고 있습니다</p>
-<p><a href="http://itmir.tistory.com/43">http://itmir.tistory.com/43</a></p>
+<p>/archive/itmir/2013/43</p>
 <p>위 게시글을 들어가셔서 cm7소스를 다운받으시길 추천드립니다</p>
 <p><strong>4. 진짜로 빌드 해볼까? - 아니</strong></p>
 <p>자 이제 소스를 모두 다운받으셨을듯 합니다</p>
@@ -92,7 +91,6 @@
 <p>를 입력해 주세요</p>
 <p>(지금부터 나오는 대부분의 명령어는 cd ~/android/system에서 작업하셔야 합니다)</p>
 <p>본격적으로 빌드 준비하기전 unpackbootimg를 설정해 줘야 합니다</p>
-<p><a href="/attachment/cfile3.uf@20473E4D510642992727D6"><img src="http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif" alt=""> unpackbootimg</a></p>
 <p>이 파일을 /bin에 넣어야 합니다</p>
 <p>넣는 방법은 sudo를 통한 넣기 또는 루트계정으로 들어가서 넣기가 있는대요</p>
 <p>그냥</p>
@@ -100,14 +98,14 @@
 <p>sudo chmod 777 /bin/unpackbootimg</p>
 <p>를 해주시면 됩니다</p>
 <p>또한 자바를 깔으셔야 오류가 덜난다고 합니다</p>
-<p><a href="http://itmir.tistory.com/51">http://itmir.tistory.com/51</a></p>
+<p>/archive/itmir/2013/51</p>
 <p>이글의 중간부분쯤 java설치부분을 따라해 주시고</p>
 <p><a href="http://deviantcj.tistory.com/373">http://deviantcj.tistory.com/373</a></p>
 <p>이 블로그의 java추가방법을 참고해 주세요</p>
 <p>(thanks 삽질)</p>
 <p>(원래 빌드하기 까다롭습니다 절반정도 왔으니 힘내세요!)</p>
 <p>그다음 cwm을 포팅할 기기의 순정 boot.img와 순정recovery.img를 준비해 주세요</p>
-<p>(adb로 추출하는 방법이 <a href="http://itmir.tistory.com/91">http://itmir.tistory.com/91</a> 에 간략하게 기록되어 있군요)</p>
+<p>(adb로 추출하는 방법이 /archive/itmir/2013/91 에 간략하게 기록되어 있군요)</p>
 <p>더보기</p>
 <p>넥서스S의 경우 이미 구글의 드라이버 sh바이너리 지원이 끊긴 기종이라 CM에서 벤더를 함께 제공하지 않으면</p>
 <p>따로 다른곳에서 벤더소스를 구해 와야 합니다.</p>
@@ -169,7 +167,7 @@
 <p>이제 이것을 cwm에 맞게 또는 자신의 기기에 맞게 수정하셔야 합니다</p>
 <p>먼저 약간 간단한(?) recovery.fastab을 수정해 봅시다</p>
 <p>이것은 순정 recovery.img를 뜯어 주시면 램디스크 파일안 etc/recovery.fastab에 있습니다…</p>
-<p>뜯는 방법은 <a href="http://itmir.tistory.com/48%EB%A5%BC">http://itmir.tistory.com/48를</a> 참고해 주시면 됩니다</p>
+<p>뜯는 방법은 /archive/itmir/2013/48를 참고해 주시면 됩니다</p>
 <p>본문에 추가하면 길이가 너무 길어지므로 추가하지 못하는점 이해해 주세요…</p>
 <p>recovery.fstab을 수정하셨으면 boardconfig.mk를 열어주세요</p>
 <p>BOARD_KERNEL_BASE := 0x10000000</p>
@@ -221,7 +219,7 @@
 <p>Recovery.img를 빌드하며 발생하는 몇몇 오류 해결법</p>
 <p>Recovery.img를 빌드하며 발생하는 몇몇 오류 해결법</p>
 <p>빌드하며 발생하는 오류는 구글링 해서 답을 얻으시면 됩니다</p>
-<p>제가 격은 빌드 오류는 <a href="http://itmir.tistory.com/41">http://itmir.tistory.com/41</a> 에 모두 정리해 두었으니 참고 하시면 될듯 합니다 ㅎㅎ</p>
+<p>제가 격은 빌드 오류는 /archive/itmir/2013/41 에 모두 정리해 두었으니 참고 하시면 될듯 합니다 ㅎㅎ</p>
 <p>#포팅 #CWM포팅 #cm7포팅 #cm7 #cwm #리커버리 #리커버리 포팅 #큼칠 포팅 #cm7 포팅 #cm7 vhxld #cwm 포팅 #포팅방법</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
 Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
 itmir.tistory.com
