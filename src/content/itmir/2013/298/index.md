@@ -32,7 +32,7 @@ original_url: "https://itmir.tistory.com/298"
 
 예를 들자면
 
-"현재 남은 배터리가 12%입니다"
+"현재 남은 배터리가 12%입니다"
 
 "미르님 안녕하십니까?"
 
@@ -86,10 +86,10 @@ string.xml에는 `<string name="hello">%1$s님 안녕하세요!</string>`라고 
 
 라고 나타나게 됩니다
 
-저 "미르"부분도 String처리가 가능합니다 getString(R.string.mir) 이렇게 저 "미르"자리에 넣어주시면 국가에 맞게 다른 언어가 나타납니다
+저 "미르"부분도 String처리가 가능합니다 getString(R.string.mir) 이렇게 저 "미르"자리에 넣어주시면 국가에 맞게 다른 언어가 나타납니다
 
 만약 2개이상 변수를 하려면 쉼표를 입력한다음 게속 이어나가시면 됩니다
 
 이 부분은 String.xml에게 꼭 필요한 부분이니 꼭 숙지하시길 바랍니다!
 
-참조 : <http://jhrun.tistory.com/123>
+참조 : <http://jhrun.tistory.com/123>

@@ -58,7 +58,7 @@ Only3 라는 프로젝트를 열어둔 상태에서 스크린샷을 찍었습니
 
 실제 파일 트리와 폴더 목록이 나타나며 이 파일들은 C:\Users\(사용자 이름)\workspace에 저장되어 있습니다
 
-(초기 이클립스의 작업 폴더를 workspace로 지정하지 않으신 분들 또는
+(초기 이클립스의 작업 폴더를 workspace로 지정하지 않으신 분들 또는
 
 따로 추가한 프로젝트중 workspace로 복사 옵션을 선택하지 않은 프로젝트는 저 위치에 저장되어 있지 않습니다)
 
@@ -80,7 +80,7 @@ Only3 라는 프로젝트를 열어둔 상태에서 스크린샷을 찍었습니
 
 위 스크린샷에서 빨강? 자홍색으로 표시된 글자들이 프로그래밍 문법 언어입니다
 
-파랑색으로는 변수 이름, 주석등을 강조표시 하고 있습니다
+파랑색으로는 변수 이름, 주석등을 강조표시 하고 있습니다
 
 이클립스 에디터에서 사용할 수 있는 단축키들도 알고 계시면 매우 매우 매우 매우 유용합니다
 
@@ -90,7 +90,7 @@ Ctrl + F11 : Run As를 실행한것과 같은 단축키 입니다
 
 Ctrl + / : 주석처리를 위한 단축키 입니다 드래그를 한다음 이 단축키를 누르면 드레그된 줄이 주석(//)처리 됩니다
 
-Ctrl  + Shift + / : 주석처리를 위한 단축키 이며 이는 /\* \*/으로 주석처리 됩니다
+Ctrl  + Shift + / : 주석처리를 위한 단축키 이며 이는 /\* \*/으로 주석처리 됩니다
 
 **Ctrl + Shift + O** : 자동으로 import하며 가장 많이 하는 단축키가 될것입니다 (꼭 암기하세요!)
 
@@ -106,171 +106,171 @@ Alt + ↓ , Alt + ↑ : 줄바꾸기 입니다 현재 커서가 위치한 줄을
 
 이클립스 단축키 모음
 
-1.  단축키 확인
+1.  단축키 확인
 
-    Window > Preference > General > Keys 메뉴에서 확인
+    Window > Preference > General > Keys 메뉴에서 확인
 
 단축키 보기 Hint : Ctrl + Shift + L
 
 2. 실행
 
-    Ctrl + F11 : 실행(바로 전에 실행했던 클래스(Run파일) 실행).
+    Ctrl + F11 : 실행(바로 전에 실행했던 클래스(Run파일) 실행).
 
 3. 디버그
 
-    1) F11 : 디버그 모드로 실행
+    1) F11 : 디버그 모드로 실행
 
-    2) F5 : step into(현재의 명령문이 호출되는 메소드 속으로 진행하여, 그 첫 문장을 실행하기 전에 멈춘다. 하지만 자바 라이브러리 클래스 수준까지 들어가므로 단계필터 사용을 체크(Shift + F5)를 하면 필터를 설정한 클래스에 대하서는 Step Over 기능과 같은 기능을 수행한다.)
+    2) F5 : step into(현재의 명령문이 호출되는 메소드 속으로 진행하여, 그 첫 문장을 실행하기 전에 멈춘다. 하지만 자바 라이브러리 클래스 수준까지 들어가므로 단계필터 사용을 체크(Shift + F5)를 하면 필터를 설정한 클래스에 대하서는 Step Over 기능과 같은 기능을 수행한다.)
 
-    3) F6 : step over(현재의 명령문을 실행하고 다음 명령문 직전에 다시 멈춘다.)
+    3) F6 : step over(현재의 명령문을 실행하고 다음 명령문 직전에 다시 멈춘다.)
 
-    4) F8 : 멈추어 있던 쓰레드를 다시 계속 실행한다.(Resume)
+    4) F8 : 멈추어 있던 쓰레드를 다시 계속 실행한다.(Resume)
 
-    5) Ctrl + Shift + B : 현재커서위치에 Break point설정 또는 해제
+    5) Ctrl + Shift + B : 현재커서위치에 Break point설정 또는 해제
 
-    6) Ctrl + R : 현재 라인까지 실행(Run to Line)
+    6) Ctrl + R : 현재 라인까지 실행(Run to Line)
 
-    Display view(표시) : Window > Show View > Other > Debug > Display를 선택하여 소스상에서 필요한 부분을 선택해서 실행시켜 볼 수 있다.  한 순간의 값만 필요할 때 볼 수 있는 반면에 아래는 계속적으로 값이 변하는 것을 확인 할 수 있다.
+    Display view(표시) : Window > Show View > Other > Debug > Display를 선택하여 소스상에서 필요한 부분을 선택해서 실행시켜 볼 수 있다.  한 순간의 값만 필요할 때 볼 수 있는 반면에 아래는 계속적으로 값이 변하는 것을 확인 할 수 있다.
 
- 4. 소스 네비게이션
+ 4. 소스 네비게이션
 
-    1) Ctrl + 객체클릭(혹은 F3) : 클래스나 메소드 혹은 멤버를 정의한 곳으로 이동(Open Declaration)
+    1) Ctrl + 객체클릭(혹은 F3) : 클래스나 메소드 혹은 멤버를 정의한 곳으로 이동(Open Declaration)
 
-    2) Ctrl + O : 해당 소스의 메소드 리스트를 확인하려 할때
+    2) Ctrl + O : 해당 소스의 메소드 리스트를 확인하려 할때
 
-    3) F4 : 클래스명을 선택하고 누르면 해당 클래스의 Hierarchy 를 볼 수 있다.
+    3) F4 : 클래스명을 선택하고 누르면 해당 클래스의 Hierarchy 를 볼 수 있다.
 
-    4) F3 : 메소드 정의부로 이동
+    4) F3 : 메소드 정의부로 이동
 
-    5) Alt + Shift + R : 변수 및 메소드 변경(변경할 변수 에서 단축키를 누르고 변경 후에 엔터를 누르면 변수명이 모두 변경)
+    5) Alt + Shift + R : 변수 및 메소드 변경(변경할 변수 에서 단축키를 누르고 변경 후에 엔터를 누르면 변수명이 모두 변경)
 
- 5. 소스 편집
+ 5. 소스 편집
 
-    1) Ctrl + spacebar : 자동 완성 기능. 어휘의 자동완성(Content Assistance)
+    1) Ctrl + spacebar : 자동 완성 기능. 어휘의 자동완성(Content Assistance)
 
-    2) Ctrl + Shift + O : 자동으로 import 하기(사용하지 않는 Class는 삭제)
+    2) Ctrl + Shift + O : 자동으로 import 하기(사용하지 않는 Class는 삭제)
 
-    3) Ctrl + Shift + M : 캐럿이 위치한 대상에 필요한 특정클래스 import
+    3) Ctrl + Shift + M : 캐럿이 위치한 대상에 필요한 특정클래스 import
 
-    4) Ctrl + Shift + G : 클래스의 메소드나 필드를 Reference하고 있는 곳으로 이동
+    4) Ctrl + Shift + G : 클래스의 메소드나 필드를 Reference하고 있는 곳으로 이동
 
-   반대 : F3 (Reference하는 클래스로 이동)
+   반대 : F3 (Reference하는 클래스로 이동)
 
-    5) Shift + Alt + S R : getter/setter 자동 생성
+    5) Shift + Alt + S R : getter/setter 자동 생성
 
-    6) Ctrl + Shift + Space : 메소드 파라미터 힌트 (메소드에 입력해야 하는 파라미터 정보가 표시된다.)
+    6) Ctrl + Shift + Space : 메소드 파라미터 힌트 (메소드에 입력해야 하는 파라미터 정보가 표시된다.)
 
-    7) F2 : 에러의 원인에 대한 힌트 (에러 라인에 커서를 위치시키고...)
+    7) F2 : 에러의 원인에 대한 힌트 (에러 라인에 커서를 위치시키고...)
 
-    8) Ctrl + Shift + / : 블록 주석(/\*..\*/) 추가
+    8) Ctrl + Shift + / : 블록 주석(/\*..\*/) 추가
 
-    9) Ctrl + Shift + \ : 블록 주석 제거
+    9) Ctrl + Shift + \ : 블록 주석 제거
 
-    10) Ctrl + / : 한줄 또는 선택영역 주석처리 또는 제거(//)
+    10) Ctrl + / : 한줄 또는 선택영역 주석처리 또는 제거(//)
 
-    11) Alt + Shift + J : 설정해 둔 기본주석 달기(JavaDoc 주석)
+    11) Alt + Shift + J : 설정해 둔 기본주석 달기(JavaDoc 주석)
 
-    12) Ctrl + S : 저장 및 컴파일
+    12) Ctrl + S : 저장 및 컴파일
 
-    13) Ctrl + Shift + F4 : 열린 파일 모두 닫기
+    13) Ctrl + Shift + F4 : 열린 파일 모두 닫기
 
-    14) Ctrl + Shift + W : 열린 파일 모두 닫기
+    14) Ctrl + Shift + W : 열린 파일 모두 닫기
 
-    15) Ctrl +W : 창 닫기
+    15) Ctrl +W : 창 닫기
 
-    16) Ctrl + Q : 마지막 편집위치로 가기
+    16) Ctrl + Q : 마지막 편집위치로 가기
 
-    17) Ctrl + L : 특정줄번호로 가기. 로컬 히스토리 기능을 이용하면 이전에 편집했던 내용으로 변환이 가능하다.
+    17) Ctrl + L : 특정줄번호로 가기. 로컬 히스토리 기능을 이용하면 이전에 편집했던 내용으로 변환이 가능하다.
 
-    18) Ctrl + O : 현재 편집 화면의 메소드나 필드로 이동하기
+    18) Ctrl + O : 현재 편집 화면의 메소드나 필드로 이동하기
 
-    19) CTRL + 휠 : 페이지 단위 이동
+    19) CTRL + 휠 : 페이지 단위 이동
 
-    20) Ctrl + D : 한줄삭제
+    20) Ctrl + D : 한줄삭제
 
-    21) Ctrl + I : 들여쓰기 자동 수정
+    21) Ctrl + I : 들여쓰기 자동 수정
 
-    22) Ctrl + Shift + F : 소스 정리
+    22) Ctrl + Shift + F : 소스 정리
 
-    23) Alt + Up(Down) : 위(아래)줄과 바꾸기
+    23) Alt + Up(Down) : 위(아래)줄과 바꾸기
 
-    24) Ctrl + Alt + ↑↓(상/하) : 한줄(블럭) 복사
+    24) Ctrl + Alt + ↑↓(상/하) : 한줄(블럭) 복사
 
-    25) Alt + Shift + 방향키 : 블록 선택하기
+    25) Alt + Shift + 방향키 : 블록 선택하기
 
-    26) Ctrl + M : 전체화면 토글
+    26) Ctrl + M : 전체화면 토글
 
-    27) Ctrl + Z / Ctrl + Y : Undo / Redo
+    27) Ctrl + Z / Ctrl + Y : Undo / Redo
 
-    28) Ctrl + , or . : 이전 또는 다음 annotation(에러, 워닝, 북마크 가능)으로 점프
+    28) Ctrl + , or . : 이전 또는 다음 annotation(에러, 워닝, 북마크 가능)으로 점프
 
-    29) Ctrl + T : 하이어라키 팝업 창 띄우기(인터페이스 구현 클래스간 이동시 편리)
+    29) Ctrl + T : 하이어라키 팝업 창 띄우기(인터페이스 구현 클래스간 이동시 편리)
 
-    30) Ctrl + F6 (재정의 하는게 편리) : ULTRAEDIT나 EDITPLUS 의 Ctrl +TAB 과 같은 기능
+    30) Ctrl + F6 (재정의 하는게 편리) : ULTRAEDIT나 EDITPLUS 의 Ctrl +TAB 과 같은 기능
 
-    31) Alt + ←→(좌/우) : 이후, 이전(뷰 화면의 탭에 열린 페이지 이동)
+    31) Alt + ←→(좌/우) : 이후, 이전(뷰 화면의 탭에 열린 페이지 이동)
 
-    32) Ctrl + Shift + R : Open Resource
+    32) Ctrl + Shift + R : Open Resource
 
-    33) Ctrl + Shift + ↑↓(상/하) : 다음/이전 메소드로 이동
+    33) Ctrl + Shift + ↑↓(상/하) : 다음/이전 메소드로 이동
 
-    34) Ctrl + Shift + E : Switch to Editor (탭에 열려있는 Editor 이동)
+    34) Ctrl + Shift + E : Switch to Editor (탭에 열려있는 Editor 이동)
 
-    35) Ctrl + Shift + G : 클래스의 메소드나 필드를 Reference하고 있는 곳으로 이동
+    35) Ctrl + Shift + G : 클래스의 메소드나 필드를 Reference하고 있는 곳으로 이동
 
-    36) Ctrl + 1  : Quick Fix(구현하지 않은 메소드 추가, 로컬 변수 이름 바꾸기, 행둘러싸기(if, while, for emd))
+    36) Ctrl + 1  : Quick Fix(구현하지 않은 메소드 추가, 로컬 변수 이름 바꾸기, 행둘러싸기(if, while, for emd))
 
-    37) Ctrl + 2 + R : Rename(리팩토링)
+    37) Ctrl + 2 + R : Rename(리팩토링)
 
-6.  문자열 찾기
+6.  문자열 찾기
 
-    Ctrl + K : 찾고자 하는 문자열을 블럭으로 설정한 후 키를 누른다.
+    Ctrl + K : 찾고자 하는 문자열을 블럭으로 설정한 후 키를 누른다.
 
-    Ctrl + Shift + K : 역으로 찾고자 하는 문자열을 찾아감.
+    Ctrl + Shift + K : 역으로 찾고자 하는 문자열을 찾아감.
 
-    Ctrl + J : 입력하면서 찾을 수 있음.
+    Ctrl + J : 입력하면서 찾을 수 있음.
 
-    Ctrl + Shift + J : 입력하면서 거꾸로 찾아갈 수 있음.
+    Ctrl + Shift + J : 입력하면서 거꾸로 찾아갈 수 있음.
 
-    Ctrl + F : 기본적으로 찾기
+    Ctrl + F : 기본적으로 찾기
 
-    Ctrl + H : Find 및 Replace
+    Ctrl + H : Find 및 Replace
 
- 7.  템플릿 사용
+ 7.  템플릿 사용
 
-    1) sysout 입력한 후 Ctrl + Space 하면 System.out.println(); 으로 바뀐다.
+    1) sysout 입력한 후 Ctrl + Space 하면 System.out.println(); 으로 바뀐다.
 
-    2) try 입력한 후 Ctrl + Space 하면 try-catch 문이 완성된다.
+    2) try 입력한 후 Ctrl + Space 하면 try-catch 문이 완성된다.
 
-    3) for 입력한 후 Ctrl + Space 하면 여러가지 for 문을 완성할 수 있다.
+    3) for 입력한 후 Ctrl + Space 하면 여러가지 for 문을 완성할 수 있다.
 
-    4) 템플릿을 수정하거나 추가하려면 Window > Preference > Java > Editor > Templates 에서 할 수 있다.
+    4) 템플릿을 수정하거나 추가하려면 Window > Preference > Java > Editor > Templates 에서 할 수 있다.
 
- 8. 에디터 변환
+ 8. 에디터 변환
 
-   1) 에디터가 여러 파일을 열어서 작업중일때 Ctrl + F6 키를 누르면 여러파일명이 나오고 F6키를 계속 누르면 아래로
+   1) 에디터가 여러 파일을 열어서 작업중일때 Ctrl + F6 키를 누르면 여러파일명이 나오고 F6키를 계속 누르면 아래로
 
-   2) Ctrl + Shift + F6 키를 누르면 위로 커서가 움직인다.
+   2) Ctrl + Shift + F6 키를 누르면 위로 커서가 움직인다.
 
-   3) Ctrl + F7 : 뷰간 전환
+   3) Ctrl + F7 : 뷰간 전환
 
-   4) Ctrl + F8 : 퍼스펙티브간 전환
+   4) Ctrl + F8 : 퍼스펙티브간 전환
 
-   5) Ctrl + E : 뷰 화면의 탭에 열린 페이지 이동
+   5) Ctrl + E : 뷰 화면의 탭에 열린 페이지 이동
 
-   6) Ctrl + H6 : 열린 페이지 이동
+   6) Ctrl + H6 : 열린 페이지 이동
 
-   7) F12 : 에디터로 포커스 위치
+   7) F12 : 에디터로 포커스 위치
 
-출처 : http://blog.naver.com/skylapunjel/150121253316
+출처 : http://blog.naver.com/skylapunjel/150121253316
 
-스크린샷에 있는 글꼴, 글자크기, 색상 변경에 관해 자세한 내용은 </archive/itmir/2013/290> 에 올라와 있습니다~
+스크린샷에 있는 글꼴, 글자크기, 색상 변경에 관해 자세한 내용은 </archive/itmir/2013/290> 에 올라와 있습니다~
 
 다음은 Outline입니다
 
 ![](./images/5.png)
 
-이 Outline은 코드를 한눈에 알아볼수 있도록 해주는대요
+이 Outline은 코드를 한눈에 알아볼수 있도록 해주는대요
 
 [메소드의 반환형](/archive/itmir/2013/330), 이름, 선언 위치등을 한눈에 알수 있습니다
 

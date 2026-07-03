@@ -14,7 +14,7 @@ original_url: "https://itmir.tistory.com/235"
 
 이렇게 버튼을 누르면 레이아웃을 변경합니다
 
-Androidmanifest.xml을 건들이니 오류가 게속 났지만
+Androidmanifest.xml을 건들이니 오류가 게속 났지만
 
 "src/패키지명" 에서 마우스 오른쪽 - New -Other - android activity로 만드니 오류가 나지 않군요
 

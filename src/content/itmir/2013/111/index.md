@@ -30,7 +30,7 @@ original_url: "https://itmir.tistory.com/111"
 
 이경우 게시글이 많으면 시간도 오래걸릴뿐만 아니라 애드센스 광고의 주소가 변경될경우 다시 작업해야 하는 어려움이 있습니다
 
-<http://tistory.i-swear.com/> 이 사이트에 들어가셔서 애드센스 소스를 주입해 주시면 작업은 끝나게 됩니다
+<http://tistory.i-swear.com/> 이 사이트에 들어가셔서 애드센스 소스를 주입해 주시면 작업은 끝나게 됩니다
 
 하지만 비 효율적이고 노가다가 필요합니다
 
@@ -53,7 +53,7 @@ document.writeln('google\_ad\_height = [광고 높이];')
 
 이내용을 우리의 광고에 맞게 수정해야 합니다
 
-<https://www.google.com/adsense> 에 들어가 모바일용 광고를 생성해 봅시다
+<https://www.google.com/adsense> 에 들어가 모바일용 광고를 생성해 봅시다
 
 ![](./images/8.png)
 

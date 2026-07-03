@@ -21,19 +21,19 @@ original_url: "https://itmir.tistory.com/388"
 먼저 덧셈 뻴셈부터
 
 ![](./images/device-2013-11-24-100519.jpg)
-   
+   
 ![](./images/device-2013-11-24-100528.jpg)
 
 그다음 삼각비에서 부터....
 
 ![](./images/device-2013-11-24-100557.jpg)
-   
+   
 ![](./images/device-2013-11-24-100604.jpg)
 
 분수까지 가능합니다
 
 ![](./images/device-2013-11-24-100758.jpg)
-   
+   
 ![](./images/device-2013-11-24-100805.jpg)
 
 잘하면 방정식도 풀수 있습니다 덜덜

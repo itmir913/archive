@@ -40,7 +40,7 @@ AlarmManager
 
 SQLite - DataBase
 
-Fragment, Activity LifeCycle
+Fragment, Activity LifeCycle
 
 How to use Material Design Library
 

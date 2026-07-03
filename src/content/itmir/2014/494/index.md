@@ -10,7 +10,7 @@ original_url: "https://itmir.tistory.com/494"
 
 삼성 펌웨어의 경우 펌웨어를 tar파일로 뽑아낼수 있습니다
 
-이 tar 압축파일 안에는 system.img.ext4이라는 파일이 존재합니다
+이 tar 압축파일 안에는 system.img.ext4이라는 파일이 존재합니다
 
 이것이 system dump파일인대요
 
@@ -18,7 +18,7 @@ original_url: "https://itmir.tistory.com/494"
 
 그래서 저걸 img로 변환한다음 추출해야 합니다
 
-이번에는 system.img.ext4을 분해해서 System 덤프를 뽑아내보도록 하겠습니다
+이번에는 system.img.ext4을 분해해서 System 덤프를 뽑아내보도록 하겠습니다
 
 [필요한 프로그램]
 
@@ -30,9 +30,9 @@ original_url: "https://itmir.tistory.com/494"
 
 **1. system.img.ext4을 Img확장자로 변환하자**
 
-먼저 펌웨어 파일에서 system.img.ext4을 압축해제 해야 합니다
+먼저 펌웨어 파일에서 system.img.ext4을 압축해제 해야 합니다
 
-알집 또는 반디집 같은 프로그램으로 tar펌웨어에서 system.img.ext4을 압축해제 해주세요
+알집 또는 반디집 같은 프로그램으로 tar펌웨어에서 system.img.ext4을 압축해제 해주세요
 
 ![](./images/1.png)
 
@@ -40,7 +40,7 @@ original_url: "https://itmir.tistory.com/494"
 
 ![](./images/2.png)
 
-압축 해제가 모두 되셨다면 압축푼 system.img.ext4와 다운받은 sgs2img파일을 한 폴더에 몰아 넣어 주세요
+압축 해제가 모두 되셨다면 압축푼 system.img.ext4와 다운받은 sgs2img파일을 한 폴더에 몰아 넣어 주세요
 
 ![](./images/3.png)
 
@@ -68,15 +68,15 @@ sgs2img system.img.ext4 system.img
 
 제경우 노트3 펌웨어를 작업하는대 약 1시간 정도 걸린듯 합니다
 
-작업이 끝나면 Convertor ending work.이라는 문구가 나타납니다
+작업이 끝나면 Convertor ending work.이라는 문구가 나타납니다
 
 ![](./images/5.png)
 
-만들어진 img파일은 아래 사진을 보시면 원본 system.img.ext4파일보다 용량이 조금 큰걸로 확인할 수 있습니다
+만들어진 img파일은 아래 사진을 보시면 원본 system.img.ext4파일보다 용량이 조금 큰걸로 확인할 수 있습니다
 
 ![](./images/6.png)
 
-이제 ext2explore.exe를 실행해 주세요
+이제 ext2explore.exe를 실행해 주세요
 
 무설치 프로그램 입니다
 

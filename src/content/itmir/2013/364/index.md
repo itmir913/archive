@@ -58,41 +58,41 @@ A. 암묵적인 약속이랄까... 그런겁니다(?)
 
 ㅁ..물론 강제는 아닙니다
 
-### 18-2 레이아웃 패스
+### 18-2 레이아웃 패스
 
 점점 강좌가 나갈수록 레이아웃은 간단해 집니다
 
 <Button
 
-    android:id="@+id/button1"
+    android:id="@+id/button1"
 
-    android:layout\_width="wrap\_content"
+    android:layout\_width="wrap\_content"
 
-    android:layout\_height="wrap\_content"
+    android:layout\_height="wrap\_content"
 
-    android:layout\_alignParentTop="true"
+    android:layout\_alignParentTop="true"
 
-    android:layout\_centerHorizontal="true"
+    android:layout\_centerHorizontal="true"
 
-    android:layout\_marginTop="50dp"
+    android:layout\_marginTop="50dp"
 
 **android:onClick="button"**
 
-    android:text="@string/start" />
+    android:text="@string/start" />
 
 <SeekBar
 
-    android:id="@+id/seekBar1"
+    android:id="@+id/seekBar1"
 
-    android:layout\_width="match\_parent"
+    android:layout\_width="match\_parent"
 
-    android:layout\_height="wrap\_content"
+    android:layout\_height="wrap\_content"
 
-    android:layout\_alignParentLeft="true"
+    android:layout\_alignParentLeft="true"
 
-    android:layout\_below="@+id/button1"
+    android:layout\_below="@+id/button1"
 
-    android:layout\_marginTop="30dp" />
+    android:layout\_marginTop="30dp" />
 
 모두 한번 배운 내용이므로 언급없이 진행하겠습니다
 
@@ -174,9 +174,9 @@ music.seekTo(progress);
 
 });
 
-먼저 seekbar.setMax(music.getDuration()); 이부분을 봅시다
+먼저 seekbar.setMax(music.getDuration()); 이부분을 봅시다
 
-setMax는 배운 것이므로 아시고 music.getDuration()는 뭘까요?
+setMax는 배운 것이므로 아시고 music.getDuration()는 뭘까요?
 
 이건 음악의 총 길이를 가져오는 코드입니다
 
@@ -188,7 +188,7 @@ onProgressChanged()를 봅시다
 
 여기서 볼수 있는 코드는 두줄, 그 전 fromUser에 대해 배워봅시다
 
-onProgressChanged()메소드가 실행될때 세번째로 값이 넘어오는 fromUser
+onProgressChanged()메소드가 실행될때 세번째로 값이 넘어오는 fromUser
 
 이것은 사용자가 움직여서 값이 변한거면 true, 소스 또는 setProgress등으로 변한것이면 false가 됩니다
 
@@ -204,7 +204,7 @@ music.seekTo(progress);
 
 간단합니다 재생 위치를 바꿔주는 것입니다
 
-즉 SeekBar를 사용자가 움직일때마다 재생 위치가 변하는 거죠
+즉 SeekBar를 사용자가 움직일때마다 재생 위치가 변하는 거죠
 
 이제 위에서 버튼에 주었던 android:onClick과 맞는 메소드를 만들어야 겠죠??
 
@@ -250,7 +250,7 @@ Thread();
 
 }
 
-자, 먼저 music.isPlaying()를 봅시다
+자, 먼저 music.isPlaying()를 봅시다
 
 이름에서 알다싶이 이건 재생중이면 true, 아니면 false를 반환합니다
 
@@ -258,13 +258,13 @@ Thread();
 
 뭐 이런것이죠 ㅎ
 
-그다음에 설명해야 할건 seekTo입니다
+그다음에 설명해야 할건 seekTo입니다
 
 이것은 어디를 재생할것인지 설정하는것으로 위에서 언급한 내용 그대로 입니다
 
 다만 여기서는 0으로 설정해 처음으로 돌아가는 것이죠 ㅎㅎ
 
-마지막 Thread();는 Thread라는 이름을 가진 메소드를 실행하는 것입니다
+마지막 Thread();는 Thread라는 이름을 가진 메소드를 실행하는 것입니다
 
 아직 정의하지 않았으므로 만들어 봅시다
 
@@ -318,13 +318,13 @@ thread.start();
 
 Runnable이라던지 Thread는 20번대 강좌에서 자세하게 배울 예정이므로 지금은 패스해 줍시다
 
-지금 배울것은 seekbar.setProgress(music.getCurrentPosition()); 부분 입니다
+지금 배울것은 seekbar.setProgress(music.getCurrentPosition()); 부분 입니다
 
 music.getCurrentPosition()은 뭘까요?
 
 눈치 빠르신 분들은 아시겠지만 이건 현재 재생되고 있는 위치를 가져오는 겁니다
 
-Thread.sleep(1000);으로 인해 1초씩 건너서 쉬므로
+Thread.sleep(1000);으로 인해 1초씩 건너서 쉬므로
 
 1초마다 SeekBar가 움직이게 됩니다
 
@@ -340,7 +340,7 @@ Thread.sleep(1000);으로 인해 1초씩 건너서 쉬므로
 
 당장 이해가 안되더라도 쭉 가다보면 언젠간 이해가 될겁니다 ㅎㅎ
 
-이 강좌의 예제소스는 19번 강좌가 나오는 즉시 업로드 됩니다
+이 강좌의 예제소스는 19번 강좌가 나오는 즉시 업로드 됩니다
 
 카페에서는 원본글에서만 다운로드가 가능합니다
 
@@ -351,7 +351,7 @@ Thread.sleep(1000);으로 인해 1초씩 건너서 쉬므로
 
 대부분의 강좌에서 진동은 그냥 위잉~ 이렇게만 언급하는대 제 강좌에서는 진동에 패턴까지 넣어서 위잉~...~윙~... 이런거 까지 해보도록 하겠습니다 ㅎㅎ
 
-참조 : <http://nephilim.tistory.com/56>
+참조 : <http://nephilim.tistory.com/56>
 
 <http://naiacinn.tistory.com/109>
 

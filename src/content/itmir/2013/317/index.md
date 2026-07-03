@@ -45,13 +45,13 @@ span.setSpan(new BackgroundColorSpan(0xFF0B76C8), start, end,
 // 글자 일부 배경 변경
 ```
 
-UnderlineSpan()는 밑줄 ForegroundColorSpan는 글자색, BackgroundColorSpan는 배경색을 설정합니다
+UnderlineSpan()는 밑줄 ForegroundColorSpan는 글자색, BackgroundColorSpan는 배경색을 설정합니다
 
 저기있는 start와 end는 처음부터 적용할 글자의 숫자인대요
 
 처음글자 0부터 시작해서 글자 하나하나마다 1씩 올라가고 공백도 포함됩니다
 
-아래는 클릭관련 코드입니다
+아래는 클릭관련 코드입니다
 
 ```java
 private void setClickSpan()
@@ -70,10 +70,10 @@ private void setSpan()
 
 {
 
-  Spannable span = (Spannable) textView.getText();
+  Spannable span = (Spannable) textView.getText();
 
 span.setSpan(clickSpan, start, end, Spannable.SPAN\_INCLUSIVE\_INCLUSIVE);
 
 }
 
-출처 : <http://colib.tistory.com/4>
+출처 : <http://colib.tistory.com/4>

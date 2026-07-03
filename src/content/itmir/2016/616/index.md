@@ -16,13 +16,13 @@ original_url: "https://itmir.tistory.com/616"
 
 오류를 해결하기 위해서는 아래와 같은 작업을 통해 주소를 변경하셔야 합니다.
 
-MealLibrary.java 파일의 모든 "http://hes."을 "http://stu."로 변경하십시오.
+MealLibrary.java 파일의 모든 "http://hes."을 "http://stu."로 변경하십시오.
 
 대국민 나이스 서비스의 개편작업으로 사이트 주소가 변경되었지만, 기존 주소 또한 한시적 기한동안 지원하다 이제 hes.~ 주소를 버린 듯 합니다.
 
-관련 commit : <https://github.com/itmir913/WondangHighSchool/commit/0569715fe573f3123078e67334a39d0b81a43e8e>
+관련 commit : <https://github.com/itmir913/WondangHighSchool/commit/0569715fe573f3123078e67334a39d0b81a43e8e>
 
-도움 : <http://cafe.naver.com/orangef914k/26162>
+도움 : <http://cafe.naver.com/orangef914k/26162>
 
 급식 파싱 참고 URL :
 

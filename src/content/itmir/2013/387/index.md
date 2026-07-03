@@ -3,7 +3,7 @@ title: "aircrack-ng으로 WEP보안 WI-FI 해킹하기"
 date: "2013-11-25T15:00:00+09:00"
 category: "Computer & PC"
 tags: []
-description: "aircrack-ng으로 WEP보안 WI-FI 해킹하기"
+description: "Kali Linux에서 aircrack-ng를 이용해 WEP 방식 와이파이를 테스트하는 방법입니다."
 draft: false
 original_url: "https://itmir.tistory.com/387"
 ---
@@ -20,13 +20,13 @@ original_url: "https://itmir.tistory.com/387"
 
 WEP는 구형 기기(닌텐도등)에서 주로 쓰였지만 보안 방식의 헛점으로 지금은 사용되지 않는 보안 방식입니다.
 
-현재 최신 기기들은 모두 보안이 강화된 WPA-PSK방식등을 사용합니다.
+현재 최신 기기들은 모두 보안이 강화된 WPA-PSK방식등을 사용합니다.
 
-이 게시글에서는 aircrack-ng과 machanger를 이용해 WEP 공유기의 비밀번호를 해킹해 보겠습니다.
+이 게시글에서는 aircrack-ng과 machanger를 이용해 WEP 공유기의 비밀번호를 해킹해 보겠습니다.
 
 리눅스(우분투) 환경에서 하시는것을 추천드리며, 이 글도 우분투를 기준으로 작성됩니다.
 
-먼저 aircrack-ng를 다운로드 해봅시다.
+먼저 aircrack-ng를 다운로드 해봅시다.
 
 sudo apt-get install build-essential
 
@@ -44,7 +44,7 @@ sudo make install
 
 sudo airodump-ng-oui-update
 
-설치가 모두 완료되었다면 aircrack-ng라고 터미널에 쳐주세요.
+설치가 모두 완료되었다면 aircrack-ng라고 터미널에 쳐주세요.
 
 $aircrack-ng
 
@@ -54,7 +54,7 @@ $aircrack-ng
 
 사용방법이 나타난다면 정상적으로 설치가 된것입니다.
 
-그런대 aircrack-ng에 대한 사용법이 명쾌하게 나온 글이 없어서 하나는 동영상으로, 하나는 글로 설명해 드리겠습니다.
+그런대 aircrack-ng에 대한 사용법이 명쾌하게 나온 글이 없어서 하나는 동영상으로, 하나는 글로 설명해 드리겠습니다.
 
 1. 동영상
 
@@ -62,7 +62,7 @@ $aircrack-ng
 
 [임베드 콘텐츠: https://play-tv.kakao.com/embed/player/cliplink/v106byU2F2GKsGGwALuFULA?service=daum\_tistory](https://play-tv.kakao.com/embed/player/cliplink/v106byU2F2GKsGGwALuFULA?service=daum_tistory)
 
-동영상 출처 : <http://juneny.wo.tc/265>
+동영상 출처 : <http://juneny.wo.tc/265>
 
 2. Machanger를 이용한 방법
 
@@ -106,7 +106,7 @@ aircrack-ng -b [bssid] [파일저장이름]
 
 [aircrack-ng\_1.1-6\_amd64.deb](https://github.com/itmir913/archive/releases/download/itmir-attachments/aircrack-ng_1.1-6_amd64.deb)
 
-출처 : <http://blog.naver.com/kkh0879/70125177862>
+출처 : <http://blog.naver.com/kkh0879/70125177862>
 
 <http://blog.naver.com/skyvvv624/194565936>
 

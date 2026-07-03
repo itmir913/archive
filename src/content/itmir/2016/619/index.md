@@ -48,9 +48,9 @@ original_url: "https://itmir.tistory.com/619"
 
 이 부분도 베가 아이언2 키보드와 마찬가지로 같은 키보드 테마를 가지고 있으며
 
-달라진 점이 있다면 키보드 내부적으로 코드의 변화가 조금 생겨 com.pantech.res.apk를 참고합니다.
+달라진 점이 있다면 키보드 내부적으로 코드의 변화가 조금 생겨 com.pantech.res.apk를 참고합니다.
 
-따라서 이 com.pantech.res.apk를 설치하지 않을 경우 패키지를 찾을 수 없다며 강제종료가 발생합니다.
+따라서 이 com.pantech.res.apk를 설치하지 않을 경우 패키지를 찾을 수 없다며 강제종료가 발생합니다.
 
 ![](./images/Screenshot_2016-08-04-22-24-30.png)
 
@@ -76,9 +76,9 @@ original_url: "https://itmir.tistory.com/619"
 
 바로 위 스샷은 작동을 테스트한 갤넥의 기기 정보입니다.
 
-참고로 베가 아임백 키보드는 인생을 루팅한 고1님께서 먼저 설치에 성공하셨습니다
+참고로 베가 아임백 키보드는 인생을 루팅한 고1님께서 먼저 설치에 성공하셨습니다
 
-(관련 게시글 : <http://cafe.naver.com/develoid/646537>)
+(관련 게시글 : <http://cafe.naver.com/develoid/646537>)
 
 키보드 높이가 설정되지 않는 이유를 알아보기 위해 smali를 java로 변환해서 확인하였습니다.
 
@@ -88,7 +88,7 @@ original_url: "https://itmir.tistory.com/619"
 
 저는 바로 위 if문과 setEnabled()를 제거해서 언제나 키보드 설정이 활성화 되도록 수정했습니다.
 
-따라서 상황에 따라 키보드 높이 설정 진입시 강제종료가 될 수 있으며, 시간도 보낼겸 만들어 본거라 앞으로 완벽한 해결 계획은 없습니다.
+따라서 상황에 따라 키보드 높이 설정 진입시 강제종료가 될 수 있으며, 시간도 보낼겸 만들어 본거라 앞으로 완벽한 해결 계획은 없습니다.
 
 최소 안드로이드 동작 API를 21(Android 5.0이상)로 만들었습니다.
 
@@ -120,11 +120,11 @@ java.lang.NoSuchMethodError: java.lang.System.arraycopy
 
 이 앱이 문제가 발생하신다면 베가 아이언2 키보드를 사용해 보시는 것도 추천드립니다!
 
-위에서 설명한 대로 com.pantech.res.apk를 설치하지 않으시면 패키지를 찾을 수 없는 오류가 발생하여 강제종료가 발생합니다.
+위에서 설명한 대로 com.pantech.res.apk를 설치하지 않으시면 패키지를 찾을 수 없는 오류가 발생하여 강제종료가 발생합니다.
 
 기본 apk는 kimcloud.kr에서 받아서 수정했습니다.
 
-<http://www.kimcloud.kr/pantech/IM-100S/> 의 IM-100S\_DEODEXED.zip
+<http://www.kimcloud.kr/pantech/IM-100S/> 의 IM-100S\_DEODEXED.zip
 
 긴 글 읽어주셔서 감사합니다.
 

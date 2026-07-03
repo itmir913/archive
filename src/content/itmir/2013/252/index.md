@@ -12,15 +12,15 @@ original_url: "https://itmir.tistory.com/252"
 
 저는 약 6개정도의 서비스를 쓰는 듯 합니다.
 
-N드라이브           60GB  
-U클라우드           50GB  
-Daum 클라우드     50GB  
-Cloud Live           16GB  
-Google Drive        15GB  
-Box                   15GB  
-Dropbox           3.38GB
+N드라이브           60GB  
+U클라우드           50GB  
+Daum 클라우드     50GB  
+Cloud Live           16GB  
+Google Drive        15GB  
+Box                   15GB  
+Dropbox           3.38GB
 
-  합계 209.38GB
+  합계 209.38GB
 
 이정도의 클라우드 서비스를 쓰는군요. ㅋㅋ
 

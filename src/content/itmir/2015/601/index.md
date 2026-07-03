@@ -3,7 +3,7 @@ title: "성적표 앱을 출시했습니다."
 date: "2015-12-29T07:54:50+09:00"
 category: "Application"
 tags: []
-description: "12월 중반부터 프로젝트를 만들기 시작해서 저번 20일날 잠깐 포스팅으로 스샷을 공개했었는데요"
+description: "12월 중반부터 프로젝트를 만들기 시작해서 저번 20일날 잠깐 포스팅으로 스샷을 공개했었는데요"
 draft: false
 original_url: "https://itmir.tistory.com/601"
 ---
@@ -12,11 +12,11 @@ original_url: "https://itmir.tistory.com/601"
 
 안녕하세요~
 
-12월 중반부터 프로젝트를 만들기 시작해서 저번 20일날 잠깐 포스팅으로 스샷을 공개했었는데요
+12월 중반부터 프로젝트를 만들기 시작해서 저번 20일날 잠깐 포스팅으로 스샷을 공개했었는데요
 
 이번에 좀 더 다듬어서 마켓에 출시하게 되었습니다!
 
-여기서 저번 글이 궁금하시다면 : [[Application] - 성적표앱을 만들어보고 있습니다.](/archive/itmir/2015/599)
+여기서 저번 글이 궁금하시다면 : [[Application] - 성적표앱을 만들어보고 있습니다.](/archive/itmir/2015/599)
 
 저번 글이랑 달라진 점은 크게 겉으로 드러나는 부분은 색이 바뀌었고 나머지는 전부 버그와 기능 보완에 중점을 두었습니다.
 
@@ -26,7 +26,7 @@ original_url: "https://itmir.tistory.com/601"
 
 앱의 메인화면 입니다.
 
-메인 화면에는 시험 리스트가 표시되고, 저 리스트를 터치하면 상세 정보를 확인할 수 있습니다.
+메인 화면에는 시험 리스트가 표시되고, 저 리스트를 터치하면 상세 정보를 확인할 수 있습니다.
 
 ![](./images/Screenshot_2015-12-28-23-01-13.png)
 
@@ -58,4 +58,4 @@ original_url: "https://itmir.tistory.com/601"
 
 [바로가기](https://play.google.com/store/apps/details?id=com.tistory.itmir.whdghks913.reportcard)
 
-ps. 맨 위의 앱 아이콘은 가운데 이미지를 찾은뒤 인터넷 포토샵이라고도 불리는 <https://pixlr.com/editor/> 사이트에서 만들었습니다 ㅋㅋ
+ps. 맨 위의 앱 아이콘은 가운데 이미지를 찾은뒤 인터넷 포토샵이라고도 불리는 <https://pixlr.com/editor/> 사이트에서 만들었습니다 ㅋㅋ

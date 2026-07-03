@@ -23,7 +23,7 @@ original_url: "https://itmir.tistory.com/464"
 위의 메뉴바를 자세히 보시면 카테고리와 메뉴를 드롭다운 메뉴로 선택이 가능합니다
 
 ![](./images/After-카테고리.png)
-    
+    
 ![](./images/After-메뉴.png)
 
 모바일에서 PC버전에 접속하시면 아래처럼 나타납니다 ^^

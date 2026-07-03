@@ -14,7 +14,7 @@ original_url: "https://itmir.tistory.com/321"
 
 ![](./images/1.png)
 
- 게시됨 히히리리히ㅣ히히히히히
+ 게시됨 히히리리히ㅣ히히히히히
 
 ![](./images/2.png)
 

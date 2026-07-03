@@ -3,12 +3,12 @@ title: "Prima Wlan 추가해서 커널 빌드하기"
 date: "2014-08-08T17:54:35+09:00"
 category: "Android/Kernel"
 tags: []
-description: "이번 시간에는 prima wlan을 다운받아 커널소스에 추가해서 빌드해 보겠습니다."
+description: "이번 시간에는 prima wlan을 다운받아 커널소스에 추가해서 빌드해 보겠습니다."
 draft: false
 original_url: "https://itmir.tistory.com/519"
 ---
 
-이번 시간에는 prima wlan을 다운받아 커널소스에 추가해서 빌드해 보겠습니다.
+이번 시간에는 prima wlan을 다운받아 커널소스에 추가해서 빌드해 보겠습니다.
 
 prima는 wifi모듈입니다.
 
@@ -36,11 +36,11 @@ prima wlan 소스는 코드 오로라에 존재합니다.
 
 (아무거나 해도 상관은 없다고 합니다.)
 
-다운 받은 파일을 압축 풀어 /drivers/staging/prima 폴더에 넣어주세요.
+다운 받은 파일을 압축 풀어 /drivers/staging/prima 폴더에 넣어주세요.
 
 ### 컴파일에 필요한 구문을 추가하자
 
-먼저 /drivers/staging/Kconfig파일을 수정해 줍시다.
+먼저 /drivers/staging/Kconfig파일을 수정해 줍시다.
 
 source "drivers/staging/ozwpan/Kconfig"
 
@@ -48,7 +48,7 @@ source "drivers/staging/ozwpan/Kconfig"
 
 endif # STAGING
 
-endif위에 밑줄친 한줄을 추가해 주세요.
+endif위에 밑줄친 한줄을 추가해 주세요.
 
 /drivers/staging/Makefile
 
@@ -78,7 +78,7 @@ CONFIG\_PRIMA\_WLAN=m
 
 이 큰 용량을 툴체인에 있는 strip을 이용하면 작게 만들 수 있습니다.
 
-이 파일은 arm-eabi-4.6/arm-eabi/bin/ 에 들어있습니다.
+이 파일은 arm-eabi-4.6/arm-eabi/bin/ 에 들어있습니다.
 
 ./strip --strip-unneeded "./drivers/staging/prima/wlan.ko"
 
@@ -90,13 +90,13 @@ CONFIG\_PRIMA\_WLAN=m
 
 **/system/lib/modules/prima**
 
-(컴파일된 모듈) wlan.ko, cfg80211.ko
+(컴파일된 모듈) wlan.ko, cfg80211.ko
 
 **/system/etc/firmware/wlan/prima**
 
-(커널소스파일) /drivers/staging/prima/firmware\_bin/WCNSS\_cfg.dat
+(커널소스파일) /drivers/staging/prima/firmware\_bin/WCNSS\_cfg.dat
 
-(커널소스파일) /drivers/staging/prima/firmware\_bin/WCNSS\_qcom\_nv.bin
+(커널소스파일) /drivers/staging/prima/firmware\_bin/WCNSS\_qcom\_nv.bin
 
 ### Thanks to
 
@@ -104,7 +104,7 @@ NewWorld님
 
 그리고 요즘 포스팅할 거리가 없었는데 이걸 생각나게 해준 Hour님
 
-추가 방법이 기록된 Commit : <https://github.com/itmir913/android_kernel_pantech_ef47s/commit/ef1b190f4a6626b8d8efc03d800044468e7a5438>
+추가 방법이 기록된 Commit : <https://github.com/itmir913/android_kernel_pantech_ef47s/commit/ef1b190f4a6626b8d8efc03d800044468e7a5438>
 
 ---
 

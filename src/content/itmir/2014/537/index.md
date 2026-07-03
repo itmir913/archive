@@ -3,14 +3,14 @@ title: "AnimatedExpandable ListView"
 date: "2014-10-20T23:49:25+09:00"
 category: "Android/App"
 tags: []
-description: "다양한 리스트뷰 라이브러리를 검색하다 AnimatedExpandableListView라는 라이브러리를 발견했습니다"
+description: "다양한 리스트뷰 라이브러리를 검색하다 AnimatedExpandableListView라는 라이브러리를 발견했습니다"
 draft: false
 original_url: "https://itmir.tistory.com/537"
 ---
 
-다양한 리스트뷰 라이브러리를 검색하다 AnimatedExpandableListView라는 라이브러리를 발견했습니다
+다양한 리스트뷰 라이브러리를 검색하다 AnimatedExpandableListView라는 라이브러리를 발견했습니다
 
-기본적으로 ExpandableListView를 상속해서 구현되어 있는듯 보이며 애니메이션 효과가 포함되어 있습니다
+기본적으로 ExpandableListView를 상속해서 구현되어 있는듯 보이며 애니메이션 효과가 포함되어 있습니다
 
 > <https://github.com/idunnololz/AnimatedExpandableListView>
 

@@ -70,39 +70,39 @@ import py2exe
 
 excludes = [
 
-    "pywin",
+    "pywin",
 
-    "pywin.debugger",
+    "pywin.debugger",
 
-    "pywin.debugger.dbgcon",
+    "pywin.debugger.dbgcon",
 
-    "pywin.dialogs",
+    "pywin.dialogs",
 
-    "pywin.dialogs.list",
+    "pywin.dialogs.list",
 
-    "win32com.server",
+    "win32com.server",
 
 ]
 
 options = {
 
-    "bundle\_files": 1,                 # create singlefile exe
+    "bundle\_files": 1,                 # create singlefile exe
 
-    "compressed"  : 1,                 # compress the library archive
+    "compressed"  : 1,                 # compress the library archive
 
-    "excludes"    : excludes,
+    "excludes"    : excludes,
 
-    "dll\_excludes": ["w9xpopen.exe"]   # we don't need this
+    "dll\_excludes": ["w9xpopen.exe"]   # we don't need this
 
 }
 
 setup(
 
-    options = {"py2exe": options},
+    options = {"py2exe": options},
 
-    zipfile = None,
+    zipfile = None,
 
-    console = ["컴파일할파일명.py"]
+    console = ["컴파일할파일명.py"]
 
 )
 
@@ -112,11 +112,11 @@ setup(
 
 C:\Python27\python.exe make.py (만들어질 이름).exe
 
-이렇게 입력하면 dist폴더에 한개의 exe가 생성됩니다.
+이렇게 입력하면 dist폴더에 한개의 exe가 생성됩니다.
 
 [make.py](./files/make.py)
 
-출처 : <http://huddling.tistory.com/5>
+출처 : <http://huddling.tistory.com/5>
 
 ---
 

@@ -12,27 +12,27 @@ original_url: "https://itmir.tistory.com/444"
 
 private String[] getHomeLauncher(){
 
-    String[] HomeLauncher;
+    String[] HomeLauncher;
 
-    PackageManager pm =  getPackageManager();
+    PackageManager pm =  getPackageManager();
 
-    Intent homeIntent = new Intent(Intent.ACTION\_MAIN);
+    Intent homeIntent = new Intent(Intent.ACTION\_MAIN);
 
-    homeIntent.addCategory(Intent.CATEGORY\_HOME);
+    homeIntent.addCategory(Intent.CATEGORY\_HOME);
 
-    List<ResolveInfo> homeApps = pm.queryIntentActivities(homeIntent, PackageManager.GET\_ACTIVITIES);
+    List<ResolveInfo> homeApps = pm.queryIntentActivities(homeIntent, PackageManager.GET\_ACTIVITIES);
 
-    HomeLauncher = new String[homeApps.size()];
+    HomeLauncher = new String[homeApps.size()];
 
-    for(int i=0; i<homeApps.size(); i++){
+    for(int i=0; i<homeApps.size(); i++){
 
-        ResolveInfo info = homeApps.get(i);
+        ResolveInfo info = homeApps.get(i);
 
-        HomeLauncher[i] = info.activityInfo.packageName;
+        HomeLauncher[i] = info.activityInfo.packageName;
 
-    }
+    }
 
-    return HomeLauncher;
+    return HomeLauncher;
 
 }
 
@@ -44,18 +44,18 @@ String[] home = getHomeLauncher();
 
 for(int i=0 ; i<home.length ; i++ ){
 
-    if(home[i].equals(**packageName**)){
+    if(home[i].equals(**packageName**)){
 
-        // 이 어플이 홈런처 일경우 실행됨
+        // 이 어플이 홈런처 일경우 실행됨
 
-        break;
+        break;
 
-    }
+    }
 
 }
 
-굵은 글시로 표시되어 있는 **packageName**에 런처인지 확인하고자 하는 어플의 패키지 명을 집어넣어 주시면
+굵은 글시로 표시되어 있는 **packageName**에 런처인지 확인하고자 하는 어플의 패키지 명을 집어넣어 주시면
 
 그 어플이 런처일경우 할 작업을 써주시면 됩니다
 
-참고 : <http://chonggi7.tistory.com/entry/PackageManager-홈-화면-Launcher-PackageName-구하기>
+참고 : <http://chonggi7.tistory.com/entry/PackageManager-홈-화면-Launcher-PackageName-구하기>

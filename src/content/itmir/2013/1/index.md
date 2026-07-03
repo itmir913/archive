@@ -12,7 +12,7 @@ original_url: "https://itmir.tistory.com/1"
 
 이게 첫 포스팅 이군요. ㅋ
 
-일단 <http://scmplayer.net/> 사이트에 들어가 줍시다.
+일단 <http://scmplayer.net/> 사이트에 들어가 줍시다.
 
 ![](./images/image.jpg)
 
@@ -34,9 +34,9 @@ original_url: "https://itmir.tistory.com/1"
 
 랜덤재생 : 랜덤으로 노래를 재생할건가?
 
-기본 볼륨 : 처음으로 설정된 볼륨 크기는 몇인가?
+기본 볼륨 : 처음으로 설정된 볼륨 크기는 몇인가?
 
-뮤직 플레이어 위치 : 뮤직 플레이어는 어디에 위치하나?
+뮤직 플레이어 위치 : 뮤직 플레이어는 어디에 위치하나?
 
 기본재생목록 : 재생 목록을 기본으로 보여주게 할것인가?
 
@@ -48,7 +48,7 @@ original_url: "https://itmir.tistory.com/1"
 
 태그를 모두 복사해 주세요. ㅋ
 
-티스토리 설정에 들어가서 html/css설정에 들어가 주세요.
+티스토리 설정에 들어가서 html/css설정에 들어가 주세요.
 
 ![](./images/image_3.jpg)
 

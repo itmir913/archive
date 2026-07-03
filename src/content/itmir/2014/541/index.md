@@ -24,15 +24,15 @@ original_url: "https://itmir.tistory.com/541"
 
 헐.. 이거 어떻게 하나요?
 
-원인은 크롬의 DirectWrite 기능 이라고 합니다.
+원인은 크롬의 DirectWrite 기능 이라고 합니다.
 
 DirectWrite이란?
 
-크롬 37버전부터 적용된 새로운 글꼴 출력 방식인데요.
+크롬 37버전부터 적용된 새로운 글꼴 출력 방식인데요.
 
-이전에는 크롬에서 GDI(Graphics Device Interface)이라는 방법으로 글씨를 표시했습니다.
+이전에는 크롬에서 GDI(Graphics Device Interface)이라는 방법으로 글씨를 표시했습니다.
 
-참고로 IE에서는 IE9부터, Firefox에서는 4버전부터 DirectWrite가 사용되었다고 합니다.
+참고로 IE에서는 IE9부터, Firefox에서는 4버전부터 DirectWrite가 사용되었다고 합니다.
 
 왜 사용하냐면.. 사용 유무에 따라 글자 출력의 품질 차이가 있다 합니다.
 

@@ -30,19 +30,19 @@ case 와 esac에 대해 알아가는 시간이었습니다
 
 제가 알게된건
 
- read nember
+ read nember
 
- case $nember in
+ case $nember in
 
-  1)
+  1)
 
 명령어 ~~~
 
-  2)
+  2)
 
 명령어~~~
 
- esac
+ esac
 
 이렇게 구성된다는 점이었습니다.
 
@@ -88,11 +88,11 @@ busybox grep (내용) /(경로)
 
 if busybox [ "`busybox grep run-parts /system/etc/install-recovery.sh`" ]; then
 
- echo ""
+ echo ""
 
 else
 
- echo "busybox run-parts /system/etc/init.d;" >> /system/etc/install-recovery.sh
+ echo "busybox run-parts /system/etc/init.d;" >> /system/etc/install-recovery.sh
 
 fi
 

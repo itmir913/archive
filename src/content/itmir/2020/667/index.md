@@ -100,7 +100,7 @@ emulator-check hyper-v
 
 파일이 이상할까 걱정되는 분은 아래 더보기를 누른 다음 텍스트를 메모장에 붙여넣은 다음, hyper\_v.reg로 저장하면 된다.
 
-Windows Registry Editor Version 5.00
+Windows Registry Editor Version 5.00
 
 [HKEY\_LOCAL\_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard]
 

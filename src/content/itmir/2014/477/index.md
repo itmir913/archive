@@ -100,7 +100,7 @@ ListView를 이해하려면 먼저 이 Adapter를 이해해야만 합니다.
 
 이제 리스트뷰의 한 아이템에 표시될 레이아웃을 정의해야 합니다.
 
-이 레이아웃 파일의 이름은 listview\_item.xml으로 합시다.
+이 레이아웃 파일의 이름은 listview\_item.xml으로 합시다.
 
 ![](./images/item-xml.png)
 
@@ -163,7 +163,7 @@ private ListView mListView = null;
 private ListViewAdapter mAdapter = null;
 ```
 
-그럼 ListViewAdapter에 빨간 줄이 생길겁니다.
+그럼 ListViewAdapter에 빨간 줄이 생길겁니다.
 
 당황하지 마시고 아직 Adapter class를 작성하지 않아서 생긴 문제이므로 넘어가 주세요.
 
@@ -288,7 +288,7 @@ public class ListData {
 
 한 아이템의 정보를 담고 있을 java파일을 만들었습니다.
 
-아래에 있는 ALPHA\_COMPARATOR는 리스트뷰의 아이템을 쇼트(알파벳 순서대로 정렬)하기 위한 메소드이며, AppInfo예제를 참조했습니다.
+아래에 있는 ALPHA\_COMPARATOR는 리스트뷰의 아이템을 쇼트(알파벳 순서대로 정렬)하기 위한 메소드이며, AppInfo예제를 참조했습니다.
 
 다시 MainActivity.java로 돌아와 보면 빨간줄이 사라져 있을겁니다.
 
@@ -337,7 +337,7 @@ public View getView(int position, View convertView, ViewGroup parent) {
 
 getView는 한 아이템에 들어갈 레이아웃을 지정해 주는 메소드라고 배웠습니다.
 
-넘어오는 값은 int position과 View convertView등이 있는데요.
+넘어오는 값은 int position과 View convertView등이 있는데요.
 
 position은 리스트뷰의 순서입니다. (아이템의 순서)
 
@@ -441,7 +441,7 @@ mListView.setOnItemClickListener(new OnItemClickListener() {
 스크린샷을 보겠습니다.
 
 ![](./images/Screenshot_2014-02-18-11-51-02.png)
-    
+    
 ![](./images/Screenshot_2014-02-18-11-51-09.png)
 
 정상적으로 아이템이 나타나며, 터치할경우 제목이 나타나는것을 확인할 수 있습니다.

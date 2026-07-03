@@ -16,7 +16,7 @@ original_url: "https://itmir.tistory.com/543"
 
 최근에 pdf파일의 표를 엑셀로 변환해야 하는 일이 생겨서 관련 프로그램을 몇일간 찾다 좋은 프로그램을 발견해서 알려드립니다
 
-프로그램 이름은 PDF To Excel Converter 입니다
+프로그램 이름은 PDF To Excel Converter 입니다
 
 ![](./images/1.png)
 

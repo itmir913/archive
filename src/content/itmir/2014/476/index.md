@@ -16,7 +16,7 @@ original_url: "https://itmir.tistory.com/476"
 
 WebView의 전체화면 캡쳐 기능을 Jar 라이브러리로 만들었습니다
 
-이름은 WebViewAllCapture입니다~
+이름은 WebViewAllCapture입니다~
 
 현재 WebView의 상태를 저장하는 방법에는 두가지가 있습니다
 
@@ -55,7 +55,7 @@ mAllCapture.onWebViewAllCapture(mWebView, mFilePath, mScreenShotName)
 mAllCapture.onWebViewAllCapture(mWebView, mFilePath, mScreenShotName, mFormat)
 
 - mWebView : 캡쳐할 화면이 나타나있는 WebView입니다
-- mFilePath : 스크린샷 파일이 저장될 위치를 String으로 입력하시면 되며, 마지막에 "/"을 꼭 붙혀야 합니다 ex) "/sdcard/"
+- mFilePath : 스크린샷 파일이 저장될 위치를 String으로 입력하시면 되며, 마지막에 "/"을 꼭 붙혀야 합니다 ex) "/sdcard/"
 - mScreenShotName : 스크린샷 파일의 이름을 입력하시면 되며, 이때 확장자 까지 넣어주셔야 합니다
 - mFormat : 캡쳐 파일의 확장자를 따로 지정할때 사용합니다 (기본값은 PNG입니다)
 

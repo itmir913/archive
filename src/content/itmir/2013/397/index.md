@@ -20,9 +20,9 @@ original_url: "https://itmir.tistory.com/397"
 
 제가 만든 어플의 소스를 업로드할 곳이 필요했으나, 클로우즈 소스로 만든 어플 소스를 github에 올릴수도 없는 노릇이었습니다.
 
-그래서 무료 git사이트를 찾아본 결과 Bitbucket이라는 사이트를 찾아냈습니다.
+그래서 무료 git사이트를 찾아본 결과 Bitbucket이라는 사이트를 찾아냈습니다.
 
-사이트 주소 : <https://bitbucket.org/>
+사이트 주소 : <https://bitbucket.org/>
 
 **완전 무료 비공개 프로젝트**와 github와 비슷한 UI로 제 맘에 쏙들었습니다.
 
@@ -56,7 +56,7 @@ github와 비슷해요. UI도.
 
 commit도 정리가 잘 되어 있습니다.
 
-이렇게 Bitbucket에 대해 알아봤습니다.
+이렇게 Bitbucket에 대해 알아봤습니다.
 
 저는 이제 github에서 갈아 타렵니다. ㅎㅎ
 

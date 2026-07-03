@@ -54,7 +54,7 @@ dfqd944v7sda3pn5h1jbjn12ks@group.calendar.google.com
 
 음력 및 24절기 구독 취소를 눌러주시면 됩니다.
 
-출처 : <http://www.appmaru.com/?document_srl=580&mid=gosu>
+출처 : <http://www.appmaru.com/?document_srl=580&mid=gosu>
 
 ---
 

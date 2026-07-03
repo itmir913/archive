@@ -18,7 +18,7 @@ original_url: "https://itmir.tistory.com/382"
 
 첨부된 예제는 제가 약간 수정하였습니다
 
-[출처] : <http://theopentutorials.com/tutorials/android/listview/how-to-get-list-of-installed-apps-in-android/>
+[출처] : <http://theopentutorials.com/tutorials/android/listview/how-to-get-list-of-installed-apps-in-android/>
 
 [예제소스 다운로드]
 
@@ -40,7 +40,7 @@ original_url: "https://itmir.tistory.com/382"
 
 ![](./images/NSC20131123_001357.jpg)
 
-[출처] : <http://blog.naver.com/pluulove84/100153350054>
+[출처] : <http://blog.naver.com/pluulove84/100153350054>
 
 [예제소스 다운로드]
 

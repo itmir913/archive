@@ -42,7 +42,7 @@ chmod 777 mkbootimg
 ./split_bootimg.pl boot.img
 ```
 
-입력하시게 되면 Page size, Command line이 나타나게 됩니다.
+입력하시게 되면 Page size, Command line이 나타나게 됩니다.
 
 꼭 기억해 두세요!
 
@@ -52,7 +52,7 @@ chmod 777 mkbootimg
 ./unpackbootimg -i boot.img
 ```
 
-을 입력하시게 되면 BOARD\_KERNEL\_BASE이 나타납니다. 이것도 중요합니다!
+을 입력하시게 되면 BOARD\_KERNEL\_BASE이 나타납니다. 이것도 중요합니다!
 
 이제 램디스크 압축을 풀어봅시다.
 
@@ -78,7 +78,7 @@ cpio -i -F boot.img-ramdisk
 
 마음것 램디스크를 수정하세요!!
 
-램디스크를 모두 수정하셨다면 합쳐야 합니다.
+램디스크를 모두 수정하셨다면 합쳐야 합니다.
 
 램디스크 파일이 들어있는 폴더속에서
 

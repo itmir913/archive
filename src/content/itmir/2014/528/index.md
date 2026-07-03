@@ -30,9 +30,9 @@ original_url: "https://itmir.tistory.com/528"
 
 이 글에 사용된 FloatingActionButton은 필자가 입맛대로 수정하고 기능을 추가/개선한 버전입니다
 
-기본 베이스는 <https://github.com/makovkastar/FloatingActionButton> 입니다
+기본 베이스는 <https://github.com/makovkastar/FloatingActionButton> 입니다
 
-위에서 받은 베이스에 <https://github.com/FaizMalkani/FloatingActionButton> 의 일부를 참조했습니다
+위에서 받은 베이스에 <https://github.com/FaizMalkani/FloatingActionButton> 의 일부를 참조했습니다
 
 <http://forum.xda-developers.com/tools/programming/library-floating-action-button-android-t2804145>을 참고했습니다
 
@@ -46,7 +46,7 @@ original_url: "https://itmir.tistory.com/528"
 
 ### 라이브러리 다운로드
 
-위에서 말씀드린대로 이글에서 사용할 FloatingActionButton은 필자가 수정한 파일입니다
+위에서 말씀드린대로 이글에서 사용할 FloatingActionButton은 필자가 수정한 파일입니다
 
 아래 박스에서 라이브러리 겸 예제 프로젝트를 다운로드 해주세요
 
@@ -54,21 +54,21 @@ v1.0 2014-09-07
 
 [FloatingActionButton.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/FloatingActionButton.zip)
 
-압축을 풀으신다음 아래 목록의 파일들을 버튼을 추가하고자 하는 프로젝트에 추가하세요
+압축을 풀으신다음 아래 목록의 파일들을 버튼을 추가하고자 하는 프로젝트에 추가하세요
 
 - src/whdghks913/tistory/floatingactionbutton 폴더 전체
 
 - res/drawable-(모든폴더) 속 각각의 shadow.png
 
-- res/values/attrs.xml : <declare-styleable name="FloatingActionButton">부분
+- res/values/attrs.xml : <declare-styleable name="FloatingActionButton">부분
 
-- res/values/dimens.xml : <!-- FloatingActionButton --> 아래부분
+- res/values/dimens.xml : <!-- FloatingActionButton --> 아래부분
 
 ### How To Use?
 
-FloatingActionButton은 다른 View처럼 레이아웃에 정의한다음 java소스에서 불러옵니다
+FloatingActionButton은 다른 View처럼 레이아웃에 정의한다음 java소스에서 불러옵니다
 
-추가하고자 하는 레이아웃의 xmlns:android밑에 아래 한줄을 추가하세요
+추가하고자 하는 레이아웃의 xmlns:android밑에 아래 한줄을 추가하세요
 
 xmlns:fab="http://schemas.android.com/apk/res-auto"
 
@@ -105,7 +105,7 @@ API 사용방법 열기
 
 **필수로 설정해야 하는 코드**
 
-- mFloatingButton.attachToListView(listView) : 스크롤에 반응할 리스트뷰를 설정합니다
+- mFloatingButton.attachToListView(listView) : 스크롤에 반응할 리스트뷰를 설정합니다
 - mFloatingButton.attachToScrollView(mScrollView) : 스크롤에 반응할 스크롤뷰를
 
 위 두개는 중복 설정이 불가능 합니다
@@ -117,18 +117,18 @@ API 사용방법 열기
 - mFloatingButton.setColorNormal(color) : 기본 색을 지정합니다
 - mFloatingButton.setColorNormalResId(colorResId) : 기본 색을 지정합니다, R.color.xxx를 사용하는 메소드입니다
 - mFloatingButton.setColorPressed(color) : 버튼을 누를때 색을 지정합니다
-- mFloatingButton.setColorPressedResId(colorResId) : 버튼을 누를때 색을 지정합니다, R.color.xxx를 사용하는 메소드입니다
+- mFloatingButton.setColorPressedResId(colorResId) : 버튼을 누를때 색을 지정합니다, R.color.xxx를 사용하는 메소드입니다
 - mFloatingButton.setImageResource(resId) : 버튼의 이미지를 변경합니다
-- mFloatingButton.setType(type) : FloatingActionButton.TYPE\_MINI와 FloatingActionButton.TYPE\_NORMAL이 가능하며, 크기를 지정합니다, 크기는 res/dimen.xml에 정의되어 있습니다
+- mFloatingButton.setType(type) : FloatingActionButton.TYPE\_MINI와 FloatingActionButton.TYPE\_NORMAL이 가능하며, 크기를 지정합니다, 크기는 res/dimen.xml에 정의되어 있습니다
 - mFloatingButton.setShadow(shadow) : true일경우 그림자를 표시하며, false일경우 표시하지 않습니다
-- mFloatingButton.setDuration(Duration) : 애니메이션의 시간이며 줄이면 애니메이션이 빨라지고 커지면 느려집니다, 기본값은 200입니다
+- mFloatingButton.setDuration(Duration) : 애니메이션의 시간이며 줄이면 애니메이션이 빨라지고 커지면 느려집니다, 기본값은 200입니다
 
 **ActionButton을 표시하거나 숨길때 사용하는 메소드**
 
 - mFloatingButton.hide()
 - mFloatingButton.hide(animate) : true일경우 애니메이션도 표시하며, false일경우 애니메이션을 표시하지 않습니다
 - mFloatingButton.show()
-- mFloatingButton.show(animate) : true일경우 애니메이션도 표시하며, false일경우 애니메이션을 표시하지 않습니다
+- mFloatingButton.show(animate) : true일경우 애니메이션도 표시하며, false일경우 애니메이션을 표시하지 않습니다
 
 **반환하는 메소드**
 
@@ -149,7 +149,7 @@ public static final int Color\_ORANGE = -17613;
 
 public static final int Color\_RED = -48060;
 
-각각 색상값을 의미하며, FloatingActionButton.Color\_XX로 사용가능합니다
+각각 색상값을 의미하며, FloatingActionButton.Color\_XX로 사용가능합니다
 
 setColorNormal()등에 사용합니다
 
@@ -158,11 +158,11 @@ setColorNormal()등에 사용합니다
 스크린샷으로 작동을 확인해보도록 하겠습니다
 
 ![](./images/device-2014-09-07-221802.png)
-    
+    
 ![](./images/device-2014-09-07-221813.png)
 
 ![](./images/device-2014-09-07-221831.png)
-    
+    
 ![](./images/device-2014-09-07-221836.png)
 
 스크롤을 하면 오른쪽 아래 버튼이 사라지고/나타나는 모습을 볼수 있습니다

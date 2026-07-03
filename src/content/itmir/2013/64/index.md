@@ -26,7 +26,7 @@ original_url: "https://itmir.tistory.com/64"
 
 ![](./images/3.png)
 
-1번을 선택하면 친절히 나옵니다. 설명 ㅋㅋ
+1번을 선택하면 친절히 나옵니다. 설명 ㅋㅋ
 
 ![](./images/4.png)
 

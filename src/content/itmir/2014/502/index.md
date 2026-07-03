@@ -10,11 +10,11 @@ original_url: "https://itmir.tistory.com/502"
 
 저번에 저는 베가 아이언2의 루팅용 boot.img만들기를 시도하였습니다
 
-참고글 : [[Ubuntu] - [Dev] 루팅용 Boot.img 만들기 강좌](/archive/itmir/2013/207)
+참고글 : [[Ubuntu] - [Dev] 루팅용 Boot.img 만들기 강좌](/archive/itmir/2013/207)
 
 루팅용 boot.img만들기는 베가레이서2 젤리빈때 만들고 처음이므로 많이 지났네요 ㅎㅎ;
 
-그런대 모든 과정을 정상적으로 따랐지만 fastboot boot에서 failed (remote : dtb not found)라는 메세지와 함께 부팅이 되지 않았습니다
+그런대 모든 과정을 정상적으로 따랐지만 fastboot boot에서 failed (remote : dtb not found)라는 메세지와 함께 부팅이 되지 않았습니다
 
 원본 boot.img는 잘 됬는대 말이죠.. <-- 이를통해 fastboot가 막힌건 아니라는 사실을 알수 있습니다
 
@@ -26,35 +26,35 @@ original_url: "https://itmir.tistory.com/502"
 
 <https://github.com/osm0sis/mkbootimg>
 
-아래는 .c파일에서 볼수 있는 mkbootimg의 사용방법 설명 입니다
+아래는 .c파일에서 볼수 있는 mkbootimg의 사용방법 설명 입니다
 
 usage: mkbootimg"
 
-       --kernel <filename>"
+       --kernel <filename>"
 
-       --ramdisk <filename>"
+       --ramdisk <filename>"
 
-       [ --second <2ndbootloader-filename> ]"
+       [ --second <2ndbootloader-filename> ]"
 
-       [ --cmdline <kernel-commandline> ]"
+       [ --cmdline <kernel-commandline> ]"
 
-       [ --board <boardname> ]"
+       [ --board <boardname> ]"
 
-       [ --base <address> ]"
+       [ --base <address> ]"
 
-       [ --pagesize <pagesize> ]"
+       [ --pagesize <pagesize> ]"
 
-       [ --kernel\_offset <base offset> ]"
+       [ --kernel\_offset <base offset> ]"
 
-       [ --ramdisk\_offset <base offset> ]"
+       [ --ramdisk\_offset <base offset> ]"
 
-       [ --second\_offset <base offset> ]"
+       [ --second\_offset <base offset> ]"
 
-       [ --tags\_offset <base offset> ]"
+       [ --tags\_offset <base offset> ]"
 
-       [ --dt <filename> ]"
+       [ --dt <filename> ]"
 
-       -o|--output <filename>"
+       -o|--output <filename>"
 
 <https://github.com/osm0sis/mkbootimg/blob/master/mkbootimg.c>
 
@@ -102,7 +102,7 @@ BOARD\_DT\_SIZE 223232
 
 일단 이 img는 파티션은 아닙니다 부탁드려서 확인해보니 파티션은 아니더라고요
 
-그리고 구글링 결과 이 dt.img파일은 커널소스에서 만들어 내는듯 합니다
+그리고 구글링 결과 이 dt.img파일은 커널소스에서 만들어 내는듯 합니다
 
 만들어 내는 툴의 이름은 dtbTool입니다
 
@@ -118,27 +118,27 @@ BOARD\_DT\_SIZE 223232
 
 <http://forum.xda-developers.com/showthread.php?t=2428117>
 
-위 링크에서 받을수 있는 split\_bootimg\_dtb.pl 내용을 보면
+위 링크에서 받을수 있는 split\_bootimg\_dtb.pl 내용을 보면
 
 +-----------------+
 
-|    boot header     |
+|    boot header     |
 
 +-----------------+
 
-|    kernel             |
+|    kernel             |
 
 +-----------------+
 
-|    ramdisk           |
+|    ramdisk           |
 
 +-----------------+
 
-|    second stage  |
+|    second stage  |
 
 +-----------------+
 
-|    dtb                 |
+|    dtb                 |
 
 +-----------------+
 

@@ -28,14 +28,14 @@ original_url: "https://itmir.tistory.com/549"
 
 ![](./images/device-2014-12-31-162603.png)
 
-브금 : 아이폰 광고음악 music every day
+브금 : 아이폰 광고음악 music every day
 
 앱의 원본 소스가 궁금하신 분들을 위해 프로젝트를 공개합니다!
 
 소스 보기
 
 
-다른곳에서의 배포를 금지하며, </archive/itmir/2015/549> 링크만 허용합니다.
+다른곳에서의 배포를 금지하며, </archive/itmir/2015/549> 링크만 허용합니다.
 
 올해도 더 좋은 글을 쓰도록 노력하겠습니다~
 

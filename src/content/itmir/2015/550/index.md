@@ -16,7 +16,7 @@ original_url: "https://itmir.tistory.com/550"
 
 어떻게 해야 할까 생각하다 정말 좋은 방법이 있어 알려드리려고 합니다.
 
-먼저 이 글은 뭐하라님의 <http://nubiz.tistory.com/551> 글을 바탕으로 작성된 것임을 말씀드립니다.
+먼저 이 글은 뭐하라님의 <http://nubiz.tistory.com/551> 글을 바탕으로 작성된 것임을 말씀드립니다.
 
 ### 완성된 스크린샷 살펴보기
 
@@ -42,7 +42,7 @@ original_url: "https://itmir.tistory.com/550"
 
 그래서 방문자가 오류를 제보하면 그것을 저장해주는 저장소가 필요합니다.
 
-이때 구글 스프레드시트를 데이터 저장 용도로 사용할 예정입니다.
+이때 구글 스프레드시트를 데이터 저장 용도로 사용할 예정입니다.
 
 [구글 드라이브(클릭)](https://drive.google.com)에 접속하셔서 새로 만들기 - Google 스프레드시트를 선택해주세요.
 
@@ -60,7 +60,7 @@ original_url: "https://itmir.tistory.com/550"
 
 ![](./images/googlesheets_1.png)
 
-A1부터 C1까지를 각각 Timestamp, path, memo로 체워주세요.
+A1부터 C1까지를 각각 Timestamp, path, memo로 체워주세요.
 
 ![](./images/googlesheets_1-2.png)
 
@@ -70,7 +70,7 @@ A1부터 C1까지를 각각 Timestamp, path, memo로 체워주세요.
 
 그러면 아래와 같은 창이 뜹니다.
 
-스크립트 만들기 - 빈 프로젝트를 선택해주세요.
+스크립트 만들기 - 빈 프로젝트를 선택해주세요.
 
 ![](./images/googlesheets_3.png)
 
@@ -80,27 +80,27 @@ A1부터 C1까지를 각각 Timestamp, path, memo로 체워주세요.
 
 저기있는 function myFunction() { } 을 모두 지우고 아래 내용을 복사해서 넣어주세요.
 
-//  1. Enter sheet name where data is to be written below
+//  1. Enter sheet name where data is to be written below
 
 var SHEET\_NAME = "**시트1**";
 
-//  2. Run > setup
+//  2. Run > setup
 
 //
 
-//  3. Publish > Deploy as web app
+//  3. Publish > Deploy as web app
 
-//    - enter Project Version name and click 'Save New Version'
+//    - enter Project Version name and click 'Save New Version'
 
-//    - set security level and enable service (most likely execute as 'me' and access 'anyone, even anonymously)
-
-//
-
-//  4. Copy the 'Current web app URL' and post this in your form/script action
+//    - set security level and enable service (most likely execute as 'me' and access 'anyone, even anonymously)
 
 //
 
-//  5. Insert column names on your destination sheet matching the parameter names of the data you are passing in (exactly matching case)
+//  4. Copy the 'Current web app URL' and post this in your form/script action
+
+//
+
+//  5. Insert column names on your destination sheet matching the parameter names of the data you are passing in (exactly matching case)
 
 var SCRIPT\_PROP = PropertiesService.getScriptProperties(); // new property service
 
@@ -108,99 +108,99 @@ var SCRIPT\_PROP = PropertiesService.getScriptProperties(); // new property serv
 
 function doGet(e){
 
-  return handleResponse(e);
+  return handleResponse(e);
 
 }
 
 function doPost(e){
 
-  return handleResponse(e);
+  return handleResponse(e);
 
 }
 
 function handleResponse(e) {
 
-  // shortly after my original solution Google announced the LockService[1]
+  // shortly after my original solution Google announced the LockService[1]
 
-  // this prevents concurrent access overwritting data
+  // this prevents concurrent access overwritting data
 
-  // [1] http://googleappsdeveloper.blogspot.co.uk/2011/10/concurrency-and-google-apps-script.html
+  // [1] http://googleappsdeveloper.blogspot.co.uk/2011/10/concurrency-and-google-apps-script.html
 
-  // we want a public lock, one that locks for all invocations
+  // we want a public lock, one that locks for all invocations
 
-  var lock = LockService.getPublicLock();
+  var lock = LockService.getPublicLock();
 
-  lock.waitLock(30000);  // wait 30 seconds before conceding defeat.
+  lock.waitLock(30000);  // wait 30 seconds before conceding defeat.
 
-  try {
+  try {
 
-    // next set where we write the data - you could write to multiple/alternate destinations
+    // next set where we write the data - you could write to multiple/alternate destinations
 
-    var doc = SpreadsheetApp.openById(SCRIPT\_PROP.getProperty("key"));
+    var doc = SpreadsheetApp.openById(SCRIPT\_PROP.getProperty("key"));
 
-    var sheet = doc.getSheetByName(SHEET\_NAME);
+    var sheet = doc.getSheetByName(SHEET\_NAME);
 
-    // we'll assume header is in row 1 but you can override with header\_row in GET/POST data
+    // we'll assume header is in row 1 but you can override with header\_row in GET/POST data
 
-    var headRow = e.parameter.header\_row || 1;
+    var headRow = e.parameter.header\_row || 1;
 
-    var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+    var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
 
-    var nextRow = sheet.getLastRow()+1; // get next row
+    var nextRow = sheet.getLastRow()+1; // get next row
 
-    var row = [];
+    var row = [];
 
-    // loop through the header columns
+    // loop through the header columns
 
-    for (i in headers){
+    for (i in headers){
 
-      if (headers[i] == "Timestamp"){ // special case if you include a 'Timestamp' column
+      if (headers[i] == "Timestamp"){ // special case if you include a 'Timestamp' column
 
-        row.push(new Date());
+        row.push(new Date());
 
-      } else { // else use header name to get data
+      } else { // else use header name to get data
 
-        row.push(e.parameter[headers[i]]);
+        row.push(e.parameter[headers[i]]);
 
-      }
+      }
 
-    }
+    }
 
-    // more efficient to set values as [][] array than individually
+    // more efficient to set values as [][] array than individually
 
-    sheet.getRange(nextRow, 1, 1, row.length).setValues([row]);
+    sheet.getRange(nextRow, 1, 1, row.length).setValues([row]);
 
-    // return json success results
+    // return json success results
 
-    return ContentService
+    return ContentService
 
-          .createTextOutput(JSON.stringify({"result":"success", "row": nextRow}))
+          .createTextOutput(JSON.stringify({"result":"success", "row": nextRow}))
 
-          .setMimeType(ContentService.MimeType.JSON);
+          .setMimeType(ContentService.MimeType.JSON);
 
-  } catch(e){
+  } catch(e){
 
-    // if error return this
+    // if error return this
 
-    return ContentService
+    return ContentService
 
-          .createTextOutput(JSON.stringify({"result":"error", "error": e}))
+          .createTextOutput(JSON.stringify({"result":"error", "error": e}))
 
-          .setMimeType(ContentService.MimeType.JSON);
+          .setMimeType(ContentService.MimeType.JSON);
 
-  } finally { //release lock
+  } finally { //release lock
 
-    lock.releaseLock();
+    lock.releaseLock();
 
-  }
+  }
 
 }
 
 function setup() {
 
-    var doc = SpreadsheetApp.getActiveSpreadsheet();
+    var doc = SpreadsheetApp.getActiveSpreadsheet();
 
-    SCRIPT\_PROP.setProperty("key", doc.getId());
+    SCRIPT\_PROP.setProperty("key", doc.getId());
 
 }
 
@@ -235,7 +235,7 @@ function setup() {
 프로젝트 버전 옆 새 버전 저장을 눌러주세요.
 
 ![](./images/googlesheets_10.png)
-   
+   
 ![](./images/googlesheets_10-2.png)
 
 앱을 실행할 사용자는 '나'
@@ -256,6 +256,7 @@ function setup() {
 
 오류 제보 버튼 html 소스를 넣고 싶으신 위치에 넣어주시면 됩니다.
 
+```html
 <div id="sendComment">
 
   <p>오류 제보하기</p>
@@ -279,6 +280,7 @@ function setup() {
 </div>
 
 <div style="clear:both" />
+`
 
 그다음 skin.html의 </body>부분에 아래 코드를 넣어주시되, 하늘색으로 표시한 부분에는 위에서 복사한 URL을 넣어주세요.
 

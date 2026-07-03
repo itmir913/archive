@@ -102,37 +102,37 @@ android:onClick="Start"
 완성된 xml의 코드는 다음과 같습니
 
 <ProgressBar  
-        android:id="@+id/progressBar1"  
-        style="?android:attr/progressBarStyleHorizontal"  
-        android:layout\_width="match\_parent"  
-        android:layout\_height="wrap\_content"  
-        android:layout\_alignParentTop="true"  
-        android:layout\_centerHorizontal="true"  
-        android:max="1000"  
-        android:layout\_marginTop="64dp" />
+        android:id="@+id/progressBar1"  
+        style="?android:attr/progressBarStyleHorizontal"  
+        android:layout\_width="match\_parent"  
+        android:layout\_height="wrap\_content"  
+        android:layout\_alignParentTop="true"  
+        android:layout\_centerHorizontal="true"  
+        android:max="1000"  
+        android:layout\_marginTop="64dp" />
 
-    <EditText  
-        android:id="@+id/editText1"  
-        android:layout\_width="wrap\_content"  
-        android:layout\_height="wrap\_content"  
-        android:layout\_below="@+id/progressBar1"  
-        android:layout\_centerHorizontal="true"  
-        android:layout\_marginTop="14dp"  
-        android:inputType="number"  
-        android:ems="10" >
+    <EditText  
+        android:id="@+id/editText1"  
+        android:layout\_width="wrap\_content"  
+        android:layout\_height="wrap\_content"  
+        android:layout\_below="@+id/progressBar1"  
+        android:layout\_centerHorizontal="true"  
+        android:layout\_marginTop="14dp"  
+        android:inputType="number"  
+        android:ems="10" >
 
-        <requestFocus />  
-    </EditText>
+        <requestFocus />  
+    </EditText>
 
-    <Button  
-        android:id="@+id/button1"  
-        android:layout\_width="wrap\_content"  
-        android:layout\_height="wrap\_content"  
-        android:layout\_below="@+id/editText1"  
-        android:layout\_centerHorizontal="true"  
-        android:layout\_marginTop="18dp"  
-        android:onClick="Start"  
-        android:text="Button" />
+    <Button  
+        android:id="@+id/button1"  
+        android:layout\_width="wrap\_content"  
+        android:layout\_height="wrap\_content"  
+        android:layout\_below="@+id/editText1"  
+        android:layout\_centerHorizontal="true"  
+        android:layout\_marginTop="18dp"  
+        android:onClick="Start"  
+        android:text="Button" />
 
 자, 그럼 여기서 각 역할을 설명해 보겠습니다
 
@@ -150,9 +150,9 @@ android:onClick="Start"
 
 public class MainActivity extends Activity **implements Runnable** {  
 **ProgressBar progressBar1;  
- EditText editText1;  
- int progress=0;  
- Thread thread;**
+ EditText editText1;  
+ int progress=0;  
+ Thread thread;**
 
 ... 중략
 
@@ -171,35 +171,35 @@ editText1 = (EditText) findViewById(R.id.editText1);
 똑똑한 EditText를 만들어 봅시다
 
 editText1.**addTextChangedListener**(new TextWatcher() {  
-    
-   @Override  
-   public void afterTextChanged(Editable arg0) {  
-      
-   }
+    
+   @Override  
+   public void afterTextChanged(Editable arg0) {  
+      
+   }
 
-   @Override  
-   public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {  
-      
-   }
+   @Override  
+   public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {  
+      
+   }
 
-   @Override  
-   public void onTextChanged(CharSequence arg0, int arg1, int arg2,  
-     int arg3) {  
-    // TODO Auto-generated method stub  
-    /\*\*  
-     \* 만약 입력한 값이 공백(없음, "")이라면 강제종료 오류가 뜨므로 이 전체를 try문으로 감싸 오류를 막습니다  
-     \*/  
-    try {  
-      // Integer.parseInt()는 String을 Int로 바꿔줍니다  
-     progress = Integer.parseInt(editText1.getText().toString());  
-     progressBar1.setProgress(progress);
+   @Override  
+   public void onTextChanged(CharSequence arg0, int arg1, int arg2,  
+     int arg3) {  
+    // TODO Auto-generated method stub  
+    /\*\*  
+     \* 만약 입력한 값이 공백(없음, "")이라면 강제종료 오류가 뜨므로 이 전체를 try문으로 감싸 오류를 막습니다  
+     \*/  
+    try {  
+      // Integer.parseInt()는 String을 Int로 바꿔줍니다  
+     progress = Integer.parseInt(editText1.getText().toString());  
+     progressBar1.setProgress(progress);
 
-     //setProgress는 프로그레스바의 진행정도를 지정해 줍니다, ()안에는 int형 숫자가 들어갈수 있습니다  
-    } catch (Exception e) {  
-       
-    }  
-   }  
-  });
+     //setProgress는 프로그레스바의 진행정도를 지정해 줍니다, ()안에는 int형 숫자가 들어갈수 있습니다  
+    } catch (Exception e) {  
+       
+    }  
+   }  
+  });
 
 addTextChangedListener라는 것을 이용하여 구현되었는데요
 
@@ -222,9 +222,9 @@ afterTextChanged메소드는 글자가 바뀐후에, beforeTextChanged는 글자
 두개의 메소드를 추가해 줘야 합니다
 
 public void Start(View v){  
-    thread = new Thread(this);  
-    thread.start();  
- }
+    thread = new Thread(this);  
+    thread.start();  
+ }
 
 하나는 버튼xml에서 지정한 onClick에 필요한 메소드입니다
 
@@ -238,17 +238,17 @@ thread.start();라는것은 아~ 드쓰레라는걸 시작하는거구나 라는
 
 @Override  
 public void run(){  
-    progress=0;  
-    while(progress<100){  
-        ++progress;  
-        progressBar1.setProgress(progress);  
-    try {  
-        thread.sleep(1000);  
-    } catch (InterruptedException e) {  
-        // TODO Auto-generated catch block  
-        e.printStackTrace();  
-    }  
-    }  
+    progress=0;  
+    while(progress<100){  
+        ++progress;  
+        progressBar1.setProgress(progress);  
+    try {  
+        thread.sleep(1000);  
+    } catch (InterruptedException e) {  
+        // TODO Auto-generated catch block  
+        e.printStackTrace();  
+    }  
+    }  
 }
 
 음... 지금쯤이면 이 코드를 보면 대충은 아실수 있지 않나요?

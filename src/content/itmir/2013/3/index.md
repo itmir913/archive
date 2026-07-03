@@ -132,11 +132,11 @@ SK 지원
 
 제 테마랑 같이 사용해보세요 !
 
-ICS KAKAO TALK : [바로가기](http://www.matcl.com/?m=bbs&bid=appDB&uid=109758)
+ICS KAKAO TALK : [바로가기](http://www.matcl.com/?m=bbs&bid=appDB&uid=109758)
 
-ICS 부트 애니메이션 : [바로가기](http://cafe.naver.com/matdc/1445)
+ICS 부트 애니메이션 : [바로가기](http://cafe.naver.com/matdc/1445)
 
-Holo Launcher : [바로가기](http://hololauncher.com/download.aspx?t=BETA)
+Holo Launcher : [바로가기](http://hololauncher.com/download.aspx?t=BETA)
 
 ======================
 

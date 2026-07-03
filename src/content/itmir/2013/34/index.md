@@ -18,7 +18,7 @@ boot.img를 쪼개기 위해 unpackbootimg가 필요한데요.
 
 명령어 뒤에 ./을 붙히시는건 아시고 계시겠죠?
 
-첨부파일 출처 : <http://blog.naver.com/squake/20162488857>
+첨부파일 출처 : <http://blog.naver.com/squake/20162488857>
 
 제가 받은 파일이 잘못되었다는 생각을 가지고 다른 파일을 구하니 정상적으로 잘 되네요...
 

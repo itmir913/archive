@@ -44,7 +44,7 @@ original_url: "https://itmir.tistory.com/461"
 
 이클립스에서 git사용을 도와주는 플러그인의 이름은 egit입니다 (edit아닙니다 ㅋ)
 
-공식 사이트는 <http://www.eclipse.org/egit/> 이며 설명을 볼수 있습니다
+공식 사이트는 <http://www.eclipse.org/egit/> 이며 설명을 볼수 있습니다
 
 공식 사이트에서는 설명만 볼수 있고 다운로드는 이클립스로 직접 가능합니다
 

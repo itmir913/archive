@@ -16,17 +16,17 @@ Error:Could not find com.android.tools.build:gradle:2.0.0.
 
 Searched in the following locations:
 
-    file:/C:/Program Files/AndroidStudio/gradle/m2repository/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.pom
+    file:/C:/Program Files/AndroidStudio/gradle/m2repository/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.pom
 
-    file:/C:/Program Files/AndroidStudio/gradle/m2repository/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.jar
+    file:/C:/Program Files/AndroidStudio/gradle/m2repository/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.jar
 
-    https://jcenter.bintray.com/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.pom
+    https://jcenter.bintray.com/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.pom
 
-    https://jcenter.bintray.com/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.jar
+    https://jcenter.bintray.com/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.jar
 
 Required by:
 
-    :ReportCard:unspecified
+    :ReportCard:unspecified
 
 해결 방법
 
@@ -38,11 +38,11 @@ app/build.gradle 파일이 아닌(Not)
 
 dependencies {
 
-    classpath 'com.android.tools.build:gradle:2.0.0-alpha1'
+    classpath 'com.android.tools.build:gradle:2.0.0-alpha1'
 
-    // NOTE: Do not place your application dependencies here; they belong
+    // NOTE: Do not place your application dependencies here; they belong
 
-    // in the individual module build.gradle files
+    // in the individual module build.gradle files
 
 }
 
@@ -54,7 +54,7 @@ alpha3으로 바꾼 이유는
 
 https://jcenter.bintray.com/com/android/tools/build/gradle/
 
-이 사이트의 맨 마지막이 2.0.0-alpha3 이었기 때문이다.
+이 사이트의 맨 마지막이 2.0.0-alpha3 이었기 때문이다.
 
 출처 / 팁
 

@@ -20,7 +20,7 @@ original_url: "https://itmir.tistory.com/508"
 
 <https://www.google.co.kr/adsense>
 
-> 구글 홈페이지에서 계정을 가입하지 않고 휴대폰으로 가입하면 생년월일이 들어가지 않아 나이 제한에 걸리지는 않는 듯 합니다.
+> 구글 홈페이지에서 계정을 가입하지 않고 휴대폰으로 가입하면 생년월일이 들어가지 않아 나이 제한에 걸리지는 않는 듯 합니다.
 
 로그인후 애드센스 홈페이지에 들어가면 아래와 같은 화면이 뜹니다.
 
@@ -46,7 +46,7 @@ original_url: "https://itmir.tistory.com/508"
 
 캡쳐를 잘못해서 우편번호 부분이 안 나왔네요..
 
-영문 주소 / 우편번호 검색 : <http://nxd.search.naver.com/dsearch_r0/addreng.naver?where=svc&p1=>
+영문 주소 / 우편번호 검색 : <http://nxd.search.naver.com/dsearch_r0/addreng.naver?where=svc&p1=>
 
 모두 입력하시고 신청서를 제출하시면 아래 화면이 나타납니다.
 
@@ -60,7 +60,7 @@ original_url: "https://itmir.tistory.com/508"
 
 이런 메일을 받으시면 절반을 성공하신겁니다. ㅎㅎ
 
-"지금 시작하기"버튼을 눌러 애드센스 홈에 접속하신다음에 광고 코드를 만들고 사이트의 html에 집어넣어야 합니다.
+"지금 시작하기"버튼을 눌러 애드센스 홈에 접속하신다음에 광고 코드를 만들고 사이트의 html에 집어넣어야 합니다.
 
 구글 애드센스 온라인 서비스 약관 보기
 

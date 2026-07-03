@@ -18,7 +18,7 @@ adb 로그켓이 잡히지 않을때 정말 힘들죠?...
 
 adbenable.bat파일을 실행시켜 주시면 됩니다.
 
-이 파일은 persist.sys.usb.config파일을 /data/property에 넣어주는대요.
+이 파일은 persist.sys.usb.config파일을 /data/property에 넣어주는대요.
 
 이게 어떤 작용을 하는지는 잘 모르겠습니다..
 

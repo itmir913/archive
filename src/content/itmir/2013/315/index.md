@@ -26,7 +26,7 @@ original_url: "https://itmir.tistory.com/315"
 
 "기기를 종료하시겠습니까?"
 
-"아니오"                    "예"
+"아니오"                    "예"
 
 이 문구를 한번쯤은 보신적이 있으실겁니다
 
@@ -67,7 +67,7 @@ alert.setNegativeButton("취소", null);
 
 이런식으로 해주시면 됩니다
 
-onClick메소드안에 있는 dialog.dismiss();는 알림을 닫아주는 코드입니다
+onClick메소드안에 있는 dialog.dismiss();는 알림을 닫아주는 코드입니다
 
 setMessage는 짐작하신바와 같이 알림안에 들어갈 내용을 지정해 주는 코드입니다
 
@@ -126,7 +126,7 @@ alert.show();
 }
 ```
 
-처음에 배운 예제랑 달라진것은 NegativeButton이 추가되었고 setIcon을 지정하였다는 점입니다
+처음에 배운 예제랑 달라진것은 NegativeButton이 추가되었고 setIcon을 지정하였다는 점입니다
 
 여기까지 이해가 안될경우 다시 정독하시길 바랍니다
 

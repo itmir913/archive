@@ -62,4 +62,4 @@ Q슬라이드 갤러리앱은 갤러리에 있는 사진을 Q슬라이드로 띄
 
 <https://play.google.com/store/apps/details?id=com.tistory.itmir.qslidegallery>
 
-오픈소스 : <https://github.com/itmir913/qslidegallery>
+오픈소스 : <https://github.com/itmir913/qslidegallery>

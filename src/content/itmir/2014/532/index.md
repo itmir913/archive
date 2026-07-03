@@ -20,7 +20,7 @@ original_url: "https://itmir.tistory.com/532"
 
 로그켓은 안드로이드의 디버깅에 사용되는 방법입니다
 
-일반 C나 자바에서는 printf();나 System.out.println();등을 사용하는대 이것과 마찬가지로 정보를 출력해 주는 역할을 합니다
+일반 C나 자바에서는 printf();나 System.out.println();등을 사용하는대 이것과 마찬가지로 정보를 출력해 주는 역할을 합니다
 
 다만 전자는 console창에, logcat은 Logcat창에 뜨는겁니다
 
@@ -52,7 +52,7 @@ adb logcat
 
 이런 명령어를 입력하면 로크켓이 cmd창에 나타납니다
 
-이를 txt파일에 저장하려면 >를 이용해서 가능합니다
+이를 txt파일에 저장하려면 >를 이용해서 가능합니다
 
 adb logcat > log.txt
 
@@ -72,7 +72,7 @@ adb logcat > log.txt
 
 ![](./images/device-2014-09-13-100631.jpg)
 
-이때 왜 강제종료가 일어났는지에 대해 AndroidRuntime이 그 원인을 로그켓에 표시합니다
+이때 왜 강제종료가 일어났는지에 대해 AndroidRuntime이 그 원인을 로그켓에 표시합니다
 
 이클립스를 통해 확인한 강제종료 원인입니다
 

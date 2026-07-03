@@ -32,7 +32,7 @@ android:label="string/app\_name" />
 
 그다음 </application>위에
 
-> <meta-data android:name="com.sec.android.multiwindow.DEFAULT\_SIZE\_W"  android:resource="@dimen/app\_defaultsize\_w" />
+> <meta-data android:name="com.sec.android.multiwindow.DEFAULT\_SIZE\_W"  android:resource="@dimen/app\_defaultsize\_w" />
 >
 > <meta-data android:name="com.sec.android.multiwindow.DEFAULT\_SIZE\_H" android:resource="@dimen/app\_defaultsize\_h" />
 >

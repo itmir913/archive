@@ -18,7 +18,7 @@ AndroidManifest.xml에서는 아래와 같이 설정하지만 java에서 유동�
 
 <intent-filter>
 
-    <action android:name="android.intent.action.MAIN" />
+    <action android:name="android.intent.action.MAIN" />
 
 **<category android:name="android.intent.category.LAUNCHER" />**
 
@@ -30,13 +30,13 @@ AndroidManifest.xml에서는 아래와 같이 설정하지만 java에서 유동�
 
 ComponentName componentToDisable =
 
-    new ComponentName("com.example.app",
+    new ComponentName("com.example.app",
 
 "com.example.app.Activity");
 
 getPackageManager().setComponentEnabledSetting(
 
-    componentToDisable,
+    componentToDisable,
 
 PackageManager.COMPONENT\_ENABLED\_STATE\_DISABLED,
 
@@ -48,7 +48,7 @@ PackageManager pm = getPackageManager();
 
 pm.setApplicationEnabledSetting("com.example.app",
 
-    PackageManager.COMPONENT\_ENABLED\_STATE\_DISABLED,
+    PackageManager.COMPONENT\_ENABLED\_STATE\_DISABLED,
 
 PackageManager.DONT\_KILL\_APP);
 
@@ -56,6 +56,6 @@ PackageManager.DONT\_KILL\_APP);
 
 android:sharedUserId속성을 이용하면 가능하다고도 합니다
 
-출처 : <http://www.helloandroid.com/tutorials/removing-app-icon-launcher>
+출처 : <http://www.helloandroid.com/tutorials/removing-app-icon-launcher>
 
 <http://cafe.naver.com/aphone/55892>

@@ -36,7 +36,7 @@ framework-res.apk를 드래그&드롭 하면 됩니다
 
 apk\_signing-push : 사인할 어플을 드래그&드롭 하면 됩니다
 
-classes.dex\_compile : classes.dex를 컴파일하는 파일이며 먼저 디컴파일후 실행하세요, smali폴더를 classed.dex로 변환합니다
+classes.dex\_compile : classes.dex를 컴파일하는 파일이며 먼저 디컴파일후 실행하세요, smali폴더를 classed.dex로 변환합니다
 
 완성된 파일은 compile\_classes.dex 입니다
 

@@ -22,7 +22,7 @@ original_url: "https://itmir.tistory.com/533"
 
 지금 보니 그 블로그 주인분께서도 저와 같은 fastboot 스킨을 쓰시는거 같더군요. ㅋㅋ
 
-원본 블로그는 <http://nubiz.tistory.com/499>입니다.
+원본 블로그는 <http://nubiz.tistory.com/499>입니다.
 
 <http://nubiz.tistory.com/442>도 참고해 주세요.
 

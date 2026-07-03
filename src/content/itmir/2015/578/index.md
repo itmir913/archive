@@ -43,7 +43,7 @@ original_url: "https://itmir.tistory.com/578"
 네이버 카페앱에 카운트를 50걸어두면 카운트가 초기화되는 0시 0분까지 네이버 카페앱은 정확히 50번만 실행할수 있게 됩니다.
 
 ![](./images/Screenshot_2015-05-25-02-23-30.png)
-  
+  
 ![](./images/Screenshot_2015-05-25-02-23-31.png)
 
 전 버전은 투박했지만 이번에 갈아엎으면서 스크롤 탭으로 만들어봤습니다 ㅎㅎ
@@ -59,7 +59,7 @@ original_url: "https://itmir.tistory.com/578"
 당연히 카운트가 초과된 어플의 전체 카운트는 수정되지 않도록 해두었습니다.
 
 ![](./images/Screenshot_2015-05-25-02-24-24.png)
-  
+  
 ![](./images/Screenshot_2015-05-25-02-24-25.png)
 
 이 부분은 전체 잠금 기능입니다.
@@ -71,7 +71,7 @@ original_url: "https://itmir.tistory.com/578"
 맨 마지막은 설정화면 입니다.
 
 ![](./images/Screenshot_2015-05-25-02-24-52.png)
-  
+  
 ![](./images/Screenshot_2015-05-25-02-25-10.png)
 
 전체 잠금 기능이 활성화 되면 위와 같은 화면이 나타납니다.

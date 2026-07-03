@@ -134,7 +134,7 @@ Wi-Fi
 
 Bluetooth
 
-#### Not Working
+#### Not Working
 
 전후면카메라
 

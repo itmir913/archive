@@ -40,7 +40,7 @@ original_url: "https://itmir.tistory.com/614"
 
 ### WebDRM Test Page
 
-식단표 링크를 클릭할 때 보안프로그램을 깔아야 한다고 설명하는 페이지로 리다이렉트되며 그 페이지 링크는 아래와 같습니다.
+식단표 링크를 클릭할 때 보안프로그램을 깔아야 한다고 설명하는 페이지로 리다이렉트되며 그 페이지 링크는 아래와 같습니다.
 
 <http://stu.ice.go.kr/markany/html/ma_man_install.html>
 

@@ -8,7 +8,7 @@ draft: false
 original_url: "https://itmir.tistory.com/612"
 ---
 
-### 현재 블로그에 적용된 #1 스킨에 게시글 이미지가 표시된 모습
+### 현재 블로그에 적용된 #1 스킨에 게시글 이미지가 표시된 모습
 
 아래 스크린샷을 보시면 [제 블로그의 메인화면](http://itmir.tistory.com)에서 게시글 썸네일이 표시되는 모습을 볼 수 있습니다.
 
@@ -16,7 +16,7 @@ original_url: "https://itmir.tistory.com/612"
 
 티스토리 블로그 관리자 페이지에서 제목만으로 설정해도 반영이 안되는 듯 합니다.
 
-참고 : [[Note] - 블로그 스킨을 티스토리 #1로 변경하였습니다.](/archive/itmir/2016/609)
+참고 : [[Note] - 블로그 스킨을 티스토리 #1로 변경하였습니다.](/archive/itmir/2016/609)
 
 ![](./images/th.png)
 
@@ -36,41 +36,47 @@ original_url: "https://itmir.tistory.com/612"
 
 ![](./images/캡처.png)
 
-<s\_article\_rep>
+```html
+<s_article_rep>
 
-    <div id="mArticle" class="article\_skin">
+    <div id="mArticle" class="article_skin">
 
-        <s\_index\_article\_rep>
+        <s_index_article_rep>
 
             <!-- 이 부분 입니다. -->
 
-        </s\_index\_article\_rep>
+        </s_index_article_rep>
 
 ...
 
 이하 생략
+```
 
 썸네일을 추가하기 위한 코드는 아래와 같으며, 순서대로 위가 html, 아래는 css 코드입니다.
 
-<div class="main\_thumbnail">
+```html
+<div class="main_thumbnail">
 
     <!-- 메인 화면 썸네일 표시 -->
 
-<s\_article\_rep\_thumbnail>
+<s_article_rep_thumbnail>
 
-   <img src="[##\_article\_rep\_thumbnail\_url\_##]" style="width: 100%; max-width: 300px; height: auto;">
+   <img src="[##_article_rep_thumbnail_url_##]" style="width: 100%; max-width: 300px; height: auto;">
 
-</s\_article\_rep\_thumbnail>
+</s_article_rep_thumbnail>
 
 <!-- 메인 화면 썸네일 표시 -->
 
 </div>
+```
 
-/\* 메인화면 썸네일 표시 \*/
+```css
+/* 메인화면 썸네일 표시 */
 
-.main\_thumbnail {padding:21px 15px 0}
+.main_thumbnail {padding:21px 15px 0}
 
-/\* 메인화면 썸네일 표시 \*/
+/* 메인화면 썸네일 표시 */
+```
 
 css는 맨 아래쯤 넣어주시면 되고, html은 위 스샷처럼 위치 잡아주시면 됩니다.
 

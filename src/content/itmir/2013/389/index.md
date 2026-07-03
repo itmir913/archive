@@ -3,7 +3,7 @@ title: "Preference (프리퍼런스) 데이터 백업 복원 하기"
 date: "2013-11-24T14:01:04+09:00"
 category: "Android/App"
 tags: []
-description: "Preference (프리퍼런스) 데이터 백업 복원 하기"
+description: "Android Preference 데이터를 파일로 백업하고 복원하는 코드를 정리했습니다."
 draft: false
 original_url: "https://itmir.tistory.com/389"
 ---
@@ -14,51 +14,51 @@ Preference를 백업하기 위한 코드 입니다
 
 private boolean saveSharedPreferencesToFile(File dst) {
 
-    boolean res = false;
+    boolean res = false;
 
-    ObjectOutputStream output = null;
+    ObjectOutputStream output = null;
 
-    try {
+    try {
 
-        output = new ObjectOutputStream(new FileOutputStream(dst));
+        output = new ObjectOutputStream(new FileOutputStream(dst));
 
-        SharedPreferences pref =
+        SharedPreferences pref =
 
-                            getSharedPreferences(prefName, MODE\_PRIVATE);
+                            getSharedPreferences(prefName, MODE\_PRIVATE);
 
-        output.writeObject(pref.getAll());
+        output.writeObject(pref.getAll());
 
-        res = true;
+        res = true;
 
-    } catch (FileNotFoundException e) {
+    } catch (FileNotFoundException e) {
 
-        e.printStackTrace();
+        e.printStackTrace();
 
-    } catch (IOException e) {
+    } catch (IOException e) {
 
-        e.printStackTrace();
+        e.printStackTrace();
 
-    }finally {
+    }finally {
 
-        try {
+        try {
 
-            if (output != null) {
+            if (output != null) {
 
-                output.flush();
+                output.flush();
 
-                output.close();
+                output.close();
 
-            }
+            }
 
-        } catch (IOException ex) {
+        } catch (IOException ex) {
 
-            ex.printStackTrace();
+            ex.printStackTrace();
 
-        }
+        }
 
-    }
+    }
 
-    return res;
+    return res;
 
 }
 
@@ -66,84 +66,84 @@ private boolean saveSharedPreferencesToFile(File dst) {
 
 private boolean loadSharedPreferencesFromFile(File src) {
 
-    boolean res = false;
+    boolean res = false;
 
-    ObjectInputStream input = null;
+    ObjectInputStream input = null;
 
-    try {
+    try {
 
-        input = new ObjectInputStream(new FileInputStream(src));
+        input = new ObjectInputStream(new FileInputStream(src));
 
-            Editor prefEdit = getSharedPreferences(prefName, MODE\_PRIVATE).edit();
+            Editor prefEdit = getSharedPreferences(prefName, MODE\_PRIVATE).edit();
 
-            prefEdit.clear();
+            prefEdit.clear();
 
-            Map<String, ?> entries = (Map<String, ?>) input.readObject();
+            Map<String, ?> entries = (Map<String, ?>) input.readObject();
 
-            for (Entry<String, ?> entry : entries.entrySet()) {
+            for (Entry<String, ?> entry : entries.entrySet()) {
 
-                Object v = entry.getValue();
+                Object v = entry.getValue();
 
-                String key = entry.getKey();
+                String key = entry.getKey();
 
-                if (v instanceof Boolean)
+                if (v instanceof Boolean)
 
-                    prefEdit.putBoolean(key, ((Boolean) v).booleanValue());
+                    prefEdit.putBoolean(key, ((Boolean) v).booleanValue());
 
-                else if (v instanceof Float)
+                else if (v instanceof Float)
 
-                    prefEdit.putFloat(key, ((Float) v).floatValue());
+                    prefEdit.putFloat(key, ((Float) v).floatValue());
 
-                else if (v instanceof Integer)
+                else if (v instanceof Integer)
 
-                    prefEdit.putInt(key, ((Integer) v).intValue());
+                    prefEdit.putInt(key, ((Integer) v).intValue());
 
-                else if (v instanceof Long)
+                else if (v instanceof Long)
 
-                    prefEdit.putLong(key, ((Long) v).longValue());
+                    prefEdit.putLong(key, ((Long) v).longValue());
 
-                else if (v instanceof String)
+                else if (v instanceof String)
 
-                    prefEdit.putString(key, ((String) v));
+                    prefEdit.putString(key, ((String) v));
 
-            }
+            }
 
-            prefEdit.commit();
+            prefEdit.commit();
 
-        res = true;
+        res = true;
 
-    } catch (FileNotFoundException e) {
+    } catch (FileNotFoundException e) {
 
-        e.printStackTrace();
+        e.printStackTrace();
 
-    } catch (IOException e) {
+    } catch (IOException e) {
 
-        e.printStackTrace();
+        e.printStackTrace();
 
-    } catch (ClassNotFoundException e) {
+    } catch (ClassNotFoundException e) {
 
-        e.printStackTrace();
+        e.printStackTrace();
 
-    }finally {
+    }finally {
 
-        try {
+        try {
 
-            if (input != null) {
+            if (input != null) {
 
-                input.close();
+                input.close();
 
-            }
+            }
 
-        } catch (IOException ex) {
+        } catch (IOException ex) {
 
-            ex.printStackTrace();
+            ex.printStackTrace();
 
-        }
+        }
 
-    }
+    }
 
-    return res;
+    return res;
 
 }
 
-출처 : <http://stackoverflow.com/questions/10864462/how-can-i-backup-sharedpreferences-to-sd-card>
+출처 : <http://stackoverflow.com/questions/10864462/how-can-i-backup-sharedpreferences-to-sd-card>

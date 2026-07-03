@@ -38,9 +38,9 @@ original_url: "https://itmir.tistory.com/468"
 
 ![](./images/1.png)
 
-평소 사용하던 RelativeLayout을 사용하면 힘들수 있으므로 이번에는 리니어 레이아웃을 사용해 보겠습니다
+평소 사용하던 RelativeLayout을 사용하면 힘들수 있으므로 이번에는 리니어 레이아웃을 사용해 보겠습니다
 
-잠깐 LinearLayout에 대해 설명하자면..
+잠깐 LinearLayout에 대해 설명하자면..
 
 이 레이아웃은 추가된 하위뷰들(EditText)을 순서대로 위에서 아래로, 또는 왼쪽에서 오른쪽으로 배열합니다
 
@@ -155,9 +155,9 @@ mWebView = (WebView) findViewById(R.id.webView);
 
 첫번째 줄을 보시면 InputMethodManager가 처음 나왔는데요 이것을 사용하는 이유는 이동할 주소를 입력한뒤 이동 버튼을 누르면
 
-키보드가 숨겨져야 하죠? 그래서 InputMethodManager를 사용합니다
+키보드가 숨겨져야 하죠? 그래서 InputMethodManager를 사용합니다
 
-이제 WebSettings에 대해 설명할 차례가 왔습니다
+이제 WebSettings에 대해 설명할 차례가 왔습니다
 
 ![](./images/3.png)
 
@@ -191,11 +191,11 @@ CacheMode에는 아래중 하나가 들어갈수 있습니다
 - WebSettings.LOAD\_NO\_CACHE
 - WebSettings.LOAD\_CACHE\_ONLY
 
-여기서 LOAD\_CACHE\_ELSE\_NETWORK에 대해 부가 설명을 하면
+여기서 LOAD\_CACHE\_ELSE\_NETWORK에 대해 부가 설명을 하면
 
 캐쉬를 사용할수 있는경우 기간이 만료되도 사용합니다, 사용할수 없으면 네트워크를 사용합니다
 
-(API 원문 : Use cached resources when they are available, even if they have expired. Otherwise load resources from the network.)
+(API 원문 : Use cached resources when they are available, even if they have expired. Otherwise load resources from the network.)
 
 이제 아래 문구를 또 넣어주세요
 
@@ -255,7 +255,7 @@ onReceivedIcon()는 웹페이지의 아이콘이 변경될때마다 호출되는
 
 onReceivedTitle()는 웹페이지의 제목이 변경될때마다,
 
-onJsAlert()와 onJsConfirm()는 자바스크립트 알림/경고를 표시할지 여부를 설정해줍니
+onJsAlert()와 onJsConfirm()는 자바스크립트 알림/경고를 표시할지 여부를 설정해줍니
 
 아래는 webViewClient입니다
 
@@ -335,7 +335,7 @@ private String httpaddressCheck(String inputUrl) {
 
 2번째 줄에서버튼을 누르면 일단 키보드를 숨겨줍니다
 
-그다음에 httpaddressCheck()라는 메소드를 호출하는데요
+그다음에 httpaddressCheck()라는 메소드를 호출하는데요
 
 이 메소드는 "http://"라는 글자가 주소에 없을경우 추가해주는 메소드입니다
 
@@ -411,229 +411,229 @@ import android.widget.ProgressBar;
 
 public class MainActivity extends Activity {
 
-    private String mAddress = "http://itmir.tistory.com/";
+    private String mAddress = "http://itmir.tistory.com/";
 
-    private WebView mWebView;
+    private WebView mWebView;
 
-    private WebSettings mWebSettings;
+    private WebSettings mWebSettings;
 
-    private EditText mEditText;
+    private EditText mEditText;
 
-    private ProgressBar mProgressBar;
+    private ProgressBar mProgressBar;
 
-    private InputMethodManager mInputMethodManager;
+    private InputMethodManager mInputMethodManager;
 
-    @Override
+    @Override
 
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
 
-        super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity\_main);
+        setContentView(R.layout.activity\_main);
 
-        mInputMethodManager = (InputMethodManager) getSystemService(Context.INPUT\_METHOD\_SERVICE);
+        mInputMethodManager = (InputMethodManager) getSystemService(Context.INPUT\_METHOD\_SERVICE);
 
-        mEditText = (EditText) findViewById(R.id.addressInput);
+        mEditText = (EditText) findViewById(R.id.addressInput);
 
-        mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
+        mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
 
-        mWebView = (WebView) findViewById(R.id.webView);
+        mWebView = (WebView) findViewById(R.id.webView);
 
-        mWebSettings = mWebView.getSettings();
+        mWebSettings = mWebView.getSettings();
 
-        // setSavePassword(false)는 이제 사라질 API이기 때문에 사용하지 않습니다
+        // setSavePassword(false)는 이제 사라질 API이기 때문에 사용하지 않습니다
 
-//        mWebSettings.setSavePassword(false);
+//        mWebSettings.setSavePassword(false);
 
-//        mWebSettings.setAppCacheMaxSize(10000);
+//        mWebSettings.setAppCacheMaxSize(10000);
 
-        mWebSettings.setSaveFormData(false);
+        mWebSettings.setSaveFormData(false);
 
-        mWebSettings.setJavaScriptEnabled(true);
+        mWebSettings.setJavaScriptEnabled(true);
 
-        mWebSettings.setSupportZoom(true);
+        mWebSettings.setSupportZoom(true);
 
-        mWebSettings.setBuiltInZoomControls(true);
+        mWebSettings.setBuiltInZoomControls(true);
 
-        mWebSettings.setCacheMode(WebSettings.LOAD\_NO\_CACHE);
+        mWebSettings.setCacheMode(WebSettings.LOAD\_NO\_CACHE);
 
-        mWebView.setWebChromeClient(new webViewChrome());
+        mWebView.setWebChromeClient(new webViewChrome());
 
-        mWebView.setWebViewClient(new webViewClient());
+        mWebView.setWebViewClient(new webViewClient());
 
-        mWebView.loadUrl(mAddress);
+        mWebView.loadUrl(mAddress);
 
-        mEditText.setText(mAddress);
+        mEditText.setText(mAddress);
 
-    }
+    }
 
-    public void GoButton(View v){
+    public void GoButton(View v){
 
-        mInputMethodManager.hideSoftInputFromWindow(mEditText.getWindowToken(), 0);
+        mInputMethodManager.hideSoftInputFromWindow(mEditText.getWindowToken(), 0);
 
-        mAddress = httpaddressCheck(mEditText.getText().toString());
+        mAddress = httpaddressCheck(mEditText.getText().toString());
 
-         if(mAddress == null)
+         if(mAddress == null)
 
-             return;
+             return;
 
-         mWebView.loadUrl(mAddress);
+         mWebView.loadUrl(mAddress);
 
-         mEditText.setText(mAddress);
+         mEditText.setText(mAddress);
 
-    }
+    }
 
-    private String httpaddressCheck(String inputUrl) {
+    private String httpaddressCheck(String inputUrl) {
 
-        if(inputUrl.length()==0)
+        if(inputUrl.length()==0)
 
-            return null;
+            return null;
 
-        if(inputUrl.indexOf("http://")  != -1)
+        if(inputUrl.indexOf("http://")  != -1)
 
-            return inputUrl;
+            return inputUrl;
 
-        else return "http://" + inputUrl;
+        else return "http://" + inputUrl;
 
-    }
+    }
 
-    public class webViewChrome extends WebChromeClient {
+    public class webViewChrome extends WebChromeClient {
 
-        @Override
+        @Override
 
-        public void onProgressChanged(WebView view, int newProgress) {
+        public void onProgressChanged(WebView view, int newProgress) {
 
-            super.onProgressChanged(view, newProgress);
+            super.onProgressChanged(view, newProgress);
 
-            if(newProgress < 100) {
+            if(newProgress < 100) {
 
-                mProgressBar.setProgress(newProgress);
+                mProgressBar.setProgress(newProgress);
 
-            }else{
+            }else{
 
-                mProgressBar.setVisibility(View.INVISIBLE);
+                mProgressBar.setVisibility(View.INVISIBLE);
 
-            }
+            }
 
-        }
+        }
 
-        /\*\*
+        /\*\*
 
-         \* 홈페이지 아이콘이 변경되었을때 호출됩니다
+         \* 홈페이지 아이콘이 변경되었을때 호출됩니다
 
-         \* icon은 홈페이지 아이콘
+         \* icon은 홈페이지 아이콘
 
-         \*/
+         \*/
 
-        @Override
+        @Override
 
-        public void onReceivedIcon(WebView view, Bitmap icon) {
+        public void onReceivedIcon(WebView view, Bitmap icon) {
 
-        super.onReceivedIcon(view, icon);
+        super.onReceivedIcon(view, icon);
 
-        }
+        }
 
-        /\*\*
+        /\*\*
 
-         \* 홈페이지의 제목에 변경이 있을때 호출됩니다
+         \* 홈페이지의 제목에 변경이 있을때 호출됩니다
 
-         \* title은 <title>타이틀</title> 에서 "타이틀" 입니다
+         \* title은 <title>타이틀</title> 에서 "타이틀" 입니다
 
-         \*/
+         \*/
 
-        @Override
+        @Override
 
-        public void onReceivedTitle(WebView view, String title) {
+        public void onReceivedTitle(WebView view, String title) {
 
-        super.onReceivedTitle(view, title);
+        super.onReceivedTitle(view, title);
 
-        }
+        }
 
-        /\*\*
+        /\*\*
 
-         \* 자바스크립트 경고(알림)를 표시할지 여부
+         \* 자바스크립트 경고(알림)를 표시할지 여부
 
-         \*/
+         \*/
 
-        @Override
+        @Override
 
-        public boolean onJsAlert(WebView mView, String url, String message, JsResult result) {
+        public boolean onJsAlert(WebView mView, String url, String message, JsResult result) {
 
-        result.confirm();
+        result.confirm();
 
-        return true;
+        return true;
 
-        }
+        }
 
-        /\*\*
+        /\*\*
 
-         \* 자바스크립트의 확인 대화상자를 표시할지 여부
+         \* 자바스크립트의 확인 대화상자를 표시할지 여부
 
-         \*/
+         \*/
 
-        @Override
+        @Override
 
-        public boolean onJsConfirm(WebView view, String url, String msg, JsResult result){
+        public boolean onJsConfirm(WebView view, String url, String msg, JsResult result){
 
-        result.confirm();
+        result.confirm();
 
-        return true;
+        return true;
 
-        }
+        }
 
-    }
+    }
 
-    public class webViewClient extends WebViewClient {
+    public class webViewClient extends WebViewClient {
 
-        @Override
+        @Override
 
-        public void onPageFinished(WebView view, String url) {
+        public void onPageFinished(WebView view, String url) {
 
-            super.onPageFinished(view, url);
+            super.onPageFinished(view, url);
 
-            mEditText.setText(url);
+            mEditText.setText(url);
 
-        }
+        }
 
-        @Override
+        @Override
 
-        public boolean shouldOverrideUrlLoading(WebView mView, String url) {
+        public boolean shouldOverrideUrlLoading(WebView mView, String url) {
 
-            mProgressBar.setVisibility(View.VISIBLE);
+            mProgressBar.setVisibility(View.VISIBLE);
 
-            mView.loadUrl(url);
+            mView.loadUrl(url);
 
-            return super.shouldOverrideUrlLoading(mView, url);
+            return super.shouldOverrideUrlLoading(mView, url);
 
-        }
+        }
 
-    }
+    }
 
-    @Override
+    @Override
 
-    public boolean onKeyDown(int keyCode, KeyEvent event){
+    public boolean onKeyDown(int keyCode, KeyEvent event){
 
-        if(keyCode == KeyEvent.KEYCODE\_BACK && event.getRepeatCount() == 0){
+        if(keyCode == KeyEvent.KEYCODE\_BACK && event.getRepeatCount() == 0){
 
-            if(mWebView.canGoBack()){
+            if(mWebView.canGoBack()){
 
-                mWebView.goBack();
+                mWebView.goBack();
 
-            }else{
+            }else{
 
-                mWebView.clearCache(false);
+                mWebView.clearCache(false);
 
-                finish();
+                finish();
 
-            }
+            }
 
-            return true;
+            return true;
 
-        }
+        }
 
-        return super.onKeyDown(keyCode, event);
+        return super.onKeyDown(keyCode, event);
 
-    }
+    }
 
 }
 

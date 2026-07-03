@@ -28,7 +28,7 @@ original_url: "https://itmir.tistory.com/6"
 
 **2. 주의사항 == [※주의]**
 
-**3. Q&A      == [자주 들어오는 질문]**
+**3. Q&A      == [자주 들어오는 질문]**
 
 **체인지로그**, 즉 수정사항은 아래와 같습니다.
 
@@ -158,11 +158,11 @@ original_url: "https://itmir.tistory.com/6"
 
 안 풀린다하는 질문/쪽지/덧글 지우겠습니다 ㅎㅎ
 
-롬다운링크 : https://[www.dropbox.com/s/is2pyos76hh9i0k/Mir\_Rom\_Apple\_Stable.7z](http://www.dropbox.com/s/is2pyos76hh9i0k/Mir_Rom_Apple_Stable.7z)
+롬다운링크 : https://[www.dropbox.com/s/is2pyos76hh9i0k/Mir\_Rom\_Apple\_Stable.7z](http://www.dropbox.com/s/is2pyos76hh9i0k/Mir_Rom_Apple_Stable.7z)
 
 눈팅은 별 상관 없다칩니다.
 
-그런대 **후기는 제발 올려주시면 안될까요?**
+그런대 **후기는 제발 올려주시면 안될까요?**
 
 허접한 롬이지만 그래도 부모님 눈치보며 힘들게 만들어 낸 것입니다. ㅠㅠ
 

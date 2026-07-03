@@ -22,7 +22,7 @@ Workflow는 안드로이드의 테스커와 비슷한 어플으로, 아이폰에
 
 이에 따라 일부 작업은 만들 수 없는 한계가 존재합니다.
 
-예를 들어, 테스커에서는, 아니 안드로이드에서는 특정 블루투스 이어폰이 연결되면 음악을 자동으로 실행할 수 있지만,
+예를 들어, 테스커에서는, 아니 안드로이드에서는 특정 블루투스 이어폰이 연결되면 음악을 자동으로 실행할 수 있지만,
 
 아이폰에서 동작하는 Workflow는 iOS에서 외부 앱에게 개방하지 않는 API를 사용할 수 없습니다.
 
@@ -66,4 +66,4 @@ http://yoonjiman.net/2014/12/17/useful-workflow/
 
 http://blog.naver.com/PostView.nhn?blogId=helledge&logNo=220580029277
 
-공식 홈페이지 : <https://workflow.is/>
+공식 홈페이지 : <https://workflow.is/>

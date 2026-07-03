@@ -60,13 +60,13 @@ original_url: "https://itmir.tistory.com/548"
 
 하나는 터치가 되는 뷰, 나머지는 터치가 안되는 뷰
 
-전자는 터치이벤트를 받을수 있어서 팝업 동영상등에, 뒤는 터치를 못받으므로 스크린필터? 이런 용도로 씁니다
+전자는 터치이벤트를 받을수 있어서 팝업 동영상등에, 뒤는 터치를 못받으므로 스크린필터? 이런 용도로 씁니다
 
 물론 둘다 만들어 볼겁니다 ㅎㅎ
 
 터치이벤트를 못받는 뷰와 관련된 레이아웃 파일 입니다
 
-이름 : always\_on\_top\_view\_not\_touch.xml
+이름 : always\_on\_top\_view\_not\_touch.xml
 
 ![](./images/2.png)
 
@@ -101,7 +101,7 @@ original_url: "https://itmir.tistory.com/548"
 
 간단하게 이미지뷰 하나만 뒀습니다
 
-이름 : always\_on\_top\_view\_touch.xml
+이름 : always\_on\_top\_view\_touch.xml
 
 ![](./images/3.png)
 
@@ -129,7 +129,7 @@ original_url: "https://itmir.tistory.com/548"
 
 AlwaysTopServiceTouch.java - 서비스 생성 (링크 참조해서 생성하세요)
 
-AlwaysTopServiceNotTouch.java - 서비스 생성 (링크 참조해서 생성하세요)
+AlwaysTopServiceNotTouch.java - 서비스 생성 (링크 참조해서 생성하세요)
 
 [AndroidManifest.xml] : 코드 추가
 
@@ -141,13 +141,13 @@ AlwaysTopServiceNotTouch.java - 서비스 생성 (링크 참조해서 생성하
 
 public void mStart(View v) {
 
-    startService(new Intent(this, AlwaysTopServiceNotTouch.class));
+    startService(new Intent(this, AlwaysTopServiceNotTouch.class));
 
 }
 
 public void mStop(View v) {
 
-    stopService(new Intent(this, AlwaysTopServiceNotTouch.class));
+    stopService(new Intent(this, AlwaysTopServiceNotTouch.class));
 
 }
 
@@ -218,13 +218,13 @@ WindowManager.LayoutParams mParams = new WindowManager.LayoutParams(w, h, \_type
 
 - WindowManager.LayoutParams.WRAP\_CONTENT
 
-이건 WRAP\_CONTENT가 눈에 잘 들어오실탠대 생각하시는 그거 맞습니다
+이건 WRAP\_CONTENT가 눈에 잘 들어오실탠대 생각하시는 그거 맞습니다
 
 - WindowManager.LayoutParams.TYPE\_SYSTEM\_OVERLAY
 
 이건 항상 최상위에 있도록 해주는 타입입니다
 
-반대로 아래에서 사용하게될 WindowManager.LayoutParams.TYPE\_PHONE은 터치 이벤트도 받을수 있습니다
+반대로 아래에서 사용하게될 WindowManager.LayoutParams.TYPE\_PHONE은 터치 이벤트도 받을수 있습니다
 
 - WindowManager.LayoutParams.FLAG\_WATCH\_OUTSIDE\_TOUCH
 
@@ -241,7 +241,7 @@ WindowManager.LayoutParams mParams = new WindowManager.LayoutParams(w, h, \_type
 아래는 스크린샷 입니다
 
 ![](./images/device-2014-12-17-174604.png)
-   
+   
 ![](./images/device-2014-12-17-174616.png)
 
 ### AlwaysTopServiceTouch 서비스를 봐주세요
@@ -267,7 +267,7 @@ TYPE\_PHONE과 FLAG가 변경되었네요
 
 포커스를 가지지 않게 합니다
 
-그리고 mView.setOnTouchListener(mViewTouchListener); 이부분에서 mViewTouchListener를 언급하지 않았네요
+그리고 mView.setOnTouchListener(mViewTouchListener); 이부분에서 mViewTouchListener를 언급하지 않았네요
 
 ```java
 private float mTouchX, mTouchY;
@@ -309,10 +309,10 @@ private OnTouchListener mViewTouchListener = new OnTouchListener() {
 
 뭐.. 이런구조인데요
 
-중요한건 터치이벤트 리스너를 받을수 있고, 그 이벤트를 받아서 mParams을 수정하고, updateViewLayout()로 위치를 수정한다 라는 원리입니다
+중요한건 터치이벤트 리스너를 받을수 있고, 그 이벤트를 받아서 mParams을 수정하고, updateViewLayout()로 위치를 수정한다 라는 원리입니다
 
 ![](./images/Screenshot_2014-12-17-17-47-51.png)
-   
+   
 ![](./images/Screenshot_2014-12-17-17-48-11.png)
 
 ### 예제 다운로드
@@ -321,7 +321,7 @@ private OnTouchListener mViewTouchListener = new OnTouchListener() {
 
 ### 마치며
 
-강좌 완성도를 점차 올리고 싶은데 시간도 없고.. 내용도 어렵고 해서 강좌를 자주 올리지 못하네요..
+강좌 완성도를 점차 올리고 싶은데 시간도 없고.. 내용도 어렵고 해서 강좌를 자주 올리지 못하네요..
 
 그리고 제 필력이 약해서 정확하게 이해하실수 있으실지도 모르겠습니다
 

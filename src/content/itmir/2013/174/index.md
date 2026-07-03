@@ -3,12 +3,12 @@ title: "BINX를 분해해 보자!"
 date: "2013-03-09T23:03:36+09:00"
 category: "SmartPhone/Android"
 tags: []
-description: "혹시 http://cafe.naver.com/skydevelopers 카페(이하 SDA, 스다)를 아시나요?설립이후부터 쭉 고민해왔던 BINX 분해에 대한 부분이 지금 풀렸다 합니다"
+description: "혹시 http://cafe.naver.com/skydevelopers 카페(이하 SDA, 스다)를 아시나요?설립이후부터 쭉 고민해왔던 BINX 분해에 대한 부분이 지금 풀렸다 합니다"
 draft: false
 original_url: "https://itmir.tistory.com/174"
 ---
 
-혹시 http://cafe.naver.com/skydevelopers 카페(이하 SDA, 스다)를 아시나요?  
+혹시 http://cafe.naver.com/skydevelopers 카페(이하 SDA, 스다)를 아시나요?  
 설립이후부터 쭉 고민해왔던 BINX 분해에 대한 부분이 지금 풀렸다 합니다
 
 ![](./images/image.jpg)

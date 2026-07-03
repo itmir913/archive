@@ -34,7 +34,7 @@ original_url: "https://itmir.tistory.com/272"
 
 -그냥 tar으로 압축하기
 
-tar -cvf (압축 파일명).tar (압축할 폴더 또는 파일)
+tar -cvf (압축 파일명).tar (압축할 폴더 또는 파일)
 
 -tar.gz로 압축하기
 
@@ -66,11 +66,11 @@ tar -xzvf (압축파일명).tgz
 
 예를 들어 test.tar.gz를 다른곳($HOME/바탕화면/HI)에 넣어보겠습니다.
 
-tar -xvzf test.tar.gz -C 바탕화면/HI
+tar -xvzf test.tar.gz -C 바탕화면/HI
 
 맨 위에 있는 옵션을 사용하여자유롭게 사용할 수 있도록 연구하는 자세가 필요할듯 합니다. ㅎㅎ
 
-옵션의 v를 제거하면 v는 visual의 약자이므로 압축 과정을 화면에 표시하지 않습니다. ㅎㅎ
+옵션의 v를 제거하면 v는 visual의 약자이므로 압축 과정을 화면에 표시하지 않습니다. ㅎㅎ
 
 파일이 엄청나게 많은경우 v를 생략하게 되면 터미널을 아낄수 있겠지요?(?)
 

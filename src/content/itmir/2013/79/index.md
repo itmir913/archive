@@ -3,16 +3,16 @@ title: "2012-08-24-2012-08-25 interactive와 interactivex추가 lagfree제거"
 date: "2012-08-25T13:42:32+09:00"
 category: "Android/Kernel"
 tags: []
-description: "어제는 interactive을 추가했고"
+description: "어제는 interactive을 추가했고"
 draft: false
 original_url: "https://itmir.tistory.com/79"
 ---
 
-어제는 interactive을 추가했고
+어제는 interactive을 추가했고
 
-방금 interactivex을 추가했습니다
+방금 interactivex을 추가했습니다
 
-그런대 interactive추가한 상태에서 커널 패닉(?)이라는 것이 발생하더군요
+그런대 interactive추가한 상태에서 커널 패닉(?)이라는 것이 발생하더군요
 
 왜 그런지 모르겠습니다만 제 커널에서만 발생하니 아마 뭔가 문제가 있는듯 합니다
 

@@ -31,7 +31,7 @@ original_url: "https://itmir.tistory.com/498"
 먼저 키보드 설정 화면 입니다
 
 ![](./images/Screenshot_2014-05-19-23-36-33.png)
-    
+    
 ![](./images/Screenshot_2014-05-19-23-36-40.png)
 
 아래에다 블로그 주소를 박았어요
@@ -53,19 +53,19 @@ original_url: "https://itmir.tistory.com/498"
 잠시 키보드 종류를 확인해 보겠습니다
 
 ![](./images/Screenshot_2014-05-19-23-37-44.png)
-   
+   
 ![](./images/Screenshot_2014-05-18-23-11-27.png)
 
 ![](./images/Screenshot_2014-05-19-23-38-30.png)
-   
+   
 ![](./images/Screenshot_2014-05-18-23-17-20.png)
 
 ![](./images/Screenshot_2014-05-19-23-38-00.png)
-   
+   
 ![](./images/Screenshot_2014-05-18-23-12-12.png)
 
 ![](./images/Screenshot_2014-05-19-23-37-33.png)
-   
+   
 ![](./images/Screenshot_2014-05-18-23-11-44.png)
 
 ![](./images/Screenshot_2014-05-19-23-38-16.png)
@@ -88,7 +88,7 @@ original_url: "https://itmir.tistory.com/498"
 
 파일 다운로드 링크 제거
 
-**[apk가 업데이트 되었습니다 : /archive/itmir/2014/499](/archive/itmir/2014/499)**
+**[apk가 업데이트 되었습니다 : /archive/itmir/2014/499](/archive/itmir/2014/499)**
 
 **위 파일을 다운로드 할경우, 다른 제 3곳에 허락없이 무단으로 업로드 하는 행위를 하지 않겠다라는 것에 동의하시게 됩니다**
 
@@ -108,4 +108,4 @@ original_url: "https://itmir.tistory.com/498"
 
 파일을 가져가지 마시고 꼭 링크로만 첨부해 주세요 apk를 따로 첨부하지 말아 주세요...
 
-(나중에 업데이트시 이글만 수정하면 되므로 정말 편합니다)
+(나중에 업데이트시 이글만 수정하면 되므로 정말 편합니다)

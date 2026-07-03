@@ -27,7 +27,7 @@ original_url: "https://itmir.tistory.com/443"
 그 계획에 이 스마트폰 중독이 가로막고 있다면 이번기회에 세번만 어플로 꼭 이루시길 바랍니다
 
 ![](./images/Screenshot_2014-01-21-11-08-33.png)
-   
+   
 ![](./images/Screenshot_2014-01-21-12-04-17.png)
 
 (좌) 메인화면 (우) 어플 선택 화면
@@ -35,19 +35,19 @@ original_url: "https://itmir.tistory.com/443"
 오른쪽 스크린샷을 보시면 카운트가 초과된 어플은 저렇게 빨간 바탕이되며, 카운트 수정이 이루어 지지 않습니다
 
 ![](./images/Screenshot_2014-01-21-11-10-01.png)
-   
+   
 ![](./images/Screenshot_2014-01-21-11-10-12.png)
 
 (좌) 카운트 설정 전 화면 (우) 카운트 설정후 화면
 
 ![](./images/Screenshot_2014-01-21-12-05-02.png)
-   
+   
 ![](./images/Screenshot_2014-01-21-11-10-43.png)
 
 (좌) 설정 화면 (우) 비밀번호 입력 화면
 
 ![](./images/Screenshot_2014-01-21-11-11-32.png)
-   
+   
 ![](./images/Screenshot_2014-01-21-11-12-15.png)
 
 (좌) 예시)네이버 어플 카운트 상승 화면 (우) 카운트 초과 화면

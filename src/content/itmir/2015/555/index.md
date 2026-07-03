@@ -15,7 +15,7 @@ original_url: "https://itmir.tistory.com/555"
 그래서 오늘 sd카드 구입했습니다. ㅎㅎ
 
 ![](./images/20150118_162529.jpg)
-  
+  
 ![](./images/20150118_162536.jpg)
 
 삼성 16gb sdcard가 비쌀거다고 생각했는데 행사 상품 9900원이라 되어있더라고요. ㅋㅋㅋ

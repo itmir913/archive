@@ -34,7 +34,7 @@ original_url: "https://itmir.tistory.com/368"
 
 넥서스5는 1차 판매나라에 우리나라 한국이 있기때문에 구글 플레이 스토어에서 구매가 가능합니다
 
-참고 : <https://play.google.com/store/devices/details/Nexus_5_16GB_검정색?id=nexus_5_black_16gb>
+참고 : <https://play.google.com/store/devices/details/Nexus_5_16GB_검정색?id=nexus_5_black_16gb>
 
 이와 함께 발매된 키켓에 대한 정보도 알아보겠습니다
 

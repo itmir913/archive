@@ -38,7 +38,7 @@ Theme\_Holo\_Light\_NoActionBar\_TranslucentDecor
 
 AndroidManifest.xml이나 values/style.xml등에서 적용해주시면 되는대요
 
-위 Holo\_Light가 아니더라도 TranslucentDecor가 있는것을 선택하시면 됩니다
+위 Holo\_Light가 아니더라도 TranslucentDecor가 있는것을 선택하시면 됩니다
 
 xml에서는 @android:style/Theme.Holo.Light.NoActionBar.TranslucentDecor
 
@@ -46,7 +46,7 @@ java에서는 setTheme(android.R.style.Theme\_Holo\_Light\_NoActionBar\_Transluc
 
 이렇게 적용해 주시면 될듯합니다
 
-참고로 setTheme은 setContentView()전에 실행되어야 하는 코드입니다
+참고로 setTheme은 setContentView()전에 실행되어야 하는 코드입니다
 
 + 2014.10.27 추가
 

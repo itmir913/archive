@@ -19,7 +19,7 @@ original_url: "https://itmir.tistory.com/576"
 아무튼 시간표 위젯과 스크롤해서 요일을 한번에 살필수 있는 시간표 까지... 시험 끝나고 구현해야 하는거 대부분 했네요 ㅎㅎ
 
 ![](./images/Screenshot_2015-05-01-00-19-56.jpg)
-   
+   
 ![](./images/Screenshot_2015-05-01-00-20-20.jpg)
 
 이제 앞으로 생각중인건..

@@ -23,7 +23,7 @@ original_url: "https://itmir.tistory.com/429"
 [할일 어플 스크린샷]
 
 ![](./images/Screenshot_2014-01-11-23-09-49.png)
-    
+    
 ![](./images/Screenshot_2014-01-11-23-38-11.png)
 
 ![](./images/Screenshot_2014-01-11-23-38-34.png)
@@ -31,7 +31,7 @@ original_url: "https://itmir.tistory.com/429"
 [캘린더 어플 스크린샷]
 
 ![](./images/Screenshot_2014-01-11-23-38-45.png)
-    
+    
 ![](./images/Screenshot_2014-01-11-23-39-12.png)
 
 ![](./images/Screenshot_2014-01-11-23-39-31.png)

@@ -26,7 +26,7 @@ original_url: "https://itmir.tistory.com/112"
 
 구글 그룹스 애드센스팀에 문의를 넣어봤습니다
 
-(혹시 저처럼 난감하신 분은 http://productforums.google.com/forum/#!forum/adsense-ko에 방문해 보세요)
+(혹시 저처럼 난감하신 분은 http://productforums.google.com/forum/#!forum/adsense-ko에 방문해 보세요)
 
 ![](./images/image_1.jpg)
 

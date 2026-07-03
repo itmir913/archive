@@ -30,7 +30,7 @@ original_url: "https://itmir.tistory.com/117"
 
 Full HD를 적용하였다 합니다
 
-화질에 민감하게 반응하시는(?)분께서 보시기에는 좋을것 같습니다 적어도 FULL HD 디스플레이 이니까요 ㅋㅋ
+화질에 민감하게 반응하시는(?)분께서 보시기에는 좋을것 같습니다 적어도 FULL HD 디스플레이 이니까요 ㅋㅋ
 
 ![](./images/image_1.jpg)
 

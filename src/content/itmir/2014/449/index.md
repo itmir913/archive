@@ -50,7 +50,7 @@ Tab(탭)버튼을 눌러 OK를 눌러주세요.
 
 3. 툴체인 설치하기
 
-툴체인에 대해서는 [[Kernel] - Android Toolchain (툴체인) 모음](/archive/itmir/2013/349) 포스팅을 확인해 주세요.
+툴체인에 대해서는 [[Kernel] - Android Toolchain (툴체인) 모음](/archive/itmir/2013/349) 포스팅을 확인해 주세요.
 
 툴체인은 아래에서 받을수 있습니다.
 
@@ -66,7 +66,7 @@ Tab(탭)버튼을 눌러 OK를 눌러주세요.
 
 (2) arm계열에 더 최적화되어 좀더 빠른 성능과 linaro를 썼다는 자부심(?)을 느끼고 싶다. - linaro 툴체인
 
-리나로 툴체인에 더 알고 싶다면 : [[Kernel] - 리나로(linaro) 툴체인으로 빌드하기](/archive/itmir/2014/439)
+리나로 툴체인에 더 알고 싶다면 : [[Kernel] - 리나로(linaro) 툴체인으로 빌드하기](/archive/itmir/2014/439)
 
 android-toolchain-eabi-4.7-2013.06-x86
 
@@ -90,7 +90,7 @@ https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4
 
 다운받으신 다음 HOME폴더에 압축을 풀어주세요.
 
-그다음 폴더 명을 툴체인 이름에 맞게 바꿔주세요.
+그다음 폴더 명을 툴체인 이름에 맞게 바꿔주세요.
 
 linaro-toolchain
 

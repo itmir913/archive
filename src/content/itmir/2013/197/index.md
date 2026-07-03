@@ -20,7 +20,7 @@ original_url: "https://itmir.tistory.com/197"
 
 ClockWorkMod Recovery, 줄여서 CWM 이라고도 언급합니다
 
-이 리버커리는 Koush라는 분께서 작업하시고 계시는 커스텀 리커버리 입니다
+이 리버커리는 Koush라는 분께서 작업하시고 계시는 커스텀 리커버리 입니다
 
 다들 아시다 싶이 CM의 소스를 받으면 bootable/recovery폴더에 CWM관련 파일들이 있지요
 
@@ -30,7 +30,7 @@ ClockWorkMod Recovery, 줄여서 CWM 이라고도 언급합니다
 
 이제 CWM에 대해 하나하나 살펴보도록 하겠습니다 (jellybean(cm10)기준)
 
-**1. CWM-based Recovery말고 내 이름을 넣어보자**
+**1. CWM-based Recovery말고 내 이름을 넣어보자**
 
 우리는 CWM을 들어가면 아래 나오는 CWM-based-recovery등을 바꿔보고 싶습니다
 
@@ -58,14 +58,14 @@ endif
 
 Recovery Name을 설정해 주는 부분이 보이시나요?
 
-제 생각에는 BoardConfig.mk에 I\_AM\_KOUSH := true 라면 RECOVERY\_NAME은 ClockworkMod Recovery로,
+제 생각에는 BoardConfig.mk에 I\_AM\_KOUSH := true 라면 RECOVERY\_NAME은 ClockworkMod Recovery로,
 
-만약 지정되지 않았거나 false라면 CWM-based Recovery라고 설정되어 진다고 예상할 수 있습니다
+만약 지정되지 않았거나 false라면 CWM-based Recovery라고 설정되어 진다고 예상할 수 있습니다
 
 즉 이 부분의 수정이 이루어 진다면 표시되는 이름의 수정이 가능할 것이라는 뜻이 되겠지요
 
 RECOVERY\_VERSION := $(RECOVERY\_NAME) v6.0.2.8  
-바로 이부분과 RECOVERY\_NAME부분을 수정해 주면 재작자의 이름도 넣을수 있을겁니다
+바로 이부분과 RECOVERY\_NAME부분을 수정해 주면 재작자의 이름도 넣을수 있을겁니다
 
 **RECOVERY\_NAME을 CWM-based Recovery말고 다른 이름으로 수정해서 빌드해 보세요**
 
@@ -77,67 +77,67 @@ RECOVERY\_VERSION := $(RECOVERY\_NAME) v6.0.2.8
 
 예를 들자면 볼륨위-아래-위 키를 눌러 활성화 시킨다음에서야 확인이 가능하다는 것이지요
 
-cwm - 5.x.x.x 버전에서는 default\_recovery\_ui.c파일이,
+cwm - 5.x.x.x 버전에서는 default\_recovery\_ui.c파일이,
 
 cwm - 6.x.x.x 버전에서는 default\_recovery\_keys.c파일이 키를 담당하고 있습니다
 
 그럼 CWM6에서는 ui.c가 없냐? 그건 아닙니다
 
-소스를 다운받지 않아도 [github에서 확인](https://github.com/CyanogenMod/android_bootable_recovery/blob/jellybean/default_recovery_ui.c)해 보시면 default\_recovery\_ui.c에는
+소스를 다운받지 않아도 [github에서 확인](https://github.com/CyanogenMod/android_bootable_recovery/blob/jellybean/default_recovery_ui.c)해 보시면 default\_recovery\_ui.c에는
 
 char\* MENU\_ITEMS[] = { "reboot system now",
 
-                       "install zip from sdcard",
+                       "install zip from sdcard",
 
-                       "install zip from sideload",
+                       "install zip from sideload",
 
-                       "wipe data/factory reset",
+                       "wipe data/factory reset",
 
-                       "wipe cache partition",
+                       "wipe cache partition",
 
-                       "backup and restore",
+                       "backup and restore",
 
-                       "mounts and storage",
+                       "mounts and storage",
 
-                       "advanced",
+                       "advanced",
 
-                       "power off",
+                       "power off",
 
-                       NULL };
+                       NULL };
 
-이런 부분이 있는대요 짐작해 보컨대 cwm6버전에서는 default\_recovery\_ui.c는 화면에 표시되는 메뉴를 나타낸다고 짐작할 수 있습니다
+이런 부분이 있는대요 짐작해 보컨대 cwm6버전에서는 default\_recovery\_ui.c는 화면에 표시되는 메뉴를 나타낸다고 짐작할 수 있습니다
 
 여기서 뭔가를 발견해 보자면 power off 버튼이 사라진것을 눈치 채실수 있으신대요
 
 <https://github.com/CyanogenMod/android_bootable_recovery/commit/cd3705e4aba68274f7033a32bfc0d9b1010a4513>
 
-이 commit을 보면 Koush께서 이 부분을 삭제 하신것을 알수 있습니다
+이 commit을 보면 Koush께서 이 부분을 삭제 하신것을 알수 있습니다
 
 그런대 메뉴만 삭제하셨지 기능은 제거하지 않으셨는대요
 
-[이 파일을 참고해 주시면 됩니다](https://github.com/CyanogenMod/android_bootable_recovery/blob/jellybean/extendedcommands.c) - extendedcommands.c
+[이 파일을 참고해 주시면 됩니다](https://github.com/CyanogenMod/android_bootable_recovery/blob/jellybean/extendedcommands.c) - extendedcommands.c
 
 선택 버튼만 사라진 거라면 되돌릴수 있겠죠?
 
 char\* MENU\_ITEMS[] = { "reboot system now",
 
-                       "install zip from sdcard",
+                       "install zip from sdcard",
 
-                       "install zip from sideload",
+                       "install zip from sideload",
 
-                       "wipe data/factory reset",
+                       "wipe data/factory reset",
 
-                       "wipe cache partition",
+                       "wipe cache partition",
 
-                       "backup and restore",
+                       "backup and restore",
 
-                       "mounts and storage",
+                       "mounts and storage",
 
-                       "advanced",
+                       "advanced",
 
 **"power off",**
 
-                       NULL };
+                       NULL };
 
 이렇게 수정해 주시면 됩니다
 
@@ -145,101 +145,101 @@ char\* MENU\_ITEMS[] = { "reboot system now",
 
 자 이제 막바지에 접어들고 있군요
 
-참고글 : <http://cafe.naver.com/androidhacker/461>
+참고글 : <http://cafe.naver.com/androidhacker/461>
 
 이번에는 키를 변경해 보도록 하겠습니다
 
-아까 언급한것처럼 default\_recovery\_ui.c와 default\_recovery\_keys.c을 봐주시면 됩니다
+아까 언급한것처럼 default\_recovery\_ui.c와 default\_recovery\_keys.c을 봐주시면 됩니다
 
-CWM6을 기준으로 설명하고 있으므로 default\_recovery\_keys.c을 기준으로 설명하겠습니다
+CWM6을 기준으로 설명하고 있으므로 default\_recovery\_keys.c을 기준으로 설명하겠습니다
 
 int device\_handle\_key(int key\_code, int visible) {
 
-    if (visible) {
+    if (visible) {
 
-        switch (key\_code) {
+        switch (key\_code) {
 
-            case KEY\_CAPSLOCK:
+            case KEY\_CAPSLOCK:
 
-            case KEY\_DOWN:
+            case KEY\_DOWN:
 
-            case KEY\_VOLUMEDOWN:
+            case KEY\_VOLUMEDOWN:
 
-            case KEY\_MENU:
+            case KEY\_MENU:
 
 **return HIGHLIGHT\_DOWN;**
 
-            case KEY\_LEFTSHIFT:
+            case KEY\_LEFTSHIFT:
 
-            case KEY\_UP:
+            case KEY\_UP:
 
-            case KEY\_VOLUMEUP:
+            case KEY\_VOLUMEUP:
 
-            case KEY\_HOME:
+            case KEY\_HOME:
 
 **return HIGHLIGHT\_UP;**
 
-            case KEY\_POWER:
+            case KEY\_POWER:
 
-                if (ui\_get\_showing\_back\_button()) {
-
-**return SELECT\_ITEM;**
-
-                }
-
-                if (!get\_allow\_toggle\_display() && !ui\_root\_menu) {
-
-**return GO\_BACK;**
-
-                }
-
-                break;
-
-            case KEY\_LEFTBRACE:
-
-            case KEY\_ENTER:
-
-            case BTN\_MOUSE:
-
-            case KEY\_CAMERA:
-
-            case KEY\_F21:
-
-            case KEY\_SEND:
+                if (ui\_get\_showing\_back\_button()) {
 
 **return SELECT\_ITEM;**
 
-            case KEY\_END:
+                }
 
-            case KEY\_BACKSPACE:
+                if (!get\_allow\_toggle\_display() && !ui\_root\_menu) {
 
-            case KEY\_SEARCH:
+**return GO\_BACK;**
 
-                if (ui\_get\_showing\_back\_button()) {
+                }
+
+                break;
+
+            case KEY\_LEFTBRACE:
+
+            case KEY\_ENTER:
+
+            case BTN\_MOUSE:
+
+            case KEY\_CAMERA:
+
+            case KEY\_F21:
+
+            case KEY\_SEND:
 
 **return SELECT\_ITEM;**
 
-                }
+            case KEY\_END:
 
-                if (!get\_allow\_toggle\_display() && !ui\_root\_menu) {
+            case KEY\_BACKSPACE:
+
+            case KEY\_SEARCH:
+
+                if (ui\_get\_showing\_back\_button()) {
+
+**return SELECT\_ITEM;**
+
+                }
+
+                if (!get\_allow\_toggle\_display() && !ui\_root\_menu) {
 
 **return GO\_BACK;**
 
-                }
+                }
 
-            case KEY\_BACK:
+            case KEY\_BACK:
 
-                if (!ui\_root\_menu) {
+                if (!ui\_root\_menu) {
 
 **return GO\_BACK;**
 
-                }
+                }
 
-        }
+        }
 
-    }
+    }
 
-    return NO\_ACTION;
+    return NO\_ACTION;
 
 }
 
@@ -249,15 +249,15 @@ int device\_handle\_key(int key\_code, int visible) {
 
 case KEY\_LEFTBRACE:
 
-            case KEY\_ENTER:
+            case KEY\_ENTER:
 
-            case BTN\_MOUSE:
+            case BTN\_MOUSE:
 
-            case KEY\_CAMERA:
+            case KEY\_CAMERA:
 
-            case KEY\_F21:
+            case KEY\_F21:
 
-            case KEY\_SEND:
+            case KEY\_SEND:
 
 **return SELECT\_ITEM;**
 
@@ -281,17 +281,17 @@ hPa님의 소스를 보시면 (https://github.com/985hPaKicK/android\_device\_pa
 
 if (ui\_get\_showing\_back\_button()) {
 
-                    return SELECT\_ITEM;
+                    return SELECT\_ITEM;
 
-                }
+                }
 
-                if (!get\_allow\_toggle\_display() && !ui\_root\_menu) {
+                if (!get\_allow\_toggle\_display() && !ui\_root\_menu) {
 
-                    return GO\_BACK;
+                    return GO\_BACK;
 
-                }
+                }
 
-                break;
+                break;
 
 부분이 없는것을 확인할 수 있습니다
 

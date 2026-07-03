@@ -20,23 +20,23 @@ Target boot image: /home/whdghks913/cm\_lucid/system/out/target/product/ef46l/bo
 
 usage: mkbootimg
 
-       --kernel <filename>
+       --kernel <filename>
 
-       --ramdisk <filename>
+       --ramdisk <filename>
 
-       [ --second <2ndbootloader-filename> ]
+       [ --second <2ndbootloader-filename> ]
 
-       [ --cmdline <kernel-commandline> ]
+       [ --cmdline <kernel-commandline> ]
 
-       [ --board <boardname> ]
+       [ --board <boardname> ]
 
-       [ --base <address> ]
+       [ --base <address> ]
 
-       [ --pagesize <pagesize> ]
+       [ --pagesize <pagesize> ]
 
-       [ --ramdisk\_offset <address> ]
+       [ --ramdisk\_offset <address> ]
 
-       -o|--output <filename>
+       -o|--output <filename>
 
 make: \*\*\* [/home/whdghks913/cm\_lucid/system/out/target/product/ef46l/boot.img] 오류 1
 
@@ -94,7 +94,7 @@ BOARD\_MKBOOTIMG\_ARGS
 
 마켓에 진수 변환이 가능한 어플도 있고 편법으로 윈도우7에 내장되어 있는 기본 계산기로도 진수 변환은 가능하나 자세한 언급은 생략하겠습니다
 
-이제 최종 ramdisk\_offset의 값을 필요로 하는 BOARD\_MKBOOTIMG\_ARGS에 넣어줘야 하는대요
+이제 최종 ramdisk\_offset의 값을 필요로 하는 BOARD\_MKBOOTIMG\_ARGS에 넣어줘야 하는대요
 
 이것도 그냥
 
@@ -118,4 +118,4 @@ BOARD\_MKBOOTIMG\_ARGS := --ramdisk\_offset 0x02400001
 
 참고
 
-Sleepy님의 4.1.2 디바이스 소스로 4.2.1 빌드하기
+Sleepy님의 4.1.2 디바이스 소스로 4.2.1 빌드하기

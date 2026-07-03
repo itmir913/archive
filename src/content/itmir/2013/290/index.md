@@ -105,7 +105,7 @@ R(R.java파일을 참조한다).layout(layout에 있는 파일을 참조한다, 
 
 그런대 여기에도 hello World! 라는건 없습니다...
 
-다만 android:text="@string/hello\_world"라는것만 있군요.
+다만 android:text="@string/hello\_world"라는것만 있군요.
 
 @string은 res/values/string.xml에서 값을 참조한다는 뜻입니다.
 
@@ -123,9 +123,9 @@ Hello world!라는 문구가 있군요!
 
 1. 안드로이드는 AndroidManifest.xml에 나와있는 Activity를 실행합니다.
 
-2. MainActivity.java파일은 setContentView(R.layout.activity\_main);코드로 res/layout/activity\_main.xml을 호출합니다. (1번 위, 3번)
+2. MainActivity.java파일은 setContentView(R.layout.activity\_main);코드로 res/layout/activity\_main.xml을 호출합니다. (1번 위, 3번)
 
-3. activity\_main.xml파일에서는 android:text="@string/hello\_world"구문으로 res/values/string.xml의 값을 참조 합니다. (1번 아래, 4번)
+3. activity\_main.xml파일에서는 android:text="@string/hello\_world"구문으로 res/values/string.xml의 값을 참조 합니다. (1번 아래, 4번)
 
 4. hello\_world로 설정된 값을 activity\_main에 준다음, 완성된 화면을 MainActivity.java에 보내줍니다. (2번)
 
@@ -169,7 +169,7 @@ values-(나라 코드)는 만약 시스탬이 (나라코드)일경우 이 언어
 
 ![](./images/2-7.png)
 
-정상적으로 변경되었습니다. ㅎㅎ
+정상적으로 변경되었습니다. ㅎㅎ
 
 이로써 values/string.xml을 수정하면 표시되는 글자를 변경할 수 있다라는 사실을 배웠습니다.
 

@@ -50,9 +50,9 @@ original_url: "https://itmir.tistory.com/571"
 
 정말 다 좋은데 한가지 단점이 돈이 없네요...
 
-공식 홈페이지는 <https://www.withsellit.com> 입니다
+공식 홈페이지는 <https://www.withsellit.com> 입니다
 
-안드로이드 마켓 : <https://play.google.com/store/apps/details?id=com.withsellit.app.sellit>
+안드로이드 마켓 : <https://play.google.com/store/apps/details?id=com.withsellit.app.sellit>
 
 ※주의 : 절대로 돈이 조금이라도 있는 분은 접속하지 마세요
 

@@ -28,15 +28,15 @@ original_url: "https://itmir.tistory.com/524"
 
 제 테스트로 한번 가져올때 0.02mb~0.04mb가 소요되었습니다
 
-참고로 인터넷 권한을 꼭 추가해 주셔야 합니다
+참고로 인터넷 권한을 꼭 추가해 주셔야 합니다
 
 ### 라이브러리 다운로드
 
-MarketVersionChecker를 사용하기 위해서는 jsoup 라이브러리가 필요합니다
+MarketVersionChecker를 사용하기 위해서는 jsoup 라이브러리가 필요합니다
 
-jsoup라이브러리는 <http://jsoup.org/download>에서 다운로드가 가능하며, 아래에도 첨부해 두었습니다
+jsoup라이브러리는 <http://jsoup.org/download>에서 다운로드가 가능하며, 아래에도 첨부해 두었습니다
 
-v1 - 2014-09-05 첫 업로드
+v1 - 2014-09-05 첫 업로드
 
 [MarketVersionChecker.jar](https://github.com/itmir913/archive/releases/download/itmir-attachments/MarketVersionChecker.jar)
 
@@ -71,9 +71,9 @@ getMarketVersionFast : Wi-Fi에서 0.6초~1.5초, 3G에서 1~3초
 
 ### 출처
 
-getMarketVersion() : http://www.androidside.com/bbs/board.php?bo\_table=B56&wr\_id=24663
+getMarketVersion() : http://www.androidside.com/bbs/board.php?bo\_table=B56&wr\_id=24663
 
-getMarketVersionFast() : http://www.androidside.com/bbs/board.php?bo\_table=B49&wr\_id=135849
+getMarketVersionFast() : http://www.androidside.com/bbs/board.php?bo\_table=B49&wr\_id=135849
 
 코드를 수정하고, 라이브러리화 하였습니다
 

@@ -19,11 +19,11 @@ original_url: "https://itmir.tistory.com/497"
 와 진짜 누가 이런 디자인을 했는지 정말 ~~~
 
 ![](./images/Screenshot_2014-05-18-12-11-23.jpg)
-   
+   
 ![](./images/Screenshot_2014-05-18-12-15-19.jpg)
 
 ![](./images/Screenshot_2014-05-18-12-05-15.jpg)
-   
+   
 ![](./images/Screenshot_2014-05-18-12-05-31.png)
 
 독특한 UI와 저 처음보는 음악 재생바까지....
@@ -40,7 +40,7 @@ original_url: "https://itmir.tistory.com/497"
 
 java.lang.NoSuchFieldError: android.view.WindowManager$LayoutParams.oemFlags
 
-이런 오류가 발생하는대 oemFlags가 뭔지... http://developer.android.com/에도 없고 네이버에도 없고...
+이런 오류가 발생하는대 oemFlags가 뭔지... http://developer.android.com/에도 없고 네이버에도 없고...
 
 아무튼 강제종료를 해결한 버전도 첨부합니다
 

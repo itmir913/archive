@@ -19,23 +19,23 @@ original_url: "https://itmir.tistory.com/383"
 @광고가 없습니다! 대한민국 학생이 만든 순수 국내 어플 입니다 어떠한 개인정보도 수집하지 않습니다
 
 ![](./images/Screenshot_2013-11-23-00-25-18.png)
-  
+  
 ![](./images/Screenshot_2013-11-23-00-25-28.png)
 
 ![](./images/Screenshot_2013-11-23-00-25-36.png)
-  
+  
 ![](./images/Screenshot_2013-11-23-00-25-45.png)
 
 ![](./images/Screenshot_2013-11-23-00-26-02.png)
-  
+  
 ![](./images/Screenshot_2013-11-23-00-26-10.png)
 
 ![](./images/Screenshot_2013-11-23-00-26-44.png)
-  
+  
 ![](./images/Screenshot_2013-11-23-00-26-50.png)
 
 ![](./images/Screenshot_2013-11-23-00-26-59.png)
-  
+  
 ![](./images/Screenshot_2013-11-23-00-27-44.png)
 
 PreView

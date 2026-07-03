@@ -14,7 +14,7 @@ original_url: "https://itmir.tistory.com/504"
 
 이미 아시는 분들도 계시겠지만...
 
-미르의 IT블로그 주소가 기존 whdghks913.tistory.com에서 <http://itmir.tistory.com/> 으로 이전되었습니다!!
+미르의 IT블로그 주소가 기존 whdghks913.tistory.com에서 <http://itmir.tistory.com/> 으로 이전되었습니다!!
 
 기존 주소가 제 ID로 이루어져 있어 너무 어려웠는대요 쉬운 주소로 변경하였습니다
 
@@ -22,9 +22,9 @@ IT + Mir = ITMir ㅋㅋ
 
 주소 이전과 함께 기존 whdghks913.tistory.com으로 접속하시는 분들을 위해 이 주소로 접속하시는 분들도 모두 새로운 주소로 이동하게 되니 참고해 주시면 감사드리겠습니다
 
-이해가 안가신다면.. <http://whdghks913.tistory.com/> 요기로 접속해 보세요 ㅎㅎ itmir.tistory.com으로 이동될겁니다 ㅋㅋ
+이해가 안가신다면.. <http://whdghks913.tistory.com/> 요기로 접속해 보세요 ㅎㅎ itmir.tistory.com으로 이동될겁니다 ㅋㅋ
 
-관련 공지글 : <http://itmir.tistory.com/notice/503>
+관련 공지글 : <http://itmir.tistory.com/notice/503>
 
 주소 이전과 함께 블로그 스킨도 변경하였습니다 ㅎ
 
@@ -54,7 +54,7 @@ IT + Mir = ITMir ㅋㅋ
 
 그래도 블로그에서 신청해 주세요~~
 
-블로그 주소 : **</archive/itmir/2014/504>**
+블로그 주소 : **</archive/itmir/2014/504>**
 
 제 블로그에 신청해주신 분들을 우선 선발하겠습니다
 

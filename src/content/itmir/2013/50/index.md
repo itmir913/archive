@@ -78,7 +78,7 @@ httpd라는 프로그램이 있습니다 그걸 실행하십시오
 
 6. download.inf를 다운로드합니다. (hosts파일을 수정하셨다면 원본으로 되돌려주세요. 만일 지금 hosts가 뭐지? 먹는건가? 그딴거 몰라, 외치고 있다면 이 괄호의 내용은 가볍게 무시하셔도 좋습니다.) 방금 전 만든 real 폴더 안에 넣어줍니다.
 
- → <http://dmfile.curitel.com/self_binary/sky_binary/real/download.inf>
+ → <http://dmfile.curitel.com/self_binary/sky_binary/real/download.inf>
 
 그다음 SK에서 KT라면 download.inf파일을 엽니다 그리고 내칸쯤에 [IM-A740S] 라는것이 있습니다
 

@@ -14,7 +14,7 @@ original_url: "https://itmir.tistory.com/283"
 
 무엇보다도 양옆으로 스크롤 하면서 사용할 수 있는 Fixed Tab + Scroll이 가장 마음에 들었는데요!
 
-제가 네이버를 찾아보며 가장 설명이 잘되어 있는 곳은 <http://blog.naver.com/liar1938/30171663892> 이라 생각됩니다.
+제가 네이버를 찾아보며 가장 설명이 잘되어 있는 곳은 <http://blog.naver.com/liar1938/30171663892> 이라 생각됩니다.
 
 그러나 모든 것은 직접 써봐야 더 능통해 지므로 서평이 끝난 지금, 지금부터 어플 강좌를 하나씩 시작하겠습니다.
 
@@ -30,7 +30,7 @@ Fragment에서 id값 찾기
 
 ![](./images/1.png)
 
-Min API 11이상부터 Fixed Tabs + Swipe라는 네비게이션 타입을 지원하는 것으로 알고 있습니다.
+Min API 11이상부터 Fixed Tabs + Swipe라는 네비게이션 타입을 지원하는 것으로 알고 있습니다.
 
 적절하게 잡아주시고,
 
@@ -63,27 +63,27 @@ ActionBar.TabListener {
 
 /\*\*
 
- \* The {@link android.support.v4.view.PagerAdapter} that will provide
+ \* The {@link android.support.v4.view.PagerAdapter} that will provide
 
- \* fragments for each of the sections. We use a
+ \* fragments for each of the sections. We use a
 
- \* {@link android.support.v4.app.FragmentPagerAdapter} derivative, which
+ \* {@link android.support.v4.app.FragmentPagerAdapter} derivative, which
 
- \* will keep every loaded fragment in memory. If this becomes too memory
+ \* will keep every loaded fragment in memory. If this becomes too memory
 
- \* intensive, it may be best to switch to a
+ \* intensive, it may be best to switch to a
 
- \* {@link android.support.v4.app.FragmentStatePagerAdapter}.
+ \* {@link android.support.v4.app.FragmentStatePagerAdapter}.
 
- \*/
+ \*/
 
 SectionsPagerAdapter mSectionsPagerAdapter;
 
 /\*\*
 
- \* The {@link ViewPager} that will host the section contents.
+ \* The {@link ViewPager} that will host the section contents.
 
- \*/
+ \*/
 
 ViewPager mViewPager;
 
@@ -107,7 +107,7 @@ actionBar.setNavigationMode(ActionBar.NAVIGATION\_MODE\_TABS);
 
 mSectionsPagerAdapter = new SectionsPagerAdapter(
 
-getApplicationContext(), getSupportFragmentManager());
+getApplicationContext(), getSupportFragmentManager());
 
 // Set up the ViewPager with the sections adapter.
 
@@ -201,11 +201,11 @@ FragmentTransaction fragmentTransaction) {
 
 /\*\*
 
- \* A {@link FragmentPagerAdapter} that returns a fragment corresponding to
+ \* A {@link FragmentPagerAdapter} that returns a fragment corresponding to
 
- \* one of the sections/tabs/pages.
+ \* one of the sections/tabs/pages.
 
- \*/
+ \*/
 
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
@@ -285,7 +285,7 @@ return null;
 
 \* displays dummy text.
 
- \*/
+ \*/
 
 public static class DummySectionFragment extends Fragment {
 
@@ -293,9 +293,9 @@ public static class DummySectionFragment extends Fragment {
 
 \* The fragment argument representing the section number for this
 
- \* fragment.
+ \* fragment.
 
- \*/
+ \*/
 
 public static final String ARG\_SECTION\_NUMBER = "section\_number";
 
@@ -331,7 +331,7 @@ return rootView;
 
 이 소스가 이 예제 어플에서 가장 중요한 소스입니다.
 
-먼저, 처음 빨간색으로 칠해져 있는 메소드 public Fragment getItem(int position)의 경우 아래와 같이 변경이 필요합니다.
+먼저, 처음 빨간색으로 칠해져 있는 메소드 public Fragment getItem(int position)의 경우 아래와 같이 변경이 필요합니다.
 
 @Override
 
@@ -363,15 +363,15 @@ return null;
 
 }
 
-그런대 여기서도 수정이 필요한데요, "첫번째탭에들어갈내용이담긴액티비티이름"... 길긴하지만 일단 가봅시다.
+그런대 여기서도 수정이 필요한데요, "첫번째탭에들어갈내용이담긴액티비티이름"... 길긴하지만 일단 가봅시다.
 
 이 부분도 수정이 필요합니다.
 
 그런대 지금은 필요가 없으니 일단 넘어가겠습니다.
 
-분홍색으로 칠해진 것은 추가가 필요합니다. ㅎㅎ
+분홍색으로 칠해진 것은 추가가 필요합니다. ㅎㅎ
 
-그다음 초록색으로 칠해져 있는 return 3; 은 탭의 갯수를 반환합니다.
+그다음 초록색으로 칠해져 있는 return 3; 은 탭의 갯수를 반환합니다.
 
 이미 눈치채신 분들은 아시겠지만 탭의 갯수를 줄이려면 이 값을 줄인 다음 switch-case문도 줄여주면 되겠지요??
 
@@ -385,7 +385,7 @@ return getString(**R.string.title\_section1**).toUpperCase(l);
 
 굵고 밑줄친 부분이 탭의 이름이 되는대요 이부분은 어떻게 이루어져 있냐,
 
-**R**(R.java파일을 참조합니다)**.string**(R파일중 string부분을 참조합니다, 즉 values/string.xml을 참조합니다)
+**R**(R.java파일을 참조합니다)**.string**(R파일중 string부분을 참조합니다, 즉 values/string.xml을 참조합니다)
 
 **.title\_section1**(title\_section1이란 이름의 값을 반환합니다)
 
@@ -399,7 +399,7 @@ return getString(**R.string.title\_section1**).toUpperCase(l);
 
 이 부분은 너무 쉬우니 따로 말씀드리지는 않겠습니다.
 
-밑줄이 그어 있는 onCreateOptionsMenu 메소드는 메뉴키를 누르면 뜨는 내용을 정의하는겁니다. 필요없으니 삭제합니다.
+밑줄이 그어 있는 onCreateOptionsMenu 메소드는 메뉴키를 누르면 뜨는 내용을 정의하는겁니다. 필요없으니 삭제합니다.
 
 이제 MainActivity는 끝났습니다.
 
@@ -469,11 +469,11 @@ public class Tabs1 extends Fragment {
 
 위 원본 소스의 취소선은 삭제된 부분, 아래 소스의 굵은 부분은 추가, 수정된 부분입니다.
 
-밑줄 친 부분은 다들 아시는 것처럼 레이아웃을 결정하는 xml에 관한 구문입니다.
+밑줄 친 부분은 다들 아시는 것처럼 레이아웃을 결정하는 xml에 관한 구문입니다.
 
-MainActivity는 FragmentActivity를 상속하지만 탭에 들어갈 내용들은 Fragment을 상속(extends)해야 합니다.
+MainActivity는 FragmentActivity를 상속하지만 탭에 들어갈 내용들은 Fragment을 상속(extends)해야 합니다.
 
-혹시 Fragment에 대해 더 알고 싶으시다면
+혹시 Fragment에 대해 더 알고 싶으시다면
 
 <http://developer.android.com/guide/components/fragments.html>
 
@@ -498,7 +498,7 @@ case 2:
 
 이제 빌드 해보시고 작동 시켜 보시면 각 탭과 연결된 xml에 기록된 내용물들이 탭 아래에 나타나는 것을 볼 수 있습니다.
 
-자 그런데 문제가 발생했습니다.
+자 그런데 문제가 발생했습니다.
 
 우리가 탭을 구현하기 위해 쓴것은 Fragment, 그런대 Fragment에서는 findViewById가 잘 작동하지 않습니다.
 
@@ -509,7 +509,7 @@ button1 = (Button) view.findViewById(R.id.button1);
 
 이렇게 구현하시면 쉽게 작동됩니다. ㅎㅎ
 
-위치는 View view = inflater.inflate(R.layout.activity\_tab1, null);와 return view;사이에 넣어주세요.
+위치는 View view = inflater.inflate(R.layout.activity\_tab1, null);와 return view;사이에 넣어주세요.
 
 실행 스샷
 

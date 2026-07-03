@@ -9,7 +9,7 @@ original_url: "https://itmir.tistory.com/420"
 ---
 
 ![](./images/ic_launcher_free.png)
-  
+  
 ![](./images/ic_launcher_pro.png)
 
 스터디체커 어플에 대해 우연히 발견하게 되어 며칠동안 삽질한 결과를 기록하고자 합니다.
@@ -29,7 +29,7 @@ original_url: "https://itmir.tistory.com/420"
 그리고 "휴식"버튼을 누르면 지금부터 휴식 시간 기록이 됩니다.
 
 ![](./images/device-2013-12-31-115926.jpg)
-   
+   
 ![](./images/device-2013-12-31-120134.jpg)
 
 처음 설치하신다음 분류 관리를 눌러 저처럼 개성넘치게 수정해 주세요. ㅎㅎ
@@ -45,15 +45,15 @@ original_url: "https://itmir.tistory.com/420"
 그 다음, 또 하나의 기능이 있다면 그래프로 통계 확인이 가능합니다.
 
 ![](./images/1.png)
-   
+   
 ![](./images/2.png)
 
 ![](./images/3.png)
-   
+   
 ![](./images/4.png)
 
 ![](./images/5.png)
-   
+   
 ![](./images/6.png)
 
 ![](./images/7.png)
@@ -86,33 +86,33 @@ original_url: "https://itmir.tistory.com/420"
 
 그래도 3번파일과 4번파일을 비교 분석하여 어디가 수정되었는지 확인이 가능했습니다.
 
-저번에 포스팅한 DRM 라이센스 관련 글에서 소개했던 **무조건 true 반환 방법**이 사용되었습니다.
+저번에 포스팅한 DRM 라이센스 관련 글에서 소개했던 **무조건 true 반환 방법**이 사용되었습니다.
 
 [[Development/App] - 안드로이드 어플 라이센스 크랙하기 (DRM Crack)](/archive/itmir/2013/408)
 
-수정된 파일은 smali\com\a\a\a\a\t.smali입니다.
+수정된 파일은 smali\com\a\a\a\a\t.smali입니다.
 
 .method public a()Z
 
-    .locals 8
+    .locals 8
 
-    const/4 v0, 0x1
+    const/4 v0, 0x1
 
 **const/4 v1, 0x0**
 
-    이하 생략
+    이하 생략
 
 .end method
 
 .method public a()Z
 
-    .locals 8
+    .locals 8
 
-    const/4 v0, 0x1
+    const/4 v0, 0x1
 
 **return v0**
 
-    이하 생략
+    이하 생략
 
 .end method
 

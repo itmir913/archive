@@ -10,9 +10,9 @@ original_url: "https://itmir.tistory.com/363"
 
 안드로이드 플레쉬 플레이어가 9월 10일 마지막 릴리즈 이후로 완전히 지원이 중단되었습니다
 
-현재 진저브레드와 허니콤(2.x와 3.x)에서 작동하는 가장 최신버전은 11.1.111.73버전 이며
+현재 진저브레드와 허니콤(2.x와 3.x)에서 작동하는 가장 최신버전은 11.1.111.73버전 이며
 
-아이스크림 샌드위치(ICS) 이상(4.x)에서 작동하는 가장 최신버전은 11.1.115.81입니다
+아이스크림 샌드위치(ICS) 이상(4.x)에서 작동하는 가장 최신버전은 11.1.115.81입니다
 
 아직 대책도 없는대 지원이 중단되다니 앞으로 호환은 될지 몰라도 보안에 취약하겠네요...;
 
@@ -26,4 +26,4 @@ GB와 허니콤에서 사용가능
 
 [install flash player 11.1.111.73.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/install flash player 11.1.111.73.apk)
 
-출처 : <http://helpx.adobe.com/flash-player/kb/archived-flash-player-versions.html>
+출처 : <http://helpx.adobe.com/flash-player/kb/archived-flash-player-versions.html>

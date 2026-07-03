@@ -72,7 +72,7 @@ reboot fastboot
 
 그리고 첨부파일의 fastboot를 압축푼뒤 기기의 recovery파일을 그 폴더에 넣어주세요
 
-fastboot드라이버를 설치하는 방법입니다 (참고: <http://cafe.naver.com/skydevelopers/5870>)
+fastboot드라이버를 설치하는 방법입니다 (참고: <http://cafe.naver.com/skydevelopers/5870>)
 
 fastboot 드라이버 설치방법
 

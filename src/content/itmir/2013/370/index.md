@@ -11,7 +11,7 @@ original_url: "https://itmir.tistory.com/370"
 구글 어스 (Google Earth)
 
 ![](./images/Screenshot_2013-11-02-22-16-45.png)
- 
+ 
 ![](./images/Screenshot_2013-11-02-22-16-14.png)
 
 PC프로그램인 Google Earth가 어플화 되었습니다

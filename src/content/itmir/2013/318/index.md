@@ -20,27 +20,27 @@ original_url: "https://itmir.tistory.com/318"
 
 저는 전 강좌였던 </archive/itmir/2013/315>의 예제소스로 해보겠습니다
 
- 이클립스 마우스 오른쪽 - Import를 눌러주세요
+ 이클립스 마우스 오른쪽 - Import를 눌러주세요
 
 ![](./images/1.png)
 
- 클릭!
+ 클릭!
 
 ![](./images/2.png)
 
- Android탭의 Exsting Android Code Into Worwspace를 선택해주세요
+ Android탭의 Exsting Android Code Into Worwspace를 선택해주세요
 
 ![](./images/3.png)
 
- 이화면에서 Root Directory옆에있는 Browse를 눌러주시고
+ 이화면에서 Root Directory옆에있는 Browse를 눌러주시고
 
 ![](./images/4.png)
 
- 압축푼 소스를 선택
+ 압축푼 소스를 선택
 
 ![](./images/5.png)
 
- 자, 이렇게 뜨는데요
+ 자, 이렇게 뜨는데요
 
 이때 꼭 Copy project into workspace를 선택해 주세요
 

@@ -80,7 +80,7 @@ MS와 제휴한 뒤 bing에서 울프럼 알파 엔진을 사용할 수 있고, 
 
 ![](./images/IMG_1562.jpg)
 
- 7. 세계 지진 정보
+ 7. 세계 지진 정보
 
 ![](./images/IMG_1566.jpg)
 
@@ -102,4 +102,4 @@ MS와 제휴한 뒤 bing에서 울프럼 알파 엔진을 사용할 수 있고, 
 
 참고
 
-Wolfram Alpha 나무위키 : [https://namu.wiki/w/Wolfram](https://namu.wiki/w/Wolfram%20Alpha)[Alpha](https://namu.wiki/w/Wolfram Alpha)
+Wolfram Alpha 나무위키 : [https://namu.wiki/w/Wolfram](https://namu.wiki/w/Wolfram%20Alpha)[Alpha](https://namu.wiki/w/Wolfram Alpha)

@@ -10,7 +10,7 @@ original_url: "https://itmir.tistory.com/185"
 
 관련된 스샷이 없어 준비를 못했습니다.. 양해를 구합니다..
 
-가끔 빌드를 하다보면 /bin/bash : \* 를 찾을수 없습니다
+가끔 빌드를 하다보면 /bin/bash : \* 를 찾을수 없습니다
 
 라는 오류를 볼 수 있는대요 이런 오류는 간단하게 해결 할 수 있습니다
 
@@ -18,7 +18,7 @@ original_url: "https://itmir.tistory.com/185"
 
 제 경우 'xmllint' 이놈을 찾을 수 없다고 나왔습니다
 
-그럼 터미널에 xmllint을 입력해 주세요
+그럼 터미널에 xmllint을 입력해 주세요
 
 > xmllint
 
@@ -32,7 +32,7 @@ original_url: "https://itmir.tistory.com/185"
 
 > sudo apt-get install libxml2-utils
 
-제경우는 xmllint이 문제였으니 libxml2-utils을 설치해 주면 해결되는 오류였습니다
+제경우는 xmllint이 문제였으니 libxml2-utils을 설치해 주면 해결되는 오류였습니다
 
 이런식으로 해서 빠진 프로그램을 설치해 주시면 됩니다 ㅎㅎ
 

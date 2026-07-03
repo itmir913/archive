@@ -40,7 +40,7 @@ wifi adb를 어떻게 하는지 알아보도록 하겠습니다.
 
 adb tcpip 5555
 
-성공시 나타나는 내용 : restarting in TCP mode port: 5555
+성공시 나타나는 내용 : restarting in TCP mode port: 5555
 
 4. 이제 USB를 연결해제하세요.
 
@@ -54,7 +54,7 @@ adb tcpip 5555
 
 adb connect <Your IP>:5555
 
-성공시 나타나는 내용 : connected to <IP>:5555
+성공시 나타나는 내용 : connected to <IP>:5555
 
 5. 축하드립니다.
 
@@ -80,13 +80,13 @@ set port=5555
 
 echo.
 
-echo   adb connect without usb by Mir(whdghks913)
+echo   adb connect without usb by Mir(whdghks913)
 
 echo.
 
-echo   Connect your Android device and adb host computer to a common Wi-Fi network accessible to both.
+echo   Connect your Android device and adb host computer to a common Wi-Fi network accessible to both.
 
-echo   Waiting for device, Connect the device to the host computer with a usb
+echo   Waiting for device, Connect the device to the host computer with a usb
 
 echo.
 
@@ -98,13 +98,13 @@ adb tcpip %port%
 
 echo.
 
-echo   Disconnect the USB cable from the target device.
+echo   Disconnect the USB cable from the target device.
 
-echo   Find the IP address of the Android device, and Enter the IP address
+echo   Find the IP address of the Android device, and Enter the IP address
 
 echo.
 
-set /P ip=  Your IP :
+set /P ip=  Your IP :
 
 adb connect %ip%:%port%
 
@@ -120,7 +120,7 @@ pause
 
 간단한 배치파일이므로 사용하시는데 큰 어려움 없으실거라 생각합니다.
 
-다만 bat 파일중 timeout /t 1 이라는 명령어가 있는데 이게 윈도우 7 이상에서 사용 가능하다고 하네요.
+다만 bat 파일중 timeout /t 1 이라는 명령어가 있는데 이게 윈도우 7 이상에서 사용 가능하다고 하네요.
 
 xp에서는 timeout 부분을 제거하시면 될겁니다.
 
@@ -130,7 +130,7 @@ xp에서는 timeout 부분을 제거하시면 될겁니다.
 
 방문해주신분들께 모두 감사드립니다~
 
-참고 : <http://developer.android.com/tools/help/adb.html#wireless>
+참고 : <http://developer.android.com/tools/help/adb.html#wireless>
 
 <http://theaessay.tistory.com/m/post/entry/안드로이드-앱-개발-할-때-무선-WIFI로-디버깅-하는-방법>
 

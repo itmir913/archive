@@ -17,14 +17,14 @@ original_url: "https://itmir.tistory.com/442"
 또한 리스트 아이템을 터치하면 패키지 네임을 토스트 알림으로 띄울수 있도록 했습니다
 
 ![](./images/Screenshot_2014-01-21-10-51-07.png)
-    
+    
 ![](./images/Screenshot_2014-01-21-10-51-13.png)
 
 관련글
 
 [[Development/App] - 설치된 어플 리스트 예제 (ListView, PackageManager)](/archive/itmir/2013/382)
 
-이 글의 두번째 AppInfo예제를 수정하였습니다
+이 글의 두번째 AppInfo예제를 수정하였습니다
 
 기본 뼈대가 되는 어플 예제 출처
 

@@ -47,6 +47,6 @@ CWM에서 롬을 설치하시듯이 설치하시면 됩니다
 
 다시 설치하실때는 마켓에 있는 busybox installer어플을 이용하시면 될듯 합니다~
 
-출처 : <http://forum.xda-developers.com/showthread.php?t=1853419>
+출처 : <http://forum.xda-developers.com/showthread.php?t=1853419>
 
 http://cafe.naver.com/grnf/109292

@@ -24,7 +24,7 @@ Could not normalize path for file 'F:\Android\_Studio\onebusaway-android\onebusa
 
 dependencies {
 
-    classpath 'com.android.tools.build:gradle:1.1.0'
+    classpath 'com.android.tools.build:gradle:1.1.0'
 
 }
 
@@ -32,7 +32,7 @@ dependencies {
 
 dependencies {
 
-    classpath 'com.android.tools.build:gradle:1.1.2'
+    classpath 'com.android.tools.build:gradle:1.1.2'
 
 }
 

@@ -60,7 +60,7 @@ android-4.4.1\_r1
 
 android-4.4.2\_r1
 
-참고 : <https://android.googlesource.com/platform/manifest/+refs>
+참고 : <https://android.googlesource.com/platform/manifest/+refs>
 
 최신버전인 4.4.2 버전을 받는다고 한다면
 
@@ -144,7 +144,7 @@ cm 디바이스 소스를 aosp로 바꿔주면 되는대요
 
 따라서 먼저 cm소스를 만든다음 aosp로 바꾸던지, 아니면 일일히 노가다 하면서 만들어야 합니다
 
-cm소스를 만드는 것은 [[Android Build] - 2) CyanogenMod 소스를 받고 빌드해 보자](/archive/itmir/2013/221) 를 참고해 주세요
+cm소스를 만드는 것은 [[Android Build] - 2) CyanogenMod 소스를 받고 빌드해 보자](/archive/itmir/2013/221) 를 참고해 주세요
 
 **4. 빌드하기**
 

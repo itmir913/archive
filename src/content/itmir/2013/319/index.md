@@ -20,7 +20,7 @@ Challenge, Try, and Achieve!
 
 -정보
 
-어플 이름 : Mission App 1
+어플 이름 : Mission App 1
 
 액티비티 : BlankActivity
 

@@ -16,13 +16,13 @@ original_url: "https://itmir.tistory.com/516"
 
 네이버에서 로그인 전용 아이디를 설정하여 더욱더 안전하게 네이버를 사용할 수 있도록 해봅시다.
 
-**네이버 로그인 전용 아이디 설정하기** <https://nid.naver.com/user2/help/myInfo.nhn?m=viewSecurity&menu=security>
+**네이버 로그인 전용 아이디 설정하기** <https://nid.naver.com/user2/help/myInfo.nhn?m=viewSecurity&menu=security>
 
 ![](./images/1.png)
 
 위 사이트에 접속한뒤 왼쪽 스크린샷과 같은 모습의 상자를 찾아주세요
 
-로그인 전용 아이디말고도 OTP 로그인, 로그인 차단 설정과 같이 많은 보안 설정들이 보입니다
+로그인 전용 아이디말고도 OTP 로그인, 로그인 차단 설정과 같이 많은 보안 설정들이 보입니다
 
 로그인 차단 설정도 한번 구경하신다음 우리가 목표로 하는 로그인 전용 아이디를 찾아 들어가 주시면 됩니다
 

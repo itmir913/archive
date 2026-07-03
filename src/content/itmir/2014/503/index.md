@@ -14,7 +14,7 @@ original_url: "https://itmir.tistory.com/503"
 
 ![](./images/whdghks913.png)
 
-<http://whdghks913.tistory.com> 이라는 주소에서 <http://itmir.tistory.com> 으로 변경되었습니다~~
+<http://whdghks913.tistory.com> 이라는 주소에서 <http://itmir.tistory.com> 으로 변경되었습니다~~
 
 주소는 IT + Mir로 구성되어 있습니다.
 
@@ -46,7 +46,7 @@ Mir보다 IT가 먼저 태어났고(?) 역사가 깊습니다.
 
 정말 이번 스킨 마음에 드네요. ㅎㅎ
 
-이 스킨에 관심 있으신 분들은 <http://blog.readiz.com/> 방문해 주세요.
+이 스킨에 관심 있으신 분들은 <http://blog.readiz.com/> 방문해 주세요.
 
 항상 제 블로그 방문해 주셔서 감사합니다!!
 

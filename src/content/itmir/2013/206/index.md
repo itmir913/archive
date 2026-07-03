@@ -3,7 +3,7 @@ title: "베가 N˚6(IM-A860S) 미니 윈도우를 적용해 보자"
 date: "2013-05-02T21:55:18+09:00"
 category: "SmartPhone/Android"
 tags: []
-description: "베가 N˚6(IM-A860S) 미니 윈도우를 적용해 보자"
+description: "베가 N˚6의 미니 윈도우를 기본 설치 없이 적용하는 방법을 소개합니다."
 draft: false
 original_url: "https://itmir.tistory.com/206"
 ---
@@ -16,7 +16,7 @@ original_url: "https://itmir.tistory.com/206"
 
 멀티 미니 윈도우가 가능하고 미니 윈도우의 숫자가 기야 급수적으로 늘었습니다
 
-( 자세한 부분은 [2013/02/07 - [전자 기기 포스팅] - 미니 윈도우를 통한 팬택의 기능 업그레이드 살펴보기](http://whdghks913.tistory.com/118) 포스팅을 살펴봐 주세요 )
+( 자세한 부분은 [2013/02/07 - [전자 기기 포스팅] - 미니 윈도우를 통한 팬택의 기능 업그레이드 살펴보기](http://whdghks913.tistory.com/118) 포스팅을 살펴봐 주세요 )
 
 이렇게 많이 들어가 있는 미니 윈도우, 베넘식에만 쓰기는 아깝죠?
 

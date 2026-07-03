@@ -14,7 +14,7 @@ original_url: "https://itmir.tistory.com/425"
 
 역시 베가 UI는 아몰레드에서 사용하는게 아니예요 ㄷㄷ
 
-이 테마로 오래쓰다가는 엄청난 번인이;;;;(?)
+이 테마로 오래쓰다가는 엄청난 번인이;;;;(?)
 
 아래는 스크린샷입니다
 
@@ -23,18 +23,18 @@ original_url: "https://itmir.tistory.com/425"
 그나저나 저 별 19200점 어떻게 쓸 방법 없을까요?...
 
 ![](./images/Screenshot_2014-01-03-22-16-52.png)
-    
+    
 ![](./images/Screenshot_2014-01-03-22-17-02.png)
 
 ![](./images/Screenshot_2014-01-03-22-17-31.png)
-    
+    
 ![](./images/Screenshot_2014-01-03-22-17-56.png)
 
 ![](./images/Screenshot_2014-01-03-22-18-12.png)
-    
+    
 ![](./images/Screenshot_2014-01-03-22-19-43.png)
 
-(배경색이 안맞는다던지 이런 문제는 저게 원래 android.R.xx를 쓰는거라 안드로이드 기본으로 정해진거 마다 달라요 그래서 수정하려면 일일히 framework를 뜯어야 해서 귀찮 쩝)
+(배경색이 안맞는다던지 이런 문제는 저게 원래 android.R.xx를 쓰는거라 안드로이드 기본으로 정해진거 마다 달라요 그래서 수정하려면 일일히 framework를 뜯어야 해서 귀찮 쩝)
 
 아무튼 베가 시크릿 업의 키보드 어플을 사용해 봤습니다
 
@@ -58,7 +58,7 @@ SKY설정에서 On, Off를 하는 베가 키패드 진동설정은 아마도 설
 
 강제종료 오류와 일부 기능을 수정하였습니다
 
-참고 : </archive/itmir/2014/426>
+참고 : </archive/itmir/2014/426>
 
 [20140104-VEGAIME.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/425-20140104-VEGAIME.apk)
 
@@ -66,7 +66,7 @@ SKY설정에서 On, Off를 하는 베가 키패드 진동설정은 아마도 설
 
 /archive/itmir/2014/493
 
-ps. VegaKeyguardSOS나 VEGAIMEProvider는 필요 없겠죠?? 힘들어서 그냥 뺐는대...
+ps. VegaKeyguardSOS나 VEGAIMEProvider는 필요 없겠죠?? 힘들어서 그냥 뺐는대...
 
 사실은 뭔지 몰라서 그냥 뺐습니다 무슨 기능이 있는거면 알려주세요
 

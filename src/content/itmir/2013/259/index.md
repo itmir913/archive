@@ -17,13 +17,13 @@ original_url: "https://itmir.tistory.com/259"
 
 ---
 
-바이트 입력     :  Bytes  
+바이트 입력     :  Bytes  
   
-킬로바이트      :  KB  
-메가바이트      :  MB  
-기가바이트      :  GB  
-테라바이트      :  TB  
-페타바이트      :  PB  
+킬로바이트      :  KB  
+메가바이트      :  MB  
+기가바이트      :  GB  
+테라바이트      :  TB  
+페타바이트      :  PB  
 
 ---
 
@@ -31,51 +31,51 @@ original_url: "https://itmir.tistory.com/259"
 
 킬로바이트 입력 :  KB  
   
-바이트          :  Bytes  
-메가바이트      :  MB  
-기가바이트      :  GB  
-테라바이트      :  TB  
-페타바이트      :  PB  
+바이트          :  Bytes  
+메가바이트      :  MB  
+기가바이트      :  GB  
+테라바이트      :  TB  
+페타바이트      :  PB  
 
 ---
 
 메가바이트 입력 :  MB  
   
-바이트          :  Bytes  
-킬로바이트      :  KB  
-기가바이트      :  GB  
-테라바이트      :  TB  
-페타바이트      :  PB  
+바이트          :  Bytes  
+킬로바이트      :  KB  
+기가바이트      :  GB  
+테라바이트      :  TB  
+페타바이트      :  PB  
 
 ---
 
 기가바이트 입력 :  GB  
   
-바이트          :  Bytes  
-킬로바이트      :  KB  
-메가바이트      :  MB  
-테라바이트      :  TB  
-페타바이트      :  PB  
+바이트          :  Bytes  
+킬로바이트      :  KB  
+메가바이트      :  MB  
+테라바이트      :  TB  
+페타바이트      :  PB  
 
 ---
 
 테라바이트 입력 :  TB  
   
-바이트          :  Bytes  
-킬로바이트      :  KB  
-메가바이트      :  MB  
-기가바이트      :  GB  
-페타바이트      :  PB  
+바이트          :  Bytes  
+킬로바이트      :  KB  
+메가바이트      :  MB  
+기가바이트      :  GB  
+페타바이트      :  PB  
 
 ---
 
 페타바이트 입력 :  PB  
   
-바이트          :  Bytes  
-킬로바이트      :  KB  
-메가바이트      :  MB  
-기가바이트      :  GB  
-테라바이트      :  TB  
+바이트          :  Bytes  
+킬로바이트      :  KB  
+메가바이트      :  MB  
+기가바이트      :  GB  
+테라바이트      :  TB  
   
   
   

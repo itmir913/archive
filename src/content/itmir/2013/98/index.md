@@ -64,33 +64,33 @@ choice를 찾아주세요.
 
 > config IOSCHED\_SIO
 >
->     tristate "Simple I/O scheduler"
+>     tristate "Simple I/O scheduler"
 >
->     default y
+>     default y
 >
->     ---help---
+>     ---help---
 >
->     The Simple I/O scheduler is an extremely simple scheduler,
+>     The Simple I/O scheduler is an extremely simple scheduler,
 >
->     based on noop and deadline, that relies on deadlines to
+>     based on noop and deadline, that relies on deadlines to
 >
->     ensure fairness. The algorithm does not do any sorting but
+>     ensure fairness. The algorithm does not do any sorting but
 >
->     basic merging, trying to keep a minimum overhead. It is aimed
+>     basic merging, trying to keep a minimum overhead. It is aimed
 >
->     mainly for aleatory access devices (eg: flash devices).
+>     mainly for aleatory access devices (eg: flash devices).
 >
 > config IOSCHED\_VR
 >
->     tristate "V(R) I/O scheduler"
+>     tristate "V(R) I/O scheduler"
 >
->     default y
+>     default y
 >
->     ---help---
+>     ---help---
 >
->      Requests are chosen according to SSTF with a penalty of rev\_penalty
+>      Requests are chosen according to SSTF with a penalty of rev\_penalty
 >
->      for switching head direction.
+>      for switching head direction.
 
 어려우시다면 아래 사진을 봐주시면 이해가 빠르실겁니다.
 
@@ -106,11 +106,11 @@ Kconfig에서 choice밑에 보시면 config DEFAULT가 있습니다.
 
 > config DEFAULT\_SIO
 >
->     bool "SIO" if IOSCHED\_SIO=y
+>     bool "SIO" if IOSCHED\_SIO=y
 >
 > config DEFAULT\_VR
 >
->     bool "VR" if IOSCHED\_VR=y
+>     bool "VR" if IOSCHED\_VR=y
 
 아래 사진처럼 choice밑부분에 config DEFAULT를 넣어주시면 완료됩니다.
 

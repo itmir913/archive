@@ -56,7 +56,7 @@ whdghks@Ubuntu:~$ sudo gedit /etc/default/grub
 
 grub를 열어보면
 
-grub\_default     0
+grub\_default     0
 
 이런 구문을 보실 수 있을겁니다. (대문자로 되어있을수도 있음)
 
@@ -68,7 +68,7 @@ grub\_default     0
 
 그뒤 타임 아웃 시간도 지정할수 있습니다. 단위는 (초)입니다.
 
-timeout     10
+timeout     10
 
 ![](./images/2.jpg)
 
@@ -102,13 +102,13 @@ done
 
 저는 어떻게 했냐면요
 
-Ubuntu, with Linux 2.6.38-16                               0
+Ubuntu, with Linux 2.6.38-16                               0
 
-Ubuntu, with Linux 2.6.38-16 (복구 모드)               1  
-Previous Linux versions                                     2  
-Memory test (memtest86+)                                   3  
-Memory test (memtest86+, serial console 115200)   3  
-Windows 7 (loader) (on /dev/sda1)                     4
+Ubuntu, with Linux 2.6.38-16 (복구 모드)               1  
+Previous Linux versions                                     2  
+Memory test (memtest86+)                                   3  
+Memory test (memtest86+, serial console 115200)   3  
+Windows 7 (loader) (on /dev/sda1)                     4
 
 이렇게 생각하였습니다.
 
@@ -128,7 +128,7 @@ Memory test가 두개니까 하나로 취급하고 3
 
 /etc/default/grub 파일이 없고 /boot/grub/menu.lst 파일이 있는 경우 이것을 수정해야 하는데요.
 
-**sudo gedit /boot/grub/menu.lst**  
+**sudo gedit /boot/grub/menu.lst**  
 **sudo update-grub**
 
 방법은 1번과 같으므로 또 다시 언급하지는 않겠습니다.

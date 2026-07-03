@@ -16,7 +16,7 @@ original_url: "https://itmir.tistory.com/392"
 
 이번에는 제가 몇일동안 끙끙 앓다가 머리가 터져버린 어플입니다
 
-대부분의 영어 앱은 구글번역을 쓰더라도 하루면 번역할수 있는대 이건 3일동안 하루종일 번역해도 반절도 못하더라고요;
+대부분의 영어 앱은 구글번역을 쓰더라도 하루면 번역할수 있는대 이건 3일동안 하루종일 번역해도 반절도 못하더라고요;
 
 이 어플은 테스커 라는 어플인대요
 
@@ -31,19 +31,19 @@ original_url: "https://itmir.tistory.com/392"
 아래는 일부 한글화 어플의 스크린샷 입니다
 
 ![](./images/Screenshot_2013-11-27-17-14-46.png)
-    
+    
 ![](./images/Screenshot_2013-11-27-17-14-55.png)
 
 ![](./images/Screenshot_2013-11-27-17-16-18.png)
-    
+    
 ![](./images/Screenshot_2013-11-27-17-16-26.png)
 
 ![](./images/Screenshot_2013-11-27-17-16-51.png)
-    
+    
 ![](./images/Screenshot_2013-11-27-17-17-02.png)
 
 ![](./images/Screenshot_2013-11-27-17-17-21.png)
-    
+    
 ![](./images/Screenshot_2013-11-27-17-17-32.png)
 
 아직 오역과 영어가 많습니다
@@ -52,7 +52,7 @@ original_url: "https://itmir.tistory.com/392"
 
 그래도 최소 작업을 만드는대 까지 번역작업을 마친것으로 판단하고 있습니다
 
-버전은 v4.2.u1 버전입니다
+버전은 v4.2.u1 버전입니다
 
 와 한글 번역하는거 정말 힘듭니다
 

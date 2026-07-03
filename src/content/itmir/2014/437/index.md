@@ -16,7 +16,7 @@ original_url: "https://itmir.tistory.com/437"
 
 백업해두길 잘했어요
 
-백업 한다고 한 글 : [[Note] - 우분투 통채로 백업.jpg](http://whdghks913.tistory.com/266)
+백업 한다고 한 글 : [[Note] - 우분투 통채로 백업.jpg](http://whdghks913.tistory.com/266)
 
 완전 편리하네요 ㅋㅋㅋ
 

@@ -26,7 +26,7 @@ original_url: "https://itmir.tistory.com/505"
 
 이 방법은 뒷부분인 123까지 함께 이동되어 </archive/itmir/2013/123> 으로 이동됩니다.
 
-이 방법은 <http://blog.gyongsu.com/194> 에서 소개된 방법입니다. 좋은정보 공유해주신 Dr.lee님께 감사드립니다.
+이 방법은 <http://blog.gyongsu.com/194> 에서 소개된 방법입니다. 좋은정보 공유해주신 Dr.lee님께 감사드립니다.
 
 ## 1. 준비 작업
 
@@ -34,7 +34,7 @@ original_url: "https://itmir.tistory.com/505"
 
 기존 주소를 A라고 하고 바꿀 주소를 B라고 하겠습니다.
 
-1. A 주소의 블로그의 주소를 B로 바꿔주세요.
+1. A 주소의 블로그의 주소를 B로 바꿔주세요.
 
 2. 빨리 A 주소로 블로그를 하나 만들어 주세요.
 

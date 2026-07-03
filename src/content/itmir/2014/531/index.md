@@ -10,13 +10,13 @@ original_url: "https://itmir.tistory.com/531"
 
 앱을 만들다 보면 더 좋은 기능과 디자인을 위해 오픈되어 있는 라이브러리를 찾아봐야 할때가 있습니다
 
-이때 Libraries for developers라는 어플을 이용해서 라이브러리를 살펴볼수 있고, Demo도 실행해볼수 있습니다
+이때 Libraries for developers라는 어플을 이용해서 라이브러리를 살펴볼수 있고, Demo도 실행해볼수 있습니다
 
 <https://play.google.com/store/apps/details?id=com.desarrollodroide.repos>
 
 80가지 이상의 라이브러리가 포함되어 있어 앱용량도 큽니다 ㅋㅋ
 
-아래 더보기를 누르시면 2014-09-12 기준 앱 설명에 나와있는 포함된 오픈소스 라이브러리 목록이 나옵니다
+아래 더보기를 누르시면 2014-09-12 기준 앱 설명에 나와있는 포함된 오픈소스 라이브러리 목록이 나옵니다
 
 더보기
 
@@ -197,12 +197,12 @@ Libraries included:
 아래는 앱을 실행하면 나오는 메인 화면과 라이브러리 선택 화면입니다
 
 ![](./images/Screenshot_2014-09-12-22-54-43.png)
-   
+   
 ![](./images/Screenshot_2014-09-12-22-55-57.png)
 
 생각보다 오픈소스 라이브러리가 많더라고요
 
-이글을 조금만 더 내리시면 제가 본 오픈소스 라이브러리중 인상깊은 Demo 스크린샷을 확인할 있습니다
+이글을 조금만 더 내리시면 제가 본 오픈소스 라이브러리중 인상깊은 Demo 스크린샷을 확인할 있습니다
 
 ![](./images/Screenshot_2014-09-12-22-56-05.png)
 
@@ -213,11 +213,11 @@ Libraries included:
 아래는 제가 인상깊었던 오픈소스 입니다
 
 ![](./images/Screenshot_2014-09-12-22-56-14.png)
-   
+   
 ![](./images/Screenshot_2014-09-12-22-57-14.png)
 
 ![](./images/Screenshot_2014-09-12-22-59-05.png)
-   
+   
 ![](./images/Screenshot_2014-09-12-23-02-59.png)
 
 ![](./images/Screenshot_2014-09-12-23-03-22.png)
@@ -228,4 +228,4 @@ Libraries included:
 
 시간내서 꼭 사용해봐야 겠습니다
 
-이 앱은 http://basicit.tistory.com/16 글을 보고 알게되었습니다
+이 앱은 http://basicit.tistory.com/16 글을 보고 알게되었습니다

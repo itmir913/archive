@@ -20,7 +20,7 @@ original_url: "https://itmir.tistory.com/107"
 
 (구하실수 없으시면 포팅할 기기와 사양이 비슷한 기기를 cm소스/device폴더에 들어가 보시면 찾으실수도 있을겁니다 코드네임으로 찾아야 합니다)
 
-전 http://cafe.naver.com/skydevelopers/86106 의 hPa님의 이자르 cm7소스를 참고하였습니다
+전 http://cafe.naver.com/skydevelopers/86106 의 hPa님의 이자르 cm7소스를 참고하였습니다
 
 
 다음은 이자르의 cm7작업파일 입니다 (hPa님 게시글 첨부파일)
@@ -29,11 +29,11 @@ original_url: "https://itmir.tistory.com/107"
 
 device/제조사/기기명 폴더에 들어가 주세요
 
-그다음 cm7작업소스에 있는 overlay폴더를 가져와 주세요
+그다음 cm7작업소스에 있는 overlay폴더를 가져와 주세요
 
-다른 기기의 overlay를 가져와도 될겁니다
+다른 기기의 overlay를 가져와도 될겁니다
 
-그다음 vendorsetup.sh등 작업 소스에 있는 파일을 하나씩 가져옵니다
+그다음 vendorsetup.sh등 작업 소스에 있는 파일을 하나씩 가져옵니다
 
 setup-makefiles.sh도 가져옵니다
 
@@ -45,9 +45,9 @@ DEVICE=a630k
 
 이 있는대요 이걸 자신에게 맞게 수정합니다 VENDOR은 제조사 DEVICE는 기기명이 되겠죠?
 
-그리고 setup-makefiles.sh을 실행합니다
+그리고 setup-makefiles.sh을 실행합니다
 
-이제 BoardConfig.mk를 수정해야 합니다
+이제 BoardConfig.mk를 수정해야 합니다
 
 제가 포팅할 기기와 비슷한 기기의 cm7 작업소스를 구해두라는건 이런 작업에서 아주 편하기 때문입니다
 
@@ -77,7 +77,7 @@ device\_기기명.mk를 열어주세요
 
 PRODUCT\_COPY\_FILES += \
 
-    device/제조사/기기명/파일경로:system/파일경로 \
+    device/제조사/기기명/파일경로:system/파일경로 \
 
 다음과 같은 양식으로 쓰이게 됩니다
 
@@ -85,9 +85,9 @@ PRODUCT\_COPY\_FILES += \
 
 이제 vendor폴더로 이동합니다
 
-vendor/cyanogen/vendorsetup.sh에 add\_lunch\_combo cyanogen\_기기명-eng 을 추가합니다
+vendor/cyanogen/vendorsetup.sh에 add\_lunch\_combo cyanogen\_기기명-eng 을 추가합니다
 
-vendor/cyanogen/products/AndroidProducts.mk에도 다른 기기처럼     $(LOCAL\_DIR)/cyanogen\_기기명.mk \을 추가합니다
+vendor/cyanogen/products/AndroidProducts.mk에도 다른 기기처럼     $(LOCAL\_DIR)/cyanogen\_기기명.mk \을 추가합니다
 
 vendor/cyanogen/products/cyanogen\_ef32k.mk를 직접 만들어야 합니다
 
@@ -99,7 +99,7 @@ vendor/cyanogen/products/cyanogen\_ef32k.mk를 직접 만들어야 합니다
 
 이제 vendor/제조사/기기명 폴더에 들어갑시다
 
-다른건 필요없고 기기명-vendor-blobs.mk만 수정하면 됩니다
+다른건 필요없고 기기명-vendor-blobs.mk만 수정하면 됩니다
 
 순정에서 가져와야 하는 파일의 목록입니다
 

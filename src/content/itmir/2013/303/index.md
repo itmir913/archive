@@ -53,7 +53,7 @@ original_url: "https://itmir.tistory.com/303"
 ```
 
 이라는 구문이 있는 어플만 저 화면에 뜨게 되는것 이지요  
-검색해보면 smali\com\sec\android\app\FlashBarService\FlashBarInfo.smali에서 담당하고 있습니다
+검색해보면 smali\com\sec\android\app\FlashBarService\FlashBarInfo.smali에서 담당하고 있습니다
 
 그럼 간단합니다
 

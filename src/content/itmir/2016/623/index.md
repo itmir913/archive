@@ -3,7 +3,7 @@ title: "Mirach A (IM-A750K) CyanogenMod 7 Photos"
 date: "2016-09-10T23:23:30+09:00"
 category: "SmartPhone"
 tags: []
-description: "Mirach A (IM-A750K) CyanogenMod 7 Photos"
+description: "베가 미라크 A (IM-A750K)에 CyanogenMod 7을 설치한 후 스크린샷을 모았습니다."
 draft: false
 original_url: "https://itmir.tistory.com/623"
 ---
@@ -22,7 +22,7 @@ Mirach A (IM-A750K) CyanogenMod 7 Photos
 
 배터리가 문제인지 부팅이 안됬지만 집념을 가지고 충전기를 연결해보니 부팅에 성공해서 cm7을 올려봤습니다.
 
-미라크a의 CyanogenMod 7은 2013년도에 제가 직접 포팅한 롬이며, 아래 게시글에서 흔적을 찾으실 수 있습니다.
+미라크a의 CyanogenMod 7은 2013년도에 제가 직접 포팅한 롬이며, 아래 게시글에서 흔적을 찾으실 수 있습니다.
 
 [[Android Build] - cm-7-20130124-UNOFFICIAL-ef32k (미라크A CyanogenMod)](/archive/itmir/2013/102)
 
@@ -64,7 +64,7 @@ cm-7-20130124-UNOFFICIAL-ef32k : <http://whdghks913.blog.me/20177902725>, 또는
 
 ![](./images/IMG_1996.jpg)
 
-잠금화면 사진입니다. (사진을 찍은 시간은 다르나 제 나름대로 재배치했습니다.)
+잠금화면 사진입니다. (사진을 찍은 시간은 다르나 제 나름대로 재배치했습니다.)
 
 ![](./images/IMG_1969.jpg)
 
@@ -72,7 +72,7 @@ cm-7-20130124-UNOFFICIAL-ef32k : <http://whdghks913.blog.me/20177902725>, 또는
 
 처음으로 부팅했을때는 build.prop에 해상도 설정이 잘못 기록되어 있어서 아이콘이 매우 크게 나왔었습니다.
 
-참고 : [[Android Build] - ★미라크a CM7부팅 성공★](/archive/itmir/2013/21)
+참고 : [[Android Build] - ★미라크a CM7부팅 성공★](/archive/itmir/2013/21)
 
 배포한 버전은 해상도를 순정 상태로 설정한 버전입니다.
 
@@ -84,7 +84,7 @@ cm-7-20130124-UNOFFICIAL-ef32k : <http://whdghks913.blog.me/20177902725>, 또는
 
 Home PC가 저희집 메인 컴퓨터 이름인데 커널 빌드를 메인 PC VM웨어에서 돌렸나봐요.
 
-제 노트북에서 빌드했다면 아래 스샷처럼 whdghks913이 뜰텐데 말이죠.
+제 노트북에서 빌드했다면 아래 스샷처럼 whdghks913이 뜰텐데 말이죠.
 
 ![](./images/IMG_1933.jpg)
 
@@ -96,7 +96,7 @@ Mod Version을 보시면 아시겠지만, 2013년 1월 24일에 빌드한 롬이
 
 lib파일을 몇개 섞다가 픽스됬네요. ㅋㅋㅋ
 
-참고 : [[Android Build] - CM7에서 카메라가 정삭적으로 작동합니다..](/archive/itmir/2013/93), <http://whdghks913.blog.me/20177516547>
+참고 : [[Android Build] - CM7에서 카메라가 정삭적으로 작동합니다..](/archive/itmir/2013/93), <http://whdghks913.blog.me/20177516547>
 
 ![](./images/IMG_2007.jpg)
 
@@ -106,7 +106,7 @@ lib파일을 몇개 섞다가 픽스됬네요. ㅋㅋㅋ
 
 ![](./images/IMG_2010.jpg)
 
-CM7을 빌드하기전 파티션 정보를 입력했기 때문에 SD카드 마운트와 USB 저장소 사용가능합니다.
+CM7을 빌드하기전 파티션 정보를 입력했기 때문에 SD카드 마운트와 USB 저장소 사용가능합니다.
 
 매우 오랜만에 본 미라크a는 작았습니다. (그래도 아이폰 5s와 비슷합니다.)
 

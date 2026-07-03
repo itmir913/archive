@@ -3,12 +3,12 @@ title: "메이플스토리2 서버점검 2회 연장에 대해"
 date: "2015-07-07T22:00:11+09:00"
 category: "News"
 tags: []
-description: "오늘 7월 7일 오후7시에 메이플스토리2가 정식 오픈되었습니다."
+description: "오늘 7월 7일 오후7시에 메이플스토리2가 정식 오픈되었습니다."
 draft: false
 original_url: "https://itmir.tistory.com/584"
 ---
 
-오늘 7월 7일 오후7시에 메이플스토리2가 정식 오픈되었습니다.
+오늘 7월 7일 오후7시에 메이플스토리2가 정식 오픈되었습니다.
 
 그런데 서버의 오류인지, 아니면 동시 접속자가 너무 많아서 그런지 모르겠지만 벌써 1시간 25분째 점검진행중입니다.
 
@@ -36,4 +36,4 @@ original_url: "https://itmir.tistory.com/584"
 
 어처피 셧다운제는 걸리지 않지만 메이플2가 설치된 컴퓨터가 안방에 있어서 저녁 늦게는 불가능하거든요 ㅠㅠ
 
-참고 기사 : http://ms2.gamemeca.com/mecareport.php?gid=855487
+참고 기사 : http://ms2.gamemeca.com/mecareport.php?gid=855487

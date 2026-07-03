@@ -45,25 +45,25 @@ original_url: "https://itmir.tistory.com/94"
 
 그다음 터미널을 열어주시면 됩니다
 
-이제 버전에 따라 각각 명령어를 입력해 주세요
+이제 버전에 따라 각각 명령어를 입력해 주세요
 
 (1) 우분투 10.10~11.10버전 분들이 공통으로 입력하셔야 하는 구문
 
 $ sudo apt-get install git-core gnupg flex bison gperf build-essential \
 
-  zip curl zlib1g-dev libc6-dev lib32ncurses5-dev ia32-libs \
+  zip curl zlib1g-dev libc6-dev lib32ncurses5-dev ia32-libs \
 
-  x11proto-core-dev libx11-dev lib32readline5-dev lib32z-dev \
+  x11proto-core-dev libx11-dev lib32readline5-dev lib32z-dev \
 
-  libgl1-mesa-dev g++-multilib mingw32 tofrodos python-markdown \
+  libgl1-mesa-dev g++-multilib mingw32 tofrodos python-markdown \
 
-  libxml2-utils xsltproc
+  libxml2-utils xsltproc
 
 (2) 우분투 10.10 을 쓰시고 계시면 다음을 추가로 입력해 주세요
 
 $ sudo ln -s /usr/lib32/mesa/libGL.so.1 /usr/lib32/mesa/libGL.so
 
-(3) 우분투 11.10 사용하시고 계시면 위 명령어와 다음을 추가로 입력해 주세요
+(3) 우분투 11.10 사용하시고 계시면 위 명령어와 다음을 추가로 입력해 주세요
 
 $ sudo apt-get install libx11-dev:i386
 
@@ -71,13 +71,13 @@ $ sudo apt-get install libx11-dev:i386
 
 $ sudo apt-get install git-core gnupg flex bison gperf build-essential \
 
-  zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev \
+  zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev \
 
-  libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386 \
+  libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386 \
 
-  libgl1-mesa-dev g++-multilib mingw32 openjdk-6-jdk tofrodos \
+  libgl1-mesa-dev g++-multilib mingw32 openjdk-6-jdk tofrodos \
 
-  python-markdown libxml2-utils xsltproc zlib1g-dev:i386
+  python-markdown libxml2-utils xsltproc zlib1g-dev:i386
 
 $ sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/i386-linux-gnu/libGL.so
 
@@ -129,13 +129,13 @@ cd ~/android/system
 
 repo를 통한 소스 다운로드
 
-이제 repo에게 뭘 받을건지 설정해 주는 시간이 왔습니다..
+이제 repo에게 뭘 받을건지 설정해 주는 시간이 왔습니다..
 
 cm의 버전에 따라 아래의 명령어를 입력해 주시면 됩니다
 
 repo init -u git://github.com/CyanogenMod/android.git -b jellybean
 
-JellyBeen버전 (CM10을 받는경우)
+JellyBeen버전 (CM10을 받는경우)
 
 repo init -u git://github.com/CyanogenMod/android.git -b ics
 
@@ -143,11 +143,11 @@ ICS버전 (CM9를 받는경우)
 
 repo init -u git://github.com/CyanogenMod/android.git -b gingerbread
 
-GB버전 (CM7을 받는경우)
+GB버전 (CM7을 받는경우)
 
 repo init -u git://github.com/CyanogenMod/android.git -b froyo
 
-Froyo버전 (CM6을 받는경우)
+Froyo버전 (CM6을 받는경우)
 
 더 아래버전도 있지만 생존여부를 모르고 다운받으실 분도 없으실것 같아 4가지만 적습니다
 
@@ -167,7 +167,7 @@ EX) repo sync -j4
 
 그럼 쭉쭉 받게 됩니다
 
-아마 많이 끊길탠대요 /archive/itmir/2013/33 이 게시글을 살펴주시면 감사드리겠습니다
+아마 많이 끊길탠대요 /archive/itmir/2013/33 이 게시글을 살펴주시면 감사드리겠습니다
 
 단 repo로 받게되면 몇몇 기기정보가 누락되어 받아집니다
 
@@ -218,9 +218,9 @@ http://deviantcj.tistory.com/373
 
 (원래 빌드하기 까다롭습니다 절반정도 왔으니 힘내세요!)
 
-그다음 cwm을 포팅할 기기의 순정 boot.img와 순정recovery.img를 준비해 주세요
+그다음 cwm을 포팅할 기기의 순정 boot.img와 순정recovery.img를 준비해 주세요
 
-(adb로 추출하는 방법이 /archive/itmir/2013/91 에 간략하게 기록되어 있군요)
+(adb로 추출하는 방법이 /archive/itmir/2013/91 에 간략하게 기록되어 있군요)
 
 더보기
 
@@ -304,7 +304,7 @@ mv proprietary\_vendor\_widevine widevine
 
 를 입력하셔서 빌드 환경을 업데이트 해주세요
 
-(모든(?) 빌드 명령어들은 . build/envsetup.sh을 입력하신 다음부터 사용하실수 있습니다
+(모든(?) 빌드 명령어들은 . build/envsetup.sh을 입력하신 다음부터 사용하실수 있습니다
 
 그러니 터미널을 한번 닫고 새로 열으시면 다시 실행해 줘야 하는 명령어 입니다)
 
@@ -328,11 +328,11 @@ build/tools/device/mkvendor.sh 제조사 기기명 ~/android/boot.img
 
 이제 이것을 cwm에 맞게 또는 자신의 기기에 맞게 수정하셔야 합니다
 
-먼저 약간 간단한(?) recovery.fastab을 수정해 봅시다
+먼저 약간 간단한(?) recovery.fastab을 수정해 봅시다
 
-이것은 순정 recovery.img를 뜯어 주시면 램디스크 파일안 etc/recovery.fastab에 있습니다...
+이것은 순정 recovery.img를 뜯어 주시면 램디스크 파일안 etc/recovery.fastab에 있습니다...
 
-뜯는 방법은 /archive/itmir/2013/48를 참고해 주시면 됩니다
+뜯는 방법은 /archive/itmir/2013/48를 참고해 주시면 됩니다
 
 본문에 추가하면 길이가 너무 길어지므로 추가하지 못하는점 이해해 주세요...
 
@@ -364,15 +364,15 @@ su
 
 cat /proc/mtd
 
-을 입력하시면 위 PARTITION\_SIZE를 알수 있는 화면이 나옵니다
+을 입력하시면 위 PARTITION\_SIZE를 알수 있는 화면이 나옵니다
 
-mtd의 내용과 같게 boardconfig.mk를 수정해 주세요
+mtd의 내용과 같게 boardconfig.mk를 수정해 주세요
 
 BOARD\_FLASH\_BLOCK\_SIZE는 감이 잘 안오시는 분들이 계실탠대요 mtd를 보시면 erasesize가 있습니다
 
 이 값은 16진수입니다 이것을 10진수로 변환해 주신다음 넣어 주시면 됩니다
 
-그다음 부트이미지를 분해할때 나오는 KERNEL BASE값과 PAGESIZE값이 boardconfig에 기록된 값과 같은지 확인해 주시면 됩니다 ㅎㅎ
+그다음 부트이미지를 분해할때 나오는 KERNEL BASE값과 PAGESIZE값이 boardconfig에 기록된 값과 같은지 확인해 주시면 됩니다 ㅎㅎ
 
 **6. 본격적 빌드를... 흐흐**
 
@@ -408,27 +408,27 @@ make -j4 recoveryimage
 
 어떤 기종의 경우 CWM을 포팅할경우 화면이 좌우 짤려 나온다 혹은 화면이 4개로 나뉜다등의 문제가 일어날수 있는대요
 
-이때는 graphics.c를 수정하시면 해결됩니다 미라크a의 경우 logo.rle파일도 집어넣어야 해결되더라고요..
+이때는 graphics.c를 수정하시면 해결됩니다 미라크a의 경우 logo.rle파일도 집어넣어야 해결되더라고요..
 
 graphics.c를 수정해야 합니다
 
-이때 해당 기기와 같은 해상도의 스마트폰 디바이스 폴더에 들어가 graphics.c를 훔쳐오면 됩니다
+이때 해당 기기와 같은 해상도의 스마트폰 디바이스 폴더에 들어가 graphics.c를 훔쳐오면 됩니다
 
-예를 들어 미라크A 기기의 경우 갤럭시 Ace(코드명: Copper)의 graphics.c를 훔쳐오면 됩니다
+예를 들어 미라크A 기기의 경우 갤럭시 Ace(코드명: Copper)의 graphics.c를 훔쳐오면 됩니다
 
 graphics.c파일을 훔치셧으면 device/제조사/기기명 폴더에 넣어주세요
 
 그다음 BoardConfig에 다음 구문을 추가해 줍시다
 
-BOARD\_CUSTOM\_GRAPHICS           := ../../../device/제조사/기기명/graphics.c
+BOARD\_CUSTOM\_GRAPHICS           := ../../../device/제조사/기기명/graphics.c
 
 logo.rle를 추가한다면 device\_기기명.mk에 아래 구문을 넣으시면 됩니다
 
 PRODUCT\_COPY\_FILES += \
 
-    device/제조사/기기명/logo.rle:root/logo.rle \
+    device/제조사/기기명/logo.rle:root/logo.rle \
 
-    device/제조사/기기명/logo.rle:root/initlogo.rle
+    device/제조사/기기명/logo.rle:root/initlogo.rle
 
 Recovery.img를 빌드하며 발생하는 몇몇 오류 해결법
 
@@ -436,7 +436,7 @@ Recovery.img를 빌드하며 발생하는 몇몇 오류 해결법
 
 빌드하며 발생하는 오류는 구글링 해서 답을 얻으시면 됩니다
 
-제가 격은 빌드 오류는 /archive/itmir/2013/41 에 모두 정리해 두었으니 참고 하시면 될듯 합니다 ㅎㅎ
+제가 격은 빌드 오류는 /archive/itmir/2013/41 에 모두 정리해 두었으니 참고 하시면 될듯 합니다 ㅎㅎ
 
   
 #포팅 #CWM포팅 #cm7포팅 #cm7 #cwm #리커버리 #리커버리 포팅 #큼칠 포팅 #cm7 포팅 #cm7 vhxld #cwm 포팅 #포팅방법

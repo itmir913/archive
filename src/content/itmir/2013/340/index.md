@@ -8,9 +8,9 @@ draft: false
 original_url: "https://itmir.tistory.com/340"
 ---
 
-먼저 이글은 <http://spapa1004.tistory.com/50>을 전제하에 작성하였습니다
+먼저 이글은 <http://spapa1004.tistory.com/50>을 전제하에 작성하였습니다
 
-한글화는 spapa님께서 하신 작품입니다
+한글화는 spapa님께서 하신 작품입니다
 
 텐센트에서 10TB를 제공하는 클라우드를 내놨습니다 ㅋㅋ;
 

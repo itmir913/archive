@@ -11,7 +11,7 @@ original_url: "https://itmir.tistory.com/391"
 순정에서 루팅 없이 사용할 수 있는 노트 3의 내 파일 어플입니다
 
 ![](./images/Screenshot_2013-11-26-18-45-50.png)
-   
+   
 ![](./images/Screenshot_2013-11-26-18-46-50.png)
 
 UI가 S3보다 엄청 보기 편하고

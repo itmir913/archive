@@ -24,11 +24,11 @@ original_url: "https://itmir.tistory.com/189"
 
 으로 접속하신다음 과목 - 학년 - 본문자료를 클릭해 주세요
 
-**지학사** - [로그인 필요 없음]
+**지학사** - [로그인 필요 없음]
 
 <http://text.jihak.co.kr/>
 
-**천재교육** - [로그인 필요 없음]
+**천재교육** - [로그인 필요 없음]
 
 <http://bigfile.tsherpa.co.kr/popup/pop_120207/pop_120207.aspx?ClassA=C2-01>
 
@@ -38,7 +38,7 @@ original_url: "https://itmir.tistory.com/189"
 
 이 사이트로 들어간 다음 링크를 따라 들어가면 됩니다
 
-**미래엔 (대한교과서)** - [로그인 필요 없음/필요]
+**미래엔 (대한교과서)** - [로그인 필요 없음/필요]
 
 http://www.대한교과서.com/
 

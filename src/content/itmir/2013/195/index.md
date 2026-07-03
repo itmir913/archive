@@ -18,7 +18,7 @@ Linux Reader라는 프로그램을 이용하여 분해가 가능한대요
 
 말만 분해이지 안에 있는 파일을 복사 하는 정도 입니다
 
-일단 Linux Reader을 깔아주세요
+일단 Linux Reader을 깔아주세요
 
 설치후 왼족 상단 메뉴를 보시면 Drivers가 있는데요
 

@@ -16,7 +16,7 @@ original_url: "https://itmir.tistory.com/434"
 
 ### 25-1 문제 1
 
-프로그래스바를 사용할때 최대값을 지정하는 xml에서와, java에서의 사용법을 서술하시오
+프로그래스바를 사용할때 최대값을 지정하는 xml에서와, java에서의 사용법을 서술하시오
 
 예) TextView의 문자 설정법은 xml에서 android:Text와 java에서는 setText입니다
 
@@ -26,7 +26,7 @@ original_url: "https://itmir.tistory.com/434"
 
 그리고 그 메소드 안에 있는 메소드의 기능 설명을 서술하시오
 
-예) EditText의 경우 addTextChangedListener입니다
+예) EditText의 경우 addTextChangedListener입니다
 
 ### 25-3 문제
 

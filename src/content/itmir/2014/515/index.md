@@ -100,7 +100,7 @@ original_url: "https://itmir.tistory.com/515"
 
 애니메이션을 정의한 xml파일은 res/anim폴더에 들어있습니다
 
-[[Development/App] - #3 App의 구조와 동작 원리](/archive/itmir/2013/289) 강좌에서 res폴더 내부를 관찰할때 설명했던 부분입니다
+[[Development/App] - #3 App의 구조와 동작 원리](/archive/itmir/2013/289) 강좌에서 res폴더 내부를 관찰할때 설명했던 부분입니다
 
 혹시 까먹으신분 있으실까봐...
 
@@ -146,7 +146,7 @@ res/anim에는 5가지의 xml 파일을 만들꺼예요
 
 - android:startOffset : 애니메이션을 시작하기 전 대기시간 입니다
 - android:repeatCount : 반복 횟수 입니다 -1은 무한반복
-- android:repeatMode (restart, reverse) : 반복 모드입니다 restart는 애니메이션을 처음부터 반복, reverse는 애니메이션을 반시계방향으로 다시 실행
+- android:repeatMode (restart, reverse) : 반복 모드입니다 restart는 애니메이션을 처음부터 반복, reverse는 애니메이션을 반시계방향으로 다시 실행
 - android:interpolator : 애니메이션 효과가 지속되는 동안 빠르게, 또는 느리게 효과가 진행되도록 만듭니다
 - android:fillAfter : 애니메이션 효과가 끝난뒤에 상태를 유지할지 결정합니다, 기본은 false
 
@@ -174,9 +174,9 @@ cycle\_interpolator : 애니메이션을 반복한다.
 
 애니메이션 집합인 <set>에 정의합니다
 
-android:shareInterpolator="false" : 하위 애니메이션에 각각 다른 interpolator를 적용할때 씁니다
+android:shareInterpolator="false" : 하위 애니메이션에 각각 다른 interpolator를 적용할때 씁니다
 
-다음은 회전을 담당하는 rotate입니다
+다음은 회전을 담당하는 rotate입니다
 
 ![](./images/4.png)
 
@@ -201,7 +201,7 @@ android:shareInterpolator="false" : 하위 애니메이션에 각각 다른 int
 
 이부분이 좀 이해하기 어렵습니다...
 
-android:fromDegrees와 android:toDegrees는 직접 값을 변경해 보시면서 알아가시는게 확실히 와닿습니다
+android:fromDegrees와 android:toDegrees는 직접 값을 변경해 보시면서 알아가시는게 확실히 와닿습니다
 
 아래 두개의 설명을 더 자세하게 드리면
 
@@ -267,10 +267,10 @@ View가 회전할때 회전의 중심이 되는 중심 축을 설정합니다
     android:toYDelta="20%p" />
 ```
 
-- android:fromXDelta="0%p" : 처음 애니메이션이 시작될때 View의 X 위치입니다 0%p이므로 원래 위치
-- android:fromYDelta="0%p" : 처음 애니메이션이 시작될때 View의 Y 위치입니다 0%p이므로 원래 위치
-- android:toXDelta="20%p" : 끝날때 X위치입니다 가로이므로 부모 View의 20%만큼 오른쪽으로 이동합니다
-- android:toYDelta="20%p" : 끝날때 Y위치입니다 세로이므로 부모 View의 20%만큼 아래로 이동합니다
+- android:fromXDelta="0%p" : 처음 애니메이션이 시작될때 View의 X 위치입니다 0%p이므로 원래 위치
+- android:fromYDelta="0%p" : 처음 애니메이션이 시작될때 View의 Y 위치입니다 0%p이므로 원래 위치
+- android:toXDelta="20%p" : 끝날때 X위치입니다 가로이므로 부모 View의 20%만큼 오른쪽으로 이동합니다
+- android:toYDelta="20%p" : 끝날때 Y위치입니다 세로이므로 부모 View의 20%만큼 아래로 이동합니다
 
 이제 마지막으로 애니메이션을 묶을수 있는 Set에 대해 알아봅시다
 
@@ -348,27 +348,27 @@ view.startAnimation(ani);
 
 ScaleAnimation ani =
 
-    // 0.0 ~ 1.0(원래 크기) 의 값이 사용됩니다.
+    // 0.0 ~ 1.0(원래 크기) 의 값이 사용됩니다.
 
-    new ScaleAnimation (float fromX, float toX, float fromY, float toY) ;
+    new ScaleAnimation (float fromX, float toX, float fromY, float toY) ;
 
-    // 중심점은 animation되는 이미지의 절대 좌표를 사용합니다.
+    // 중심점은 animation되는 이미지의 절대 좌표를 사용합니다.
 
-    // x = 0 이면 left edge, y = 0이면 top edge 를 가리킵니다.
+    // x = 0 이면 left edge, y = 0이면 top edge 를 가리킵니다.
 
-    new ScaleAnimation (float fromX, float toX, float fromY, float toY, float pivotX, float pivotY);
+    new ScaleAnimation (float fromX, float toX, float fromY, float toY, float pivotX, float pivotY);
 
-    // Type에 사용되는 것은 아래와 같습니다.
+    // Type에 사용되는 것은 아래와 같습니다.
 
-    // Animation.ABSOLUTE, Animation.RELATIVE\_TO\_SELF, Animation.RELATIVE\_TO\_PARENT
+    // Animation.ABSOLUTE, Animation.RELATIVE\_TO\_SELF, Animation.RELATIVE\_TO\_PARENT
 
-    // Value에는 Type이 absolute일 때 scale되는 이미지의 절대 좌표이가 사용되고
+    // Value에는 Type이 absolute일 때 scale되는 이미지의 절대 좌표이가 사용되고
 
-    // 나머지 Type에서는 0.0(0%) ~ 1.0(100%)의 값을 사용하는 퍼센트를 사용합니다.
+    // 나머지 Type에서는 0.0(0%) ~ 1.0(100%)의 값을 사용하는 퍼센트를 사용합니다.
 
-    new ScaleAnimation (float fromX, float toX, float fromY, float toY,
+    new ScaleAnimation (float fromX, float toX, float fromY, float toY,
 
-                               int pivotXType, float pivotXValue, int pivotYType, float pivotYValue) ;
+                               int pivotXType, float pivotXValue, int pivotYType, float pivotYValue) ;
 
 view.startAnimation(ani);
 
@@ -376,21 +376,21 @@ view.startAnimation(ani);
 
 TranslateAnimation ani =
 
-    // 절대 좌표를 사용합니다.
+    // 절대 좌표를 사용합니다.
 
-    new TranslateAnimation(float fromXDelta, float toXDelta, float fromYDelta, float toYDelta);
+    new TranslateAnimation(float fromXDelta, float toXDelta, float fromYDelta, float toYDelta);
 
-    // Type에 사용되는 것은 아래와 같습니다.
+    // Type에 사용되는 것은 아래와 같습니다.
 
-    // Animation.ABSOLUTE, Animation.RELATIVE\_TO\_SELF, Animation.RELATIVE\_TO\_PARENT
+    // Animation.ABSOLUTE, Animation.RELATIVE\_TO\_SELF, Animation.RELATIVE\_TO\_PARENT
 
-    // Value에는 Type이 absolute일 때 scale되는 이미지의 절대 좌표이가 사용되고
+    // Value에는 Type이 absolute일 때 scale되는 이미지의 절대 좌표이가 사용되고
 
-    // 나머지 Type에서는 0.0(0%) ~ 1.0(100%)의 값을 사용하는 퍼센트를 사용합니다.
+    // 나머지 Type에서는 0.0(0%) ~ 1.0(100%)의 값을 사용하는 퍼센트를 사용합니다.
 
-    new TranslateAnimation(int fromXType, float fromXValue, int toXType, float toXValue,
+    new TranslateAnimation(int fromXType, float fromXValue, int toXType, float toXValue,
 
-                                       int fromYType, float fromYValue, int toYType, float toYValue);
+                                       int fromYType, float fromYValue, int toYType, float toYValue);
 
 view.startAnimation(ani);
 
@@ -398,27 +398,27 @@ view.startAnimation(ani);
 
 RotateAnimation ani =
 
-    // 기본 중심점은 (0, 0) 입니다.
+    // 기본 중심점은 (0, 0) 입니다.
 
-    new RotateAnimation (float fromDegrees, float toDegrees);
+    new RotateAnimation (float fromDegrees, float toDegrees);
 
-    // 중심점은 animation되는 이미지의 절대 좌표를 사용합니다.
+    // 중심점은 animation되는 이미지의 절대 좌표를 사용합니다.
 
-    // x = 0 이면 left edge, y = 0이면 top edge 를 가리킵니다.
+    // x = 0 이면 left edge, y = 0이면 top edge 를 가리킵니다.
 
-    new RotateAnimation (float fromDegrees, float toDegrees, float pivotX, float pivotY);
+    new RotateAnimation (float fromDegrees, float toDegrees, float pivotX, float pivotY);
 
-    // Type에 사용되는 것은 아래와 같습니다.
+    // Type에 사용되는 것은 아래와 같습니다.
 
-    // Animation.ABSOLUTE, Animation.RELATIVE\_TO\_SELF, Animation.RELATIVE\_TO\_PARENT
+    // Animation.ABSOLUTE, Animation.RELATIVE\_TO\_SELF, Animation.RELATIVE\_TO\_PARENT
 
-    // Value에는 Type이 absolute일 때 scale되는 이미지의 절대 좌표이가 사용되고
+    // Value에는 Type이 absolute일 때 scale되는 이미지의 절대 좌표이가 사용되고
 
-    // 나머지 Type에서는 0.0(0%) ~ 1.0(100%)의 값을 사용하는 퍼센트를 사용합니다.
+    // 나머지 Type에서는 0.0(0%) ~ 1.0(100%)의 값을 사용하는 퍼센트를 사용합니다.
 
-    new RotateAnimation (float fromDegrees, float toDegrees,
+    new RotateAnimation (float fromDegrees, float toDegrees,
 
-                                int pivotXType, float pivotXValue, int pivotYType, float pivotYValue);
+                                int pivotXType, float pivotXValue, int pivotYType, float pivotYValue);
 
 view.startAnimation(ani);
 
@@ -444,19 +444,19 @@ ani.setAnimationListener(new Animation.AnimationListener() {
 
 public void onAnimationStart(Animation animation) {
 
-    // Auto-generated method stub
+    // Auto-generated method stub
 
 }
 
 public void onAnimationEnd(Animation animation) {
 
-    // Auto-generated method stub
+    // Auto-generated method stub
 
 }
 
 public void onAnimationRepeat(Animation animation) {
 
-    // Auto-generated method stub
+    // Auto-generated method stub
 
 }
 

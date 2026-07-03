@@ -15,7 +15,7 @@ original_url: "https://itmir.tistory.com/114"
 관리자 메뉴에 들어가서 HTML/CSS 편집 - 파일 업로드를 한다음 아래 첨부파일을 풀어 모두 업로드 해주세요
 
 
- 그다음 크롬등의 브라우저로 들어가서 마우스 오른쪽 - 새 탭에서 링크 열기를 클릭해 주세요
+ 그다음 크롬등의 브라우저로 들어가서 마우스 오른쪽 - 새 탭에서 링크 열기를 클릭해 주세요
 
 ![](./images/캡쳐.jpg)
 
@@ -35,7 +35,7 @@ original_url: "https://itmir.tistory.com/114"
 <A onmouseover='img4.src="http://cfs.tistory.com/custom/blog/000/0000000/skin/images/bmr-200.jpg"' onmouseout='img4.src="http://cfs.tistory.com/custom/blog/000/0000000/skin/images/bmr-200\_o.jpg"' href="http://v.daum.net/user/plus?blogurl=http://블로그주소.tistory.com" target=blank><IMG name=img4 src="http://cfs.tistory.com/custom/blog/000/0000000/skin/images/bmr-200\_o.jpg"></A>
 ```
 
-/000/0000000/에 자신의 블로그 코드를 넣어 주시면 되고 블로그주소에 자신의 블로그 주소를 기입해 주시면 됩니다
+/000/0000000/에 자신의 블로그 코드를 넣어 주시면 되고 블로그주소에 자신의 블로그 주소를 기입해 주시면 됩니다
 
 
 이제 플러그인 설정에 들어간다음 배너출력을 활성화 해주세요

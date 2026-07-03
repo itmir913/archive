@@ -3,12 +3,12 @@ title: "리나로(linaro) 툴체인으로 빌드하기"
 date: "2014-01-20T19:04:25+09:00"
 category: "Android/Kernel"
 tags: []
-description: "일반적으로 커널 컴파일(빌드)시 사용되는 arm-eabi-4.6 툴체인외 arm기기에 최적화 되어 있다고 알려진"
+description: "일반적으로 커널 컴파일(빌드)시 사용되는 arm-eabi-4.6 툴체인외 arm기기에 최적화 되어 있다고 알려진"
 draft: false
 original_url: "https://itmir.tistory.com/439"
 ---
 
-일반적으로 커널 컴파일(빌드)시 사용되는 arm-eabi-4.6 툴체인외 arm기기에 최적화 되어 있다고 알려진
+일반적으로 커널 컴파일(빌드)시 사용되는 arm-eabi-4.6 툴체인외 arm기기에 최적화 되어 있다고 알려진
 
 linaro툴체인을 이용하여 빌드하는 방법입니다.
 
@@ -40,7 +40,7 @@ linaro툴체인을 이용하여 빌드하는 방법입니다.
 
 **2. Linaro툴체인 설치하기**
 
-이전글 : [[Kernel] - 커널 컴파일을 위한 기본 설정 구축하기](/archive/itmir/2013/51)
+이전글 : [[Kernel] - 커널 컴파일을 위한 기본 설정 구축하기](/archive/itmir/2013/51)
 
 에서 arm-eabi툴체인을 설치하지 말고 linaro툴체인을 설치하면 됩니다.
 
@@ -70,55 +70,55 @@ error: variable 'c' set but not used [-Werror=unused-but-set-variable]
 
 cc1: all warnings being treated as errors
 
-이런 오류가 발생할겁니다. (아니면 와우~~~하면 되고요 ㅋㅋ)
+이런 오류가 발생할겁니다. (아니면 와우~~~하면 되고요 ㅋㅋ)
 
 이제 kernel폴더 최상위에 있는 MakeFile을 열어주세요.
 
 그다음 KBUILD\_CFLAGS를 검색해 주세요
 
-KBUILD\_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
+KBUILD\_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 
-  -Werror \
+  -Werror \
 
-  -fno-strict-aliasing -fno-common \
+  -fno-strict-aliasing -fno-common \
 
-  -Werror-implicit-function-declaration \
+  -Werror-implicit-function-declaration \
 
-  -Wno-format-security \
+  -Wno-format-security \
 
-  -fno-delete-null-pointer-checks
+  -fno-delete-null-pointer-checks
 
 위 문구를 아래로 바꿔주세요
 
-KBUILD\_CFLAGS   := -Wundef -Wstrict-prototypes -Wno-trigraphs \
+KBUILD\_CFLAGS   := -Wundef -Wstrict-prototypes -Wno-trigraphs \
 
-  -Werror \
+  -Werror \
 
-  -fno-strict-aliasing -fno-common \
+  -fno-strict-aliasing -fno-common \
 
-  -Werror-implicit-function-declaration \
+  -Werror-implicit-function-declaration \
 
-  -Wno-format-security \
+  -Wno-format-security \
 
-  -Wno-unused-but-set-variable \
+  -Wno-unused-but-set-variable \
 
-  -fno-delete-null-pointer-checks
+  -fno-delete-null-pointer-checks
 
 수정된 부분 강조
 
-KBUILD\_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
+KBUILD\_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 
-  -Werror \
+  -Werror \
 
-  -fno-strict-aliasing -fno-common \
+  -fno-strict-aliasing -fno-common \
 
-  -Werror-implicit-function-declaration \
+  -Werror-implicit-function-declaration \
 
-  -Wno-format-security \
+  -Wno-format-security \
 
 **-Wno-unused-but-set-variable \**
 
-  -fno-delete-null-pointer-checks
+  -fno-delete-null-pointer-checks
 
 만약 MakeFile에서 "CROSS\_COMPILE"이라고 검색했을때 있다면,
 
@@ -134,23 +134,23 @@ $(call cc-disable-warning,(Warning이름),)
 
 $(call cc-disable-warning,uninitialized,)
 
-이것을 MakeFile의 KBUILD\_CFLAGS에 넣어주세요.
+이것을 MakeFile의 KBUILD\_CFLAGS에 넣어주세요.
 
 예를 들면 아래와 같습니다.
 
-KBUILD\_CFLAGS   := -Wundef -Wstrict-prototypes -Wno-trigraphs \
+KBUILD\_CFLAGS   := -Wundef -Wstrict-prototypes -Wno-trigraphs \
 
-  -Werror \
+  -Werror \
 
-  -fno-strict-aliasing -fno-common \
+  -fno-strict-aliasing -fno-common \
 
-  -Werror-implicit-function-declaration \
+  -Werror-implicit-function-declaration \
 
-  -Wno-format-security \
+  -Wno-format-security \
 
-  -Wno-unused-but-set-variable \
+  -Wno-unused-but-set-variable \
 
-  -fno-delete-null-pointer-checks **\**
+  -fno-delete-null-pointer-checks **\**
 
 **$(call cc-disable-warning,uninitialized,)**
 
@@ -158,7 +158,7 @@ In function 's5ptvfb\_set\_par':
 
 error: lvalue required as left operand of assignment
 
-문제된 파일 s5p\_stda\_grp.c을 열어주세요.
+문제된 파일 s5p\_stda\_grp.c을 열어주세요.
 
 ((struct fb\_var\_screeninfo) (s5ptv\_status.fb->var)).bits\_per\_pixel = ((struct fb\_var\_screeninfo) (fb->var)).bits\_per\_pixel;
 

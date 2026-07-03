@@ -94,11 +94,11 @@ $ sudo apt-get install oracle-java6-installer
 
 위 박스안 명령어를 입력하시면 자동으로 파일을 받아 java가 설치됩니다
 
-(출처 : http://thedaneshproject.com/posts/how-to-install-java-7-on-ubuntu-12-04-lts/, thanks for hPa)
+(출처 : http://thedaneshproject.com/posts/how-to-install-java-7-on-ubuntu-12-04-lts/, thanks for hPa)
 
 설치가 완료된 다음 터미널에 java -version이라 입력할경우 java 버전이 나오면 정상입니다
 
-**(2) Android SDK 설치**
+**(2) Android SDK 설치**
 
 adb와 fastboot를 설치하면 우분투에서 바로 스마트폰의 상태를 확인할 수도 있고 adb명령어가 쓸만한게 많습니다
 
@@ -114,7 +114,7 @@ adb와 fastboot를 설치하면 우분투에서 바로 스마트폰의 상태를
 
 ![](./images/1.png)
 
-SDK Tools Only박스에서 Linux 32 & 64-bit를 받아주시면 됩니다
+SDK Tools Only박스에서 Linux 32 & 64-bit를 받아주시면 됩니다
 
 다운이 완료되면 자신의 홈 폴더, 즉 ~/에 압축해제 해주세요
 
@@ -140,13 +140,13 @@ android를 입력한다음에는 SDK manager메뉴가 나타나야 합니다
 
 전부 설치하시면 시간도 오래걸리고 용량도 많이 잡아먹습니다 (빌드하면 용량이 부족할수도 있으므로)
 
-설치가 다 되면 platform-tools안에 adb와 fastboot등의 파일이 있을겁니다
+설치가 다 되면 platform-tools안에 adb와 fastboot등의 파일이 있을겁니다
 
 위 초록 박스의 명령어를 입력한후 터미널을 닫지 않으면 adb가 될겁니다
 
 하지만 새로 터미널을 닫을경우 adb가 안되는대 이때는 ~/.bashrc등에 SDK를 PATH에 추가해 주시면 됩니다
 
-**(3) 빌드에 필요한 패키지 설치**
+**(3) 빌드에 필요한 패키지 설치**
 
 이제는 터미널을 사용하여 패키지를 설치해 봅시다
 
@@ -160,13 +160,13 @@ $ sudo apt-get install git-core
 
 $ sudo apt-get install git-core gnupg flex bison gperf build-essential \
 
-  zip curl zlib1g-dev libc6-dev lib32ncurses5-dev ia32-libs \
+  zip curl zlib1g-dev libc6-dev lib32ncurses5-dev ia32-libs \
 
-  x11proto-core-dev libx11-dev lib32readline5-dev lib32z-dev \
+  x11proto-core-dev libx11-dev lib32readline5-dev lib32z-dev \
 
-  libgl1-mesa-dev g++-multilib mingw32 tofrodos python-markdown \
+  libgl1-mesa-dev g++-multilib mingw32 tofrodos python-markdown \
 
-  libxml2-utils
+  libxml2-utils
 
 **11.10은 10.04구문 입력후 아래 구문을 또 입력해 주세요**
 
@@ -176,17 +176,17 @@ $ sudo ln -s /usr/lib/i386-linux-gnu/libX11.so.6 /usr/lib/i386-linux-gnu/libX11.
 
 $ sudo apt-get install git-core gnupg flex bison gperf build-essential \
 
-  zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev \
+  zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev \
 
-  libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386 \
+  libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386 \
 
-  libgl1-mesa-dev g++-multilib mingw32 openjdk-6-jdk tofrodos \
+  libgl1-mesa-dev g++-multilib mingw32 openjdk-6-jdk tofrodos \
 
-  python-markdown libxml2-utils xsltproc zlib1g-dev:i386
+  python-markdown libxml2-utils xsltproc zlib1g-dev:i386
 
 $ sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/i386-linux-gnu/libGL.so
 
-**(3) USB 드라이버 설치**
+**(3) USB 드라이버 설치**
 
 gksudo gedit /etc/udev/rules.d/51-android.rules
 
@@ -324,7 +324,7 @@ repo는 안드로이드의 소스를 받는대 필요한 파일 입니다
 
 $ mkdir ~/bin
 
-$ export PATH=~/bin:$PATH
+$ export PATH=~/bin:$PATH
 
 $ curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > ~/bin/repo
 
@@ -338,13 +338,13 @@ repo를 다운받는 주소가 변경되었습니다
 
 curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 
-안내 : http://stackoverflow.com/questions/19126603/android-source-repo-gpg-public-key-not-found
+안내 : http://stackoverflow.com/questions/19126603/android-source-repo-gpg-public-key-not-found
 
 **(5) Hosts를 수정하여 소스 다운중 오류를 줄임**
 
 $ gksudo gedit /etc/hosts
 
-이 명령어를 입력하신 다음 아래 회색 박스의 내용을 IPv4부분에 넣어주시면 됩니다
+이 명령어를 입력하신 다음 아래 회색 박스의 내용을 IPv4부분에 넣어주시면 됩니다
 
 #Google Source
 

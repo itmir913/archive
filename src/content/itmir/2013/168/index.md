@@ -55,7 +55,7 @@ CWM등의 커스텀 리커버리 & 루트 익스플로러등 시스탬에 접근
 
 이것이 첫번째 방법입니다
 
-이 방법은 음성 인식 기능이 지원되지 않는다 하네요 원본 게시글을 보시면 **VOICE SEARCH IS NOT WORKING**이 있습니다
+이 방법은 음성 인식 기능이 지원되지 않는다 하네요 원본 게시글을 보시면 **VOICE SEARCH IS NOT WORKING**이 있습니다
 
 그럼 두번째 방법을 설명드리겠습니다
 
@@ -73,13 +73,13 @@ CWM등의 커스텀 리커버리 & 루트 익스플로러등 시스탬에 접근
 
 zip분활압축하여 올려두었습니다
 
-원본 링크는 [Offline링크](http://www.mediafire.com/download.php?hsos53699wq2ttm) / [On](http://www.mediafire.com/download.php?g55mv3df79s6rez)[line링크](http://www.mediafire.com/download.php?g55mv3df79s6rez) 입니다
+원본 링크는 [Offline링크](http://www.mediafire.com/download.php?hsos53699wq2ttm) / [On](http://www.mediafire.com/download.php?g55mv3df79s6rez)[line링크](http://www.mediafire.com/download.php?g55mv3df79s6rez) 입니다
 
 이 파일을 받아 압축 풀으신다음 CWM리커버리에서 설치 해주시면 됩니다 ㅎㅎ
 
 그럼 ICS에서 구글 나우 기능을 재대로 사용하실수 있으실겁니다 ㅋ
 
-원본 XDA 게시글 : http://forum.xda-developers.com/showthread.php?t=1747224
+원본 XDA 게시글 : http://forum.xda-developers.com/showthread.php?t=1747224
 
 검정 배경의 구글 나우 버전
 
@@ -102,4 +102,4 @@ zip분활압축하여 올려두었습니다
 
 ICS기기에 구글 나우가 추가된것을 볼 수 있습니다 ㅋ
 
-이렇게 해서 ICS기기에 구글 나우 사용방법을 살펴보았습니다 ㅎㅎ
+이렇게 해서 ICS기기에 구글 나우 사용방법을 살펴보았습니다 ㅎㅎ

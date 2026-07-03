@@ -12,19 +12,19 @@ original_url: "https://itmir.tistory.com/526"
 
 오늘은 추석 전날이네요~ 모두 차 안막히고 빨리 가시기를..
 
-그래서 오늘은 FadingActionBar에 대해 알아보겠습니다
+그래서 오늘은 FadingActionBar에 대해 알아보겠습니다
 
-### 구글 마켓에서 찾은 FadingActionBar
+### 구글 마켓에서 찾은 FadingActionBar
 
 이게 뭔지 모르시는 분이 계실까봐 예시 사진을 가져왔어요
 
-구글 Play Store의 UI가 바로 FadingActionBar입니다
+구글 Play Store의 UI가 바로 FadingActionBar입니다
 
 ![](./images/마켓1.png)
-    
+    
 ![](./images/마켓2.png)
 
-아래로 스크롤을 내리면 액션바 부분이 불투명해집니다 이부분을 FadingActionBar으로 구현할수 있습니다
+아래로 스크롤을 내리면 액션바 부분이 불투명해집니다 이부분을 FadingActionBar으로 구현할수 있습니다
 
 ### 오픈소스 라이브러리 다운로드
 
@@ -36,7 +36,7 @@ https://github.com/ManuelPeinado/FadingActionBar
 
 [FadingActionBarLibrary.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/FadingActionBarLibrary.zip)
 
-gitbub에서 받으신경우 필수적으로 필요한 폴더는 library입니다
+gitbub에서 받으신경우 필수적으로 필요한 폴더는 library입니다
 
 ### 라이브러리 추가하기
 
@@ -44,7 +44,7 @@ FadingActionBar를 압축풀어보시면 .jar파일이 아닙니다
 
 어떻게 라이브러리에 추가해야 할까요?
 
-추가한 FadingActionBar 프로젝트 마우스 오른쪽 - Properties에 들어가 주세요
+추가한 FadingActionBar 프로젝트 마우스 오른쪽 - Properties에 들어가 주세요
 
 ![](./images/01-Properties.jpg)
 
@@ -54,15 +54,15 @@ FadingActionBar를 압축풀어보시면 .jar파일이 아닙니다
 
 ![](./images/02-isLibrary.png)
 
-이제 FadingActionBar를 추가하고자 하는 프로젝트로 돌아온다음 위에서는 is Library를 체크했지만 지금은 Add - (추가한 프로젝트)를 클릭합니다
+이제 FadingActionBar를 추가하고자 하는 프로젝트로 돌아온다음 위에서는 is Library를 체크했지만 지금은 Add - (추가한 프로젝트)를 클릭합니다
 
 ![](./images/03-라이브러리추가.png)
 
 ### 라이브러리 사용방법
 
-github에 함께 올라와있는 samples-stock폴더를 확인해 보시면 더 자세한 사용방법을 확인해 보실수 있습니다
+github에 함께 올라와있는 samples-stock폴더를 확인해 보시면 더 자세한 사용방법을 확인해 보실수 있습니다
 
-아래 apk파일은 samples-stock폴더를 빌드한 어플입니다
+아래 apk파일은 samples-stock폴더를 빌드한 어플입니다
 
 설치하신다음 살펴보시고 보시면 더 이해가 잘되실겁니다
 
@@ -83,7 +83,7 @@ helper.initActionBar(this);
 - headerLayout : 액션바의 헤더부분의 레이아웃을 설정합니다
 - contentLayout : 기존 레이아웃을 설정합니다
 
-기존에는 setContentView(R.layout.xxx)를 이용했지만 Fading을 이용하면 조금 방식이 달라진다는점을 확인해 볼수 있습니다
+기존에는 setContentView(R.layout.xxx)를 이용했지만 Fading을 이용하면 조금 방식이 달라진다는점을 확인해 볼수 있습니다
 
 사진으로 비교해 보겠습니다
 
@@ -95,11 +95,11 @@ helper.initActionBar(this);
 
 actionBarBackground는 리소스아이디(R.drawable.xx)를 받을수도 있고 그냥 이미지(Drawable)도 받을수 있습니다
 
-원하는 컬러가 있는대 이미지는 없다면 ColorDrawable를 이용해 보세요
+원하는 컬러가 있는대 이미지는 없다면 ColorDrawable를 이용해 보세요
 
 .actionBarBackground(new ColorDrawable(Color.parseColor("#ffffff")))
 
-또한 위 코드에는 없지만 parallax(true)이라는 속성도 있습니다
+또한 위 코드에는 없지만 parallax(true)이라는 속성도 있습니다
 
 ![](./images/parallax.png)
 
@@ -107,7 +107,7 @@ actionBarBackground는 리소스아이디(R.drawable.xx)를 받을수도 있고 
 
 기본은 true입니다
 
-이제 header.xml을 살펴보겠습니다
+이제 header.xml을 살펴보겠습니다
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -128,7 +128,7 @@ actionBarBackground는 리소스아이디(R.drawable.xx)를 받을수도 있고 
 
 마지막으로 contentLayout부분을 보시면 원래 레이아웃을 넣어주고 있습니다
 
-특이하게도 리스트뷰는 android:id="@android:id/list"((ListView) findViewById(android.R.id.list);)를 사용해야 됩니다
+특이하게도 리스트뷰는 android:id="@android:id/list"((ListView) findViewById(android.R.id.list);)를 사용해야 됩니다
 
 이부분도 이유를 정확하게 알고있는 부분이 아니므로.. 아시는분께서는 덧글로 남겨주시면 감사드리겠습니다
 

@@ -18,9 +18,9 @@ original_url: "https://itmir.tistory.com/613"
 
 ### 안내
 
-참고 java파일 : .activity.bap.star.BapStarActivity.java, class HttpTask
+참고 java파일 : .activity.bap.star.BapStarActivity.java, class HttpTask
 
-선행된 작업 : [[Development/App] - 구글 스프레드 시트를 데이터베이스로 사용하기 - 스크립트편](/archive/itmir/2015/598)
+선행된 작업 : [[Development/App] - 구글 스프레드 시트를 데이터베이스로 사용하기 - 스크립트편](/archive/itmir/2015/598)
 
 전 강좌의 작업을 모두 완료하신다음 얻어지는 url 경로를 저장하세요.
 
@@ -30,7 +30,7 @@ original_url: "https://itmir.tistory.com/613"
 
 ### 앱에서 HTTP POST를 보내는 소스
 
-바로 결론부터 말씀드리면 http post를 보내는 소스는 BapStarActivity.java파일의 class HttpTask의 doInBackground 메소드안에 들어있는 코드들 입니다.
+바로 결론부터 말씀드리면 http post를 보내는 소스는 BapStarActivity.java파일의 class HttpTask의 doInBackground 메소드안에 들어있는 코드들 입니다.
 
 ```java
 HttpPost postRequest = new HttpPost("URL");
@@ -60,7 +60,7 @@ nameValue.add(new BasicNameValuePair("NAME", VALUE));
 
 NAME 부분은 전 강좌에서 말씀드렸던 것 처럼 시트의 맨 첫번째 라인을 말합니다.
 
-VALUE 부분은 입력될 값들 입니다.
+VALUE 부분은 입력될 값들 입니다.
 
 예를 들어 보충 설명하겠습니다.
 
@@ -125,7 +125,7 @@ nameValue.add(new BasicNameValuePair("sheet\_name", "시트1"));
 
 저는 유지보수를 중요시하기 때문에 한 파일과 한 스크립트로 처리하기 위해 이런 방법을 사용했습니다.
 
-그래서 시트 이름을 넣어줘야 합니다.
+그래서 시트 이름을 넣어줘야 합니다.
 
 Vector<NameValuePair> nameValue = new Vector<>();
 
@@ -143,7 +143,7 @@ nameValue.add(new BasicNameValuePair("sheet\_name", "시트1"));
 >
 > sheet\_name만 바꿔서 post를 날려주면 됩니다.
 
-오류제보와 이 스크립트가 다른점은 스크립트에서 시트 이름이 정의되지 않고 HTTP POST로 넣어줄 시트 이름을 받아온다는 점입니다.
+오류제보와 이 스크립트가 다른점은 스크립트에서 시트 이름이 정의되지 않고 HTTP POST로 넣어줄 시트 이름을 받아온다는 점입니다.
 
 ### 앱에서 구현 방법
 
@@ -171,7 +171,7 @@ public void postStar(View v) {
 
 위 메소드는 전송! 버튼을 누르면 호출되는 메소드입니다.
 
-3번째 줄에서 가져오는 int값은 Spinner에서 가져오는데요.
+3번째 줄에서 가져오는 int값은 Spinner에서 가져오는데요.
 
 첫번째 Spinner는 점심, 두번재는 저녁으로 설정되어 있습니다.
 
@@ -196,7 +196,7 @@ public static boolean canPostStar(Context mContext, int type) {
 
 소스 코드는 위와 같습니다.
 
-다시 postStar(View v)메소드로 돌아와서,
+다시 postStar(View v)메소드로 돌아와서,
 
 6-7번째 줄에서 AsyncTask를 실행하는 모습입니다.
 
@@ -206,7 +206,7 @@ else 이하는 말 안해도 아실꺼라 믿습니다.
 
 (new HttpTask()).execute(String.valueOf(position), String.valueOf(rate), null);
 
-이부분은 position값과 rate값을 String으로 형 변환하여 execute메소드에 넣어주고 있는데요.
+이부분은 position값과 rate값을 String으로 형 변환하여 execute메소드에 넣어주고 있는데요.
 
 AsyncTask를 아신다면 바로 이해가 가능하고, 모르신다고 해도 값을 넣어준다 정도로 이해하시면 됩니다.
 
@@ -285,9 +285,9 @@ private class HttpTask extends AsyncTask<String, Void, Integer> {
 
 AsyncTask의 구조를 아신다면 쉽지만 모르시는 분들을 위해 설명드리면
 
-onPreExecute(), doInBackground(), onPostExecute()순으로 메소드가 실행됩니다.
+onPreExecute(), doInBackground(), onPostExecute()순으로 메소드가 실행됩니다.
 
-onPreExecute() 메소드에서는 전송중 알림을 띄워주는거니 패스, 마지막 onPostExecute() 메소드도 성공 실패 여부에 따라 알림을 띄워주는거니 맨 마지막 코드를 제외하면 전부 아실겁니다.
+onPreExecute() 메소드에서는 전송중 알림을 띄워주는거니 패스, 마지막 onPostExecute() 메소드도 성공 실패 여부에 따라 알림을 띄워주는거니 맨 마지막 코드를 제외하면 전부 아실겁니다.
 
 doInBackground() 메소드도 try-catch로 묶여있는 부분은 전부 위에서 반복된 내용입니다.
 
@@ -336,13 +336,13 @@ public static void todayPostStar(Context mContext, int type) {
 
 (좀 더 간단하게 시트의 내용을 가져올 수 있는 방법을 찾다가 안나와서 그냥 포기한 케이스)
 
-구글 스프레드 시트를 파싱하기 위해 자체 class를 만들고 (itmir.tistory.com.spreadsheets.GoogleSheetTask) 이를 또 상속받아 (extends GoogleSheetTask) 만든 class가 바로 BapStarActivity.java파일의 class getStarRateDownloadTask 입니다.
+구글 스프레드 시트를 파싱하기 위해 자체 class를 만들고 (itmir.tistory.com.spreadsheets.GoogleSheetTask) 이를 또 상속받아 (extends GoogleSheetTask) 만든 class가 바로 BapStarActivity.java파일의 class getStarRateDownloadTask 입니다.
 
 간단히 다음 강좌의 요약을 해드리면
 
 첫번째로 구글 스프레드 시트를 파싱해서 데이터 베이스로 저장합니다.
 
-맨 첫번째 라인(Timestamp, title, message같은거)이 Column이 됩니다.
+맨 첫번째 라인(Timestamp, title, message같은거)이 Column이 됩니다.
 
 그다음 db에 저장된 내용을 다시 가져오는 부분이 두번째 입니다.
 

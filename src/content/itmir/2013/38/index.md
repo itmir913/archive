@@ -58,7 +58,7 @@ Create a free account를 눌러 계정을 만드세요.
 
 ![](./images/6.png)
 
-저기 부분의 <https://github.com/itmir913/Mir-kernel.git>을 복사해 두세요~
+저기 부분의 <https://github.com/itmir913/Mir-kernel.git>을 복사해 두세요~
 
 이제 우분투(리눅스)가 필요합니다.
 
@@ -86,7 +86,7 @@ git을 설치합니다.
 
 이것은 이 폴더를 Github의 작업폴더로 사용하겠다는 뜻이 됩니다.
 
-그다음 (커널 소스등을 넣으신뒤) **git status** 을 입력해 주세요.
+그다음 (커널 소스등을 넣으신뒤) **git status** 을 입력해 주세요.
 
 현재 상태를 확인하게 됩니다
 
@@ -128,11 +128,11 @@ commit 하면 HEAD로 확정지어지게 됩니다.
 
 그럼 우리가 git에게 주소를 알려주어야 합니다.
 
-아까 복사해둔 <https://github.com/itmir913/Mir-kernel.git>을 가져와 주세요.
+아까 복사해둔 <https://github.com/itmir913/Mir-kernel.git>을 가져와 주세요.
 
 **git remote add origin (아까 복사해둔 주소)**
 
-이렇게 입력해주면 서버의 주소를 가지고 있는 origin이라는 remote를 생성하게 됩니다.
+이렇게 입력해주면 서버의 주소를 가지고 있는 origin이라는 remote를 생성하게 됩니다.
 
 예를 들면 제경우
 

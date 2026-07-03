@@ -18,7 +18,7 @@ original_url: "https://itmir.tistory.com/493"
 
 지난 버전과 크게 달라진점은 없지만 이모티콘을 쓰고싶으신 분께는...!
 
-[참고] 지난 버전
+[참고] 지난 버전
 
 [[Application] - [APP] Vega Secret UP (베가 시크릿 업) 키보드](/archive/itmir/2014/425)
 
@@ -39,13 +39,13 @@ original_url: "https://itmir.tistory.com/493"
 그래서 관련 설명을 삽입해뒀습니다
 
 ![](./images/Screenshot_2014-05-03-23-20-10.png)
-    
+    
 ![](./images/Screenshot_2014-05-03-23-20-26.png)
 
 키보드 종류와 테마에는 변함이 없습니다
 
 ![](./images/Screenshot_2014-05-03-23-22-00.png)
-    
+    
 ![](./images/Screenshot_2014-05-03-23-22-08.png)
 
 이번 업데이트때 젤리빈 버전에서 해결하지 못한 버그를 픽스하였습니다
@@ -55,7 +55,7 @@ original_url: "https://itmir.tistory.com/493"
 단 필기입력은 아직도 사용할 수 없습니다
 
 ![](./images/Screenshot_2014-05-03-23-23-05.png)
-    
+    
 ![](./images/Screenshot_2014-05-03-23-23-26.png)
 
 이렇게 이번 업데이트에서는 이모티콘이 추가되었습니다~

@@ -60,7 +60,7 @@ original_url: "https://itmir.tistory.com/676"
 
 현재 unlocker의 최신 버전은 3.0.3이다. 이 프로젝트의 README를 읽어보면 다음과 같이 쓰여있다.
 
-> Unlocker 3 is designed for VMware Workstation 11-15 and Player 7-15.
+> Unlocker 3 is designed for VMware Workstation 11-15 and Player 7-15.
 
 따라서 VMWare Player 16 버전이 설치되어 있다면, 지우고 15버전으로 다운그레이드 해야 한다.
 

@@ -3,14 +3,14 @@ title: "바이두(baidu) 2TB 클라우드 이용하기"
 date: "2013-09-29T12:48:59+09:00"
 category: "Computer & PC/Windows"
 tags: []
-description: "제목 : 바이두(baidu) 2TB 무료 대용량 클라우드 서비스 시작하기"
+description: "제목 : 바이두(baidu) 2TB 무료 대용량 클라우드 서비스 시작하기"
 draft: false
 original_url: "https://itmir.tistory.com/353"
 ---
 
-**제목 : 바이두(baidu) 2TB 무료 대용량 클라우드 서비스 시작하기**
+**제목 : 바이두(baidu) 2TB 무료 대용량 클라우드 서비스 시작하기**
 
-**출처 : <http://spapa1004.tistory.com/51>**
+**출처 : <http://spapa1004.tistory.com/51>**
 
 **안녕하세요. SPAPA입니다.**
 
@@ -24,17 +24,17 @@ original_url: "https://itmir.tistory.com/353"
 
 어제 뜬금없이 무료로 2테라로 공간이 늘어났더군요;; 텐센트를 의식한건가....;;
 
-아직 많이 사용해보지 않아 잘 모르겠지만 텐센트와 비교해보면 기능적인 부분에선 텐센트보다 우위인것같고,
+아직 많이 사용해보지 않아 잘 모르겠지만 텐센트와 비교해보면 기능적인 부분에선 텐센트보다 우위인것같고,
 
 개인적으로 모바일앱이나 PC클라이언트의 UI가 좀 촌스럽다고 느껴지네요 ㅋㅋ
 
 하지만 대부분의 리뷰들은 보면 바이두가 텐센트보다 속도면에선 훨씬 안정적이라고들 하는거같습니다.
 
-하지만 직접 이거저거 써보시고 비교들 해보시고 본인에게 맞는걸 쓰시면 될거같네요.
+하지만 직접 이거저거 써보시고 비교들 해보시고 본인에게 맞는걸 쓰시면 될거같네요.
 
-▶ 텐센트 10TB 클라우드서비스 : <http://spapa1004.tistory.com/49>
+▶ 텐센트 10TB 클라우드서비스 : <http://spapa1004.tistory.com/49>
 
-▶ 텐센트 10TB 클라우드서비스  한글화 : <http://spapa1004.tistory.com/50>
+▶ 텐센트 10TB 클라우드서비스  한글화 : <http://spapa1004.tistory.com/50>
 
 [임베드 콘텐츠: http://api.v.daum.net/widget3?nid=49817092](http://api.v.daum.net/widget3?nid=49817092)
 
@@ -58,7 +58,7 @@ E-mail과 비밀번호 인증코드만 입력하시고 "등록"을 클릭을 바
 
 ![](./images/image_1.jpg)
 
-<http://pan.baidu.com/>  이제 바이두의 클라우드 웹페이지로 이동하여 로그인하시면됩니다.
+<http://pan.baidu.com/>  이제 바이두의 클라우드 웹페이지로 이동하여 로그인하시면됩니다.
 
 ![](./images/image_2.jpg)
 
@@ -66,33 +66,33 @@ E-mail과 비밀번호 인증코드만 입력하시고 "등록"을 클릭을 바
 
 ![](./images/image_4.jpg)
 
-PC용 클라이언트 프로그램 : <http://bcscdn.baidu.com/netdisk/BaiduYunGuanjia_4.1.0.exe>
+PC용 클라이언트 프로그램 : <http://bcscdn.baidu.com/netdisk/BaiduYunGuanjia_4.1.0.exe>
 
-이제 2TB의 무료 공간을 받기 위해선 먼저 모바일기기에서 바이두클라우드 앱을 설치하셔야합니다.
+이제 2TB의 무료 공간을 받기 위해선 먼저 모바일기기에서 바이두클라우드 앱을 설치하셔야합니다.
 
 아래의 링크에서 받으시거나 모바일기기에서 QR코드를 스캔해서 받으시면 됩니다.
 
-모바일 앱 다운 : <http://bs.baidu.com/netdisk/BaiduYunSetup_web_2T.apk>
+모바일 앱 다운 : <http://bs.baidu.com/netdisk/BaiduYunSetup_web_2T.apk>
 
-QR코드 :       ![](./images/image_5.jpg)
+QR코드 :       ![](./images/image_5.jpg)
 
 모바일 앱을 기기에 설치하신 후에 위에서 등록한 계정으로 똑같이 로그인하시면되구요.
 
-이제 마지막으로 <http://yun.baidu.com/1t> 링크로 이동하여 무료수신 버튼을 누르시면 2TB의 무료 공간을 받을수 있습니다!
+이제 마지막으로 <http://yun.baidu.com/1t> 링크로 이동하여 무료수신 버튼을 누르시면 2TB의 무료 공간을 받을수 있습니다!
 
 모두들 성공적으로 2TB 받으셨나요? ^^ ㅋㅋ
 
 ![](./images/image_6.jpg)
 
-이상으로 "바이두(baidu) 클라우드"에 대한 간단한 포스팅을 마치도록 하겠습니다.
+이상으로 "바이두(baidu) 클라우드"에 대한 간단한 포스팅을 마치도록 하겠습니다.
 
 다음엔 바이두(Baidu)의 모바일 앱 한글화 버전을 올려드리겠습니다^^
 
 현재 90%정도 완성된거같네요...
 
-**제목 : 바이두(baidu) 2TB 무료 대용량 클라우드 서비스 모바일 앱 한글화.**
+**제목 : 바이두(baidu) 2TB 무료 대용량 클라우드 서비스 모바일 앱 한글화.**
 
-**출처 : <http://spapa1004.tistory.com/53>**
+**출처 : <http://spapa1004.tistory.com/53>**
 
 **바이두(baidu) 2TB 무료 대용량 클라우드 서비스 모바일 앱 한글화.**
 
@@ -102,9 +102,9 @@ QR코드 :       ![](./images/image_5.jpg)
 
 \* 클라우드 서비스 관련포스트
 
-텐센트 10TB 무료 대용량 클라우드 서비스  :  <http://spapa1004.tistory.com/49>
+텐센트 10TB 무료 대용량 클라우드 서비스  :  <http://spapa1004.tistory.com/49>
 
-텐센트 10TB 무료 대용량 클라우드 한글화 앱  :  <http://spapa1004.tistory.com/50>
+텐센트 10TB 무료 대용량 클라우드 한글화 앱  :  <http://spapa1004.tistory.com/50>
 
 **텐센트 클라우드에 이어 바이두 클라우드의 모바일앱까지 한글화 해봤습니다.**
 
@@ -114,7 +114,7 @@ QR코드 :       ![](./images/image_5.jpg)
 
 **대부분의 평을 보면 바이두가 텐센트보다 속도면에서 더 좋다고들 하시는데... 직접 둘다 써보시고 판단을....**
 
-바이두(baidu) 클라우드 소개 및 가입하기 : <http://spapa1004.tistory.com/51>
+바이두(baidu) 클라우드 소개 및 가입하기 : <http://spapa1004.tistory.com/51>
 
 **2TB가 아니고 7GB밖에 용량안된다는 분들이 꽤 계신거같은데;;;**
 
@@ -124,13 +124,13 @@ QR코드 :       ![](./images/image_5.jpg)
 
 **추천 한번씩 눌러주시면 큰 힘이 될거같습니다^^**
 
-![](./images/image_7.jpg) ![](./images/image_8.jpg) ![](./images/image_9.jpg)
+![](./images/image_7.jpg) ![](./images/image_8.jpg) ![](./images/image_9.jpg)
 
-![](./images/image_10.jpg) ![](./images/image_11.jpg) ![](./images/image_12.jpg)
+![](./images/image_10.jpg) ![](./images/image_11.jpg) ![](./images/image_12.jpg)
 
-![](./images/image_13.jpg) ![](./images/image_14.jpg) ![](./images/image_15.jpg)
+![](./images/image_13.jpg) ![](./images/image_14.jpg) ![](./images/image_15.jpg)
 
-**바이두 클라우드 한글화 앱 다운로드 :   [BaiduCloud(SPAPA).apk](http://spapa1004.tistory.com/attachment/cfile5.uf@2453A247522E884834A3E7.apk)**
+**바이두 클라우드 한글화 앱 다운로드 :   [BaiduCloud(SPAPA).apk](http://spapa1004.tistory.com/attachment/cfile5.uf@2453A247522E884834A3E7.apk)**
 
 ~~BaiduCloud\_fix(SPAPA).apk~~ *(파일 없음)*
 
@@ -140,17 +140,17 @@ QR코드 :       ![](./images/image_5.jpg)
 
 **한글화앱과 한글화된 PC프로그램이면 쓰기 참 편하겠네요^^**
 
-**이 자료는 다른곳에서의 직접적인 공유를 절대 금지합니다.**
+**이 자료는 다른곳에서의 직접적인 공유를 절대 금지합니다.**
 
-**제목 : 바이두 클라우드 한글화 + 추가 내용**
+**제목 : 바이두 클라우드 한글화 + 추가 내용**
 
-**출처 : <http://w3tech.tistory.com/187>**
+**출처 : <http://w3tech.tistory.com/187>**
 
 바이두 클라우드 한글화 작업했습니다.
 
-(+ 하는김에 AHK로 패치 프로그램을 만들었습니다.<http://w3tech.tistory.com/189> )
+(+ 하는김에 AHK로 패치 프로그램을 만들었습니다.<http://w3tech.tistory.com/189> )
 
-<http://w3tech.tistory.com/189>  ← 이 포스트에 최근 번역 수정한 파일이 있습니다. ( 공유관련 미번역된것 번역 )
+<http://w3tech.tistory.com/189>  ← 이 포스트에 최근 번역 수정한 파일이 있습니다. ( 공유관련 미번역된것 번역 )
 
 본인은 중국어를 하나도 모르며 오로지 구글 번역 사이트를 이용해서 작업했습니다.
 
@@ -285,11 +285,11 @@ C:\Program Files\baidu\BaiduYunGuanjia
 
 **제목 : 바이두 클라우드 한국어 패치 프로그램 AHK로 만들기**
 
-**출처 : <http://w3tech.tistory.com/189>**
+**출처 : <http://w3tech.tistory.com/189>**
 
 안녕하세요.
 
-이번엔 AHK로 바이두 클라우드의 간단한 한국어 패치 작업을 해주는 프로그램을 만들어봤습니다.
+이번엔 AHK로 바이두 클라우드의 간단한 한국어 패치 작업을 해주는 프로그램을 만들어봤습니다.
 
 요약해서 말하자면 단순한 파일 복사 프로그램입니다.
 
@@ -325,7 +325,7 @@ C:\Program Files\baidu\BaiduYunGuanjia
 
 ## [바이두 클라우드 서비스 모바일 앱 업데이트버전(5.1.1) 한글화](http://spapa1004.tistory.com/96)
 
-[일반 자료](http://spapa1004.tistory.com/category/%EC%9D%BC%EB%B0%98%20%EC%9E%90%EB%A3%8C) 2013/10/28 09:42 Posted by Spapa™
+[일반 자료](http://spapa1004.tistory.com/category/%EC%9D%BC%EB%B0%98%20%EC%9E%90%EB%A3%8C) 2013/10/28 09:42 Posted by Spapa™
 
 **바이두 클라우드 서비스 모바일 앱 업데이트버전(5.1.1) 한글화**
 
@@ -335,7 +335,7 @@ C:\Program Files\baidu\BaiduYunGuanjia
 
 **업데이트 버전으로 다시 한글화파일을 배포합니다.**
 
-![](./images/image_16.jpg) ![](./images/image_17.jpg) ![](./images/image_18.jpg)
+![](./images/image_16.jpg) ![](./images/image_17.jpg) ![](./images/image_18.jpg)
 
 \* 업데이트 로그는 다음과 같습니다. 이번 업데이트에서 기능상의 별다른 변화는 없는듯하고,
 
@@ -343,17 +343,17 @@ C:\Program Files\baidu\BaiduYunGuanjia
 
 ![](./images/image_19.jpg)
 
-**업데이트버전(5.1.1) 한글화 앱 :**
+**업데이트버전(5.1.1) 한글화 앱 :**
 
 ~~BaiduCloud\_5.1.1(SPAPA).apk~~ *(파일 없음)*
 
 **\* 대용량 클라우드 서비스**
 
-**바이두 무료 대용량 클라우드 서비소개 :  <http://spapa1004.tistory.com/51>**
+**바이두 무료 대용량 클라우드 서비소개 :  <http://spapa1004.tistory.com/51>**
 
-**퀴우360 무료 대용량 클라우드 서비스소개 :  <http://spapa1004.tistory.com/83>**
+**퀴우360 무료 대용량 클라우드 서비스소개 :  <http://spapa1004.tistory.com/83>**
 
-**텐센트 무료 대용량 클라우드 서비스소개 :  <http://spapa1004.tistory.com/49>**
+**텐센트 무료 대용량 클라우드 서비스소개 :  <http://spapa1004.tistory.com/49>**
 
 **이자료는 다른곳에서의 직접적인 공유를 금지합니다.**
 

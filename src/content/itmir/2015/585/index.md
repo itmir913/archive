@@ -3,7 +3,7 @@ title: "Windows 10 업그레이드 예약창이 안떠서..."
 date: "2015-07-12T16:10:33+09:00"
 category: "Computer & PC"
 tags: []
-description: "벌써 Windows 10 정식 출시일인 7월 29일이 2주하고 조금 더 남았습니다."
+description: "벌써 Windows 10 정식 출시일인 7월 29일이 2주하고 조금 더 남았습니다."
 draft: false
 original_url: "https://itmir.tistory.com/585"
 ---
@@ -12,7 +12,7 @@ original_url: "https://itmir.tistory.com/585"
 
 http://www.gamespot.com/articles/games-bought-on-gog-will-work-with-windows-10-on-d/1100-6428730/
 
-벌써 Windows 10 정식 출시일인 7월 29일이 2주하고 조금 더 남았습니다.
+벌써 Windows 10 정식 출시일인 7월 29일이 2주하고 조금 더 남았습니다.
 
 원래 그냥 제 태블릿은 Windows 8.1 그대로 쓸려고 하다가 방학도 다가오고 그래서 업데이트 예약을 해보려고 시도했습니다.
 
@@ -36,7 +36,7 @@ http://www.microsoft.com/ko-kr/windows/windows-10-upgrade
 
 SSD용량도 적어졌고 그래서 오랜만에 시원하게 초기화를 했습니다.
 
-그다음 사용자 설정때 Wi-Fi 연결한다음 Windows Update를 자동 설치(권장)으로 설정했습니다.
+그다음 사용자 설정때 Wi-Fi 연결한다음 Windows Update를 자동 설치(권장)으로 설정했습니다.
 
 그러니까 Windows 10 예약 화면이 뜨네요 ㅋㅋ..
 

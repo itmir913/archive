@@ -8,7 +8,7 @@ draft: false
 original_url: "https://itmir.tistory.com/525"
 ---
 
-Dropdown, FixedTabs + Swipe, Scroll Tab 3개의 예제를 만들었습니다
+Dropdown, FixedTabs + Swipe, Scroll Tab 3개의 예제를 만들었습니다
 
 저번에 탭관련 강좌를 쓴적이 있습니다
 

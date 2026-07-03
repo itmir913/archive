@@ -18,13 +18,13 @@ original_url: "https://itmir.tistory.com/288"
 
 이번에 네타냥님의 도움으로 이 문제를 해결하게 되어 한번 글을 올려볼까 하는대요 ㅎ
 
-제 글실력이 부족하여 못알아 들으신경우 <http://blog.naver.com/liar1938/30173022348>으로 가시면 더욱 자세하게 아실수 있으실겁니다 ㅎㅎ
+제 글실력이 부족하여 못알아 들으신경우 <http://blog.naver.com/liar1938/30173022348>으로 가시면 더욱 자세하게 아실수 있으실겁니다 ㅎㅎ
 
 으아아아아아 컴이 렉걸렸어요 ;;
 
 왜 문제가 발생하느냐...
 
-기기의 화면을 전환할때는 onDestroy()와 onCreate()가 호출되면서 바뀐 화면이 화면에 나타납니다
+기기의 화면을 전환할때는 onDestroy()와 onCreate()가 호출되면서 바뀐 화면이 화면에 나타납니다
 
 그런대 이때 모든 Activity의 필드, 변수가 초기화 되는대요
 
@@ -54,15 +54,15 @@ android:configChanges="keyboardHidden|orientation|screenSize"
 
 을 추가해 주셔야만 합니다
 
-관련 API입니다 (출처: <http://developer.android.com/guide/topics/manifest/activity-element.html>, http://blog.naver.com/liar1938/30173022348)
+관련 API입니다 (출처: <http://developer.android.com/guide/topics/manifest/activity-element.html>, http://blog.naver.com/liar1938/30173022348)
 
 ![](./images/orientation.png)
 
-직역하자면 target API 버전이 13이상이라면 android:configChanges에 screenSize도 추가해 주라네요..
+직역하자면 target API 버전이 13이상이라면 android:configChanges에 screenSize도 추가해 주라네요..
 
 아오... 제 머리가 안돌아가서 글 인용하겠습니다...
 
-> 'android:configChanges' 속성은 화면전환시 자동으로 onDstroy()와 onCreate()를 호출하지 않고 onConfigurationChanged()  메소드 호출하여 내가 원하는 내용으로 환경 설정을 하겠다고 안드로이드에게 알려줍니다. 네, 이렇게되면 Activity를 재생성하지 않아도 되는거죠. ^^ 화면회전이 생길 때, 안드로이드 시스템이 아니라 액티비티 내부에서 직접 이벤트를 관리하게 됩니다.
+> 'android:configChanges' 속성은 화면전환시 자동으로 onDstroy()와 onCreate()를 호출하지 않고 onConfigurationChanged()  메소드 호출하여 내가 원하는 내용으로 환경 설정을 하겠다고 안드로이드에게 알려줍니다. 네, 이렇게되면 Activity를 재생성하지 않아도 되는거죠. ^^ 화면회전이 생길 때, 안드로이드 시스템이 아니라 액티비티 내부에서 직접 이벤트를 관리하게 됩니다.
 >
 > 그런데 orientation 환경 변화는 이해가 가는데 keyboardHidden 값은 왜 주는 걸까요?
 >
@@ -89,7 +89,7 @@ public void onConfigurationChanged(Configuration newConfig) {
 }
 ```
 
-만약 화면 전환시 알림을 뜨게 하고 싶다면
+만약 화면 전환시 알림을 뜨게 하고 싶다면
 
 ```java
 if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE)

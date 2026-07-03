@@ -24,7 +24,7 @@ original_url: "https://itmir.tistory.com/489"
 
 점차 인앱 결제가 대세가 되고 있는데요.
 
-그런대 이 인앱 결제 방식도 크랙할 수는 있습니다.
+그런대 이 인앱 결제 방식도 크랙할 수는 있습니다.
 
 먼저 인앱 결제 말고 언락커 방식의 어플의 크랙방법을 알아볼께요.
 
@@ -66,7 +66,7 @@ lite버전은 pro key 어플이 설치되었을경우 full버전으로 변경되
 
 언락커를 확인하는 방법은 몇 가지 있겠지만 대표적으로 패키지 명을 확인해서 기기내 A 패키지명을 가진 어플이 존재하는가? 를 검사하는 경우가 있습니다.
 
-이건 가장 쉬운 경우고요.
+이건 가장 쉬운 경우고요.
 
 언락커를 깔고 진짜 구매한게 맞는지 검증 과정을 거치는 경우가 가장 흔한 케이스가 되겠습니다.
 
@@ -78,35 +78,35 @@ lite버전은 pro key 어플이 설치되었을경우 full버전으로 변경되
 
 if (isUnlockerInstalled("com.lee.tistory.com")) {
 
-    Toast.makeText(this, "설치됨", Toast.LENGTH\_LONG).show();
+    Toast.makeText(this, "설치됨", Toast.LENGTH\_LONG).show();
 
 } else {
 
-    Toast.makeText(this, "설치되지 않음", Toast.LENGTH\_LONG).show();
+    Toast.makeText(this, "설치되지 않음", Toast.LENGTH\_LONG).show();
 
 }
 
 private boolean isUnlockerInstalled(String unlockerPackageName) {
 
-    PackageManager pm = getPackageManager();
+    PackageManager pm = getPackageManager();
 
-    try {
+    try {
 
-        pm.getApplicationInfo(unlockerPackageName,
+        pm.getApplicationInfo(unlockerPackageName,
 
-        PackageManager.GET\_META\_DATA);
+        PackageManager.GET\_META\_DATA);
 
-        return true;
+        return true;
 
-    } catch (NameNotFoundException e) {
+    } catch (NameNotFoundException e) {
 
-        return false;
+        return false;
 
-    }
+    }
 
 }
 
-onCreate() 메소드 안에서 if문을 통해 isUnlockerInstalled라는 메소드를 호출합니다.
+onCreate() 메소드 안에서 if문을 통해 isUnlockerInstalled라는 메소드를 호출합니다.
 
 저 try-catch문안에서 패키지가 설치된 게 확인되면 true반환, 만약 패키지가 없을경우 catch로 넘어와서 false가 반환됩니다.
 
@@ -116,107 +116,107 @@ onCreate() 메소드 안에서 if문을 통해 isUnlockerInstalled라는 메소
 
 .method protected onCreate(Landroid/os/Bundle;)V
 
-    // 생략
+    // 생략
 
-    .line 17
+    .line 17
 
-    const-string v0, "com.lee.tistory.com"
+    const-string v0, "com.lee.tistory.com"
 
-    // 이 아래 코드가 언락커를 확인하는 메소드를 실행하는 부분입니다.
+    // 이 아래 코드가 언락커를 확인하는 메소드를 실행하는 부분입니다.
 
-    invoke-direct {p0, v0}, Lcom/example/exampleunlocker/MainActivity;->**isUnlockerInstalled**(Ljava/lang/String;)Z
+    invoke-direct {p0, v0}, Lcom/example/exampleunlocker/MainActivity;->**isUnlockerInstalled**(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v0
 
-    // v0, 즉 반환값이 0(false)일경우 아래 설치됨 부분을 건너 뜁니다.
+    // v0, 즉 반환값이 0(false)일경우 아래 설치됨 부분을 건너 뜁니다.
 
-    if-eqz v0, :cond\_1b
+    if-eqz v0, :cond\_1b
 
-    .line 18
+    .line 18
 
-    const-string v0, "설치됨"
+    const-string v0, "설치됨"
 
-    invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
-    move-result-object v0
+    move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 22
+    .line 22
 
-    :goto\_1a
+    :goto\_1a
 
-    return-void
+    return-void
 
-    .line 20
+    .line 20
 
-    :cond\_1b
+    :cond\_1b
 
-    const-string v0, "설치되지 않음"
+    const-string v0, "설치되지 않음"
 
-    invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
-    move-result-object v0
+    move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    goto :goto\_1a
+    goto :goto\_1a
 
 .end method
 
 .method private isUnlockerInstalled(Ljava/lang/String;)Z
 
-    .registers 5
+    .registers 5
 
-    .param p1, "unlockerPackageName"    # Ljava/lang/String;
+    .param p1, "unlockerPackageName"    # Ljava/lang/String;
 
-    .prologue
+    .prologue
 
-    .line 32
+    .line 32
 
-    invoke-virtual {p0}, Lcom/example/exampleunlocker/MainActivity;->getPackageManager()Landroid/content/pm/PackageManager;
+    invoke-virtual {p0}, Lcom/example/exampleunlocker/MainActivity;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    move-result-object v1
+    move-result-object v1
 
-    .line 35
+    .line 35
 
-    .local v1, "pm":Landroid/content/pm/PackageManager;
+    .local v1, "pm":Landroid/content/pm/PackageManager;
 
-    const/16 v2, 0x80
+    const/16 v2, 0x80
 
-    .line 34
+    .line 34
 
-    :try\_start\_6
+    :try\_start\_6
 
-    invoke-virtual {v1, p1, v2}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
+    invoke-virtual {v1, p1, v2}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
 
-    :try\_end\_9
+    :try\_end\_9
 
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try\_start\_6 .. :try\_end\_9} :catch\_b
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try\_start\_6 .. :try\_end\_9} :catch\_b
 
 .line 37
 
-    const/4 v2, 0x1
+    const/4 v2, 0x1
 
 .line 39
 
-    :goto\_a
+    :goto\_a
 
-    return v2
+    return v2
 
-    .line 38
+    .line 38
 
-    :catch\_b
+    :catch\_b
 
-    move-exception v0
+    move-exception v0
 
-    .line 39
+    .line 39
 
-    .local v0, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
+    .local v0, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
 
 const/4 v2, 0x0
 
-    goto :goto\_a
+    goto :goto\_a
 
 .end method
 
@@ -230,59 +230,59 @@ try{ } 부분에서 오류가 날 경우 catch로 넘어온다는건 java 기초
 
 .method private isUnlockerInstalled(Ljava/lang/String;)Z
 
-    .registers 5
+    .registers 5
 
-    .param p1, "unlockerPackageName"    # Ljava/lang/String;
+    .param p1, "unlockerPackageName"    # Ljava/lang/String;
 
-    .prologue
+    .prologue
 
-    .line 32
+    .line 32
 
-    invoke-virtual {p0}, Lcom/example/exampleunlocker/MainActivity;->getPackageManager()Landroid/content/pm/PackageManager;
+    invoke-virtual {p0}, Lcom/example/exampleunlocker/MainActivity;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    move-result-object v1
+    move-result-object v1
 
-    .line 35
+    .line 35
 
-    .local v1, "pm":Landroid/content/pm/PackageManager;
+    .local v1, "pm":Landroid/content/pm/PackageManager;
 
-    const/16 v2, 0x80
+    const/16 v2, 0x80
 
-    .line 34
+    .line 34
 
-    :try\_start\_6
+    :try\_start\_6
 
-    invoke-virtual {v1, p1, v2}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
+    invoke-virtual {v1, p1, v2}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
 
-    :try\_end\_9
+    :try\_end\_9
 
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try\_start\_6 .. :try\_end\_9} :catch\_b
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try\_start\_6 .. :try\_end\_9} :catch\_b
 
-    .line 37
+    .line 37
 
-    const/4 v2, 0x1
+    const/4 v2, 0x1
 
-    .line 39
+    .line 39
 
-    :goto\_a
+    :goto\_a
 
 const/4 v2, 0x1
 
-    return v2
+    return v2
 
-    .line 38
+    .line 38
 
-    :catch\_b
+    :catch\_b
 
-    move-exception v0
+    move-exception v0
 
-    .line 39
+    .line 39
 
-    .local v0, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
+    .local v0, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
 
-    const/4 v2, 0x0
+    const/4 v2, 0x0
 
-    goto :goto\_a
+    goto :goto\_a
 
 .end method
 
@@ -291,7 +291,7 @@ return 바로 앞에 0x1을 집어 넣어주면 끝~
 실행 결과를 봅시다.
 
 ![](./images/fail.png)
-    
+    
 ![](./images/ok.png)
 
 com.lee.tistory.com이란 패키지명을 가진 어플은 존재하지 않습니다.
@@ -344,7 +344,7 @@ onActivityResult()라는 메소드 인데요.
 
 +2016.1.1
 
-그러나 경험상 결제 창이 나타난 뒤에 크랙을 하는 방법은 비효율적입니다.
+그러나 경험상 결제 창이 나타난 뒤에 크랙을 하는 방법은 비효율적입니다.
 
 왜냐하면 사용자가 결제창을 한 번이라도 실행해야 하기때문이죠.
 
@@ -360,7 +360,7 @@ onActivityResult()라는 메소드 인데요.
 
 어처피 길은 하나지만 그 길로 갈 수 있게 도와주는 길잡이랄까요?
 
-제가 본 대부분의 앱은 한번 결제 정보를 가져오면 그걸 저장합니다. 오프라인에.
+제가 본 대부분의 앱은 한번 결제 정보를 가져오면 그걸 저장합니다. 오프라인에.
 
 어떻게 저장하냐고요?
 

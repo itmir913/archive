@@ -88,7 +88,7 @@ sdcard/clockworkmod에 로그가 있다고 하더라고요
 
 뽑아 왔습니다~
 
-Starting recovery on Mon Sep  3 08:59:55 2012
+Starting recovery on Mon Sep  3 08:59:55 2012
 
 framebuffer: fd 4 (320 x 480)
 
@@ -98,21 +98,21 @@ recovery filesystem table
 
 =========================
 
-  0 /tmp ramdisk (null) (null)
+  0 /tmp ramdisk (null) (null)
 
-  1 /boot mtd boot (null)
+  1 /boot mtd boot (null)
 
-  2 /cache yaffs2 cache (null)
+  2 /cache yaffs2 cache (null)
 
-  3 /data yaffs2 userdata (null)
+  3 /data yaffs2 userdata (null)
 
-  4 /misc mtd misc (null)
+  4 /misc mtd misc (null)
 
-  5 /recovery mtd recovery (null)
+  5 /recovery mtd recovery (null)
 
-  6 /sdcard vfat /dev/block/mmcblk0p1 /dev/block/mmcblk0
+  6 /sdcard vfat /dev/block/mmcblk0p1 /dev/block/mmcblk0
 
-  7 /system yaffs2 system (null)
+  7 /system yaffs2 system (null)
 
 W:Unable to get recovery.fstab info for /sd-ext during fstab generation!
 
@@ -150,7 +150,7 @@ ro.build.version.codename=REL
 
 ro.build.version.release=2.3.3
 
-ro.build.date=Thu Oct  6 12:24:05 KST 2011
+ro.build.date=Thu Oct  6 12:24:05 KST 2011
 
 ro.build.date.utc=1317871445
 

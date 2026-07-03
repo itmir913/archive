@@ -8,7 +8,7 @@ draft: false
 original_url: "https://itmir.tistory.com/352"
 ---
 
-출처 : <http://spapa1004.tistory.com/83>
+출처 : <http://spapa1004.tistory.com/83>
 
 **퀴우360 (36TB) 무료 대용량 클라우드 서비스 소개**
 
@@ -28,7 +28,7 @@ original_url: "https://itmir.tistory.com/352"
 
 **그 후 텐센트가 10테라의 초대용량의 서비스를 시작해서인지...**
 
-**현재는 바이두가 2테라, 퀴우360은 36테라의 무료 용량을 제공하고 있더군요.**
+**현재는 바이두가 2테라, 퀴우360은 36테라의 무료 용량을 제공하고 있더군요.**
 
 ![](./images/image_1.jpg)
 
@@ -40,7 +40,7 @@ original_url: "https://itmir.tistory.com/352"
 
 **회원가입은 정말 간단합니다.****메일주소와 비밀번호만 입력하면 끝입니다.**
 
-**퀴우360 홈페이지 :    <http://yunpan.360.cn/>**
+**퀴우360 홈페이지 :    <http://yunpan.360.cn/>**
 
 ![](./images/image_2.jpg)
 
@@ -80,9 +80,9 @@ original_url: "https://itmir.tistory.com/352"
 
 **PC클라이언트는 한글화가 부분적으로밖에 안되네요;;;**
 
-![](./images/image_10.jpg)   ![](./images/image_11.jpg)
+![](./images/image_10.jpg)   ![](./images/image_11.jpg)
 
-![](./images/image_12.jpg)   ![](./images/image_13.jpg)
+![](./images/image_12.jpg)   ![](./images/image_13.jpg)
 
 ![](./images/image_14.jpg)
 
@@ -136,7 +136,7 @@ original_url: "https://itmir.tistory.com/352"
 
 **앞으로 아무작업없이 CPU점유율 차지하는 프로그램들은 모두 조심해야겠습니다.**
 
-**그리고 말씀하신  " 360WangPanShell64.dll "   파일...**
+**그리고 말씀하신  " 360WangPanShell64.dll "   파일...**
 
 **아래 첨부한 동영상 보시면 아시겠지만 제가 삭제했을땐 이상없이 남지않고 모두 삭제되었습니다.**
 
@@ -154,15 +154,15 @@ original_url: "https://itmir.tistory.com/352"
 
 **중국어로 되어있어 모르면 같이 깔리게된다??****물론 그럴순 있습니다.**
 
-**하지만 말 그대로 이건 설치하는 사람이 주의해야할 문제죠.**
+**하지만 말 그대로 이건 설치하는 사람이 주의해야할 문제죠.**
 
 **서비스 자체의 좋고나쁨을 판가름할 수 있는 부분은 아니죠.**
 
 **국내의 프로그램들도 마찬가지구요.**
 
-**이렇게 따지면 이건 중국프로그램에만 국한되는 문제가 아니지 않나요?? 영어모르는 사람은 어쩌죠??**
+**이렇게 따지면 이건 중국프로그램에만 국한되는 문제가 아니지 않나요?? 영어모르는 사람은 어쩌죠??**
 
-**영문 윈도우마저도 쓰면안되겠군요.. 그냥 오로지 한글 프로그램만 주구장창 써야하나요??**
+**영문 윈도우마저도 쓰면안되겠군요.. 그냥 오로지 한글 프로그램만 주구장창 써야하나요??**
 
 **앞서 남기신 댓글을 보면 블로그 자체가 광고라느니... 중국프로그램들 무섭다.**
 
@@ -190,9 +190,9 @@ original_url: "https://itmir.tistory.com/352"
 
 [임베드 콘텐츠: http://videofarm.daum.net/controller/video/viewer/Video.html?vid=v33a4nmWyWMnyuuekkxehMW&play\_loc=daum\_tistory](http://videofarm.daum.net/controller/video/viewer/Video.html?vid=v33a4nmWyWMnyuuekkxehMW&play_loc=daum_tistory)
 
-출처 : <http://spapa1004.tistory.com/84>
+출처 : <http://spapa1004.tistory.com/84>
 
-**퀴우360(36TB) 무료 대용량 클라우드 서비스 모바일앱 및 PC버전 한글화.**
+**퀴우360(36TB) 무료 대용량 클라우드 서비스 모바일앱 및 PC버전 한글화.**
 
 **엊그제 소개해드린 퀴우360 클라우드의 한글화 모바일앱과 PC클라이언트 일부 한글화 파일입니다.**
 
@@ -212,15 +212,15 @@ original_url: "https://itmir.tistory.com/352"
 
 ![](./images/12_1.png)
 
-******PC클라이언트 한글화파일 다운로드 :**
+******PC클라이언트 한글화파일 다운로드 :**
 
 [language.ini](./files/language.ini)
 
-**한글화 모바일 앱 다운로드 :**
+**한글화 모바일 앱 다운로드 :**
 
 [com.qihoo.yunpan.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/com.qihoo.yunpan.apk)
 
-**이 자료는 다른곳에서의 직접적인 공유를 절대 금지합니다.**
+**이 자료는 다른곳에서의 직접적인 공유를 절대 금지합니다.**
 
 **혹시나 공유하실분들은 블로그 링크로만 허용합니다.**
 
@@ -228,7 +228,7 @@ original_url: "https://itmir.tistory.com/352"
 
 **▶ 텐센트(10TB) 클라우드 서비스 소개 :**[**http://spapa1004.tistory.com/49**](http://spapa1004.tistory.com/49)
 
-**▶ 텐센트(10TB) 클라우드 서비스 모바일앱/PC클라이언트 한글화 :****<http://spapa1004.tistory.com/50>**
+**▶ 텐센트(10TB) 클라우드 서비스 모바일앱/PC클라이언트 한글화 :****<http://spapa1004.tistory.com/50>**
 
 **▶ 바이두(2TB) 클라우드 서비스 소개 :**[**http://spapa1004.tistory.com/51**](http://spapa1004.tistory.com/51)
 
@@ -238,7 +238,7 @@ original_url: "https://itmir.tistory.com/352"
 
 ## [퀴우 360 클라우드 모바일앱 3.3.2버전 한글화(업데이트)](http://spapa1004.tistory.com/95)
 
-[일반 자료](http://spapa1004.tistory.com/category/%EC%9D%BC%EB%B0%98%20%EC%9E%90%EB%A3%8C) 2013/10/27 01:02 Posted by Spapa™
+[일반 자료](http://spapa1004.tistory.com/category/%EC%9D%BC%EB%B0%98%20%EC%9E%90%EB%A3%8C) 2013/10/27 01:02 Posted by Spapa™
 
 **퀴우 360 클라우드 모바일앱 3.3.2버전 한글화(업데이트)**
 
@@ -246,19 +246,19 @@ original_url: "https://itmir.tistory.com/352"
 
 **3.3.2 버전으로 업데이트되어 다시 작업하여 올려드립니다.**
 
-![](./images/image_24.jpg) ![](./images/image_25.jpg) ![](./images/image_26.jpg)
+![](./images/image_24.jpg) ![](./images/image_25.jpg) ![](./images/image_26.jpg)
 
-**업데이트버전(3.3.2) 한글화 앱 :   [com.qihoo.yunpan-update(3.3.2).apk](http://spapa1004.tistory.com/attachment/cfile27.uf@23541F4B526BE6AA395BF2.apk)**
+**업데이트버전(3.3.2) 한글화 앱 :   [com.qihoo.yunpan-update(3.3.2).apk](http://spapa1004.tistory.com/attachment/cfile27.uf@23541F4B526BE6AA395BF2.apk)**
 
 [com.qihoo.yunpan-update(3.3.2).apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/com.qihoo.yunpan-update(3.3.2).apk)
 
 **\* 대용량 클라우드 서비스**
 
-**바이두 무료 대용량 클라우드 서비소개 :  <http://spapa1004.tistory.com/51>**
+**바이두 무료 대용량 클라우드 서비소개 :  <http://spapa1004.tistory.com/51>**
 
-**퀴우360 무료 대용량 클라우드 서비스소개 :  <http://spapa1004.tistory.com/83>**
+**퀴우360 무료 대용량 클라우드 서비스소개 :  <http://spapa1004.tistory.com/83>**
 
-**텐센트 무료 대용량 클라우드 서비스소개 :  <http://spapa1004.tistory.com/49>**
+**텐센트 무료 대용량 클라우드 서비스소개 :  <http://spapa1004.tistory.com/49>**
 
 ---
 

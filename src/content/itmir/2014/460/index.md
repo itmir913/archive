@@ -12,7 +12,7 @@ original_url: "https://itmir.tistory.com/460"
 
 에라이 벌써 졸업이라니
 
-시간 정말 빨리 지나가는듯;;
+시간 정말 빨리 지나가는듯;;
 
 ![](./images/졸업장_fixed.png)
 

@@ -30,11 +30,11 @@ Your branch is up-to-date with 'origin/master'.
 
 Changes not staged for commit:
 
-  (use "git add <file>..." to update what will be committed)
+  (use "git add <file>..." to update what will be committed)
 
-  (use "git checkout -- <file>..." to discard changes in working directory)
+  (use "git checkout -- <file>..." to discard changes in working directory)
 
-        modified:   build.gradle
+        modified:   build.gradle
 
 no changes added to commit (use "git add" and/or "git commit -a")
 
@@ -56,7 +56,7 @@ warning: CRLF will be replaced by LF in build.gradle.
 
 The file will have its original line endings in your working directory.
 
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 **D:\Android\AndroidStudio\WondangHighSchool>git push origin master**
 
@@ -66,7 +66,7 @@ Password for 'https://itmir913@github.com':
 
 To https://github.com/itmir913/wondanghighschool
 
- ! [rejected]        master -> master (fetch first)
+ ! [rejected]        master -> master (fetch first)
 
 error: failed to push some refs to 'https://github.com/itmir913/wondanghighschool'
 
@@ -92,7 +92,7 @@ Unpacking objects: 100% (4/4), done.
 
 From https://github.com/itmir913/wondanghighschool
 
-   5bb3741..6917361  master     -> origin/master
+   5bb3741..6917361  master     -> origin/master
 
 Removing app/app.iml
 
@@ -100,17 +100,17 @@ Removing WondangHighSchool.iml
 
 Merge made by the 'recursive' strategy.
 
- .gitignore            |   1 +
+ .gitignore            |   1 +
 
- WondangHighSchool.iml |  19 ---------
+ WondangHighSchool.iml |  19 ---------
 
- app/app.iml           | 110 --------------------------------------------------
+ app/app.iml           | 110 --------------------------------------------------
 
- 3 files changed, 1 insertion(+), 129 deletions(-)
+ 3 files changed, 1 insertion(+), 129 deletions(-)
 
- delete mode 100644 WondangHighSchool.iml
+ delete mode 100644 WondangHighSchool.iml
 
- delete mode 100644 app/app.iml
+ delete mode 100644 app/app.iml
 
 **D:\Android\AndroidStudio\WondangHighSchool>git push origin master**
 
@@ -130,7 +130,7 @@ Total 5 (delta 3), reused 0 (delta 0)
 
 To https://github.com/itmir913/wondanghighschool
 
-   6917361..8e8881a  master -> master
+   6917361..8e8881a  master -> master
 
 해결 방법
 

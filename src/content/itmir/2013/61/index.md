@@ -14,13 +14,13 @@ original_url: "https://itmir.tistory.com/61"
 
 먼저 프로그램을 이용하는 방법입니다.
 
-프로그램의 이름은 LogcatFilter로 어디선가 구하게된 프로그램 입니다.
+프로그램의 이름은 LogcatFilter로 어디선가 구하게된 프로그램 입니다.
 
 <http://cafe.naver.com/logcatfilter>
 
 위 카페에서 제작, 배포되고 있는듯 합니다.
 
-첨부파일에 있는 LogcatFilter의 버전은 1.2.0.0버전으로 현재까지 최신버전입니다.
+첨부파일에 있는 LogcatFilter의 버전은 1.2.0.0버전으로 현재까지 최신버전입니다.
 
 프로그램을 실행하면,
 

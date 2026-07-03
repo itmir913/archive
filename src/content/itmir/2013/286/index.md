@@ -38,7 +38,7 @@ original_url: "https://itmir.tistory.com/286"
 
 일단 자바를 깔아볼까요?
 
-자바 다운로드 사이트 <http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html>
+자바 다운로드 사이트 <http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html>
 
 으로 이동하셔서 자바를 깔아주세요.
 
@@ -60,7 +60,7 @@ Windows의 경우 컴퓨터 - 속성을 들어가시면 몇 비트인지 알수 
 
 리눅스의 경우 System - About Ubuntu에 들어가서 확인하거나 uname -a으로 확인 (i686 = 32bit, x86/64 = 64bit)
 
-만약 페이지를 찾지 못했다는 오류가 발생할경우 <http://www.oracle.com>에서 찾아주시면 됩니다.
+만약 페이지를 찾지 못했다는 오류가 발생할경우 <http://www.oracle.com>에서 찾아주시면 됩니다.
 
 ### 1-2 이클립스와 SDK
 
@@ -90,7 +90,7 @@ Android Platform-tools (Platform-tools이 내장되어 있습니다)
 
 The latest Android platform (최신버전의 SDK가 탑재되었습니다)
 
-The latest Android system image for the emulator 최신버전의 SDK가 탑재되었습니다)
+The latest Android system image for the emulator 최신버전의 SDK가 탑재되었습니다)
 
 이 4가지의 이유로 ADT 번들을 받는답니다~
 

@@ -20,7 +20,7 @@ original_url: "https://itmir.tistory.com/154"
 
 제가 전에 정말 좋은 아로마 인스톨러 응용법을 생각해 냈습니다
 
-메뉴박스에서 메뉴를 선택할때 그 메뉴가 비활성화 되어 있으면 활성화를 하고 활성화 안내 알림을 띄우고, 만약 활성화가 되어있었다면 비활성화하고 비활성화 안내 알림을 띄우는 방식입니다
+메뉴박스에서 메뉴를 선택할때 그 메뉴가 비활성화 되어 있으면 활성화를 하고 활성화 안내 알림을 띄우고, 만약 활성화가 되어있었다면 비활성화하고 비활성화 안내 알림을 띄우는 방식입니다
 
 구조를 나타내면 아래와 같습니다
 
@@ -146,9 +146,9 @@ aroma-config의 첫 부분에 아래 구문을 넣어주세요
 
 setvar(
 
-    "resexec\_retstatus",
+    "resexec\_retstatus",
 
-    resexec("sh/FileName\_Start.sh")
+    resexec("sh/FileName\_Start.sh")
 
 );
 
@@ -164,37 +164,37 @@ config가운데 넣으시면 값이 다시 초기화 될수 있습니다
 
 참고로 setvar은 시스탬 정보등을 파악할때 사용하는 스크립트 입니다
 
-위 코드의 resexec\_retstatus은 sh를 실행시킨다음 그곳에 저장하라는 뜻의 코드입니다 (지우지 마세요 ㅋ)
+위 코드의 resexec\_retstatus은 sh를 실행시킨다음 그곳에 저장하라는 뜻의 코드입니다 (지우지 마세요 ㅋ)
 
-아무튼 위 코드를 ini\_set 코드 아래쯤 넣어주시면 아로마 인스톨러가 처음 시작할때 자동으로 실행됩니다
+아무튼 위 코드를 ini\_set 코드 아래쯤 넣어주시면 아로마 인스톨러가 처음 시작할때 자동으로 실행됩니다
 
 그러면서 아로마 인스톨러의 작업폴더인 /tmp/aroma에 FileName.prop가 들어가게 되며 자동으로 비활성화 코드가 들어가게 됩니다
 
 이제 메뉴 박스를 만들어 주신다음 if절로 메뉴가 선택되면 아래 구문이 실행되도록 만들어 주세요
 
-if  (prop("FileName.prop","selected.1")=="0") then
+if  (prop("FileName.prop","selected.1")=="0") then
 
-    setvar(
+    setvar(
 
-        "Adfree\_enable",
+        "Adfree\_enable",
 
-        resexec("sh/FileName\_Change\_1.sh")
+        resexec("sh/FileName\_Change\_1.sh")
 
-    );
+    );
 
-    alert("알림","FileName를 활성화 했습니다 - 현재 상태:활성화", "@info");
+    alert("알림","FileName를 활성화 했습니다 - 현재 상태:활성화", "@info");
 
 else
 
-    setvar(
+    setvar(
 
-        "Adfree\_disable",
+        "Adfree\_disable",
 
-        resexec("sh/FileName\_Change\_0.sh")
+        resexec("sh/FileName\_Change\_0.sh")
 
-    );
+    );
 
-    alert("알림","FileName를 비활성화 했습니다 - 현재 상태:비활성화", "@info");
+    alert("알림","FileName를 비활성화 했습니다 - 현재 상태:비활성화", "@info");
 
 endif;
 
@@ -206,7 +206,7 @@ endif;
 
 약간 해석하자면 처음에 Start.sh를 실행해서 현재 값이 0입니다
 
-if절의 처음을 보면 FileName.prop의 값이 selected.1=0이라면 Change\_1.sh를 실행해서 값을 1로 바꾼다음 활성화 하고
+if절의 처음을 보면 FileName.prop의 값이 selected.1=0이라면 Change\_1.sh를 실행해서 값을 1로 바꾼다음 활성화 하고
 
 값이 1이라면(값이 0이 아니라면) Change\_0.sh를 실행해서 값을 0으로 바꾼다음 비활성화 하는 구조입니다
 

@@ -30,59 +30,59 @@ CSS 설정 보기
 
 .tabs {
 
-  float: left;
+  float: left;
 
-  width: 100%;
+  width: 100%;
 
 }
 
 .tabs>.labels>label {
 
-  background-color: #eee;
+  background-color: #eee;
 
-  border-radius: 0 2em 0 0;
+  border-radius: 0 2em 0 0;
 
-  color: #999;
+  color: #999;
 
-  cursor: pointer;
+  cursor: pointer;
 
-  float: left;
+  float: left;
 
-  height: 3em;
+  height: 3em;
 
-  line-height: 3em;
+  line-height: 3em;
 
-  overflow: hidden;
+  overflow: hidden;
 
-  padding: 0 1em;
+  padding: 0 1em;
 
-  position: relative;
+  position: relative;
 
-  width: 40%;
+  width: 40%;
 
-  margin: 1em 0 0 0;
+  margin: 1em 0 0 0;
 
-  border-bottom: .2em solid #45a6e7;
+  border-bottom: .2em solid #45a6e7;
 
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
 
-  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
 
-  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
 
 }
 
 .tabs>.labels>label:nth-of-type(3) {
 
-  width: 20%;
+  width: 20%;
 
 }
 
 .tabs>.labels>label:hover {
 
-  background-color: #ccc;
+  background-color: #ccc;
 
-  color: #333;
+  color: #333;
 
 }
 
@@ -92,41 +92,41 @@ input#tab2:checked ~ .labels>label[for="tab2"],
 
 input#tab3:checked ~ .labels>label[for="tab3"] {
 
-  background-color: #45a6e7!important;
+  background-color: #45a6e7!important;
 
-  color: #fff!important;
+  color: #fff!important;
 
-  display: block!important;
+  display: block!important;
 
 }
 
 .tabs>.labels>label a {
 
-  color: inherit;
+  color: inherit;
 
 }
 
 .tab\_container {
 
-  clear: both;
+  clear: both;
 
-  overflow: auto;
+  overflow: auto;
 
-  width: 100%;
+  width: 100%;
 
-  padding: 1em;
+  padding: 1em;
 
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
 
-  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
 
-  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
 
 }
 
 .tabs>input[type="radio"], .tabs .tab\_content {
 
-  display: none;
+  display: none;
 
 }
 
@@ -136,33 +136,33 @@ input#tab2:checked ~ .tab\_container>#tab2C,
 
 input#tab3:checked ~ .tab\_container>#tab3C {
 
-  display:block;
+  display:block;
 
 }
 
 @media screen and (max-width:480px) {
 
-  .tabs>.labels>label {
+  .tabs>.labels>label {
 
-    width: 100%;
+    width: 100%;
 
-    margin: 0;
+    margin: 0;
 
-    border-radius: 0;
+    border-radius: 0;
 
-  }
+  }
 
-  .tabs>.labels>label:nth-of-type(3) {
+  .tabs>.labels>label:nth-of-type(3) {
 
-    width: 100%;
+    width: 100%;
 
-  }
+  }
 
-  .tabs>.labels>label:first-of-type {
+  .tabs>.labels>label:first-of-type {
 
-    margin: 1em 0 0 0;
+    margin: 1em 0 0 0;
 
-  };
+  };
 
 }
 
@@ -174,141 +174,141 @@ CSS 설정 보기
 
 .tabs {
 
-  float: left;
+  float: left;
 
-  width: 100%;
+  width: 100%;
 
 }
 
 .tabs>.labels>label {
 
-  background-color: #eee;
+  background-color: #eee;
 
-  color: #999;
+  color: #999;
 
-  cursor: pointer;
+  cursor: pointer;
 
-  float: left;
+  float: left;
 
-  height: 2.5em;
+  height: 2.5em;
 
-  line-height: 2.5em;
+  line-height: 2.5em;
 
-  overflow: hidden;
+  overflow: hidden;
 
-  padding: 0 .8em;
+  padding: 0 .8em;
 
-  position: relative;
+  position: relative;
 
-  width: 40%;
+  width: 40%;
 
-  margin: 1em 0 0 0;
+  margin: 1em 0 0 0;
 
-  border-bottom: .2em solid #555;
+  border-bottom: .2em solid #555;
 
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
 
-  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
 
-  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
 
 }
 
 .tabs>.labels>label:nth-of-type(3) {
 
-  width: 20%;
+  width: 20%;
 
 }
 
 .tabs>.labels>label:hover {
 
-  background-color: #ccc;
+  background-color: #ccc;
 
-  color: #333;
+  color: #333;
 
 }
 
 input#tab1:checked ~ .labels>label[for="tab1"],input#tab2:checked ~ .labels>label[for="tab2"],input#tab3:checked ~ .labels>label[for="tab3"] {
 
-  background-color: #555;
+  background-color: #555;
 
-  color: #fff;
+  color: #fff;
 
 }
 
 .tabs>.labels>label a {
 
-  color: inherit;
+  color: inherit;
 
 }
 
 .tab\_container {
 
-  clear: both;
+  clear: both;
 
-  overflow: auto;
+  overflow: auto;
 
-  width: 100%;
+  width: 100%;
 
-  padding: 1em;
+  padding: 1em;
 
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
 
-  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
 
-  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
 
 }
 
 .tabs>input[type="radio"],.tabs .tab\_content {
 
-  display: none;
+  display: none;
 
 }
 
 .notAvailable {
 
-  border: #f00 solid 1px;
+  border: #f00 solid 1px;
 
-  background: #fdd;
+  background: #fdd;
 
-  padding: 1em;
+  padding: 1em;
 
 }
 
 input[name="tabs"]:checked ~ .tab\_container>.notAvailable {
 
-  display: none;
+  display: none;
 
 }
 
 input#tab1:checked ~ .tab\_container>#tab1C,input#tab2:checked ~ .tab\_container>#tab2C,input#tab3:checked ~ .tab\_container>#tab3C {
 
-  display: block;
+  display: block;
 
 }
 
 @media screen and (max-width:480px) {
 
-  .tabs>.labels>label {
+  .tabs>.labels>label {
 
-    width: 100%;
+    width: 100%;
 
-    margin: 0;
+    margin: 0;
 
-  }
+  }
 
-  .tabs>.labels>label:nth-of-type(3) {
+  .tabs>.labels>label:nth-of-type(3) {
 
-    width: 100%;
+    width: 100%;
 
-  }
+  }
 
-  .tabs>.labels>label:first-of-type {
+  .tabs>.labels>label:first-of-type {
 
-    margin: 1em 0 0 0;
+    margin: 1em 0 0 0;
 
-  };
+  };
 
 }
 

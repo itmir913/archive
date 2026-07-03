@@ -44,4 +44,4 @@ original_url: "https://itmir.tistory.com/466"
 
 끝까지 봐주셔서 감사합니다~
 
-원본 동영상이랑 노래는 <https://www.youtube.com/watch?v=moSFlvxnbgk> 을 사용했습니다.
+원본 동영상이랑 노래는 <https://www.youtube.com/watch?v=moSFlvxnbgk> 을 사용했습니다.

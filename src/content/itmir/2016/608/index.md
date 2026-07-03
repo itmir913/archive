@@ -28,7 +28,7 @@ original_url: "https://itmir.tistory.com/608"
 
 그래서 구글에 관련 키워드로 검색을 해보니, 저와 같은 문제를 해결하신 분이 계셨습니다.
 
-관련 글은 <http://cloim.tistory.com/8> 입니다.
+관련 글은 <http://cloim.tistory.com/8> 입니다.
 
 위에 있는 링크로 진입하신다음 프로그램 다운받으셔서 실행하면 아이튠즈의 태그가 업데이트 됩니다.
 

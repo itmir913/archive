@@ -18,11 +18,11 @@ original_url: "https://itmir.tistory.com/579"
 
 나이스의 보안프로그램 적용으로 급식 파싱 라이브러리 사용이 제한될 수 있으며, 영구적으로 사용이 불가능할 수도 있습니다.
 
-자세한 내용은 [[Application] - 나이스 보안 프로그램과 현재 급식 파싱 불가능 관련](/archive/itmir/2016/614)을 참고하세요
+자세한 내용은 [[Application] - 나이스 보안 프로그램과 현재 급식 파싱 불가능 관련](/archive/itmir/2016/614)을 참고하세요
 
 MealLibrary.java의 사용은 자유입니다. MealLibrary.java만 사용한다면 오픈소스를 표기해야 하는 제약은 없습니다.
 
-그러나 급식 위젯과 급식 자동 업데이트를 제 앱을 참고해서 기능을 만드시려면 **꼭(강제) 오픈소스 라이센스를 표기해야 합니다.**
+그러나 급식 위젯과 급식 자동 업데이트를 제 앱을 참고해서 기능을 만드시려면 **꼭(강제) 오픈소스 라이센스를 표기해야 합니다.**
 
 오픈소스 라이센스는 가급적 어플 내에 표기하세요.
 
@@ -36,7 +36,7 @@ AndroidMealLibrary가 적용된 대표적인 프로젝트를 살펴보세요!
 
 이 글보다 더 자세하게 설명하고 있는 README를 살펴보세요!
 
-<https://github.com/itmir913/wondanghighschool> (README 위치 : app/src/main/java/toast/library/meal)
+<https://github.com/itmir913/wondanghighschool> (README 위치 : app/src/main/java/toast/library/meal)
 
 <https://github.com/itmir913/androidmeallibrary>
 
@@ -50,7 +50,7 @@ AndroidMealLibrary가 적용된 대표적인 프로젝트를 살펴보세요!
 >
 > 앞으로는 제 개인 메일로 급식 파싱에 대해서 질문하지 말아주세요. 부탁드립니다.
 >
-> 기본적인 급식 파싱에 대해서는 샘플 프로젝트를 참고해 주시고, 급식 위젯처럼 심화된 내용은 스스로 구현 하셔야 합니다.
+> 기본적인 급식 파싱에 대해서는 샘플 프로젝트를 참고해 주시고, 급식 위젯처럼 심화된 내용은 스스로 구현 하셔야 합니다.
 >
 > 비슷한 질문 메일을 받게 된다면, 저는 메일을 삭제하겠습니다.
 
@@ -60,7 +60,7 @@ AndroidMealLibrary가 적용된 대표적인 프로젝트를 살펴보세요!
 
 2. 인터넷 권한 추가
 
-3. MealLibrary.java 추가 [(클릭 후 app/src/main/java/toast/library/meal 폴더로 진입하세요.)](https://github.com/itmir913/wondanghighschool)
+3. MealLibrary.java 추가 [(클릭 후 app/src/main/java/toast/library/meal 폴더로 진입하세요.)](https://github.com/itmir913/wondanghighschool)
 
 4. 자신의 학교 코드 정보
 
@@ -144,7 +144,7 @@ ProcessTask.java는 필수로 수정하셔야 합니다.
 
 대충 이런 구조를 가지고 있습니다만
 
-일부 잘못되어 있는 부분이 있어서 직접 파일을 분석해서 확인하시는게 편합니다.
+일부 잘못되어 있는 부분이 있어서 직접 파일을 분석해서 확인하시는게 편합니다.
 
 그림에서 BapTool이 Preference와 상속관계라고 되어 있는데 정확하게 말하면 BapTool에서 Preference를 사용하는 겁니다.
 
@@ -152,9 +152,9 @@ ProcessTask.java는 필수로 수정하셔야 합니다.
 
 자신이 그래도 실력이 있다 생각하시면 샘플 프로젝트 분석을 건너뛰시고 바로 제 학교앱 분석에 들어가셔도 됩니다.
 
-상급자용 : <https://github.com/itmir913/wondanghighschool>
+상급자용 : <https://github.com/itmir913/wondanghighschool>
 
-기초예제 : <https://github.com/itmir913/androidmeallibrary>
+기초예제 : <https://github.com/itmir913/androidmeallibrary>
 
 위에서 언급한 것 처럼 상급자용 분석은 질문하셔도 답변을 하지 않을 예정입니다.
 
@@ -166,7 +166,7 @@ ProcessTask.java는 필수로 수정하셔야 합니다.
 
 기초 예제를 구현하신다음 시간이 되시면 다양한 기능도 구현해보시기 바랍니다.
 
-직접 제 학교앱 어플을 실행해보고 싶으신 분께서는 마켓에 "원당고"라고 검색하시면 됩니다.
+직접 제 학교앱 어플을 실행해보고 싶으신 분께서는 마켓에 "원당고"라고 검색하시면 됩니다.
 
 ### 6. MealLibrary.java 변수 설명
 

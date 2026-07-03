@@ -20,15 +20,15 @@ original_url: "https://itmir.tistory.com/459"
 
 Android의 경우 구글 음성인식이 이미 있지만 IOS의 경우는 한국어 음성인식 API가 시리를 제외하고는 최초라고 알고있습니다
 
-시리는 애플에서 다른 앱이 사용 불가능하도록 막아뒀기때문에 한국어 음성인식 API가 IOS에서는 세계 최초라고 합니다
+시리는 애플에서 다른 앱이 사용 불가능하도록 막아뒀기때문에 한국어 음성인식 API가 IOS에서는 세계 최초라고 합니다
 
 **API관련 Daum 가이드**
 
 - [API 시작하기](http://dna.daum.net/affiliate/speech/intro)
 
-- [안드로이드 API 가이드](http://dna.daum.net/affiliate/speech/android)  /  [예제 소스 다운로드](http://dna.daum.net/examples/speech/android/DaumSpeechRecognizerAndroid-1.0.0.zip)
+- [안드로이드 API 가이드](http://dna.daum.net/affiliate/speech/android)  /  [예제 소스 다운로드](http://dna.daum.net/examples/speech/android/DaumSpeechRecognizerAndroid-1.0.0.zip)
 
-- [IOS API 가이드](http://dna.daum.net/affiliate/speech/ios)  /  [예제 소스 다운로드](http://dna.daum.net/examples/speech/ios/DaumSpeechRecognizerIphone-1.0.0.zip)
+- [IOS API 가이드](http://dna.daum.net/affiliate/speech/ios)  /  [예제 소스 다운로드](http://dna.daum.net/examples/speech/ios/DaumSpeechRecognizerIphone-1.0.0.zip)
 
 또한 다음에서 음성인식 API를 시험할수 있도록 예제 앱을 올려두었습니다
 

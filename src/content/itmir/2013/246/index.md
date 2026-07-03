@@ -3,12 +3,12 @@ title: "베가레이서2 LucidOS 커널 PegasusQ 가버너 추가"
 date: "2013-06-11T22:45:48+09:00"
 category: "Android/Kernel"
 tags: []
-description: "오늘은 PegasusQ라는 가버너를 추가했습니다"
+description: "오늘은 PegasusQ라는 가버너를 추가했습니다"
 draft: false
 original_url: "https://itmir.tistory.com/246"
 ---
 
-오늘은 PegasusQ라는 가버너를 추가했습니다
+오늘은 PegasusQ라는 가버너를 추가했습니다
 
 제 기억으론 갤삼에 있던 가버너 였죠??
 

@@ -24,11 +24,11 @@ python의 설치없이 getOTA를 사용할수 있습니다
 
 ![](./images/1.png)
 
- exe로 변환되어서 번거롭게 cmd창에서 실행할 필요가 없습니다
+ exe로 변환되어서 번거롭게 cmd창에서 실행할 필요가 없습니다
 
 ![](./images/2.png)
 
- 한글화도 함께 하였고, 기저대역 버전 힌트도 담겨있습니다
+ 한글화도 함께 하였고, 기저대역 버전 힌트도 담겨있습니다
 
 Build.prop의 ro.product.baseband\_ver\_hidden값을 입력해 주시면 됩니다
 

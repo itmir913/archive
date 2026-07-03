@@ -17,7 +17,7 @@ original_url: "https://itmir.tistory.com/567"
 이게 자동 회전버튼이 자주 쓰이는건 아닌지라 언제 없어졌는지도 모릅니다.
 
 ![](./images/자동회전-정상.jpg)
-   
+   
 ![](./images/자동회전이-사라짐.jpg)
 
 (좌) 기존 (우) 사라짐

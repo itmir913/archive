@@ -72,101 +72,101 @@ var SCRIPT\_PROP = PropertiesService.getScriptProperties(); // new property serv
 
 function doGet(e){
 
-  return handleResponse(e);
+  return handleResponse(e);
 
 }
 
 function doPost(e){
 
-  return handleResponse(e);
+  return handleResponse(e);
 
 }
 
 function handleResponse(e) {
 
-  // shortly after my original solution Google announced the LockService[1]
+  // shortly after my original solution Google announced the LockService[1]
 
-  // this prevents concurrent access overwritting data
+  // this prevents concurrent access overwritting data
 
-  // [1] http://googleappsdeveloper.blogspot.co.uk/2011/10/concurrency-and-google-apps-script.html
+  // [1] http://googleappsdeveloper.blogspot.co.uk/2011/10/concurrency-and-google-apps-script.html
 
-  // we want a public lock, one that locks for all invocations
+  // we want a public lock, one that locks for all invocations
 
-  var lock = LockService.getPublicLock();
+  var lock = LockService.getPublicLock();
 
-  lock.waitLock(30000);  // wait 30 seconds before conceding defeat.
+  lock.waitLock(30000);  // wait 30 seconds before conceding defeat.
 
-  try {
+  try {
 
-    var SHEET\_NAME = e.parameter["sheet\_name"];
+    var SHEET\_NAME = e.parameter["sheet\_name"];
 
-    // next set where we write the data - you could write to multiple/alternate destinations
+    // next set where we write the data - you could write to multiple/alternate destinations
 
-    var doc = SpreadsheetApp.openById(SCRIPT\_PROP.getProperty("key"));
+    var doc = SpreadsheetApp.openById(SCRIPT\_PROP.getProperty("key"));
 
-    var sheet = doc.getSheetByName(SHEET\_NAME);
+    var sheet = doc.getSheetByName(SHEET\_NAME);
 
-    // we'll assume header is in row 1 but you can override with header\_row in GET/POST data
+    // we'll assume header is in row 1 but you can override with header\_row in GET/POST data
 
-    var headRow = e.parameter.header\_row || 1;
+    var headRow = e.parameter.header\_row || 1;
 
-    var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+    var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
 
-    var nextRow = sheet.getLastRow()+1; // get next row
+    var nextRow = sheet.getLastRow()+1; // get next row
 
-    var row = [];
+    var row = [];
 
-    // loop through the header columns
+    // loop through the header columns
 
-    for (i in headers){
+    for (i in headers){
 
-      if (headers[i] == "Timestamp"){ // special case if you include a 'Timestamp' column
+      if (headers[i] == "Timestamp"){ // special case if you include a 'Timestamp' column
 
-        row.push(new Date());
+        row.push(new Date());
 
-      } else { // else use header name to get data
+      } else { // else use header name to get data
 
-        row.push(e.parameter[headers[i]]);
+        row.push(e.parameter[headers[i]]);
 
-      }
+      }
 
-    }
+    }
 
-    // more efficient to set values as [][] array than individually
+    // more efficient to set values as [][] array than individually
 
-    sheet.getRange(nextRow, 1, 1, row.length).setValues([row]);
+    sheet.getRange(nextRow, 1, 1, row.length).setValues([row]);
 
-    // return json success results
+    // return json success results
 
-    return ContentService
+    return ContentService
 
- .createTextOutput(JSON.stringify({"result":"success", "row": nextRow}))
+ .createTextOutput(JSON.stringify({"result":"success", "row": nextRow}))
 
- .setMimeType(ContentService.MimeType.JSON);
+ .setMimeType(ContentService.MimeType.JSON);
 
-  } catch(e){
+  } catch(e){
 
-    // if error return this
+    // if error return this
 
-    return ContentService
+    return ContentService
 
- .createTextOutput(JSON.stringify({"result":"error", "error": e}))
+ .createTextOutput(JSON.stringify({"result":"error", "error": e}))
 
- .setMimeType(ContentService.MimeType.JSON);
+ .setMimeType(ContentService.MimeType.JSON);
 
-  } finally { //release lock
+  } finally { //release lock
 
-    lock.releaseLock();
+    lock.releaseLock();
 
-  }
+  }
 
 }
 
 function setup() {
 
-  var doc = SpreadsheetApp.getActiveSpreadsheet();
+  var doc = SpreadsheetApp.getActiveSpreadsheet();
 
-  SCRIPT\_PROP.setProperty("key", doc.getId());
+  SCRIPT\_PROP.setProperty("key", doc.getId());
 
 }
 
@@ -174,7 +174,7 @@ function setup() {
 
 위 박스의 코드는 시트 이름을 정의하지 않습니다.
 
-그대신 한가지 차이점이 있다면 html post의 sheet\_name을 가져옵니다.
+그대신 한가지 차이점이 있다면 html post의 sheet\_name을 가져옵니다.
 
 그래서 시트를 많이 만든뒤 각각의 시트에 html post를 따로 넣고 싶다면
 
@@ -246,4 +246,4 @@ post 요청을 보내기 전, 무엇 무엇이 필요한지 생각해보고 맨 
 
 + 2015-12-20
 
-제 학교앱 소스를 가지고 연구하시다 실수로라도 공지사항에 글을 게시할 수 없도록 소스를 보완했습니다.
+제 학교앱 소스를 가지고 연구하시다 실수로라도 공지사항에 글을 게시할 수 없도록 소스를 보완했습니다.

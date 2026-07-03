@@ -12,7 +12,7 @@ original_url: "https://itmir.tistory.com/122"
 
 베가레이서2의 경우 IO데이터 베이스 문제가 심각합니다..
 
-안투투로 측정하면 IO점수가 정상은 500점 이상이 나와야 하지만 비정상인 경우 50정도 나오게 됩니다.
+안투투로 측정하면 IO점수가 정상은 500점 이상이 나와야 하지만 비정상인 경우 50정도 나오게 됩니다.
 
 이런 문제는 아래 커널 패치로 해결이 가능합니다.
 
@@ -74,4 +74,4 @@ Yes를 선택해서 눌러주시면 됩니다 ㅎㅎ
 
 설치 하신다음 정상 이용이 가능 하신 분은 덧글로 어떤 기종 성공 여부와 스카이 스테이션 버전을 알려주시면 감사드리겠습니다. ㅎㅎ
 
-github commit : <https://github.com/AlexBokhankovich/IM-A830S_kernel> by 토깽이
+github commit : <https://github.com/AlexBokhankovich/IM-A830S_kernel> by 토깽이

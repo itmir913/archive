@@ -27,10 +27,10 @@ original_url: "https://itmir.tistory.com/467"
 앱 강좌 링크를 어플로 탄생시켰습니다 !!
 
 ![](./images/Screenshot_2014-02-13-12-33-56.png)
-    
+    
 ![](./images/Screenshot_2014-02-13-12-45-51.png)
 
-마켓 링크는 [http](http://play.google.com/store/apps/details?id=lee.whdghks913.mirithtml)[://play.google.com/store/apps/details?id=lee.whdghks913.mirithtml](http://play.google.com/store/apps/details?id=lee.whdghks913.mirithtml) 이며 방금 업로드 했으므로 나타나지 않을수 있습니다
+마켓 링크는 [http](http://play.google.com/store/apps/details?id=lee.whdghks913.mirithtml)[://play.google.com/store/apps/details?id=lee.whdghks913.mirithtml](http://play.google.com/store/apps/details?id=lee.whdghks913.mirithtml) 이며 방금 업로드 했으므로 나타나지 않을수 있습니다
 
 [DownLoad]
 

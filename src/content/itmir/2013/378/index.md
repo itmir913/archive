@@ -16,16 +16,16 @@ original_url: "https://itmir.tistory.com/378"
 
 KT
 
--바이두 : [클릭](http://pan.baidu.com/s/1gR99I)
+-바이두 : [클릭](http://pan.baidu.com/s/1gR99I)
 
--UCloud : [클릭](https://plink.ucloud.com/public_link/link/a49776efac84b22a)
+-UCloud : [클릭](https://plink.ucloud.com/public_link/link/a49776efac84b22a)
 
--inCLU : [클릭](http://inclu.net:82/DEVELOID/Samsung/Galaxy%20S3%20LTE/%EC%88%9C%EC%A0%95%ED%8E%8C%EC%9B%A8%EC%96%B4/Galaxy%20s3%204.3%20KT/)
+-inCLU : [클릭](http://inclu.net:82/DEVELOID/Samsung/Galaxy%20S3%20LTE/%EC%88%9C%EC%A0%95%ED%8E%8C%EC%9B%A8%EC%96%B4/Galaxy%20s3%204.3%20KT/)
 
-이름 : E210KKKUGMK2\_E210KKTTGMK2\_E210KKKMK2\_HOME.tar
+이름 : E210KKKUGMK2\_E210KKTTGMK2\_E210KKKMK2\_HOME.tar
 
 SK
 
--inCLU : [클릭](http://inclu.net:82/DEVELOID/Samsung/Galaxy%20S3%20LTE/%EC%88%9C%EC%A0%95%ED%8E%8C%EC%9B%A8%EC%96%B4/)
+-inCLU : [클릭](http://inclu.net:82/DEVELOID/Samsung/Galaxy%20S3%20LTE/%EC%88%9C%EC%A0%95%ED%8E%8C%EC%9B%A8%EC%96%B4/)
 
-이름 : E210SKSUGMK1\_E210SSKTGMK1\_E210SKSMJB\_HOME.tar
+이름 : E210SKSUGMK1\_E210SSKTGMK1\_E210SKSMJB\_HOME.tar

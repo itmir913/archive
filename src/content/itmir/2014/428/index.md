@@ -22,9 +22,9 @@ original_url: "https://itmir.tistory.com/428"
 
 [분석도구]
 
-smali to java: [[SmartPhone] - Apk Dex Tools (Apk Manager)](/archive/itmir/2013/399)
+smali to java: [[SmartPhone] - Apk Dex Tools (Apk Manager)](/archive/itmir/2013/399)
 
-apk manager: [[SmartPhone] - Apk Manager 5.0.2 다운/사용법 및 Java 설정](/archive/itmir/2013/121)
+apk manager: [[SmartPhone] - Apk Manager 5.0.2 다운/사용법 및 Java 설정](/archive/itmir/2013/121)
 
 [분석대상]
 
@@ -62,7 +62,7 @@ smali 언어가 보기 싫어 java로 변환해 분석하면 더욱 편리합니
 
 pro, license, proversion, inapp등 유료를 나타내는 단어로 검색합니다.
 
-드림나래같은 경우는 매인 액티비티가 smali/angeloid/dreamnarae/v3/main/MainActivity.java 입니다.
+드림나래같은 경우는 매인 액티비티가 smali/angeloid/dreamnarae/v3/main/MainActivity.java 입니다.
 
 이 액티비티 부터 조사해 보면 나옵니다. Boolean반환 메소드라던지.. 코드라던지.
 
@@ -72,65 +72,65 @@ smali언어를 보기 싫어 java로 보면 아래와 같더군요.
 
 public static boolean a()
 
-  {
+  {
 
-    try
+    try
 
-    {
+    {
 
-      Bundle localBundle = n.a(3, "angeloid.dreamnarae.v3", "inapp", null);
+      Bundle localBundle = n.a(3, "angeloid.dreamnarae.v3", "inapp", null);
 
-      int i1 = localBundle.getInt("RESPONSE\_CODE");
+      int i1 = localBundle.getInt("RESPONSE\_CODE");
 
-      ArrayList localArrayList = null;
+      ArrayList localArrayList = null;
 
-      if (i1 == 0)
+      if (i1 == 0)
 
-        localArrayList = localBundle.getStringArrayList("INAPP\_PURCHASE\_ITEM\_LIST");
+        localArrayList = localBundle.getStringArrayList("INAPP\_PURCHASE\_ITEM\_LIST");
 
-      if ((i1 == 0) && (localArrayList.size() > 0))
+      if ((i1 == 0) && (localArrayList.size() > 0))
 
-      {
+      {
 
-        boolean bool = ((String)localArrayList.get(0)).equals("angel\_unlock");
+        boolean bool = ((String)localArrayList.get(0)).equals("angel\_unlock");
 
-        if (bool)
+        if (bool)
 
 **return true;**
 
-      }
+      }
 
-    }
+    }
 
-    catch (RemoteException localRemoteException)
+    catch (RemoteException localRemoteException)
 
-    {
+    {
 
-    }
+    }
 
 **return false;**
 
-  }
+  }
 
 smali는 아래와 같습니다.
 
 .method public static a()Z
 
-    .locals 7
+    .locals 7
 
-    .prologue
+    .prologue
 
-    const/4 v0, 0x0
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x0
 
-    .line 179
+    .line 179
 
-    :try\_start\_0
+    :try\_start\_0
 
-    sget-object v2, Langeloid/dreamnarae/v3/main/MainActivity;->n:Lcom/a/a/a/a;
+    sget-object v2, Langeloid/dreamnarae/v3/main/MainActivity;->n:Lcom/a/a/a/a;
 
-    -- 모두 생략 --
+    -- 모두 생략 --
 
 .end method
 
@@ -138,75 +138,75 @@ smali는 아래와 같습니다.
 
 .method public static a()Z
 
-    .locals 7
+    .locals 7
 
-    .prologue
+    .prologue
 
-    const/4 v0, 0x**1**
+    const/4 v0, 0x**1**
 
 **return v0**
 
-    const/4 v1, 0x0
+    const/4 v1, 0x0
 
-    .line 179
+    .line 179
 
-    :try\_start\_0
+    :try\_start\_0
 
-    sget-object v2, Langeloid/dreamnarae/v3/main/MainActivity;->n:Lcom/a/a/a/a;
+    sget-object v2, Langeloid/dreamnarae/v3/main/MainActivity;->n:Lcom/a/a/a/a;
 
-    -- 모두 생략 --
+    -- 모두 생략 --
 
 .end method
 
-그다음 검색해보면 smali/angeloid/dreamnarae/v3/tweak/Angel\_Biling.java에도 있는거 같아서 아래처럼 수정합니다.
+그다음 검색해보면 smali/angeloid/dreamnarae/v3/tweak/Angel\_Biling.java에도 있는거 같아서 아래처럼 수정합니다.
 
 public void a()
 
-  {
+  {
 
-    try
+    try
 
-    {
+    {
 
-      startIntentSenderForResult(((PendingIntent)a.a(3, getPackageName(), "angel\_unlock", "inapp", null).getParcelable("BUY\_INTENT")).getIntentSender(), 1001, new Intent(), Integer.valueOf(0).intValue(), Integer.valueOf(0).intValue(), Integer.valueOf(0).intValue());
+      startIntentSenderForResult(((PendingIntent)a.a(3, getPackageName(), "angel\_unlock", "inapp", null).getParcelable("BUY\_INTENT")).getIntentSender(), 1001, new Intent(), Integer.valueOf(0).intValue(), Integer.valueOf(0).intValue(), Integer.valueOf(0).intValue());
 
-      return;
+      return;
 
-    }
+    }
 
-    catch (Exception localException)
+    catch (Exception localException)
 
-    {
+    {
 
-    }
+    }
 
-  }
+  }
 
 # virtual methods
 
 .method public a()V
 
-    .locals 7
+    .locals 7
 
-    .prologue
+    .prologue
 
-    .line 132
+    .line 132
 
 return-void
 
-    :try\_start\_0
+    :try\_start\_0
 
-    const-string v3, "angel"
+    const-string v3, "angel"
 
-    .line 133
+    .line 133
 
-    sget-object v0, Langeloid/dreamnarae/v3/tweak/Angel\_Biling;->a:Lcom/a/a/a/a;
+    sget-object v0, Langeloid/dreamnarae/v3/tweak/Angel\_Biling;->a:Lcom/a/a/a/a;
 
-    const/4 v1, 0x3
+    const/4 v1, 0x3
 
-    invoke-virtual {p0}, Langeloid/dreamnarae/v3/tweak/Angel\_Biling;->getPackageName()Ljava/lang/String;
+    invoke-virtual {p0}, Langeloid/dreamnarae/v3/tweak/Angel\_Biling;->getPackageName()Ljava/lang/String;
 
-    -- 생략 --
+    -- 생략 --
 
 .end method
 

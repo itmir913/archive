@@ -3,7 +3,7 @@ title: "어플 개발 강좌 게시판을 신설했습니다!"
 date: "2013-07-23T23:09:34+09:00"
 category: "Android/App"
 tags: []
-description: "어플 개발 강좌 게시판을 신설했습니다!"
+description: "디벨로이드 카페 도서 서평 이벤트를 계기로 안드로이드 앱 개발 강좌 게시판을 신설했습니다."
 draft: false
 original_url: "https://itmir.tistory.com/274"
 ---

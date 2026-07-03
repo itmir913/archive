@@ -12,8 +12,8 @@ original_url: "https://itmir.tistory.com/687"
 
 Code-Server의 확장 프로그램 중 C/C++ for Visual Studio Code이 아래와 같은 오류 메시지를 표시하며 작동하지 않는 경우가 존재한다.
 
-> [Error - 6:47:09 PM] Connection to server got closed. Server will not be restarted.  
-> /config/extensions/ms-vscode.cpptools-1.1.3/bin/cpptools: 7: /config/extensions/ms-vscode.cpptools-1.1.3/bin/cpptools: Syntax error: word unexpected (expecting ")")
+> [Error - 6:47:09 PM] Connection to server got closed. Server will not be restarted.  
+> /config/extensions/ms-vscode.cpptools-1.1.3/bin/cpptools: 7: /config/extensions/ms-vscode.cpptools-1.1.3/bin/cpptools: Syntax error: word unexpected (expecting ")")
 
 ## 이슈 원인
 

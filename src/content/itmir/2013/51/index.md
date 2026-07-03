@@ -10,7 +10,7 @@ original_url: "https://itmir.tistory.com/51"
 
 이 강좌는 사람님의 강좌를 바탕으로 제작되었습니다
 
-원본글은 <http://cafe.naver.com/tdadevelop/3581> 입니다
+원본글은 <http://cafe.naver.com/tdadevelop/3581> 입니다
 
 환경 구축 스크립트도 만들어 두었습니다
 
@@ -28,7 +28,7 @@ ISO로 멀티부팅으로 하셔도 되고 가상머신도 됩니다
 
 2. 필수 패키지 설치
 
-sudo apt-get install git-core gnupg flex bison gperf libsdl1.2-dev libesd0-dev build-essential zip curl
+sudo apt-get install git-core gnupg flex bison gperf libsdl1.2-dev libesd0-dev build-essential zip curl
 
 libncurses5-dev zlib1g-dev valgrind
 
@@ -38,11 +38,11 @@ libncurses5-dev zlib1g-dev valgrind
 
 이제 자바를 설치해야 합니다
 
-sudo add-apt-repository "deb <http://kr.archive.ubuntu.com/ubuntu/> hardy multiverse"
+sudo add-apt-repository "deb <http://kr.archive.ubuntu.com/ubuntu/> hardy multiverse"
 
 sudo add-apt-repository "deb
 
-<http://kr.archive.ubuntu.com/ubuntu/> hardy-updates multiverse"
+<http://kr.archive.ubuntu.com/ubuntu/> hardy-updates multiverse"
 
 이렇게 입력해 주시면 됩니다
 
@@ -62,7 +62,7 @@ sudo apt-get install sun-java6-jdk
 
 <http://www.mediafire.com/file/msmnxt8n6xj6ayf/arm-eabi-4.4.0.zip>
 
-위 링크에 들어가 arm-eabi-4.4.0을 받아 줍니다
+위 링크에 들어가 arm-eabi-4.4.0을 받아 줍니다
 
 이것을 최상단 폴더(/home/계정명/)에 넣에 주시면 됩니다
 
@@ -84,7 +84,7 @@ cd ~/arm-eabi-4.4.0/libexec/gcc/arm-eabi/4.4.0/install-tools
 
 chmod +x ./\*
 
-모두다 쳐주세요 ㄷ
+모두다 쳐주세요 ㄷ
 
 마지막으로
 

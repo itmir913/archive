@@ -40,7 +40,7 @@ original_url: "https://itmir.tistory.com/600"
 
 ![](./images/스크린샷-2.png)
 
-그런데 저 세번째 옵션으로 초기화를 할 때 Windows.old 폴더를 날려버려서 복구 할 수 없을텐데,
+그런데 저 세번째 옵션으로 초기화를 할 때 Windows.old 폴더를 날려버려서 복구 할 수 없을텐데,
 
 초기화를 진행해보니 Windows 8.1으로 다시 돌아오게 되었습니다.
 

@@ -39,11 +39,11 @@ ps2. 이 자료 어디까지 퍼진거죠?ㅋㅋ
 ![](./images/Screenshot_2014-01-10-17-49-44.jpg)
 
 ![](./images/Screenshot_2014-01-10-17-42-04.png)
-   
+   
 ![](./images/Screenshot_2014-01-10-17-43-34.png)
 
 ![](./images/Screenshot_2014-01-10-17-44-24.png)
-   
+   
 ![](./images/Screenshot_2014-01-10-17-44-36.png)
 
 2014-01-04 수정내역
@@ -96,49 +96,49 @@ E/AndroidRuntime( 3612): at java.lang.Runtime.load(Runtime.java:340)
 
 E/AndroidRuntime( 3612): at java.lang.System.load(System.java:507)
 
-여기서 /system/lib/libdhwr.so 보이시나요?
+여기서 /system/lib/libdhwr.so 보이시나요?
 
-강제종료가 났던 원인은 /system/lib/libdhwr.so파일이 없었기 때문입니다
+강제종료가 났던 원인은 /system/lib/libdhwr.so파일이 없었기 때문입니다
 
 그래서 덧글을 달아주신 분들중 저 so 파일을 lib폴더에 넣어주면 작동이 되는 분들이 계신거 였고요 (넥스에도 넣으면 작동됨)
 
 하지만 제가 만들고 싶은건 "순정"에서 돌아가는 전기종 어플 이므로 찾아봤습니다
 
-이상한건 어플내/lib/armeabi-v7a폴더에 libdhwr.so파일이 분명 있었습니다
+이상한건 어플내/lib/armeabi-v7a폴더에 libdhwr.so파일이 분명 있었습니다
 
 원래 저기서 가져와야 하는게 맞는대 이상하게 /system/lib폴더를 찾고 있었습니다
 
 아무리 뒤져봐도 해결이 안나오니 classes.dex를 java코드로 변환하서 뒤져봤습니다
 
-libjni\_skyime.so를 호출하는 java는 com/pantech/inputmethod/skyime/Utils이더라고요
+libjni\_skyime.so를 호출하는 java는 com/pantech/inputmethod/skyime/Utils이더라고요
 
 smali를 java로 변환한 코드입니다
 
 public static void **loadNativeLibrary()**{
 
-    try{
+    try{
 
-        if (SkyIMEData.USE\_SYSTEM\_LIBRARY){
+        if (SkyIMEData.USE\_SYSTEM\_LIBRARY){
 
 **System.loadLibrary**("jni\_skyime");
 
-            return;
+            return;
 
-        }
+        }
 
 **System.load**("/data/data/com.pantech.inputmethod.skyime/lib/libjni\_skyime.so");
 
-        return;
+        return;
 
-    }catch (UnsatisfiedLinkError localUnsatisfiedLinkError){
+    }catch (UnsatisfiedLinkError localUnsatisfiedLinkError){
 
-        Log.e(TAG, "Could not load native library jni\_skyime");
+        Log.e(TAG, "Could not load native library jni\_skyime");
 
-    }
+    }
 
 }
 
-여기서 System.loadLibrary()와 System.load()의 차이를 알았습니다
+여기서 System.loadLibrary()와 System.load()의 차이를 알았습니다
 
 System.loadLibrary() : path를 기준으로 찾음, 경로를 설정할 필요가 없음
 
@@ -162,11 +162,11 @@ com/pantech/inputmethod/skyime/BinaryDictionary
 
 두곳입니다
 
-그다음 libdhwr.so를 검색하면 com/diotek/dhwr/DHWR.smali에서 찾을수 있습니다
+그다음 libdhwr.so를 검색하면 com/diotek/dhwr/DHWR.smali에서 찾을수 있습니다
 
 static{
 
-    String str = **GetLibraryPath**("4.00");
+    String str = **GetLibraryPath**("4.00");
 
 **if (str != null)**
 
@@ -174,19 +174,19 @@ static{
 
 while (true){
 
-        DTYPE\_NONE = BIT\_FLAG(0);
+        DTYPE\_NONE = BIT\_FLAG(0);
 
-        DTYPE\_MULTI\_CHARS = BIT\_FLAG(1);
+        DTYPE\_MULTI\_CHARS = BIT\_FLAG(1);
 
 생략
 
-        mResult = new Result();
+        mResult = new Result();
 
 **return;**
 
 **System.loadLibrary("dhwr");**
 
-        // 리턴하면 그 아래에 있는 코드는 쓸모가 없죠...
+        // 리턴하면 그 아래에 있는 코드는 쓸모가 없죠...
 
 }
 
@@ -196,31 +196,31 @@ while (true){
 
 public static String GetLibraryPath(String paramString){
 
-    if (new File("/data/data/com.diotek.dhwr.addon/lib/libdhwr.so").exists());
+    if (new File("/data/data/com.diotek.dhwr.addon/lib/libdhwr.so").exists());
 
 label135:
 
 while (true)
 
-   try{
+   try{
 
-            FileInputStream localFileInputStream = new FileInputStream("/data/data/com.diotek.dhwr.addon/lib/libdhwrex.so");
+            FileInputStream localFileInputStream = new FileInputStream("/data/data/com.diotek.dhwr.addon/lib/libdhwrex.so");
 
-            byte[] arrayOfByte = new byte[localFileInputStream.available()];
+            byte[] arrayOfByte = new byte[localFileInputStream.available()];
 
-            localFileInputStream.read(arrayOfByte, 0, arrayOfByte.length);
+            localFileInputStream.read(arrayOfByte, 0, arrayOfByte.length);
 
-            String[] arrayOfString = new String(arrayOfByte, "ascii").split("\\.");
+            String[] arrayOfString = new String(arrayOfByte, "ascii").split("\\.");
 
-            if (arrayOfString.length != 3)
+            if (arrayOfString.length != 3)
 
-   break label135;
+   break label135;
 
-            if (paramString.compareTo(arrayOfString[0] + "." + arrayOfString[1]) != 0){
+            if (paramString.compareTo(arrayOfString[0] + "." + arrayOfString[1]) != 0){
 
-   break label135;
+   break label135;
 
-                localFileInputStream.close();
+                localFileInputStream.close();
 
 **return "/system/lib/libdhwr.so";**
 
@@ -232,15 +232,15 @@ continue;
 
 }catch (Exception localException){
 
-   continue;
+   continue;
 
 }
 
 }
 
-초반부분쯤 GetLibraryPath()메소드를 호출하고 그게 null값이 아니라면 System.load();를 하고 있어요
+초반부분쯤 GetLibraryPath()메소드를 호출하고 그게 null값이 아니라면 System.load();를 하고 있어요
 
-그런대 GetLibraryPath()이 조금 이상합니다 그래서 해석 포기
+그런대 GetLibraryPath()이 조금 이상합니다 그래서 해석 포기
 
 아무튼 /system/lib/libdhwr.so가 리턴되서 System.load()에 들어가게 되는대...
 
@@ -262,7 +262,7 @@ invoke-static {v1}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
 이상...!!
 
-출처 : <http://www.androidpub.com/2256339>
+출처 : <http://www.androidpub.com/2256339>
 
 [http://blog.naver.com/todangs/80133439961](http://www.androidpub.com/2256339)
 

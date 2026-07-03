@@ -24,7 +24,7 @@ original_url: "https://itmir.tistory.com/440"
 
 +추가 버튼을 눌러 파일을 업로드 해주세요
 
-그다음 업로드한 파일의 미리보기에 마우스 오른쪽 클릭후 이미지 URL 복사를 눌러주세요 (크롬기준)
+그다음 업로드한 파일의 미리보기에 마우스 오른쪽 클릭후 이미지 URL 복사를 눌러주세요 (크롬기준)
 
 ![](./images/2.png)
 
@@ -40,7 +40,7 @@ original_url: "https://itmir.tistory.com/440"
 
 이미지 URL : 방금전 업로드한 이미지 주소
 
-연결할 URL : http://tistory.com/thankyou/2013/?nil=supporters\_banner
+연결할 URL : http://tistory.com/thankyou/2013/?nil=supporters\_banner
 
 저장해 주시면 됩니다
 

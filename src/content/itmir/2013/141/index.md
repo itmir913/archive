@@ -3,12 +3,12 @@ title: "Hiberfil.sys 파일과 최대 절전모드 비활성화에 대해 알아
 date: "2013-02-18T16:09:53+09:00"
 category: "Computer & PC/Windows"
 tags: []
-description: "컴퓨터를 사용하다 보면 많은 분들이 하드디스크의 파티션을 나눠 효율적으로 사용하길 원할겁니다."
+description: "컴퓨터를 사용하다 보면 많은 분들이 하드디스크의 파티션을 나눠 효율적으로 사용하길 원할겁니다."
 draft: false
 original_url: "https://itmir.tistory.com/141"
 ---
 
-컴퓨터를 사용하다 보면 많은 분들이 하드디스크의 파티션을 나눠 효율적으로 사용하길 원할겁니다.
+컴퓨터를 사용하다 보면 많은 분들이 하드디스크의 파티션을 나눠 효율적으로 사용하길 원할겁니다.
 
 대부분 C드라이브와 D드라이브를 나눠 사용할탠데요.
 
@@ -40,9 +40,9 @@ original_url: "https://itmir.tistory.com/141"
 
 다시 킬때는 저장한 파일에 있는 자료를 램에 다시 넣는 방식이죠.
 
-이때 사용하는 파일이 바로 Hiberfil.sys 파일입니다.
+이때 사용하는 파일이 바로 Hiberfil.sys 파일입니다.
 
-대부분 최대 절전모드를 사용한다면 자신의 램크기와 비슷한 Hiberfil.sys파일이 C:\에 있습니다.
+대부분 최대 절전모드를 사용한다면 자신의 램크기와 비슷한 Hiberfil.sys파일이 C:\에 있습니다.
 
 ![](./images/3.png)
 

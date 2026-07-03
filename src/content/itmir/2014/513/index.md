@@ -38,7 +38,7 @@ original_url: "https://itmir.tistory.com/513"
 
 애드센스 홈페이지에 가봅시다.
 
-링크 : <https://www.google.com/adsense>
+링크 : <https://www.google.com/adsense>
 
 그러면 아래처럼 지급 보류 관련 빨간색 경고가 뜹니다.
 

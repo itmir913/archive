@@ -8,9 +8,9 @@ draft: false
 original_url: "https://itmir.tistory.com/209"
 ---
 
-난 천재니까님께서 발견하신 베가레이서2 젤리빈용 CWM ( <http://cafe.naver.com/skydevelopers/246150> )을 터치 리커버리로 만들겸 분해해 봤습니다
+난 천재니까님께서 발견하신 베가레이서2 젤리빈용 CWM ( <http://cafe.naver.com/skydevelopers/246150> )을 터치 리커버리로 만들겸 분해해 봤습니다
 
-원본 베트남 포럼의 글은 <http://vegaviet.com/forum/threads/10522/> 입니다
+원본 베트남 포럼의 글은 <http://vegaviet.com/forum/threads/10522/> 입니다
 
 분해를 해본 결과 빌드하실때 제 github의 cm-10.1소스를 사용하신거 같군요!
 
@@ -28,7 +28,7 @@ default.prop를 확인해 보겠습니다
 
 이것은 베트남 포럼의 리커버리의 램디스크안 default.prop에 있던 내용입니다
 
-제 깃허브에 가보겠습니다 ( <https://github.com/itmir913/android_device_pantech_ef46l/> )
+제 깃허브에 가보겠습니다 ( <https://github.com/itmir913/android_device_pantech_ef46l/> )
 
 ![](./images/3.png)
 
@@ -50,7 +50,7 @@ default.prop를 확인해 보겠습니다
 
 git소스 말고도 cm-10.1 소스 위치/bootable/recovery폴더의
 
-Android.mk를 수정하신거 같고 (위에 뜨는 로고, 참고 : [2013/04/26 - [강좌/팁/커널/빌드 강좌] - [Dev] ClockWorkMod Recovery 키값과 표시 로고 바꿔보기 [개발자글]](/archive/itmir/2013/197) )
+Android.mk를 수정하신거 같고 (위에 뜨는 로고, 참고 : [2013/04/26 - [강좌/팁/커널/빌드 강좌] - [Dev] ClockWorkMod Recovery 키값과 표시 로고 바꿔보기 [개발자글]](/archive/itmir/2013/197) )
 
 또한 nandroid.h파일을 수정하신거 같습니다 (기본 백업 확장자가 tar인것으로 보아)
 

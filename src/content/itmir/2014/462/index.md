@@ -3,16 +3,16 @@ title: "NDK 개발환경 구축하기 (이클립스, Cygwin)"
 date: "2014-02-09T16:22:56+09:00"
 category: "Android/App"
 tags: []
-description: "이번글에서는 이클립스와 Cygwin을 이용하여 NDK 빌드환경을 구축해 보도록 하겠습니다"
+description: "이번글에서는 이클립스와 Cygwin을 이용하여 NDK 빌드환경을 구축해 보도록 하겠습니다"
 draft: false
 original_url: "https://itmir.tistory.com/462"
 ---
 
 안녕하세요
 
-이번글에서는 이클립스와 Cygwin을 이용하여 NDK 빌드환경을 구축해 보도록 하겠습니다
+이번글에서는 이클립스와 Cygwin을 이용하여 NDK 빌드환경을 구축해 보도록 하겠습니다
 
-처음에 NDK를 압축푸는 시간과 Cygwin설치 시간이 길어요
+처음에 NDK를 압축푸는 시간과 Cygwin설치 시간이 길어요
 
 그러므로 1번과 2번을 동시에 진행하시는걸 추천드립니다
 
@@ -20,7 +20,7 @@ original_url: "https://itmir.tistory.com/462"
 
 다른 리눅스나 맥에서는 [다른강좌](http://blog.naver.com/zzbung/10100873079)를 참고해 주세요
 
-뭐.. Cygwin를 사용하는것만 빼면 비슷합니다
+뭐.. Cygwin를 사용하는것만 빼면 비슷합니다
 
 0. 필수
 
@@ -48,11 +48,11 @@ SDK다운로드 받을때 처럼 구글에서 다운로드 하셔야 합니다
 
 ![](./images/3.png)
 
-2. Cygwin설치
+2. Cygwin설치
 
 Cygwin는 윈도우 환경을 사용중일때 설치해야 합니다
 
-위에서 언급했지만 다른 OS일경우 이 강좌를 보시면 안됩니다 (뭐.. Cygwin설치만 빼면 비슷하지만요)
+위에서 언급했지만 다른 OS일경우 이 강좌를 보시면 안됩니다 (뭐.. Cygwin설치만 빼면 비슷하지만요)
 
 -공식 사이트
 
@@ -112,7 +112,7 @@ cygwin\_gcc-core 이런게 아니라 gcc-core입니다
 
 완료!
 
-3. Cygwin의 bashrc수정
+3. Cygwin의 bashrc수정
 
 이제 ".bashrc"라는 파일을 수정해야 합니다
 
@@ -120,7 +120,7 @@ cygwin\_gcc-core 이런게 아니라 gcc-core입니다
 
 C:\cygwin\home\(계정명)\.bashrc
 
-만약 파일이 없다면 cygwin을 한번 실행한다음 다시 들어가 보세요
+만약 파일이 없다면 cygwin을 한번 실행한다음 다시 들어가 보세요
 
 추가해야 할건 아래와 같습니다
 
@@ -140,7 +140,7 @@ cygwin에서는 이렇게 표현합니다 (이유는 몰라요)
 
 ![](./images/11.png)
 
-이제 Cygwin을 연다음 adb를 입력했을때 정상적으로 나타날겁니다
+이제 Cygwin을 연다음 adb를 입력했을때 정상적으로 나타날겁니다
 
 ![](./images/12.png)
 

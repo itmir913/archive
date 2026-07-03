@@ -40,7 +40,7 @@ https://play.google.com/store/apps/details?id=com.jovasoft.defylens
 스크린샷
 
 ![](./images/1.png)
-   
+   
 ![](./images/2.png)
 
 참고로 저는 레드랜즈더군요 ㅎㅎ

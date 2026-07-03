@@ -58,6 +58,6 @@ original_url: "https://itmir.tistory.com/130"
 
 Jelly Bean 업데이트가 시작된 베가 R3! 빨리 만나보세요 ㅎㅎ
 
-(이미지 출처 : http://cafe.naver.com/iroid/1964864
+(이미지 출처 : http://cafe.naver.com/iroid/1964864
 
 가입이 안되어 있어 허락을 받지 못했습니다 문제가 된다면 사진을 삭제하도록 하겠습니다)

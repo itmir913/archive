@@ -42,11 +42,11 @@ Fix 방법은 다음과 같습니다.
 >
 > service skytestserver /system/bin/skytestserver
 >
->     class main
+>     class main
 >
->     socket skytest stream 666
+>     socket skytest stream 666
 >
->     user root
+>     user root
 
 추가 (위치는 service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post\_boot.sh 요 놈 바로 위에가 적당할 겁니다.)
 
@@ -58,7 +58,7 @@ CM9 소스의 hardware/libhardware\_legacy/wifi.c에 마지막 줄에
 >
 > {
 >
->     return 0;
+>     return 0;
 >
 > }
 >
@@ -66,7 +66,7 @@ CM9 소스의 hardware/libhardware\_legacy/wifi.c에 마지막 줄에
 >
 > {
 >
->     return 0;
+>     return 0;
 >
 > }
 

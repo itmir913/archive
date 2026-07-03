@@ -108,7 +108,7 @@ layout\_alignRight - 특정 위젯과 오른쪽이 일치하도록 위젯을 배
 
 모두 알고 계실 필요는 없으나 이런것들도 있구나 정도만 알아주세요 ㅎㅎ
 
-layout\_margin은 "값"만큼 띄어서 배치하겠다는 뜻입니다
+layout\_margin은 "값"만큼 띄어서 배치하겠다는 뜻입니다
 
 하나하나 Textview의 속성에 대해 알아보겠습니다
 
@@ -158,7 +158,7 @@ RRGGBB의 값은 어떻게 구하나요?
 
 ![](./images/번외-2.jpg)
 
-다른걸 써도 되는데 여기서는 윈도우 계산기로 하겠습니다
+다른걸 써도 되는데 여기서는 윈도우 계산기로 하겠습니다
 
 보기 - 프로그래머용을 들어간다음 좌측 메뉴를 Dex로 설정하세요
 
@@ -190,7 +190,7 @@ android:textSize
 
 android:typeFace
 
-글자 폰트를 지정합니다
+글자 폰트를 지정합니다
 
 대표적으로
 
@@ -210,7 +210,7 @@ android:textStyle
 
 뭐 예를들면 **굵은글씨**, *기울어짐*등등..
 
-기본을 제외한 세개만 들어갈수 있습니다
+기본을 제외한 세개만 들어갈수 있습니다
 
 normal
 
@@ -254,7 +254,7 @@ android:singleLine
 
 소스는 다음과 같습니다
 
-아래에 있는 Graphical Layout을 눌러보세요
+아래에 있는 Graphical Layout을 눌러보세요
 
 ![](./images/1-9.png)
 
@@ -308,7 +308,7 @@ MainActivity를 볼까요?
 
 이제 버튼을 누르면 글자와 TextView의 속성이 변경되게 할건데요
 
-public class MainActivity extends Activity { 밑에 Button Btn\_change;을 추가해 주세요
+public class MainActivity extends Activity { 밑에 Button Btn\_change;을 추가해 주세요
 
 ![](./images/1-1_1.png)
 
@@ -334,7 +334,7 @@ import 후
 
 ![](./images/1-2.png)
 
-마찬가지로 TextView textview;도 추가후 import 해주세요
+마찬가지로 TextView textview;도 추가후 import 해주세요
 
 이제 버튼과 TextView를 자바 코드상에서 조작할수 있도록 xml과 java를 연결해야만 합니다
 

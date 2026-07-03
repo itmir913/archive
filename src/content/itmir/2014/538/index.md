@@ -14,7 +14,7 @@ original_url: "https://itmir.tistory.com/538"
 
 제가 6개월 전부터 구상"만" 하고 있던 어플이 뭐냐면..
 
-배터리 구루처럼 사용자의 학습을 학습하고 그 정보를 바탕으로 원하는 동작을 실행해주는 앱이었습니다
+배터리 구루처럼 사용자의 학습을 학습하고 그 정보를 바탕으로 원하는 동작을 실행해주는 앱이었습니다
 
 이게 좀처럼 어렵더라고요.............
 
@@ -23,7 +23,7 @@ original_url: "https://itmir.tistory.com/538"
 아래 스크린샷은 초기 도움말과 메인 화면 입니다
 
 ![](./images/1.png)
-   
+   
 ![](./images/2.png)
 
 ![](./images/3.png)
@@ -35,12 +35,12 @@ original_url: "https://itmir.tistory.com/538"
 아래는 그 기록의 일부입니다
 
 ![](./images/5.jpg)
-    
+    
 ![](./images/6.jpg)
 
 저 0, 1, 2는 저도 잘 몰라요 ㅋㅋ 코드와 대조해 봐야 합니다 ㅋㅋ
 
-여기까지는 저번 <http://cafe.naver.com/develoid/462494> 글에 풀었던 스크린샷입니다 ㅎㅎ
+여기까지는 저번 <http://cafe.naver.com/develoid/462494> 글에 풀었던 스크린샷입니다 ㅎㅎ
 
 지금부터 주말동안에 무슨 뻘짓을 했는지 보여드릴께요
 
@@ -51,7 +51,7 @@ original_url: "https://itmir.tistory.com/538"
 물론 전부구현한건 아니고 극히 일부분이죠...
 
 ![](./images/11.png)
-    
+    
 ![](./images/7.png)
 
 액션바의 +를 누르면 이름 입력이 뜨고, 거기서 또 +를 누르면 오른쪽(또는 아래)사진이 뜹니다
@@ -59,7 +59,7 @@ original_url: "https://itmir.tistory.com/538"
 작업을 선택하면... 자세한 설정이 가능해요
 
 ![](./images/10.png)
-    
+    
 ![](./images/9.png)
 
 여러개의 작업을 추가하고 저장하면 DB에 기록되는거죠
