@@ -12,7 +12,7 @@ original_url: "https://itmir.tistory.com/261"
 
 (안드로이드 프로젝트 내에 있는 "AndroidManifest.xml" 파일에서 수정하면 됩니다.)
 
-![](http://postfiles1.naver.net/20100514_176/jolangma_1273840651452Yw5pX_png/theme_jolangma.png?type=w3)   ![](http://postfiles2.naver.net/20100514_97/jolangma_1273840651642pSuak_png/theme_notitlebar_jolangma.png?type=w3)   ![](http://postfiles14.naver.net/20100514_109/jolangma_1273840651813MaTRR_png/theme_notitlebar_fullscreen_jolangma.png?type=w3)
+![](./images/theme_jolangma.png)   ![](./images/theme_notitlebar_jolangma.png)   ![](http://postfiles14.naver.net/20100514_109/jolangma_1273840651813MaTRR_png/theme_notitlebar_fullscreen_jolangma.png?type=w3)
 
 `<activity android:theme="@android:style/Theme">`
 

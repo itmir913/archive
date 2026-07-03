@@ -21,7 +21,7 @@ git을 시작하기 위한 간편 안내서. 어렵지 않아요 ;)
 [English](http://rogerdudler.github.io/git-guide/index.html), [Deutsch](http://rogerdudler.github.io/git-guide/index.de.html), [Español](http://rogerdudler.github.io/git-guide/index.es.html), [Français](http://rogerdudler.github.io/git-guide/index.fr.html), [Italiano](http://rogerdudler.github.io/git-guide/index.it.html), [日本語](http://rogerdudler.github.io/git-guide/index.ja.html),  
 [မြန်မာ](http://rogerdudler.github.io/git-guide/index.my.html), [Nederlands](http://rogerdudler.github.io/git-guide/index.nl.html), [Português](http://rogerdudler.github.io/git-guide/index.pt_BR.html), [Русский](http://rogerdudler.github.io/git-guide/index.ru.html), [Türkçe](http://rogerdudler.github.io/git-guide/index.tr.html), [中文](http://rogerdudler.github.io/git-guide/index.zh.html)
 
-![자, 갑시다!](http://rogerdudler.github.io/git-guide/img/arrow.png)
+![자, 갑시다!](./images/arrow.png)
 
 ## 설치
 
@@ -52,7 +52,7 @@ git을 시작하기 위한 간편 안내서. 어렵지 않아요 ;)
 준비 영역(staging area)의 역할을 하며, 마지막 나무인 `HEAD`는  
 최종 확정본(commit)을 나타네요.
 
-![로컬 저장소는 이렇게 생겼어요.](http://rogerdudler.github.io/git-guide/img/trees.png)
+![로컬 저장소는 이렇게 생겼어요.](./images/trees.png)
 
 ## 추가와 확정(commit)
 
@@ -84,7 +84,7 @@ git을 시작하기 위한 간편 안내서. 어렵지 않아요 ;)
 이제 다른 가지를 이용해서 개발을 진행하고, 나중에 개발이 완료되면  
 master 가지로 돌아와 병합하면 돼요.
 
-![가지치기 예제를 보여드리죠.](http://rogerdudler.github.io/git-guide/img/branches.png)
+![가지치기 예제를 보여드리죠.](./images/branches.png)
 
 아래 명령으로 "feature_x"라는 이름의 가지를 만들고 갈아탑니다.  
 `git checkout -b feature_x`  
