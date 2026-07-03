@@ -7,7 +7,7 @@ interface Props {
   maxWidth?: string;
 }
 
-const { title, description = 'ITMir 아카이브 · 2013–2021 · luminousky', maxWidth } = Astro.props;
+const { title, description = 'ITMir 아카이브 · 2012–2021 · luminousky', maxWidth } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
@@ -27,7 +27,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <header class="site-header">
       <div class="header-inner">
         <a href={`${base}/`} class="site-title">luminousky / ITMir</a>
-        <span class="site-period">2013 – 2021</span>
+        <span class="site-period">2012 – 2021</span>
       </div>
     </header>
 
