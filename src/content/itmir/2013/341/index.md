@@ -51,5 +51,3 @@ exe변환/한글화 : 미르
 ![](./images/error.png)
 
 시험삼아 받아보니 이런게 뜨네요;
-
-[getOTA.exe](https://github.com/itmir913/archive/releases/download/itmir-attachments/getOTA.exe)

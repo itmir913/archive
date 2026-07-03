@@ -1,4 +1,4 @@
----
+﻿---
 title: "완전 언루팅 / 완벽 비지박스 삭제 (UnRoot / Uninstall Busybox)"
 date: "2013-09-07T22:13:43+09:00"
 category: "SmartPhone/Android"
@@ -20,7 +20,6 @@ original_url: "https://itmir.tistory.com/331"
 
 언루팅
 
-[UnRooting.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/UnRooting.zip)
 
 CWM에서 롬을 설치하시듯이 설치하시면 됩니다
 
@@ -42,7 +41,6 @@ CWM에서 롬을 설치하시듯이 설치하시면 됩니다
 
 아래 zip파일을 사용하지면 됩니다
 
-[Busybox Uninstall.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/Busybox Uninstall.zip)
 
 다시 설치하실때는 마켓에 있는 busybox installer어플을 이용하시면 될듯 합니다~
 

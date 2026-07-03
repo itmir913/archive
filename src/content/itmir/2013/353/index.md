@@ -1,4 +1,4 @@
----
+﻿---
 title: "바이두(baidu) 2TB 클라우드 이용하기"
 date: "2013-09-29T12:48:59+09:00"
 category: "Computer & PC/Windows"
@@ -202,7 +202,6 @@ HEX에디터와 파일비교등등으로 겨우 이정도까지 했습니다.
 
 접기
 
-[바이두클라우드한글패치.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/바이두클라우드한글패치.zip)
 
 접기
 
@@ -232,7 +231,6 @@ HEX에디터와 파일비교등등으로 겨우 이정도까지 했습니다.
 
 파일은 아래
 
-[바이두동기화한글패치.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/바이두동기화한글패치.zip)
 
 경로
 
@@ -278,7 +276,6 @@ C:\Program Files\baidu\BaiduYunGuanjia
 
 **패쳐 다운로드 ↓↓↓↓**
 
-[BaiduCloud_Korean_130928.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/BaiduCloud_Korean_130928.zip)
 
 **제목 : 바이두 클라우드 한국어 패치 프로그램 AHK로 만들기**
 
@@ -312,7 +309,6 @@ C:\Program Files\baidu\BaiduYunGuanjia
 
 아래는 실행파일과 패치파일이 포함된 압축 파일입니다.
 
-[BaiduCloud_Korean_130928.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/BaiduCloud_Korean_130928_1.zip)
 
 실행한 화면입니다.
 

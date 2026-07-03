@@ -70,7 +70,3 @@ original_url: "https://itmir.tistory.com/223"
 2013.05.27 15:30 2차 수정 파일로 교체했습니다.
 
 그전에 받으신 분들은 업데이트하시기 바랍니다.
-
-[S_Translator_CSLi_v0.8.8_ported_softdx.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/S_Translator_CSLi_v0.8.8_ported_softdx.apk)
-
-[Samsungsvc_v1.4.0.108.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/Samsungsvc_v1.4.0.108.apk)

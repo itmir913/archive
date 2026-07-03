@@ -30,6 +30,3 @@ original_url: "https://itmir.tistory.com/692"
 ![](./images/img_1.jpg)
 
 공식 홈페이지에서 받은 PureText 6.2 프로그램을 백업용으로 첨부해둡니다.
-
-[puretext_6.2_32-bit.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/puretext_6.2_32-bit.zip)
-[puretext_6.2_64-bit.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/puretext_6.2_64-bit.zip)

@@ -1,4 +1,4 @@
----
+﻿---
 title: "Apk Easy Tool - Apk GUI 디컴파일 도구"
 date: "2020-10-24T14:23:59+09:00"
 category: "SmartPhone/Android"
@@ -58,12 +58,11 @@ Apk Manager보다 확실히 정돈되고 아름다운 UI를 자랑한다. 이게
 
 Screenshot of APK Easy Tool v1.57 Apk Easy Tool is a lightweight application that enables you to manage, sign, compile and decompile the APK files for th…
 
-forum.xda-developers.com](https://forum.xda-developers.com/android/software-hacking/tool-apk-easy-tool-v1-02-windows-gui-t3333960)
+[forum.xda-developers.com](https://forum.xda-developers.com/android/software-hacking/tool-apk-easy-tool-v1-02-windows-gui-t3333960)
 
 위의 공식 사이트에서 파일을 받을 수 있다.
 
 혹은 아래 압축 파일을 받은 뒤에 apktool.jar 파일을 따로 넣어주는 방법도 있다.
 
-[APK Easy Tool v1.57 Portable.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/APK Easy Tool v1.57 Portable.zip)
 
 위 압축 파일 내에는 티스토리 용량 관계 상 apktool.jar이 없으므로 [여기](https://ibotpeaches.github.io/Apktool/)를 클릭하여 apktool.jar을 다운 받은 다음, 하위 폴더 내의 Apktool 폴더 안에 jar파일을 넣어주어야 한다.

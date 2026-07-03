@@ -54,9 +54,7 @@ java.lang.NoSuchFieldError: android.view.WindowManager$LayoutParams.oemFlags
 
 [oemFlags 수정 VEGAMusicPlayer.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/497-oemFlags-VEGAMusicPlayer.apk)
 
-[VEGAminiMusic.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/VEGAminiMusic.apk)
 
-[VEGAMusicFX.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/VEGAMusicFX.apk)
 
 [VEGAMusicPlayer.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/497-VEGAMusicPlayer.apk)
 

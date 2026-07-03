@@ -1,4 +1,4 @@
----
+﻿---
 title: "안드로이드 플래쉬 플레이어 (FlashPlayer for Android)"
 date: "2013-10-26T21:56:28+09:00"
 category: "SmartPhone/Android"
@@ -20,10 +20,8 @@ original_url: "https://itmir.tistory.com/363"
 
 ICS이상 사용가능
 
-[install flash player 11.1.115.81.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/install flash player 11.1.115.81.apk)
 
 GB와 허니콤에서 사용가능
 
-[install flash player 11.1.111.73.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/install flash player 11.1.111.73.apk)
 
 출처 : <http://helpx.adobe.com/flash-player/kb/archived-flash-player-versions.html>

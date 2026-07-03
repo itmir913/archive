@@ -20,7 +20,6 @@ original_url: "https://itmir.tistory.com/206"
 
 그래서 한번 제 베레2에 넣어보도록 하겠습니다
 
-[VEGACamera.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/VEGACamera.zip)
 
 [배넘식 미니 윈도우.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/206-mini-window.zip)
 

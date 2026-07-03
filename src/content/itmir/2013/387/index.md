@@ -102,9 +102,7 @@ aircrack-ng -b [bssid] [파일저장이름]
 
 첨부파일
 
-[aircrack-ng-1.2-beta1-win.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/aircrack-ng-1.2-beta1-win.zip)
 
-[aircrack-ng_1.1-6_amd64.deb](https://github.com/itmir913/archive/releases/download/itmir-attachments/aircrack-ng_1.1-6_amd64.deb)
 
 출처 : <http://blog.naver.com/kkh0879/70125177862>
 

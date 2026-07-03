@@ -19,5 +19,3 @@ AutoShutDown은 일정시간후 프로그램을 종료시켜 줍니다.
 저 명령어를 프로그램화 한것으로 생각하시면 됩니다.
 
 그럼 저는 이만..
-
-[AutoShutDown.exe](https://github.com/itmir913/archive/releases/download/itmir-attachments/AutoShutDown.exe)

@@ -55,7 +55,3 @@ ps. 다음 업뎃에 삼성의 터치위즈 상단바 투명 센스를 기대하
 혹시 필요하신 분이 계실지 몰라 첨부해 둡니다
 
 이글은 디벨로이드, 미르의 IT정복기([itmir.tistory.com](http://itmir.tistory.com)), 맛클에 업로드 됩니다
-
-[signedSecLauncher3.z01](https://github.com/itmir913/archive/releases/download/itmir-attachments/signedSecLauncher3.z01)
-
-[signedSecLauncher3.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/signedSecLauncher3.zip)

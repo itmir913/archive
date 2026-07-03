@@ -1,4 +1,4 @@
----
+﻿---
 title: "[Info][APP] My Script 계산기 어플 소개"
 date: "2013-11-24T11:32:22+09:00"
 category: "Application"
@@ -47,5 +47,3 @@ ps. 녹스에서도 사용 가능합니다
 삼성 앱스에서 다운로드 가능합니다
 
 이 어플은 필수입니다!!!!
-
-[MyScript Calculator v1.1.2.250.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/MyScript Calculator v1.1.2.250.apk)

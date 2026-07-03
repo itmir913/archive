@@ -25,5 +25,3 @@ UI가 S3보다 엄청 보기 편하고
 그럼 강종 뜨는 문제 있다면 알려주세요~
 
 ps. 노트3 내파일 어플은 Sdcard → Knox 가 가능하다고 해서 이식해 본건대 없는....;;
-
-[SecMyFiles2.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/SecMyFiles2.apk)

@@ -1,4 +1,4 @@
----
+﻿---
 title: "system.img.ext4를 분해(Unpack)에서 System Dump를 추출하자"
 date: "2014-05-06T13:53:55+09:00"
 category: "SmartPhone/Android"
@@ -24,7 +24,6 @@ original_url: "https://itmir.tistory.com/494"
 
 [sgs2img.exe](https://github.com/itmir913/archive/releases/download/itmir-attachments/sgs2img.exe)
 
-[ext2explore v2.2.71.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ext2explore v2.2.71.zip)
 
 ---
 

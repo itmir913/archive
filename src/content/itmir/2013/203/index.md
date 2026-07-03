@@ -22,9 +22,7 @@ original_url: "https://itmir.tistory.com/203"
 
 또한 루팅 카운터가 올라가는 것을 방지하는 기능도 포함되어 있습니다
 
-[VegaRacer2.z01](https://github.com/itmir913/archive/releases/download/itmir-attachments/VegaRacer2.z01)
 
-[VegaRacer2.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/VegaRacer2.zip)
 
 --개발자용 글
 

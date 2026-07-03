@@ -3,10 +3,8 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const allPosts = await getCollection('itmir', ({ data }) => !data.draft);
-// 최신순 정렬: 연도 내에서도 최신(12월)이 위, 오래된 것(1월)이 아래
 allPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
-// Group by actual publication year (frontmatter date), most recent year first
 const byYear = new Map<string, typeof allPosts>();
 for (const post of allPosts) {
   const year = String(post.data.date.getFullYear());
@@ -14,6 +12,13 @@ for (const post of allPosts) {
   byYear.get(year)!.push(post);
 }
 const years = [...byYear.keys()].sort((a, b) => Number(b) - Number(a));
+
+// 카테고리 가나다 정렬
+const catSet = new Set<string>();
+for (const post of allPosts) {
+  if (post.data.category) catSet.add(post.data.category);
+}
+const allCategories = [...catSet].sort((a, b) => a.localeCompare(b, 'ko'));
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
@@ -27,40 +32,120 @@ function formatDate(d: Date) {
 ---
 
 <BaseLayout title="ITMir 아카이브">
-  <h1 class="page-title">ITMir 아카이브</h1>
-  <p class="page-description">
-    itmir.tistory.com · naver · 2012–2021 · 총 {allPosts.length}개 포스트
+  <h1 class="text-2xl font-bold tracking-tight m-0 mb-1 leading-tight">
+    ITMir 아카이브
+  </h1>
+  <p class="text-base text-gray-400 m-0 mb-10">
+    itmir.tistory.com · 2012–2021 · 총 {allPosts.length}개 포스트
   </p>
 
-  <nav class="year-nav" aria-label="연도별 이동">
+  <!-- 검색 -->
+  <div class="mb-3">
+    <input
+      type="search"
+      id="search-input"
+      placeholder="제목, 카테고리, 설명 검색..."
+      autocomplete="off"
+      class="w-full px-3 py-2 text-base font-sans border border-gray-200 rounded-md outline-none focus:border-blue-500 transition-colors bg-white text-gray-900 placeholder-gray-400"
+    />
+  </div>
+
+  <!-- 카테고리 필터 -->
+  {allCategories.length > 0 && (
+    <div class="mb-3">
+      <button
+        id="cat-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="cat-panel"
+        class="flex items-center gap-2 text-base font-medium text-gray-500 hover:text-gray-900 transition-colors cursor-pointer select-none"
+      >
+        <span>카테고리 필터</span>
+        <span id="cat-selected-label" class="text-blue-600 font-normal hidden"></span>
+        <span id="cat-arrow" class="text-gray-400" aria-hidden="true">▾</span>
+      </button>
+      <div
+        id="cat-panel"
+        role="group"
+        aria-label="카테고리 필터"
+        class="hidden flex-wrap gap-1.5 mt-2"
+      >
+        <button
+          data-cat="__all__"
+          type="button"
+          class="filter-cat-btn text-base px-2 py-1 rounded border border-gray-200 bg-gray-100 text-gray-500 hover:text-gray-900 hover:border-gray-400 transition-colors cursor-pointer whitespace-nowrap font-sans"
+        >
+          전체
+        </button>
+        {allCategories.map((cat) => (
+          <button
+            data-cat={cat}
+            type="button"
+            class="filter-cat-btn text-base px-2 py-1 rounded border border-gray-200 bg-gray-50 text-gray-500 hover:text-gray-900 hover:border-gray-400 transition-colors cursor-pointer whitespace-nowrap font-sans"
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <!-- 필터 결과 수 -->
+  <p
+    id="filter-status"
+    aria-live="polite"
+    class="text-base text-gray-400 h-6 mb-4"
+  ></p>
+
+  <!-- 연도 내비게이션 -->
+  <nav aria-label="연도별 이동" class="flex flex-wrap gap-1.5 mb-10">
     {years.map((year) => (
-      <a href={`#year-${year}`}>{year}</a>
+      <a
+        href={`#year-${year}`}
+        class="text-base font-medium text-gray-400 px-2 py-1 rounded border border-gray-200 hover:text-gray-900 hover:border-gray-400 transition-colors no-underline"
+      >
+        {year}
+      </a>
     ))}
   </nav>
 
+  <!-- 연도별 포스트 목록 -->
   {years.map((year) => {
     const posts = byYear.get(year)!;
     return (
-      <section class="year-section" id={`year-${year}`}>
-        <h2 class="year-heading">
+      <section id={`year-${year}`} class="mb-12 scroll-mt-14">
+        <h2 class="text-xl font-bold tracking-tight m-0 mb-3 pb-2 border-b-2 border-gray-900 flex items-baseline gap-2">
           {year}
-          <span class="year-count">({posts.length})</span>
+          <span class="text-base font-normal text-gray-400">({posts.length})</span>
         </h2>
-        <ul class="post-list">
+        <ul class="list-none p-0 m-0">
           {posts.map((post) => {
             const [postYear, postNum] = post.slug.split('/');
+            const searchText = [
+              post.data.title,
+              post.data.category,
+              post.data.description,
+            ].filter(Boolean).join(' ').toLowerCase();
             return (
-              <li class="post-item">
-                <span class="post-date">{formatDate(post.data.date)}</span>
-                <div class="post-title-row">
+              <li
+                class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 py-2 border-b border-gray-100 last:border-b-0"
+                data-cat={post.data.category || ''}
+                data-search={searchText}
+              >
+                <span class="sm:w-28 sm:flex-shrink-0 text-base text-gray-400 whitespace-nowrap tabular-nums">
+                  {formatDate(post.data.date)}
+                </span>
+                <div class="flex items-center gap-2 flex-wrap">
                   <a
                     href={`${base}/itmir/${postYear}/${postNum}/`}
-                    class="post-title-link"
+                    class="text-base font-medium text-gray-900 hover:text-blue-600 no-underline transition-colors"
                   >
                     {post.data.title}
                   </a>
                   {post.data.category && (
-                    <span class="post-category">{post.data.category}</span>
+                    <span class="text-base text-gray-400 bg-gray-100 px-2 py-0.5 rounded whitespace-nowrap flex-shrink-0">
+                      {post.data.category}
+                    </span>
                   )}
                 </div>
               </li>
@@ -71,3 +156,141 @@ function formatDate(d: Date) {
     );
   })}
 </BaseLayout>
+
+<style>
+  .filter-cat-btn.active {
+    @apply bg-blue-600 border-blue-600 text-white;
+  }
+</style>
+
+<script>
+  const searchInput = document.getElementById('search-input') as HTMLInputElement | null;
+  const catBtns = document.querySelectorAll<HTMLButtonElement>('.filter-cat-btn');
+  const allItems = document.querySelectorAll<HTMLLIElement>('li[data-search]');
+  const yearSections = document.querySelectorAll<HTMLElement>('section[id^="year-"]');
+  const filterStatus = document.getElementById('filter-status');
+  const catToggle = document.getElementById('cat-toggle') as HTMLButtonElement | null;
+  const catPanel = document.getElementById('cat-panel') as HTMLElement | null;
+  const catArrow = document.getElementById('cat-arrow') as HTMLElement | null;
+  const catSelectedLabel = document.getElementById('cat-selected-label') as HTMLElement | null;
+
+  let selectedCats = new Set<string>();
+  let query = '';
+  let panelOpen = false;
+
+  function setPanelOpen(open: boolean) {
+    panelOpen = open;
+    if (catPanel) {
+      if (open) {
+        catPanel.classList.remove('hidden');
+        catPanel.classList.add('flex');
+      } else {
+        catPanel.classList.add('hidden');
+        catPanel.classList.remove('flex');
+      }
+    }
+    if (catArrow) catArrow.textContent = open ? '▴' : '▾';
+    if (catToggle) catToggle.setAttribute('aria-expanded', String(open));
+  }
+
+  function updateSelectedLabel() {
+    if (!catSelectedLabel) return;
+    if (selectedCats.size === 0) {
+      catSelectedLabel.textContent = '';
+      catSelectedLabel.classList.add('hidden');
+    } else {
+      catSelectedLabel.textContent = `(${selectedCats.size}개 선택)`;
+      catSelectedLabel.classList.remove('hidden');
+    }
+  }
+
+  function readURL() {
+    const p = new URLSearchParams(window.location.search);
+    const c = p.get('cat');
+    if (c) selectedCats = new Set(c.split(',').filter(Boolean));
+    query = p.get('q') || '';
+  }
+
+  function pushURL() {
+    const p = new URLSearchParams();
+    if (selectedCats.size > 0) p.set('cat', [...selectedCats].join(','));
+    if (query) p.set('q', query);
+    const qs = p.toString();
+    history.replaceState(null, '', location.pathname + (qs ? '?' + qs : ''));
+  }
+
+  function applyFilter() {
+    let visible = 0;
+
+    allItems.forEach((li) => {
+      const itemCat = li.dataset.cat || '';
+      const itemText = li.dataset.search || '';
+
+      const catMatch = selectedCats.size === 0 || selectedCats.has(itemCat);
+      const textMatch = !query || itemText.includes(query);
+
+      const show = catMatch && textMatch;
+      li.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+
+    yearSections.forEach((sec) => {
+      const any = Array.from(sec.querySelectorAll<HTMLLIElement>('li[data-search]')).some(
+        (li) => li.style.display !== 'none',
+      );
+      sec.style.display = any ? '' : 'none';
+    });
+
+    const filtered = selectedCats.size > 0 || query;
+    if (filterStatus) filterStatus.textContent = filtered ? `${visible}개 표시 중` : '';
+
+    updateSelectedLabel();
+    pushURL();
+  }
+
+  function syncUI() {
+    catBtns.forEach((btn) => {
+      const c = btn.dataset.cat;
+      if (c === '__all__') {
+        btn.classList.toggle('active', selectedCats.size === 0);
+      } else {
+        btn.classList.toggle('active', selectedCats.has(c!));
+      }
+    });
+  }
+
+  readURL();
+  if (searchInput) searchInput.value = query;
+
+  // URL에 카테고리가 있으면 패널 자동 열기
+  if (selectedCats.size > 0) setPanelOpen(true);
+
+  syncUI();
+  applyFilter();
+
+  catToggle?.addEventListener('click', () => {
+    setPanelOpen(!panelOpen);
+  });
+
+  catBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const c = btn.dataset.cat;
+      if (c === '__all__') {
+        selectedCats.clear();
+      } else if (c) {
+        selectedCats.has(c) ? selectedCats.delete(c) : selectedCats.add(c);
+      }
+      syncUI();
+      applyFilter();
+    });
+  });
+
+  let debounce: ReturnType<typeof setTimeout>;
+  searchInput?.addEventListener('input', () => {
+    clearTimeout(debounce);
+    debounce = setTimeout(() => {
+      query = searchInput.value.toLowerCase().trim();
+      applyFilter();
+    }, 150);
+  });
+</script>

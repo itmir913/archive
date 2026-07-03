@@ -68,6 +68,14 @@ original_url: "https://itmir.tistory.com/300"
 `itmir-1-1/` 폴더(별도 zip 백업)에 변환 스크립트 보관:
 `convert.py` → `compress_images.py` → `add_attachments.py` → `validate.py`
 
+## Tailwind CSS 규칙
+
+- **최소 글씨 크기: `text-base` (1rem / 16px)**
+- `text-xs`, `text-sm` 사용 금지
+- `text-[0.8rem]` 등 `text-base` 미만 임의 크기 사용 금지
+- 글씨 크기는 Tailwind 기본 스케일 사용: `text-base`, `text-lg`, `text-xl`, `text-2xl`, `text-3xl`, `text-4xl` …
+- 더 큰 크기에서 스케일에 딱 맞는 값이 없을 때만 `text-[...]` 임의 값 허용
+
 ## Git 규칙
 
 - 커밋 메시지에 `Co-Authored-By:` 등 AI 공동 작성자 표기 금지

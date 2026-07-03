@@ -1,4 +1,4 @@
----
+﻿---
 title: "Img를 분해해 보자 - Linux Reader"
 date: "2013-04-24T16:55:34+09:00"
 category: "SmartPhone"
@@ -10,7 +10,6 @@ original_url: "https://itmir.tistory.com/195"
 
 BINX를 분해하면 나오는 img 또는 cwm에서 백업하면 생기는 img파일은 아래와 같은 방법으로 분해가 가능합니다
 
-[Linux Reader.exe](https://github.com/itmir913/archive/releases/download/itmir-attachments/Linux Reader.exe)
 
 <http://www.diskinternals.com/linux-reader/>
 

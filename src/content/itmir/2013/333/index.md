@@ -15,9 +15,3 @@ original_url: "https://itmir.tistory.com/333"
 원본 다운받은 곳에서 한개의 수정도 없이 올립니다
 
 TWRP는 공식 사이트에서, CWM은 네이버에서 다운로드 받았습니다
-
-[cwm_v6.0.1.2_gt-i9300_touch.tar](https://github.com/itmir913/archive/releases/download/itmir-attachments/cwm_v6.0.1.2_gt-i9300_touch.tar)
-
-[openrecovery-twrp-2.6.1.0-i9300.tar](https://github.com/itmir913/archive/releases/download/itmir-attachments/openrecovery-twrp-2.6.1.0-i9300.tar)
-
-[recovery-clockwork-touch-6.0.3.1-i9300.tar](https://github.com/itmir913/archive/releases/download/itmir-attachments/recovery-clockwork-touch-6.0.3.1-i9300.tar)

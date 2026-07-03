@@ -48,7 +48,6 @@ original_url: "https://itmir.tistory.com/671"
 
 먼저 인터넷에서 구한 각종 드라이버 파일을 압축해둔 파일을 아래 링크를 클릭하여 다운로드 받는다.
 
-[jtab2-driver.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/jtab2-driver.zip)
 
 이 파일을 다운로드한 뒤에 압축 해제한 각각의 폴더 들어가서 각각 설치하지 **않는다.**
 

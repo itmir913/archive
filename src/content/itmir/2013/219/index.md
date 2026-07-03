@@ -42,11 +42,8 @@ out/target/common/obj/APPS
 
 반디집으로 7z 분활압축 했습니다
 
-[android_stubs_current_intermediates.7z.001](https://github.com/itmir913/archive/releases/download/itmir-attachments/android_stubs_current_intermediates.7z.001)
 
-[android_stubs_current_intermediates.7z.002](https://github.com/itmir913/archive/releases/download/itmir-attachments/android_stubs_current_intermediates.7z.002)
 
-[android_stubs_current_intermediates.7z.003](https://github.com/itmir913/archive/releases/download/itmir-attachments/android_stubs_current_intermediates.7z.003)
 
 ---
 

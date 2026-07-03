@@ -218,7 +218,6 @@ original_url: "https://itmir.tistory.com/352"
 
 **한글화 모바일 앱 다운로드 :**
 
-[com.qihoo.yunpan.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/com.qihoo.yunpan.apk)
 
 **이 자료는 다른곳에서의 직접적인 공유를 절대 금지합니다.**
 
@@ -250,7 +249,6 @@ original_url: "https://itmir.tistory.com/352"
 
 **업데이트버전(3.3.2) 한글화 앱 :   [com.qihoo.yunpan-update(3.3.2).apk](http://spapa1004.tistory.com/attachment/cfile27.uf@23541F4B526BE6AA395BF2.apk)**
 
-[com.qihoo.yunpan-update(3.3.2).apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/com.qihoo.yunpan-update(3.3.2).apk)
 
 *** 대용량 클라우드 서비스**
 

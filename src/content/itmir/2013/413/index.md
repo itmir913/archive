@@ -1,4 +1,4 @@
----
+﻿---
 title: "올레 나비 Olleh Navi v3.4.0"
 date: "2013-12-19T01:00:00+09:00"
 category: "Application"
@@ -21,7 +21,3 @@ original_url: "https://itmir.tistory.com/413"
 혹시 필요하신 분 계실까봐 업로드 해둡니다~
 
 [DownLoad]
-
-[올레 navi v3.4.0.z01](https://github.com/itmir913/archive/releases/download/itmir-attachments/올레 navi v3.4.0.z01)
-
-[올레 navi v3.4.0.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/올레 navi v3.4.0.zip)

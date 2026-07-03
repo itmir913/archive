@@ -1,4 +1,4 @@
----
+﻿---
 title: "[Me] 너에게난 나에게넌 기타 연주"
 date: "2014-01-24T13:34:33+09:00"
 category: "DailyLife"
@@ -39,13 +39,3 @@ original_url: "https://itmir.tistory.com/446"
 [YouTube 영상: https://www.youtube.com/watch?v=GHSIkjj-4m0](https://www.youtube.com/watch?v=GHSIkjj-4m0)
 
 [DownLoad]
-
-[너에게난나에게넌.z01](https://github.com/itmir913/archive/releases/download/itmir-attachments/너에게난나에게넌.z01)
-
-[너에게난나에게넌.z02](https://github.com/itmir913/archive/releases/download/itmir-attachments/너에게난나에게넌.z02)
-
-[너에게난나에게넌.z03](https://github.com/itmir913/archive/releases/download/itmir-attachments/너에게난나에게넌.z03)
-
-[너에게난나에게넌.z04](https://github.com/itmir913/archive/releases/download/itmir-attachments/너에게난나에게넌.z04)
-
-[너에게난나에게넌.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/너에게난나에게넌.zip)

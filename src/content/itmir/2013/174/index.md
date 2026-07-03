@@ -1,4 +1,4 @@
----
+﻿---
 title: "BINX를 분해해 보자!"
 date: "2013-03-09T23:03:36+09:00"
 category: "SmartPhone/Android"
@@ -33,7 +33,6 @@ su_ky님과 베트남 분(자세히는 모르겠습니다)께서 만드셨다고
 
 필요 파일을 설치하신다음 아래 툴을 받아 압축풀어 주세요
 
-[binx unpacker.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/binx unpacker.zip)
 
 압축풀으신다음 폴더에 진입하셔서 BINX폴더에 분해를 원하는 .binx파일을 넣어주신다음 Unpacker.bat를 실행해주시면 됩니다
 

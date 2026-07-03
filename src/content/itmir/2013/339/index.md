@@ -22,9 +22,7 @@ py2exe가 그 주인공 인데요.
 
 python은 [www.python.org](http://www.python.org)에서 받을 수 있습니다.
 
-[python-2.7.5.z01](https://github.com/itmir913/archive/releases/download/itmir-attachments/python-2.7.5.z01)
 
-[python-2.7.5.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/python-2.7.5.zip)
 
 첨부로도 올려두겠습니다.
 
@@ -36,7 +34,6 @@ python은 [www.python.org](http://www.python.org)에서 받을 수 있습니다.
 
 위에 올려진 python을 설치했다면,
 
-[py2exe-0.6.9.win32-py2.7.exe](https://github.com/itmir913/archive/releases/download/itmir-attachments/py2exe-0.6.9.win32-py2.7.exe)
 
 자 모두 설치해주시면 아래를 따라해주세요.
 
@@ -123,4 +120,3 @@ C:\Python27\python.exe make.py (만들어질 이름).exe
 ## 첨부파일
 
 - [make.py](./files/make.py)
-

@@ -27,5 +27,3 @@ UI는 아래와 같습니다
 ![](./images/Screenshot_2013-12-16-18-10-31.jpg)
 
 [DownLoad]
-
-[VEGAMusicPlayer.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/411-VEGAMusicPlayer.apk)

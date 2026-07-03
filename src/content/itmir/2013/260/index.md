@@ -1,4 +1,4 @@
----
+﻿---
 title: "안드로이드 스마트폰으로 CCTV를 만들자 - IP Webcam KO (한글번역버전)"
 date: "2013-07-05T21:21:12+09:00"
 category: "Application"
@@ -81,5 +81,3 @@ A에서 B로 영상을 실시간 전송하는 기능을 합니다
 이것은 2일동안 힘들게 번역한 것임으로 함부로 배포하지 않으셨으면 합니다 ㅎㅎ..
 
 개인 소장 부탁드립니다~
-
-[IP Webcam KO.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/IP Webcam KO.apk)
