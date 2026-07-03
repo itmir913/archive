@@ -12,7 +12,7 @@ original_url: "https://itmir.tistory.com/42"
 
 이 소스는 구버전 소스이고 java.mk오류가 나므로 본인이 직접 압축해서 배포중인 소스를 사용해주시면 감사드리겠습니다~
 
-[2013/01/27 - [강좌/팁/Kernel/Build 강좌] - CM7소스를 배포합니다](http://itmir.tistory.com/43)
+[2013/01/27 - [강좌/팁/Kernel/Build 강좌] - CM7소스를 배포합니다](/archive/itmir/2013/43)
 
 요즈음 cm7소스를 받으면 재대로 받아지지 않아 make -j4 otatools를 하면 ace.mk부터 기기정보 파일이 없다고 나타나는대요
 

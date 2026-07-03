@@ -20,9 +20,9 @@ original_url: "https://itmir.tistory.com/493"
 
 [참고] 지난 버전
 
-[[Application] - [APP] Vega Secret UP (베가 시크릿 업) 키보드](http://itmir.tistory.com/425)
+[[Application] - [APP] Vega Secret UP (베가 시크릿 업) 키보드](/archive/itmir/2014/425)
 
-[[Application] - Vega Secret UP 키보드 오류 수정 완료](http://itmir.tistory.com/426)
+[[Application] - Vega Secret UP 키보드 오류 수정 완료](/archive/itmir/2014/426)
 
 ![](./images/Screenshot_2014-05-03-23-18-50.jpg)
 

@@ -26,7 +26,7 @@ original_url: "https://itmir.tistory.com/408"
 
 안드로이드 어플을 사용하다 보면, 사용할 수 있는 기기를 제한한다던지, 마켓에서 라이센스를 확인하여 실행을 막던지하는 어플이 많이 있습니다.
 
-그 예로 기기를 제한하는 경우는 [전에 크랙한 V노트](https://itmir.tistory.com/407)가 있겠고, 라이센스 확인은 대표적으로 [파워 앰프 앱](https://itmir.tistory.com/463)이 존재합니다.
+그 예로 기기를 제한하는 경우는 [전에 크랙한 V노트](https://itmir.tistory.com/407)가 있겠고, 라이센스 확인은 대표적으로 [파워 앰프 앱](/archive/itmir/2014/463)이 존재합니다.
 
 (파워앰프는 난독화가 되어 있어, 디컴파일도 안되는점 이해하시고, 크랙이 잘 안됩니다. 삽질하지 마시길....)
 
@@ -658,8 +658,8 @@ v0이 v1보다 작거나 같으면 cond\_0으로 넘어간다.
 
 [참고]
 
-smali에서 Toast 알림 띄우기: [[Android/App] - [Smali] Toast 알림 띄우기](https://itmir.tistory.com/421)
+smali에서 Toast 알림 띄우기: [[Android/App] - [Smali] Toast 알림 띄우기](/archive/itmir/2013/421)
 
 이 글과 함께 보면 더 도움이 되는 글
 
-[[Development/App] - 인앱결제(Inapp Billing)와 언락커(Unlocker) 크랙하기 (DRM Crack)](http://itmir.tistory.com/489)
+[[Development/App] - 인앱결제(Inapp Billing)와 언락커(Unlocker) 크랙하기 (DRM Crack)](/archive/itmir/2014/489)

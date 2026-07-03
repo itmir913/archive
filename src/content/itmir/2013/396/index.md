@@ -14,7 +14,7 @@ original_url: "https://itmir.tistory.com/396"
 
 전에 adb를 이용한 백업/복원 방식과, 프로그램을 소개해 드린바 있습니다.
 
-[2013/10/08 - [SmartPhone] - ADB Backup & Restore (adb를 이용한 어플 데이터 백업)](http://itmir.tistory.com/356)
+[2013/10/08 - [SmartPhone] - ADB Backup & Restore (adb를 이용한 어플 데이터 백업)](/archive/itmir/2013/356)
 
 이번에는 Helium이라는 어플을 소개하려고 합니다.
 

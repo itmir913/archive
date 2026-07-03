@@ -12,9 +12,9 @@ original_url: "https://itmir.tistory.com/672"
 
 필자는 오래전에 Apk Manager에 대해 포스팅한 적이 있었다.
 
-[[SmartPhone/Android] - Apk Manager 5.0.2 다운/사용법 및 Java 설정](https://itmir.tistory.com/121)
+[[SmartPhone/Android] - Apk Manager 5.0.2 다운/사용법 및 Java 설정](/archive/itmir/2013/121)
 
-[[SmartPhone/Android] - Apk Dex Tools (Apk Manager)](https://itmir.tistory.com/399)
+[[SmartPhone/Android] - Apk Dex Tools (Apk Manager)](/archive/itmir/2013/399)
 
 apktool.jar 파일을 이용하여 안드로이드 앱 파일인 apk를 디컴파일하고, 수정한 뒤에 다시 컴파일할 수 있는 도구 중에서 가장 대중적인 도구가 바로 Apk Manager였다.
 

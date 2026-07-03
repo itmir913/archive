@@ -114,9 +114,9 @@ make-boot파일이 완성되었습니다!
 
 만약 부트 이미지 분해시 ramdiskaddr이 나올경우 아래 mkbootimg링크를 따라 들어가 업데이트된 파일을 받은다음 ./mkbootimg 명령어 마지막 부분(-o)전쪽에 "--ramdiskaddr 0x값" 을 넣어 주시면 됩니다.
 
-[2013/03/24 - [강좌/팁/Ubuntu 강좌] - mkbootimg](http://itmir.tistory.com/181)
+[2013/03/24 - [강좌/팁/Ubuntu 강좌] - mkbootimg](/archive/itmir/2013/181)
 
-[2013/01/27 - [강좌/팁/Ubuntu 강좌] - 우분투 64Bit unpackbootimg 오류 해결법](http://itmir.tistory.com/34)
+[2013/01/27 - [강좌/팁/Ubuntu 강좌] - 우분투 64Bit unpackbootimg 오류 해결법](/archive/itmir/2013/34)
 
 ---
 

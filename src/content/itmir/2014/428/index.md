@@ -22,9 +22,9 @@ original_url: "https://itmir.tistory.com/428"
 
 [분석도구]
 
-smali to java: [[SmartPhone] - Apk Dex Tools (Apk Manager)](http://itmir.tistory.com/399)
+smali to java: [[SmartPhone] - Apk Dex Tools (Apk Manager)](/archive/itmir/2013/399)
 
-apk manager: [[SmartPhone] - Apk Manager 5.0.2 다운/사용법 및 Java 설정](http://itmir.tistory.com/121)
+apk manager: [[SmartPhone] - Apk Manager 5.0.2 다운/사용법 및 Java 설정](/archive/itmir/2013/121)
 
 [분석대상]
 
@@ -44,7 +44,7 @@ apk manager: [[SmartPhone] - Apk Manager 5.0.2 다운/사용법 및 Java 설정
 
 안드로이드 어플의 라이센스를 크랙하는 대표적인 방법을 사용하여 크랙이 가능했습니다.
 
-참고 : [[Development/App] - 안드로이드 어플 라이센스 크랙하기 (DRM Crack)](http://itmir.tistory.com/408)
+참고 : [[Development/App] - 안드로이드 어플 라이센스 크랙하기 (DRM Crack)](/archive/itmir/2013/408)
 
 참고 글의 "무조건 TRUE반환" 방법을 사용하여 크랙이 가능했습니다.
 

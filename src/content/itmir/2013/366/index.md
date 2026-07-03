@@ -14,7 +14,7 @@ original_url: "https://itmir.tistory.com/366"
 >
 > 안드로이드에서 제공하는 AsyncTask를 이용해서 구현하시길 바랍니다.
 >
-> AsyncTask에 관한 글 바로가기 : [[Development/App] - #34 AsyncTask를 사용해보자](http://itmir.tistory.com/624)
+> AsyncTask에 관한 글 바로가기 : [[Development/App] - #34 AsyncTask를 사용해보자](/archive/itmir/2016/624)
 
 20번대 강좌입니다 ㅎㅎ
 
@@ -165,9 +165,9 @@ int inputNumber;
 
 --참조--
 
-[2013/02/20 - [Development/Java] - 자료형을 기반으로 메모리 공간에 저장되는 상수!](http://itmir.tistory.com/153)
+[2013/02/20 - [Development/Java] - 자료형을 기반으로 메모리 공간에 저장되는 상수!](/archive/itmir/2013/153)
 
-[2013/02/20 - [Development/Java] - 변수와 자료형이란?!](http://itmir.tistory.com/151)
+[2013/02/20 - [Development/Java] - 변수와 자료형이란?!](/archive/itmir/2013/151)
 
 자 이제 id값을 연결해 봅시다
 

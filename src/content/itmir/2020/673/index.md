@@ -14,9 +14,9 @@ original_url: "https://itmir.tistory.com/673"
 
 요즘 같은 무선 클라우드 시대에 언제까지 거치장스러운 USB 선을 꼽아야 디버깅이 가능한지 의심스러운데, 이미 그 해답은 수 년 전에 필자가 포스팅한 글에 있었다.
 
-[[SmartPhone/Android] - Adb Over Network 사용 방법](https://itmir.tistory.com/239)
+[[SmartPhone/Android] - Adb Over Network 사용 방법](/archive/itmir/2013/239)
 
-[[Android/App] - 안드로이드 무선 ADB 사용하기 (Wi-Fi로 디버깅하기)](https://itmir.tistory.com/594)
+[[Android/App] - 안드로이드 무선 ADB 사용하기 (Wi-Fi로 디버깅하기)](/archive/itmir/2015/594)
 
 그러나 이 방법 역시 cmd 배치파일을 이용하는 방법이기 때문에 CUI에 익숙하지 않은 사람이라면 상당히 번거롭다.
 
@@ -62,7 +62,7 @@ IntelliJ를 재시작하면 다음과 같은 탭이 생긴다. 만약 탭이 보
 
 ## 스마트폰과 PC를 무선으로 연결하기
 
-무선으로 adb를 사용하기 위해서는 [[Android/App] - 안드로이드 무선 ADB 사용하기 (Wi-Fi로 디버깅하기)](https://itmir.tistory.com/594)에서도 언급한 것처럼, PC와 스마트폰이 동일한 무선 와이파이에 접속되어 있어야 한다.
+무선으로 adb를 사용하기 위해서는 [[Android/App] - 안드로이드 무선 ADB 사용하기 (Wi-Fi로 디버깅하기)](/archive/itmir/2015/594)에서도 언급한 것처럼, PC와 스마트폰이 동일한 무선 와이파이에 접속되어 있어야 한다.
 
 또한, 첫 연결 시에는 먼저 USB로 컴퓨터와 스마트폰을 연결해야 한다.
 

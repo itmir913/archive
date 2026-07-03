@@ -20,11 +20,11 @@ original_url: "https://itmir.tistory.com/498"
 
 베가 아이언2 키보드는 기본적으로 베가 시크릿 업의 킷캣 키보드와 비슷합니다
 
-[[Application] - [KitKat] Vega Secret UP (베가 시크릿 업) 키보드 킷캣 업데이트](http://itmir.tistory.com/493)
+[[Application] - [KitKat] Vega Secret UP (베가 시크릿 업) 키보드 킷캣 업데이트](/archive/itmir/2014/493)
 
-[[Application] - [APP] Vega Secret UP (베가 시크릿 업) 키보드](http://itmir.tistory.com/425)
+[[Application] - [APP] Vega Secret UP (베가 시크릿 업) 키보드](/archive/itmir/2014/425)
 
-[[Application] - Vega Secret UP 키보드 오류 수정 완료](http://itmir.tistory.com/426)
+[[Application] - Vega Secret UP 키보드 오류 수정 완료](/archive/itmir/2014/426)
 
 이 키보드에서 몇가지 테마가.. 아니 엄청난 테마가 추가되서 나온것이 철2 키보드 입니다
 
@@ -88,7 +88,7 @@ original_url: "https://itmir.tistory.com/498"
 
 파일 다운로드 링크 제거
 
-**[apk가 업데이트 되었습니다 : http://itmir.tistory.com/499](http://itmir.tistory.com/499)**
+**[apk가 업데이트 되었습니다 : /archive/itmir/2014/499](/archive/itmir/2014/499)**
 
 **위 파일을 다운로드 할경우, 다른 제 3곳에 허락없이 무단으로 업로드 하는 행위를 하지 않겠다라는 것에 동의하시게 됩니다**
 

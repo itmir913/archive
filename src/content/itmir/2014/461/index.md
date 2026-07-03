@@ -18,11 +18,11 @@ original_url: "https://itmir.tistory.com/461"
 
 이에 관해서는 전에 2개의 git사이트를 소개한적이 있으므로 링크로 대신하겠습니다
 
-[[Computer/PC] - Github 사용방법](http://itmir.tistory.com/38)
+[[Computer/PC] - Github 사용방법](/archive/itmir/2013/38)
 
-[[Computer/PC] - Git 사용 방법](http://itmir.tistory.com/192)
+[[Computer/PC] - Git 사용 방법](/archive/itmir/2013/192)
 
-[[Computer/PC] - [Site] Bitbucket, 무료 git 사이트](http://itmir.tistory.com/397)
+[[Computer/PC] - [Site] Bitbucket, 무료 git 사이트](/archive/itmir/2013/397)
 
 1. 이클립스 설치
 
@@ -36,9 +36,9 @@ original_url: "https://itmir.tistory.com/461"
 
 또는 필자가 포스팅중인 어플 개발 강좌를 보아도 손색이 없다
 
-[[Development/App] - #1 컴퓨터의 개발환경을 구축하자](http://itmir.tistory.com/286)
+[[Development/App] - #1 컴퓨터의 개발환경을 구축하자](/archive/itmir/2013/286)
 
-[[Development/App] - #2 이클립스 때려서 어플 만들자](http://itmir.tistory.com/287)
+[[Development/App] - #2 이클립스 때려서 어플 만들자](/archive/itmir/2013/287)
 
 2. EGit 플러그인 설치
 

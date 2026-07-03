@@ -146,4 +146,4 @@ Write ... OK
 
 [![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) Fastboot.zip](http://itmir.tistory.com/attachment/cfile7.uf@151CD84B5104D8C4357833.zip)
 
-[2013/01/27 - [강좌/팁/SmartPhone 강좌] - Boot.img Recovery.img 원클릭 적용툴](http://itmir.tistory.com/27)
+[2013/01/27 - [강좌/팁/SmartPhone 강좌] - Boot.img Recovery.img 원클릭 적용툴](/archive/itmir/2013/27)

@@ -32,4 +32,4 @@ original_url: "https://itmir.tistory.com/27"
 
 [![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) 원클릭 img적용툴.zip](/attachment/cfile7.uf@2136BB4C5104C2E02337B7.zip)
 
-[2013/01/27 - [강좌/팁/SmartPhone 강좌] - 커스텀 리커버리 (CWM)설치방법](http://itmir.tistory.com/57)
+[2013/01/27 - [강좌/팁/SmartPhone 강좌] - 커스텀 리커버리 (CWM)설치방법](/archive/itmir/2013/57)

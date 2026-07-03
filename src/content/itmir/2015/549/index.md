@@ -36,7 +36,7 @@ original_url: "https://itmir.tistory.com/549"
 
 [Hi2015.zip](https://t1.daumcdn.net/cfile/tistory/2779A94554A8E3AC19)
 
-다른곳에서의 배포를 금지하며, <http://itmir.tistory.com/549> 링크만 허용합니다.
+다른곳에서의 배포를 금지하며, </archive/itmir/2015/549> 링크만 허용합니다.
 
 올해도 더 좋은 글을 쓰도록 노력하겠습니다~
 

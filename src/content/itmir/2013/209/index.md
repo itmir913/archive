@@ -50,7 +50,7 @@ default.prop를 확인해 보겠습니다
 
 git소스 말고도 cm-10.1 소스 위치/bootable/recovery폴더의
 
-Android.mk를 수정하신거 같고 (위에 뜨는 로고, 참고 : [2013/04/26 - [강좌/팁/커널/빌드 강좌] - [Dev] ClockWorkMod Recovery 키값과 표시 로고 바꿔보기 [개발자글]](http://itmir.tistory.com/197) )
+Android.mk를 수정하신거 같고 (위에 뜨는 로고, 참고 : [2013/04/26 - [강좌/팁/커널/빌드 강좌] - [Dev] ClockWorkMod Recovery 키값과 표시 로고 바꿔보기 [개발자글]](/archive/itmir/2013/197) )
 
 또한 nandroid.h파일을 수정하신거 같습니다 (기본 백업 확장자가 tar인것으로 보아)
 

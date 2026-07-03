@@ -22,7 +22,7 @@ original_url: "https://itmir.tistory.com/442"
 
 관련글
 
-[[Development/App] - 설치된 어플 리스트 예제 (ListView, PackageManager)](http://itmir.tistory.com/382)
+[[Development/App] - 설치된 어플 리스트 예제 (ListView, PackageManager)](/archive/itmir/2013/382)
 
 이 글의 두번째 AppInfo예제를 수정하였습니다
 

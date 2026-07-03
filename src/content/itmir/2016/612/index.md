@@ -16,7 +16,7 @@ original_url: "https://itmir.tistory.com/612"
 
 티스토리 블로그 관리자 페이지에서 제목만으로 설정해도 반영이 안되는 듯 합니다.
 
-참고 : [[Note] - 블로그 스킨을 티스토리 #1로 변경하였습니다.](http://itmir.tistory.com/609)
+참고 : [[Note] - 블로그 스킨을 티스토리 #1로 변경하였습니다.](/archive/itmir/2016/609)
 
 ![](./images/th.png)
 

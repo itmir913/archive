@@ -38,7 +38,7 @@ original_url: "https://itmir.tistory.com/676"
 
 만약 Hyper-v, 혹은 Windows Sandbox를 사용해서 LeoMoon Cpu-v에서 위와 같은 모습이 나오지 않을 경우, 다음 포스팅을 참고하여 Hyper-v 등의 옵션을 꺼주자.
 
-[[Development/Error] - Android Emulator Hypervisor Driver for AMD Processors installation failed.](https://itmir.tistory.com/667)
+[[Development/Error] - Android Emulator Hypervisor Driver for AMD Processors installation failed.](/archive/itmir/2020/667)
 
 대부분의 기기는 기본 값으로 AMD-V가 활성화되어 있을 테지만, 특정 모델의 경우에는 바이오스에서 해당 옵션을 활성화해주어야 할 수도 있다.
 
@@ -340,7 +340,7 @@ Virtual Machine Settings을 열고 ISO 파일을 연결한다.
 
 아래 포스팅을 확인하여 전체 화면에서 VMWare의 전체화면 툴바를 없애주면 깨끗한 Mac OS를 감상할 수 있다.
 
-[[Computer/PC] - VMware 전체화면 툴바(Toolbar) 없애기](https://itmir.tistory.com/677)
+[[Computer/PC] - VMware 전체화면 툴바(Toolbar) 없애기](/archive/itmir/2020/677)
 
 ## 참고
 

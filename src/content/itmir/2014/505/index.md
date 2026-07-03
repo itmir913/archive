@@ -24,7 +24,7 @@ original_url: "https://itmir.tistory.com/505"
 
 예를들어, 알려진 대부분의 방법은 <http://whdghks913.tistory.com/123> 으로 접속하면 그냥 <http://itmir.tistory.com> 으로 접속되는데요.
 
-이 방법은 뒷부분인 123까지 함께 이동되어 <http://itmir.tistory.com/123> 으로 이동됩니다.
+이 방법은 뒷부분인 123까지 함께 이동되어 </archive/itmir/2013/123> 으로 이동됩니다.
 
 이 방법은 <http://blog.gyongsu.com/194> 에서 소개된 방법입니다. 좋은정보 공유해주신 Dr.lee님께 감사드립니다.
 

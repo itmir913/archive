@@ -28,4 +28,4 @@ Html.fromHtml("<font color='#RRGGBB'>텍스트</font>")
 
 이렇게 사용하셔도 됩니다
 
-일부 글자만 색을 변경하려면 <http://itmir.tistory.com/317>을 참조하세요
+일부 글자만 색을 변경하려면 </archive/itmir/2013/317>을 참조하세요

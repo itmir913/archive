@@ -8,7 +8,7 @@ draft: false
 original_url: "https://itmir.tistory.com/649"
 ---
 
-앱 배포와 관련된 내용은 [[Application] - 천일문 완성 어플에 대해서](https://itmir.tistory.com/650) 글을 참고해주세요..!
+앱 배포와 관련된 내용은 [[Application] - 천일문 완성 어플에 대해서](/archive/itmir/2018/650) 글을 참고해주세요..!
 
 예전에 천일문 기본편이 유료 앱으로 나왔다고 해서 완성편은 언제쯤 나올까 기다리고 있었는데..
 

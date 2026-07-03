@@ -88,7 +88,7 @@ original_url: "https://itmir.tistory.com/420"
 
 저번에 포스팅한 DRM 라이센스 관련 글에서 소개했던 **무조건 true 반환 방법**이 사용되었습니다.
 
-[[Development/App] - 안드로이드 어플 라이센스 크랙하기 (DRM Crack)](http://itmir.tistory.com/408)
+[[Development/App] - 안드로이드 어플 라이센스 크랙하기 (DRM Crack)](/archive/itmir/2013/408)
 
 수정된 파일은 smali\com\a\a\a\a\t.smali입니다.
 

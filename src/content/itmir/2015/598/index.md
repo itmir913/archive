@@ -14,15 +14,15 @@ original_url: "https://itmir.tistory.com/598"
 
 저번 포스팅에서 급식 별점 기능을 공개한 바 있습니다.
 
-[[Application] - 학교앱을 새로운 디자인으로 업데이트 했습니다. (feat. 재밌는 기능 추가)](http://itmir.tistory.com/596)
+[[Application] - 학교앱을 새로운 디자인으로 업데이트 했습니다. (feat. 재밌는 기능 추가)](/archive/itmir/2015/596)
 
-[[Application] - 학교앱에 급식 평점 기능을 넣고나서](http://itmir.tistory.com/597)
+[[Application] - 학교앱에 급식 평점 기능을 넣고나서](/archive/itmir/2015/597)
 
 이번 글에서는 별점기능을 구현하기 앞서 구글 스프레드 시트를 온라인 데이터 베이스로 사용하는 방법을 알아보겠습니다.
 
 이 글은 전에 포스팅한 티스토리 오류제보 기능 만들기와 유사합니다.
 
-[[Tistory] - 티스토리 오류 제보하기 버튼 만들기 - 구글 스프레드 시트 사용](http://itmir.tistory.com/550)
+[[Tistory] - 티스토리 오류 제보하기 버튼 만들기 - 구글 스프레드 시트 사용](/archive/itmir/2015/550)
 
 ### 1. 구글 스프레드 시트에서 Html Post 요청을 받을 수 있도록 스크립트 편집하기
 
@@ -242,7 +242,7 @@ post 요청을 보내기 전, 무엇 무엇이 필요한지 생각해보고 맨 
 
 참고
 
-http://itmir.tistory.com/550
+/archive/itmir/2015/550
 
 + 2015-12-20
 

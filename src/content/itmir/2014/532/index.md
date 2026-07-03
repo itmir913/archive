@@ -46,7 +46,7 @@ adb라는 프로그램이 필요합니다
 
 adb에 대해서와 다운로드는 아래 링크에서 얻을수 있습니다
 
-[[SmartPhone] - 안드로이드의 LOG을 확인하자 - adb logcat / LogcatFilter.exe](http://itmir.tistory.com/61)
+[[SmartPhone] - 안드로이드의 LOG을 확인하자 - adb logcat / LogcatFilter.exe](/archive/itmir/2013/61)
 
 adb logcat
 

@@ -58,7 +58,7 @@ usb를 연결하기 위해서는 otg가 필요합니다
 
 전에 포스팅한 usb 허브를 사용하면 좋을거 같네요 ㅎㅎ
 
-[[Computer/PC] - USB Hub를 나눔받았습니다!](http://itmir.tistory.com/545)
+[[Computer/PC] - USB Hub를 나눔받았습니다!](/archive/itmir/2014/545)
 
 ### 초기 부팅 및 설정
 

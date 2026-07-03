@@ -14,7 +14,7 @@ original_url: "https://itmir.tistory.com/184"
 
 CyanogenMod, 다들 아시죠?
 
-[2013/02/02 - [강좌/팁/SmartPhone 강좌] - 커롬의 절대 강자! CM과 MIUI를 비교해 보자!](http://itmir.tistory.com/106)
+[2013/02/02 - [강좌/팁/SmartPhone 강좌] - 커롬의 절대 강자! CM과 MIUI를 비교해 보자!](/archive/itmir/2013/106)
 
 이 글을 살펴보시면 CyanogenMod(이하 CM, 큼)과 MIUI(이하 미우이, 미유아이)를 살펴 보실수 있으십니다 ㅎ
 
@@ -56,7 +56,7 @@ repo는 (사용자 계정)/bin에 받는것이 일반적입니다
 
 참고로 curl이라는 것은 하나의 프로그램이므로 sudo apt-get install curl으로 설치를 하셔야 하는 프로그램 입니다
 
-[2013/01/27 - [강좌/팁/커널/빌드 강좌] - 커널 컴파일을 위한 기본 설정 구축하기](http://itmir.tistory.com/51)
+[2013/01/27 - [강좌/팁/커널/빌드 강좌] - 커널 컴파일을 위한 기본 설정 구축하기](/archive/itmir/2013/51)
 
 이 글을 끝내셨다면 curl은 깔려있습니다 ㅎㅎ
 

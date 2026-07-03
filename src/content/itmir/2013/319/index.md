@@ -70,16 +70,16 @@ Challenge, Try, and Achieve!
 
 필요한 강좌들
 
-[#2 이클립스 때려서 어플 만들자](http://itmir.tistory.com/287)
+[#2 이클립스 때려서 어플 만들자](/archive/itmir/2013/287)
 
-[#5 TextView를 정복하자](http://itmir.tistory.com/291)
+[#5 TextView를 정복하자](/archive/itmir/2013/291)
 
-[#6 버튼을 만들어 보자](http://itmir.tistory.com/295)
+[#6 버튼을 만들어 보자](/archive/itmir/2013/295)
 
-[#7 EditText는 완전 쉬워요~](http://itmir.tistory.com/306)
+[#7 EditText는 완전 쉬워요~](/archive/itmir/2013/306)
 
-[#9 Toast와, 도둑잡기 게임을 만들어 봐요! (rand함수 이용)](http://itmir.tistory.com/310)
+[#9 Toast와, 도둑잡기 게임을 만들어 봐요! (rand함수 이용)](/archive/itmir/2013/310)
 
-[#11 알림 메세지 띄우기](http://itmir.tistory.com/315)
+[#11 알림 메세지 띄우기](/archive/itmir/2013/315)
 
 이글은 [] 에서 다시 보실수 있으며 원본 글의 저작권은 미르에게 있습니다

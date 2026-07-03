@@ -454,7 +454,7 @@ mListView.setOnItemClickListener(new OnItemClickListener() {
 
 아이템을 터치하면 확장되는 리스트뷰.
 
-스와이프로 아이템 삭제가능한 리스트뷰. - [[Development/App] - ListView에서 Swipe To Dismiss(밀어서 삭제) 사용하기](http://itmir.tistory.com/455)
+스와이프로 아이템 삭제가능한 리스트뷰. - [[Development/App] - ListView에서 Swipe To Dismiss(밀어서 삭제) 사용하기](/archive/itmir/2014/455)
 
 삭제 취소가 가능한 리스트뷰.
 

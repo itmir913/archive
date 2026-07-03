@@ -18,7 +18,7 @@ original_url: "https://itmir.tistory.com/318"
 
 다운받으신 소스를 압축풀어주세요
 
-저는 전 강좌였던 <http://itmir.tistory.com/315>의 예제소스로 해보겠습니다
+저는 전 강좌였던 </archive/itmir/2013/315>의 예제소스로 해보겠습니다
 
  이클립스 마우스 오른쪽 - Import를 눌러주세요
 

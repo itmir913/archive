@@ -12,7 +12,7 @@ original_url: "https://itmir.tistory.com/513"
 
 구글 애드센스를 알게된지는 1~2년이 된 거 같고.. 블로그 주소와 스킨을 갈아 엎으면서 애드센스 시작한 것도 1달이 넘어가는거 같습니다.
 
-[[Tistory] - [애드센스] 구글 애드센스 (Google Adsense) 신청하기](http://itmir.tistory.com/508)
+[[Tistory] - [애드센스] 구글 애드센스 (Google Adsense) 신청하기](/archive/itmir/2014/508)
 
 글 보니까 딱 한 달이 되는거 같네요. ㅋㅋ
 

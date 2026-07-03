@@ -12,7 +12,7 @@ original_url: "https://itmir.tistory.com/597"
 
 저번 주말에 학교앱을 다시 한번 디자인부터 리메이크하고 몇가지 기능도 넣어서 출시하였습니다.
 
-[[Application] - 학교앱을 새로운 디자인으로 업데이트 했습니다. (feat. 재밌는 기능 추가)](http://itmir.tistory.com/596)
+[[Application] - 학교앱을 새로운 디자인으로 업데이트 했습니다. (feat. 재밌는 기능 추가)](/archive/itmir/2015/596)
 
 그중에 급식 평점기능도 새로 만들어서 넣었는데요
 

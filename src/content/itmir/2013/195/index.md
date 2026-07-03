@@ -56,4 +56,4 @@ Mount Image를 선택해 주시면 됩니다
 
 연관된 글 :
 
-[2013/03/09 - [강좌/팁/SmartPhone 강좌] - BINX를 분해해 보자!](http://itmir.tistory.com/174)
+[2013/03/09 - [강좌/팁/SmartPhone 강좌] - BINX를 분해해 보자!](/archive/itmir/2013/174)

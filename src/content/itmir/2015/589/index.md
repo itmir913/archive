@@ -14,7 +14,7 @@ original_url: "https://itmir.tistory.com/589"
 
 (목요일날 같이 갔던 친구들은 토요일날 다시 도전했는데 5시쯤 도착했는데 180명 정도로 아슬아슬했다고 하더라고요.)
 
-작년 키타스 글 : [[Note] - KITAS (키타스) 2014 D-Day](http://itmir.tistory.com/514)
+작년 키타스 글 : [[Note] - KITAS (키타스) 2014 D-Day](/archive/itmir/2014/514)
 
 그래서 올해는 전 날에 출발했습니다.
 

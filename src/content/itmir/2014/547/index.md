@@ -90,15 +90,15 @@ apk파일도 함께 첨부했습니다
 
 ### 이 소스를 이해하기 위해 알아아할 기본 지식들
 
-[[Development/App] - #21 Preference(프리퍼런스)](http://itmir.tistory.com/393)
+[[Development/App] - #21 Preference(프리퍼런스)](/archive/itmir/2013/393)
 
-[[Development/App] - #23 Service (서비스)에 대해 알아보자](http://itmir.tistory.com/414)
+[[Development/App] - #23 Service (서비스)에 대해 알아보자](/archive/itmir/2013/414)
 
-[[Development/App] - #24 Broadcast Receiver로 문자(SMS) 수신해보자](http://itmir.tistory.com/424)
+[[Development/App] - #24 Broadcast Receiver로 문자(SMS) 수신해보자](/archive/itmir/2014/424)
 
-[[Development/App] - #27 어플에서 SMS(문자) 전송 하기](http://itmir.tistory.com/458)
+[[Development/App] - #27 어플에서 SMS(문자) 전송 하기](/archive/itmir/2014/458)
 
-[[Development/App] - #31 PreferenceActivity를 사용하여 설정(Setting)을 만들어보자](http://itmir.tistory.com/523)
+[[Development/App] - #31 PreferenceActivity를 사용하여 설정(Setting)을 만들어보자](/archive/itmir/2014/523)
 
 ---
 

@@ -74,7 +74,7 @@ imei날라갈 가능성이 없지 않으니 꼭 리커버리 백업을 하신다
 
 1. ClockWorkmod Recovery를 설치해야 합니다.
 
-<http://itmir.tistory.com/22> 또는 <http://whdghks913.blog.me/20176732787>의 리커버리를 설치해주세요.
+</archive/itmir/2013/22> 또는 <http://whdghks913.blog.me/20176732787>의 리커버리를 설치해주세요.
 
 다른 리커버리를 사용하셔도 되지만 정상적으로 설치될 수 있는지 확신할 수 없습니다.
 

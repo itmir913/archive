@@ -34,7 +34,7 @@ original_url: "https://itmir.tistory.com/499"
 
 위 점을 제외하고는 기존 버전과 동일합니다
 
-[[SmartPhone] - [APK] 베가 아이언2 (Vega Iron2) 키보드 (VEGAIME.apk)](http://itmir.tistory.com/498)
+[[SmartPhone] - [APK] 베가 아이언2 (Vega Iron2) 키보드 (VEGAIME.apk)](/archive/itmir/2014/498)
 
 그럼 이번 버전에서 수정한 부분의 스크린샷을 확인해 보겟습니다
 

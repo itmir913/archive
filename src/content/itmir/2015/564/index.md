@@ -10,7 +10,7 @@ original_url: "https://itmir.tistory.com/564"
 
 저번에 학교앱을 Material Design으로 만들고 있다는 글을 올렸습니다
 
-[[Application] - 학교앱을 Material 디자인으로 새로 만들고 있습니다](http://itmir.tistory.com/563)
+[[Application] - 학교앱을 Material 디자인으로 새로 만들고 있습니다](/archive/itmir/2015/563)
 
 일단은 전체적인 디자인이랑 기능이 복구(?)된것 같아 마켓에도 업데이트 하고 글 남깁니다~
 

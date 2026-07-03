@@ -16,7 +16,7 @@ original_url: "https://itmir.tistory.com/601"
 
 이번에 좀 더 다듬어서 마켓에 출시하게 되었습니다!
 
-여기서 저번 글이 궁금하시다면 : [[Application] - 성적표앱을 만들어보고 있습니다.](http://itmir.tistory.com/599)
+여기서 저번 글이 궁금하시다면 : [[Application] - 성적표앱을 만들어보고 있습니다.](/archive/itmir/2015/599)
 
 저번 글이랑 달라진 점은 크게 겉으로 드러나는 부분은 색이 바뀌었고 나머지는 전부 버그와 기능 보완에 중점을 두었습니다.
 

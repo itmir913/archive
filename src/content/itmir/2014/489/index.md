@@ -60,7 +60,7 @@ lite버전은 pro key 어플이 설치되었을경우 full버전으로 변경되
 
 저번에 다룬 안드로이드 라이센스 크랙하기 포스팅과 99% 관련이 있습니다.
 
-[[Development/App] - 안드로이드 어플 라이센스 크랙하기 (DRM Crack)](http://itmir.tistory.com/408)
+[[Development/App] - 안드로이드 어플 라이센스 크랙하기 (DRM Crack)](/archive/itmir/2013/408)
 
 그럼 한번 해보겠습니다.
 
@@ -412,7 +412,7 @@ smali문법 조금만 알면 쉽습니다.
 
 저번에 올린 라이센스 크랙 게시글과 이 게시글을 함께 연구하시면 성과가 있으실겁니다.
 
-<http://itmir.tistory.com/408>
+</archive/itmir/2013/408>
 
 인앱 결제 관련 좋은 글이 있어 소개합니다.
 

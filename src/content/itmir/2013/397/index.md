@@ -10,11 +10,11 @@ original_url: "https://itmir.tistory.com/397"
 
 아주 전에 github사용법에 대해 포스팅한 글이 있습니다.
 
-[Git 사용 방법](http://itmir.tistory.com/192)
+[Git 사용 방법](/archive/itmir/2013/192)
 
-[github에 branch를 새로 생성하여 소스를 올려보자](http://itmir.tistory.com/193)
+[github에 branch를 새로 생성하여 소스를 올려보자](/archive/itmir/2013/193)
 
-[Github 사용방법](http://itmir.tistory.com/38)
+[Github 사용방법](/archive/itmir/2013/38)
 
 그런대, github의 최대 단점은 비공개 프로젝트를 만들수 없다라는 점입니다.
 

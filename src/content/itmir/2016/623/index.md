@@ -24,11 +24,11 @@ Mirach A (IM-A750K) CyanogenMod 7 Photos
 
 미라크a의 CyanogenMod 7은 2013년도에 제가 직접 포팅한 롬이며, 아래 게시글에서 흔적을 찾으실 수 있습니다.
 
-[[Android Build] - cm-7-20130124-UNOFFICIAL-ef32k (미라크A CyanogenMod)](http://itmir.tistory.com/102)
+[[Android Build] - cm-7-20130124-UNOFFICIAL-ef32k (미라크A CyanogenMod)](/archive/itmir/2013/102)
 
-[[Android Build] - 빌드한 ClockWorkMod Recovery - 화면 안짤림 - 기기명 ef32k (KT미라크A)](http://itmir.tistory.com/22)
+[[Android Build] - 빌드한 ClockWorkMod Recovery - 화면 안짤림 - 기기명 ef32k (KT미라크A)](/archive/itmir/2013/22)
 
-[[Android Build] - ClockWorkMod Recovery for Mirach A](http://itmir.tistory.com/8)
+[[Android Build] - ClockWorkMod Recovery for Mirach A](/archive/itmir/2013/8)
 
 제 블로그를 [네이버 블로그](http://whdghks913.blog.me/)에서 티스토리 블로그로 옮긴 시기가 cm7을 포팅했을때 시기와 겹치기 때문에 제 티스토리에 올라온 게시글의 날짜는 비슷합니다.
 
@@ -72,7 +72,7 @@ cm-7-20130124-UNOFFICIAL-ef32k : <http://whdghks913.blog.me/20177902725>, 또는
 
 처음으로 부팅했을때는 build.prop에 해상도 설정이 잘못 기록되어 있어서 아이콘이 매우 크게 나왔었습니다.
 
-참고 : [[Android Build] - ★미라크a CM7부팅 성공★](http://itmir.tistory.com/21)
+참고 : [[Android Build] - ★미라크a CM7부팅 성공★](/archive/itmir/2013/21)
 
 배포한 버전은 해상도를 순정 상태로 설정한 버전입니다.
 
@@ -96,7 +96,7 @@ Mod Version을 보시면 아시겠지만, 2013년 1월 24일에 빌드한 롬이
 
 lib파일을 몇개 섞다가 픽스됬네요. ㅋㅋㅋ
 
-참고 : [[Android Build] - CM7에서 카메라가 정삭적으로 작동합니다..](http://itmir.tistory.com/93), <http://whdghks913.blog.me/20177516547>
+참고 : [[Android Build] - CM7에서 카메라가 정삭적으로 작동합니다..](/archive/itmir/2013/93), <http://whdghks913.blog.me/20177516547>
 
 ![](./images/IMG_2007.jpg)
 

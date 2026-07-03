@@ -20,4 +20,4 @@ original_url: "https://itmir.tistory.com/304"
 
 답변 결과는 아래 포스트에서!
 
-[[DailyLife] - 천재교육에게 답이 왔습니다](https://itmir.tistory.com/320)
+[[DailyLife] - 천재교육에게 답이 왔습니다](/archive/itmir/2013/320)

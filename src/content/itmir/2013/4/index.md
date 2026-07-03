@@ -144,7 +144,7 @@ bravia(화면, 색감 패치)적용
 
 블로그링크
 
-[http://itmir.tistory.com/4](http://whdghks913.blog.me/20162033260)
+[/archive/itmir/2013/4](http://whdghks913.blog.me/20162033260)
 
 다음버전은 없을지도...? (는 농담)
 

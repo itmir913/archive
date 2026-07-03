@@ -18,7 +18,7 @@ original_url: "https://itmir.tistory.com/579"
 
 나이스의 보안프로그램 적용으로 급식 파싱 라이브러리 사용이 제한될 수 있으며, 영구적으로 사용이 불가능할 수도 있습니다.
 
-자세한 내용은 [[Application] - 나이스 보안 프로그램과 현재 급식 파싱 불가능 관련](http://itmir.tistory.com/614)을 참고하세요
+자세한 내용은 [[Application] - 나이스 보안 프로그램과 현재 급식 파싱 불가능 관련](/archive/itmir/2016/614)을 참고하세요
 
 MealLibrary.java의 사용은 자유입니다. MealLibrary.java만 사용한다면 오픈소스를 표기해야 하는 제약은 없습니다.
 
@@ -56,7 +56,7 @@ AndroidMealLibrary가 적용된 대표적인 프로젝트를 살펴보세요!
 
 급식 파싱을 하기 전에 필수로 준비해야 할 것.
 
-1. jericho-html.jar 추가 [(클릭)](http://itmir.tistory.com/486)
+1. jericho-html.jar 추가 [(클릭)](/archive/itmir/2014/486)
 
 2. 인터넷 권한 추가
 

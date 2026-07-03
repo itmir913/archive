@@ -10,7 +10,7 @@ original_url: "https://itmir.tistory.com/647"
 
 정시 점수공개 표본을 분석하기 위한 분석 엑셀 파일은 저번 글에서 받으실 수 있습니다.
 
-[정시 점수공개 표본 분석기 엑셀 (진학사) (http://itmir.tistory.com/646)](http://itmir.tistory.com/646)
+[정시 점수공개 표본 분석기 엑셀 (진학사) (/archive/itmir/2018/646)](/archive/itmir/2018/646)
 
 ### 대학 정보 시트
 

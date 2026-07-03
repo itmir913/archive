@@ -16,7 +16,7 @@ original_url: "https://itmir.tistory.com/554"
 
 아래는 J Tab 리뷰 목록입니다
 
-[[Computer/PC] - [J-Tab2] 주연테크 J-Tab2 (제이탭) 개봉기](http://itmir.tistory.com/553)
+[[Computer/PC] - [J-Tab2] 주연테크 J-Tab2 (제이탭) 개봉기](/archive/itmir/2015/553)
 
 참고로 Windows8의 하이브리드 절전 기능을 해제후 (powercfg -h off) 측정했습니다
 

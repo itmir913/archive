@@ -28,7 +28,7 @@ original_url: "https://itmir.tistory.com/650"
 
 작동 영상을 비롯해서 앱에 대한 대략적인 내용은 저번 포스팅에서 서술했습니다.
 
-[[Application] - 천일문 완성 mp3 파일로 앱을 만들었습니다.](http://itmir.tistory.com/649)
+[[Application] - 천일문 완성 mp3 파일로 앱을 만들었습니다.](/archive/itmir/2018/649)
 
 메인 화면입니다.
 

@@ -12,7 +12,7 @@ original_url: "https://itmir.tistory.com/288"
 
 저번 강좌
 
-[2013/07/29 - [미르의 개발 이야기/어플 개발 강좌] - 안드로이드 탭을 구현해 보자, Fragment](http://itmir.tistory.com/283)
+[2013/07/29 - [미르의 개발 이야기/어플 개발 강좌] - 안드로이드 탭을 구현해 보자, Fragment](/archive/itmir/2013/283)
 
 의 문제점을 보면 화면을 회전할경우 어플리케이션이 강제종료된다는 점이었습니다
 

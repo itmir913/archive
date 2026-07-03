@@ -18,17 +18,17 @@ original_url: "https://itmir.tistory.com/565"
 
 그동안 애드센스와 관련해서 쓴 글도 많네요. ㅎㅎ..
 
-[[Tistory] - [1편] 티스토리에 구글 애드센스 (Google Adsense)를 넣어보자](http://itmir.tistory.com/110)
+[[Tistory] - [1편] 티스토리에 구글 애드센스 (Google Adsense)를 넣어보자](/archive/itmir/2013/110)
 
-[[Note] - 드디어 구글 애드센스 허가가 떨어졌습니다!](http://itmir.tistory.com/112)
+[[Note] - 드디어 구글 애드센스 허가가 떨어졌습니다!](/archive/itmir/2013/112)
 
-[[Note] - 구글 애드센스 무효클릭으로 인해 계정이 비활성화 되었습니다 ㅠ](http://itmir.tistory.com/163)
+[[Note] - 구글 애드센스 무효클릭으로 인해 계정이 비활성화 되었습니다 ㅠ](/archive/itmir/2013/163)
 
-[[Tistory] - [애드센스] 구글 애드센스 (Google Adsense) 신청하기](http://itmir.tistory.com/508)
+[[Tistory] - [애드센스] 구글 애드센스 (Google Adsense) 신청하기](/archive/itmir/2014/508)
 
-[[Tistory] - 구글 애드센스 $10를 넘어 주소 확인 PIN이 발송되었습니다~](http://itmir.tistory.com/513)
+[[Tistory] - 구글 애드센스 $10를 넘어 주소 확인 PIN이 발송되었습니다~](/archive/itmir/2014/513)
 
-[[Tistory] - 구글 애드센스(Adsense) 핀번호가 도착했습니다](http://itmir.tistory.com/535)
+[[Tistory] - 구글 애드센스(Adsense) 핀번호가 도착했습니다](/archive/itmir/2014/535)
 
 작년 6월달에 블로그 주소 변경하고, 7월에 핀번호 발송되서, 8~9월에 핀번호 입력하고....
 

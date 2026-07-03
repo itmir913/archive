@@ -12,7 +12,7 @@ original_url: "https://itmir.tistory.com/523"
 
 먼저 읽으시기 전에 아래 강좌를 한번 읽어보시는것을 강력 추천드립니다
 
-[[Development/App] - #21 Preference(프리퍼런스)](http://itmir.tistory.com/393)
+[[Development/App] - #21 Preference(프리퍼런스)](/archive/itmir/2013/393)
 
 그리고 이번 글부터 글양식을 조금 바꿔봤어요 ㅋㅋ 아마 원본글이 아니면 깨질수도 있을거 같아요
 

@@ -24,15 +24,15 @@ original_url: "https://itmir.tistory.com/221"
 
 필독글
 
-[2013/05/25 - [강좌/팁/커널/빌드 강좌] - 1) 안드로이드를 빌드하기 전에 빌드 환경을 구축하자](http://itmir.tistory.com/220)
+[2013/05/25 - [강좌/팁/커널/빌드 강좌] - 1) 안드로이드를 빌드하기 전에 빌드 환경을 구축하자](/archive/itmir/2013/220)
 
 관련글
 
-[2013/03/31 - [강좌/팁/커널/빌드 강좌] - 버전별 CyanogenMod의 소스를 다운받자!](http://itmir.tistory.com/184)
+[2013/03/31 - [강좌/팁/커널/빌드 강좌] - 버전별 CyanogenMod의 소스를 다운받자!](/archive/itmir/2013/184)
 
-[2013/02/03 - [강좌/팁/커널/빌드 강좌] - 나도 CM7 포팅해 보자 - 디바이스 소스와 벤더를 짜자](http://itmir.tistory.com/107)
+[2013/02/03 - [강좌/팁/커널/빌드 강좌] - 나도 CM7 포팅해 보자 - 디바이스 소스와 벤더를 짜자](/archive/itmir/2013/107)
 
-[2013/01/28 - [강좌/팁/커널/빌드 강좌] - 나도 CM7 포팅해 보자 - CWM을 포팅해보자](http://itmir.tistory.com/94)
+[2013/01/28 - [강좌/팁/커널/빌드 강좌] - 나도 CM7 포팅해 보자 - CWM을 포팅해보자](/archive/itmir/2013/94)
 
 기본적인 빌드 환경이 구축되었다고 생각하고 강좌 진행하도록 하겠습니다
 
@@ -302,7 +302,7 @@ build/tools/device/mkvendor.sh (제조사) (코드네임) (부트이미지경로
 
 cmdline등과 각종 Config설정을 BoardConfig.mk에 넣어주고 필요한 파일은 device\_(코드네임).mk에 추가해 주고..
 
-[2013/01/28 - [강좌/팁/커널/빌드 강좌] - 나도 CM7 포팅해 보자 - CWM을 포팅해보자](http://itmir.tistory.com/94)
+[2013/01/28 - [강좌/팁/커널/빌드 강좌] - 나도 CM7 포팅해 보자 - CWM을 포팅해보자](/archive/itmir/2013/94)
 
 이 글과 대체적으로 비슷하다고 생각하시면 됩니다
 
@@ -344,4 +344,4 @@ brunch (기기명)으로 빌드할때는 lunch를 하지 않아도 됩니다 자
 
 <https://github.com/CyanogenMod>
 
-<http://itmir.tistory.com/94>
+</archive/itmir/2013/94>

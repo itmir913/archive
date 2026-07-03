@@ -12,7 +12,7 @@ original_url: "https://itmir.tistory.com/599"
 
 아래 글을 참고해주세요
 
-[[Application] - 성적표 앱을 출시했습니다.](http://itmir.tistory.com/601)
+[[Application] - 성적표 앱을 출시했습니다.](/archive/itmir/2015/601)
 
 안녕하세요
 

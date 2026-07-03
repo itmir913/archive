@@ -197,9 +197,9 @@ Toast.makeText(MainActivity.this, inPutText,Toast.LENGTH\_SHORT).show();
 
 자세한건 이쪽으로~
 
-[2013/02/22 - [미르의 개발 이야기/Java 배움터] - 계산을 할수 있는 연산자에 대해 알아보자! - 1편](http://itmir.tistory.com/157)
+[2013/02/22 - [미르의 개발 이야기/Java 배움터] - 계산을 할수 있는 연산자에 대해 알아보자! - 1편](/archive/itmir/2013/157)
 
-[2013/02/22 - [미르의 개발 이야기/Java 배움터] - 계산을 할수 있는 연산자에 대해 알아보자! - 2편](http://itmir.tistory.com/158)
+[2013/02/22 - [미르의 개발 이야기/Java 배움터] - 계산을 할수 있는 연산자에 대해 알아보자! - 2편](/archive/itmir/2013/158)
 
 그럼 다시 돌아와서 저 줄을 확인해 보면
 

@@ -13,9 +13,9 @@ original_url: "https://itmir.tistory.com/556"
 
 아래는 J Tab 리뷰 목록입니다.
 
-[[Computer/PC] - [J-Tab2] 주연테크 J-Tab2 (제이탭) 부팅 시간 측정](http://itmir.tistory.com/554)
+[[Computer/PC] - [J-Tab2] 주연테크 J-Tab2 (제이탭) 부팅 시간 측정](/archive/itmir/2015/554)
 
-[[Computer/PC] - [J-Tab2] 주연테크 J-Tab2 (제이탭) 개봉기](http://itmir.tistory.com/553)
+[[Computer/PC] - [J-Tab2] 주연테크 J-Tab2 (제이탭) 개봉기](/archive/itmir/2015/553)
 
 ### 도킹 키보드 모습
 

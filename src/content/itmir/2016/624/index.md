@@ -26,7 +26,7 @@ original_url: "https://itmir.tistory.com/624"
 
 우리는 #강좌에서 쓰레드와 핸들러를 이용한 방법을 배웠습니다.
 
-[[Development/App] - #20 쓰레드(Thread)와 핸들러(Handler)](http://itmir.tistory.com/366)
+[[Development/App] - #20 쓰레드(Thread)와 핸들러(Handler)](/archive/itmir/2013/366)
 
 그런데, 안드로이드에서는 AsyncTask라는 클래스를 상속받아 사용할 수 있습니다.
 

@@ -14,11 +14,11 @@ original_url: "https://itmir.tistory.com/578"
 
 제 블로그에도 몇번 포스팅한적이 있습니다!
 
-[[Application] - 세번만 (BETA) 어플을 완성했습니다](http://itmir.tistory.com/362)
+[[Application] - 세번만 (BETA) 어플을 완성했습니다](/archive/itmir/2013/362)
 
-[[Application] - 하루에 어플을 실행할 횟수를 정하자! - 세번만 (BETA)](http://itmir.tistory.com/383)
+[[Application] - 하루에 어플을 실행할 횟수를 정하자! - 세번만 (BETA)](/archive/itmir/2013/383)
 
-[[Application] - [Update v2.4] Only3 (세번만) - 스마트폰 어플 중독방지](http://itmir.tistory.com/443)
+[[Application] - [Update v2.4] Only3 (세번만) - 스마트폰 어플 중독방지](/archive/itmir/2014/443)
 
 과거기록(?) 보시면 아시겠지만 제가 중3때 완성한 앱이라 그때 UI도 그렇고 체계적으로 앱을 만들지 못했습니다.
 

@@ -20,13 +20,13 @@ original_url: "https://itmir.tistory.com/619"
 
 그러므로 만약 이 앱이 작동하지 않으신다면 아래 링크로 들어가셔서 베가 아이언2 키보드 등을 설치해주세요.
 
-[[Application] - 20140522 - 베가 아이언2 (Vega Iron2) 키보드 (VEGAIME.apk)](http://itmir.tistory.com/499)
+[[Application] - 20140522 - 베가 아이언2 (Vega Iron2) 키보드 (VEGAIME.apk)](/archive/itmir/2014/499)
 
-[[Application] - [APK] 베가 아이언2 (Vega Iron2) 키보드 (VEGAIME.apk)](http://itmir.tistory.com/498)
+[[Application] - [APK] 베가 아이언2 (Vega Iron2) 키보드 (VEGAIME.apk)](/archive/itmir/2014/498)
 
-[[Application] - [KitKat] Vega Secret UP (베가 시크릿 업) 키보드 킷캣 업데이트](http://itmir.tistory.com/493)
+[[Application] - [KitKat] Vega Secret UP (베가 시크릿 업) 키보드 킷캣 업데이트](/archive/itmir/2014/493)
 
-[[Application] - [APP] Vega Secret UP (베가 시크릿 업) 키보드](http://itmir.tistory.com/425)
+[[Application] - [APP] Vega Secret UP (베가 시크릿 업) 키보드](/archive/itmir/2014/425)
 
 참고로 제가 가진 안드로이드 기기중 가장 최신 OS버전이 갤넥의 CM12.1, Android 5.1.1입니다.
 

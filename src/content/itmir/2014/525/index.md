@@ -12,7 +12,7 @@ Dropdown, FixedTabs + Swipe, Scroll Tab 3개의 예제를 만들었습니다
 
 저번에 탭관련 강좌를 쓴적이 있습니다
 
-[[Development/App] - 안드로이드 탭을 구현해 보자, Fragment](http://itmir.tistory.com/283)
+[[Development/App] - 안드로이드 탭을 구현해 보자, Fragment](/archive/itmir/2013/283)
 
 이 글에서 다루지 못했던 나머지 두개의 탭까지 올려드립니다
 

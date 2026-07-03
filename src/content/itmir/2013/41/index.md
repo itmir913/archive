@@ -330,7 +330,7 @@ BOARD\_BLUETOOTH\_BDROID\_BUILDCFG\_INCLUDE\_DIR := device/samsung/msm8660-commo
 
 이제 NO BOARD\_BLUETOOTH\_BDROID\_BUILDCFG\_INCLUDE\_DIR, using only generic configuration오류는 나타나지 않을 것 입니다
 
-[2013/04/06 - [강좌/팁/커널/빌드 강좌] - NO BOARD\_BLUETOOTH\_BDROID\_BUILDCFG\_INCLUDE\_DIR, using only generic configuration](http://itmir.tistory.com/188)
+[2013/04/06 - [강좌/팁/커널/빌드 강좌] - NO BOARD\_BLUETOOTH\_BDROID\_BUILDCFG\_INCLUDE\_DIR, using only generic configuration](/archive/itmir/2013/188)
 
 출처 : <http://forum.xda-developers.com/showthread.php?p=35522843>
 

@@ -26,4 +26,4 @@ original_url: "https://itmir.tistory.com/375"
 
 ![](./images/20131111_080922.jpg)
 
-이글은 [https://itmir.tistory.com/375] 에서 다시 보실수 있으며 원본 글의 저작권은 미르에게 있습니다
+이글은 [/archive/itmir/2013/375] 에서 다시 보실수 있으며 원본 글의 저작권은 미르에게 있습니다

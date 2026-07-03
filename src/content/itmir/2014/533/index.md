@@ -16,7 +16,7 @@ original_url: "https://itmir.tistory.com/533"
 
 포기하고 버튼을 만들어 적용했었습니다.
 
-관련 글: [[Tistory] - 소셜 댓글 서비스 디스커스(Disqus)를 추가했습니다](http://itmir.tistory.com/509)
+관련 글: [[Tistory] - 소셜 댓글 서비스 디스커스(Disqus)를 추가했습니다](/archive/itmir/2014/509)
 
 그런대!! 오늘 원본 블로그를 발견해서 저도 제 블로그에 탭을 적용할 수 있었습니다.
 

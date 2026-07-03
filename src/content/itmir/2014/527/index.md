@@ -40,7 +40,7 @@ github에 공개되어 있습니다
 
 poppyview-library폴더를 import해주신다음 is Library해주세요
 
-IsLibrary를 모르시는 분께서는 [[Development/App] - FadingActionBar를 사용해 보자 - Play Store UI](http://itmir.tistory.com/526) 글 중간부분에 설명이 나와있습니다
+IsLibrary를 모르시는 분께서는 [[Development/App] - FadingActionBar를 사용해 보자 - Play Store UI](/archive/itmir/2014/526) 글 중간부분에 설명이 나와있습니다
 
 아래 apk파일은 샘플 프로젝트 입니다 한번 설치해서 구경해 보세요
 

@@ -10,7 +10,7 @@ original_url: "https://itmir.tistory.com/684"
 
 ## UTM VM on iOS
 
-필자는 지난 글([iPad Pro에 Mac OS가 돌아간다면?](https://itmir.tistory.com/678))에서 아이패드에 맥이 돌아간다면 어떠할지 막연한 기대감을 표출하였다.
+필자는 지난 글([iPad Pro에 Mac OS가 돌아간다면?](/archive/itmir/2020/678))에서 아이패드에 맥이 돌아간다면 어떠할지 막연한 기대감을 표출하였다.
 
 그러던 중 UTM이라는 흥미로운 프로젝트를 발견하게 되었다.
 

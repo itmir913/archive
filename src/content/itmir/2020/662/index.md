@@ -52,4 +52,4 @@ Draft는 구독형 앱이지만 무료로 사용하기에도 별다른 부족함
 
 ## 같이 보기
 
-[[SmartPhone/iPad] - 아이패드 프로 (iPad Pro) 필수, 권장 유료 앱 추천 100+개](https://itmir.tistory.com/661)
+[[SmartPhone/iPad] - 아이패드 프로 (iPad Pro) 필수, 권장 유료 앱 추천 100+개](/archive/itmir/2020/661)

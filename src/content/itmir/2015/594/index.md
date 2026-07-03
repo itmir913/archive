@@ -10,7 +10,7 @@ original_url: "https://itmir.tistory.com/594"
 
 안드로이드 스튜디오를 사용하신다면,
 
-[[Android/App] - Android Studio 무선 ADB 사용하기 (Android WiFi ADB)](https://itmir.tistory.com/673) 글을 참고해주세요!
+[[Android/App] - Android Studio 무선 ADB 사용하기 (Android WiFi ADB)](/archive/itmir/2020/673) 글을 참고해주세요!
 
 안녕하세요.
 

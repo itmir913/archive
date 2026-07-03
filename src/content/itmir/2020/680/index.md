@@ -12,13 +12,13 @@ original_url: "https://itmir.tistory.com/680"
 
 아래 링크는 과거 2013년에 필자가 Syntax Highlighter를 적용한 후 남긴 포스팅입니다.
 
-[[Tistory] - 티스토리 좋은 소스코드 표현방법](https://itmir.tistory.com/324)
+[[Tistory] - 티스토리 좋은 소스코드 표현방법](/archive/itmir/2013/324)
 
 [티스토리 좋은 소스코드 표현방법
 
 안녕하세요~ 티스토리 강좌는 오랜만이군요 전부터 시도했지만 안됬던게 하나 있었습니다 바로 Syntax Highlighter... 이게 뭐냐면... 티스토리 블로그를 보면 코드소스가 깔끔하게 정리된 블로그가
 
-itmir.tistory.com](https://itmir.tistory.com/324)
+itmir.tistory.com](/archive/itmir/2013/324)
 
 그러나 이는 업데이트도 없고, [highlight.js](https://highlightjs.org/)라는 강력하고 간편한 대체제가 나왔기 때문에 현재로서는 메리트가 없습니다.
 

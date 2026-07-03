@@ -123,7 +123,7 @@ original_url: "https://itmir.tistory.com/548"
 
 구체적인 생성법은 아래 링크를 참고해 주세요
 
-[[Development/App] - #23 Service (서비스)에 대해 알아보자](http://itmir.tistory.com/414)
+[[Development/App] - #23 Service (서비스)에 대해 알아보자](/archive/itmir/2013/414)
 
 [java] : 파일 생성
 
@@ -198,7 +198,7 @@ public void onCreate() {
 
 커스텀 알림때 배운 레이아웃 인플레이터입니다
 
-[[Development/App] - #17 커스텀 알림(Alert) 띄우기](http://itmir.tistory.com/358)
+[[Development/App] - #17 커스텀 알림(Alert) 띄우기](/archive/itmir/2013/358)
 
 ![](./images/레이아웃 인플레이터.jpg)
 

@@ -16,13 +16,13 @@ https://open.neis.go.kr/portal/data/dataset/searchDatasetPage.do
 
 나이스의 보안프로그램 적용으로 급식 파싱 라이브러리 사용이 제한될 수 있으며, 영구적으로 사용이 불가능할 수도 있습니다.
 
-자세한 내용은 [[Application] - 나이스 보안 프로그램과 현재 급식 파싱 불가능 관련](http://itmir.tistory.com/614)을 참고하세요.
+자세한 내용은 [[Application] - 나이스 보안 프로그램과 현재 급식 파싱 불가능 관련](/archive/itmir/2016/614)을 참고하세요.
 
 급식 라이브러리 가이드가 작성되었습니다.
 
 오래된 이 글보다 아래 가이드 글을 참고해주세요!
 
-<http://itmir.tistory.com/579>
+</archive/itmir/2015/579>
 
 <https://github.com/itmir913/wondanghighschool>
 

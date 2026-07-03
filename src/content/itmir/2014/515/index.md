@@ -100,7 +100,7 @@ original_url: "https://itmir.tistory.com/515"
 
 애니메이션을 정의한 xml파일은 res/anim폴더에 들어있습니다
 
-[[Development/App] - #3 App의 구조와 동작 원리](http://itmir.tistory.com/289) 강좌에서 res폴더 내부를 관찰할때 설명했던 부분입니다
+[[Development/App] - #3 App의 구조와 동작 원리](/archive/itmir/2013/289) 강좌에서 res폴더 내부를 관찰할때 설명했던 부분입니다
 
 혹시 까먹으신분 있으실까봐...
 

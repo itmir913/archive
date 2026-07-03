@@ -8,7 +8,7 @@ draft: false
 original_url: "https://itmir.tistory.com/399"
 ---
 
-GUI 프로그램을 포스팅했습니다 : [[SmartPhone/Android] - Apk Easy Tool - Apk GUI 디컴파일 도구](https://itmir.tistory.com/672)
+GUI 프로그램을 포스팅했습니다 : [[SmartPhone/Android] - Apk Easy Tool - Apk GUI 디컴파일 도구](/archive/itmir/2020/672)
 
 apk dex Tool
 

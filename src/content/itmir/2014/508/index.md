@@ -74,9 +74,9 @@ original_url: "https://itmir.tistory.com/508"
 
 시작하기를 눌러 광고를 만들고, 사이트에 넣어주세요.
 
-[[Tistory] - [1편] 티스토리에 구글 애드센스 (Google Adsense)를 넣어보자](http://itmir.tistory.com/110)
+[[Tistory] - [1편] 티스토리에 구글 애드센스 (Google Adsense)를 넣어보자](/archive/itmir/2013/110)
 
-[[Tistory] - [4편] 메인 페이지에 애드센스 광고를 넣어보자!](http://itmir.tistory.com/139)
+[[Tistory] - [4편] 메인 페이지에 애드센스 광고를 넣어보자!](/archive/itmir/2013/139)
 
 모든 작업이 완료되면 아래 메일이 날라옵니다~~~
 

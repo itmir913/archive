@@ -10,7 +10,7 @@ original_url: "https://itmir.tistory.com/617"
 
 저번 포스팅에서 MathPad의 추가기능 활성화하여 Wolfram Alpha를 통해 수식을 계산하는 모습을 살펴보았습니다.
 
-[[Application] - 아이폰앱 Wolfram Alpha와 Mathpad를 이용해서 적분하기](http://itmir.tistory.com/615)
+[[Application] - 아이폰앱 Wolfram Alpha와 Mathpad를 이용해서 적분하기](/archive/itmir/2016/615)
 
 그런데, Wolfram Alpha에는 수식 계산 말고도 더 많은 사용방법이 있습니다.
 

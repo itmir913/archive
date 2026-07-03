@@ -129,7 +129,7 @@ iOS 특유의 폐쇄성으로 인하여 개발 환경을 구축하는 것부터 
 
 ## 같이 보기
 
-[[SmartPhone/iPad] - 아이패드 프로 (iPad Pro) 필수, 권장 유료 앱 추천 100+개](https://itmir.tistory.com/661)
+[[SmartPhone/iPad] - 아이패드 프로 (iPad Pro) 필수, 권장 유료 앱 추천 100+개](/archive/itmir/2020/661)
 
 ## 참고
 

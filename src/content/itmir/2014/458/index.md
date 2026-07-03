@@ -77,7 +77,7 @@ public void sendSMS(View v){
 
 2~3줄의 getText().toString()은 모두 아시는 구문이죠?
 
-모르신다면 [[Development/App] - #7 EditText는 완전 쉬워요~](http://itmir.tistory.com/306) 부터 보시길 추천드립니다
+모르신다면 [[Development/App] - #7 EditText는 완전 쉬워요~](/archive/itmir/2013/306) 부터 보시길 추천드립니다
 
 5번째의 length는 String의 길이를 반환합니다
 
@@ -177,7 +177,7 @@ BroadCast를 등록해 주는 역할을 했었는데요
 
 그 아래의 IntentFilter도 그 강좌에서 한 적이 잇습니다
 
-[[Development/App] - #24 Broadcast Receiver로 문자(SMS) 수신해보자](http://itmir.tistory.com/424)
+[[Development/App] - #24 Broadcast Receiver로 문자(SMS) 수신해보자](/archive/itmir/2014/424)
 
 ![](./images/캡처.png)
 
@@ -417,7 +417,7 @@ originText.setText(originSmsText);
 
 참조 : http://developer.android.com/reference/android/telephony/gsm/SmsManager.html
 
-http://itmir.tistory.com/424
+/archive/itmir/2014/424
 
 ---
 

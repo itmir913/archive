@@ -20,7 +20,7 @@ original_url: "https://itmir.tistory.com/613"
 
 참고 java파일 : .activity.bap.star.BapStarActivity.java, class HttpTask
 
-선행된 작업 : [[Development/App] - 구글 스프레드 시트를 데이터베이스로 사용하기 - 스크립트편](http://itmir.tistory.com/598)
+선행된 작업 : [[Development/App] - 구글 스프레드 시트를 데이터베이스로 사용하기 - 스크립트편](/archive/itmir/2015/598)
 
 전 강좌의 작업을 모두 완료하신다음 얻어지는 url 경로를 저장하세요.
 
@@ -115,7 +115,7 @@ nameValue.add(new BasicNameValuePair("sheet\_name", "시트1"));
 
 구글 스프레드 시트의 첫 발생은 뭐하라님께서 알려주신 티스토리 오류 제보였습니다.
 
-[[Tistory] - 티스토리 오류 제보하기 버튼 만들기 - 구글 스프레드 시트 사용](http://itmir.tistory.com/550)
+[[Tistory] - 티스토리 오류 제보하기 버튼 만들기 - 구글 스프레드 시트 사용](/archive/itmir/2015/550)
 
 이 오류 제보 기능은 시트를 하나만 사용했습니다. (2개 이상의 시트를 쓸 이유가 없죠)
 

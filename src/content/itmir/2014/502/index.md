@@ -10,7 +10,7 @@ original_url: "https://itmir.tistory.com/502"
 
 저번에 저는 베가 아이언2의 루팅용 boot.img만들기를 시도하였습니다
 
-참고글 : [[Ubuntu] - [Dev] 루팅용 Boot.img 만들기 강좌](http://itmir.tistory.com/207)
+참고글 : [[Ubuntu] - [Dev] 루팅용 Boot.img 만들기 강좌](/archive/itmir/2013/207)
 
 루팅용 boot.img만들기는 베가레이서2 젤리빈때 만들고 처음이므로 많이 지났네요 ㅎㅎ;
 

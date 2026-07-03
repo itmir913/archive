@@ -14,7 +14,7 @@ original_url: "https://itmir.tistory.com/358"
 
 알림을 띄우는것은 전에 모두 했었던 내용입니다
 
-[**[Development/App] - #11 알림 메세지 띄우기**](http://itmir.tistory.com/315)
+[**[Development/App] - #11 알림 메세지 띄우기**](/archive/itmir/2013/315)
 
 그러나 이것만으로는 할수 없는것들이 있기 때문에 이번에는 그것을 배워보도록 하겠습니다
 
