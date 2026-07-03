@@ -54,6 +54,7 @@ fragment같이 context를 상속하고 있다면 Context같은것을 넣어주�
 
 -상속을 어떻게 알수 있나요?
 
+`java
 public class MainActivity extends Activity {
 
 이걸 보면 밑줄이 있죠? extends가 상속한다는 뜻입니다
@@ -66,15 +67,17 @@ this다음 쉼표(,)뒤에는 토스트 메세지가 들어갑니다
 
 R.string.(스트링 이름)을 쓸때는
 
-Toast.makeText(this, R.string.toast,Toast.LENGTH\_SHORT).show();
+``java
+Toast.makeText(this, R.string.toast,Toast.LENGTH_SHORT).show();
+```
 
 이런식으로 작성해 주시면 됩니다
 
-그 옆에 있는 Toast.LENGTH\_SHORT는 얼마만큼 토스트 메세지를 띄우는 시간입니다
+그 옆에 있는 Toast.LENGTH_SHORT는 얼마만큼 토스트 메세지를 띄우는 시간입니다
 
-Toast.LENGTH\_LONG과
+Toast.LENGTH_LONG과
 
-Toast.LENGTH\_SHORT이 들어갈수 있는데요
+Toast.LENGTH_SHORT이 들어갈수 있는데요
 
 long은 약 5초, short는 약 2초라 합니다
 
@@ -102,8 +105,10 @@ rand의 자세한 내용은 [2013/08/14 - [미르의 개발 이야기/Java 배�
 
 우리는 아래 코드만 알면 됩니다
 
-num = ((int)(Math.random() \* 9));  
+`java
+num = ((int)(Math.random() * 9));
 num++;
+`
 
 이게 랜덤의 숫자를 구하는 가장 최소한의 두줄입니다 ㅎㅎㅎㅎㅎㅎㅎㅎ 제가 직접 짰어요
 
@@ -115,97 +120,99 @@ num++;
 
 ### 9-4 도둑잡기 게임을 만들어봐요~
 
-먼저 activity\_main.xml의 코드 내용입니다
+먼저 activity_main.xml의 코드 내용입니다
 
+``xml
 <Button  
  android:id="@+id/button1"  
- android:layout\_width="80sp"  
- android:layout\_height="80sp"  
- android:layout\_alignParentLeft="true"  
- android:layout\_alignParentTop="true"  
+ android:layout_width="80sp"  
+ android:layout_height="80sp"  
+ android:layout_alignParentLeft="true"  
+ android:layout_alignParentTop="true"  
  android:onClick="ClickMethod"  
  />
 
 <Button  
  android:id="@+id/button2"  
- android:layout\_width="80sp"  
- android:layout\_height="80sp"  
- android:layout\_alignBaseline="@+id/button1"  
- android:layout\_alignBottom="@+id/button1"  
- android:layout\_centerHorizontal="true"  
+ android:layout_width="80sp"  
+ android:layout_height="80sp"  
+ android:layout_alignBaseline="@+id/button1"  
+ android:layout_alignBottom="@+id/button1"  
+ android:layout_centerHorizontal="true"  
  android:onClick="ClickMethod"  
  />  
    
  <Button  
  android:id="@+id/button3"  
- android:layout\_width="80sp"  
- android:layout\_height="80sp"  
- android:layout\_alignBaseline="@+id/button2"  
- android:layout\_alignBottom="@+id/button2"  
- android:layout\_alignParentRight="true"  
+ android:layout_width="80sp"  
+ android:layout_height="80sp"  
+ android:layout_alignBaseline="@+id/button2"  
+ android:layout_alignBottom="@+id/button2"  
+ android:layout_alignParentRight="true"  
  android:onClick="ClickMethod"  
  />
 
 <Button  
  android:id="@+id/button4"  
- android:layout\_width="80sp"  
- android:layout\_height="80sp"  
- android:layout\_alignLeft="@+id/button1"  
- android:layout\_below="@+id/button1"  
- android:layout\_marginTop="30dp"  
+ android:layout_width="80sp"  
+ android:layout_height="80sp"  
+ android:layout_alignLeft="@+id/button1"  
+ android:layout_below="@+id/button1"  
+ android:layout_marginTop="30dp"  
  android:onClick="ClickMethod"  
  />
 
 <Button  
  android:id="@+id/button5"  
- android:layout\_width="80sp"  
- android:layout\_height="80sp"  
- android:layout\_alignBaseline="@+id/button4"  
- android:layout\_alignBottom="@+id/button4"  
- android:layout\_alignLeft="@+id/button2"  
+ android:layout_width="80sp"  
+ android:layout_height="80sp"  
+ android:layout_alignBaseline="@+id/button4"  
+ android:layout_alignBottom="@+id/button4"  
+ android:layout_alignLeft="@+id/button2"  
  android:onClick="ClickMethod"  
  />
 
 <Button  
  android:id="@+id/button6"  
- android:layout\_width="80sp"  
- android:layout\_height="80sp"  
- android:layout\_alignBaseline="@+id/button5"  
- android:layout\_alignBottom="@+id/button5"  
- android:layout\_alignLeft="@+id/button3"  
+ android:layout_width="80sp"  
+ android:layout_height="80sp"  
+ android:layout_alignBaseline="@+id/button5"  
+ android:layout_alignBottom="@+id/button5"  
+ android:layout_alignLeft="@+id/button3"  
  android:onClick="ClickMethod"  
  />
 
 <Button  
  android:id="@+id/button7"  
- android:layout\_width="80sp"  
- android:layout\_height="80sp"  
- android:layout\_alignLeft="@+id/button4"  
- android:layout\_below="@+id/button4"  
- android:layout\_marginTop="30dp"  
+ android:layout_width="80sp"  
+ android:layout_height="80sp"  
+ android:layout_alignLeft="@+id/button4"  
+ android:layout_below="@+id/button4"  
+ android:layout_marginTop="30dp"  
  android:onClick="ClickMethod"  
  />
 
 <Button  
  android:id="@+id/button8"  
- android:layout\_width="80sp"  
- android:layout\_height="80sp"  
- android:layout\_alignBaseline="@+id/button7"  
- android:layout\_alignBottom="@+id/button7"  
- android:layout\_alignLeft="@+id/button5"  
+ android:layout_width="80sp"  
+ android:layout_height="80sp"  
+ android:layout_alignBaseline="@+id/button7"  
+ android:layout_alignBottom="@+id/button7"  
+ android:layout_alignLeft="@+id/button5"  
  android:onClick="ClickMethod"  
  />
 
 <Button  
  android:id="@+id/button9"  
- android:layout\_width="80sp"  
- android:layout\_height="80sp"  
- android:layout\_alignBaseline="@+id/button8"  
- android:layout\_alignBottom="@+id/button8"  
- android:layout\_alignLeft="@+id/button6"  
+ android:layout_width="80sp"  
+ android:layout_height="80sp"  
+ android:layout_alignBaseline="@+id/button8"  
+ android:layout_alignBottom="@+id/button8"  
+ android:layout_alignLeft="@+id/button6"  
  android:onClick="ClickMethod"  
  />
 
+```
 도둑잡기에 쓰일 9개 버튼을 만들었습니다
 
 이번 어플에서는 listener을 사용하지 않고 한 메소드로만 사용할 예정입니다
@@ -222,47 +229,48 @@ int num;을 추가해 주세요
 그다음 메소드를 하나 추가할건데요 이번 어플에서는 onCreate를 건들지 않습니다
 
 public void ClickMethod(View v){  
- num = ((int)(Math.random() \* 9));  
+ num = ((int)(Math.random() * 9));  
  num++;  
  switch(v.getId()){  
  case R.id.button1:  
  if (num==1)  
- Toast.makeText(MainActivity.this,"도둑잡았다!",Toast.LENGTH\_SHORT).show();  
+ Toast.makeText(MainActivity.this,"도둑잡았다!",Toast.LENGTH_SHORT).show();  
  break;  
  case R.id.button2:  
  if (num==2)  
- Toast.makeText(MainActivity.this,"도둑잡았다!",Toast.LENGTH\_SHORT).show();  
+ Toast.makeText(MainActivity.this,"도둑잡았다!",Toast.LENGTH_SHORT).show();  
  break;  
  case R.id.button3:  
  if (num==3)  
- Toast.makeText(MainActivity.this,"도둑잡았다!",Toast.LENGTH\_SHORT).show();  
+ Toast.makeText(MainActivity.this,"도둑잡았다!",Toast.LENGTH_SHORT).show();  
  break;  
  case R.id.button4:  
  if (num==4)  
- Toast.makeText(MainActivity.this,"도둑잡았다!",Toast.LENGTH\_SHORT).show();  
+ Toast.makeText(MainActivity.this,"도둑잡았다!",Toast.LENGTH_SHORT).show();  
  break;  
  case R.id.button5:  
  if (num==5)  
- Toast.makeText(MainActivity.this,"도둑잡았다!",Toast.LENGTH\_SHORT).show();  
+ Toast.makeText(MainActivity.this,"도둑잡았다!",Toast.LENGTH_SHORT).show();  
  break;  
  case R.id.button6:  
  if (num==6)  
- Toast.makeText(MainActivity.this,"도둑잡았다!",Toast.LENGTH\_SHORT).show();  
+ Toast.makeText(MainActivity.this,"도둑잡았다!",Toast.LENGTH_SHORT).show();  
  break;  
  case R.id.button7:  
  if (num==7)  
- Toast.makeText(MainActivity.this,"도둑잡았다!",Toast.LENGTH\_SHORT).show();  
+ Toast.makeText(MainActivity.this,"도둑잡았다!",Toast.LENGTH_SHORT).show();  
  break;  
  case R.id.button8:  
  if (num==8)  
- Toast.makeText(MainActivity.this,"도둑잡았다!",Toast.LENGTH\_SHORT).show();  
+ Toast.makeText(MainActivity.this,"도둑잡았다!",Toast.LENGTH_SHORT).show();  
  break;  
  case R.id.button9:  
  if (num==9)  
- Toast.makeText(MainActivity.this,"도둑잡았다!",Toast.LENGTH\_SHORT).show();  
+ Toast.makeText(MainActivity.this,"도둑잡았다!",Toast.LENGTH_SHORT).show();  
  break;  
  }  
  }
+`
 
 이 코드를 통채로 넣어버리면 됩니다
 
