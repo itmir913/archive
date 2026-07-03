@@ -118,7 +118,7 @@ cygwin_gcc-core 이런게 아니라 gcc-core입니다
 
 경로는 아래와 같아요
 
-C:\cygwin\home\(계정명)\.bashrc
+C:\cygwin\home(계정명)\.bashrc
 
 만약 파일이 없다면 cygwin을 한번 실행한다음 다시 들어가 보세요
 

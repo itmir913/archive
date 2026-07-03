@@ -28,7 +28,7 @@ VMWare를 전체화면으로 사용했을 때, 보통 툴바가 자동으로 사
 
 파일 경로는 다음과 같다.
 
-C:\Users\(User Name)\AppData\Roaming\VMware\preferences.ini
+C:\Users(User Name)\AppData\Roaming\VMware\preferences.ini
 
 이 파일을 메모장과 같은 텍스트 에디터로 연 다음, 맨 아래에 한 줄을 추가해주자.
 

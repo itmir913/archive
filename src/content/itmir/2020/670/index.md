@@ -98,7 +98,7 @@ git config --global mergetool.prompt false
 
 merge 툴으로 p4merge를 사용하지 않으려면 (단순히 difftool으로만 사용하려면) 위의 세 줄만 입력해주세요.
 
-정상적으로 입력되었다면 C:\Users\(유저명)\.gitconfig 파일에 다음과 같이 설정이 기록됩니다.
+정상적으로 입력되었다면 C:\Users(유저명)\.gitconfig 파일에 다음과 같이 설정이 기록됩니다.
 
 ![](./images/img_5.png)
 

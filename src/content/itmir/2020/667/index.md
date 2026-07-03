@@ -62,7 +62,7 @@ Done
 
 (SDK 설치 위치)\emulator 폴더 안의 emulator-check.exe를 통해 hyper-v 여부를 확인해볼 수 있다.
 
-설치 위치를 변경하지 않았다면 대부분 C:\Users\(사용자이름)\AppData\Local\Android\Sdk\emulator 일 것이다.
+설치 위치를 변경하지 않았다면 대부분 C:\Users(사용자이름)\AppData\Local\Android\Sdk\emulator 일 것이다.
 
 cmd로 저 폴더에 이동한 다음, 아래 명령어를 입력한다.
 
