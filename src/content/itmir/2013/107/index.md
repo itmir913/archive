@@ -22,7 +22,6 @@ original_url: "https://itmir.tistory.com/107"
 
 전 http://cafe.naver.com/skydevelopers/86106 의 hPa님의 이자르 cm7소스를 참고하였습니다
 
-
 다음은 이자르의 cm7작업파일 입니다 (hPa님 게시글 첨부파일)
 
 그럼 좀 까다롭고 어려운 작업을 시작해 보도록 하겠습니다

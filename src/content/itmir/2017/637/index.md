@@ -1,7 +1,7 @@
 ---
 title: "2017년 블로그 안내"
 date: "2017-06-06T19:21:49+09:00"
-category: ""
+category: "DailyLife"
 tags: []
 description: "먼저 제 블로그에 방문해 주신 분들께 감사의 말씀을 드립니다."
 draft: false

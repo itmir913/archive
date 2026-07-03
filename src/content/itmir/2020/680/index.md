@@ -8,7 +8,7 @@ draft: false
 original_url: "https://itmir.tistory.com/680"
 ---
 
-## <pre><code>가 아닌, <pre>만 있는 과거 게시글
+## `<pre><code>`가 아닌, `<pre>`만 있는 과거 게시글
 
 아래 링크는 과거 2013년에 필자가 Syntax Highlighter를 적용한 후 남긴 포스팅입니다.
 
@@ -24,7 +24,7 @@ original_url: "https://itmir.tistory.com/680"
 
 티스토리 코드 하이라이트 방법을 새로 바꾸면서, 한 가지 문제가 생겼습니다.
 
-바로 기존까지 사용하던 Syntax Highlighter는 <code> 태그를 사용하지 않는다는 점입니다.
+바로 기존까지 사용하던 Syntax Highlighter는 `<code>` 태그를 사용하지 않는다는 점입니다.
 
 highlight.js로 코드를 강조 표시하기 위해서는 다음과 같은 html 태그가 필요합니다.
 
@@ -81,7 +81,7 @@ $(document).ready(function() {
 </head>
 ```
 
-이렇게 hljs.initHighlightingOnLoad(); 밑에 스크립트를 넣어주시면 <pre> 태그만 있는 소스 파일도 [highlight.js](https://highlightjs.org/)를 적용할 수 있습니다.
+이렇게 hljs.initHighlightingOnLoad(); 밑에 스크립트를 넣어주시면 `<pre>` 태그만 있는 소스 파일도 [highlight.js](https://highlightjs.org/)를 적용할 수 있습니다.
 
 원리는 간단합니다.
 

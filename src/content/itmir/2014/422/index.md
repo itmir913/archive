@@ -1,7 +1,7 @@
 ---
 title: "2014 새해 복 많이 받으세요~~~!!!!"
 date: "2013-12-31T00:00:00+09:00"
-category: ""
+category: "DailyLife"
 tags: []
 description: "벌서 2013년이 모두 지나가고 2014년이 다가왔습니다."
 draft: false

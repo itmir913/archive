@@ -30,7 +30,7 @@ original_url: "https://itmir.tistory.com/137"
 
 위 코드를 복사한다음
 
-관리자 모드 - HTML/CSS 편집에 들어가 <html>위 에 넣어주시면 됩니다
+관리자 모드 - HTML/CSS 편집에 들어가 `<html>` 위에 넣어주시면 됩니다
 
 [gzip 코드.txt](./files/gzip 코드.txt)
 

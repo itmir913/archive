@@ -82,7 +82,6 @@ class Switchcase
 }
 ```
 
-
 이렇게 구성했습니다.
 
 예상을 해보면 M이 2이므로 case2부터 실행될 것임을 알수 있습니다.
@@ -129,7 +128,6 @@ class Switchcasebreak
  }
 }
 ```
-
 
 각 case마다 break를 넣었습니다.
 

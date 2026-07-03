@@ -31,7 +31,6 @@ su_ky님과 베트남 분(자세히는 모르겠습니다)께서 만드셨다고
 
 혹시 몰라 필요한 파일을 업로드해 두겠습니다
 
-
 필요 파일을 설치하신다음 아래 툴을 받아 압축풀어 주세요
 
 [binx unpacker.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/binx unpacker.zip)

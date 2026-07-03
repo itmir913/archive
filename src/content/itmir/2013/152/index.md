@@ -1,7 +1,7 @@
 ---
 title: "Java 강좌 로고"
 date: "2013-02-20T15:50:01+09:00"
-category: ""
+category: "Programming/Java"
 tags: []
 description: ""
 draft: false

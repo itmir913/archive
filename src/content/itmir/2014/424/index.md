@@ -230,17 +230,19 @@ abortBroadcast();
 
 한번 등록해 봅시다
 
+```xml
 <receiver android:name ="whdghks913.tistory.examplebroadcastreceiver.Broadcast">
 
-    <intent-filter **android:priority="9999"**>
+    <intent-filter android:priority="9999">
 
-        <action android:name="**android.intent.action.BOOT_COMPLETED**"/>
+        <action android:name="android.intent.action.BOOT_COMPLETED"/>
 
-        <action android:name="**android.provider.Telephony.SMS_RECEIVED**" />
+        <action android:name="android.provider.Telephony.SMS_RECEIVED" />
 
     </intent-filter>
 
 </receiver>
+```
 
 receiver를 등록하였습니다
 
@@ -256,9 +258,11 @@ receiver를 등록하였습니다
 
 마지막으로 부팅완료와 sms수신은 권한이 필요합니다
 
+```xml
 <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
 <uses-permission android:name="android.permission.RECEIVE_SMS" />
+```
 
 ### 24-5 registerReceiver()로 등록하자 (동적 등록)
 

@@ -288,7 +288,6 @@ function setup() {
 
 이미 jquery가 적용된 블로그의 경우 맨 윗 줄은 생략하셔야 합니다.
 
-
 <script>
 
 //오류제보하기 - http://nubiz.tistory.com/551

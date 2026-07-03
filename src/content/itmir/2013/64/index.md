@@ -46,7 +46,6 @@ original_url: "https://itmir.tistory.com/64"
 
 아무튼 이런 기능이 있는 img원클릭 설치툴을 올리겠습니다.
 
-
 이글은
 
 [2013/01/27 - [강좌/팁/SmartPhone 강좌] - 단 한번만 img로 부팅/리커버리진입 해보자!](http://whdghks913.tistory.com/63)

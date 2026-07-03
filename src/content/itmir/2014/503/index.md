@@ -1,7 +1,7 @@
 ---
 title: "블로그가 개편되어 주소와 스킨이 모두 변경되었습니다!"
 date: "2014-06-13T23:07:27+09:00"
-category: ""
+category: "DailyLife"
 tags: []
 description: "안녕하세요~~ 다름이 아니라 제 블로그 주소가 변경되어 안내말씀 드립니다!!"
 draft: false

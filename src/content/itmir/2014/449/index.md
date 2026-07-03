@@ -70,15 +70,11 @@ Tab(탭)버튼을 눌러 OK를 눌러주세요.
 
 android-toolchain-eabi-4.7-2013.06-x86
 
-
 arm-eabi-4.4.0
-
 
 arm-eabi-4.4.3
 
-
 arm-eabi-4.6
-
 
 참고 : arm-eabi-4.7, 4.8
 

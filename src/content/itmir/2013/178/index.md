@@ -26,7 +26,6 @@ original_url: "https://itmir.tistory.com/178"
 
 먼저 inf파일을 설치하는 방법입니다
 
-
 inf파일이란? 설치 정보가 담긴 파일으로 마우스 오른쪽으로 설치 명령을 내릴 수 있습니다
 
 svchost.inf를 받으신다음 마우스 오른쪽 키를 눌러 설치(I)키를 눌러주세요

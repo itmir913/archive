@@ -10,6 +10,7 @@ original_url: "https://itmir.tistory.com/444"
 
 먼저 홈런처 어플의 패키지명을 구해서 String[]으로 반환하는 메소드입니다
 
+```java
 private String[] getHomeLauncher(){
 
     String[] HomeLauncher;
@@ -35,11 +36,13 @@ private String[] getHomeLauncher(){
     return HomeLauncher;
 
 }
+```
 
 java안 아무데다 추가해 주시고
 
 이 메소드를 사용하는 방법은 아래와 같습니다
 
+```java
 String[] home = getHomeLauncher();
 
 for(int i=0 ; i<home.length ; i++ ){
@@ -53,6 +56,7 @@ for(int i=0 ; i<home.length ; i++ ){
     }
 
 }
+```
 
 굵은 글시로 표시되어 있는 **packageName**에 런처인지 확인하고자 하는 어플의 패키지 명을 집어넣어 주시면
 

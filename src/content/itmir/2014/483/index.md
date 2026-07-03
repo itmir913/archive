@@ -1,7 +1,7 @@
 ---
 title: "[안내] 2014-03월의 활동이 뜸해질수 있습니다"
 date: "2014-03-06T22:30:46+09:00"
-category: ""
+category: "DailyLife"
 tags: []
 description: "2014년 3월 이후 블로그 활동 내역이 뜸해질 가능성이 매우 큽니다."
 draft: false

@@ -38,7 +38,6 @@ original_url: "https://itmir.tistory.com/126"
 
 위 div코드를 광고 코드에 씌워주시면(?) 됩니다
 
-
 border:2px에는 테두리의 두께를 선택하시는 것이고요
 
 #d3d3d3은 테두리의 색을 나타냅니다 ㅎㅎ

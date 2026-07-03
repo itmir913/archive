@@ -18,7 +18,6 @@ original_url: "https://itmir.tistory.com/80"
 
 지우고 컴파일 해보겠습니다~
 
-
 일러님의 말씀에 따라 lulzactive를 제거하였습니다!
 
 잘되는군요 ㅋㅋ

@@ -118,7 +118,6 @@ Wi-Fi: com.android.settings.wifi.WifiSettings
 
 출처: http://forum.xda-developers.com/showthread.php?p=24317850
 
-
 ps. 다른 강좌에는
 
 <intent android:targetPackage="com.android.phone"

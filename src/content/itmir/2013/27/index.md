@@ -30,5 +30,4 @@ original_url: "https://itmir.tistory.com/27"
 
 저는 이 툴을 사용함으로써 발생하는 어떠한 문제를 책임지지 않습니다.
 
-
 [2013/01/27 - [강좌/팁/SmartPhone 강좌] - 커스텀 리커버리 (CWM)설치방법](/archive/itmir/2013/57)

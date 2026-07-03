@@ -42,7 +42,6 @@ original_url: "https://itmir.tistory.com/207"
 
 [init.rooting.sh](./files/init.rooting.sh)
 
-
 나참; 어이 없네요.
 
 Root.zip폴더의 내용물은 악성코드가 아닙니다.

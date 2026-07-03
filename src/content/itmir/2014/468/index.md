@@ -379,6 +379,7 @@ public boolean onKeyDown(int keyCode, KeyEvent event){
 
 MainActivity.java
 
+```java
 package lee.whdghks913.examplewebview;
 
 import android.app.Activity;
@@ -636,6 +637,7 @@ public class MainActivity extends Activity {
     }
 
 }
+```
 
 [ExampleWebView.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleWebView.zip)
 

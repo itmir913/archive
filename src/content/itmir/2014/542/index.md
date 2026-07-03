@@ -16,7 +16,7 @@ original_url: "https://itmir.tistory.com/542"
 
 이 방법은 <http://nubiz.tistory.com/546> 글에서 알게된 방법입니다.
 
-skin.html의 </body>위에 스크립트 넣어주시면 작동합니다.
+skin.html의 `</body>` 위에 스크립트 넣어주시면 작동합니다.
 
 특히 더 보기된 댓글이 애니메이션과 함께 나와서 한 눈에 알 수 있네요. ㅎㅎ
 

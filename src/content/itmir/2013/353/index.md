@@ -202,7 +202,6 @@ HEX에디터와 파일비교등등으로 겨우 이정도까지 했습니다.
 
 접기
 
-
 [바이두클라우드한글패치.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/바이두클라우드한글패치.zip)
 
 접기
@@ -232,7 +231,6 @@ HEX에디터와 파일비교등등으로 겨우 이정도까지 했습니다.
 이래저래 쓰기엔 그냥 웹하드방식이 나은것 같습니다.
 
 파일은 아래
-
 
 [바이두동기화한글패치.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/바이두동기화한글패치.zip)
 
@@ -279,7 +277,6 @@ C:\Program Files\baidu\BaiduYunGuanjia
 [BaiduYunGuanjia_4.1.0.exe](http://bcscdn.baidu.com/netdisk/BaiduYunGuanjia_4.1.0.exe)
 
 **패쳐 다운로드 ↓↓↓↓**
-
 
 [BaiduCloud_Korean_130928.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/BaiduCloud_Korean_130928.zip)
 

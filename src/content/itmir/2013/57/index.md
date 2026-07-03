@@ -140,5 +140,4 @@ Write ... OK
 
 명령어는 txt로 올려두었습니다
 
-
 [2013/01/27 - [강좌/팁/SmartPhone 강좌] - Boot.img Recovery.img 원클릭 적용툴](/archive/itmir/2013/27)

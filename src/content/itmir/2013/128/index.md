@@ -16,7 +16,6 @@ original_url: "https://itmir.tistory.com/128"
 
 이럴때 사용하는 프로그램 Folder2 Iso 입니다.
 
-
 경로를 모두 설정한다음, Generate iso를 클릭해 주시면 ISO파일이 완성되어 나타나게 됩니다.
 
 [공식 사이트 바로가기](http://www.trustfm.net/divx/SoftwareFolder2Iso.php)

@@ -3,7 +3,7 @@ title: "천일문 완성 어플에 대해서"
 date: "2018-02-16T20:55:14+09:00"
 category: "Application"
 tags: []
-description: "------------------------------"
+description: "쎄듀 저작권 문제로 천일문 완성 앱 배포가 불가능하게 된 경위와 앱 기능 소개"
 draft: false
 original_url: "https://itmir.tistory.com/650"
 ---

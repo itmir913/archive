@@ -242,11 +242,11 @@ android:padding은 여백입니다
 
 설명할게 없네요
 
-<RadioButton>인것 말고는 모두 <Button>과 같으니 말이죠 ㅋㅋ
+`<RadioButton>`인것 말고는 모두 `<Button>`과 같으니 말이죠 ㅋㅋ
 
 마지막으로 라디오 그룹을 닫아줘야 하므로
 
-</RadioGroup>
+`</RadioGroup>`
 
 을 입력해 주세요!!!!
 

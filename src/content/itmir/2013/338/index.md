@@ -162,7 +162,6 @@ original_url: "https://itmir.tistory.com/338"
 
 한글화 앱 추가수정 (초보자 가이드 한글화, 몇몇 부분 수정)
 
-
  미르의 미러 첨부파일
 
 [PC용 한글화.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/338-PC-korean.zip)

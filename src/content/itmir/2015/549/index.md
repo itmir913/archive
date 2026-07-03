@@ -34,7 +34,6 @@ original_url: "https://itmir.tistory.com/549"
 
 소스 보기
 
-
 다른곳에서의 배포를 금지하며, </archive/itmir/2015/549> 링크만 허용합니다.
 
 올해도 더 좋은 글을 쓰도록 노력하겠습니다~

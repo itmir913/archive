@@ -52,9 +52,9 @@ adb tcpip 5555
 
 설정 앱 - WIFI - WIFI 고급 설정(또는 WIFI 설정) - IP 주소
 
-adb connect <Your IP>:5555
+adb connect \<Your IP>:5555
 
-성공시 나타나는 내용 : connected to <IP>:5555
+성공시 나타나는 내용 : connected to \<IP>:5555
 
 5. 축하드립니다.
 

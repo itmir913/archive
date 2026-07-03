@@ -314,7 +314,6 @@ CONFIG_DRIVER_NL80211=y가 주석처리 되어 있는대 이 부분의 주석을
 
 device/samsung/msm8660-common 또는 msm8660-common에 들어간 다음 bluetooth라는 폴더를 만들어 주세요
 
-
 이 파일을 아까 만든 bluetooth폴더안에 넣어주시면 됩니다
 
 이제 BoardConfigComon.mk을 수정할 겁니다

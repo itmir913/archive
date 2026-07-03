@@ -16,7 +16,6 @@ original_url: "https://itmir.tistory.com/98"
 
 구문은 다음 첨부파일을 확인해 주시면 감사드리겠습니다.
 
-
 (제가 올려둔 Github의 commit를 확인해 보시려면
 
 <https://github.com/itmir913/Mir-kernel/commit/d745d917209323bcac7ce117d7d6842a88e25678> 사이트를 방문해 주세요.)
@@ -34,7 +33,6 @@ original_url: "https://itmir.tistory.com/98"
 마지막으로 누가 올려둔 소스를 보는 방법입니다.
 
 제가 제 커널에 추가한 소스를 올려둘태니 참고하시면 될듯 합니다. ㅎㅎ
-
 
 기본적으로 deadline이나 noop는 커널소스에 있을겁니다. sio나 vr만 받으셔도 될듯.
 

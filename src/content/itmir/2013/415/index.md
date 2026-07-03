@@ -1,7 +1,7 @@
 ---
 title: "2013 블로그 총결산"
 date: "2013-12-31T12:59:00+09:00"
-category: ""
+category: "DailyLife"
 tags: []
 description: "제가 티스토리 블로그를 시작한지도 벌써 1년이 다되어 가네요~"
 draft: false

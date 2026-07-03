@@ -1,7 +1,7 @@
 ---
 title: "방문해 주신 많은 분들께 감사드립니다!"
 date: "2013-11-29T16:41:25+09:00"
-category: ""
+category: "DailyLife"
 tags: []
 description: "이 블로그를 시작한지 벌써 11개월이나 되었습니다. (정확히는 10개월, 1월~11월)"
 draft: false

@@ -14,8 +14,6 @@ original_url: "https://itmir.tistory.com/602"
 
 ..
 
-
-
 ...
 
 ㅈ..죄송합니다. ㅠㅠ

@@ -28,33 +28,35 @@ original_url: "https://itmir.tistory.com/502"
 
 아래는 .c파일에서 볼수 있는 mkbootimg의 사용방법 설명 입니다
 
-usage: mkbootimg"
+```
+usage: mkbootimg
 
-       --kernel <filename>"
+       --kernel <filename>
 
-       --ramdisk <filename>"
+       --ramdisk <filename>
 
-       [ --second <2ndbootloader-filename> ]"
+       [ --second <2ndbootloader-filename> ]
 
-       [ --cmdline <kernel-commandline> ]"
+       [ --cmdline <kernel-commandline> ]
 
-       [ --board <boardname> ]"
+       [ --board <boardname> ]
 
-       [ --base <address> ]"
+       [ --base <address> ]
 
-       [ --pagesize <pagesize> ]"
+       [ --pagesize <pagesize> ]
 
-       [ --kernel_offset <base offset> ]"
+       [ --kernel_offset <base offset> ]
 
-       [ --ramdisk_offset <base offset> ]"
+       [ --ramdisk_offset <base offset> ]
 
-       [ --second_offset <base offset> ]"
+       [ --second_offset <base offset> ]
 
-       [ --tags_offset <base offset> ]"
+       [ --tags_offset <base offset> ]
 
-       [ --dt <filename> ]"
+       [ --dt <filename> ]
 
-       -o|--output <filename>"
+       -o|--output <filename>
+```
 
 <https://github.com/osm0sis/mkbootimg/blob/master/mkbootimg.c>
 

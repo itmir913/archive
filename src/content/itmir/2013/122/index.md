@@ -41,7 +41,6 @@ FIXED IO issue. Improved overall IO performance.
 
 그럼 패치 방법을 포스팅 하도록 하겠습니다.
 
-
 기기에 맞는 파일을 받아 sdcard에 넣어주세요.
 
 LG U+ (IM-A830L) / KT (IM-A830K) : IM-A830L(K) IO fix by slayer_b

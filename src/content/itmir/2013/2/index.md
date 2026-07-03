@@ -1,7 +1,7 @@
 ---
 title: "미르의 티스토리 공지"
 date: "2013-01-27T13:22:29+09:00"
-category: ""
+category: "DailyLife"
 tags: []
 description: "이 블로그는 IT중에서 안드로이드 스마트폰에 대한 정보를 중심적으로 다루고 있으나, 다른 IT분야도 포스팅해 다방면의 IT 정보를 모으는 블로그입니다."
 draft: false

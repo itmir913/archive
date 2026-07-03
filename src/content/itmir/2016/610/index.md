@@ -1,7 +1,7 @@
 ---
 title: "미르의 IT 정복기 2016년 공지사항"
 date: "2016-02-16T23:56:14+09:00"
-category: ""
+category: "DailyLife"
 tags: []
 description: "저는 미르의 IT 정복기 블로그를 운영중인 Mir(itmir913)입니다."
 draft: false
