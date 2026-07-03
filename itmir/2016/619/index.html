@@ -37,7 +37,7 @@
 <p>참고로 베가 아임백 키보드는 인생을 루팅한 고1님께서 먼저 설치에 성공하셨습니다</p>
 <p>(관련 게시글 : <a href="http://cafe.naver.com/develoid/646537">http://cafe.naver.com/develoid/646537</a>)</p>
 <p>키보드 높이가 설정되지 않는 이유를 알아보기 위해 smali를 java로 변환해서 확인하였습니다.</p>
-<p>![](./images/java decompiler.png)</p>
+<p><img  src="/archive/_astro/java-decompiler.BgHtRt4q_Z1giICd.webp" alt="" width="820" height="546" loading="lazy" decoding="async"></p>
 <p>드래그한 부분이 키보드 설정을 비활성화 하는 코드입니다.</p>
 <p>저는 바로 위 if문과 setEnabled()를 제거해서 언제나 키보드 설정이 활성화 되도록 수정했습니다.</p>
 <p>따라서 상황에 따라 키보드 높이 설정 진입시 강제종료가 될 수 있으며, 시간도 보낼겸 만들어 본거라 앞으로 완벽한 해결 계획은 없습니다.</p>
@@ -47,7 +47,7 @@
 <p>마시멜로 이하 기기에서 발생하는 오류는 해결하기 힘듭니다.</p>
 <p>아래는 제 뷰3(킷켓)에서 발생한 오류의 로그입니다.</p>
 <p>java.lang.NoSuchMethodError: java.lang.System.arraycopy</p>
-<p>![](./images/logcat filter.png)</p>
+<p><img  src="/archive/_astro/logcat-filter.Caj5wGiI_ZixtBj.webp" alt="" width="820" height="459" loading="lazy" decoding="async"></p>
 <p>네… 해결방법이 안보여서 최소 API를 더 내리진 못했습니다.</p>
 <p>따라서 마시멜로 이하에서 작동을 보증할 수 없습니다.</p>
 <p><a href="./file/com.pantech.res.apk">com.pantech.res.apk</a></p>

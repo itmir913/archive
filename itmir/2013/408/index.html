@@ -49,22 +49,22 @@
 <p>이는 저번 포스팅에서 다룬 V노트의 기기명 검사를 우회하는 방법과 같습니다.</p>
 <p><a href="https://itmir.tistory.com/407">[Application] - [APP] 베가 V 노트 전기종 설치 (VEGA VNote)</a></p>
 <p>기기명 검사의 원리는 아래와 같습니다.</p>
-<p>![](./images/1 점프.png)</p>
+<p><img  src="/archive/_astro/1-%EC%A0%90%ED%94%84.Cdo1JHnK_Z1mCmeH.webp" alt="" width="598" height="185" loading="lazy" decoding="async"></p>
 <p>즉, java파일에서 기기명을 가져옵니다.</p>
 <p>그 다음 가져온 값을 확인하여 정상일경우 통과, 아닐경우 알림 또는 토스트를 띄우고 종료하는 거죠.</p>
 <p>점프의 원리는 어떠한 경우에도 어플이 실행될 수 있도록 검사 부분을 통과하는 겁니다.</p>
 <p>이 방법은 대부분의 어플에서 사용이 가능합니다.</p>
 <p>점프를 그림으로 표현하면 아래와 같습니다.</p>
-<p>![](./images/2 점프 원리.png)</p>
+<p><img  src="/archive/_astro/2-%EC%A0%90%ED%94%84-%EC%9B%90%EB%A6%AC.CtSCcaOl_Z2jXw9F.webp" alt="" width="408" height="312" loading="lazy" decoding="async"></p>
 <p>이렇게 라이센스 검사를 아에 패스해 버리는 거죠.</p>
 <p>여기서 팁 하나 드리겠습니다.</p>
 <p>어떤 개발자든 어플 종료로 넘어갈때는 알림을 띄우게 되있습니다.</p>
 <p>사용자에게 어떠한 고지도 없이 종료할 경우, 관련 지식이 없는 사용자는 분명히 버그라고 리포트할 것이기 때문입니다.</p>
 <p><img  src="/archive/_astro/Screenshot_2013-12-15-12-02-50.D7iPsSLo_Z1KEzzC.webp" alt="" width="356" height="65" loading="lazy" decoding="async"></p>
 <p>저 글자는 R.string으로 가져오므로, res/values-ko/string.xml을 찾아보면 나옵니다.</p>
-<p>![](./images/3 지원하지 않는 모델.png)</p>
+<p><img  src="/archive/_astro/3-%EC%A7%80%EC%9B%90%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EB%AA%A8%EB%8D%B8.DRZKHSRo_Z1AGG2Q.webp" alt="" width="580" height="25" loading="lazy" decoding="async"></p>
 <p>이제 string의 이름 not_support_device을 res/values/public.xml에서 찾아주세요.</p>
-<p>![](./images/3 지원하지 않는 모델 2.png)</p>
+<p><img  src="/archive/_astro/3-%EC%A7%80%EC%9B%90%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EB%AA%A8%EB%8D%B8-2.UUbuKl1u_ZP5erB.webp" alt="" width="539" height="20" loading="lazy" decoding="async"></p>
 <p>마지막으로 id값인 0x7f0b01cd을 smali폴더에서 찾아주시면, 저 문장을 띄우는 곳이 어디인지를 알 수 있습니다.</p>
 <p>라이센스 체크 부분이 어디인지 발견했으면, 이제 수정해 봅시다.</p>
 <p>.method public onCreate(Landroid/os/Bundle;)V</p>
@@ -170,7 +170,7 @@
 <p>건너뛴다는 의미로 해석하면 쉬우므로 제가 이 방법을 명명할 때 점프기법이라고 명명했습니다.</p>
 <h2 id="2-무조건-true-반환">2. 무조건 true 반환</h2>
 <p>두번째 방법은 메소드에서 무조건 true를 반환하도록 하는 방법입니다.</p>
-<p>![](./images/4 true.png)</p>
+<p><img  src="/archive/_astro/4-true.Ce6y_dRA_1h7pnN.webp" alt="" width="438" height="322" loading="lazy" decoding="async"></p>
 <p>이렇게 어플을 실행한후 라이센스 메소드를 호출하여, 그 메소드에서 true, false값을 반환하는 어플의 경우 어울리는 방법입니다.</p>
 <p>(코드 수정이 대부분 간단)</p>
 <p>무조건 true 반환 예제는 직접 만들어 사용했습니다.</p>
