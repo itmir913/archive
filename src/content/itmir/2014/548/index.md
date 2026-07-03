@@ -317,7 +317,7 @@ private OnTouchListener mViewTouchListener = new OnTouchListener() {
 
 ### 예제 다운로드
 
-[ExampleWindowView.zip](./file/ExampleWindowView.zip)
+[ExampleWindowView.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleWindowView.zip)
 
 ### 마치며
 

@@ -42,9 +42,9 @@ original_url: "https://itmir.tistory.com/429"
 
 할일 : v1.1.2
 
-[캘린더 Beta.apk](./file/캘린더 Beta.apk)
+[캘린더 Beta.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/429-calendar-beta.apk)
 
-[할일 Beta.apk](./file/할일 Beta.apk)
+[할일 Beta.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/429-todo-beta.apk)
 
 ---
 

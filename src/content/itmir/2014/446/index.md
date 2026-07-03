@@ -40,12 +40,12 @@ original_url: "https://itmir.tistory.com/446"
 
 [DownLoad]
 
-[너에게난나에게넌.z01](./file/너에게난나에게넌.z01)
+[너에게난나에게넌.z01](https://github.com/itmir913/archive/releases/download/itmir-attachments/너에게난나에게넌.z01)
 
-[너에게난나에게넌.z02](./file/너에게난나에게넌.z02)
+[너에게난나에게넌.z02](https://github.com/itmir913/archive/releases/download/itmir-attachments/너에게난나에게넌.z02)
 
-[너에게난나에게넌.z03](./file/너에게난나에게넌.z03)
+[너에게난나에게넌.z03](https://github.com/itmir913/archive/releases/download/itmir-attachments/너에게난나에게넌.z03)
 
-[너에게난나에게넌.z04](./file/너에게난나에게넌.z04)
+[너에게난나에게넌.z04](https://github.com/itmir913/archive/releases/download/itmir-attachments/너에게난나에게넌.z04)
 
-[너에게난나에게넌.zip](./file/너에게난나에게넌.zip)
+[너에게난나에게넌.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/너에게난나에게넌.zip)

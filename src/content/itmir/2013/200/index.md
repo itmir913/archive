@@ -18,7 +18,7 @@ ps. 루팅 카운터가 이미 올라가 있는경우에 이 카운터를 초기
 
 그리고 리커버리를 올려봤는대 젤리빈에서는 부트로더가 부팅을 막아버리는지 검은 화면만 뜨는군요
 
-[pantech\_server](./file/pantech_server)
+[pantech\_server](https://github.com/itmir913/archive/releases/download/itmir-attachments/pantech_server)
 
 참조 : <http://cafe.naver.com/skydevelopers/150571>
 

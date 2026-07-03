@@ -22,11 +22,11 @@ LucidOS의 NIGHTLY 버전에서 사용가능합니다
 
 그 바이너리도 첨부합니다
 
-[RootTools-2.6.jar](./file/RootTools-2.6.jar)
+[RootTools-2.6.jar](https://github.com/itmir913/archive/releases/download/itmir-attachments/RootTools-2.6.jar)
 
-[SoftkeyChanger.apk](./file/SoftkeyChanger.apk)
+[SoftkeyChanger.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/SoftkeyChanger.apk)
 
-[SoftkeyChanger.zip](./file/SoftkeyChanger.zip)
+[SoftkeyChanger.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/SoftkeyChanger.zip)
 
 ---
 

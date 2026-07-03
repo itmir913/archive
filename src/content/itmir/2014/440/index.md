@@ -64,7 +64,7 @@ original_url: "https://itmir.tistory.com/440"
 
 ![](./images/Best2013.png)
 
-[Best2013.zip](./file/Best2013.zip)
+[Best2013.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/Best2013.zip)
 
 ---
 

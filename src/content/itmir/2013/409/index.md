@@ -348,7 +348,7 @@ if(item.getItemId()==R.id.**actionBarMenu**){
 
 메뉴 사용하기 쉽죠?~
 
-[ExampleMenu.zip](./file/ExampleMenu.zip)
+[ExampleMenu.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleMenu.zip)
 
 ---
 

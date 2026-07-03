@@ -373,7 +373,7 @@ setView를 이용하여 다양하게 알림을 추가할수 있다
 
 어려운거 있으시면 알려주세요~
 
-[ExampleCustomAlert.zip](./file/ExampleCustomAlert.zip)
+[ExampleCustomAlert.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleCustomAlert.zip)
 
 ---
 

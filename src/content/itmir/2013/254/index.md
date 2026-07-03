@@ -20,4 +20,4 @@ AutoShutDown은 일정시간후 프로그램을 종료시켜 줍니다.
 
 그럼 저는 이만..
 
-[AutoShutDown.exe](./file/AutoShutDown.exe)
+[AutoShutDown.exe](https://github.com/itmir913/archive/releases/download/itmir-attachments/AutoShutDown.exe)

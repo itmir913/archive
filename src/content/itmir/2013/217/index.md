@@ -8,7 +8,7 @@ draft: false
 original_url: "https://itmir.tistory.com/217"
 ---
 
-[0516.xlsx](./file/0516.xlsx)
+[0516.xlsx](https://github.com/itmir913/archive/releases/download/itmir-attachments/0516.xlsx)
 
 ---
 

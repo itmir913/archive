@@ -250,7 +250,7 @@ Heap Size를 늘려주거나 사진의 크기를 줄여야만 합니다
 
 이글에 사용된 두개의 이미지는 http://cafe.naver.com/ppc1004/22589, http://cafe.naver.com/take22/273567에 있습니다
 
-[ExampleImageView.zip](./file/ExampleImageView.zip)
+[ExampleImageView.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleImageView.zip)
 
 ---
 

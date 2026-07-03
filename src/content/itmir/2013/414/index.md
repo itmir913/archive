@@ -424,7 +424,7 @@ if(music.isPlaying()){
 
 점차 심화/응용한 예제를 들고 오겠습니다!
 
-[ExampleService.zip](./file/ExampleService.zip)
+[ExampleService.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleService.zip)
 
 ---
 

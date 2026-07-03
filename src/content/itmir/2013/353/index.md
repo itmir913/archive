@@ -203,7 +203,7 @@ HEX에디터와 파일비교등등으로 겨우 이정도까지 했습니다.
 접기
 
 
-[바이두클라우드한글패치.zip](./file/바이두클라우드한글패치.zip)
+[바이두클라우드한글패치.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/바이두클라우드한글패치.zip)
 
 접기
 
@@ -234,7 +234,7 @@ HEX에디터와 파일비교등등으로 겨우 이정도까지 했습니다.
 파일은 아래
 
 
-[바이두동기화한글패치.zip](./file/바이두동기화한글패치.zip)
+[바이두동기화한글패치.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/바이두동기화한글패치.zip)
 
 경로
 
@@ -281,7 +281,7 @@ C:\Program Files\baidu\BaiduYunGuanjia
 **패쳐 다운로드 ↓↓↓↓**
 
 
-[BaiduCloud\_Korean\_130928.zip](./file/BaiduCloud_Korean_130928.zip)
+[BaiduCloud\_Korean\_130928.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/BaiduCloud_Korean_130928.zip)
 
 **제목 : 바이두 클라우드 한국어 패치 프로그램 AHK로 만들기**
 
@@ -315,13 +315,13 @@ C:\Program Files\baidu\BaiduYunGuanjia
 
 아래는 실행파일과 패치파일이 포함된 압축 파일입니다.
 
-[BaiduCloud\_Korean\_130928.zip](./file/BaiduCloud_Korean_130928_1.zip)
+[BaiduCloud\_Korean\_130928.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/BaiduCloud_Korean_130928_1.zip)
 
 실행한 화면입니다.
 
 ![](./images/kor.png)
 
-[바이두.hwp](./file/바이두.hwp)
+[바이두.hwp](https://github.com/itmir913/archive/releases/download/itmir-attachments/353-baidu.hwp)
 
 ## [바이두 클라우드 서비스 모바일 앱 업데이트버전(5.1.1) 한글화](http://spapa1004.tistory.com/96)
 

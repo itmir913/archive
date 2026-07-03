@@ -20,9 +20,9 @@ Androidmanifest.xml을 건들이니 오류가 게속 났지만
 
 어플의 소스와 apk올립니다
 
-[choose.apk](./file/choose.apk)
+[choose.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/choose.apk)
 
-[choose.zip](./file/choose.zip)
+[choose.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/choose.zip)
 
 ---
 

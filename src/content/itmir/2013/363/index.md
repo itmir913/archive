@@ -20,10 +20,10 @@ original_url: "https://itmir.tistory.com/363"
 
 ICS이상 사용가능
 
-[install flash player 11.1.115.81.apk](./file/install flash player 11.1.115.81.apk)
+[install flash player 11.1.115.81.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/install flash player 11.1.115.81.apk)
 
 GB와 허니콤에서 사용가능
 
-[install flash player 11.1.111.73.apk](./file/install flash player 11.1.111.73.apk)
+[install flash player 11.1.111.73.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/install flash player 11.1.111.73.apk)
 
 출처 : <http://helpx.adobe.com/flash-player/kb/archived-flash-player-versions.html>

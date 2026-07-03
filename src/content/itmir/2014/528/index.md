@@ -52,7 +52,7 @@ original_url: "https://itmir.tistory.com/528"
 
 v1.0 2014-09-07
 
-[FloatingActionButton.zip](./file/FloatingActionButton.zip)
+[FloatingActionButton.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/FloatingActionButton.zip)
 
 압축을 풀으신다음 아래 목록의 파일들을 버튼을 추가하고자 하는 프로젝트에 추가하세요
 

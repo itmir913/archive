@@ -48,4 +48,4 @@ ps. 녹스에서도 사용 가능합니다
 
 이 어플은 필수입니다!!!!
 
-[MyScript Calculator v1.1.2.250.apk](./file/MyScript Calculator v1.1.2.250.apk)
+[MyScript Calculator v1.1.2.250.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/MyScript Calculator v1.1.2.250.apk)

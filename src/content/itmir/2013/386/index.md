@@ -18,7 +18,7 @@ original_url: "https://itmir.tistory.com/386"
 
 1초에 20장이상 찍는것 같습니다
 
-[연사카메라 v2.2.apk](./file/연사카메라 v2.2.apk)
+[연사카메라 v2.2.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/386-burst-camera-v2.2.apk)
 
 ---
 

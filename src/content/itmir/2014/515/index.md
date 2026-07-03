@@ -462,7 +462,7 @@ public void onAnimationRepeat(Animation animation) {
 
 });
 
-[ExampleTweenAnimation.zip](./file/ExampleTweenAnimation.zip)
+[ExampleTweenAnimation.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleTweenAnimation.zip)
 
 머리가 아파서 횡설수설한거같네요;
 

@@ -104,9 +104,9 @@ make-boot파일이 완성되었습니다!
 
 [boot.img 분해 조립.txt](./files/boot.img 분해 조립.txt)
 
-[mkbootimg](./file/mkbootimg)
+[mkbootimg](https://github.com/itmir913/archive/releases/download/itmir-attachments/48-mkbootimg)
 
-[unpackbootimg](./file/unpackbootimg)
+[unpackbootimg](https://github.com/itmir913/archive/releases/download/itmir-attachments/48-unpackbootimg)
 
 [split\_bootimg.pl](./files/split_bootimg.pl)
 

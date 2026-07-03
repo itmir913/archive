@@ -28,7 +28,7 @@ original_url: "https://itmir.tistory.com/642"
 
 기출 문제에서 중요한 문제만 선별된 자료라고 생각합니다.
 
-[물리1 오답문제.pdf](./file/물리1 오답문제.pdf)
+[물리1 오답문제.pdf](https://github.com/itmir913/archive/releases/download/itmir-attachments/642-physics1-review.pdf)
 
 ---
 

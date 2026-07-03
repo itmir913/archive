@@ -28,7 +28,7 @@ original_url: "https://itmir.tistory.com/676"
 
 [leomoon-dot-com\_leomoon-cpu-v\_win.zip
 
-1.06MB](./file/leomoon-dot-com_leomoon-cpu-v_win.zip)
+1.06MB](https://github.com/itmir913/archive/releases/download/itmir-attachments/leomoon-dot-com_leomoon-cpu-v_win.zip)
 
 프로그램을 실행하면 아래와 같은 스크린샷이 뜬다.
 
@@ -80,7 +80,7 @@ original_url: "https://itmir.tistory.com/676"
 
 [unlocker\_v3.0.3.zip
 
-6.44MB](./file/unlocker_v3.0.3.zip)
+6.44MB](https://github.com/itmir913/archive/releases/download/itmir-attachments/unlocker_v3.0.3.zip)
 
 VMWare Player 15버전을 설치한다음, unlocker 압축 파일을 다운받고 **관리자 권한**으로 win-install.cmd 파일을 실행한다.
 

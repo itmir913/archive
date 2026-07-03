@@ -32,11 +32,11 @@ original_url: "https://itmir.tistory.com/207"
 
 1. 부트이미지 언/패킹에 필요한 파일들
 
-[mkbootimg](./file/mkbootimg)
+[mkbootimg](https://github.com/itmir913/archive/releases/download/itmir-attachments/207-mkbootimg)
 
 [split\_bootimg.pl](./files/split_bootimg.pl)
 
-[unpackbootimg](./file/unpackbootimg)
+[unpackbootimg](https://github.com/itmir913/archive/releases/download/itmir-attachments/207-unpackbootimg)
 
 2. 루팅 파일들
 

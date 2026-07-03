@@ -84,7 +84,7 @@ CONFIG\_PRIMA\_WLAN=m
 
 파일도 따로 올려드립니다.
 
-[strip](./file/strip)
+[strip](https://github.com/itmir913/archive/releases/download/itmir-attachments/strip)
 
 ### 필요한 파일들
 

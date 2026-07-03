@@ -76,9 +76,9 @@ LG의 기능중 하나가 내 폰과의 대화 라는 기능으로
 
 ### 다운로드 및 안내
 
-[TalkWithMyPhone.apk](./file/TalkWithMyPhone.apk)
+[TalkWithMyPhone.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/TalkWithMyPhone.apk)
 
-[TalkWithMyPhone.zip](./file/TalkWithMyPhone.zip)
+[TalkWithMyPhone.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/TalkWithMyPhone.zip)
 
 apk파일도 함께 첨부했습니다
 

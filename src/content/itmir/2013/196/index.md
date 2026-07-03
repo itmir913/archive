@@ -10,27 +10,27 @@ original_url: "https://itmir.tistory.com/196"
 
 방과후 학교에서 배운 컴퓨터 활용 능력 관련 엑셀 파일 입니다
 
-[0401.xlsx](./file/0401.xlsx)
+[0401.xlsx](https://github.com/itmir913/archive/releases/download/itmir-attachments/0401.xlsx)
 
-[0403.xlsx](./file/0403.xlsx)
+[0403.xlsx](https://github.com/itmir913/archive/releases/download/itmir-attachments/0403.xlsx)
 
-[0408.xlsx](./file/0408.xlsx)
+[0408.xlsx](https://github.com/itmir913/archive/releases/download/itmir-attachments/0408.xlsx)
 
-[0410.xlsx](./file/0410.xlsx)
+[0410.xlsx](https://github.com/itmir913/archive/releases/download/itmir-attachments/0410.xlsx)
 
-[0411-2.xlsx](./file/0411-2.xlsx)
+[0411-2.xlsx](https://github.com/itmir913/archive/releases/download/itmir-attachments/0411-2.xlsx)
 
-[0411.xlsx](./file/0411.xlsx)
+[0411.xlsx](https://github.com/itmir913/archive/releases/download/itmir-attachments/0411.xlsx)
 
-[0415.xlsx](./file/0415.xlsx)
+[0415.xlsx](https://github.com/itmir913/archive/releases/download/itmir-attachments/0415.xlsx)
 
-[0418.xlsx](./file/0418.xlsx)
+[0418.xlsx](https://github.com/itmir913/archive/releases/download/itmir-attachments/0418.xlsx)
 
-[0422.xlsx](./file/0422.xlsx)
+[0422.xlsx](https://github.com/itmir913/archive/releases/download/itmir-attachments/0422.xlsx)
 
-[0424.xlsx](./file/0424.xlsx)
+[0424.xlsx](https://github.com/itmir913/archive/releases/download/itmir-attachments/0424.xlsx)
 
-[0425.xlsx](./file/0425.xlsx)
+[0425.xlsx](https://github.com/itmir913/archive/releases/download/itmir-attachments/0425.xlsx)
 
 ---
 

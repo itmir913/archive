@@ -22,8 +22,8 @@ original_url: "https://itmir.tistory.com/557"
 
 출처는 <http://icl7280.blog.me/220234115576> 이며, 한번 들어가서 덧글 써주세요. ㅎㅎ
 
-> [mkbootimg.zip](./file/mkbootimg.zip)
-> [unpackbootimg.zip](./file/unpackbootimg.zip)
+> [mkbootimg.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/mkbootimg.zip)
+> [unpackbootimg.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/unpackbootimg.zip)
 
 1. dtb 지원
 

@@ -20,9 +20,9 @@ jar library와 javadoc
 
 Version : v1.0, 2014-01-14
 
-[SecurityXOR.jar](./file/SecurityXOR.jar)
+[SecurityXOR.jar](https://github.com/itmir913/archive/releases/download/itmir-attachments/SecurityXOR.jar)
 
-[javadoc.zip](./file/javadoc.zip)
+[javadoc.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/javadoc.zip)
 
 2014-09-11 원본 java소스 첨부
 
@@ -288,7 +288,7 @@ api사용을 담은 예제 어플 소스 / number, String, File을 암호화 �
 
 Version : v1.0, 2014-01-14
 
-[ExampleSecurityXor.zip](./file/ExampleSecurityXor.zip)
+[ExampleSecurityXor.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleSecurityXor.zip)
 
 ![](./images/Screenshot_2014-01-14-11-11-59.png)
     

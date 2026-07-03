@@ -12,11 +12,11 @@ original_url: "https://itmir.tistory.com/231"
 
 간단하게 만들어본 어플 ㅎㅎ
 
-[TextView.apk](./file/TextView.apk)
+[TextView.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/TextView.apk)
 
 사인이 되어 있지는 않습니다 ㅇㅅㅇ
 
-[TextView.zip](./file/TextView.zip)
+[TextView.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/TextView.zip)
 
 원본 어플 소스입니다 ㅇㅅㅇ
 

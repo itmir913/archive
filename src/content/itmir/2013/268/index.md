@@ -8,9 +8,9 @@ draft: false
 original_url: "https://itmir.tistory.com/268"
 ---
 
-[boot.img](./file/boot.img)
+[boot.img](https://github.com/itmir913/archive/releases/download/itmir-attachments/268-boot.img)
 
-[config.gz](./file/config.gz)
+[config.gz](https://github.com/itmir913/archive/releases/download/itmir-attachments/config.gz)
 
 업뎃집에서 추출한 boot.img이며 config.gz는 /proc에 생성되는, 커널 컴파일시의 defconfig을 기록한 파일입니다.
 

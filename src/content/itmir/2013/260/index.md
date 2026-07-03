@@ -82,4 +82,4 @@ A에서 B로 영상을 실시간 전송하는 기능을 합니다
 
 개인 소장 부탁드립니다~
 
-[IP Webcam KO.apk](./file/IP Webcam KO.apk)
+[IP Webcam KO.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/IP Webcam KO.apk)

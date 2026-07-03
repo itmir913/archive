@@ -24,8 +24,8 @@ original_url: "https://itmir.tistory.com/544"
 
 그래서 v2.1.1 업데이트 바로 전 버전인 v2.0.53 버전을 첨부해 드립니다
 
-[DicePlayer v2.0.53.z01](./file/DicePlayer v2.0.53.z01)
+[DicePlayer v2.0.53.z01](https://github.com/itmir913/archive/releases/download/itmir-attachments/DicePlayer v2.0.53.z01)
 
-[DicePlayer v2.0.53.zip](./file/DicePlayer v2.0.53.zip)
+[DicePlayer v2.0.53.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/DicePlayer v2.0.53.zip)
 
 zip분활압축 입니다

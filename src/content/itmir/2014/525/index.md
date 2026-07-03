@@ -18,7 +18,7 @@ Dropdown, FixedTabs + Swipe, Scroll Tab 3개의 예제를 만들었습니다
 
 ### ExampleDropdown
 
-[ExampleDropdown.zip](./file/ExampleDropdown.zip)
+[ExampleDropdown.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleDropdown.zip)
 
 ![](./images/drop.png)
 
@@ -26,7 +26,7 @@ Dropdown, FixedTabs + Swipe, Scroll Tab 3개의 예제를 만들었습니다
 
 ### ExampleFixedTabsSwipe
 
-[ExampleFixedTabsSwipe.zip](./file/ExampleFixedTabsSwipe.zip)
+[ExampleFixedTabsSwipe.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleFixedTabsSwipe.zip)
 
 ![](./images/Fixed.png)
 
@@ -36,7 +36,7 @@ Dropdown, FixedTabs + Swipe, Scroll Tab 3개의 예제를 만들었습니다
 
 ### ExampleScrollTab
 
-[ExampleScrollTab.zip](./file/ExampleScrollTab.zip)
+[ExampleScrollTab.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleScrollTab.zip)
 
 ![](./images/ScrollTab.png)
 

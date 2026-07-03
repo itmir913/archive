@@ -90,7 +90,7 @@ original_url: "https://itmir.tistory.com/415"
 
 내년도 모든일 잘 풀리고 새해 복 많이 받으세요. 다들!
 
-[whdghks913.tistory.com 총결산.xlsx](./file/whdghks913.tistory.com 총결산.xlsx)
+[whdghks913.tistory.com 총결산.xlsx](https://github.com/itmir913/archive/releases/download/itmir-attachments/415-tistory-summary.xlsx)
 
 ---
 

@@ -464,7 +464,7 @@ CheckBox가 있어 동시선택이 가능한 리스트뷰.
 
 여러분의 입맛에 맞게 다양하게 사용하셨으면 합니다~
 
-[CustomListView.zip](./file/CustomListView.zip)
+[CustomListView.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/CustomListView.zip)
 
 ---
 

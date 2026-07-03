@@ -44,7 +44,7 @@ classes.dex\_decompile-push : 디컴파일할 classes.dex를 투척해 주세요
 
 classes.dex\_smali\_to\_java\_push : classes.dex를 jar파일으로 변환한다음 원본 java코드를 볼때 사용합니다 classes.dex를 투척해 주세요
 
-[apk\_dex\_tools\_whdghks913.zip](./file/apk_dex_tools_whdghks913.zip)
+[apk\_dex\_tools\_whdghks913.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/apk_dex_tools_whdghks913.zip)
 
 [apk\_intstall-push.bat](./files/apk_intstall-push.bat)
 

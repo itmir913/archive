@@ -29,4 +29,4 @@ UI는 아래와 같습니다
 [DownLoad]
 
 
-[VEGAMusicPlayer.apk](./file/VEGAMusicPlayer.apk)
+[VEGAMusicPlayer.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/411-VEGAMusicPlayer.apk)

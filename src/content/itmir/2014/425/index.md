@@ -60,7 +60,7 @@ SKY설정에서 On, Off를 하는 베가 키패드 진동설정은 아마도 설
 
 참고 : </archive/itmir/2014/426>
 
-[20140104-VEGAIME.apk](./file/20140104-VEGAIME.apk)
+[20140104-VEGAIME.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/425-20140104-VEGAIME.apk)
 
 -2014-05-04 킷캣 최신 버전으로 업데이트 되었습니다
 

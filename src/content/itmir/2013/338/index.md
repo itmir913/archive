@@ -169,7 +169,7 @@ original_url: "https://itmir.tistory.com/338"
 
  미르의 미러 첨부파일
 
-[PC용 한글화.zip](./file/PC용 한글화.zip)
+[PC용 한글화.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/338-PC-korean.zip)
 
 **PC 클라이언트 설치파일 :**<http://dldir1.qq.com/weiyun/weiyun_windows_1.6.0.514.exe>
 
@@ -225,7 +225,7 @@ original_url: "https://itmir.tistory.com/338"
 
 **링크를 통해서만 공유 부탁드립니다.**
 
-[텐센트.hwp](./file/텐센트.hwp)
+[텐센트.hwp](https://github.com/itmir913/archive/releases/download/itmir-attachments/338-tencent.hwp)
 
 ## [텐센트 클라우드 서비스 모바일 앱 업데이트버전(1.6.0.360) 한글화파일 배포](http://spapa1004.tistory.com/87)
 

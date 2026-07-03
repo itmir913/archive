@@ -460,7 +460,7 @@ switch문으로 id값을 확인하여 토스트 메세지를 띄워주고 있습
 
 설명이 오락가락 한거 같은데 이해 안된거 있으시면 꼭!! 알려주세요!!
 
-[Example16.zip](./file/Example16.zip)
+[Example16.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/Example16.zip)
 
 ---
 

@@ -52,7 +52,7 @@ www.jooyon.co.kr](https://www.jooyon.co.kr/onlinedriver.php)
 
 [jtab2-driver.zip
 
-7.39MB](./file/jtab2-driver.zip)
+7.39MB](https://github.com/itmir913/archive/releases/download/itmir-attachments/jtab2-driver.zip)
 
 이 파일을 다운로드한 뒤에 압축 해제한 각각의 폴더 들어가서 각각 설치하지 **않는다.**
 

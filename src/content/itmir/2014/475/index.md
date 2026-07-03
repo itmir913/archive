@@ -47,7 +47,7 @@ License: public domain.
 
 Jar Library
 
-[WebArchiveReader.jar](./file/WebArchiveReader.jar)
+[WebArchiveReader.jar](https://github.com/itmir913/archive/releases/download/itmir-attachments/WebArchiveReader.jar)
 
 jar파일은 라이브러리 파일이며, zip은 소스파일 입니다
 
@@ -91,9 +91,9 @@ jar파일만 받으신후 프로젝트/libs에 넣어주세요
 
 예제 어플 소스
 
-[ExampleWebArchiveReader.apk](./file/ExampleWebArchiveReader.apk)
+[ExampleWebArchiveReader.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleWebArchiveReader.apk)
 
-[ExampleWebArchiveReader.zip](./file/ExampleWebArchiveReader.zip)
+[ExampleWebArchiveReader.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleWebArchiveReader.zip)
 
 WebArchiveReader 라이브러리를 이용한 예제 어플입니다
 

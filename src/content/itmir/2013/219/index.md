@@ -32,9 +32,9 @@ out/target/common/obj/APPS
 
 이 위치에 넣어주세요~
 
-[Apollo\_intermediates.zip](./file/Apollo_intermediates.zip)
+[Apollo\_intermediates.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/Apollo_intermediates.zip)
 
-[JAVA\_LIBRARIES.zip](./file/JAVA_LIBRARIES.zip)
+[JAVA\_LIBRARIES.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/JAVA_LIBRARIES.zip)
 
 + 2013-05-25 추가
 
@@ -42,11 +42,11 @@ out/target/common/obj/APPS
 
 반디집으로 7z 분활압축 했습니다
 
-[android\_stubs\_current\_intermediates.7z.001](./file/android_stubs_current_intermediates.7z.001)
+[android\_stubs\_current\_intermediates.7z.001](https://github.com/itmir913/archive/releases/download/itmir-attachments/android_stubs_current_intermediates.7z.001)
 
-[android\_stubs\_current\_intermediates.7z.002](./file/android_stubs_current_intermediates.7z.002)
+[android\_stubs\_current\_intermediates.7z.002](https://github.com/itmir913/archive/releases/download/itmir-attachments/android_stubs_current_intermediates.7z.002)
 
-[android\_stubs\_current\_intermediates.7z.003](./file/android_stubs_current_intermediates.7z.003)
+[android\_stubs\_current\_intermediates.7z.003](https://github.com/itmir913/archive/releases/download/itmir-attachments/android_stubs_current_intermediates.7z.003)
 
 ---
 

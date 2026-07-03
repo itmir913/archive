@@ -637,7 +637,7 @@ public class MainActivity extends Activity {
 
 }
 
-[ExampleWebView.zip](./file/ExampleWebView.zip)
+[ExampleWebView.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleWebView.zip)
 
 ---
 

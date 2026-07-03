@@ -46,19 +46,19 @@ java.lang.NoSuchFieldError: android.view.WindowManager$LayoutParams.oemFlags
 
 [Download] - 2014-05-18 PM 7:34
 
-[2014-05-18 PM 7-34 VEGAMusicPlayer.apk](./file/2014-05-18 PM 7-34 VEGAMusicPlayer.apk)
+[2014-05-18 PM 7-34 VEGAMusicPlayer.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/2014-05-18-PM-7-34-VEGAMusicPlayer.apk)
 
 지원하지 않는 테마입니다 라는 토스트 알림 제거
 
 [Download]
 
-[oemFlags 수정 VEGAMusicPlayer.apk](./file/oemFlags 수정 VEGAMusicPlayer.apk)
+[oemFlags 수정 VEGAMusicPlayer.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/497-oemFlags-VEGAMusicPlayer.apk)
 
-[VEGAminiMusic.apk](./file/VEGAminiMusic.apk)
+[VEGAminiMusic.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/VEGAminiMusic.apk)
 
-[VEGAMusicFX.apk](./file/VEGAMusicFX.apk)
+[VEGAMusicFX.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/VEGAMusicFX.apk)
 
-[VEGAMusicPlayer.apk](./file/VEGAMusicPlayer.apk)
+[VEGAMusicPlayer.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/497-VEGAMusicPlayer.apk)
 
 갤럭시 S3에서 작동한 결과는 일단 "지원하지 않는 테마입니다" 라는 문구가 뜨고
 

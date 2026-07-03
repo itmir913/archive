@@ -96,7 +96,7 @@ emulator-check hyper-v
 
 [hyper\_v.zip
 
-0.00MB](./file/hyper_v.zip)
+0.00MB](https://github.com/itmir913/archive/releases/download/itmir-attachments/hyper_v.zip)
 
 추후 티스토리나 카카오에서 악성코드라고 오인하여 파일이 내려갈 가능성을 대비하기 위해 암호를 1234로 걸었다.
 

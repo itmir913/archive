@@ -32,7 +32,7 @@ namocom.tistory.com](https://namocom.tistory.com/630)
 
 [HangulJasoFixer2.exe
 
-0.08MB](./file/HangulJasoFixer2.exe)
+0.08MB](https://github.com/itmir913/archive/releases/download/itmir-attachments/HangulJasoFixer2.exe)
 
 - 2020.10.03 내용 추가
 

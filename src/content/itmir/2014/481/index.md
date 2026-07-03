@@ -46,9 +46,9 @@ original_url: "https://itmir.tistory.com/481"
 
   
 
-[Crouton.zip](./file/Crouton.zip)
+[Crouton.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/Crouton.zip)
 
-[CroutonHelper.jar](./file/CroutonHelper.jar)
+[CroutonHelper.jar](https://github.com/itmir913/archive/releases/download/itmir-attachments/CroutonHelper.jar)
 
 2014-02-23 v1.0 첫 릴리즈
 
@@ -260,7 +260,7 @@ mHelper.clearCroutonsForActivity();
 
 **어플 예제 소스**
 
-[Crouton.apk](./file/Crouton.apk)
+[Crouton.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/Crouton.apk)
 
 Helper를 이용한 예제 어플입니다
 

@@ -8,7 +8,7 @@ draft: false
 original_url: "https://itmir.tistory.com/214"
 ---
 
-[touchscreen backup.zip](./file/touchscreen backup.zip)
+[touchscreen backup.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/touchscreen-backup.zip)
 
 비공개로 작성한 글을 2016-10-16에 공개 글로 전환하였습니다.
 

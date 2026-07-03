@@ -46,7 +46,7 @@ PATH.sh에 권한을 주신 다음, 터미널로 실행 또는 터미널에서 .
 
 그럼 유용하게 사용하셨으면 합니다~
 
-[PATH.zip](./file/PATH.zip)
+[PATH.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/PATH.zip)
 
 ---
 

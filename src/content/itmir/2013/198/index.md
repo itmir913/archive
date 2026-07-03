@@ -30,13 +30,13 @@ original_url: "https://itmir.tistory.com/198"
 
 그럼 오늘 하루도 파이팅!!
 
-[cwm.img](./file/cwm.img)
+[cwm.img](https://github.com/itmir913/archive/releases/download/itmir-attachments/cwm.img)
 
-[cwm\_pink.img](./file/cwm_pink.img)
+[cwm\_pink.img](https://github.com/itmir913/archive/releases/download/itmir-attachments/cwm_pink.img)
 
-[twrp.img](./file/twrp.img)
+[twrp.img](https://github.com/itmir913/archive/releases/download/itmir-attachments/twrp.img)
 
-[twrp\_pink.img](./file/twrp_pink.img)
+[twrp\_pink.img](https://github.com/itmir913/archive/releases/download/itmir-attachments/twrp_pink.img)
 
 참고로 pink 리커버리는 아래와 같이 생겼습니다
 

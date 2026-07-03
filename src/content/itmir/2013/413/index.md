@@ -22,6 +22,6 @@ original_url: "https://itmir.tistory.com/413"
 
 [DownLoad]
 
-[올레 navi v3.4.0.z01](./file/올레 navi v3.4.0.z01)
+[올레 navi v3.4.0.z01](https://github.com/itmir913/archive/releases/download/itmir-attachments/올레 navi v3.4.0.z01)
 
-[올레 navi v3.4.0.zip](./file/올레 navi v3.4.0.zip)
+[올레 navi v3.4.0.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/올레 navi v3.4.0.zip)

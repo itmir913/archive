@@ -366,7 +366,7 @@ Log.d("문자 내용", "발신자 : "+origNumber+", 내용 : " + message);
 
 발견하시면 알려주세요 ㅎ
 
-[ExampleBroadcastReceiver.zip](./file/ExampleBroadcastReceiver.zip)
+[ExampleBroadcastReceiver.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleBroadcastReceiver.zip)
 
 ---
 

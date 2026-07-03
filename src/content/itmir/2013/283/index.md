@@ -564,7 +564,7 @@ API 14보다 낮을경우, 이 구문은 무시됩니다.
 
 예제소스
 
-[ExampleTabs.zip](./file/ExampleTabs.zip)
+[ExampleTabs.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleTabs.zip)
 
 ---
 

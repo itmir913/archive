@@ -14,10 +14,10 @@ original_url: "https://itmir.tistory.com/380"
 
 Iron
 
-[Iron MusicPlayer.apk](./file/Iron MusicPlayer.apk)
+[Iron MusicPlayer.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/Iron MusicPlayer.apk)
 
-[SkyMusicFX.apk](./file/SkyMusicFX.apk)
+[SkyMusicFX.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/380-SkyMusicFX.apk)
 
 Note
 
-[Secret Note MusicPlayer.apk](./file/Secret Note MusicPlayer.apk)
+[Secret Note MusicPlayer.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/Secret Note MusicPlayer.apk)

@@ -122,9 +122,9 @@ original_url: "https://itmir.tistory.com/546"
 
 그런데 언제 업데이트 할지.. 언제 내릴지도 몰라요;
 
-[절대로 못하는 게임 - 복사본.exe](./file/절대로 못하는 게임 - 복사본.exe)
+[절대로 못하는 게임 - 복사본.exe](https://github.com/itmir913/archive/releases/download/itmir-attachments/546-impossible-game-copy.exe)
 
-[절대로 못하는 게임.zip](./file/절대로 못하는 게임.zip)
+[절대로 못하는 게임.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/546-impossible-game.zip)
 
 ---
 

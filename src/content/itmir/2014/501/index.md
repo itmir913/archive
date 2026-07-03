@@ -32,7 +32,7 @@ original_url: "https://itmir.tistory.com/501"
 
 -2014-05-25
 
-[20140525-Weather.apk](./file/20140525-Weather.apk)
+[20140525-Weather.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/20140525-Weather.apk)
 
 이 파일을 받는 동시에 다른곳에 배포하지 않겠다는 것에 동의하게 됩니다
 

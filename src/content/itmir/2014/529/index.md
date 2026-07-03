@@ -44,7 +44,7 @@ IsLibrary를 모르신다면 [[Development/App] - FadingActionBar를 사용해 
 
 이 프로젝트에는 리스트뷰 예제만 들어있으므로 다른 그리드뷰등은 github에 공개되어 있는 샘플 프로젝트를 참고해 주세요
 
-[ExamplePullToRefreshListView.zip](./file/ExamplePullToRefreshListView.zip)
+[ExamplePullToRefreshListView.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ExamplePullToRefreshListView.zip)
 
 ### 라이브러리 사용하기
 

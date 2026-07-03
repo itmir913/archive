@@ -36,7 +36,7 @@ github에 공개되어 있습니다
 
 <https://github.com/flavienlaurent/poppyview>
 
-[poppyview-master.zip](./file/poppyview-master.zip)
+[poppyview-master.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/poppyview-master.zip)
 
 poppyview-library폴더를 import해주신다음 is Library해주세요
 
@@ -44,7 +44,7 @@ IsLibrary를 모르시는 분께서는 [[Development/App] - FadingActionBar를 
 
 아래 apk파일은 샘플 프로젝트 입니다 한번 설치해서 구경해 보세요
 
-[poppyview-sample.apk](./file/poppyview-sample.apk)
+[poppyview-sample.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/poppyview-sample.apk)
 
 ### 라이브러리 사용하기
 

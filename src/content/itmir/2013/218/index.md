@@ -10,7 +10,7 @@ original_url: "https://itmir.tistory.com/218"
 
 20130520 컴퓨터 활용 능력 방과후 입니다
 
-[0520.xlsx](./file/0520.xlsx)
+[0520.xlsx](https://github.com/itmir913/archive/releases/download/itmir-attachments/0520.xlsx)
 
 ---
 

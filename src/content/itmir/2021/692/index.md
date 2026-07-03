@@ -37,7 +37,7 @@ stevemiller.net](https://stevemiller.net/PureText)
 
 [puretext\_6.2\_32-bit.zip
 
-0.04MB](./file/puretext_6.2_32-bit.zip)
+0.04MB](https://github.com/itmir913/archive/releases/download/itmir-attachments/puretext_6.2_32-bit.zip)
 [puretext\_6.2\_64-bit.zip
 
-0.04MB](./file/puretext_6.2_64-bit.zip)
+0.04MB](https://github.com/itmir913/archive/releases/download/itmir-attachments/puretext_6.2_64-bit.zip)

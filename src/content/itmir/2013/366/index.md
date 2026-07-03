@@ -612,11 +612,11 @@ br />
 
 예제소스 다운로드 :
 
-[ExampleThreadHandler.zip](./file/ExampleThreadHandler.zip)
+[ExampleThreadHandler.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleThreadHandler.zip)
 
 메모리 릭 발생 오류 수정 예제
 
-[ExampleThreadHandler-Memoryleaks.zip](./file/ExampleThreadHandler-Memoryleaks.zip)
+[ExampleThreadHandler-Memoryleaks.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleThreadHandler-Memoryleaks.zip)
 
 ---
 

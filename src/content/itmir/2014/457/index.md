@@ -530,7 +530,7 @@ GB에서는 이런 방식으로 프로그래스바를 돌려야 합니다
 
 그럼 설 잘보내세요~~
 
-[ExampleNofitication.zip](./file/ExampleNofitication.zip)
+[ExampleNofitication.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleNofitication.zip)
 
 참조 : http://androidhuman.com/507
 

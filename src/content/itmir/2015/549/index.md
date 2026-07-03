@@ -22,7 +22,7 @@ original_url: "https://itmir.tistory.com/549"
 
 앱을 통해 새해 인사를 드리고 싶습니다. ㅎㅎ
 
-[Hi2015.apk](./file/Hi2015.apk)
+[Hi2015.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/Hi2015.apk)
 
 스샷보기
 

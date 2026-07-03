@@ -24,7 +24,7 @@ original_url: "https://itmir.tistory.com/329"
 
 주석이 달려있고, 이미 배웠던것이므로 따로 소스 설명은 하지 않을려고 합니다ㅎㅎ
 
-[MissionApp1\_Example.zip](./file/MissionApp1_Example.zip)
+[MissionApp1\_Example.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/MissionApp1_Example.zip)
 
 ### 14-2 프로그레스바
 

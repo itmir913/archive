@@ -280,7 +280,7 @@ android:singleLine
 
 이 글에 추가될것으로 추가될때 까지는 가져가지 마세요 ㅎㅎㅎ
 
-[exampleTextView.zip](./file/exampleTextView.zip)
+[exampleTextView.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/exampleTextView.zip)
 
 (xml만 수정한 예제소스)
 
@@ -466,7 +466,7 @@ setText(R.string.(이름));으로 넣어주시면 됩니다
 
 자바코드를 수정한 예제소스
 
-[exampleTextView\_java\_code.zip](./file/exampleTextView_java_code.zip)
+[exampleTextView\_java\_code.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/exampleTextView_java_code.zip)
 
 ---
 

@@ -138,7 +138,7 @@ public class MainActivity extends Activity {
 
 더 자세한 이론은 http://thdev.net/369 을 참고해 주세요
 
-[ExampleSwipeToDismiss.zip](./file/ExampleSwipeToDismiss.zip)
+[ExampleSwipeToDismiss.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleSwipeToDismiss.zip)
 
 ---
 

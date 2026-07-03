@@ -40,7 +40,7 @@ original_url: "https://itmir.tistory.com/406"
 
 영역 검사까지 합치면 너무 길어져서 나중에 수정에도 곤란하고 가독성도 떨어지기에 모두 분리하였습니다
 
-[티스토리 초대장 배포 적합.xlsx](./file/티스토리 초대장 배포 적합.xlsx)
+[티스토리 초대장 배포 적합.xlsx](https://github.com/itmir913/archive/releases/download/itmir-attachments/406-tistory-invite.xlsx)
 
 ---
 

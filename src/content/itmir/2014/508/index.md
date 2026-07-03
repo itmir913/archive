@@ -86,7 +86,7 @@ original_url: "https://itmir.tistory.com/508"
 
 감사합니다~~
 
-> [애드센스 필수 가이드북.pdf](./file/애드센스 필수 가이드북.pdf)
+> [애드센스 필수 가이드북.pdf](https://github.com/itmir913/archive/releases/download/itmir-attachments/508-adsense-guide.pdf)
 
 ---
 

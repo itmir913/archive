@@ -281,7 +281,7 @@ setContentView(R.layout.activity\_main);
 
 응용은 당신의 몫!
 
-[Button.zip](./file/Button.zip)
+[Button.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/Button.zip)
 
 ---
 

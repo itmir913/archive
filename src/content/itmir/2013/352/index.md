@@ -218,7 +218,7 @@ original_url: "https://itmir.tistory.com/352"
 
 **한글화 모바일 앱 다운로드 :**
 
-[com.qihoo.yunpan.apk](./file/com.qihoo.yunpan.apk)
+[com.qihoo.yunpan.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/com.qihoo.yunpan.apk)
 
 **이 자료는 다른곳에서의 직접적인 공유를 절대 금지합니다.**
 
@@ -234,7 +234,7 @@ original_url: "https://itmir.tistory.com/352"
 
 **▶ 바이두(2TB) 클라우드 서비스 모바일 앱 한글화 :**[**http://spapa1004.tistory.com/53**](http://spapa1004.tistory.com/53)****
 
-[퀴우360.hwp](./file/퀴우360.hwp)
+[퀴우360.hwp](https://github.com/itmir913/archive/releases/download/itmir-attachments/352-qhoo360.hwp)
 
 ## [퀴우 360 클라우드 모바일앱 3.3.2버전 한글화(업데이트)](http://spapa1004.tistory.com/95)
 
