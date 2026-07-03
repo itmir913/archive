@@ -152,6 +152,7 @@ a:hover {
 /* ── Year section ── */
 .year-section {
   margin-bottom: 3rem;
+  scroll-margin-top: 68px;
 }
 
 .year-heading {

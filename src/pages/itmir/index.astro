@@ -6,10 +6,10 @@ const allPosts = await getCollection('itmir', ({ data }) => !data.draft);
 // 최신순 정렬: 연도 내에서도 최신(12월)이 위, 오래된 것(1월)이 아래
 allPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
-// Group by year, most recent year first
+// Group by actual publication year (frontmatter date), most recent year first
 const byYear = new Map<string, typeof allPosts>();
 for (const post of allPosts) {
-  const year = post.slug.split('/')[0];
+  const year = String(post.data.date.getFullYear());
   if (!byYear.has(year)) byYear.set(year, []);
   byYear.get(year)!.push(post);
 }
