@@ -1,4 +1,4 @@
-﻿---
+---
 title: "[1편] 티스토리에 구글 애드센스 (Google Adsense)를 넣어보자"
 date: "2013-02-05T22:01:01+09:00"
 category: "Tistory"

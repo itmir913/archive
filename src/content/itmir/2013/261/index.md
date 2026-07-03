@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Android Activity theme 기본으로 제공하는 것들"
 date: "2013-07-07T16:34:30+09:00"
 category: "Application"

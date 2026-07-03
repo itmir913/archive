@@ -1,4 +1,4 @@
-﻿---
+---
 title: "3) CyanogenMod Config.mk 구문"
 date: "2013-05-26T14:10:13+09:00"
 category: "Android/Build"
