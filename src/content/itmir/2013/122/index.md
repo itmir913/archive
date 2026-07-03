@@ -44,9 +44,9 @@ FIXED IO issue. Improved overall IO performance.
 
 기기에 맞는 파일을 받아 sdcard에 넣어주세요.
 
-LG U+ (IM-A830L) / KT (IM-A830K) : IM-A830L(K) IO fix by slayer\_b
+LG U+ (IM-A830L) / KT (IM-A830K) : IM-A830L(K) IO fix by slayer_b
 
-SKT (IM-A830S) : IM-A830S IO fix by slayer\_b
+SKT (IM-A830S) : IM-A830S IO fix by slayer_b
 
 그다음 CWM 리커버리에 진입하신다음 받으신 파일을 설치해 주시면 됩니다.
 

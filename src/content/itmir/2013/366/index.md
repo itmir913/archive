@@ -79,23 +79,23 @@ UI구성, 즉 xml은 언급없이 지나갈수 있습니다
 
 ### 20-3 레이아웃은 어떻게 구성할까요?
 
-저만 그런진 몰라도 저는 일단 어떻게 어플을 만들까 라는 아이디어가 생각나면 직관적으로 레이아웃이 떠오르더라고요 +\_+
+저만 그런진 몰라도 저는 일단 어떻게 어플을 만들까 라는 아이디어가 생각나면 직관적으로 레이아웃이 떠오르더라고요 +_+
 
 레이아웃은 아무렇게나 짜도 되지만 꼭 EditText, Button, TextView로 짜주시고, TextView의 글자를 없애주세요
 
-(사실 매번 강좌쓸때마다 예제를 어떻게 만들까를 강좌 쓰면서 생각하지요 -\_-)
+(사실 매번 강좌쓸때마다 예제를 어떻게 만들까를 강좌 쓰면서 생각하지요 -_-)
 
 <EditText
 
     android:id="@+id/EditText"
 
-    android:layout\_width="match\_parent"
+    android:layout_width="match_parent"
 
-    android:layout\_height="wrap\_content"
+    android:layout_height="wrap_content"
 
-    android:layout\_alignParentTop="true"
+    android:layout_alignParentTop="true"
 
-    android:layout\_centerHorizontal="true"
+    android:layout_centerHorizontal="true"
 
     android:inputType="number" >
 
@@ -107,31 +107,31 @@ UI구성, 즉 xml은 언급없이 지나갈수 있습니다
 
     android:id="@+id/Button"
 
-    android:layout\_width="wrap\_content"
+    android:layout_width="wrap_content"
 
-    android:layout\_height="wrap\_content"
+    android:layout_height="wrap_content"
 
-    android:layout\_below="@+id/EditText"
+    android:layout_below="@+id/EditText"
 
-    android:layout\_centerHorizontal="true"
+    android:layout_centerHorizontal="true"
 
-    android:onClick="Button\_Click"
+    android:onClick="Button_Click"
 
     android:text="입력하시고 터치하세요" />
 
 <TextView
 
-    android:id="@+id/Count\_TextView"
+    android:id="@+id/Count_TextView"
 
-    android:layout\_width="wrap\_content"
+    android:layout_width="wrap_content"
 
-    android:layout\_height="wrap\_content"
+    android:layout_height="wrap_content"
 
-    android:layout\_below="@+id/Button"
+    android:layout_below="@+id/Button"
 
-    android:layout\_centerHorizontal="true"
+    android:layout_centerHorizontal="true"
 
-    android:layout\_marginTop="30dp"
+    android:layout_marginTop="30dp"
 
     android:textSize="50dp" />
 
@@ -143,7 +143,7 @@ UI구성, 즉 xml은 언급없이 지나갈수 있습니다
 
 EditText EditText;
 
-TextView Count\_TextView;
+TextView Count_TextView;
 
 Button Button;
 
@@ -173,13 +173,13 @@ int inputNumber;
 
 EditText = (EditText) findViewById(R.id.EditText);
 
-Count\_TextView = (TextView) findViewById(R.id.Count\_TextView);
+Count_TextView = (TextView) findViewById(R.id.Count_TextView);
 
 Button = (Button) findViewById(R.id.Button);
 
 마지막으로 버튼을 눌렀을때 어떤 작업을 할지 메소드를 만들어 줘야합니다
 
-전에 많이 만든것처럼 이름이 Button\_Click인 메소드를 만들어 주세요
+전에 많이 만든것처럼 이름이 Button_Click인 메소드를 만들어 주세요
 
 (사실 이부분까지 쓰고 혼자서 예제를 만들어 봤는데요 꽤 길더라고요 ㅎㅎ;;)
 
@@ -189,7 +189,7 @@ Button = (Button) findViewById(R.id.Button);
 
 String input = EditText.getText().toString();
 
-Count\_TextView.setText(input);
+Count_TextView.setText(input);
 
 메소드의 처음은 EditText에 입력한 값을 가져오고 TextView에 적용하는 코드를 구현했습니다
 
@@ -199,7 +199,7 @@ Count\_TextView.setText(input);
 
 if(input.equals("")){
 
-Toast.makeText(this, "공백입니다", Toast.LENGTH\_SHORT).show();
+Toast.makeText(this, "공백입니다", Toast.LENGTH_SHORT).show();
 
 }else{
 
@@ -215,7 +215,7 @@ inputNumber = Integer.parseInt(input);
 
 if(inputNumber==0){
 
-Toast.makeText(this, "0은 입력할수 없습니다", Toast.LENGTH\_SHORT).show();
+Toast.makeText(this, "0은 입력할수 없습니다", Toast.LENGTH_SHORT).show();
 
 return;
 
@@ -253,11 +253,11 @@ Log.d("What Number : ", "What is 2");
 
 }
 
-Count\_TextView.setText(""+inputNumber);
+Count_TextView.setText(""+inputNumber);
 
 if(inputNumber==0){
 
-Toast.makeText(MainActivity.this, "카운트가 완료되었습니다", Toast.LENGTH\_SHORT).show();
+Toast.makeText(MainActivity.this, "카운트가 완료되었습니다", Toast.LENGTH_SHORT).show();
 
 Button.setEnabled(true);
 
@@ -290,7 +290,7 @@ MainActivity activity = mActivity.get();
 
    if (activity != null) {
 
-/\*\*
+/**
 
 \* 넘겨받은 what값을 이용해 실행할 작업을 분류합니다
 
@@ -306,11 +306,11 @@ Log.d("What Number : ", "What is 2");
 
 }
 
-activity.Count\_TextView.setText(""+activity.inputNumber);
+activity.Count_TextView.setText(""+activity.inputNumber);
 
 if(activity.inputNumber==0){
 
-Toast.makeText(activity, "카운트가 완료되었습니다", Toast.LENGTH\_SHORT).show();
+Toast.makeText(activity, "카운트가 완료되었습니다", Toast.LENGTH_SHORT).show();
 
 activity.Button.setEnabled(true);
 
@@ -488,7 +488,7 @@ public class SampleActivity extends Activity {
 
 public class SampleActivity extends Activity {
 
-  /\*\*
+  /**
 
    \* Instances of static inner classes do not hold an implicit
 
@@ -524,7 +524,7 @@ public class SampleActivity extends Activity {
 
   private final MyHandler mHandler = new MyHandler(this);
 
-  /\*\*
+  /**
 
    \* Instances of anonymous classes do not hold an implicit
 

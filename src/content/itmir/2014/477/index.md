@@ -100,7 +100,7 @@ ListView를 이해하려면 먼저 이 Adapter를 이해해야만 합니다.
 
 이제 리스트뷰의 한 아이템에 표시될 레이아웃을 정의해야 합니다.
 
-이 레이아웃 파일의 이름은 listview\_item.xml으로 합시다.
+이 레이아웃 파일의 이름은 listview_item.xml으로 합시다.
 
 ![](./images/item-xml.png)
 
@@ -288,7 +288,7 @@ public class ListData {
 
 한 아이템의 정보를 담고 있을 java파일을 만들었습니다.
 
-아래에 있는 ALPHA\_COMPARATOR는 리스트뷰의 아이템을 쇼트(알파벳 순서대로 정렬)하기 위한 메소드이며, AppInfo예제를 참조했습니다.
+아래에 있는 ALPHA_COMPARATOR는 리스트뷰의 아이템을 쇼트(알파벳 순서대로 정렬)하기 위한 메소드이며, AppInfo예제를 참조했습니다.
 
 다시 MainActivity.java로 돌아와 보면 빨간줄이 사라져 있을겁니다.
 

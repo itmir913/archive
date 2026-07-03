@@ -28,13 +28,13 @@ adb가 안되니 방법이 없을듯 했으나 cwm으로 들어가
 
 I/pixelflinger(   75): Needs: n=0x03545404 p=0x00000077 t0=0x00000000 t1=0x00000000
 
-I/ARMAssembler(   75): generated scanline\_\_00000077:03545404\_00000000\_00000000 [ 29 ipp] (43 ins) at [0x2ad3c1e8:0x2ad3c294] in 214999 ns
+I/ARMAssembler(   75): generated scanline__00000077:03545404_00000000_00000000 [ 29 ipp] (43 ins) at [0x2ad3c1e8:0x2ad3c294] in 214999 ns
 
 I/pixelflinger(   75): Needs: n=0x03545404 p=0x00000077 t0=0x00000000 t1=0x00000000
 
 I/pixelflinger(   75): Needs: n=0x03545404 p=0x00000077 t0=0x00000a08 t1=0x00000000
 
-I/ARMAssembler(   75): generated scanline\_\_00000077:03545404\_00000A08\_00000000 [ 30 ipp] (52 ins) at [0x2ad3c298:0x2ad3c368] in 161666 ns
+I/ARMAssembler(   75): generated scanline__00000077:03545404_00000A08_00000000 [ 30 ipp] (52 ins) at [0x2ad3c298:0x2ad3c368] in 161666 ns
 
 I/pixelflinger(   75): Needs: n=0x03545404 p=0x00000077 t0=0x00000000 t1=0x00000000
 

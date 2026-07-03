@@ -81,9 +81,9 @@ setContentView(R.layout.activity_main);
 
 ![](./images/2-3.png)
 
-그렇다는건 setContentView(R.layout.activity\_main);이 화면에 표시하는 코드라는 건데요!
+그렇다는건 setContentView(R.layout.activity_main);이 화면에 표시하는 코드라는 건데요!
 
-R.layout.activity\_main을 봅시다. ㅎㅎ
+R.layout.activity_main을 봅시다. ㅎㅎ
 
 저번 시간에 R.java에 대해 언급한 적이 있었습니다.
 
@@ -93,11 +93,11 @@ R.java파일은 이런형식으로 조회가 가능한데요.
 
 R(R.java파일을 참조한다).layout(layout에 있는 파일을 참조한다, res/layout)
 
-.activity\_main(activity\_main이라는 파일을 참조한다)
+.activity_main(activity_main이라는 파일을 참조한다)
 
 라는 의미입니다.
 
-그럼 res/layout/activity\_main을 확인해 볼까요?
+그럼 res/layout/activity_main을 확인해 볼까요?
 
 ![](./images/2-4.png)
 
@@ -105,7 +105,7 @@ R(R.java파일을 참조한다).layout(layout에 있는 파일을 참조한다, 
 
 그런대 여기에도 hello World! 라는건 없습니다...
 
-다만 android:text="@string/hello\_world"라는것만 있군요.
+다만 android:text="@string/hello_world"라는것만 있군요.
 
 @string은 res/values/string.xml에서 값을 참조한다는 뜻입니다.
 
@@ -117,17 +117,17 @@ R(R.java파일을 참조한다).layout(layout에 있는 파일을 참조한다, 
 
 Hello world!라는 문구가 있군요!
 
-아하, 아까본 android:text="@string/hello\_world"는 values/string.xml에서 hello\_world라는 이름을 가진 스트링을 찾아 표시한다는 뜻이었습니다.
+아하, 아까본 android:text="@string/hello_world"는 values/string.xml에서 hello_world라는 이름을 가진 스트링을 찾아 표시한다는 뜻이었습니다.
 
 그럼 한번 정리를 해볼까요?
 
 1. 안드로이드는 AndroidManifest.xml에 나와있는 Activity를 실행합니다.
 
-2. MainActivity.java파일은 setContentView(R.layout.activity\_main);코드로 res/layout/activity\_main.xml을 호출합니다. (1번 위, 3번)
+2. MainActivity.java파일은 setContentView(R.layout.activity_main);코드로 res/layout/activity_main.xml을 호출합니다. (1번 위, 3번)
 
-3. activity\_main.xml파일에서는 android:text="@string/hello\_world"구문으로 res/values/string.xml의 값을 참조 합니다. (1번 아래, 4번)
+3. activity_main.xml파일에서는 android:text="@string/hello_world"구문으로 res/values/string.xml의 값을 참조 합니다. (1번 아래, 4번)
 
-4. hello\_world로 설정된 값을 activity\_main에 준다음, 완성된 화면을 MainActivity.java에 보내줍니다. (2번)
+4. hello_world로 설정된 값을 activity_main에 준다음, 완성된 화면을 MainActivity.java에 보내줍니다. (2번)
 
 5. 마지막으로 기기에 화면을 띄웁니다.
 
@@ -153,9 +153,9 @@ OK 누르면 완료됩니다
 
 그럼 이제 어플에 추가하고 바꿔볼까요?
 
--<string name="hello\_world">Hello world!</string>
+-<string name="hello_world">Hello world!</string>
 
-+<string name="hello\_world">미르의 안드로이드 정복기!</string>
++<string name="hello_world">미르의 안드로이드 정복기!</string>
 
 -는 제거, +는 추가란 뜻으로 git써보신적 있으시다면 바로 아실겁니다. ㅎㅎ
 
@@ -165,7 +165,7 @@ OK 누르면 완료됩니다
 
 values-(나라 코드)는 만약 시스탬이 (나라코드)일경우 이 언어를 사용하라~ 라는 뜻입니다.
 
-이제 activity\_main.xml으로 돌아와서 아래에 있는 Graphical Layout(그래픽 레이아웃)을 눌러주세요.
+이제 activity_main.xml으로 돌아와서 아래에 있는 Graphical Layout(그래픽 레이아웃)을 눌러주세요.
 
 ![](./images/2-7.png)
 

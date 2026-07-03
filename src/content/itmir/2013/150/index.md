@@ -3,7 +3,7 @@ title: "제 자바 강좌(?)는 제가 산 책을 기준으로 작성됩니다"
 date: "2013-02-20T14:29:43+09:00"
 category: "Programming"
 tags: []
-description: "저는 윤성우 저자 \"나는 java를 공부한적이 없다고요\"라는 책을 사용하고 있습니다"
+description: "저는 윤성우 저자 "나는 java를 공부한적이 없다고요"라는 책을 사용하고 있습니다"
 draft: false
 original_url: "https://itmir.tistory.com/150"
 ---

@@ -12,17 +12,17 @@ cm10 디바이스 소스를 이용해 cm10.1을 빌드할때 발생한 오류입
 
 overlay관련 문제 내용을 보면,
 
-> target Export Resources: framework-res (/home/whdghks913/cluster/system/out/target/common/obj/APPS/framework-res\_intermediates/package-export.apk)
+> target Export Resources: framework-res (/home/whdghks913/cluster/system/out/target/common/obj/APPS/framework-res_intermediates/package-export.apk)
 >
-> device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:30: error: Resource at config\_networkLocationProviderPackageName appears in overlay but not in the base package; use <add-resource> to add.
+> device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:30: error: Resource at config_networkLocationProviderPackageName appears in overlay but not in the base package; use <add-resource> to add.
 >
-> device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:33: error: Resource at config\_geocodeProviderPackageName appears in overlay but not in the base package; use <add-resource> to add.
+> device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:33: error: Resource at config_geocodeProviderPackageName appears in overlay but not in the base package; use <add-resource> to add.
 >
-> device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:40: error: Resource at config\_autoBrightnessButtonKeyboard appears in overlay but not in the base package; use <add-resource> to add.
+> device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:40: error: Resource at config_autoBrightnessButtonKeyboard appears in overlay but not in the base package; use <add-resource> to add.
 >
-> make: \*\*\* [/home/whdghks913/cluster/system/out/target/common/obj/APPS/framework-res\_intermediates/package-export.apk] 오류 1
+> make: *** [/home/whdghks913/cluster/system/out/target/common/obj/APPS/framework-res_intermediates/package-export.apk] 오류 1
 >
-> make: \*\*\* 파일 `/home/whdghks913/cluster/system/out/target/common/obj/APPS/framework-res\_intermediates/package-export.apk'을(를) 지웁니다
+> make: *** 파일 `/home/whdghks913/cluster/system/out/target/common/obj/APPS/framework-res_intermediates/package-export.apk'을(를) 지웁니다
 
 위와 같은 오류가 발생합니다.
 

@@ -38,11 +38,11 @@ original_url: "https://itmir.tistory.com/458"
 
 AndroidManifest.xml에 아래 권한을 추가해주세요
 
-<uses-permission android:name="android.permission.SEND\_SMS" />
+<uses-permission android:name="android.permission.SEND_SMS" />
 
-<uses-permission android:name="android.permission.RECEIVE\_SMS" />
+<uses-permission android:name="android.permission.RECEIVE_SMS" />
 
-<uses-permission android:name="android.permission.READ\_PHONE\_STATE" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
 ### 27-2 Main Layout
 
@@ -161,9 +161,9 @@ public void sendSMS(String smsNumber, String smsText){
 
 두번째~세번째 줄의 PendingIntent에 대해 따로 때어내어 설명하도록 하겠습니다
 
-PendingIntent sentIntent = PendingIntent.getBroadcast(this, 0, new Intent("SMS\_SENT\_ACTION"), 0);
+PendingIntent sentIntent = PendingIntent.getBroadcast(this, 0, new Intent("SMS_SENT_ACTION"), 0);
 
-PendingIntent deliveredIntent = PendingIntent.getBroadcast(this, 0, new Intent("SMS\_DELIVERED\_ACTION"), 0);
+PendingIntent deliveredIntent = PendingIntent.getBroadcast(this, 0, new Intent("SMS_DELIVERED_ACTION"), 0);
 
 각각 위에서부터 문자 전송, 문자 수신에 관련하여 sendTextMessage()에 넘겨줄 값들입니다
 
@@ -203,7 +203,7 @@ BroadCast를 등록해 주는 역할을 했었는데요
 
 이 레이아웃은 한번도 써본적이 없으신 분들을 위해 코드를 제공하겠습니다
 
-res/layout/activity\_showsms.xml
+res/layout/activity_showsms.xml
 
 ```xml
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -353,7 +353,7 @@ AndroidManifest.xml에 방금 만든 브로드캐스트를 등록합시다
 
     <intent-filter android:priority="9999">
 
-        <action android:name="android.provider.Telephony.SMS\_RECEIVED" />
+        <action android:name="android.provider.Telephony.SMS_RECEIVED" />
 
     </intent-filter>
 

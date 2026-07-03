@@ -44,11 +44,11 @@ Dropdown, FixedTabs + Swipe, Scroll Tab 3개의 예제를 만들었습니다
 
 저기있는 파란 SECTION 1부분을 아래로 내리려면
 
-activity\_main.xml에서
+activity_main.xml에서
 
 <android.support.v4.view.PagerTitleStrip>의
 
-android:layout\_gravity="top"
+android:layout_gravity="top"
 
 를 변경해 주시면 됩니다
 

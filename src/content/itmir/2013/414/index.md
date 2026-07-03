@@ -66,7 +66,7 @@ AndroidManifest.xml은 아래와 같이 수정해 줍니다
 
     android:name="whdghks913.tistory.exampleservice.Service"
 
-    android:label="@string/title\_activity\_service" >
+    android:label="@string/title_activity_service" >
 
 </activity>
 
@@ -76,7 +76,7 @@ AndroidManifest.xml은 아래와 같이 수정해 줍니다
 
     android:name="whdghks913.tistory.exampleservice.Service"
 
-    android:label="@string/title\_activity\_service" />
+    android:label="@string/title_activity_service" />
 
 이렇게 바꿔주세요
 
@@ -94,7 +94,7 @@ public class Service extends Activity {
 
         super.onCreate(savedInstanceState);
 
-setContentView(R.layout.activity\_service);
+setContentView(R.layout.activity_service);
 
     }
 
@@ -330,7 +330,7 @@ FilePath = **intent.getStringExtra("FilePath");**
 
 if(**! mp3File.exists()**){
 
-    Toast.makeText(this, "파일이 없습니다", Toast.LENGTH\_LONG).show();
+    Toast.makeText(this, "파일이 없습니다", Toast.LENGTH_LONG).show();
 
     stopSelf();
 
@@ -414,7 +414,7 @@ if(music.isPlaying()){
 
 실제로 작동을 잘 하는지 테스트 해보겠습니다
 
-[임베드 콘텐츠: https://play-tv.kakao.com/embed/player/cliplink/vb6b7qJJEaSwIyyELSqKSKw?service=daum\_tistory](https://play-tv.kakao.com/embed/player/cliplink/vb6b7qJJEaSwIyyELSqKSKw?service=daum_tistory)
+[임베드 콘텐츠: https://play-tv.kakao.com/embed/player/cliplink/vb6b7qJJEaSwIyyELSqKSKw?service=daum_tistory](https://play-tv.kakao.com/embed/player/cliplink/vb6b7qJJEaSwIyyELSqKSKw?service=daum_tistory)
 
 (소리가 안들리면 볼륨을 높혀주세요)
 

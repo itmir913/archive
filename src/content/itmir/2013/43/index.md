@@ -14,15 +14,15 @@ original_url: "https://itmir.tistory.com/43"
 
 (2013-02-13 현재 확인결과 맨처음 링크와 맨 마지막 링크의 횟수가 모두 끝난 관계로 2개의 파일을 제거했습니다)
 
-http://files.ucloud.com/pf/D348246\_86\_132550267(횟수 초과)
+http://files.ucloud.com/pf/D348246_86_132550267(횟수 초과)
 
-http://files.ucloud.com/pf/D348246\_86\_132570235(횟수 초과)
+http://files.ucloud.com/pf/D348246_86_132570235(횟수 초과)
 
-http://files.ucloud.com/pf/D348246\_86\_132507127(횟수 초과)
+http://files.ucloud.com/pf/D348246_86_132507127(횟수 초과)
 
-http://files.ucloud.com/pf/D348246\_86\_132546747(횟수 초과)
+http://files.ucloud.com/pf/D348246_86_132546747(횟수 초과)
 
-http://files.ucloud.com/pf/D348246\_86\_132651546(횟수 초과)
+http://files.ucloud.com/pf/D348246_86_132651546(횟수 초과)
 
 안타깝게도 2013-07-19 현재 모든 링크가 파괴되었습니다 ㅠㅠ
 

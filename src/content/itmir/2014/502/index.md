@@ -44,13 +44,13 @@ usage: mkbootimg"
 
        [ --pagesize <pagesize> ]"
 
-       [ --kernel\_offset <base offset> ]"
+       [ --kernel_offset <base offset> ]"
 
-       [ --ramdisk\_offset <base offset> ]"
+       [ --ramdisk_offset <base offset> ]"
 
-       [ --second\_offset <base offset> ]"
+       [ --second_offset <base offset> ]"
 
-       [ --tags\_offset <base offset> ]"
+       [ --tags_offset <base offset> ]"
 
        [ --dt <filename> ]"
 
@@ -74,7 +74,7 @@ Second size: 0 (0x00000000)
 
 Board name:
 
-Command line: console=NULL,115200,n8 androidboot.hardware=qcom user\_debug=31 msm\_rtb.filter=0x37 ehci-hcd.park=3 vmalloc=260M loglevel=0
+Command line: console=NULL,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 vmalloc=260M loglevel=0
 
 Writing boot.img-kernel ... complete.
 
@@ -82,19 +82,19 @@ Writing boot.img-ramdisk.gz ... complete.
 
 whdghks913@Ubuntu:~/바탕화면/iron2root2222$ ./unpackbootimg -i boot.img
 
-BOARD\_KERNEL\_CMDLINE console=NULL,115200,n8 androidboot.hardware=qcom user\_debug=31 msm\_rtb.filter=0x37 ehci-hcd.park=3 vmalloc=260M loglevel=0
+BOARD_KERNEL_CMDLINE console=NULL,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 vmalloc=260M loglevel=0
 
-**BOARD\_KERNEL\_BASE 00000000**
+**BOARD_KERNEL_BASE 00000000**
 
-BOARD\_PAGE\_SIZE 2048
+BOARD_PAGE_SIZE 2048
 
-BOARD\_KERNEL\_OFFSET 00008000
+BOARD_KERNEL_OFFSET 00008000
 
-BOARD\_RAMDISK\_OFFSET 01000000
+BOARD_RAMDISK_OFFSET 01000000
 
-BOARD\_TAGS\_OFFSET 00000100
+BOARD_TAGS_OFFSET 00000100
 
-BOARD\_DT\_SIZE 223232
+BOARD_DT_SIZE 223232
 
 특이하게 베가 아이언2의 커널 base값이 '00000000' 이더라고요;;;
 
@@ -108,17 +108,17 @@ BOARD\_DT\_SIZE 223232
 
 <http://forum.xda-developers.com/showthread.php?t=2469510>
 
-./dtbTool -o ~/dt\_files/dt.img -s 2048 -p ./scripts/dtc/ ./arch/arm/boot/
+./dtbTool -o ~/dt_files/dt.img -s 2048 -p ./scripts/dtc/ ./arch/arm/boot/
 
 이렇게 만들어진 dt.img는 mkbootimg와 함께 아래 처럼 쓰입니다
 
-./mkbootimg --base 0x00000000 --kernel zImage --ramdisk\_offset 0x02000000 --tags\_offset 0x01E00000 --pagesize 2048 --cmdline "androidboot.hardware=qcom user\_debug=31 maxcpus=2 msm\_rtb.filter=0x3F ehci-hcd.park=3 msm\_rtb.enable=0 lpj=192598 dwc3.maximum\_speed=high dwc3\_msm.prop\_chg\_detect=Y" --ramdisk initrd.img **--dt dt.img** -o boot.img
+./mkbootimg --base 0x00000000 --kernel zImage --ramdisk_offset 0x02000000 --tags_offset 0x01E00000 --pagesize 2048 --cmdline "androidboot.hardware=qcom user_debug=31 maxcpus=2 msm_rtb.filter=0x3F ehci-hcd.park=3 msm_rtb.enable=0 lpj=192598 dwc3.maximum_speed=high dwc3_msm.prop_chg_detect=Y" --ramdisk initrd.img **--dt dt.img** -o boot.img
 
 그렇지만 dt.img가 뭔지는 모르겟습니다...
 
 <http://forum.xda-developers.com/showthread.php?t=2428117>
 
-위 링크에서 받을수 있는 split\_bootimg\_dtb.pl 내용을 보면
+위 링크에서 받을수 있는 split_bootimg_dtb.pl 내용을 보면
 
 +-----------------+
 
@@ -144,7 +144,7 @@ BOARD\_DT\_SIZE 223232
 
 이렇게 나와 있습니다
 
-기존까지 쓰던 split\_bootimg.pl 파일은 dtb가 없는 second stage까지만 있었습니다
+기존까지 쓰던 split_bootimg.pl 파일은 dtb가 없는 second stage까지만 있었습니다
 
 커널소스로 부터 얻을수 있고(dtbTool) fastboot boot가 안되게 하고, mkbootimg 바이너리의 수정이 필요하며, 추가된 dtb는 무엇일까요?
 
@@ -156,7 +156,7 @@ BOARD\_DT\_SIZE 223232
 
 [mkbootimg-master.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/mkbootimg-master.zip)
 
-[split\_bootimg\_dtb.pl](./files/split_bootimg_dtb.pl)
+[split_bootimg_dtb.pl](./files/split_bootimg_dtb.pl)
 
 [unpackbootimg](https://github.com/itmir913/archive/releases/download/itmir-attachments/502-unpackbootimg)
 

@@ -86,4 +86,4 @@ $ sudo service ssh restart
 
 ## 참고.
 
-[https://jongmin92.github.io/2016/09/20/Linux & Ubuntu/add\_user](https://jongmin92.github.io/2016/09/20/Linux%20&%20Ubuntu/add_user/)
+[https://jongmin92.github.io/2016/09/20/Linux & Ubuntu/add_user](https://jongmin92.github.io/2016/09/20/Linux%20&%20Ubuntu/add_user/)

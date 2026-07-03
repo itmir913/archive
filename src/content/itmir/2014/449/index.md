@@ -120,11 +120,11 @@ gedit ~/.bashrc
 
 맨 아래에 추가해 주시면 됩니다.
 
-export JAVA\_HOME=/usr/lib/jvm/java-1.6.0-sun
+export JAVA_HOME=/usr/lib/jvm/java-1.6.0-sun
 
-export ANDROID\_JAVA\_HOME=$JAVA\_HOME
+export ANDROID_JAVA_HOME=$JAVA_HOME
 
-export CROSS\_COMPILE=$HOME/(툴체인 폴더명)/bin/arm-eabi-
+export CROSS_COMPILE=$HOME/(툴체인 폴더명)/bin/arm-eabi-
 
 export PATH=$PATH:$HOME/(툴체인 폴더명)/bin/
 

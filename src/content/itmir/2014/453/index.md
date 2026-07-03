@@ -1,5 +1,5 @@
 ---
-title: "커널버전의 \"+\" 지우기 (+포함 방지)"
+title: "커널버전의 "+" 지우기 (+포함 방지)"
 date: "2014-01-28T07:00:00+09:00"
 category: "Android/Kernel"
 tags: []
@@ -24,7 +24,7 @@ original_url: "https://itmir.tistory.com/453"
 
     if test "${LOCALVERSION+set}" != "set"; then
 
-        scm=$(scm\_version --short)
+        scm=$(scm_version --short)
 
 **res="$res${scm:++}"**
 

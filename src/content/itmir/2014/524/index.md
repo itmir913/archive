@@ -71,9 +71,9 @@ getMarketVersionFast : Wi-Fi에서 0.6초~1.5초, 3G에서 1~3초
 
 ### 출처
 
-getMarketVersion() : http://www.androidside.com/bbs/board.php?bo\_table=B56&wr\_id=24663
+getMarketVersion() : http://www.androidside.com/bbs/board.php?bo_table=B56&wr_id=24663
 
-getMarketVersionFast() : http://www.androidside.com/bbs/board.php?bo\_table=B49&wr\_id=135849
+getMarketVersionFast() : http://www.androidside.com/bbs/board.php?bo_table=B49&wr_id=135849
 
 코드를 수정하고, 라이브러리화 하였습니다
 

@@ -12,7 +12,7 @@ original_url: "https://itmir.tistory.com/58"
 
 더 설명하자면,
 
-mkbootimg, split\_bootimg.pl, unpackbootimg
+mkbootimg, split_bootimg.pl, unpackbootimg
 
 이 세개의 파일을 터미널 어디서나 실행할수 있도록 bin에 PATH로 등록해 주는 스크립트입니다.
 
@@ -28,7 +28,7 @@ PATH.sh에 권한을 주신 다음, 터미널로 실행 또는 터미널에서 .
 
 세개의 파일을 모두 ~/bin혹은 /bin에 복사합니다.
 
-이때 cp \* ~/bin을 이용하기 때문에 세개의 파일 외 추가할 것이 있으시면
+이때 cp * ~/bin을 이용하기 때문에 세개의 파일 외 추가할 것이 있으시면
 
 압축풀으신후 한폴더에만 넣으신뒤 sh를 실행하면 모두 패치 적용됩니다.
 

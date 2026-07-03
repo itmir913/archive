@@ -126,7 +126,7 @@ I:Set boot command "boot-recovery"
 
 I:Checking arguments.
 
-I:device\_recovery\_start()
+I:device_recovery_start()
 
 Command: "/sbin/recovery"
 
@@ -186,9 +186,9 @@ ro.board.platform=msm7k
 
 ro.product.boardnswver=7x27 V1.78
 
-ro.product.baseband\_ver=S0210178
+ro.product.baseband_ver=S0210178
 
-ro.product.baseband\_ver\_hidden=S0210178a
+ro.product.baseband_ver_hidden=S0210178a
 
 ro.product.checksum=
 
@@ -204,27 +204,27 @@ rild.libpath=/system/lib/libril-qc-1.so
 
 rild.libargs=-d /dev/smd0
 
-persist.rild.nitz\_plmn=
+persist.rild.nitz_plmn=
 
-persist.rild.nitz\_long\_ons\_0=
+persist.rild.nitz_long_ons_0=
 
-persist.rild.nitz\_long\_ons\_1=
+persist.rild.nitz_long_ons_1=
 
-persist.rild.nitz\_long\_ons\_2=
+persist.rild.nitz_long_ons_2=
 
-persist.rild.nitz\_long\_ons\_3=
+persist.rild.nitz_long_ons_3=
 
-persist.rild.nitz\_short\_ons\_0=
+persist.rild.nitz_short_ons_0=
 
-persist.rild.nitz\_short\_ons\_1=
+persist.rild.nitz_short_ons_1=
 
-persist.rild.nitz\_short\_ons\_2=
+persist.rild.nitz_short_ons_2=
 
-persist.rild.nitz\_short\_ons\_3=
+persist.rild.nitz_short_ons_3=
 
 ril.subscription.types=NV,RUIM
 
-DEVICE\_PROVISIONED=1
+DEVICE_PROVISIONED=1
 
 debug.sf.hw=1
 
@@ -240,21 +240,21 @@ media.stagefright.enable-http=true
 
 ro.opengles.version=131072
 
-ro.use\_data\_netmgrd=false
+ro.use_data_netmgrd=false
 
 ro.bluetooth.remote.autoconnect=true
 
-ro.sf.lcd\_density=160
+ro.sf.lcd_density=160
 
 dalvik.vm.heapsize=48m
 
 ro.setupwizard.mode=OPTIONAL
 
-ro.com.google.gmsversion=2.3\_r3
+ro.com.google.gmsversion=2.3_r3
 
-ro.config.notification\_sound=OnTheHunt.ogg
+ro.config.notification_sound=OnTheHunt.ogg
 
-ro.config.alarm\_alert=Alarm\_Classic.ogg
+ro.config.alarm_alert=Alarm_Classic.ogg
 
 ro.com.google.clientidbase=android-skt-kr
 

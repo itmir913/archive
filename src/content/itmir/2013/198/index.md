@@ -18,7 +18,7 @@ original_url: "https://itmir.tistory.com/198"
 
 그래서 핑크색(?) 리커버리도 올려드립니다~
 
-\_pink가 있는 파일이 어제 빌드한 안 따끈따끈한 리커버리고요
+_pink가 있는 파일이 어제 빌드한 안 따끈따끈한 리커버리고요
 
 없는것이 정상적으로 설치/표시되는 리커버리 입니다
 
@@ -32,11 +32,11 @@ original_url: "https://itmir.tistory.com/198"
 
 [cwm.img](https://github.com/itmir913/archive/releases/download/itmir-attachments/cwm.img)
 
-[cwm\_pink.img](https://github.com/itmir913/archive/releases/download/itmir-attachments/cwm_pink.img)
+[cwm_pink.img](https://github.com/itmir913/archive/releases/download/itmir-attachments/cwm_pink.img)
 
 [twrp.img](https://github.com/itmir913/archive/releases/download/itmir-attachments/twrp.img)
 
-[twrp\_pink.img](https://github.com/itmir913/archive/releases/download/itmir-attachments/twrp_pink.img)
+[twrp_pink.img](https://github.com/itmir913/archive/releases/download/itmir-attachments/twrp_pink.img)
 
 참고로 pink 리커버리는 아래와 같이 생겼습니다
 

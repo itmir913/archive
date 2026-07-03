@@ -60,7 +60,7 @@ Find Song on Youtube 자세히 보기
 
 구글에서 'Workflow 모음' 등으로 검색하면 모두 찾을 수 있거나, 간단히 만들 수 있습니다.
 
-http://www.clien.net/cs2/bbs/board.php?bo\_table=cm\_iphonien&wr\_id=3167127
+http://www.clien.net/cs2/bbs/board.php?bo_table=cm_iphonien&wr_id=3167127
 
 http://yoonjiman.net/2014/12/17/useful-workflow/
 

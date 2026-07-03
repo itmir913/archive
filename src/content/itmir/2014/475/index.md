@@ -16,9 +16,9 @@ original_url: "https://itmir.tistory.com/475"
 
 그런대 찾아보니 저장하는 방법은 매우 쉬운대 반면 불러들이는 방법이 까다롭고, 자료가 없더라고요
 
-구글링 결과 github에 프로젝트가 있었습니다...+\_+
+구글링 결과 github에 프로젝트가 있었습니다...+_+
 
-(1) [https://github.com/gregko/WebArchiveReader/blob/master/src/com/hyperionics/war\_test/WebArchiveReader.java](https://github.com/gregko/WebArchiveReader)  
+(1) [https://github.com/gregko/WebArchiveReader/blob/master/src/com/hyperionics/war_test/WebArchiveReader.java](https://github.com/gregko/WebArchiveReader)  
 (2) <https://github.com/dotcool/coolreader/blob/master/src/com/dotcool/reader/helper/WebArchiveReader.java>
 
 (3) <https://github.com/Fengrui/WebView/blob/master/webview/src/com/example/webview/WebArchiveReader.java>
@@ -83,7 +83,7 @@ jar파일만 받으신후 프로젝트/libs에 넣어주세요
 
     if(result)
 
-        Toast.makeText(MainActivity.this, "Saved OK", Toast.LENGTH\_SHORT).show();
+        Toast.makeText(MainActivity.this, "Saved OK", Toast.LENGTH_SHORT).show();
 
    - result : 저장이 성공되어 파일이 존재할경우 true를 반환합니다
 

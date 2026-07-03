@@ -70,7 +70,7 @@ original_url: "https://itmir.tistory.com/6"
 
 귀찮.....일일히 수정한거 넣기 힘들어요;;
 
-예를들면 flash\_image나 998mhz오버클럭(by Nien), 아도비 플래쉬 기능이 저 위에는 없지요?
+예를들면 flash_image나 998mhz오버클럭(by Nien), 아도비 플래쉬 기능이 저 위에는 없지요?
 
 이처럼 체인지 로그만 보시면 안됩니다?!
 
@@ -82,7 +82,7 @@ original_url: "https://itmir.tistory.com/6"
 
 2. 오류는 대부분 패치되었으나 제가 발견하지 못한 오류는 빨리 알려주시기 바랍니다.
 
-3. 암호달라 하지 마세요 \*\_\* 저 휴가가서 잘 못들어 와요!
+3. 암호달라 하지 마세요 *_* 저 휴가가서 잘 못들어 와요!
 
 4. 어떻게 설치하나요? 라는 질문 안받습니다 ㅎㅎ 아래 설명하겠습니다!
 
@@ -158,7 +158,7 @@ original_url: "https://itmir.tistory.com/6"
 
 안 풀린다하는 질문/쪽지/덧글 지우겠습니다 ㅎㅎ
 
-롬다운링크 : https://[www.dropbox.com/s/is2pyos76hh9i0k/Mir\_Rom\_Apple\_Stable.7z](http://www.dropbox.com/s/is2pyos76hh9i0k/Mir_Rom_Apple_Stable.7z)
+롬다운링크 : https://[www.dropbox.com/s/is2pyos76hh9i0k/Mir_Rom_Apple_Stable.7z](http://www.dropbox.com/s/is2pyos76hh9i0k/Mir_Rom_Apple_Stable.7z)
 
 눈팅은 별 상관 없다칩니다.
 

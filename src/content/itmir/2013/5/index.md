@@ -152,7 +152,7 @@ MirRom
 
 보안코드는
 
-##AppleMIRRom\_code\_
+##AppleMIRRom_code_
 
 입니다
 

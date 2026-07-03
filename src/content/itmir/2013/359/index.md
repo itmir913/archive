@@ -20,7 +20,7 @@ original_url: "https://itmir.tistory.com/359"
 
 새폴더 생성 추가
 
-[FileExplorer\_AddFolder.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/FileExplorer_AddFolder.zip)
+[FileExplorer_AddFolder.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/FileExplorer_AddFolder.zip)
 
 원본글
 

@@ -60,7 +60,7 @@ iget-object v0, v0, Landroid/content/pm/PackageInfo;->**signatures**:[Landroid/c
 
 array-length v3, v0
 
-if-lez v3, :cond\_c
+if-lez v3, :cond_c
 
 const/4 v3, 0x0
 
@@ -80,9 +80,9 @@ move v3, v0
 
 move v0, v2
 
-:goto\_0
+:goto_0
 
-if-ge v0, v6, :cond\_c
+if-ge v0, v6, :cond_c
 
 add-int/lit8 v4, v3, 0x1
 
@@ -92,25 +92,25 @@ sget-object v7, Lcom/maxmpz/audioplayer/Application;->ah:[B
 
 aget-byte v7, v7, v0
 
-:try\_end\_0
+:try_end_0
 
-.catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try\_start\_0 .. :try\_end\_0} :catch\_0
+.catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-if-eq v3, v7, :cond\_b
+if-eq v3, v7, :cond_b
 
 move v0, v2
 
-:goto\_1
+:goto_1
 
-if-nez v0, :cond\_1
+if-nez v0, :cond_1
 
-// smali의 if문법에 따르면 not equals zero (0이 아니면) cond\_1(아래부분)으로 넘어갑니다
+// smali의 if문법에 따르면 not equals zero (0이 아니면) cond_1(아래부분)으로 넘어갑니다
 
 // 이부분에서 true(0이 아니다)가 나와서 아래 "?컙"을 패스해야 되요!!
 
-**if-eqz v0, :cond\_1**
+**if-eqz v0, :cond_1**
 
-// equals zero(0이면) 을 추가해 0이든 0이 아니든 cond\_1으로 넘어가게 만듭니다
+// equals zero(0이면) 을 추가해 0이든 0이 아니든 cond_1으로 넘어가게 만듭니다
 
 sput-boolean v1, Lcom/maxmpz/audioplayer/Application;->0xF1:Z
 
@@ -120,7 +120,7 @@ sput-boolean v1, Lcom/maxmpz/audioplayer/Application;->0xF1:Z
 
 .line 723
 
-:cond\_1
+:cond_1
 
 invoke-virtual {p0}, Lcom/maxmpz/audioplayer/Application;->?컙()V
 

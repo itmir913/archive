@@ -88,7 +88,7 @@ httpd라는 프로그램이 있습니다 그걸 실행하십시오
 
 Version=S0210178
 
-FileName=IM-A710K\_S0831318.BINX
+FileName=IM-A710K_S0831318.BINX
 
 FSVersion=281
 
@@ -104,7 +104,7 @@ CRC=52712
 
 Version=S0831318
 
-FileName=IM-A740S\_S0210178.BINX
+FileName=IM-A740S_S0210178.BINX
 
 FSVersion=103
 
@@ -122,9 +122,9 @@ CRC=29919
 
 이건 SK에서 KT껄로 바꾸는것입니다.
 
-http://dmfile.curitel.com/self\_binary/sky\_binary/real/IM-A710K/IM-A710K\_S0831162.BINX
+http://dmfile.curitel.com/self_binary/sky_binary/real/IM-A710K/IM-A710K_S0831162.BINX
 
-http://dmfile.curitel.com/self\_binary/sky\_binary/real/IM-A740S/IM-A740S\_S0210178.BINX
+http://dmfile.curitel.com/self_binary/sky_binary/real/IM-A740S/IM-A740S_S0210178.BINX
 
 이게 안된다면
 
@@ -140,9 +140,9 @@ host가 이미 바꾼것입니다
 
 ![](./images/5.png)
 
-(3) [http://dmfile.curitel.com/self\_binary/sky\_binary/real/(자신의 모델명)/(방금 복사한부분)] 를 웹 브라우저의 주소창에 입력하시면 자신의 기종에 알맞는 binx파일을 받으실 수 있습니다.
+(3) [http://dmfile.curitel.com/self_binary/sky_binary/real/(자신의 모델명)/(방금 복사한부분)] 를 웹 브라우저의 주소창에 입력하시면 자신의 기종에 알맞는 binx파일을 받으실 수 있습니다.
 
-ex) http://dmfile.curitel.com/self\_binary/sky\_binary/real/IM-A710K/IM-A710K\_S0831162.BINX
+ex) http://dmfile.curitel.com/self_binary/sky_binary/real/IM-A710K/IM-A710K_S0831162.BINX
 
 -------------------------------------------------------------------------------------------
 

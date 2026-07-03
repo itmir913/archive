@@ -94,21 +94,21 @@ emulator-check hyper-v
 
 저 페이지가 없어질 경우를 대비하여 파일을 첨부하겠다.
 
-[hyper\_v.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/hyper_v.zip)
+[hyper_v.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/hyper_v.zip)
 
 추후 티스토리나 카카오에서 악성코드라고 오인하여 파일이 내려갈 가능성을 대비하기 위해 암호를 1234로 걸었다.
 
-파일이 이상할까 걱정되는 분은 아래 더보기를 누른 다음 텍스트를 메모장에 붙여넣은 다음, hyper\_v.reg로 저장하면 된다.
+파일이 이상할까 걱정되는 분은 아래 더보기를 누른 다음 텍스트를 메모장에 붙여넣은 다음, hyper_v.reg로 저장하면 된다.
 
 Windows Registry Editor Version 5.00
 
-[HKEY\_LOCAL\_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard]
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard]
 
 "RequireMicrosoftSignedBootChain"=dword:00000000
 
-[HKEY\_LOCAL\_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios]
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios]
 
-[HKEY\_LOCAL\_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity]
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity]
 
 "WasEnabledBy"=dword:00000000
 

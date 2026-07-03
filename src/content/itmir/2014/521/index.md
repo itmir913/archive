@@ -56,6 +56,6 @@ Tears in Heaven
 
 녹음할때 선풍기를 못틀었더니 손에 땀이 너무 많이 나서 F잡을때 소리가 잘 안 났네요 ㅋㅋ
 
-[임베드 콘텐츠: https://play-tv.kakao.com/embed/player/cliplink/v7256XRgeg6dGolflFGf6rr?service=daum\_tistory](https://play-tv.kakao.com/embed/player/cliplink/v7256XRgeg6dGolflFGf6rr?service=daum_tistory)
+[임베드 콘텐츠: https://play-tv.kakao.com/embed/player/cliplink/v7256XRgeg6dGolflFGf6rr?service=daum_tistory](https://play-tv.kakao.com/embed/player/cliplink/v7256XRgeg6dGolflFGf6rr?service=daum_tistory)
 
 끝까지 봐주셔서 감사합니다~

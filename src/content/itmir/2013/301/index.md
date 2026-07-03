@@ -12,7 +12,7 @@ original_url: "https://itmir.tistory.com/301"
 
 <application
 
-android:label="string/app\_name" />
+android:label="string/app_name" />
 
 밑에 아래 구문을 추가합니다
 
@@ -26,31 +26,31 @@ android:label="string/app\_name" />
 
 밑에
 
-> <category android:name="android.intent.category.MULTIWINDOW\_LAUNCHER" />
+> <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
 
 추가합니다
 
 그다음 </application>위에
 
-> <meta-data android:name="com.sec.android.multiwindow.DEFAULT\_SIZE\_W"  android:resource="@dimen/app\_defaultsize\_w" />
+> <meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_W"  android:resource="@dimen/app_defaultsize_w" />
 >
-> <meta-data android:name="com.sec.android.multiwindow.DEFAULT\_SIZE\_H" android:resource="@dimen/app\_defaultsize\_h" />
+> <meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_H" android:resource="@dimen/app_defaultsize_h" />
 >
-> <meta-data android:name="com.sec.android.multiwindow.MINIMUM\_SIZE\_W" android:resource="@dimen/app\_minimumsize\_w" />
+> <meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_W" android:resource="@dimen/app_minimumsize_w" />
 >
-> <meta-data android:name="com.sec.android.multiwindow.MINIMUM\_SIZE\_H" android:resource="@dimen/app\_minimumsize\_h" />
+> <meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_H" android:resource="@dimen/app_minimumsize_h" />
 
 이 네줄을 추가합니다
 
 마지막으로 values/dimens.xml에
 
-> <dimen name="app\_defaultsize\_w">1.0dip</dimen>
+> <dimen name="app_defaultsize_w">1.0dip</dimen>
 >
-> <dimen name="app\_defaultsize\_h">1.0dip</dimen>
+> <dimen name="app_defaultsize_h">1.0dip</dimen>
 >
-> <dimen name="app\_minimumsize\_w">1.0dip</dimen>
+> <dimen name="app_minimumsize_w">1.0dip</dimen>
 >
-> <dimen name="app\_minimumsize\_h">1.0dip</dimen>
+> <dimen name="app_minimumsize_h">1.0dip</dimen>
 
 이 4줄을 추가하면 됩니다
 

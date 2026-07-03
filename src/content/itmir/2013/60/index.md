@@ -56,7 +56,7 @@ whdghks@Ubuntu:~$ sudo gedit /etc/default/grub
 
 grub를 열어보면
 
-grub\_default     0
+grub_default     0
 
 이런 구문을 보실 수 있을겁니다. (대문자로 되어있을수도 있음)
 
@@ -135,6 +135,6 @@ Memory test가 두개니까 하나로 취급하고 3
 
 이렇게 팁을 마치겠습니다.
 
-그런데 좀 찜찜하네요 -\_-
+그런데 좀 찜찜하네요 -_-
 
 default의 값에 대해서 말이죠...

@@ -8,8 +8,6 @@ draft: false
 original_url: "https://itmir.tistory.com/623"
 ---
 
-Mirach A (IM-A750K) CyanogenMod 7 Photos
-
 미라크 A CyanogenMod 7 (CM7)
 
 안녕하세요.

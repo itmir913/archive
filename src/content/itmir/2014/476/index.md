@@ -40,7 +40,7 @@ saveArchive()를 불러오는 부분이 제가 짠게 아니라 github에서 프
 
 먼저 스크린샷을 저장할때 sdcard를 사용하므로 퍼미션을주어야 합니다
 
-<uses-permission android:name="android.permission.WRITE\_EXTERNAL\_STORAGE" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 이 라이브러리의 사용방법은 아래와 같습니다
 

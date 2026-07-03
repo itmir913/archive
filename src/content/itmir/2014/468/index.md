@@ -185,13 +185,13 @@ mWebSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
 
 CacheMode에는 아래중 하나가 들어갈수 있습니다
 
-- WebSettings.LOAD\_DEFAULT
-- WebSettings.LOAD\_NORMAL
-- WebSettings.LOAD\_CACHE\_ELSE\_NETWORK
-- WebSettings.LOAD\_NO\_CACHE
-- WebSettings.LOAD\_CACHE\_ONLY
+- WebSettings.LOAD_DEFAULT
+- WebSettings.LOAD_NORMAL
+- WebSettings.LOAD_CACHE_ELSE_NETWORK
+- WebSettings.LOAD_NO_CACHE
+- WebSettings.LOAD_CACHE_ONLY
 
-여기서 LOAD\_CACHE\_ELSE\_NETWORK에 대해 부가 설명을 하면
+여기서 LOAD_CACHE_ELSE_NETWORK에 대해 부가 설명을 하면
 
 캐쉬를 사용할수 있는경우 기간이 만료되도 사용합니다, 사용할수 없으면 네트워크를 사용합니다
 
@@ -429,9 +429,9 @@ public class MainActivity extends Activity {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity\_main);
+        setContentView(R.layout.activity_main);
 
-        mInputMethodManager = (InputMethodManager) getSystemService(Context.INPUT\_METHOD\_SERVICE);
+        mInputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
         mEditText = (EditText) findViewById(R.id.addressInput);
 
@@ -455,7 +455,7 @@ public class MainActivity extends Activity {
 
         mWebSettings.setBuiltInZoomControls(true);
 
-        mWebSettings.setCacheMode(WebSettings.LOAD\_NO\_CACHE);
+        mWebSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
 
         mWebView.setWebChromeClient(new webViewChrome());
 
@@ -517,7 +517,7 @@ public class MainActivity extends Activity {
 
         }
 
-        /\*\*
+        /**
 
          \* 홈페이지 아이콘이 변경되었을때 호출됩니다
 
@@ -533,7 +533,7 @@ public class MainActivity extends Activity {
 
         }
 
-        /\*\*
+        /**
 
          \* 홈페이지의 제목에 변경이 있을때 호출됩니다
 
@@ -549,7 +549,7 @@ public class MainActivity extends Activity {
 
         }
 
-        /\*\*
+        /**
 
          \* 자바스크립트 경고(알림)를 표시할지 여부
 
@@ -565,7 +565,7 @@ public class MainActivity extends Activity {
 
         }
 
-        /\*\*
+        /**
 
          \* 자바스크립트의 확인 대화상자를 표시할지 여부
 
@@ -613,7 +613,7 @@ public class MainActivity extends Activity {
 
     public boolean onKeyDown(int keyCode, KeyEvent event){
 
-        if(keyCode == KeyEvent.KEYCODE\_BACK && event.getRepeatCount() == 0){
+        if(keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0){
 
             if(mWebView.canGoBack()){
 

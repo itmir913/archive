@@ -154,23 +154,23 @@ res/anim에는 5가지의 xml 파일을 만들꺼예요
 
 더보기
 
-linear\_interpolator : 일정하게 진행이 된다
+linear_interpolator : 일정하게 진행이 된다
 
-accelerate\_interpolator : 점점 속도를 더해가며 빠르게 진행한다
+accelerate_interpolator : 점점 속도를 더해가며 빠르게 진행한다
 
-decelerate\_interpolator : 점점 느리게 진행한다
+decelerate_interpolator : 점점 느리게 진행한다
 
-accelerate\_decelerate\_interpolator : accelerate/decelerate 동시적용 된다.
+accelerate_decelerate_interpolator : accelerate/decelerate 동시적용 된다.
 
-anticipate\_interpolator : 시작위치에서 조금 뒤로 이동햇다가 이동
+anticipate_interpolator : 시작위치에서 조금 뒤로 이동햇다가 이동
 
-overshoot\_interpolator : 도착위치를 조금 지나쳣다가 도착위치로 이동
+overshoot_interpolator : 도착위치를 조금 지나쳣다가 도착위치로 이동
 
-anticipate\_overshoot\_interpolator : anticipate/ overshoot 동시적용 된다.
+anticipate_overshoot_interpolator : anticipate/ overshoot 동시적용 된다.
 
-bounce\_interpolator : 도착위치에서 팅기는 효과를 준다.
+bounce_interpolator : 도착위치에서 팅기는 효과를 준다.
 
-cycle\_interpolator : 애니메이션을 반복한다.
+cycle_interpolator : 애니메이션을 반복한다.
 
 애니메이션 집합인 <set>에 정의합니다
 
@@ -360,7 +360,7 @@ ScaleAnimation ani =
 
     // Type에 사용되는 것은 아래와 같습니다.
 
-    // Animation.ABSOLUTE, Animation.RELATIVE\_TO\_SELF, Animation.RELATIVE\_TO\_PARENT
+    // Animation.ABSOLUTE, Animation.RELATIVE_TO_SELF, Animation.RELATIVE_TO_PARENT
 
     // Value에는 Type이 absolute일 때 scale되는 이미지의 절대 좌표이가 사용되고
 
@@ -382,7 +382,7 @@ TranslateAnimation ani =
 
     // Type에 사용되는 것은 아래와 같습니다.
 
-    // Animation.ABSOLUTE, Animation.RELATIVE\_TO\_SELF, Animation.RELATIVE\_TO\_PARENT
+    // Animation.ABSOLUTE, Animation.RELATIVE_TO_SELF, Animation.RELATIVE_TO_PARENT
 
     // Value에는 Type이 absolute일 때 scale되는 이미지의 절대 좌표이가 사용되고
 
@@ -410,7 +410,7 @@ RotateAnimation ani =
 
     // Type에 사용되는 것은 아래와 같습니다.
 
-    // Animation.ABSOLUTE, Animation.RELATIVE\_TO\_SELF, Animation.RELATIVE\_TO\_PARENT
+    // Animation.ABSOLUTE, Animation.RELATIVE_TO_SELF, Animation.RELATIVE_TO_PARENT
 
     // Value에는 Type이 absolute일 때 scale되는 이미지의 절대 좌표이가 사용되고
 

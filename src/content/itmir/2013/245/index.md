@@ -12,9 +12,9 @@ original_url: "https://itmir.tistory.com/245"
 
 일러님께서 올려주신 패치파일
 
-[patch\_153528-7\_16242\_input\_pwrkey\_fix\_press-release\_irq\_dispatch](https://github.com/itmir913/archive/releases/download/itmir-attachments/patch_153528-7_16242_input_pwrkey_fix_press-release_irq_dispatch)
+[patch_153528-7_16242_input_pwrkey_fix_press-release_irq_dispatch](https://github.com/itmir913/archive/releases/download/itmir-attachments/patch_153528-7_16242_input_pwrkey_fix_press-release_irq_dispatch)
 
-[patch\_156998-2\_16666\_power-key\_fix\_reboot-deepsleep\_timers\_20120](https://github.com/itmir913/archive/releases/download/itmir-attachments/patch_156998-2_16666_power-key_fix_reboot-deepsleep_timers_20120)
+[patch_156998-2_16666_power-key_fix_reboot-deepsleep_timers_20120](https://github.com/itmir913/archive/releases/download/itmir-attachments/patch_156998-2_16666_power-key_fix_reboot-deepsleep_timers_20120)
 
 > 최근 많은 스마트 폰들이 강제 재부팅을 넣어서, 배터리를 빼서 생길 수 있는 브릭을 방지하도록 하고 있습니다. 그래서 이 기능을 구해 왔습니다.
 >
@@ -26,7 +26,7 @@ original_url: "https://itmir.tistory.com/245"
 >
 > 패치 변경사항을 남김없이 적용한 뒤에 할 일이 한 가지 있습니다.
 >
-> dump\_reg() 함수를 비활성화해야 합니다. 7초간 길게 눌러 재부팅하는 기능에서는 dump\_reg() 함수를 사용하지 않도록 하고 있습니다.
+> dump_reg() 함수를 비활성화해야 합니다. 7초간 길게 눌러 재부팅하는 기능에서는 dump_reg() 함수를 사용하지 않도록 하고 있습니다.
 >
 > #include <linux/mfd/pm8xxx/pm8921.h> 문구를 비활성화해야 빌드가 됩니다. (베가 레이서 기준 37행
 

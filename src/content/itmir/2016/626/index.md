@@ -60,7 +60,7 @@ HUAWEI BAND를 눌러서 아너 제로랑 연동해봅시다.
 
 줄의 길이가 그다지 긴 편은 아닙니다.
 
-아너 제로 기기의 화면 표시 스크린 샷을 원하신다면 [이곳 http://underkg.co.kr/user\_review/1371664](http://underkg.co.kr/user_review/1371664) 을 방문해주세요.
+아너 제로 기기의 화면 표시 스크린 샷을 원하신다면 [이곳 http://underkg.co.kr/user_review/1371664](http://underkg.co.kr/user_review/1371664) 을 방문해주세요.
 
 몇일간 사용해본결과..
 

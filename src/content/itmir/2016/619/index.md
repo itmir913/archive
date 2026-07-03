@@ -110,7 +110,7 @@ java.lang.NoSuchMethodError: java.lang.System.arraycopy
 
 [com.pantech.res.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/com.pantech.res.apk)
 
-[VEGAIME\_by\_Mir.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/VEGAIME_by_Mir.apk)
+[VEGAIME_by_Mir.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/VEGAIME_by_Mir.apk)
 
 저에겐 최신의 안드로이드를 탑재한 기기가 없습니다.... 갤넥 CM12에서만 작동을 확인했기 때문에
 
@@ -124,7 +124,7 @@ java.lang.NoSuchMethodError: java.lang.System.arraycopy
 
 기본 apk는 kimcloud.kr에서 받아서 수정했습니다.
 
-<http://www.kimcloud.kr/pantech/IM-100S/> 의 IM-100S\_DEODEXED.zip
+<http://www.kimcloud.kr/pantech/IM-100S/> 의 IM-100S_DEODEXED.zip
 
 긴 글 읽어주셔서 감사합니다.
 

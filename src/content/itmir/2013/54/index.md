@@ -20,7 +20,7 @@ original_url: "https://itmir.tistory.com/54"
 
 바로
 
-system/etc/wifi/wpa\_supplicant.conf
+system/etc/wifi/wpa_supplicant.conf
 
 이 파일을 수정하면 되는것!
 
@@ -28,9 +28,9 @@ system/etc/wifi/wpa\_supplicant.conf
 >
 > network={
 >
->     ssid="T wifi zone\_secure"
+>     ssid="T wifi zone_secure"
 >
->     key\_mgmt=WPA-EAP IEEE8021X
+>     key_mgmt=WPA-EAP IEEE8021X
 >
 >     eap=AKA
 >
@@ -42,7 +42,7 @@ system/etc/wifi/wpa\_supplicant.conf
 >
 >     ssid="T wifi zone"
 >
->     key\_mgmt=NONE
+>     key_mgmt=NONE
 >
 >     priority=1
 >
@@ -54,7 +54,7 @@ system/etc/wifi/wpa\_supplicant.conf
 >
 >     ssid="ollehWiFi"
 >
->     key\_mgmt=WPA-EAP IEEE8021X
+>     key_mgmt=WPA-EAP IEEE8021X
 >
 >     eap=AKA
 >

@@ -66,7 +66,7 @@ original_url: "https://itmir.tistory.com/548"
 
 터치이벤트를 못받는 뷰와 관련된 레이아웃 파일 입니다
 
-이름 : always\_on\_top\_view\_not\_touch.xml
+이름 : always_on_top_view_not_touch.xml
 
 ![](./images/2.png)
 
@@ -101,7 +101,7 @@ original_url: "https://itmir.tistory.com/548"
 
 간단하게 이미지뷰 하나만 뒀습니다
 
-이름 : always\_on\_top\_view\_touch.xml
+이름 : always_on_top_view_touch.xml
 
 ![](./images/3.png)
 
@@ -113,7 +113,7 @@ original_url: "https://itmir.tistory.com/548"
 
 화면에 뷰를 추가하기 위한 권한을 추가해 줍시다
 
-<uses-permission android:name="android.permission.SYSTEM\_ALERT\_WINDOW" />
+<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
 ### 서비스 생성하기
 
@@ -212,27 +212,27 @@ public void onCreate() {
 
 API를 봅시다
 
-WindowManager.LayoutParams mParams = new WindowManager.LayoutParams(w, h, \_type, \_flags, \_format)
+WindowManager.LayoutParams mParams = new WindowManager.LayoutParams(w, h, _type, _flags, _format)
 
 저 순서대로 집어넣어 주는건데요
 
-- WindowManager.LayoutParams.WRAP\_CONTENT
+- WindowManager.LayoutParams.WRAP_CONTENT
 
-이건 WRAP\_CONTENT가 눈에 잘 들어오실탠대 생각하시는 그거 맞습니다
+이건 WRAP_CONTENT가 눈에 잘 들어오실탠대 생각하시는 그거 맞습니다
 
-- WindowManager.LayoutParams.TYPE\_SYSTEM\_OVERLAY
+- WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY
 
 이건 항상 최상위에 있도록 해주는 타입입니다
 
-반대로 아래에서 사용하게될 WindowManager.LayoutParams.TYPE\_PHONE은 터치 이벤트도 받을수 있습니다
+반대로 아래에서 사용하게될 WindowManager.LayoutParams.TYPE_PHONE은 터치 이벤트도 받을수 있습니다
 
-- WindowManager.LayoutParams.FLAG\_WATCH\_OUTSIDE\_TOUCH
+- WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH
 
 이건 뷰를 제외한 나머지 부분의 터치를 가능하게 해준다...라고 알고있습니다
 
 - PixelFormat.TRANSLUCENT
 
-이건 API를 보면 \_format이라 되어있는데 dev.android.com찾아봐도 뭔지 모르겠네요
+이건 API를 보면 _format이라 되어있는데 dev.android.com찾아봐도 뭔지 모르겠네요
 
 (아시는분 계시다면 덧글로 꼭 알려주세요!)
 
@@ -261,9 +261,9 @@ mParams = new WindowManager.LayoutParams(
 mParams.gravity = Gravity.TOP | Gravity.LEFT;
 ```
 
-TYPE\_PHONE과 FLAG가 변경되었네요
+TYPE_PHONE과 FLAG가 변경되었네요
 
-- WindowManager.LayoutParams.FLAG\_NOT\_FOCUSABLE
+- WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
 
 포커스를 가지지 않게 합니다
 

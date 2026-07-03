@@ -26,7 +26,7 @@ original_url: "https://itmir.tistory.com/554"
 
 데이터 부담이 크신 분들을 위해 스샷도 준비했습니다
 
-[임베드 콘텐츠: https://play-tv.kakao.com/embed/player/cliplink/ved5cEPsPEssgHbgs74r27E?service=daum\_tistory](https://play-tv.kakao.com/embed/player/cliplink/ved5cEPsPEssgHbgs74r27E?service=daum_tistory)
+[임베드 콘텐츠: https://play-tv.kakao.com/embed/player/cliplink/ved5cEPsPEssgHbgs74r27E?service=daum_tistory](https://play-tv.kakao.com/embed/player/cliplink/ved5cEPsPEssgHbgs74r27E?service=daum_tistory)
 
 ![](./images/부팅.png)
 
@@ -36,7 +36,7 @@ original_url: "https://itmir.tistory.com/554"
 
 종료 시간을 측정한 동영상 입니다
 
-[임베드 콘텐츠: https://play-tv.kakao.com/embed/player/cliplink/v99afE8ZiwjVVNoiEBjCv7V?service=daum\_tistory](https://play-tv.kakao.com/embed/player/cliplink/v99afE8ZiwjVVNoiEBjCv7V?service=daum_tistory)
+[임베드 콘텐츠: https://play-tv.kakao.com/embed/player/cliplink/v99afE8ZiwjVVNoiEBjCv7V?service=daum_tistory](https://play-tv.kakao.com/embed/player/cliplink/v99afE8ZiwjVVNoiEBjCv7V?service=daum_tistory)
 
 ![](./images/종료.png)
 

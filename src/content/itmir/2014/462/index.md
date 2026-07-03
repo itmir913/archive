@@ -102,7 +102,7 @@ URL입력후 Add한뒤 선택하고 다음 >
 
 - devel/make: The GNU version of the 'make' utility
 
-cygwin\_gcc-core 이런게 아니라 gcc-core입니다
+cygwin_gcc-core 이런게 아니라 gcc-core입니다
 
 ![](./images/9.png)
 
@@ -128,9 +128,9 @@ PATH=$PATH:.:${HOME}/bin:/cygdrive/**c/SDK/android-ndk-r9c**:**/cygdrive/c/SDK/s
 
 export PATH
 
-NDK\_PROJECT\_PATH=.
+NDK_PROJECT_PATH=.
 
-export NDK\_PROJECT\_PATH
+export NDK_PROJECT_PATH
 
 /cygdrive/c/은 C:\입니다
 

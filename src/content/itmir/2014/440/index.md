@@ -40,7 +40,7 @@ original_url: "https://itmir.tistory.com/440"
 
 이미지 URL : 방금전 업로드한 이미지 주소
 
-연결할 URL : http://tistory.com/thankyou/2013/?nil=supporters\_banner
+연결할 URL : http://tistory.com/thankyou/2013/?nil=supporters_banner
 
 저장해 주시면 됩니다
 

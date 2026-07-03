@@ -82,15 +82,15 @@ ps. 이번 수정은 조금 어려웠어요 ㅠㅠ
 
 처음에 넥서스S에서 나타났던 오류 입니다
 
-D/dalvikvm( 3612): Trying to load lib /data/app-lib/com.pantech.inputmethod.skyime-1/libjni\_skyime.so 0x4222f900
+D/dalvikvm( 3612): Trying to load lib /data/app-lib/com.pantech.inputmethod.skyime-1/libjni_skyime.so 0x4222f900
 
-D/dalvikvm( 3612): Shared lib '/data/app-lib/com.pantech.inputmethod.skyime-1/libjni\_skyime.so' already loaded in same CL 0x4222f900
+D/dalvikvm( 3612): Shared lib '/data/app-lib/com.pantech.inputmethod.skyime-1/libjni_skyime.so' already loaded in same CL 0x4222f900
 
-E/dalvikvm( 3612): dlopen("/system/lib/libdhwr.so") failed: **Cannot load library**: load\_library(linker.cpp:771): library "**/system/lib/libdhwr.so**" **not found**
+E/dalvikvm( 3612): dlopen("/system/lib/libdhwr.so") failed: **Cannot load library**: load_library(linker.cpp:771): library "**/system/lib/libdhwr.so**" **not found**
 
 E/AndroidRuntime( 3612): FATAL EXCEPTION: main
 
-E/AndroidRuntime( 3612): **java.lang.UnsatisfiedLinkError: Cannot load library: load\_library(linker.cpp:771): library "/system/lib/libdhwr.so" not found**
+E/AndroidRuntime( 3612): **java.lang.UnsatisfiedLinkError: Cannot load library: load_library(linker.cpp:771): library "/system/lib/libdhwr.so" not found**
 
 E/AndroidRuntime( 3612): at java.lang.Runtime.load(Runtime.java:340)
 
@@ -110,7 +110,7 @@ E/AndroidRuntime( 3612): at java.lang.System.load(System.java:507)
 
 아무리 뒤져봐도 해결이 안나오니 classes.dex를 java코드로 변환하서 뒤져봤습니다
 
-libjni\_skyime.so를 호출하는 java는 com/pantech/inputmethod/skyime/Utils이더라고요
+libjni_skyime.so를 호출하는 java는 com/pantech/inputmethod/skyime/Utils이더라고요
 
 smali를 java로 변환한 코드입니다
 
@@ -118,21 +118,21 @@ public static void **loadNativeLibrary()**{
 
     try{
 
-        if (SkyIMEData.USE\_SYSTEM\_LIBRARY){
+        if (SkyIMEData.USE_SYSTEM_LIBRARY){
 
-**System.loadLibrary**("jni\_skyime");
+**System.loadLibrary**("jni_skyime");
 
             return;
 
         }
 
-**System.load**("/data/data/com.pantech.inputmethod.skyime/lib/libjni\_skyime.so");
+**System.load**("/data/data/com.pantech.inputmethod.skyime/lib/libjni_skyime.so");
 
         return;
 
     }catch (UnsatisfiedLinkError localUnsatisfiedLinkError){
 
-        Log.e(TAG, "Could not load native library jni\_skyime");
+        Log.e(TAG, "Could not load native library jni_skyime");
 
     }
 
@@ -146,11 +146,11 @@ System.load() : 절대 경로로 찾음, 파일위치가 필요
 
 저 굵은 부분 코드를 smali로 보면 아래와 같습니다
 
-const-string v1, "jni\_skyime"
+const-string v1, "jni_skyime"
 
 invoke-static {v1}, Ljava/lang/System;->**loadLibrary**(Ljava/lang/String;)V
 
-const-string v1, "/data/data/com.pantech.inputmethod.skyime/lib/libjni\_skyime.so"
+const-string v1, "/data/data/com.pantech.inputmethod.skyime/lib/libjni_skyime.so"
 
 invoke-static {v1}, Ljava/lang/System;->**load**(Ljava/lang/String;)V
 
@@ -174,9 +174,9 @@ static{
 
 while (true){
 
-        DTYPE\_NONE = BIT\_FLAG(0);
+        DTYPE_NONE = BIT_FLAG(0);
 
-        DTYPE\_MULTI\_CHARS = BIT\_FLAG(1);
+        DTYPE_MULTI_CHARS = BIT_FLAG(1);
 
 생략
 

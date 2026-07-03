@@ -32,7 +32,7 @@ Fix 방법은 다음과 같습니다.
 
 /system/bin/skytestserver
 
-/system/lib/libsky\_aprlib.so
+/system/lib/libsky_aprlib.so
 
 /system/lib/libmtc.so
 
@@ -48,13 +48,13 @@ Fix 방법은 다음과 같습니다.
 >
 >     user root
 
-추가 (위치는 service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post\_boot.sh 요 놈 바로 위에가 적당할 겁니다.)
+추가 (위치는 service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post_boot.sh 요 놈 바로 위에가 적당할 겁니다.)
 
-마지막으로 skytestserver가 libhardware\_legacy.so에 다음 두 함수를 원하므로 Dummy로 추가합니다.
+마지막으로 skytestserver가 libhardware_legacy.so에 다음 두 함수를 원하므로 Dummy로 추가합니다.
 
-CM9 소스의 hardware/libhardware\_legacy/wifi.c에 마지막 줄에
+CM9 소스의 hardware/libhardware_legacy/wifi.c에 마지막 줄에
 
-> int wifi\_load\_mfg\_driver()
+> int wifi_load_mfg_driver()
 >
 > {
 >
@@ -62,7 +62,7 @@ CM9 소스의 hardware/libhardware\_legacy/wifi.c에 마지막 줄에
 >
 > }
 >
-> int wifi\_unload\_mfg\_driver()
+> int wifi_unload_mfg_driver()
 >
 > {
 >
@@ -70,4 +70,4 @@ CM9 소스의 hardware/libhardware\_legacy/wifi.c에 마지막 줄에
 >
 > }
 
-추가 및 libhardware\_legacy.so 빌드
+추가 및 libhardware_legacy.so 빌드

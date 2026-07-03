@@ -188,7 +188,7 @@ original_url: "https://itmir.tistory.com/352"
 
 ![](./images/image_19.jpg)
 
-[임베드 콘텐츠: http://videofarm.daum.net/controller/video/viewer/Video.html?vid=v33a4nmWyWMnyuuekkxehMW&play\_loc=daum\_tistory](http://videofarm.daum.net/controller/video/viewer/Video.html?vid=v33a4nmWyWMnyuuekkxehMW&play_loc=daum_tistory)
+[임베드 콘텐츠: http://videofarm.daum.net/controller/video/viewer/Video.html?vid=v33a4nmWyWMnyuuekkxehMW&play_loc=daum_tistory](http://videofarm.daum.net/controller/video/viewer/Video.html?vid=v33a4nmWyWMnyuuekkxehMW&play_loc=daum_tistory)
 
 출처 : <http://spapa1004.tistory.com/84>
 
@@ -252,7 +252,7 @@ original_url: "https://itmir.tistory.com/352"
 
 [com.qihoo.yunpan-update(3.3.2).apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/com.qihoo.yunpan-update(3.3.2).apk)
 
-**\* 대용량 클라우드 서비스**
+*** 대용량 클라우드 서비스**
 
 **바이두 무료 대용량 클라우드 서비소개 :  <http://spapa1004.tistory.com/51>**
 

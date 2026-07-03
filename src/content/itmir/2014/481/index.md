@@ -181,7 +181,7 @@ mHelper.setDuration(croutonLong)
 
 mHelper.setDuration(duration)
 
-- croutonLong : true 일경우 Toast.LENGTH\_LONG과, false일경우 Toast.LENGTH\_SHORT와 같습니다
+- croutonLong : true 일경우 Toast.LENGTH_LONG과, false일경우 Toast.LENGTH_SHORT와 같습니다
 - int duration : 밀리 세컨드초 단위이며, 입력한 시간동안 Crouton을 표시합니다
 - String duration : int와 같으며, String을 int로 변환하는 과정을 생략할수 있습니다
 
@@ -212,7 +212,7 @@ mHelper.setHeight(height)
 
 mHelper.setGravity(gravity)
 
-- gravity : 위치를 설정할수 있으며, Gravity.CENTER\_VERTICAL, Gravity.CENTER\_HORIZONTAL, Gravity.LEFT등을 사용할수 있습니다
+- gravity : 위치를 설정할수 있으며, Gravity.CENTER_VERTICAL, Gravity.CENTER_HORIZONTAL, Gravity.LEFT등을 사용할수 있습니다
 
 mHelper.setBackgroundColor(bgColorResId)
 

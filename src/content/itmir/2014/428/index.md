@@ -80,19 +80,19 @@ public static boolean a()
 
       Bundle localBundle = n.a(3, "angeloid.dreamnarae.v3", "inapp", null);
 
-      int i1 = localBundle.getInt("RESPONSE\_CODE");
+      int i1 = localBundle.getInt("RESPONSE_CODE");
 
       ArrayList localArrayList = null;
 
       if (i1 == 0)
 
-        localArrayList = localBundle.getStringArrayList("INAPP\_PURCHASE\_ITEM\_LIST");
+        localArrayList = localBundle.getStringArrayList("INAPP_PURCHASE_ITEM_LIST");
 
       if ((i1 == 0) && (localArrayList.size() > 0))
 
       {
 
-        boolean bool = ((String)localArrayList.get(0)).equals("angel\_unlock");
+        boolean bool = ((String)localArrayList.get(0)).equals("angel_unlock");
 
         if (bool)
 
@@ -126,7 +126,7 @@ smali는 아래와 같습니다.
 
     .line 179
 
-    :try\_start\_0
+    :try_start_0
 
     sget-object v2, Langeloid/dreamnarae/v3/main/MainActivity;->n:Lcom/a/a/a/a;
 
@@ -150,7 +150,7 @@ smali는 아래와 같습니다.
 
     .line 179
 
-    :try\_start\_0
+    :try_start_0
 
     sget-object v2, Langeloid/dreamnarae/v3/main/MainActivity;->n:Lcom/a/a/a/a;
 
@@ -158,7 +158,7 @@ smali는 아래와 같습니다.
 
 .end method
 
-그다음 검색해보면 smali/angeloid/dreamnarae/v3/tweak/Angel\_Biling.java에도 있는거 같아서 아래처럼 수정합니다.
+그다음 검색해보면 smali/angeloid/dreamnarae/v3/tweak/Angel_Biling.java에도 있는거 같아서 아래처럼 수정합니다.
 
 public void a()
 
@@ -168,7 +168,7 @@ public void a()
 
     {
 
-      startIntentSenderForResult(((PendingIntent)a.a(3, getPackageName(), "angel\_unlock", "inapp", null).getParcelable("BUY\_INTENT")).getIntentSender(), 1001, new Intent(), Integer.valueOf(0).intValue(), Integer.valueOf(0).intValue(), Integer.valueOf(0).intValue());
+      startIntentSenderForResult(((PendingIntent)a.a(3, getPackageName(), "angel_unlock", "inapp", null).getParcelable("BUY_INTENT")).getIntentSender(), 1001, new Intent(), Integer.valueOf(0).intValue(), Integer.valueOf(0).intValue(), Integer.valueOf(0).intValue());
 
       return;
 
@@ -194,17 +194,17 @@ public void a()
 
 return-void
 
-    :try\_start\_0
+    :try_start_0
 
     const-string v3, "angel"
 
     .line 133
 
-    sget-object v0, Langeloid/dreamnarae/v3/tweak/Angel\_Biling;->a:Lcom/a/a/a/a;
+    sget-object v0, Langeloid/dreamnarae/v3/tweak/Angel_Biling;->a:Lcom/a/a/a/a;
 
     const/4 v1, 0x3
 
-    invoke-virtual {p0}, Langeloid/dreamnarae/v3/tweak/Angel\_Biling;->getPackageName()Ljava/lang/String;
+    invoke-virtual {p0}, Langeloid/dreamnarae/v3/tweak/Angel_Biling;->getPackageName()Ljava/lang/String;
 
     -- 생략 --
 

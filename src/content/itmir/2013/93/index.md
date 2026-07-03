@@ -15,7 +15,7 @@ original_url: "https://itmir.tistory.com/93"
 ![](./images/image_2.jpg)
 
 다음 사진처럼 카메라가 작동합니다 ㅋㅋ  
-전에 libandroid\_runtime.so때문에 libcamera관련을 넣어준적이 있는듯 한대
+전에 libandroid_runtime.so때문에 libcamera관련을 넣어준적이 있는듯 한대
 
 그것때문에 작동하는듯 합니다 ㅋㅋ
 

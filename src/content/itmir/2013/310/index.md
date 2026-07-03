@@ -34,7 +34,7 @@ Toast를 배우는 시간입니다~
 
 자바 소스로 오신다음 한 줄만 입력하시면 됩니다 ㅎㅎ
 
-Toast.makeText(this,"토스트 메세지 내용",Toast.LENGTH\_SHORT).show();
+Toast.makeText(this,"토스트 메세지 내용",Toast.LENGTH_SHORT).show();
 
 한줄이면 토스트가 끝나는데요
 

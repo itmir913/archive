@@ -8,7 +8,7 @@ draft: false
 original_url: "https://itmir.tistory.com/360"
 ---
 
-사실 오픈소스화 한지 6개월이 지났지만 -\_-;;
+사실 오픈소스화 한지 6개월이 지났지만 -_-;;
 
 지금에서야 올리네요;
 

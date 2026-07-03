@@ -18,13 +18,13 @@ original_url: "https://itmir.tistory.com/294"
 
 만 작동할거고요 ㅎㅎ
 
-NewWorld님께서 알려주신 prima\_wlan으로 최종 완성이 가능했습니다.
+NewWorld님께서 알려주신 prima_wlan으로 최종 완성이 가능했습니다.
 
 감사드립니다~
 
 적용법은 boot.img설치해 주시고 들어있는 모듈 두 개 lib/modules/prima에 넣어주시고
 
-WCNSS\_cfg.dat, WCNSS\_qcom\_nv.bin도 lib/modules/prima에 넣어주시면 됩니다.
+WCNSS_cfg.dat, WCNSS_qcom_nv.bin도 lib/modules/prima에 넣어주시면 됩니다.
 
 **적용방법 물어보지 마세요 찾아가서 때리겠습니다(?)**
 

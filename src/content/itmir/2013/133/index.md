@@ -28,7 +28,7 @@ After Rooting 시리즈는 루팅후 대중적으로 많이 하는 부분을 다
 
 그럼 시작하겠습니다
 
-[camera\_click.ogg](https://github.com/itmir913/archive/releases/download/itmir-attachments/camera_click.ogg)
+[camera_click.ogg](https://github.com/itmir913/archive/releases/download/itmir-attachments/camera_click.ogg)
 
 [VideoRecord.ogg](https://github.com/itmir913/archive/releases/download/itmir-attachments/VideoRecord.ogg)
 
@@ -46,7 +46,7 @@ After Rooting 시리즈는 루팅후 대중적으로 많이 하는 부분을 다
 
 /system/media에 644퍼미션으로 넣어주시면 됩니다
 
-camera\_click.ogg와 VideoRecord.ogg를 sdcard에 넣어주세요
+camera_click.ogg와 VideoRecord.ogg를 sdcard에 넣어주세요
 
 폰을 연결해 주신다음 넣어주시면 됩니다
 
@@ -104,7 +104,7 @@ OXX
 
 자주 사용할 권한이니 꼭 외워 두세요!
 
-camera\_click.ogg와 VideoRecord.ogg 모두 퍼미션 644를 주시면 됩니다
+camera_click.ogg와 VideoRecord.ogg 모두 퍼미션 644를 주시면 됩니다
 
 rw-r--r--
 

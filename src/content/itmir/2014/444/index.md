@@ -16,11 +16,11 @@ private String[] getHomeLauncher(){
 
     PackageManager pm =  getPackageManager();
 
-    Intent homeIntent = new Intent(Intent.ACTION\_MAIN);
+    Intent homeIntent = new Intent(Intent.ACTION_MAIN);
 
-    homeIntent.addCategory(Intent.CATEGORY\_HOME);
+    homeIntent.addCategory(Intent.CATEGORY_HOME);
 
-    List<ResolveInfo> homeApps = pm.queryIntentActivities(homeIntent, PackageManager.GET\_ACTIVITIES);
+    List<ResolveInfo> homeApps = pm.queryIntentActivities(homeIntent, PackageManager.GET_ACTIVITIES);
 
     HomeLauncher = new String[homeApps.size()];
 

@@ -12,7 +12,7 @@ original_url: "https://itmir.tistory.com/155"
 
 이 파일을 얻기 위해 롬 전체를 다운받아야 해서 파일을 따로 올려둡니다
 
-Mir\_Rom\_Brave버전에 포함되어 있는 updater-script와 aroma-config을 첨부해 두었습니다
+Mir_Rom_Brave버전에 포함되어 있는 updater-script와 aroma-config을 첨부해 두었습니다
 
 [aroma-config](https://github.com/itmir913/archive/releases/download/itmir-attachments/aroma-config)
 

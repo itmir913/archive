@@ -66,15 +66,15 @@ A. 암묵적인 약속이랄까... 그런겁니다(?)
 
     android:id="@+id/button1"
 
-    android:layout\_width="wrap\_content"
+    android:layout_width="wrap_content"
 
-    android:layout\_height="wrap\_content"
+    android:layout_height="wrap_content"
 
-    android:layout\_alignParentTop="true"
+    android:layout_alignParentTop="true"
 
-    android:layout\_centerHorizontal="true"
+    android:layout_centerHorizontal="true"
 
-    android:layout\_marginTop="50dp"
+    android:layout_marginTop="50dp"
 
 **android:onClick="button"**
 
@@ -84,15 +84,15 @@ A. 암묵적인 약속이랄까... 그런겁니다(?)
 
     android:id="@+id/seekBar1"
 
-    android:layout\_width="match\_parent"
+    android:layout_width="match_parent"
 
-    android:layout\_height="wrap\_content"
+    android:layout_height="wrap_content"
 
-    android:layout\_alignParentLeft="true"
+    android:layout_alignParentLeft="true"
 
-    android:layout\_below="@+id/button1"
+    android:layout_below="@+id/button1"
 
-    android:layout\_marginTop="30dp" />
+    android:layout_marginTop="30dp" />
 
 모두 한번 배운 내용이므로 언급없이 진행하겠습니다
 
@@ -274,7 +274,7 @@ Runnable task = new Runnable(){
 
 public void run(){
 
-/\*\*
+/**
 
 \* while문을 돌려서 음악이 실행중일때 게속 돌아가게 합니다
 
@@ -294,7 +294,7 @@ e.printStackTrace();
 
 }
 
-/\*\*
+/**
 
 \* music.getCurrentPosition()은 현재 음악 재생 위치를 가져오는 구문 입니다
 
@@ -332,7 +332,7 @@ Thread.sleep(1000);으로 인해 1초씩 건너서 쉬므로
 
 구동영상은 동영상으로 확인해 보겠습니다
 
-[임베드 콘텐츠: https://play-tv.kakao.com/embed/player/cliplink/vb45awTduwY4YIIOAdIIOCb?service=daum\_tistory](https://play-tv.kakao.com/embed/player/cliplink/vb45awTduwY4YIIOAdIIOCb?service=daum_tistory)
+[임베드 콘텐츠: https://play-tv.kakao.com/embed/player/cliplink/vb45awTduwY4YIIOAdIIOCb?service=daum_tistory](https://play-tv.kakao.com/embed/player/cliplink/vb45awTduwY4YIIOAdIIOCb?service=daum_tistory)
 
 모든 기능이 잘 작동하는것으로 확인되었습니다 ㅎㅎ
 

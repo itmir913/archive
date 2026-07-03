@@ -18,7 +18,7 @@ prima는 wifi모듈입니다.
 
 커널소스에 없기 때문에 그냥 추가 없이 커널 소스를 받고 빌드한 다음 바로 적용하면 WIFI 모듈이 달라 정상적으로 무선 wifi가 안됩니다.
 
-그래서 prima\_wlan을 추가해서 빌드하는 방법을 알아보겠습니다.
+그래서 prima_wlan을 추가해서 빌드하는 방법을 알아보겠습니다.
 
 ### 코드 오로라에서 소스 다운로드 하기
 
@@ -52,7 +52,7 @@ endif위에 밑줄친 한줄을 추가해 주세요.
 
 /drivers/staging/Makefile
 
-obj-$(CONFIG\_PRIMA\_WLAN) += prima/
+obj-$(CONFIG_PRIMA_WLAN) += prima/
 
 이제 defconfig에 추가해줘야 합니다.
 
@@ -70,7 +70,7 @@ device drivers - staging drivers - Qualcomm Athernos Prima Wlan Module
 
 #
 
-CONFIG\_PRIMA\_WLAN=m
+CONFIG_PRIMA_WLAN=m
 
 ### 모듈 용량 줄이기
 
@@ -94,9 +94,9 @@ CONFIG\_PRIMA\_WLAN=m
 
 **/system/etc/firmware/wlan/prima**
 
-(커널소스파일) /drivers/staging/prima/firmware\_bin/WCNSS\_cfg.dat
+(커널소스파일) /drivers/staging/prima/firmware_bin/WCNSS_cfg.dat
 
-(커널소스파일) /drivers/staging/prima/firmware\_bin/WCNSS\_qcom\_nv.bin
+(커널소스파일) /drivers/staging/prima/firmware_bin/WCNSS_qcom_nv.bin
 
 ### Thanks to
 

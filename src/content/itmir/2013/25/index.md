@@ -18,35 +18,35 @@ original_url: "https://itmir.tistory.com/25"
 
 **boardconfig**
 
-BOARD\_USES\_QCOM\_HARDWARE := true
+BOARD_USES_QCOM_HARDWARE := true
 
-BOARD\_USES\_QCOM\_LIBS := true
+BOARD_USES_QCOM_LIBS := true
 
-BOARD\_USES\_QCOM\_LIBRPC := true
+BOARD_USES_QCOM_LIBRPC := true
 
-BOARD\_HAVE\_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH := true
 
-#BOARD\_HAVE\_BLUETOOTH\_BCM := true
+#BOARD_HAVE_BLUETOOTH_BCM := true
 
-WIFI\_DRIVER\_MODULE\_NAME := bcm4329
+WIFI_DRIVER_MODULE_NAME := bcm4329
 
-WIFI\_DRIVER\_MODULE\_PATH := /system/lib/modules/wlan.ko
+WIFI_DRIVER_MODULE_PATH := /system/lib/modules/wlan.ko
 
-BOARD\_WPA\_SUPPLICANT\_DRIVER := WEXT
+BOARD_WPA_SUPPLICANT_DRIVER := WEXT
 
-BOARD\_WLAN\_DEVICE := bcm4329
+BOARD_WLAN_DEVICE := bcm4329
 
-WIFI\_DRIVER\_MODULE\_ARG := "firmware\_path=/system/etc/wl/bcm43291.bin nvram\_path=/system/etc/wl/nvram.txt"
+WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/etc/wl/bcm43291.bin nvram_path=/system/etc/wl/nvram.txt"
 
-WIFI\_DRIVER\_FW\_STA\_PATH := "/system/etc/wl/bcm43291.bin"
+WIFI_DRIVER_FW_STA_PATH := "/system/etc/wl/bcm43291.bin"
 
-WIFI\_DRIVER\_FW\_AP\_PATH := "/system/etc/wl/bcm43291\_apsta.bin"
+WIFI_DRIVER_FW_AP_PATH := "/system/etc/wl/bcm43291_apsta.bin"
 
-WIFI\_DRIVER\_FW\_P2P\_PATH := "/system/etc/wl/bcm43291\_p2p.bin"
+WIFI_DRIVER_FW_P2P_PATH := "/system/etc/wl/bcm43291_p2p.bin"
 
-**device\_ef32k.mk**
+**device_ef32k.mk**
 
-PRODUCT\_COPY\_FILES += \
+PRODUCT_COPY_FILES += \
 
 device/pantech/ef32k/add/bin/pppd:system/bin/pppd \
 
@@ -60,9 +60,9 @@ wifi.interface=wlan0
 
 ro.product.boardnswver=7x27 V1.46
 
-ro.product.baseband\_ver=S0832146
+ro.product.baseband_ver=S0832146
 
-ro.product.baseband\_ver\_hidden=S0832146a
+ro.product.baseband_ver_hidden=S0832146a
 
 ro.product.checksum=
 
@@ -72,7 +72,7 @@ ro.carrier=KT-KOR
 
 # Modules
 
-PRODUCT\_COPY\_FILES += \
+PRODUCT_COPY_FILES += \
 
 vendor/pantech/ef32k/proprietary/lib/modules/libra.ko:system/lib/modules/libra.ko \
 
@@ -82,25 +82,25 @@ vendor/pantech/ef32k/proprietary/lib/modules/wlan.ko:system/lib/modules/wlan.ko
 
 # Wifi
 
-PRODUCT\_COPY\_FILES += \
+PRODUCT_COPY_FILES += \
 
 vendor/pantech/ef32k/proprietary/etc/wl/nvram.txt:system/etc/wl/nvram.txt \
 
-vendor/pantech/ef32k/proprietary/etc/wl/bcm4329\_apsta.bin:system/etc/wl/bcm4329\_apsta.bin \
+vendor/pantech/ef32k/proprietary/etc/wl/bcm4329_apsta.bin:system/etc/wl/bcm4329_apsta.bin \
 
 vendor/pantech/ef32k/proprietary/etc/wl/bcm4329.bin:system/etc/wl/bcm4329.bin \
 
-vendor/pantech/ef32k/proprietary/etc/wl/bcm4329\_mfg.bin:system/etc/wl/bcm4329\_mfg.bin \
+vendor/pantech/ef32k/proprietary/etc/wl/bcm4329_mfg.bin:system/etc/wl/bcm4329_mfg.bin \
 
 vendor/pantech/ef32k/proprietary/etc/wl/bcm43291.bin:system/etc/wl/bcm43291.bin \
 
-vendor/pantech/ef32k/proprietary/etc/wl/bcm43291\_apsta.bin:system/etc/wl/bcm43291\_apsta.bin \
+vendor/pantech/ef32k/proprietary/etc/wl/bcm43291_apsta.bin:system/etc/wl/bcm43291_apsta.bin \
 
-vendor/pantech/ef32k/proprietary/etc/wl/bcm43291\_mfg.bin:system/etc/wl/bcm43291\_mfg.bin \
+vendor/pantech/ef32k/proprietary/etc/wl/bcm43291_mfg.bin:system/etc/wl/bcm43291_mfg.bin \
 
-vendor/pantech/ef32k/proprietary/etc/wl/bcm43291\_p2p.bin:system/etc/wl/bcm43291\_p2p.bin \
+vendor/pantech/ef32k/proprietary/etc/wl/bcm43291_p2p.bin:system/etc/wl/bcm43291_p2p.bin \
 
-vendor/pantech/ef32k/proprietary/etc/wifi/wpa\_supplicant.conf:system/etc/wifi/wpa\_supplicant.conf \
+vendor/pantech/ef32k/proprietary/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
 
 vendor/pantech/ef32k/proprietary/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf
 
@@ -136,7 +136,7 @@ E/AndroidRuntime( 227): Unable to register all android natives
 
 I/Netd ( 230): Netd 1.0 starting
 
-어떤분의 말씀으로 libmedia\_jni.so를 전에 빌드한 so로 교체를 한뒤
+어떤분의 말씀으로 libmedia_jni.so를 전에 빌드한 so로 교체를 한뒤
 
 로그켓을 봐서 libcameraservice.so, libcamera.so, libOlaEngine.so이 세개의 파일을 순정에서 가져와서 집어넣었더니 부팅이 되었습니다
 
@@ -154,9 +154,9 @@ D/SettingsAppWidgetProvider( 345): No instances yet... Wait for at least one ins
 
 로그를 보면 Failed to load Wi-Fi driver. 즉 wifi 드라이버를 불러오지 못하여 발생하는 문제라 생각됩니다
 
-저보다 먼저 cm7을 포팅하신 사람님과 호호님의 말씀으로는 libhardware\_legacy.so의 문제라 생각된다 하셨습니다
+저보다 먼저 cm7을 포팅하신 사람님과 호호님의 말씀으로는 libhardware_legacy.so의 문제라 생각된다 하셨습니다
 
-이 파일을 헥스 에디터로 열어보니 넣지도 않은 tiap\_drv.ko를 읽는 부분이 있었습니다
+이 파일을 헥스 에디터로 열어보니 넣지도 않은 tiap_drv.ko를 읽는 부분이 있었습니다
 
 그래서 그 부분을 지우고 저장한다음 기기에 집어넣었습니다 그러나 부팅이 되지 않습니다
 
@@ -166,13 +166,13 @@ D/SettingsAppWidgetProvider( 345): No instances yet... Wait for at least one ins
 
 I/cm ( 82): Welcome to Android 2.3.7 / CyanogenMod-7-20130122-UNOFFICIAL-ef32k
 
-I/cm ( 83): \_
+I/cm ( 83): _
 
-I/cm ( 84): \_\_ \_\_ \_ \_\_\_ \_ \_ \_\_ \_\_\_ \_\_ \_ \_ \_ \_ \_\_ \_\_))
+I/cm ( 84): __ __ _ ___ _ _ __ ___ __ _ _ _ _ __ __))
 
-I/cm ( 85): ((\_ \(/'((\_( ((\( ((\_)((\_( (('((\( ((`1( ((\_)((\_(
+I/cm ( 85): ((_ \(/'((_( ((\( ((_)((_( (('((\( ((`1( ((_)((_(
 
-I/cm ( 86): )) \_))
+I/cm ( 86): )) _))
 
 I/cm ( 87):
 
@@ -184,7 +184,7 @@ I/DEBUG ( 121): debuggerd: Jan 22 2013 16:58:05
 
 I/Vold ( 119): Vold 2.1 (the revenge) firing up
 
-E/ ( 126): [sky]sky\_localdb reader start!!
+E/ ( 126): [sky]sky_localdb reader start!!
 
 D/Vold ( 119): Volume sdcard state changing -1 (Initializing) -> 0 (No-Media)
 
@@ -192,9 +192,9 @@ D/Vold ( 119): Volume sdcard state changing 0 (No-Media) -> 2 (Pending)
 
 D/Vold ( 119): Volume sdcard state changing 2 (Pending) -> 1 (Idle-Unmounted)
 
-W/Vold ( 119): Ignoring unknown switch 'usb\_mass\_storage'
+W/Vold ( 119): Ignoring unknown switch 'usb_mass_storage'
 
-W/Vold ( 119): Ignoring unknown switch 'MSM72K\_UDC'
+W/Vold ( 119): Ignoring unknown switch 'MSM72K_UDC'
 
 D/Vold ( 119): USB connected
 
@@ -204,7 +204,7 @@ D/Vold ( 119): Share method ums now available
 
 여기서 /data/local/download on /cache/download failed: No such file or directory는 정상 부팅시에도 있었던 구문이기 때문입니다
 
-수정하지 않은 libhardware\_legacy.so을 첨부하겠습니다
+수정하지 않은 libhardware_legacy.so을 첨부하겠습니다
 
 제가 포팅을 야매로 배운덕에 넓은 지식을 가지고 있지 않습니다..
 

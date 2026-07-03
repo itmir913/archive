@@ -8,7 +8,7 @@ draft: false
 original_url: "https://itmir.tistory.com/219"
 ---
 
-make: \*\*\* `/home/whdghks913/cluster/system/out/target/common/obj/APPS/Apollo\_intermediates/classes-full-debug.jar'에서 필요로 하는 타겟 `/home/whdghks913/cluster/system/out/target/common/obj/JAVA\_LIBRARIES/android\_stubs\_current\_intermediates/javalib.jar'를 만들 규칙이 없습니다. 멈춤.
+make: *** `/home/whdghks913/cluster/system/out/target/common/obj/APPS/Apollo_intermediates/classes-full-debug.jar'에서 필요로 하는 타겟 `/home/whdghks913/cluster/system/out/target/common/obj/JAVA_LIBRARIES/android_stubs_current_intermediates/javalib.jar'를 만들 규칙이 없습니다. 멈춤.
 
 이상하게 cluster을 빌드하면 이런 오류가 나는군요
 
@@ -20,21 +20,21 @@ make: \*\*\* `/home/whdghks913/cluster/system/out/target/common/obj/APPS/Apollo\
 
 또 문제가 일어났던 Apollo어플의 Android.mk에 있는
 
-LOCAL\_SRC\_FILES += $(call all-java-files-under, src)
+LOCAL_SRC_FILES += $(call all-java-files-under, src)
 
 을 주석처리 하였습니다
 
 아직은 빌드가 완료된것이 아니라 잘은 모르겠지만 아무튼 파일은 올립니다
 
-out/target/common/obj/JAVA\_LIBRARIES
+out/target/common/obj/JAVA_LIBRARIES
 
 out/target/common/obj/APPS
 
 이 위치에 넣어주세요~
 
-[Apollo\_intermediates.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/Apollo_intermediates.zip)
+[Apollo_intermediates.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/Apollo_intermediates.zip)
 
-[JAVA\_LIBRARIES.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/JAVA_LIBRARIES.zip)
+[JAVA_LIBRARIES.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/JAVA_LIBRARIES.zip)
 
 + 2013-05-25 추가
 
@@ -42,11 +42,11 @@ out/target/common/obj/APPS
 
 반디집으로 7z 분활압축 했습니다
 
-[android\_stubs\_current\_intermediates.7z.001](https://github.com/itmir913/archive/releases/download/itmir-attachments/android_stubs_current_intermediates.7z.001)
+[android_stubs_current_intermediates.7z.001](https://github.com/itmir913/archive/releases/download/itmir-attachments/android_stubs_current_intermediates.7z.001)
 
-[android\_stubs\_current\_intermediates.7z.002](https://github.com/itmir913/archive/releases/download/itmir-attachments/android_stubs_current_intermediates.7z.002)
+[android_stubs_current_intermediates.7z.002](https://github.com/itmir913/archive/releases/download/itmir-attachments/android_stubs_current_intermediates.7z.002)
 
-[android\_stubs\_current\_intermediates.7z.003](https://github.com/itmir913/archive/releases/download/itmir-attachments/android_stubs_current_intermediates.7z.003)
+[android_stubs_current_intermediates.7z.003](https://github.com/itmir913/archive/releases/download/itmir-attachments/android_stubs_current_intermediates.7z.003)
 
 ---
 

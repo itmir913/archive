@@ -54,73 +54,73 @@ receiver : 수신기(수신하다)
 
 브로드캐스트에서 받을수 있는 액션이 무엇이 있는지 조금만 살펴보겠습니다
 
-**ACTION\_BOOT\_COMPLETED**
+**ACTION_BOOT_COMPLETED**
 
-**부팅이 끝났을 때 (RECEIVE\_BOOT\_COMPLETED 권한등록 필요)**
+**부팅이 끝났을 때 (RECEIVE_BOOT_COMPLETED 권한등록 필요)**
 
-ACTION\_CAMERA\_BUTTON
+ACTION_CAMERA_BUTTON
 
 카메라 버튼이 눌렸을 때
 
-ACTION\_DATE\_CHANGED
+ACTION_DATE_CHANGED
 
-ACTION\_TIME\_CHANGED
+ACTION_TIME_CHANGED
 
 폰의 날짜, 시간이 수동으로 변했을때 (설정에서 수정했을때)
 
-**ACTION\_SCREEN\_OFF**
+**ACTION_SCREEN_OFF**
 
-**ACTION\_SCREEN\_ON**
+**ACTION_SCREEN_ON**
 
 **화면 on, off**
 
-ACTION\_AIRPLANE\_MODE\_CHANGED
+ACTION_AIRPLANE_MODE_CHANGED
 
 비행기 모드
 
-ACTION\_BATTERY\_CHANGED
+ACTION_BATTERY_CHANGED
 
-ACTION\_BATTERY\_LOW
+ACTION_BATTERY_LOW
 
-ACTION\_BATTERY\_OKAY
+ACTION_BATTERY_OKAY
 
 배터리 상태변화
 
-ACTION\_PACKAGE\_ADDED
+ACTION_PACKAGE_ADDED
 
-ACTION\_PACKAGE\_CHANGED
+ACTION_PACKAGE_CHANGED
 
-ACTION\_PACKAGE\_DATA\_CLEARED
+ACTION_PACKAGE_DATA_CLEARED
 
-ACTION\_PACKAGE\_INSTALL
+ACTION_PACKAGE_INSTALL
 
-ACTION\_PACKAGE\_REMOVED
+ACTION_PACKAGE_REMOVED
 
-ACTION\_PACKAGE\_REPLACED
+ACTION_PACKAGE_REPLACED
 
-ACTION\_PACKAGE\_RESTARTED
+ACTION_PACKAGE_RESTARTED
 
 어플 설치/제거
 
-ACTION\_POWER\_CONNECTED
+ACTION_POWER_CONNECTED
 
-ACTION\_POWER\_DISCONNECTED
+ACTION_POWER_DISCONNECTED
 
 충전 관련
 
-ACTION\_REBOOT
+ACTION_REBOOT
 
-ACTION\_SHUTDOWN
+ACTION_SHUTDOWN
 
 재부팅/종료
 
-ACTION\_TIME\_TICK
+ACTION_TIME_TICK
 
 매분마다 수신
 
-**android.provider.Telephony.SMS\_RECEIVED**
+**android.provider.Telephony.SMS_RECEIVED**
 
-**sms 수신 (RECEIVE\_SMS 권한 필요)**
+**sms 수신 (RECEIVE_SMS 권한 필요)**
 
 (전체중 극히 일부)
 
@@ -164,25 +164,25 @@ intent.getAction()
 
 예를들어 화면 on, off, 부팅 완료, sms수신의 경우
 
-if (**Intent.ACTION\_BOOT\_COMPLETED**.equals(intent.getAction())){
+if (**Intent.ACTION_BOOT_COMPLETED**.equals(intent.getAction())){
 
     // 부팅완료
 
 }
 
-if (**Intent.ACTION\_SCREEN\_ON** == intent.getAction()) {
+if (**Intent.ACTION_SCREEN_ON** == intent.getAction()) {
 
     // 화면 켜짐
 
 }
 
-if (**Intent.ACTION\_SCREEN\_OFF** == intent.getAction()) {
+if (**Intent.ACTION_SCREEN_OFF** == intent.getAction()) {
 
     // 화면 꺼짐
 
 }
 
-if (**"android.provider.Telephony.SMS\_RECEIVED"**.equals(intent.getAction())) {
+if (**"android.provider.Telephony.SMS_RECEIVED"**.equals(intent.getAction())) {
 
     // sms 수신
 
@@ -190,7 +190,7 @@ if (**"android.provider.Telephony.SMS\_RECEIVED"**.equals(intent.getAction())) {
 
 이렇게 if문을 통해 구현해 주시면 됩니다 (이때 ==이나 equals나 상관이 없다고합니다만 잘 모르겠네요)
 
-참고로 Intent.ACTION\_BOOT\_COMPLETED이나 "android.intent.action.BOOT\_COMPLETED"이나 같다고 합니다만 전자는 java에서, 후자는 xml에서 자주 보이는군요
+참고로 Intent.ACTION_BOOT_COMPLETED이나 "android.intent.action.BOOT_COMPLETED"이나 같다고 합니다만 전자는 java에서, 후자는 xml에서 자주 보이는군요
 
 이제 각각의 액션을 구분할수 있게 되었습니다
 
@@ -234,9 +234,9 @@ abortBroadcast();
 
     <intent-filter **android:priority="9999"**>
 
-        <action android:name="**android.intent.action.BOOT\_COMPLETED**"/>
+        <action android:name="**android.intent.action.BOOT_COMPLETED**"/>
 
-        <action android:name="**android.provider.Telephony.SMS\_RECEIVED**" />
+        <action android:name="**android.provider.Telephony.SMS_RECEIVED**" />
 
     </intent-filter>
 
@@ -256,9 +256,9 @@ receiver를 등록하였습니다
 
 마지막으로 부팅완료와 sms수신은 권한이 필요합니다
 
-<uses-permission android:name="android.permission.RECEIVE\_BOOT\_COMPLETED" />
+<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
-<uses-permission android:name="android.permission.RECEIVE\_SMS" />
+<uses-permission android:name="android.permission.RECEIVE_SMS" />
 
 ### 24-5 registerReceiver()로 등록하자 (동적 등록)
 
@@ -276,13 +276,13 @@ Button이나 TextView처럼 추가해 주시면 됩니다
 
 그다음 onCreate()에는
 
-**IntentFilter intentFilter** = new IntentFilter(**Intent.ACTION\_SCREEN\_ON**);
+**IntentFilter intentFilter** = new IntentFilter(**Intent.ACTION_SCREEN_ON**);
 
-intentFilter.**addAction**(**Intent.ACTION\_SCREEN\_OFF**);
+intentFilter.**addAction**(**Intent.ACTION_SCREEN_OFF**);
 
-intentFilter.addAction(Intent.ACTION\_BOOT\_COMPLETED);
+intentFilter.addAction(Intent.ACTION_BOOT_COMPLETED);
 
-intentFilter.addAction("android.provider.Telephony.SMS\_RECEIVED");
+intentFilter.addAction("android.provider.Telephony.SMS_RECEIVED");
 
 **registerReceiver**(myReceiver, intentFilter);
 

@@ -40,31 +40,31 @@ repo init -u https://android.googlesource.com/platform/manifest
 
 명령어 뒤에 -b를 붙힌후 원하는 버전을 다운받을수도 있습니다
 
-android-2.3.7\_r1
+android-2.3.7_r1
 
-android-4.0.4\_r2
+android-4.0.4_r2
 
-android-4.1.1\_r6
+android-4.1.1_r6
 
-android-4.1.2\_r2
+android-4.1.2_r2
 
-android-4.2.1\_r1
+android-4.2.1_r1
 
-android-4.2.2\_r1
+android-4.2.2_r1
 
-android-4.3\_r3
+android-4.3_r3
 
-android-4.4\_r1
+android-4.4_r1
 
-android-4.4.1\_r1
+android-4.4.1_r1
 
-android-4.4.2\_r1
+android-4.4.2_r1
 
 참고 : <https://android.googlesource.com/platform/manifest/+refs>
 
 최신버전인 4.4.2 버전을 받는다고 한다면
 
-repo init -u https://android.googlesource.com/platform/manifest -b android-4.4.2\_r1
+repo init -u https://android.googlesource.com/platform/manifest -b android-4.4.2_r1
 
 이렇게 입력해 주세요
 
@@ -120,7 +120,7 @@ https://android.googlesource.com/device/samsung/crespo
 
 가장 대표적으로 CyanogenMod에서 가져온다음 파일을 수정하면 됩니다
 
-https://github.com/cyanogenmod/android\_device\_samsung\_crespo
+https://github.com/cyanogenmod/android_device_samsung_crespo
 
 수정해야 하는 파일은 따로 정리하겠습니다
 

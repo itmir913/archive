@@ -14,7 +14,7 @@ Could not normalize path for file 'D:\android-sdk\platforms\android-14\android.j
 
 Could not normalize path for file 'Q:\trunk\ActionBarSherlock\build\intermediates\mockable-Sony:Sony Add-on SDK 3.0:19.jar'.
 
-Could not normalize path for file 'F:\Android\_Studio\onebusaway-android\onebusaway-android\build\intermediates\mockable-Google Inc.:Google APIs:21.jar
+Could not normalize path for file 'F:\Android_Studio\onebusaway-android\onebusaway-android\build\intermediates\mockable-Google Inc.:Google APIs:21.jar
 
 파일 이름, 디렉터리 이름 또는 볼륨 레이블 구문이 잘못되었습니다
 

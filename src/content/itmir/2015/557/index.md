@@ -29,7 +29,7 @@ original_url: "https://itmir.tistory.com/557"
 
 2. 더 긴 kernel command line 지원
 
-3. kernel\_offset, ramdisk\_offset, second\_offset, tags\_offset 지원
+3. kernel_offset, ramdisk_offset, second_offset, tags_offset 지원
 
 4. 추가적인 pagesize 크기 지원 (32K, 64K, 128K)
 

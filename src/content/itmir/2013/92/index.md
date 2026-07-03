@@ -18,11 +18,11 @@ Vega 1:1 상담에서 베가 레이서2의 커널 컴파일 방법에 대한 문
 
 대충 보니까 툴체인 4.4.0은 깔려 있고 그런대요
 
-미라크a소스에는 ./build\_kernel.sh를 이용하라 되어있는대 이 파일에는
+미라크a소스에는 ./build_kernel.sh를 이용하라 되어있는대 이 파일에는
 
-make CONFIG\_DEBUG\_SECTION\_MISMATCH=y ARCH=arm arm msm8960\_ef47s\_tp30\_defconfig
+make CONFIG_DEBUG_SECTION_MISMATCH=y ARCH=arm arm msm8960_ef47s_tp30_defconfig
 
-make CONFIG\_DEBUG\_SECTION\_MISMATCH=y ARCH=arm
+make CONFIG_DEBUG_SECTION_MISMATCH=y ARCH=arm
 
 이렇게만 되어있네요 이게 바로 빌드 명령어 인가요?
 

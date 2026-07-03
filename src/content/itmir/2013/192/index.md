@@ -86,7 +86,7 @@ master 가지로 돌아와 병합하면 돼요.
 
 ![가지치기 예제를 보여드리죠.](http://rogerdudler.github.io/git-guide/img/branches.png)
 
-아래 명령으로 "feature\_x"라는 이름의 가지를 만들고 갈아탑니다.  
+아래 명령으로 "feature_x"라는 이름의 가지를 만들고 갈아탑니다.  
 `git checkout -b feature_x`  
 아래 명령으로 master 가지로 돌아올 수 있어요.  
 `git checkout master`  

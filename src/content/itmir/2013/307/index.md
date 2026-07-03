@@ -8,4 +8,4 @@ draft: false
 original_url: "https://itmir.tistory.com/307"
 ---
 
-투명도 \* 2.25로 나온 10진수를 16진수로 변경하면 됩니다.
+투명도 * 2.25로 나온 10진수를 16진수로 변경하면 됩니다.

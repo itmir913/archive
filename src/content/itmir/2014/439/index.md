@@ -58,7 +58,7 @@ chmod -R 777 linaro-toolchain
 
 gedit ~/.bashrc
 
-export CROSS\_COMPILE=$HOME/linaro-toolchain/bin/arm-eabi-
+export CROSS_COMPILE=$HOME/linaro-toolchain/bin/arm-eabi-
 
 export PATH=$PATH:$HOME/linaro-toolchain/bin/
 
@@ -74,9 +74,9 @@ cc1: all warnings being treated as errors
 
 이제 kernel폴더 최상위에 있는 MakeFile을 열어주세요.
 
-그다음 KBUILD\_CFLAGS를 검색해 주세요
+그다음 KBUILD_CFLAGS를 검색해 주세요
 
-KBUILD\_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
+KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 
   -Werror \
 
@@ -90,7 +90,7 @@ KBUILD\_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 
 위 문구를 아래로 바꿔주세요
 
-KBUILD\_CFLAGS   := -Wundef -Wstrict-prototypes -Wno-trigraphs \
+KBUILD_CFLAGS   := -Wundef -Wstrict-prototypes -Wno-trigraphs \
 
   -Werror \
 
@@ -106,7 +106,7 @@ KBUILD\_CFLAGS   := -Wundef -Wstrict-prototypes -Wno-trigraphs \
 
 수정된 부분 강조
 
-KBUILD\_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
+KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 
   -Werror \
 
@@ -120,7 +120,7 @@ KBUILD\_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 
   -fno-delete-null-pointer-checks
 
-만약 MakeFile에서 "CROSS\_COMPILE"이라고 검색했을때 있다면,
+만약 MakeFile에서 "CROSS_COMPILE"이라고 검색했을때 있다면,
 
 경로를 linaro툴체인으로 알맞게 변경해 주세요.
 
@@ -134,11 +134,11 @@ $(call cc-disable-warning,(Warning이름),)
 
 $(call cc-disable-warning,uninitialized,)
 
-이것을 MakeFile의 KBUILD\_CFLAGS에 넣어주세요.
+이것을 MakeFile의 KBUILD_CFLAGS에 넣어주세요.
 
 예를 들면 아래와 같습니다.
 
-KBUILD\_CFLAGS   := -Wundef -Wstrict-prototypes -Wno-trigraphs \
+KBUILD_CFLAGS   := -Wundef -Wstrict-prototypes -Wno-trigraphs \
 
   -Werror \
 
@@ -154,17 +154,17 @@ KBUILD\_CFLAGS   := -Wundef -Wstrict-prototypes -Wno-trigraphs \
 
 **$(call cc-disable-warning,uninitialized,)**
 
-In function 's5ptvfb\_set\_par':
+In function 's5ptvfb_set_par':
 
 error: lvalue required as left operand of assignment
 
-문제된 파일 s5p\_stda\_grp.c을 열어주세요.
+문제된 파일 s5p_stda_grp.c을 열어주세요.
 
-((struct fb\_var\_screeninfo) (s5ptv\_status.fb->var)).bits\_per\_pixel = ((struct fb\_var\_screeninfo) (fb->var)).bits\_per\_pixel;
+((struct fb_var_screeninfo) (s5ptv_status.fb->var)).bits_per_pixel = ((struct fb_var_screeninfo) (fb->var)).bits_per_pixel;
 
 위 줄을 아래로 바꿔주세요.
 
-(s5ptv\_status.fb->var).bits\_per\_pixel = (fb->var).bits\_per\_pixel;
+(s5ptv_status.fb->var).bits_per_pixel = (fb->var).bits_per_pixel;
 
 error: arch/arm/boot/compressed/piggy.lzo.o: Unknown CPU architecture
 
@@ -178,4 +178,4 @@ linaro툴체인 문제입니다.
 
 http://forum.xda-developers.com/showthread.php?t=2376286
 
-https://gitorious.org/replicant/kernel\_samsung\_aries/commit/f385c89f3b03e9ee69dd45b185bc790dc23e191c?diffmode=sidebyside
+https://gitorious.org/replicant/kernel_samsung_aries/commit/f385c89f3b03e9ee69dd45b185bc790dc23e191c?diffmode=sidebyside

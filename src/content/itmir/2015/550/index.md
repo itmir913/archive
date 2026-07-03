@@ -82,7 +82,7 @@ A1부터 C1까지를 각각 Timestamp, path, memo로 체워주세요.
 
 //  1. Enter sheet name where data is to be written below
 
-var SHEET\_NAME = "**시트1**";
+var SHEET_NAME = "**시트1**";
 
 //  2. Run > setup
 
@@ -102,7 +102,7 @@ var SHEET\_NAME = "**시트1**";
 
 //  5. Insert column names on your destination sheet matching the parameter names of the data you are passing in (exactly matching case)
 
-var SCRIPT\_PROP = PropertiesService.getScriptProperties(); // new property service
+var SCRIPT_PROP = PropertiesService.getScriptProperties(); // new property service
 
 // If you don't want to expose either GET or POST methods you can comment out the appropriate function
 
@@ -136,13 +136,13 @@ function handleResponse(e) {
 
     // next set where we write the data - you could write to multiple/alternate destinations
 
-    var doc = SpreadsheetApp.openById(SCRIPT\_PROP.getProperty("key"));
+    var doc = SpreadsheetApp.openById(SCRIPT_PROP.getProperty("key"));
 
-    var sheet = doc.getSheetByName(SHEET\_NAME);
+    var sheet = doc.getSheetByName(SHEET_NAME);
 
-    // we'll assume header is in row 1 but you can override with header\_row in GET/POST data
+    // we'll assume header is in row 1 but you can override with header_row in GET/POST data
 
-    var headRow = e.parameter.header\_row || 1;
+    var headRow = e.parameter.header_row || 1;
 
     var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
 
@@ -200,7 +200,7 @@ function setup() {
 
     var doc = SpreadsheetApp.getActiveSpreadsheet();
 
-    SCRIPT\_PROP.setProperty("key", doc.getId());
+    SCRIPT_PROP.setProperty("key", doc.getId());
 
 }
 

@@ -119,7 +119,7 @@ API 사용방법 열기
 - mFloatingButton.setColorPressed(color) : 버튼을 누를때 색을 지정합니다
 - mFloatingButton.setColorPressedResId(colorResId) : 버튼을 누를때 색을 지정합니다, R.color.xxx를 사용하는 메소드입니다
 - mFloatingButton.setImageResource(resId) : 버튼의 이미지를 변경합니다
-- mFloatingButton.setType(type) : FloatingActionButton.TYPE\_MINI와 FloatingActionButton.TYPE\_NORMAL이 가능하며, 크기를 지정합니다, 크기는 res/dimen.xml에 정의되어 있습니다
+- mFloatingButton.setType(type) : FloatingActionButton.TYPE_MINI와 FloatingActionButton.TYPE_NORMAL이 가능하며, 크기를 지정합니다, 크기는 res/dimen.xml에 정의되어 있습니다
 - mFloatingButton.setShadow(shadow) : true일경우 그림자를 표시하며, false일경우 표시하지 않습니다
 - mFloatingButton.setDuration(Duration) : 애니메이션의 시간이며 줄이면 애니메이션이 빨라지고 커지면 느려집니다, 기본값은 200입니다
 
@@ -139,17 +139,17 @@ API 사용방법 열기
 
 **사용할수 있는 상수**
 
-public static final int Color\_BLUE = -13388315;
+public static final int Color_BLUE = -13388315;
 
-public static final int Color\_PURPLE = -5609780;
+public static final int Color_PURPLE = -5609780;
 
-public static final int Color\_GREEN = -6697984;
+public static final int Color_GREEN = -6697984;
 
-public static final int Color\_ORANGE = -17613;
+public static final int Color_ORANGE = -17613;
 
-public static final int Color\_RED = -48060;
+public static final int Color_RED = -48060;
 
-각각 색상값을 의미하며, FloatingActionButton.Color\_XX로 사용가능합니다
+각각 색상값을 의미하며, FloatingActionButton.Color_XX로 사용가능합니다
 
 setColorNormal()등에 사용합니다
 

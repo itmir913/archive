@@ -171,7 +171,7 @@ git clone (복사한 주소)
 
 git clone (복사한 주소) -b (버전명)
 
-예를 들면 git clone https://github.com/CyanogenMod/android\_device\_samsung\_crespo -b cm-10.1
+예를 들면 git clone https://github.com/CyanogenMod/android_device_samsung_crespo -b cm-10.1
 
 이렇게 입력해 주시면 됩니다
 
@@ -256,7 +256,7 @@ git clone <https://github.com/985hPaKicK/android_device_pantech_ef46l> -b jellyb
 
 (3) 직접 디바이스 소스 생성
 
-이 케이스가 가장 까다로운 방법입니다 -\_-
+이 케이스가 가장 까다로운 방법입니다 -_-
 
 그리고 가장 어렵습니다..
 
@@ -290,7 +290,7 @@ Aㅏ... 이 글로 설명하기 진짜 힘들고 어려운 방법입니다
 
 안드로이드 풀소스안 device/(제조사)/(코드네임) 폴더를 생성하신 다음
 
-BoardConfig.mk, device\_(코드네임).mk등의 파일을 생성해야 합니다
+BoardConfig.mk, device_(코드네임).mk등의 파일을 생성해야 합니다
 
 ```bash
 build/tools/device/mkvendor.sh
@@ -306,7 +306,7 @@ build/tools/device/mkvendor.sh (제조사) (코드네임) (부트이미지경로
 
 그다음은 완전 노가다 입니다
 
-cmdline등과 각종 Config설정을 BoardConfig.mk에 넣어주고 필요한 파일은 device\_(코드네임).mk에 추가해 주고..
+cmdline등과 각종 Config설정을 BoardConfig.mk에 넣어주고 필요한 파일은 device_(코드네임).mk에 추가해 주고..
 
 [2013/01/28 - [강좌/팁/커널/빌드 강좌] - 나도 CM7 포팅해 보자 - CWM을 포팅해보자](/archive/itmir/2013/94)
 

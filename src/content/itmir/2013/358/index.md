@@ -64,9 +64,9 @@ original_url: "https://itmir.tistory.com/358"
 
 먼저 첫번째 메소드의 맨 위에 아래 소스가 필요합니다
 
-LayoutInflater inflater = (LayoutInflater)getSystemService(this.LAYOUT\_INFLATER\_SERVICE);
+LayoutInflater inflater = (LayoutInflater)getSystemService(this.LAYOUT_INFLATER_SERVICE);
 
-View view = inflater.inflate(**R.layout.activity\_alert1**, null);
+View view = inflater.inflate(**R.layout.activity_alert1**, null);
 
 [소스 3-1] LayoutInflater를 이용한 코드
 
@@ -78,9 +78,9 @@ View view = inflater.inflate(**R.layout.activity\_alert1**, null);
 
 정리하자면 한 부분을 따로 떼어 레이아웃 파일(xml)으로 따로 작성한 것 입니다
 
-여기서 **R.layout.activity\_alert1**을 주목해 주세요
+여기서 **R.layout.activity_alert1**을 주목해 주세요
 
-이것은 자주 보면 형식인대 우리는 아직 activity\_alert1이라는 xml파일을 안만들었습니다
+이것은 자주 보면 형식인대 우리는 아직 activity_alert1이라는 xml파일을 안만들었습니다
 
 그래서 한번 만들어 봤습니다 여러분도 따로 만들어 보세요~
 
@@ -119,8 +119,8 @@ View를 적용할수 있는 setView()메소드 잘 기억해 두세요!
 
 완성 코드
 
-LayoutInflater inflater = (LayoutInflater)getSystemService(this.LAYOUT\_INFLATER\_SERVICE);  
-  View view = inflater.inflate(R.layout.activity\_alert1, null);  
+LayoutInflater inflater = (LayoutInflater)getSystemService(this.LAYOUT_INFLATER_SERVICE);  
+  View view = inflater.inflate(R.layout.activity_alert1, null);  
     
   AlertDialog.Builder alert = new AlertDialog.Builder(this);  
   alert.setTitle("알림");  
@@ -146,7 +146,7 @@ new AlertDialog.Builder(this)
     new DialogInterface.OnClickListener(){  
     public void onClick(DialogInterface dialog, int which){  
         String[] Like = getResources().getStringArray(R.array.Like);  
-        Toast.makeText(MainActivity.this, "가장 좋아하는것은: " + Like[which], Toast.LENGTH\_SHORT).show();**
+        Toast.makeText(MainActivity.this, "가장 좋아하는것은: " + Like[which], Toast.LENGTH_SHORT).show();**
 
 **dialog.dismiss();  
     }  
@@ -228,7 +228,7 @@ new AlertDialog.Builder(this)
    new DialogInterface.OnClickListener(){  
    public void onClick(DialogInterface dialog, int which){  
     String[] Like = getResources().getStringArray(R.array.Like);  
-    Toast.makeText(MainActivity.this, "가장 좋아하는것은: " + Like[which], Toast.LENGTH\_SHORT).show();  
+    Toast.makeText(MainActivity.this, "가장 좋아하는것은: " + Like[which], Toast.LENGTH_SHORT).show();  
     dialog.dismiss();  
    }  
   })  
@@ -260,7 +260,7 @@ new AlertDialog.Builder(this)
 .setPositiveButton("확인",new DialogInterface.OnClickListener(){  
  public void onClick(DialogInterface dialog, int whichButton){  
      **String[] Like = getResources().getStringArray(R.array.Like);**  
-     Toast.makeText(MainActivity.this, "가장 좋아하는것은: "+**Like[Choose]**, Toast.LENGTH\_SHORT).show();  
+     Toast.makeText(MainActivity.this, "가장 좋아하는것은: "+**Like[Choose]**, Toast.LENGTH_SHORT).show();  
      dialog.dismiss();  
  }  
 })  
@@ -309,7 +309,7 @@ new AlertDialog.Builder(this)
      **if(MultChoose[i]){  
       string += foods[i] + ", ";  
      }**    }  
-    Toast.makeText(MainActivity.this, string, Toast.LENGTH\_SHORT).show();  
+    Toast.makeText(MainActivity.this, string, Toast.LENGTH_SHORT).show();  
    }  
   })  
   .setNegativeButton("취소",null)  
@@ -327,7 +327,7 @@ new AlertDialog.Builder(this)
 
 배열의 순서와 체크 여부가 넘어오게 됩니다
 
-이때 boolean배열의 \*번째 값을 isChecked의 값으로 변경하게 됩니다
+이때 boolean배열의 *번째 값을 isChecked의 값으로 변경하게 됩니다
 
 즉 which가 2고 isChecked가 true가 되면
 

@@ -87,13 +87,13 @@ Preference.java
 
 Tools.java
 
-activity\_main.xml
+activity_main.xml
 
-row\_bap\_item.xml
+row_bap_item.xml
 
 string.xml
 
-background\_corners.xml
+background_corners.xml
 
 무조건 수정해야 하는 것
 
@@ -182,7 +182,7 @@ EX) 인천 : ice.go.kr
 
 교육청에서 학교를 구분할때, 학교에 공문을 내릴때 사용하며 아래 참조에서 코드를 찾을수도 있습니다
 
-EX) 인천의 학교 코드 검색 : http://hes.ice.go.kr/sts\_sci\_si00\_001.do (학교 검색후 E10000xxxx 부분)
+EX) 인천의 학교 코드 검색 : http://hes.ice.go.kr/sts_sci_si00_001.do (학교 검색후 E10000xxxx 부분)
 
 - schulCrseScCode는 학교 분류입니다
 

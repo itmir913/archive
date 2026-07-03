@@ -3,7 +3,7 @@ title: "허허 이클립스를 설치했습니다 ㅋㅋ"
 date: "2013-02-15T21:26:32+09:00"
 category: "Programming"
 tags: []
-description: "야구소년님께서 뚝딱 학교 앱을 만드시는걸 보고 \"저거보소\" 이러며 필을 받았어요 ㅋㅋ"
+description: "야구소년님께서 뚝딱 학교 앱을 만드시는걸 보고 "저거보소" 이러며 필을 받았어요 ㅋㅋ"
 draft: false
 original_url: "https://itmir.tistory.com/134"
 ---

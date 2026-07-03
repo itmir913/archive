@@ -52,7 +52,7 @@ ipa 파일은 <https://github.com/utmapp/UTM/releases/latest>에서 다운로드
 
 시스템 설정은 다음과 같다.
 
-아키텍쳐: x86\_64
+아키텍쳐: x86_64
 
 시스템: pc
 

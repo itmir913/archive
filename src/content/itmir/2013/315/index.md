@@ -87,7 +87,7 @@ setNeutralButton
 
 그럼 예제로 버튼을 클릭하면 알림이 뜨는 어플을 만들어 봅시다
 
-activity\_main.xml
+activity_main.xml
 
 ```xml
 <Button

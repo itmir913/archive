@@ -52,7 +52,7 @@ chmod 777 mkbootimg
 ./unpackbootimg -i boot.img
 ```
 
-을 입력하시게 되면 BOARD\_KERNEL\_BASE이 나타납니다. 이것도 중요합니다!
+을 입력하시게 되면 BOARD_KERNEL_BASE이 나타납니다. 이것도 중요합니다!
 
 이제 램디스크 압축을 풀어봅시다.
 
@@ -120,7 +120,7 @@ make-boot파일이 완성되었습니다!
 
 [unpackbootimg](https://github.com/itmir913/archive/releases/download/itmir-attachments/48-unpackbootimg)
 
-[split\_bootimg.pl](./files/split_bootimg.pl)
+[split_bootimg.pl](./files/split_bootimg.pl)
 
 요즘 나온 스마트폰들은 대부분 ramdiskaddr을 지정해 주어야 부팅이 됩니다.
 

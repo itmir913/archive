@@ -66,7 +66,7 @@ original_url: "https://itmir.tistory.com/256"
 
 그럼 이쯤해서 카카오톡 PC버전에 대한 설명을 마치겠습니다.
 
-[KakaoTalk\_Setup.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/KakaoTalk_Setup.zip)
+[KakaoTalk_Setup.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/KakaoTalk_Setup.zip)
 
 설치 파일을 그냥 올리면 두려우니(그럼 카카오에서 이메일 인증 한 이유가 없으니) 암호를 걸어 압축한 뒤 올려두겠습니다.
 

@@ -40,4 +40,4 @@ original_url: "https://itmir.tistory.com/190"
 
 할 작업이 없으신 분들은 제가 뭘 수정했는지 확인해 보시는ㄱ...ㅋㅋㅋ
 
-github.com/itmir913/android\_device\_ef46l
+github.com/itmir913/android_device_ef46l

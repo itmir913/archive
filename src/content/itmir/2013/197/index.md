@@ -24,7 +24,7 @@ ClockWorkMod Recovery, 줄여서 CWM 이라고도 언급합니다
 
 다들 아시다 싶이 CM의 소스를 받으면 bootable/recovery폴더에 CWM관련 파일들이 있지요
 
-[htt](https://github.com/cyanogenmod/android_bootable_recovery)[ps://github.com/cyanogenmod/android\_bootable\_recovery](https://github.com/cyanogenmod/android_bootable_recovery)
+[htt](https://github.com/cyanogenmod/android_bootable_recovery)[ps://github.com/cyanogenmod/android_bootable_recovery](https://github.com/cyanogenmod/android_bootable_recovery)
 
 이 링크를 들어가 보셔도 recovery폴더의 내용물을 확인 하실수 있으십니다
 
@@ -36,38 +36,38 @@ ClockWorkMod Recovery, 줄여서 CWM 이라고도 언급합니다
 
 Android.mk를 열어봐 주시면 아래와 같은 내용이 있습니다
 
-ifdef I\_AM\_KOUSH
+ifdef I_AM_KOUSH
 
-**RECOVERY\_NAME := ClockworkMod Recovery**
+**RECOVERY_NAME := ClockworkMod Recovery**
 
-LOCAL\_CFLAGS += -DI\_AM\_KOUSH
+LOCAL_CFLAGS += -DI_AM_KOUSH
 
 else
 
-ifndef RECOVERY\_NAME
+ifndef RECOVERY_NAME
 
-**RECOVERY\_NAME := CWM-based Recovery**
-
-endif
+**RECOVERY_NAME := CWM-based Recovery**
 
 endif
 
-**RECOVERY\_VERSION := $(RECOVERY\_NAME) v6.0.2.8**
+endif
 
-**LOCAL\_CFLAGS += -DRECOVERY\_VERSION="$(RECOVERY\_VERSION)"**
+**RECOVERY_VERSION := $(RECOVERY_NAME) v6.0.2.8**
+
+**LOCAL_CFLAGS += -DRECOVERY_VERSION="$(RECOVERY_VERSION)"**
 
 Recovery Name을 설정해 주는 부분이 보이시나요?
 
-제 생각에는 BoardConfig.mk에 I\_AM\_KOUSH := true 라면 RECOVERY\_NAME은 ClockworkMod Recovery로,
+제 생각에는 BoardConfig.mk에 I_AM_KOUSH := true 라면 RECOVERY_NAME은 ClockworkMod Recovery로,
 
 만약 지정되지 않았거나 false라면 CWM-based Recovery라고 설정되어 진다고 예상할 수 있습니다
 
 즉 이 부분의 수정이 이루어 진다면 표시되는 이름의 수정이 가능할 것이라는 뜻이 되겠지요
 
-RECOVERY\_VERSION := $(RECOVERY\_NAME) v6.0.2.8  
-바로 이부분과 RECOVERY\_NAME부분을 수정해 주면 재작자의 이름도 넣을수 있을겁니다
+RECOVERY_VERSION := $(RECOVERY_NAME) v6.0.2.8  
+바로 이부분과 RECOVERY_NAME부분을 수정해 주면 재작자의 이름도 넣을수 있을겁니다
 
-**RECOVERY\_NAME을 CWM-based Recovery말고 다른 이름으로 수정해서 빌드해 보세요**
+**RECOVERY_NAME을 CWM-based Recovery말고 다른 이름으로 수정해서 빌드해 보세요**
 
 아직까지 BoardConfig.mk에 구문을 추가해 이름을 지정하는건 모르겠습니다
 
@@ -77,15 +77,15 @@ RECOVERY\_VERSION := $(RECOVERY\_NAME) v6.0.2.8
 
 예를 들자면 볼륨위-아래-위 키를 눌러 활성화 시킨다음에서야 확인이 가능하다는 것이지요
 
-cwm - 5.x.x.x 버전에서는 default\_recovery\_ui.c파일이,
+cwm - 5.x.x.x 버전에서는 default_recovery_ui.c파일이,
 
-cwm - 6.x.x.x 버전에서는 default\_recovery\_keys.c파일이 키를 담당하고 있습니다
+cwm - 6.x.x.x 버전에서는 default_recovery_keys.c파일이 키를 담당하고 있습니다
 
 그럼 CWM6에서는 ui.c가 없냐? 그건 아닙니다
 
-소스를 다운받지 않아도 [github에서 확인](https://github.com/CyanogenMod/android_bootable_recovery/blob/jellybean/default_recovery_ui.c)해 보시면 default\_recovery\_ui.c에는
+소스를 다운받지 않아도 [github에서 확인](https://github.com/CyanogenMod/android_bootable_recovery/blob/jellybean/default_recovery_ui.c)해 보시면 default_recovery_ui.c에는
 
-char\* MENU\_ITEMS[] = { "reboot system now",
+char* MENU_ITEMS[] = { "reboot system now",
 
                        "install zip from sdcard",
 
@@ -105,7 +105,7 @@ char\* MENU\_ITEMS[] = { "reboot system now",
 
                        NULL };
 
-이런 부분이 있는대요 짐작해 보컨대 cwm6버전에서는 default\_recovery\_ui.c는 화면에 표시되는 메뉴를 나타낸다고 짐작할 수 있습니다
+이런 부분이 있는대요 짐작해 보컨대 cwm6버전에서는 default_recovery_ui.c는 화면에 표시되는 메뉴를 나타낸다고 짐작할 수 있습니다
 
 여기서 뭔가를 발견해 보자면 power off 버튼이 사라진것을 눈치 채실수 있으신대요
 
@@ -119,7 +119,7 @@ char\* MENU\_ITEMS[] = { "reboot system now",
 
 선택 버튼만 사라진 거라면 되돌릴수 있겠죠?
 
-char\* MENU\_ITEMS[] = { "reboot system now",
+char* MENU_ITEMS[] = { "reboot system now",
 
                        "install zip from sdcard",
 
@@ -149,89 +149,89 @@ char\* MENU\_ITEMS[] = { "reboot system now",
 
 이번에는 키를 변경해 보도록 하겠습니다
 
-아까 언급한것처럼 default\_recovery\_ui.c와 default\_recovery\_keys.c을 봐주시면 됩니다
+아까 언급한것처럼 default_recovery_ui.c와 default_recovery_keys.c을 봐주시면 됩니다
 
-CWM6을 기준으로 설명하고 있으므로 default\_recovery\_keys.c을 기준으로 설명하겠습니다
+CWM6을 기준으로 설명하고 있으므로 default_recovery_keys.c을 기준으로 설명하겠습니다
 
-int device\_handle\_key(int key\_code, int visible) {
+int device_handle_key(int key_code, int visible) {
 
     if (visible) {
 
-        switch (key\_code) {
+        switch (key_code) {
 
-            case KEY\_CAPSLOCK:
+            case KEY_CAPSLOCK:
 
-            case KEY\_DOWN:
+            case KEY_DOWN:
 
-            case KEY\_VOLUMEDOWN:
+            case KEY_VOLUMEDOWN:
 
-            case KEY\_MENU:
+            case KEY_MENU:
 
-**return HIGHLIGHT\_DOWN;**
+**return HIGHLIGHT_DOWN;**
 
-            case KEY\_LEFTSHIFT:
+            case KEY_LEFTSHIFT:
 
-            case KEY\_UP:
+            case KEY_UP:
 
-            case KEY\_VOLUMEUP:
+            case KEY_VOLUMEUP:
 
-            case KEY\_HOME:
+            case KEY_HOME:
 
-**return HIGHLIGHT\_UP;**
+**return HIGHLIGHT_UP;**
 
-            case KEY\_POWER:
+            case KEY_POWER:
 
-                if (ui\_get\_showing\_back\_button()) {
+                if (ui_get_showing_back_button()) {
 
-**return SELECT\_ITEM;**
+**return SELECT_ITEM;**
 
                 }
 
-                if (!get\_allow\_toggle\_display() && !ui\_root\_menu) {
+                if (!get_allow_toggle_display() && !ui_root_menu) {
 
-**return GO\_BACK;**
+**return GO_BACK;**
 
                 }
 
                 break;
 
-            case KEY\_LEFTBRACE:
+            case KEY_LEFTBRACE:
 
-            case KEY\_ENTER:
+            case KEY_ENTER:
 
-            case BTN\_MOUSE:
+            case BTN_MOUSE:
 
-            case KEY\_CAMERA:
+            case KEY_CAMERA:
 
-            case KEY\_F21:
+            case KEY_F21:
 
-            case KEY\_SEND:
+            case KEY_SEND:
 
-**return SELECT\_ITEM;**
+**return SELECT_ITEM;**
 
-            case KEY\_END:
+            case KEY_END:
 
-            case KEY\_BACKSPACE:
+            case KEY_BACKSPACE:
 
-            case KEY\_SEARCH:
+            case KEY_SEARCH:
 
-                if (ui\_get\_showing\_back\_button()) {
+                if (ui_get_showing_back_button()) {
 
-**return SELECT\_ITEM;**
-
-                }
-
-                if (!get\_allow\_toggle\_display() && !ui\_root\_menu) {
-
-**return GO\_BACK;**
+**return SELECT_ITEM;**
 
                 }
 
-            case KEY\_BACK:
+                if (!get_allow_toggle_display() && !ui_root_menu) {
 
-                if (!ui\_root\_menu) {
+**return GO_BACK;**
 
-**return GO\_BACK;**
+                }
+
+            case KEY_BACK:
+
+                if (!ui_root_menu) {
+
+**return GO_BACK;**
 
                 }
 
@@ -239,7 +239,7 @@ int device\_handle\_key(int key\_code, int visible) {
 
     }
 
-    return NO\_ACTION;
+    return NO_ACTION;
 
 }
 
@@ -247,47 +247,47 @@ int device\_handle\_key(int key\_code, int visible) {
 
 짤라서 보도록 하겠습니다
 
-case KEY\_LEFTBRACE:
+case KEY_LEFTBRACE:
 
-            case KEY\_ENTER:
+            case KEY_ENTER:
 
-            case BTN\_MOUSE:
+            case BTN_MOUSE:
 
-            case KEY\_CAMERA:
+            case KEY_CAMERA:
 
-            case KEY\_F21:
+            case KEY_F21:
 
-            case KEY\_SEND:
+            case KEY_SEND:
 
-**return SELECT\_ITEM;**
+**return SELECT_ITEM;**
 
-만약 KEY\_XXX가 눌려졌을경우 SELECT\_ITEM을 반환한다 라는 뜻입니다
+만약 KEY_XXX가 눌려졌을경우 SELECT_ITEM을 반환한다 라는 뜻입니다
 
 어떠한 키가 눌려졌는지를 확인한 다음 값을 반환해서 작동하는 방식으로 되어 있지요
 
 그럼 이것을 이용하여 어떤 키가 눌려졌을경우 어떠한 작업을 할지 우리가 직접 정할 수 있습니다
 
-case KEY\_XXX또는 case [버튼의 키코드]를 추가해 주시면 되겠죠?
+case KEY_XXX또는 case [버튼의 키코드]를 추가해 주시면 되겠죠?
 
 키코드는 CWM에서 advanced 부분에 보시면 Key test부분이 있습니다 참고 하시길
 
 또한 소스를 수정하지 않고 BoardConfig.mk을 통해서 소스를 수정 할 수 있습니다
 
-BOARD\_CUSTOM\_RECOVERY\_KEYMAPPING := ../../device/[제조사]/[기기명]/recovery\_keys.c
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/[제조사]/[기기명]/recovery_keys.c
 
-BOARD\_CUSTOM\_RECOVERY\_KEYMAPPING옵션으로 자신이 수정한 key.c를 사용해 주셔도 되지요~
+BOARD_CUSTOM_RECOVERY_KEYMAPPING옵션으로 자신이 수정한 key.c를 사용해 주셔도 되지요~
 
-hPa님의 소스를 보시면 (https://github.com/985hPaKicK/android\_device\_pantech\_ef46l/blob/jellybean/recovery/recovery\_keys.c )
+hPa님의 소스를 보시면 (https://github.com/985hPaKicK/android_device_pantech_ef46l/blob/jellybean/recovery/recovery_keys.c )
 
-if (ui\_get\_showing\_back\_button()) {
+if (ui_get_showing_back_button()) {
 
-                    return SELECT\_ITEM;
+                    return SELECT_ITEM;
 
                 }
 
-                if (!get\_allow\_toggle\_display() && !ui\_root\_menu) {
+                if (!get_allow_toggle_display() && !ui_root_menu) {
 
-                    return GO\_BACK;
+                    return GO_BACK;
 
                 }
 

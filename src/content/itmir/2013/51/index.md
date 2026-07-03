@@ -70,19 +70,19 @@ sudo apt-get install sun-java6-jdk
 
 cd ~/arm-eabi-4.4.0/bin
 
-chmod +x ./\*
+chmod +x ./*
 
 cd ~/arm-eabi-4.4.0/arm-eabi/bin
 
-chmod +x ./\*
+chmod +x ./*
 
 cd ~/arm-eabi-4.4.0/libexec/gcc/arm-eabi/4.4.0
 
-chmod +x ./\*
+chmod +x ./*
 
 cd ~/arm-eabi-4.4.0/libexec/gcc/arm-eabi/4.4.0/install-tools
 
-chmod +x ./\*
+chmod +x ./*
 
 모두다 쳐주세요 ㄷ
 
@@ -92,11 +92,11 @@ gedit ~/.bashrc
 
 를 입력하시면 편집기가 뜰탠대요 맨밑에
 
-export JAVA\_HOME=/usr/lib/jvm/java-1.6.0-sun
+export JAVA_HOME=/usr/lib/jvm/java-1.6.0-sun
 
-export ANDROID\_JAVA\_HOME=$JAVA\_HOME
+export ANDROID_JAVA_HOME=$JAVA_HOME
 
-export CROSS\_COMPILE=$HOME/arm-eabi-4.4.0/bin/arm-eabi-
+export CROSS_COMPILE=$HOME/arm-eabi-4.4.0/bin/arm-eabi-
 
 export PATH=$PATH:$HOME/arm-eabi-4.4.0/bin/
 

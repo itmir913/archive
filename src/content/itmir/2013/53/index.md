@@ -31,17 +31,17 @@ Kconfig
 
 Makefile
 
--obj-$(CONFIG\_RAMZSWAP)+= ramzswap/
+-obj-$(CONFIG_RAMZSWAP)+= ramzswap/
 
-+obj-$(CONFIG\_ZRAM) += zram/
++obj-$(CONFIG_ZRAM) += zram/
 
-+obj-$(CONFIG\_XVMALLOC) += zram/
++obj-$(CONFIG_XVMALLOC) += zram/
 
-+obj-$(CONFIG\_ZCACHE) += zcache/
++obj-$(CONFIG_ZCACHE) += zcache/
 
 그뒤
 
-.config의 옵션인 CONFI\_ZRAM, CONFIG\_XVMALLOC,CONFIG\_ZCACHE을 활성화 해주시거나 또는  
+.config의 옵션인 CONFI_ZRAM, CONFIG_XVMALLOC,CONFIG_ZCACHE을 활성화 해주시거나 또는  
   
 menuconfig에서
 
@@ -78,7 +78,7 @@ Zram을 활성화 시키기 위해선
 있다면 터미널에물레이터에 su를 입력합니다  
   
 그리고 입력해 주세요 ㅋ  
-echo $((50\*1024\*1024)) > /sys/block/zram0/disksize   
+echo $((50*1024*1024)) > /sys/block/zram0/disksize   
   
 50Mb를 지정한겁니다 수치를 바꾸고 싶으신 분들은 수치를 바꾸셔도 무방합니다
 

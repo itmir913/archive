@@ -16,7 +16,7 @@ original_url: "https://itmir.tistory.com/312"
 
 사용방법은 아래와 같습니다
 
-1)apktool4.1\_armhf.zip또는 apktool4.1\_armel.zip을 받아 압축을 푼다음 /sdcard에 저장하세요
+1)apktool4.1_armhf.zip또는 apktool4.1_armel.zip을 받아 압축을 푼다음 /sdcard에 저장하세요
 
 2)압축을 푼다음 apktool4.1.apk을 설치하세요
 

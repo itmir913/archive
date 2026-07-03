@@ -72,7 +72,7 @@ private void setSpan()
 
   Spannable span = (Spannable) textView.getText();
 
-span.setSpan(clickSpan, start, end, Spannable.SPAN\_INCLUSIVE\_INCLUSIVE);
+span.setSpan(clickSpan, start, end, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
 
 }
 

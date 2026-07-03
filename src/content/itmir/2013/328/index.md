@@ -14,17 +14,17 @@ original_url: "https://itmir.tistory.com/328"
 
 private void showNotify(Context context) {
 
-NotificationManager nm = (NotificationManager)context.getSystemService(Context.NOTIFICATION\_SERVICE);
+NotificationManager nm = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
 
 // 시스탬 서비스를 호출한다
 
-Notification notification = new Notification(R.drawable.ic\_launcher, "알림이 뜰때 표시", System.currentTimeMillis());
+Notification notification = new Notification(R.drawable.ic_launcher, "알림이 뜰때 표시", System.currentTimeMillis());
 
 // 아이콘을 지정한다, 카카오톡의 "새로운 메세지가 도착했습니다"가 잠깐 표시되는것 같은거
 
-notification.flags = Notification.FLAG\_ONGOING\_EVENT;
+notification.flags = Notification.FLAG_ONGOING_EVENT;
 
-// FLAG\_AUTO\_CANCEL:은 알림(확인하면 지워짐), FLAG\_ONGOING\_EVENT은 진행중표시
+// FLAG_AUTO_CANCEL:은 알림(확인하면 지워짐), FLAG_ONGOING_EVENT은 진행중표시
 
 PendingIntent contentIntent = PendingIntent.getActivity(context, 0, new Intent(context, MainActivity.class), 0);
 

@@ -24,7 +24,7 @@ original_url: "https://itmir.tistory.com/649"
 
 ![](./images/IMG_4189.jpg)
 
-[임베드 콘텐츠: https://play-tv.kakao.com/embed/player/cliplink/v8b58FctctZtcRSShtRZZOU?service=daum\_tistory](https://play-tv.kakao.com/embed/player/cliplink/v8b58FctctZtcRSShtRZZOU?service=daum_tistory)
+[임베드 콘텐츠: https://play-tv.kakao.com/embed/player/cliplink/v8b58FctctZtcRSShtRZZOU?service=daum_tistory](https://play-tv.kakao.com/embed/player/cliplink/v8b58FctctZtcRSShtRZZOU?service=daum_tistory)
 
 오랜만에 잡는거라 머리도 안 돌아가고 UI도 어처피 혼자 쓸거니 대충 코딩하고 그러느라
 

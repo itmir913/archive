@@ -10,7 +10,7 @@ original_url: "https://itmir.tistory.com/45"
 
 이 팁은 Diaz님께서 알려주셨습니다
 
-sys.keep\_app\_1=어플 이름
+sys.keep_app_1=어플 이름
 
 이렇게 빌드프롭에 추가하게 된다면 그 어플은 종료금지가 되게 됩니다
 

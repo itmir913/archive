@@ -8,8 +8,6 @@ draft: false
 original_url: "https://itmir.tistory.com/662"
 ---
 
-## iOS 글쓰기 어플 기능 비교/정리하기
-
 안녕하세요.
 
 앱스토어에는 글쓰기를 지원하는 다양한 앱이 존재합니다. 소설, 시나리오 글쓰기 프로그램의 끝판왕이라고 할 수 있는 Scrivener부터 마크 다운 에디터인 iA Writer까지 다양한 앱을 만나볼 수 있습니다.

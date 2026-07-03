@@ -30,6 +30,6 @@ original_url: "https://itmir.tistory.com/634"
 어서 빨리 구매 기록에 남겨두세요. ㅎㅎ  
   
 Emanuele Floris의 Double Player for Music with Headphones Pro  
-https://appsto.re/kr/Wl\_NM.i  
+https://appsto.re/kr/Wl_NM.i  
   
 정가는 $0.99이라고 합니다.

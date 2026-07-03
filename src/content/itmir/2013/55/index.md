@@ -34,33 +34,33 @@ apk manager로 디컴파일 해줍시다
 
 2. res/vaules 에 들어가서 strings.xml를 엽니다
 
-<string name="settings\_ics\_radio">WIRELESS & NETWORKS</string>
+<string name="settings_ics_radio">WIRELESS & NETWORKS</string>
 
-<string name="settings\_radio\_more">More...</string>
+<string name="settings_radio_more">More...</string>
 
-<string name="settings\_ics\_device">DEVICE</string>
+<string name="settings_ics_device">DEVICE</string>
 
-<string name="settings\_ics\_personal">PERSONAL</string>
+<string name="settings_ics_personal">PERSONAL</string>
 
-<string name="settings\_ics\_system\_cap">SYSTEM</string>
+<string name="settings_ics_system_cap">SYSTEM</string>
 
-<string name="settings\_battery">Battery</string>
+<string name="settings_battery">Battery</string>
 
 이것을 추가하세요
 
 vaules-ko에도 들어가서 strings.xml를 엽니다
 
-<string name="settings\_ics\_radio">무선 및 네트워크</string>
+<string name="settings_ics_radio">무선 및 네트워크</string>
 
-<string name="settings\_radio\_more">더보기...</string>
+<string name="settings_radio_more">더보기...</string>
 
-<string name="settings\_ics\_device">디바이스</string>
+<string name="settings_ics_device">디바이스</string>
 
-<string name="settings\_ics\_personal">개인</string>
+<string name="settings_ics_personal">개인</string>
 
-<string name="settings\_ics\_system\_cap">시스템</string>
+<string name="settings_ics_system_cap">시스템</string>
 
-<string name="settings\_battery">배터리</string>
+<string name="settings_battery">배터리</string>
 
 이 두개의 공통점에서 string name은 마음대로 하셔도 됩니다만 수정하실때 모두 같아야만 합니다
 
@@ -72,7 +72,7 @@ vaules-ko에도 들어가서 strings.xml를 엽니다
 
 이제 좀 중요합니다 Settings.xml을 열어주세요 (잘못하면 설정어플 맛이 갑니다)
 
-<com.android.settings.IconPreferenceScreen android:title="타이틀 string값" android:key="call\_settings" settings:icon="사용될 사진"> <intent android:targetPackage="com.android.settings" android:action="android.intent.action.MAIN" android:targetClass="명령" /> </com.android.settings.IconPreferenceScreen>
+<com.android.settings.IconPreferenceScreen android:title="타이틀 string값" android:key="call_settings" settings:icon="사용될 사진"> <intent android:targetPackage="com.android.settings" android:action="android.intent.action.MAIN" android:targetClass="명령" /> </com.android.settings.IconPreferenceScreen>
 
 이것이 한 구분선 입니다
 
@@ -82,9 +82,9 @@ vaules-ko에도 들어가서 strings.xml를 엽니다
 
 @string/값
 
-입니다 여기서 값은 res/vaules/strings.xml에서 settings\_ics\_radio와 같습니다
+입니다 여기서 값은 res/vaules/strings.xml에서 settings_ics_radio와 같습니다
 
-그렇다면 @string/settings\_ics\_radio 이렇게 작성해서 넣으면 되지요
+그렇다면 @string/settings_ics_radio 이렇게 작성해서 넣으면 되지요
 
 사용될 사진에 들어갈 내용는
 
@@ -110,7 +110,7 @@ Wi-Fi: com.android.settings.wifi.WifiSettings
 
 위 구문을 넣어주시면 됩니다
 
-아까한 방법과 마찬가지로 @string/값에는 settings\_ics\_radio등 아주 위에서 만든것을 넣으시면 됩니다
+아까한 방법과 마찬가지로 @string/값에는 settings_ics_radio등 아주 위에서 만든것을 넣으시면 됩니다
 
 이제 컴파일하신후 적용하시면 됩니다
 

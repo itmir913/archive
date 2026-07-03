@@ -8,8 +8,6 @@ draft: false
 original_url: "https://itmir.tistory.com/385"
 ---
 
-**사용자 어플 (User App)을 시스탬 어플 (System App)으로 변환하기**
-
 **Deodex → Odex**
 
 먼저 이 글은 웃음 투자님의 글을 바탕으로 만들어진 글임을 밝힘니다

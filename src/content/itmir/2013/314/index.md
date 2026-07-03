@@ -8,7 +8,7 @@ draft: false
 original_url: "https://itmir.tistory.com/314"
 ---
 
-[Tmoney\_inapp.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/Tmoney_inapp.apk)
+[Tmoney_inapp.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/Tmoney_inapp.apk)
 
 [Tmoney.z01](https://github.com/itmir913/archive/releases/download/itmir-attachments/Tmoney.z01)
 

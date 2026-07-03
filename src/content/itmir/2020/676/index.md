@@ -26,7 +26,7 @@ original_url: "https://itmir.tistory.com/676"
 
 혹은 아래 첨부파일을 다운받아도 된다. 2020-11-03일자 공식 홈페이지에서 다운받은 파일이다.
 
-[leomoon-dot-com\_leomoon-cpu-v\_win.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/leomoon-dot-com_leomoon-cpu-v_win.zip)
+[leomoon-dot-com_leomoon-cpu-v_win.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/leomoon-dot-com_leomoon-cpu-v_win.zip)
 
 프로그램을 실행하면 아래와 같은 스크린샷이 뜬다.
 
@@ -76,7 +76,7 @@ original_url: "https://itmir.tistory.com/676"
 
 필자는 [이곳](https://blog.notepads.kr/124)의 블로그를 참고하여 맥 카탈리나 iso 파일을 다운로드 받았다.
 
-[unlocker\_v3.0.3.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/unlocker_v3.0.3.zip)
+[unlocker_v3.0.3.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/unlocker_v3.0.3.zip)
 
 VMWare Player 15버전을 설치한다음, unlocker 압축 파일을 다운받고 **관리자 권한**으로 win-install.cmd 파일을 실행한다.
 

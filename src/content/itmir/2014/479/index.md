@@ -33,7 +33,7 @@ TV에서 한번은 들어보셨을거라 생각합니다
 
 미리 들어보시라고 동영상으로 만들어 첨부합니다
 
-[임베드 콘텐츠: https://play-tv.kakao.com/embed/player/cliplink/v7826NSTLNT8bggNb6PEmS0?service=daum\_tistory](https://play-tv.kakao.com/embed/player/cliplink/v7826NSTLNT8bggNb6PEmS0?service=daum_tistory)
+[임베드 콘텐츠: https://play-tv.kakao.com/embed/player/cliplink/v7826NSTLNT8bggNb6PEmS0?service=daum_tistory](https://play-tv.kakao.com/embed/player/cliplink/v7826NSTLNT8bggNb6PEmS0?service=daum_tistory)
 
 이 벨소리는 olleh에서도 받을수 있어요
 

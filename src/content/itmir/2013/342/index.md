@@ -8,7 +8,7 @@ draft: false
 original_url: "https://itmir.tistory.com/342"
 ---
 
-[임베드 콘텐츠: https://play-tv.kakao.com/embed/player/cliplink/v3afdF6t0RttWNN7E45RV4t?service=daum\_tistory](https://play-tv.kakao.com/embed/player/cliplink/v3afdF6t0RttWNN7E45RV4t?service=daum_tistory)
+[임베드 콘텐츠: https://play-tv.kakao.com/embed/player/cliplink/v3afdF6t0RttWNN7E45RV4t?service=daum_tistory](https://play-tv.kakao.com/embed/player/cliplink/v3afdF6t0RttWNN7E45RV4t?service=daum_tistory)
 
 노인은 우리의 미래모습입니다
 

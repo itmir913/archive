@@ -77,7 +77,7 @@ original_url: "https://itmir.tistory.com/110"
 <div class="article">
 
 본문 상단에 광고를 넣고싶다면 여기에 광고 소스를...  
-##\_article\_rep\_desc\_##
+##_article_rep_desc_##
 
 본문 하단에 광고를 넣고싶다면 여기에 광고 소스를...
 
@@ -85,7 +85,7 @@ original_url: "https://itmir.tistory.com/110"
 
 <div class아래에 넣으시면 본문 상단에 광고가 들어가게 되고
 
-##\_article아래에 넣으시게 되면 본문 하단에 광고가 들어가게 됩니다
+##_article아래에 넣으시게 되면 본문 하단에 광고가 들어가게 됩니다
 
 그렇다면 광고 2개를 상단에 *쳐* 넣는 방법은 뭘까요?
 

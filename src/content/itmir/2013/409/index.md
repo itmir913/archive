@@ -170,7 +170,7 @@ collapseActionView는 정보가 부족하여 아직은 저도 모르겠습니다
 
     android:showAsAction="**ifRoom**"
 
-**android:icon**="@drawable/ic\_launcher"
+**android:icon**="@drawable/ic_launcher"
 
     android:title="아이콘 메뉴"/>
 
@@ -182,7 +182,7 @@ collapseActionView는 정보가 부족하여 아직은 저도 모르겠습니다
 
 <item
 
-    android:id="@+id/subMenu\_1"
+    android:id="@+id/subMenu_1"
 
     android:orderInCategory="4"
 
@@ -194,7 +194,7 @@ collapseActionView는 정보가 부족하여 아직은 저도 모르겠습니다
 
         <item
 
-            android:id="@+id/subMenu\_2"
+            android:id="@+id/subMenu_2"
 
             android:orderInCategory="5"
 
@@ -204,7 +204,7 @@ collapseActionView는 정보가 부족하여 아직은 저도 모르겠습니다
 
         <item
 
-            android:id="@+id/subMenu\_3"
+            android:id="@+id/subMenu_3"
 
             android:orderInCategory="6"
 
@@ -282,7 +282,7 @@ item.isCheckable() : 현재 체크가 가능한지 여부를 반환합니다
 
 if(item.getItemId()==R.id.**SimpleMenu**){
 
-    Toast.makeText(this, "기본 메뉴가 터치되었습니다", Toast.LENGTH\_SHORT).show();
+    Toast.makeText(this, "기본 메뉴가 터치되었습니다", Toast.LENGTH_SHORT).show();
 
 }
 
@@ -292,13 +292,13 @@ if(item.getItemId()==R.id.**clickAbleMenu**){
 
 **item.setChecked(false);**
 
-        Toast.makeText(this, "체크가 해제되었습니다", Toast.LENGTH\_SHORT).show();
+        Toast.makeText(this, "체크가 해제되었습니다", Toast.LENGTH_SHORT).show();
 
     }else{
 
 **item.setChecked(true);**
 
-        Toast.makeText(this, "체크 되었습니다", Toast.LENGTH\_SHORT).show();
+        Toast.makeText(this, "체크 되었습니다", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -306,25 +306,25 @@ if(item.getItemId()==R.id.**clickAbleMenu**){
 
 if(item.getItemId()==R.id.**IconMenu**){
 
-    Toast.makeText(this, "아이콘 메뉴가 터치되었습니다", Toast.LENGTH\_SHORT).show();
+    Toast.makeText(this, "아이콘 메뉴가 터치되었습니다", Toast.LENGTH_SHORT).show();
 
 }
 
-if(item.getItemId()==R.id.**subMenu\_2**){
+if(item.getItemId()==R.id.**subMenu_2**){
 
-    Toast.makeText(this, "서브메뉴 2가 터치되었습니다", Toast.LENGTH\_SHORT).show();
+    Toast.makeText(this, "서브메뉴 2가 터치되었습니다", Toast.LENGTH_SHORT).show();
 
 }
 
-if(item.getItemId()==R.id.**subMenu\_3**){
+if(item.getItemId()==R.id.**subMenu_3**){
 
-    Toast.makeText(this, "서브메뉴 3이 터치되었습니다", Toast.LENGTH\_SHORT).show();
+    Toast.makeText(this, "서브메뉴 3이 터치되었습니다", Toast.LENGTH_SHORT).show();
 
 }
 
 if(item.getItemId()==R.id.**actionBarMenu**){
 
-    Toast.makeText(this, "액션바 메뉴가 터치되었습니다", Toast.LENGTH\_SHORT).show();
+    Toast.makeText(this, "액션바 메뉴가 터치되었습니다", Toast.LENGTH_SHORT).show();
 
 }
 
@@ -336,7 +336,7 @@ if(item.getItemId()==R.id.**actionBarMenu**){
 
 여기서 하나 지정하지 않은것이 있습니다
 
-바로 subMenu\_1인데요 이 메뉴는 어처피 눌러도 더보기와 같이 서브적인 메뉴를 띄워주는 역할만 하기 때문에
+바로 subMenu_1인데요 이 메뉴는 어처피 눌러도 더보기와 같이 서브적인 메뉴를 띄워주는 역할만 하기 때문에
 
 특별히 역할이 필요하지 않는 이상은 지정하지 않았습니다
 

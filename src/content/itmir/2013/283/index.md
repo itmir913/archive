@@ -44,9 +44,9 @@ src/(패키지 네임)/MainActivity.java파일입니다.
 
 제 경험상,
 
-res/layout/activity\_main.xml
+res/layout/activity_main.xml
 
-res/layout/fragment\_main\_dummy.xml
+res/layout/fragment_main_dummy.xml
 
 이 두개의 파일은 건들일 필요가 없더군요.
 
@@ -61,7 +61,7 @@ public class MainActivity extends FragmentActivity implements
 ActionBar.TabListener {
 ```
 
-/\*\*
+/**
 
  \* The {@link android.support.v4.view.PagerAdapter} that will provide
 
@@ -79,7 +79,7 @@ ActionBar.TabListener {
 
 SectionsPagerAdapter mSectionsPagerAdapter;
 
-/\*\*
+/**
 
  \* The {@link ViewPager} that will host the section contents.
 
@@ -93,13 +93,13 @@ protected void onCreate(Bundle savedInstanceState) {
 
 super.onCreate(savedInstanceState);
 
-setContentView(R.layout.activity\_main);
+setContentView(R.layout.activity_main);
 
 // Set up the action bar.
 
 final ActionBar actionBar = getActionBar();
 
-actionBar.setNavigationMode(ActionBar.NAVIGATION\_MODE\_TABS);
+actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
 // Create the adapter that will return a fragment for each of the three
 
@@ -199,7 +199,7 @@ FragmentTransaction fragmentTransaction) {
 
 }
 
-/\*\*
+/**
 
  \* A {@link FragmentPagerAdapter} that returns a fragment corresponding to
 
@@ -233,7 +233,7 @@ Fragment fragment = new DummySectionFragment();
 
 Bundle args = new Bundle();
 
-args.putInt(DummySectionFragment.ARG\_SECTION\_NUMBER, position + 1);
+args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
 
 fragment.setArguments(args);
 
@@ -261,15 +261,15 @@ switch (position) {
 
 case 0:
 
-return getString(R.string.title\_section1).toUpperCase(l);
+return getString(R.string.title_section1).toUpperCase(l);
 
 case 1:
 
-return getString(R.string.title\_section2).toUpperCase(l);
+return getString(R.string.title_section2).toUpperCase(l);
 
 case 2:
 
-return getString(R.string.title\_section3).toUpperCase(l);
+return getString(R.string.title_section3).toUpperCase(l);
 
 }
 
@@ -279,7 +279,7 @@ return null;
 
 }
 
-/\*\*
+/**
 
 \* A dummy fragment representing a section of the app, but that simply
 
@@ -289,7 +289,7 @@ return null;
 
 public static class DummySectionFragment extends Fragment {
 
-/\*\*
+/**
 
 \* The fragment argument representing the section number for this
 
@@ -297,7 +297,7 @@ public static class DummySectionFragment extends Fragment {
 
  \*/
 
-public static final String ARG\_SECTION\_NUMBER = "section\_number";
+public static final String ARG_SECTION_NUMBER = "section_number";
 
 public DummySectionFragment() {
 
@@ -309,17 +309,17 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container,
 
 Bundle savedInstanceState) {
 
-View rootView = inflater.inflate(R.layout.fragment\_main\_dummy,
+View rootView = inflater.inflate(R.layout.fragment_main_dummy,
 
 container, false);
 
 TextView dummyTextView = (TextView) rootView
 
-.findViewById(R.id.section\_label);
+.findViewById(R.id.section_label);
 
 dummyTextView.setText(Integer.toString(getArguments().getInt(
 
-ARG\_SECTION\_NUMBER)));
+ARG_SECTION_NUMBER)));
 
 return rootView;
 
@@ -381,13 +381,13 @@ DummySectionFragment로 탭을 구현할 수도 있지만, onCreateView() 메소
 
 마지막 파란색 부분은 탭의 이름입니다.
 
-return getString(**R.string.title\_section1**).toUpperCase(l);
+return getString(**R.string.title_section1**).toUpperCase(l);
 
 굵고 밑줄친 부분이 탭의 이름이 되는대요 이부분은 어떻게 이루어져 있냐,
 
 **R**(R.java파일을 참조합니다)**.string**(R파일중 string부분을 참조합니다, 즉 values/string.xml을 참조합니다)
 
-**.title\_section1**(title\_section1이란 이름의 값을 반환합니다)
+**.title_section1**(title_section1이란 이름의 값을 반환합니다)
 
 이렇게 생각하시면됩니다. 저도 이렇게 생각했고요.
 
@@ -509,7 +509,7 @@ button1 = (Button) view.findViewById(R.id.button1);
 
 이렇게 구현하시면 쉽게 작동됩니다. ㅎㅎ
 
-위치는 View view = inflater.inflate(R.layout.activity\_tab1, null);와 return view;사이에 넣어주세요.
+위치는 View view = inflater.inflate(R.layout.activity_tab1, null);와 return view;사이에 넣어주세요.
 
 실행 스샷
 

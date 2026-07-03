@@ -34,11 +34,11 @@ original_url: "https://itmir.tistory.com/466"
 
 1. 기타 코드 + 노래
 
-[임베드 콘텐츠: https://play-tv.kakao.com/embed/player/cliplink/vc88dMAMVGv5gDDMKVgGgVK?service=daum\_tistory](https://play-tv.kakao.com/embed/player/cliplink/vc88dMAMVGv5gDDMKVgGgVK?service=daum_tistory)
+[임베드 콘텐츠: https://play-tv.kakao.com/embed/player/cliplink/vc88dMAMVGv5gDDMKVgGgVK?service=daum_tistory](https://play-tv.kakao.com/embed/player/cliplink/vc88dMAMVGv5gDDMKVgGgVK?service=daum_tistory)
 
 2. in 영화 + 기타
 
-[임베드 콘텐츠: https://play-tv.kakao.com/embed/player/cliplink/ve9faZ6SSMBHvnnHdB6KKBK?service=daum\_tistory](https://play-tv.kakao.com/embed/player/cliplink/ve9faZ6SSMBHvnnHdB6KKBK?service=daum_tistory)
+[임베드 콘텐츠: https://play-tv.kakao.com/embed/player/cliplink/ve9faZ6SSMBHvnnHdB6KKBK?service=daum_tistory](https://play-tv.kakao.com/embed/player/cliplink/ve9faZ6SSMBHvnnHdB6KKBK?service=daum_tistory)
 
 마지막에 하이코드를 잡아야 하는데, 손가락이 아파서 실수 조금 한거 같아요..;;
 

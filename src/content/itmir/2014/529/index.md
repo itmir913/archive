@@ -203,8 +203,8 @@ mPullRefreshListView.setReleaseLabel(releaseLabel, mode);
 
 - mPullRefreshListView.setMode(mode);
 - Mode.BOTH : 위 아래 둘다 사용
-- Mode.PULL\_FROM\_START : 위만 사용
-- Mode.PULL\_FROM\_END : 아래만 사용
+- Mode.PULL_FROM_START : 위만 사용
+- Mode.PULL_FROM_END : 아래만 사용
 
 마지막으로 사용가능한 다양한 API를 살펴보도록 하겠습니다
 

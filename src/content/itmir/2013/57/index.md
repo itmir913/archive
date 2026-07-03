@@ -95,7 +95,7 @@ fastboot 드라이버 설치방법
 ![](./images/6.gif)  
 찾아보기를 눌러서  
 ![](./images/7.gif)  
-Fastboot Drivers폴더에 들어간뒤 android\_winusb를 클릭/열기 해주시면 완료됩니다  
+Fastboot Drivers폴더에 들어간뒤 android_winusb를 클릭/열기 해주시면 완료됩니다  
 ![](./images/8.gif)
 
 그럼 설치가 끝나게 됩니다

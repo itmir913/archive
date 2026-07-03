@@ -44,7 +44,7 @@ original_url: "https://itmir.tistory.com/494"
 
 ![](./images/3.png)
 
-폴더의 이름은 system.img\_dump로 지정하였습니다
+폴더의 이름은 system.img_dump로 지정하였습니다
 
 폴더 안에서 쉬프트키(Shift)를 누른후 마우스 오른쪽을 클릭하시면 여기서 명령 창 열기(W)가 나타납니다
 

@@ -8,8 +8,6 @@ draft: false
 original_url: "https://itmir.tistory.com/389"
 ---
 
-Preference (프리퍼런스) 데이터 백업 복원 하기
-
 Preference를 백업하기 위한 코드 입니다
 
 private boolean saveSharedPreferencesToFile(File dst) {
@@ -24,7 +22,7 @@ private boolean saveSharedPreferencesToFile(File dst) {
 
         SharedPreferences pref =
 
-                            getSharedPreferences(prefName, MODE\_PRIVATE);
+                            getSharedPreferences(prefName, MODE_PRIVATE);
 
         output.writeObject(pref.getAll());
 
@@ -74,7 +72,7 @@ private boolean loadSharedPreferencesFromFile(File src) {
 
         input = new ObjectInputStream(new FileInputStream(src));
 
-            Editor prefEdit = getSharedPreferences(prefName, MODE\_PRIVATE).edit();
+            Editor prefEdit = getSharedPreferences(prefName, MODE_PRIVATE).edit();
 
             prefEdit.clear();
 

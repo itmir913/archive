@@ -10,7 +10,7 @@ original_url: "https://itmir.tistory.com/604"
 
 오류 정보
 
-Plugin is too old, please update to a more recent version, or set ANDROID\_DAILY\_OVERRIDE environment variable to
+Plugin is too old, please update to a more recent version, or set ANDROID_DAILY_OVERRIDE environment variable to
 
 Error:Could not find com.android.tools.build:gradle:2.0.0.
 

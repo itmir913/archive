@@ -28,11 +28,11 @@ original_url: "https://itmir.tistory.com/22"
 
 2. 자신이 만든 logo.rle를 포팅하려는 기기의 소스폴더안에 넣습니다
 
-3. device\_기기명.mk에 다음과 같은 내용을 추가합니다.
+3. device_기기명.mk에 다음과 같은 내용을 추가합니다.
 
 # Logo.rle
 
-PRODUCT\_COPY\_FILES += \
+PRODUCT_COPY_FILES += \
 
 device/제조사/기기명/logo.rle:root/logo.rle \
 
@@ -40,7 +40,7 @@ device/제조사/기기명/logo.rle:root/initlogo.rle
 
 # Custom Graphics
 
-BOARD\_CUSTOM\_GRAPHICS := ../../../device/제조사/기기명/graphics.c
+BOARD_CUSTOM_GRAPHICS := ../../../device/제조사/기기명/graphics.c
 
 4. make clobber을 해줍니다.
 

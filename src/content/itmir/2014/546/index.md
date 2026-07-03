@@ -114,7 +114,7 @@ original_url: "https://itmir.tistory.com/546"
 
 어이없게 죽었던적도 있었으니... 너무 욕하진 말아주세요
 
-[임베드 콘텐츠: https://play-tv.kakao.com/embed/player/cliplink/v048c2X27UUd2YX9R1D1x5c?service=daum\_tistory](https://play-tv.kakao.com/embed/player/cliplink/v048c2X27UUd2YX9R1D1x5c?service=daum_tistory)
+[임베드 콘텐츠: https://play-tv.kakao.com/embed/player/cliplink/v048c2X27UUd2YX9R1D1x5c?service=daum_tistory](https://play-tv.kakao.com/embed/player/cliplink/v048c2X27UUd2YX9R1D1x5c?service=daum_tistory)
 
 ### 다운로드
 

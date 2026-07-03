@@ -74,7 +74,7 @@ Overview에 접속하시면 Project Number가 있습니다
 
 이 숫자를 메모해 두시거나 복사해 주세요
 
-저 숫자는 **PROJECT\_ID**입니다
+저 숫자는 **PROJECT_ID**입니다
 
 ![](./images/7.png)
 
@@ -102,7 +102,7 @@ APIs & auth의 Credentials에 들어가 주세요
 
 이곳의 API Key도 따로 복사해 주세요
 
-이 API Key는 **GOOGLE\_API\_KEY**입니다
+이 API Key는 **GOOGLE_API_KEY**입니다
 
 ![](./images/11.png)
 

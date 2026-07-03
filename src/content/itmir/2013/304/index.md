@@ -3,7 +3,7 @@ title: "천재교육에게 우편을 보내다"
 date: "2013-08-12T18:22:11+09:00"
 category: "DailyLife"
 tags: []
-description: "직접만든 \"천재교육 중3 영어\" 어플을 마켓에 올리기전 천재교육(주)에게 저작물 사용 요청을 하여 허락을 받아야만 합니다."
+description: "직접만든 "천재교육 중3 영어" 어플을 마켓에 올리기전 천재교육(주)에게 저작물 사용 요청을 하여 허락을 받아야만 합니다."
 draft: false
 original_url: "https://itmir.tistory.com/304"
 ---

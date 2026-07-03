@@ -38,9 +38,9 @@ getPackageManager().setComponentEnabledSetting(
 
     componentToDisable,
 
-PackageManager.COMPONENT\_ENABLED\_STATE\_DISABLED,
+PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
 
-PackageManager.DONT\_KILL\_APP);
+PackageManager.DONT_KILL_APP);
 
 두번째 예제
 
@@ -48,9 +48,9 @@ PackageManager pm = getPackageManager();
 
 pm.setApplicationEnabledSetting("com.example.app",
 
-    PackageManager.COMPONENT\_ENABLED\_STATE\_DISABLED,
+    PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
 
-PackageManager.DONT\_KILL\_APP);
+PackageManager.DONT_KILL_APP);
 
 자신의 어플(this)외 타 어플의 아이콘을 숨기려고 하면 퍼미션 오류가 나타납니다
 

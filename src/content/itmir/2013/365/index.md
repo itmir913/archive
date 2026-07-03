@@ -3,7 +3,7 @@ title: "#19 어플에서 진동을 사용하는 2가지 방법"
 date: "2013-10-28T19:21:48+09:00"
 category: "Android/App"
 tags: []
-description: "허... 벌서 19번이라니; 20번대 강좌부터는 조금 복잡한 쓰래드랑 핸들러같은 \"소스\"위주로 배울 예정입니다"
+description: "허... 벌서 19번이라니; 20번대 강좌부터는 조금 복잡한 쓰래드랑 핸들러같은 "소스"위주로 배울 예정입니다"
 draft: false
 original_url: "https://itmir.tistory.com/365"
 ---
@@ -72,17 +72,17 @@ vibrate는 두가지 소스가 있죠
 
     android:id="@+id/button1"
 
-    android:layout\_width="wrap\_content"
+    android:layout_width="wrap_content"
 
-    android:layout\_height="wrap\_content"
+    android:layout_height="wrap_content"
 
-    android:layout\_alignParentTop="true"
+    android:layout_alignParentTop="true"
 
-    android:layout\_centerHorizontal="true"
+    android:layout_centerHorizontal="true"
 
-    android:layout\_marginTop="50dp"
+    android:layout_marginTop="50dp"
 
-    android:onClick="Vibrator\_basic"
+    android:onClick="Vibrator_basic"
 
     android:text="일반 진동" />
 
@@ -90,17 +90,17 @@ vibrate는 두가지 소스가 있죠
 
     android:id="@+id/button2"
 
-    android:layout\_width="wrap\_content"
+    android:layout_width="wrap_content"
 
-    android:layout\_height="wrap\_content"
+    android:layout_height="wrap_content"
 
-    android:layout\_alignLeft="@+id/button1"
+    android:layout_alignLeft="@+id/button1"
 
-    android:layout\_below="@+id/button1"
+    android:layout_below="@+id/button1"
 
-    android:layout\_marginTop="20dp"
+    android:layout_marginTop="20dp"
 
-    android:onClick="Vibrator\_pattern"
+    android:onClick="Vibrator_pattern"
 
     android:text="패턴 진동" />
 
@@ -120,7 +120,7 @@ Vibrator는 안드로이드에서 진동을 담당하는 객체입니다 (객체
 
 onCreate() 메소드 안에는 다음 한줄을 추가해 주세요
 
-vide = (Vibrator) getSystemService(Context.VIBRATOR\_SERVICE);
+vide = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
 진동은 시스탬 서비스의 한 종류 이므로 이렇게 바로 불러오는 것만으로도 바로 사용이 가능합니다
 
@@ -128,9 +128,9 @@ vide = (Vibrator) getSystemService(Context.VIBRATOR\_SERVICE);
 
 이제 Vibrator의 사용법을 알아볼까 합니다
 
-첫번째 일반 진동버튼에 정의된 onClick은 Vibrator\_basic이므로 메소드 이름을 Vibrator\_basic으로 만들어 봅시다
+첫번째 일반 진동버튼에 정의된 onClick은 Vibrator_basic이므로 메소드 이름을 Vibrator_basic으로 만들어 봅시다
 
-public void Vibrator\_basic(View v){
+public void Vibrator_basic(View v){
 
 }
 
@@ -172,9 +172,9 @@ A. 20번대나 30번대 강좌에서 배울예정인 알람(일정 시간후에 
 
 꼭 숙지하세요
 
-그다음 두번째 버튼의 onClick은 Vibrator\_pattern입니다 그러므로 이름이 Vibrator\_pattern인 메소드를 만들어 봅시다
+그다음 두번째 버튼의 onClick은 Vibrator_pattern입니다 그러므로 이름이 Vibrator_pattern인 메소드를 만들어 봅시다
 
-public void Vibrator\_pattern(View v){
+public void Vibrator_pattern(View v){
 
 }
 

@@ -34,7 +34,7 @@ Groove를 사용하려면 Media Feature Pack을 설치해야 합니다.
 
 그래서 수소문 끝에 이 Media Pack을 재설치하는 방법을 찾았습니다.
 
-[http://answers.microsoft.com/ko-kr/windows/forum/windows\_10-windows\_install/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%8810-kb3010081/ec0cd22e-49e0-49f6-b8c8-871fe2aaabec](http://answers.microsoft.com/ko-kr/windows/forum/windows_10-windows_install/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%8810-kb3010081/ec0cd22e-49e0-49f6-b8c8-871fe2aaabec?auth=1)
+[http://answers.microsoft.com/ko-kr/windows/forum/windows_10-windows_install/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%8810-kb3010081/ec0cd22e-49e0-49f6-b8c8-871fe2aaabec](http://answers.microsoft.com/ko-kr/windows/forum/windows_10-windows_install/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%8810-kb3010081/ec0cd22e-49e0-49f6-b8c8-871fe2aaabec?auth=1)
 
 원리는 레지스트리 상속을 통해 수정 권한을 얻은 뒤, Media Pack과 관련된 키값을 제거해서 업데이트가 설치되지 않은 상태로 속여(아마도..?) 재설치 하는 방법으로 생각됩니다.
 

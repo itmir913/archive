@@ -12,7 +12,7 @@ original_url: "https://itmir.tistory.com/75"
 
 smartass2 추가가 안되었기에 다시 수정해본뒤 컴파일 ㅇㅅㅇ
 
-그런대 make.sh는 컴파일 할때 나오는 build\_ef30지우면 안될듯 합니다
+그런대 make.sh는 컴파일 할때 나오는 build_ef30지우면 안될듯 합니다
 
 안지우고 하니까 시간이 확줄어버린;;
 

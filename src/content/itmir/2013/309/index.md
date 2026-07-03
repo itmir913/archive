@@ -32,15 +32,15 @@ int로 형변환을 하면 됩니다.
 
 > (1) 각 변에 10을 곱합니다
 >
-> 0.0 <= Math.random() \* 10 < 10.0
+> 0.0 <= Math.random() * 10 < 10.0
 >
 > (2) 각 변을 int로 형변환 합니다
 >
-> 0 <= (int)Math.random() \*10 <10
+> 0 <= (int)Math.random() *10 <10
 >
 > (3) 각 변에 1을 더합니다
 >
-> 1 <= (int)Math.random() \*10 +1 < 11
+> 1 <= (int)Math.random() *10 +1 < 11
 
 이렇게 되면 원하는 대로 1부터 10까지의 정수가 반환됩니다.
 
@@ -50,7 +50,7 @@ int로 형변환을 하면 됩니다.
 
 > double rand = Math.random();
 >
-> rand = rand \* 10;
+> rand = rand * 10;
 >
 > int num = (int)rand;
 >
@@ -58,7 +58,7 @@ int로 형변환을 하면 됩니다.
 >
 > 간단히 줄여보면
 >
-> int num= ((int)(Math.random() \* 10));
+> int num= ((int)(Math.random() * 10));
 >
 > num++;
 

@@ -10,7 +10,7 @@ original_url: "https://itmir.tistory.com/83"
 
 BFQ스케쥴러 소스 찾아서 슬쩍 가져온 ㅋㅋㅋ
 
-cpu\_freq도 슬쩍...
+cpu_freq도 슬쩍...
 
 -2가 새로 주어온 소스 (BFQ부분만 뜯어옴)
 

@@ -40,7 +40,7 @@ original_url: "https://itmir.tistory.com/383"
 
 PreView
 
-[임베드 콘텐츠: https://play-tv.kakao.com/embed/player/cliplink/vdfactWZ7IiIl117jtit181?service=daum\_tistory](https://play-tv.kakao.com/embed/player/cliplink/vdfactWZ7IiIl117jtit181?service=daum_tistory)
+[임베드 콘텐츠: https://play-tv.kakao.com/embed/player/cliplink/vdfactWZ7IiIl117jtit181?service=daum_tistory](https://play-tv.kakao.com/embed/player/cliplink/vdfactWZ7IiIl117jtit181?service=daum_tistory)
 
 미르의 소스 최적화 실력으로 메모리 점유율 최적화
 

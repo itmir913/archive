@@ -18,9 +18,9 @@ original_url: "https://itmir.tistory.com/71"
 
 여기 들어가면 있는 make.sh부분이 베가s가 아니라 미라크a에 맞는 부분으로 수정해야 하는대
 
-readme파일에는 없어서 고민하던중 build\_kernel.sh파일을 보니까 저 부분이 있어서 같다 붙혔습니다 ㅋㅋ
+readme파일에는 없어서 고민하던중 build_kernel.sh파일을 보니까 저 부분이 있어서 같다 붙혔습니다 ㅋㅋ
 
-그리고 ./build\_kernel.sh를 하면 커널 폴더속에 zImage가 생기는대 make.sh를 보면 합치는 명령어도 있더라고요 그래서 필요없는 부분 지우고 아에 갈아 엎었습니다 ㅋㅋ
+그리고 ./build_kernel.sh를 하면 커널 폴더속에 zImage가 생기는대 make.sh를 보면 합치는 명령어도 있더라고요 그래서 필요없는 부분 지우고 아에 갈아 엎었습니다 ㅋㅋ
 
 하하;; 또 언제 컴파일 완성될까요?ㅋㅋ
 

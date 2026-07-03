@@ -214,7 +214,7 @@ securityXOR.getSecurityXOR("JAR FILE", 251) : 군⒪쉿렙
 
 --File
 
-securityXOR.securityFileXOR(new File("C:/java/test.txt"), new File("C:/java/test\_xor.txt"), 8547)
+securityXOR.securityFileXOR(new File("C:/java/test.txt"), new File("C:/java/test_xor.txt"), 8547)
 
 Success : true, Fail : false
 
@@ -268,7 +268,7 @@ securityXOR.getIsFileSize() : 967356byte(바이트)
 
 --File
 
-securityXOR.securityFileXOR(new File("C:/java/test.txt"), new File("C:/java/test\_xor.txt"), 8547)
+securityXOR.securityFileXOR(new File("C:/java/test.txt"), new File("C:/java/test_xor.txt"), 8547)
 
 Success : true, Fail : false
 

@@ -106,7 +106,7 @@ input#tab3:checked ~ .labels>label[for="tab3"] {
 
 }
 
-.tab\_container {
+.tab_container {
 
   clear: both;
 
@@ -124,17 +124,17 @@ input#tab3:checked ~ .labels>label[for="tab3"] {
 
 }
 
-.tabs>input[type="radio"], .tabs .tab\_content {
+.tabs>input[type="radio"], .tabs .tab_content {
 
   display: none;
 
 }
 
-input#tab1:checked ~ .tab\_container>#tab1C,
+input#tab1:checked ~ .tab_container>#tab1C,
 
-input#tab2:checked ~ .tab\_container>#tab2C,
+input#tab2:checked ~ .tab_container>#tab2C,
 
-input#tab3:checked ~ .tab\_container>#tab3C {
+input#tab3:checked ~ .tab_container>#tab3C {
 
   display:block;
 
@@ -242,7 +242,7 @@ input#tab1:checked ~ .labels>label[for="tab1"],input#tab2:checked ~ .labels>labe
 
 }
 
-.tab\_container {
+.tab_container {
 
   clear: both;
 
@@ -260,7 +260,7 @@ input#tab1:checked ~ .labels>label[for="tab1"],input#tab2:checked ~ .labels>labe
 
 }
 
-.tabs>input[type="radio"],.tabs .tab\_content {
+.tabs>input[type="radio"],.tabs .tab_content {
 
   display: none;
 
@@ -276,13 +276,13 @@ input#tab1:checked ~ .labels>label[for="tab1"],input#tab2:checked ~ .labels>labe
 
 }
 
-input[name="tabs"]:checked ~ .tab\_container>.notAvailable {
+input[name="tabs"]:checked ~ .tab_container>.notAvailable {
 
   display: none;
 
 }
 
-input#tab1:checked ~ .tab\_container>#tab1C,input#tab2:checked ~ .tab\_container>#tab2C,input#tab3:checked ~ .tab\_container>#tab3C {
+input#tab1:checked ~ .tab_container>#tab1C,input#tab2:checked ~ .tab_container>#tab2C,input#tab3:checked ~ .tab_container>#tab3C {
 
   display: block;
 

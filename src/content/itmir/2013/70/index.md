@@ -14,7 +14,7 @@ zImage 빌드와 모듈도 따로 나왔습니다.
 
 명령어는
 
-./build\_kernel.sh
+./build_kernel.sh
 
 로 readme파일에 있던것 처럼 같은 명령어를 사용하였습니다.
 

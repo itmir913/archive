@@ -44,13 +44,13 @@ warning: CRLF will be replaced by LF in build.gradle.
 
 The file will have its original line endings in your working directory.
 
-**D:\Android\AndroidStudio\WondangHighSchool>git commit -m "Plugin is too old, please update to a more recent version, or set ANDROID\_DAILY\_OVERRIDE environment variable"**
+**D:\Android\AndroidStudio\WondangHighSchool>git commit -m "Plugin is too old, please update to a more recent version, or set ANDROID_DAILY_OVERRIDE environment variable"**
 
 [master warning: CRLF will be replaced by LF in build.gradle.
 
 The file will have its original line endings in your working directory.
 
-99e0db2] Plugin is too old, please update to a more recent version, or set ANDROID\_DAILY\_OVERRIDE environment variable
+99e0db2] Plugin is too old, please update to a more recent version, or set ANDROID_DAILY_OVERRIDE environment variable
 
 warning: CRLF will be replaced by LF in build.gradle.
 

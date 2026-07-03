@@ -66,7 +66,7 @@ original_url: "https://itmir.tistory.com/598"
 
 내용을 모두 지워주고 아래 박스의 스크립트를 붙혀넣기 해주세요
 
-var SCRIPT\_PROP = PropertiesService.getScriptProperties(); // new property service
+var SCRIPT_PROP = PropertiesService.getScriptProperties(); // new property service
 
 // If you don't want to expose either GET or POST methods you can comment out the appropriate function
 
@@ -98,17 +98,17 @@ function handleResponse(e) {
 
   try {
 
-    var SHEET\_NAME = e.parameter["sheet\_name"];
+    var SHEET_NAME = e.parameter["sheet_name"];
 
     // next set where we write the data - you could write to multiple/alternate destinations
 
-    var doc = SpreadsheetApp.openById(SCRIPT\_PROP.getProperty("key"));
+    var doc = SpreadsheetApp.openById(SCRIPT_PROP.getProperty("key"));
 
-    var sheet = doc.getSheetByName(SHEET\_NAME);
+    var sheet = doc.getSheetByName(SHEET_NAME);
 
-    // we'll assume header is in row 1 but you can override with header\_row in GET/POST data
+    // we'll assume header is in row 1 but you can override with header_row in GET/POST data
 
-    var headRow = e.parameter.header\_row || 1;
+    var headRow = e.parameter.header_row || 1;
 
     var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
 
@@ -166,7 +166,7 @@ function setup() {
 
   var doc = SpreadsheetApp.getActiveSpreadsheet();
 
-  SCRIPT\_PROP.setProperty("key", doc.getId());
+  SCRIPT_PROP.setProperty("key", doc.getId());
 
 }
 
@@ -174,11 +174,11 @@ function setup() {
 
 위 박스의 코드는 시트 이름을 정의하지 않습니다.
 
-그대신 한가지 차이점이 있다면 html post의 sheet\_name을 가져옵니다.
+그대신 한가지 차이점이 있다면 html post의 sheet_name을 가져옵니다.
 
 그래서 시트를 많이 만든뒤 각각의 시트에 html post를 따로 넣고 싶다면
 
-sheet\_name만 바꿔서 post를 날려주면 됩니다.
+sheet_name만 바꿔서 post를 날려주면 됩니다.
 
 ![](./images/googlesheets_6.png)
 

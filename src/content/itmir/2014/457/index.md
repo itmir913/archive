@@ -97,15 +97,15 @@ Notification notification = new Notification(icon, tickerText, when);
 
 플래그는 아래가 있는데요 보통 일반 알림인지, 진행중 알림인지 선택할때 사용합니다
 
-- FLAG\_AUTO\_CANCEL : 알림을 터치하면 사라짐
-- FLAG\_ONGOING\_EVENT : 진행중 알림
+- FLAG_AUTO_CANCEL : 알림을 터치하면 사라짐
+- FLAG_ONGOING_EVENT : 진행중 알림
 
 4번째줄의 notification.defaults는 있어도 되고 없어도 됩니다
 
 전 소리와 진동을 사용할것이기 때문에 저런 속성을 주었고요 진동만, 또는 소리만 하는 방법은 아래와 같아요
 
-- notification.defaults = Notification.DEFAULT\_SOUND ;
-- notification.defaults = Notification.DEFAULT\_VIBRATE ;
+- notification.defaults = Notification.DEFAULT_SOUND ;
+- notification.defaults = Notification.DEFAULT_VIBRATE ;
 
 그 아래의 number는 미확인 알림의 개수라고 생각하시면 됩니다
 
@@ -113,12 +113,12 @@ Notification notification = new Notification(icon, tickerText, when);
 
 6번째 줄의 PendingIntent는 자세하게 설명은 힘드나 알림을 터치하면 실행할 액티비티(또는 서비스)를 지정해 주고 있어요
 
-마지막의 PendingIntent.FLAG\_UPDATE\_CURRENT에 대해 조금 보충해 드리자면
+마지막의 PendingIntent.FLAG_UPDATE_CURRENT에 대해 조금 보충해 드리자면
 
-- FLAG\_CANCEL\_CURRENT : 이전에 생성한 PendingIntent 는 취소하고 새롭게 만듭니다
-- FLAG\_NO\_CREATE : 생성된 PendingIntent를 반환하여 재사용 합니다
-- FLAG\_ONE\_SHOT : 이 flag 로 생성한 PendingIntent는 일회용 입니다
-- FLAG\_UPDATE\_CURRENT : 이미 생성된 PendingIntent가 존재하면 내용을 변경합니다
+- FLAG_CANCEL_CURRENT : 이전에 생성한 PendingIntent 는 취소하고 새롭게 만듭니다
+- FLAG_NO_CREATE : 생성된 PendingIntent를 반환하여 재사용 합니다
+- FLAG_ONE_SHOT : 이 flag 로 생성한 PendingIntent는 일회용 입니다
+- FLAG_UPDATE_CURRENT : 이미 생성된 PendingIntent가 존재하면 내용을 변경합니다
 
 그 아래 7번째는 아래와 같습니다
 
@@ -194,9 +194,9 @@ mBuilder의 옵션을 하나씩 살펴볼께요
 - setContentText : 상단바 알림 내용이며, 구 소스의 contentText랑 같습니다
 - setDefaults : 기본 설정이며, 구 소스의 notification.defaults랑 같습니다
 - setContentIntent : 실행할 작업이 담긴 PendingIntent이며, 구 소스의 contentIntent랑 같습닏
-- setAutoCancel : 터치하면 자동으로 지워지도록 설정하는 것이며, 구 소스의 FLAG\_AUTO\_CANCEL랑 같습니다
+- setAutoCancel : 터치하면 자동으로 지워지도록 설정하는 것이며, 구 소스의 FLAG_AUTO_CANCEL랑 같습니다
 - setPriority : 우선순위입니다, 구 소스의 notification.priority랑 같습니다만 구글 개발자 API를 보면 API 16이상부터 사용이 가능하다고 합니다
-- setOngoing : 진행중알림 이며, 구 소스의 FLAG\_ONGOING\_EVENT랑 같습니다
+- setOngoing : 진행중알림 이며, 구 소스의 FLAG_ONGOING_EVENT랑 같습니다
 - addAction : 알림에서 바로 어떤 활동을 할지 선택하는 것이며, 스샷찍은다음 삭제/공유 같은것이 이에 해당합니다
 
 Builder에서 사용되는 대표적인, 또는 대부분의 옵션을 살펴봤어요

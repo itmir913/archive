@@ -24,7 +24,7 @@ original_url: "https://itmir.tistory.com/329"
 
 주석이 달려있고, 이미 배웠던것이므로 따로 소스 설명은 하지 않을려고 합니다ㅎㅎ
 
-[MissionApp1\_Example.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/MissionApp1_Example.zip)
+[MissionApp1_Example.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/MissionApp1_Example.zip)
 
 ### 14-2 프로그레스바
 
@@ -68,11 +68,11 @@ style="?android:attr/progressBarStyleHorizontal"
 
 늘려줍시다
 
-android:layout\_width="wrap\_content"
+android:layout_width="wrap_content"
 
 을
 
-android:layout\_width="match\_parent"
+android:layout_width="match_parent"
 
 으로
 
@@ -104,20 +104,20 @@ android:onClick="Start"
 <ProgressBar  
         android:id="@+id/progressBar1"  
         style="?android:attr/progressBarStyleHorizontal"  
-        android:layout\_width="match\_parent"  
-        android:layout\_height="wrap\_content"  
-        android:layout\_alignParentTop="true"  
-        android:layout\_centerHorizontal="true"  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"  
+        android:layout_alignParentTop="true"  
+        android:layout_centerHorizontal="true"  
         android:max="1000"  
-        android:layout\_marginTop="64dp" />
+        android:layout_marginTop="64dp" />
 
     <EditText  
         android:id="@+id/editText1"  
-        android:layout\_width="wrap\_content"  
-        android:layout\_height="wrap\_content"  
-        android:layout\_below="@+id/progressBar1"  
-        android:layout\_centerHorizontal="true"  
-        android:layout\_marginTop="14dp"  
+        android:layout_width="wrap_content"  
+        android:layout_height="wrap_content"  
+        android:layout_below="@+id/progressBar1"  
+        android:layout_centerHorizontal="true"  
+        android:layout_marginTop="14dp"  
         android:inputType="number"  
         android:ems="10" >
 
@@ -126,11 +126,11 @@ android:onClick="Start"
 
     <Button  
         android:id="@+id/button1"  
-        android:layout\_width="wrap\_content"  
-        android:layout\_height="wrap\_content"  
-        android:layout\_below="@+id/editText1"  
-        android:layout\_centerHorizontal="true"  
-        android:layout\_marginTop="18dp"  
+        android:layout_width="wrap_content"  
+        android:layout_height="wrap_content"  
+        android:layout_below="@+id/editText1"  
+        android:layout_centerHorizontal="true"  
+        android:layout_marginTop="18dp"  
         android:onClick="Start"  
         android:text="Button" />
 
@@ -186,7 +186,7 @@ editText1.**addTextChangedListener**(new TextWatcher() {
    public void onTextChanged(CharSequence arg0, int arg1, int arg2,  
      int arg3) {  
     // TODO Auto-generated method stub  
-    /\*\*  
+    /**  
      \* 만약 입력한 값이 공백(없음, "")이라면 강제종료 오류가 뜨므로 이 전체를 try문으로 감싸 오류를 막습니다  
      \*/  
     try {  

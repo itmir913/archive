@@ -184,7 +184,7 @@ E/AndroidRuntime(26330): ... 11 more
 
 E/AndroidRuntime(26330): Caused by: java.lang.NullPointerException: println needs a message
 
-E/AndroidRuntime(26330): at android.util.Log.println\_native(Native Method)
+E/AndroidRuntime(26330): at android.util.Log.println_native(Native Method)
 
 E/AndroidRuntime(26330): at android.util.Log.d(Log.java:155)
 

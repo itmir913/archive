@@ -53,15 +53,15 @@ DEVICE=a630k
 
 칩셋이 같은 기기라면 더욱 말이죠
 
-TARGET\_BOARD\_PLATFORM := msm7k
+TARGET_BOARD_PLATFORM := msm7k
 
-TARGET\_ARCH\_VARIANT := armv6-vfp
+TARGET_ARCH_VARIANT := armv6-vfp
 
-TARGET\_CPU\_ABI := armeabi-v6l
+TARGET_CPU_ABI := armeabi-v6l
 
-TARGET\_CPU\_ABI2 := armeabi
+TARGET_CPU_ABI2 := armeabi
 
-TARGET\_BOARD\_PLATFORM\_GPU := qcom-adreno200
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 
 다음과 같은 구문을 복붙합니다
 
@@ -71,11 +71,11 @@ BoardConfig.mk은 포팅하며 아주 많이 수정할거니 많이 친해지셔
 
 오류가 날때마다 여기에 구문을 추가해서 오류를 해결할수가 있습니다
 
-device\_기기명.mk를 열어주세요
+device_기기명.mk를 열어주세요
 
 여기에 우리가 순정에서 가져와야 하는 순정파일을 넣어주는 매크로를 작성해야 합니다
 
-PRODUCT\_COPY\_FILES += \
+PRODUCT_COPY_FILES += \
 
     device/제조사/기기명/파일경로:system/파일경로 \
 
@@ -85,11 +85,11 @@ PRODUCT\_COPY\_FILES += \
 
 이제 vendor폴더로 이동합니다
 
-vendor/cyanogen/vendorsetup.sh에 add\_lunch\_combo cyanogen\_기기명-eng 을 추가합니다
+vendor/cyanogen/vendorsetup.sh에 add_lunch_combo cyanogen_기기명-eng 을 추가합니다
 
-vendor/cyanogen/products/AndroidProducts.mk에도 다른 기기처럼     $(LOCAL\_DIR)/cyanogen\_기기명.mk \을 추가합니다
+vendor/cyanogen/products/AndroidProducts.mk에도 다른 기기처럼     $(LOCAL_DIR)/cyanogen_기기명.mk \을 추가합니다
 
-vendor/cyanogen/products/cyanogen\_ef32k.mk를 직접 만들어야 합니다
+vendor/cyanogen/products/cyanogen_ef32k.mk를 직접 만들어야 합니다
 
 같은 폴더내에 있는 다른 기기 파일을 참고하시거나 작업소스를 참고하시면 쉽게 짜실수 있을거라 생각되어 간략한 설명한 하기로 하겠습니다
 

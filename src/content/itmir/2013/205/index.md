@@ -8,7 +8,7 @@ draft: false
 original_url: "https://itmir.tistory.com/205"
 ---
 
-Easy\_Root\_for\_VegaRacer2
+Easy_Root_for_VegaRacer2
 
 베가레이서2를 위한 쉬운 루팅툴
 
@@ -24,7 +24,7 @@ thanks for hPa
 
 사용법 : 첨부파일을 받아 압축을 풀으신다음 Start.bat파일을 실행하세요
 
-[Easy\_Root\_for\_VegaRacer2.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/Easy_Root_for_VegaRacer2.zip)
+[Easy_Root_for_VegaRacer2.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/Easy_Root_for_VegaRacer2.zip)
 
 자주 묻는 질문
 

@@ -24,7 +24,7 @@ original_url: "https://itmir.tistory.com/41"
 
 make clobber치면
 
-build/core/product\_config.mk:196: \*\*\* \_nic.PRODUCTS.[[vendor/cyanogen/products/cyanogen\_sunfire.mk]]: "device/motorola/sunfire/sunfire.mk" does not exist. 멈춤.
+build/core/product_config.mk:196: *** _nic.PRODUCTS.[[vendor/cyanogen/products/cyanogen_sunfire.mk]]: "device/motorola/sunfire/sunfire.mk" does not exist. 멈춤.
 
 **brunch a750k**
 
@@ -40,11 +40,11 @@ brunch: command not found
 
 Vendor/cyanogen 에서 h를 수정해야하고
 
-Vendor/cyanogem/product 에서 cyanogen\_기기명.mk를 작성하시고 androidproduct.mk 도 수정해야합니다
+Vendor/cyanogem/product 에서 cyanogen_기기명.mk를 작성하시고 androidproduct.mk 도 수정해야합니다
 
-Cyanogen\_기기명.mk는 다른 파일들을 참고하시고 작성하시면 됩니다
+Cyanogen_기기명.mk는 다른 파일들을 참고하시고 작성하시면 됩니다
 
-vendorsetup.sh수정은 add\_lunch\_combo cyanogen\_a750k - eng
+vendorsetup.sh수정은 add_lunch_combo cyanogen_a750k - eng
 
 Target device명을 device/회사명 안에 기기명과 같게해야할겁니다
 
@@ -52,33 +52,33 @@ Target device명을 device/회사명 안에 기기명과 같게해야할겁니�
 
 Vendor/cyanogen/vendorsetup.sh,
 
-Vendor/cyanogem/product/cyanogen\_기기명.mk
+Vendor/cyanogem/product/cyanogen_기기명.mk
 
 Vendor/cyanogem/product/androidproduct.mk
 
-Target device는 cyanogen\_기기명.mk의 디바이스 부분이다
+Target device는 cyanogen_기기명.mk의 디바이스 부분이다
 
 **libaudio을 만들규칙이 없습니다;;**
 
 target Strip: libeffects (out/target/product/a750k/obj/lib/libeffects.so)
 
-make: \*\*\* `out/target/product/a750k/obj/SHARED\_LIBRARIES/libaudioflinger\_intermediates/LINKED/libaudioflinger.so'에서 필요로 하는  타겟 `out/target/product/a750k/obj/lib/libaudio.so'를 만들 규칙이 없습니다.  멈춤.
+make: *** `out/target/product/a750k/obj/SHARED_LIBRARIES/libaudioflinger_intermediates/LINKED/libaudioflinger.so'에서 필요로 하는  타겟 `out/target/product/a750k/obj/lib/libaudio.so'를 만들 규칙이 없습니다.  멈춤.
 
 호호 : libaudio.so라는 파일을 해당경로에 가져다 놔도 되고
 
-Boardconfig.mk에 BOARD\_USES\_GENERIC\_AUDIO:= true 라는 구문을 추가해주세요
+Boardconfig.mk에 BOARD_USES_GENERIC_AUDIO:= true 라는 구문을 추가해주세요
 
-나의 해결법 : out/target/product/a750k/obj/SHARED\_LIBRARIES/libaudioflinger\_intermediates
+나의 해결법 : out/target/product/a750k/obj/SHARED_LIBRARIES/libaudioflinger_intermediates
 
 이경로폴더를 삭제했습니다 libaudioflinger.so 생성 완료
 
 **libcamera.so을 만들규칙이 없습니다**
 
-make: \*\*\* `out/target/product/ef32k/obj/SHARED\_LIBRARIES/libcameraservice\_intermediates/LINKED/libcameraservice.so'에서 필요로 하는  타겟 `out/target/product/ef32k/obj/lib/libcamera.so'를 만들 규칙이 없습니다.  멈춤.
+make: *** `out/target/product/ef32k/obj/SHARED_LIBRARIES/libcameraservice_intermediates/LINKED/libcameraservice.so'에서 필요로 하는  타겟 `out/target/product/ef32k/obj/lib/libcamera.so'를 만들 규칙이 없습니다.  멈춤.
 
 검색, 참고자료SDA: <http://cafe.naver.com/skydevelopers/96508>
 
-호호 : Boardconfig.mk에 USE\_CAMERA\_STUB:= true을 추가해 주시면 됩니다
+호호 : Boardconfig.mk에 USE_CAMERA_STUB:= true을 추가해 주시면 됩니다
 
 **램디스크 부분 (init부분)**
 
@@ -90,7 +90,7 @@ Init.rc도 넣지않으면 알아서 던져주는데 그거 빼와서 원래 ini
 
 복사 명령어
 
-PRODUCT\_COPY\_FILES := \
+PRODUCT_COPY_FILES := \
 
 device/pantech/a750k/init.rc:root/init.rc \
 
@@ -98,7 +98,7 @@ device/pantech/a750k/init.rc:root/init.rc \
 
 부가 설명: 복사 명령어는
 
-PRODUCT\_COPY\_FILES := \
+PRODUCT_COPY_FILES := \
 
 파일의 경로:복사될 경로 \
 
@@ -110,7 +110,7 @@ PRODUCT\_COPY\_FILES := \
 
 잘가다가 오류;;
 
-make: \*\*\* `out/target/product/a750k/system/app/RomManager.apk'에서 필요로 하는 타겟 `vendor/cyanogen/proprietary/RomManager.apk'를 만들 규칙이 없습니다. 멈춤.
+make: *** `out/target/product/a750k/system/app/RomManager.apk'에서 필요로 하는 타겟 `vendor/cyanogen/proprietary/RomManager.apk'를 만들 규칙이 없습니다. 멈춤.
 
 는 뭘까요?
 
@@ -166,7 +166,7 @@ Pantech것을 따라주셔야하는데 가장윗부분에 export BOOTCLASSPATH �
 
 **OpenVpn오류**
 
-make: \*\*\* [out/target/product/ef32k/obj/EXECUTABLES/openvpn\_intermediates/LINKED/openvpn] 오류 1
+make: *** [out/target/product/ef32k/obj/EXECUTABLES/openvpn_intermediates/LINKED/openvpn] 오류 1
 
 sudo apt-get install openvpn
 
@@ -176,9 +176,9 @@ sudo apt-get install openvpn
 
 **Acp.o 생성 오류**
 
-make: \*\*\* [out/host/linux-x86/obj/EXECUTABLES/acp\_intermediates/acp.o] Error 1
+make: *** [out/host/linux-x86/obj/EXECUTABLES/acp_intermediates/acp.o] Error 1
 
-Error: make: \*\*\* [out/host/linux-x86/obj/EXECUTABLES/acp\_intermediates/acp] Error 1
+Error: make: *** [out/host/linux-x86/obj/EXECUTABLES/acp_intermediates/acp] Error 1
 
 이 두개의 오류의 해결법은
 
@@ -190,31 +190,31 @@ sudo apt-get install g++-multilib
 
 **Cgi.o 생성 오류**
 
-make: \*\*\* [out/host/linux-x86/obj/SHARED\_LIBRARIES/libneo\_cgi\_intermediates/cgi.o] Error 1
+make: *** [out/host/linux-x86/obj/SHARED_LIBRARIES/libneo_cgi_intermediates/cgi.o] Error 1
 
 sudo apt-get install zlib1g-dev
 
 **Aapt.o 생성 오류**
 
-make: \*\*\* [out/host/linux-x86/obj/EXECUTABLES/aapt\_intermediates/aapt] Error 1
+make: *** [out/host/linux-x86/obj/EXECUTABLES/aapt_intermediates/aapt] Error 1
 
 sudo apt-get install lib32z1-dev
 
-**aidl\_language\_y.cpp 오류**
+**aidl_language_y.cpp 오류**
 
-make: \*\*\* [out/host/linux-x86/obj/EXECUTABLES/aidl\_intermediates/aidl\_language\_y.cpp] Error 127
+make: *** [out/host/linux-x86/obj/EXECUTABLES/aidl_intermediates/aidl_language_y.cpp] Error 127
 
 sudo apt-get install bison
 
-**aidl\_language\_l.cpp 오류**
+**aidl_language_l.cpp 오류**
 
-make: \*\*\* [out/host/linux-x86/obj/EXECUTABLES/aidl\_intermediates/aidl\_language\_l.cpp] Error 127
+make: *** [out/host/linux-x86/obj/EXECUTABLES/aidl_intermediates/aidl_language_l.cpp] Error 127
 
 sudo apt-get install flex
 
 **adb 오류**
 
-make: \*\*\* [out/host/linux-x86/obj/EXECUTABLES/adb\_intermediates/adb] Error 1
+make: *** [out/host/linux-x86/obj/EXECUTABLES/adb_intermediates/adb] Error 1
 
 sudo apt-get install lib32ncurses5-dev
 
@@ -222,15 +222,15 @@ sudo apt-get install libncurses5-dev
 
 **Main-common.o 생성 오류**
 
-make: \*\*\* [out/host/linux-x86/obj/EXECUTABLES/emulator\_intermediates/Android/Main-common.o] Error 1
+make: *** [out/host/linux-x86/obj/EXECUTABLES/emulator_intermediates/Android/Main-common.o] Error 1
 
 sudo apt-get install libx11-dev
 
 **CSSPropertyNames.h 혹은****CSSPropertyNames.h 오류**
 
-make: \*\*\* [out/target/product/generic/obj/STATIC\_LIBRARIES/libwebcore\_intermediates/WebCore/css/CSSPropertyNames.h] Error 25
+make: *** [out/target/product/generic/obj/STATIC_LIBRARIES/libwebcore_intermediates/WebCore/css/CSSPropertyNames.h] Error 25
 
-make: \*\*\* Deleting file `out/target/product/generic/obj/STATIC\_LIBRARIES/libwebcore\_intermediates/WebCore/css/CSSPropertyNames.h ‘
+make: *** Deleting file `out/target/product/generic/obj/STATIC_LIBRARIES/libwebcore_intermediates/WebCore/css/CSSPropertyNames.h ‘
 
 sudo apt-get install gperf
 
@@ -244,7 +244,7 @@ sudo apt-get install gcc-multilib
 
 **센서 픽스방법**
 
-BOARD\_NEEDS\_CUTILS\_LOG := true
+BOARD_NEEDS_CUTILS_LOG := true
 
 구문 추가
 
@@ -252,13 +252,13 @@ BOARD\_NEEDS\_CUTILS\_LOG := true
 
 **overlay 문제 해결**
 
-target Export Resources: framework-res (/home/whdghks913/cluster/system/out/target/common/obj/APPS/framework-res\_intermediates/package-export.apk)
+target Export Resources: framework-res (/home/whdghks913/cluster/system/out/target/common/obj/APPS/framework-res_intermediates/package-export.apk)
 
-device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:30: error: Resource at config\_networkLocationProviderPackageName appears in overlay but not in the base package; use **<add-resource>** to add.  
-device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:33: error: Resource at config\_geocodeProviderPackageName appears in overlay but not in the base package; use **<add-resource>** to add.  
-device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:40: error: Resource at config\_autoBrightnessButtonKeyboard appears in overlay but not in the base package; use **<add-resource>** to add.  
-make: \*\*\* [/home/whdghks913/cluster/system/out/target/common/obj/APPS/framework-res\_intermediates/package-export.apk] 오류 1  
-make: \*\*\* 파일 `/home/whdghks913/cluster/system/out/target/common/obj/APPS/framework-res\_intermediates/package-export.apk'을(를) 지웁니다
+device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:30: error: Resource at config_networkLocationProviderPackageName appears in overlay but not in the base package; use **<add-resource>** to add.  
+device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:33: error: Resource at config_geocodeProviderPackageName appears in overlay but not in the base package; use **<add-resource>** to add.  
+device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:40: error: Resource at config_autoBrightnessButtonKeyboard appears in overlay but not in the base package; use **<add-resource>** to add.  
+make: *** [/home/whdghks913/cluster/system/out/target/common/obj/APPS/framework-res_intermediates/package-export.apk] 오류 1  
+make: *** 파일 `/home/whdghks913/cluster/system/out/target/common/obj/APPS/framework-res_intermediates/package-export.apk'을(를) 지웁니다
 
 cm10→cm10.1에서 체험한 문제입니다
 
@@ -278,19 +278,19 @@ String위에 아래 구문을 추가하세요
 
 error: undefined reference to 오류 해결법
 
-/home/whdghks913/cm-10.1/system/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6/bin/../lib/gcc/arm-linux-androideabi/4.6.x-google/../../../../arm-linux-androideabi/bin/ld: /home/whdghks913/cm-10.1/system/out/target/product/ef46l/obj/EXECUTABLES/hostapd\_intermediates/src/drivers/driver\_nl80211.o: in function nl80211\_set\_p2p\_powersave:external/wpa\_supplicant\_8/hostapd/src/drivers/driver\_nl80211.c:9062: **error: undefined reference to 'wpa\_driver\_set\_p2p\_ps'**
+/home/whdghks913/cm-10.1/system/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6/bin/../lib/gcc/arm-linux-androideabi/4.6.x-google/../../../../arm-linux-androideabi/bin/ld: /home/whdghks913/cm-10.1/system/out/target/product/ef46l/obj/EXECUTABLES/hostapd_intermediates/src/drivers/driver_nl80211.o: in function nl80211_set_p2p_powersave:external/wpa_supplicant_8/hostapd/src/drivers/driver_nl80211.c:9062: **error: undefined reference to 'wpa_driver_set_p2p_ps'**
 
-/home/whdghks913/cm-10.1/system/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6/bin/../lib/gcc/arm-linux-androideabi/4.6.x-google/../../../../arm-linux-androideabi/bin/ld: /home/whdghks913/cm-10.1/system/out/target/product/ef46l/obj/EXECUTABLES/hostapd\_intermediates/src/drivers/driver\_nl80211.o: in function wpa\_driver\_nl80211\_ops:driver\_nl80211.c(.data.rel.ro.wpa\_driver\_nl80211\_ops+0x104): **error: undefined reference to 'wpa\_driver\_set\_ap\_wps\_p2p\_ie'**
+/home/whdghks913/cm-10.1/system/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6/bin/../lib/gcc/arm-linux-androideabi/4.6.x-google/../../../../arm-linux-androideabi/bin/ld: /home/whdghks913/cm-10.1/system/out/target/product/ef46l/obj/EXECUTABLES/hostapd_intermediates/src/drivers/driver_nl80211.o: in function wpa_driver_nl80211_ops:driver_nl80211.c(.data.rel.ro.wpa_driver_nl80211_ops+0x104): **error: undefined reference to 'wpa_driver_set_ap_wps_p2p_ie'**
 
-/home/whdghks913/cm-10.1/system/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6/bin/../lib/gcc/arm-linux-androideabi/4.6.x-google/../../../../arm-linux-androideabi/bin/ld: /home/whdghks913/cm-10.1/system/out/target/product/ef46l/obj/EXECUTABLES/hostapd\_intermediates/src/drivers/driver\_nl80211.o: in function wpa\_driver\_nl80211\_ops:driver\_nl80211.c(.data.rel.ro.wpa\_driver\_nl80211\_ops+0x140): **error: undefined reference to 'wpa\_driver\_get\_p2p\_noa'**
+/home/whdghks913/cm-10.1/system/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6/bin/../lib/gcc/arm-linux-androideabi/4.6.x-google/../../../../arm-linux-androideabi/bin/ld: /home/whdghks913/cm-10.1/system/out/target/product/ef46l/obj/EXECUTABLES/hostapd_intermediates/src/drivers/driver_nl80211.o: in function wpa_driver_nl80211_ops:driver_nl80211.c(.data.rel.ro.wpa_driver_nl80211_ops+0x140): **error: undefined reference to 'wpa_driver_get_p2p_noa'**
 
-/home/whdghks913/cm-10.1/system/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6/bin/../lib/gcc/arm-linux-androideabi/4.6.x-google/../../../../arm-linux-androideabi/bin/ld: /home/whdghks913/cm-10.1/system/out/target/product/ef46l/obj/EXECUTABLES/hostapd\_intermediates/src/drivers/driver\_nl80211.o: in function wpa\_driver\_nl80211\_ops:driver\_nl80211.c(.data.rel.ro.wpa\_driver\_nl80211\_ops+0x144): **error: undefined reference to 'wpa\_driver\_set\_p2p\_noa'**
+/home/whdghks913/cm-10.1/system/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6/bin/../lib/gcc/arm-linux-androideabi/4.6.x-google/../../../../arm-linux-androideabi/bin/ld: /home/whdghks913/cm-10.1/system/out/target/product/ef46l/obj/EXECUTABLES/hostapd_intermediates/src/drivers/driver_nl80211.o: in function wpa_driver_nl80211_ops:driver_nl80211.c(.data.rel.ro.wpa_driver_nl80211_ops+0x144): **error: undefined reference to 'wpa_driver_set_p2p_noa'**
 
-/home/whdghks913/cm-10.1/system/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6/bin/../lib/gcc/arm-linux-androideabi/4.6.x-google/../../../../arm-linux-androideabi/bin/ld: /home/whdghks913/cm-10.1/system/out/target/product/ef46l/obj/EXECUTABLES/hostapd\_intermediates/src/drivers/driver\_nl80211.o: in function wpa\_driver\_nl80211\_ops:driver\_nl80211.c(.data.rel.ro.wpa\_driver\_nl80211\_ops+0x1a0): **error: undefined reference to 'wpa\_driver\_nl80211\_driver\_cmd'**
+/home/whdghks913/cm-10.1/system/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6/bin/../lib/gcc/arm-linux-androideabi/4.6.x-google/../../../../arm-linux-androideabi/bin/ld: /home/whdghks913/cm-10.1/system/out/target/product/ef46l/obj/EXECUTABLES/hostapd_intermediates/src/drivers/driver_nl80211.o: in function wpa_driver_nl80211_ops:driver_nl80211.c(.data.rel.ro.wpa_driver_nl80211_ops+0x1a0): **error: undefined reference to 'wpa_driver_nl80211_driver_cmd'**
 
 collect2: ld returned 1 exit status
 
-make: \*\*\* [/home/whdghks913/cm-10.1/system/out/target/product/ef46l/obj/EXECUTABLES/hostapd\_intermediates/LINKED/hostapd] 오류 1
+make: *** [/home/whdghks913/cm-10.1/system/out/target/product/ef46l/obj/EXECUTABLES/hostapd_intermediates/LINKED/hostapd] 오류 1
 
 이런 오류가 뜨며 빌드가 진행 되지 않았습니다
 
@@ -298,19 +298,19 @@ make: \*\*\* [/home/whdghks913/cm-10.1/system/out/target/product/ef46l/obj/EXECU
 
 이 사이트에서 제시하고 있는
 
-CONFIG\_DRIVER\_NL80211 := true
+CONFIG_DRIVER_NL80211 := true
 
-BOARD\_WPA\_SUPPLICANT\_PRIVATE\_LIB        := lib\_driver\_cmd\_bcmdhd  
-BOARD\_HOSTAPD\_PRIVATE\_LIB               := lib\_driver\_cmd\_bcmdhd  
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB        := lib_driver_cmd_bcmdhd  
+BOARD_HOSTAPD_PRIVATE_LIB               := lib_driver_cmd_bcmdhd  
 이 문구를 BoardConfig.mk에 추가한다음 빌드해 보면
 
-NOTICE-TARGET-STATIC\_LIBRARIES-lib\_driver\_cmd\_bcmdhd을 만들 규칙이 없다고 나타납니다
+NOTICE-TARGET-STATIC_LIBRARIES-lib_driver_cmd_bcmdhd을 만들 규칙이 없다고 나타납니다
 
-그러므로 저는 hostapd를 빌드하는 소스의 위치, 즉 external/wpa\_supplicant\_8/hostapd위치에 있는 android.config을 열어보면
+그러므로 저는 hostapd를 빌드하는 소스의 위치, 즉 external/wpa_supplicant_8/hostapd위치에 있는 android.config을 열어보면
 
-CONFIG\_DRIVER\_NL80211=y가 주석처리 되어 있는대 이 부분의 주석을 제거해 주면 오류가 나타나지 않고 빌드가 됩니다
+CONFIG_DRIVER_NL80211=y가 주석처리 되어 있는대 이 부분의 주석을 제거해 주면 오류가 나타나지 않고 빌드가 됩니다
 
-**external/bluetooth/bluedroid/Android.mk:8: NO BOARD\_BLUETOOTH\_BDROID\_BUILDCFG\_INCLUDE\_DIR, using only generic configuration**
+**external/bluetooth/bluedroid/Android.mk:8: NO BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR, using only generic configuration**
 
 device/samsung/msm8660-common 또는 msm8660-common에 들어간 다음 bluetooth라는 폴더를 만들어 주세요
 
@@ -321,15 +321,15 @@ device/samsung/msm8660-common 또는 msm8660-common에 들어간 다음 bluetoot
 
 이 파일은 device/samsung/msm8660-common또는 msm8660-commom에 들어 있습니다
 
-BOARD\_BLUETOOTH\_BDROID\_BUILDCFG\_INCLUDE\_DIR := device/samsung/msm8660-common/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/msm8660-common/bluetooth
 
 이 구문을 추가해 주세요
 
 만약 이미 있다면 #을 풀어주시거나 없다면 추가해 주시면 됩니다
 
-이제 NO BOARD\_BLUETOOTH\_BDROID\_BUILDCFG\_INCLUDE\_DIR, using only generic configuration오류는 나타나지 않을 것 입니다
+이제 NO BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR, using only generic configuration오류는 나타나지 않을 것 입니다
 
-[2013/04/06 - [강좌/팁/커널/빌드 강좌] - NO BOARD\_BLUETOOTH\_BDROID\_BUILDCFG\_INCLUDE\_DIR, using only generic configuration](/archive/itmir/2013/188)
+[2013/04/06 - [강좌/팁/커널/빌드 강좌] - NO BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR, using only generic configuration](/archive/itmir/2013/188)
 
 출처 : <http://forum.xda-developers.com/showthread.php?p=35522843>
 
@@ -339,73 +339,73 @@ In file included from hardware/qcom/display/liboverlay/overlayImpl.h:34:0,
 
 hardware/qcom/display/liboverlay/overlayRotator.h: In member function 'virtual int overlay::MdssRot::getDstMemId() const':
 
-hardware/qcom/display/liboverlay/overlayRotator.h:444:21: **error: 'const struct msmfb\_overlay\_data' has no member named 'dst\_data'**
+hardware/qcom/display/liboverlay/overlayRotator.h:444:21: **error: 'const struct msmfb_overlay_data' has no member named 'dst_data'**
 
-hardware/qcom/display/liboverlay/overlayRotator.h: In member function 'virtual uint32\_t overlay::MdssRot::getDstOffset() const':
+hardware/qcom/display/liboverlay/overlayRotator.h: In member function 'virtual uint32_t overlay::MdssRot::getDstOffset() const':
 
-hardware/qcom/display/liboverlay/overlayRotator.h:447:21: **error: 'const struct msmfb\_overlay\_data' has no member named 'dst\_data'**
+hardware/qcom/display/liboverlay/overlayRotator.h:447:21: **error: 'const struct msmfb_overlay_data' has no member named 'dst_data'**
 
-make: \*\*\* [/home/obi-wan-kenobi/mydev/android-source/cm10point1/out/target/product/e730/obj/SHARED\_LIBRARIES/liboverlay\_intermediates/overlay.o] Error 1
+make: *** [/home/obi-wan-kenobi/mydev/android-source/cm10point1/out/target/product/e730/obj/SHARED_LIBRARIES/liboverlay_intermediates/overlay.o] Error 1
 
 이 오류는 뭔가 선언되지 않아 발생하는 오류라 생각(일뿐 자세하게는 모릅니다)합니다
 
 오류를 해결하기 위해 include을 찾아야 하는대요
 
-플레폼 소스폴더안에서 msm\_mdp.h을 찾으시던지 아니면 이 파일을 직접 include하고 있다던지 아무튼 파일을 열어주세요
+플레폼 소스폴더안에서 msm_mdp.h을 찾으시던지 아니면 이 파일을 직접 include하고 있다던지 아무튼 파일을 열어주세요
 
-include/linux/msm\_mdp.h을 열어주셨으면 아래를 찾아주세요
+include/linux/msm_mdp.h을 열어주셨으면 아래를 찾아주세요
 
-"struct msmfb\_overlay\_data"
+"struct msmfb_overlay_data"
 
 이게 없다면 아래 문장을 추가해 주시고 있다면 보충해 주세요
 
-struct msmfb\_overlay\_data {
+struct msmfb_overlay_data {
 
-         uint32\_t id;
+         uint32_t id;
 
-         struct msmfb\_data data;
+         struct msmfb_data data;
 
-         uint32\_t version\_key;
+         uint32_t version_key;
 
-         struct msmfb\_data plane1\_data;
+         struct msmfb_data plane1_data;
 
-         struct msmfb\_data plane2\_data;
+         struct msmfb_data plane2_data;
 
-         struct msmfb\_data dst\_data;
+         struct msmfb_data dst_data;
 
 };
 
 <http://forum.cyanogenmod.org/topic/70073-building-cm-101-422/>
 
-**hardware/qcom/display/libgralloc/fb\_priv.h:48:26: error: field 'fence' has incomplete type**
+**hardware/qcom/display/libgralloc/fb_priv.h:48:26: error: field 'fence' has incomplete type**
 
-**hardware/qcom/display/libgralloc/fb\_priv.h:49:31: error: field 'commit' has incomplete type**
+**hardware/qcom/display/libgralloc/fb_priv.h:49:31: error: field 'commit' has incomplete type**
 
 이 오류도 선언과 관련있는거라 생각됩니다
 
-오류가 뜨는 파일인 fb\_priv.h을 열어
+오류가 뜨는 파일인 fb_priv.h을 열어
 
-struct mdp\_buf\_fence fence;
+struct mdp_buf_fence fence;
 
-struct mdp\_display\_commit commit;
+struct mdp_display_commit commit;
 
 이 두개를 추가해 주시고 필요로 하는 h파일을 include할수 있도록 아래도 추가해 주세요
 
 #include <linux/fb.h>
 
-#include <linux/msm\_mdp.h>
+#include <linux/msm_mdp.h>
 
 모두 추가했는대도 문제가 발생한다면 현재 include하고 있는 폴더를 잠시 주석처리해 둔다음 빌드하시면 정상적으로 됩니다
 
 출처: <http://forum.cyanogenmod.org/topic/70073-building-cm-101-422/>
 
   
-**out/target/product/(기기명)/obj/KERNEL\_OBJ/usr'를 만들 규칙이 없습니다. 멈춤.[1]**  
-이 오류는 그냥 obj/KERNEL\_OBJ/usr 폴더를 만들어 주면 됩니다
+**out/target/product/(기기명)/obj/KERNEL_OBJ/usr'를 만들 규칙이 없습니다. 멈춤.[1]**  
+이 오류는 그냥 obj/KERNEL_OBJ/usr 폴더를 만들어 주면 됩니다
 
 DEVICE=기기명
 
-mkdir -p ../../../out/target/product/$DEVICE/obj/KERNEL\_OBJ/usr
+mkdir -p ../../../out/target/product/$DEVICE/obj/KERNEL_OBJ/usr
 
 이런식으로 스크립트를 짜주시면 되지요 ㅎㅎ
 
@@ -417,7 +417,7 @@ mkdir -p ../../../out/target/product/$DEVICE/obj/KERNEL\_OBJ/usr
 
 ![](./images/IMG_20130429_202429.jpg)
 
-RECOVERY\_GRAPHICS\_USE\_LINELENGTH := true
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
 
 이것을 추가해 준다음 빌드하니 정상으로 됨
 
@@ -431,11 +431,11 @@ RECOVERY\_GRAPHICS\_USE\_LINELENGTH := true
 
 2. 자신이 만든 logo.rle를 포팅하려는 기기의 소스폴더안에 넣습니다
 
-3. device\_기기명.mk에 다음과 같은 내용을 추가합니다
+3. device_기기명.mk에 다음과 같은 내용을 추가합니다
 
 # Logo.rle
 
-PRODUCT\_COPY\_FILES += \
+PRODUCT_COPY_FILES += \
 
 device/제조사/기기명/logo.rle:root/logo.rle \
 
@@ -445,7 +445,7 @@ device/제조사/기기명/logo.rle:root/initlogo.rle
 
 # Custom Graphics
 
-BOARD\_CUSTOM\_GRAPHICS := ../../../device/제조사/기기명/graphics.c
+BOARD_CUSTOM_GRAPHICS := ../../../device/제조사/기기명/graphics.c
 
 4. make clobber을 해줍니다
 
