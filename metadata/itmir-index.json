@@ -1,8 +1,74 @@
 {
   "source": "itmir.tistory.com",
-  "total": 657,
-  "converted_at": "2026-07-02T19:59:15.746595",
+  "total": 667,
+  "converted_at": "2026-07-03T05:30:29.012155",
   "posts": [
+    {
+      "post_num": "naver-1",
+      "title": "KT 미라크A 실제 사용 후기, 가벼운 스마트폰, Mirach a 후기",
+      "date": "2012-02-17T00:00:00+09:00",
+      "year": "2012",
+      "category": "SmartPhone/Android",
+      "tags": [],
+      "summary": "KT 미라크A를 5개월 직접 사용하며 느낀 루팅·오버클럭 포함 실사용 후기",
+      "original_url": "https://blog.naver.com/whdghks913/20151074018",
+      "path": "src/content/itmir/2012/naver-1/index.md"
+    },
+    {
+      "post_num": "naver-2",
+      "title": "부트/리커버리 파티션 찾기",
+      "date": "2012-07-30T00:00:00+09:00",
+      "year": "2012",
+      "category": "Android/Kernel",
+      "tags": [],
+      "summary": "adb dd 명령어로 부트·리커버리 파티션을 찾는 방법과 unpackbootimg 활용법",
+      "original_url": "https://blog.naver.com/whdghks913/20163218171",
+      "path": "src/content/itmir/2012/naver-2/index.md"
+    },
+    {
+      "post_num": "naver-3",
+      "title": "Aroma Installer 왕초보 따라하기 강좌 - aroma-config편",
+      "date": "2012-08-02T00:00:00+09:00",
+      "year": "2012",
+      "category": "Android/Build",
+      "tags": [],
+      "summary": "Aroma Installer aroma-config 작성법 왕초보 따라하기 강좌",
+      "original_url": "https://blog.naver.com/whdghks913/20163432312",
+      "path": "src/content/itmir/2012/naver-3/index.md"
+    },
+    {
+      "post_num": "naver-4",
+      "title": "각종 오류 해결 방법",
+      "date": "2012-09-05T00:00:00+09:00",
+      "year": "2012",
+      "category": "Android/Build",
+      "tags": [],
+      "summary": "AOSP 빌드 중 발생하는 brunch·make·Java 오류 해결 방법 정리",
+      "original_url": "https://blog.naver.com/whdghks913/20166024812",
+      "path": "src/content/itmir/2012/naver-4/index.md"
+    },
+    {
+      "post_num": "naver-5",
+      "title": "[베레유저 멘붕] 베레 터치패널은 미라크보다 안 좋다",
+      "date": "2012-10-02T00:00:00+09:00",
+      "year": "2012",
+      "category": "Android/Kernel",
+      "tags": [],
+      "summary": "베가레이서2 터치패널 커널 config 분석 — 미라크A보다 스펙이 낮음을 소스로 증명",
+      "original_url": "https://blog.naver.com/whdghks913/20168002652",
+      "path": "src/content/itmir/2012/naver-5/index.md"
+    },
+    {
+      "post_num": "naver-1",
+      "title": "사이트 주소로 보는 베가(Vega)의 진실",
+      "date": "2013-01-04T00:00:00+09:00",
+      "year": "2013",
+      "category": "SmartPhone/Android",
+      "tags": [],
+      "summary": "SKY 베가 공식 사이트 URL 패턴 분석으로 드러나는 제품 라인업 내부 구조",
+      "original_url": "https://blog.naver.com/whdghks913/20175196260",
+      "path": "src/content/itmir/2013/naver-1/index.md"
+    },
     {
       "post_num": 1,
       "title": "티스토리에 BGM을 깔아보자!",
@@ -2248,6 +2314,17 @@
       "path": "src/content/itmir/2013/212/index.md"
     },
     {
+      "post_num": "naver-2",
+      "title": "VegaRacer2 커널 수정으로 멀티터치 최대 10점으로 상향 성공",
+      "date": "2013-05-12T00:00:00+09:00",
+      "year": "2013",
+      "category": "Android/Kernel",
+      "tags": [],
+      "summary": "베가레이서2 LucidOS 커널 수정으로 멀티터치 최대 인식 점수를 5점에서 10점으로 상향",
+      "original_url": "https://blog.naver.com/whdghks913/20187502136",
+      "path": "src/content/itmir/2013/naver-2/index.md"
+    },
+    {
       "post_num": 213,
       "title": "할인률과 할인된 가격을 구하는 JAVA 프로그램",
       "date": "2013-05-12T10:23:32+09:00",
@@ -4426,6 +4503,17 @@
       "path": "src/content/itmir/2014/426/index.md"
     },
     {
+      "post_num": "naver-1",
+      "title": "Slide2Wake for CYTTSP_Gen3(베가 레이서, 미라크A) 패치파일",
+      "date": "2014-01-09T00:00:00+09:00",
+      "year": "2014",
+      "category": "Android/Kernel",
+      "tags": [],
+      "summary": "베가 레이서·미라크A용 CYTTSP_Gen3 터치스크린 Slide2Wake 커널 패치파일",
+      "original_url": "https://blog.naver.com/whdghks913/20202774967",
+      "path": "src/content/itmir/2014/naver-1/index.md"
+    },
+    {
       "post_num": 428,
       "title": "소피아네님의 드림나래 앱 분석 결과",
       "date": "2014-01-11T16:20:20+09:00",
@@ -4448,6 +4536,28 @@
       "path": "src/content/itmir/2014/429/index.md"
     },
     {
+      "post_num": "naver-2",
+      "title": "xor 암호화/복호화를 테스트할겸 어플로 만들어봤어요",
+      "date": "2014-01-12T00:00:00+09:00",
+      "year": "2014",
+      "category": "Programming/Java",
+      "tags": [],
+      "summary": "XOR 연산 기반 암호화·복호화 Android 앱 개발 시작 기록",
+      "original_url": "https://blog.naver.com/whdghks913/20203004728",
+      "path": "src/content/itmir/2014/naver-2/index.md"
+    },
+    {
+      "post_num": "naver-3",
+      "title": "Xor 암호화 어플을 일단 만든듯 합니다 jar로 API도 만들었어요 ㅋ",
+      "date": "2014-01-13T00:00:00+09:00",
+      "year": "2014",
+      "category": "Programming/Java",
+      "tags": [],
+      "summary": "XOR 암호화 앱에 jar API를 추가해 외부 앱에서도 사용 가능하도록 구현",
+      "original_url": "https://blog.naver.com/whdghks913/20203077756",
+      "path": "src/content/itmir/2014/naver-3/index.md"
+    },
+    {
       "post_num": 430,
       "title": "이클립스(Eclipse) javadoc - java.lang.IllegalArgumentException",
       "date": "2014-01-13T22:59:20+09:00",
@@ -4457,6 +4567,17 @@
       "summary": "이클립스에서 javadoc를 만들다 보면 java.lang.IllegalArgumentException오류가 날때가 있습니다",
       "original_url": "https://itmir.tistory.com/430",
       "path": "src/content/itmir/2014/430/index.md"
+    },
+    {
+      "post_num": "naver-4",
+      "title": "Xor 암호화 어플 다운로드/설명",
+      "date": "2014-01-14T00:00:00+09:00",
+      "year": "2014",
+      "category": "Programming/Java",
+      "tags": [],
+      "summary": "XOR 암호화 Android 앱 베타 배포 및 기능 설명",
+      "original_url": "https://blog.naver.com/whdghks913/20203100738",
+      "path": "src/content/itmir/2014/naver-4/index.md"
     },
     {
       "post_num": 431,
