@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="베가레이서2 터치패널 커널 config 분석 — 미라크A보다 스펙이 낮음을 소스로 증명"><title>[베레유저 멘붕] 베레 터치패널은 미라크보다 안 좋다 — luminousky archive</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.y0VkQ2s7.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2013 – 2021</span> </div> </header> <main> <div class="content-wrapper" style="max-width: 800px">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">[베레유저 멘붕] 베레 터치패널은 미라크보다 안 좋다</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2012-10-01T15:00:00.000Z"> 2012년 10월 2일 </time> <span class="post-category">Android/Kernel</span> <a href="https://blog.naver.com/whdghks913/20168002652" class="post-original" target="_blank" rel="noopener noreferrer">
+원본 보기 ↗
+</a> </div> <p class="post-description">베가레이서2 터치패널 커널 config 분석 — 미라크A보다 스펙이 낮음을 소스로 증명</p> </header> <div class="post-content"> <p>놀라셨죠? 모두 거짓말이 아닌 사실이니 심장 약하신 분들은 마음의 준비를 하시고 와 주세요.</p>
+<p>미라크의 config를 참조하면</p>
+<p>…</p>
+<p>CONFIG_TOUCHSCREEN_QT602240=y</p>
+<h1 id="config_touchscreen_synaptics_i2c_rmi-is-not-set">CONFIG_TOUCHSCREEN_SYNAPTICS_I2C_RMI is not set</h1>
+<h1 id="config_touchscreen_touchright-is-not-set">CONFIG_TOUCHSCREEN_TOUCHRIGHT is not set</h1>
+<h1 id="config_touchscreen_touchwin-is-not-set">CONFIG_TOUCHSCREEN_TOUCHWIN is not set</h1>
+<h1 id="config_touchscreen_usb_composite-is-not-set">CONFIG_TOUCHSCREEN_USB_COMPOSITE is not set</h1>
+<h1 id="config_touchscreen_touchit213-is-not-set">CONFIG_TOUCHSCREEN_TOUCHIT213 is not set</h1>
+<h1 id="config_touchscreen_tsc2007-is-not-set">CONFIG_TOUCHSCREEN_TSC2007 is not set</h1>
+<p>CONFIG_TOUCHSCREEN_MSM_LEGACY=y
+CONFIG_ANDROID_TOUCHSCREEN_MSM_HACKS=y</p>
+<p>…</p>
+<p>QT602240 부품은 그리 양질의 부품은 아닐 수도 있겠지만, 구글에 QT602240 datasheet이라 치면 다음과 같이 뜹니다.</p>
+<p>!</p>
+<p>첫 페이지인데, 세 개가 쫙 뜨죠. 데이터시트가 있어야 편리한 개발이 가능하기 때문에 가끔 필요한 경우가 있습니다.</p>
+<p>이번에는 베가 레이서(IM-A760S / IM-A770K)의 config입니다. (LG 베가레이서, 즉 IM-A780L은 Sain Touch 부품을 사용하였으므로 제외합니다.)</p>
+<p>…</p>
+<p>CONFIG_KEYBOARD_PMIC8XXX=y</p>
+<h1 id="config_keyboard_pmic8058-is-not-set">CONFIG_KEYBOARD_PMIC8058 is not set</h1>
+<p>CONFIG_INPUT_JOYSTICK=y
+CONFIG_INPUT_TOUCHSCREEN=y</p>
+<h1 id="config_touchscreen_cy8c_ts-is-not-set">CONFIG_TOUCHSCREEN_CY8C_TS is not set</h1>
+<p>CONFIG_TOUCHSCREEN_CYTTSP_I2C=y</p>
+<p>…</p>
+<p>이제 cyttsp_i2c datasheet 검색어로 검색을 해 보겠습니다.</p>
+<p>!</p>
+<p>첫 페이지입니다. 확연히 다르네요. 패치 기록 웹문서 하나가 외로움을 달래줄 뿐입니다.</p>
+<p>베가 레이서는 정말 터치패널에서만큼은 망작임을 확신합니다. 미라크도 10점 터치가 되건만, 왜 베가 레이서만은 그 화면 크기에 4점인데다 그 4점조차도 끊겨서 제대로 할 수가 없는 것일까요?</p>
+<p>이번에는 베가X의 커널 소스에서 추출한 config의 일부입니다.</p>
+<p>…</p>
+<h1 id="config_touchscreen_cyttsp_i2c-is-not-set">CONFIG_TOUCHSCREEN_CYTTSP_I2C is not set</h1>
+<p>CONFIG_TOUCHSCREEN_QT602240=y
+CONFIG_INPUT_MISC=y</p>
+<h1 id="config_input_ad714x-is-not-set">CONFIG_INPUT_AD714X is not set</h1>
+<h1 id="config_input_ati_remote-is-not-set">CONFIG_INPUT_ATI_REMOTE is not set</h1>
+<h1 id="config_input_ati_remote2-is-not-set">CONFIG_INPUT_ATI_REMOTE2 is not set</h1>
+<h1 id="config_input_keychord-is-not-set">CONFIG_INPUT_KEYCHORD is not set</h1>
+<h1 id="config_input_keyspan_remote-is-not-set">CONFIG_INPUT_KEYSPAN_REMOTE is not set</h1>
+<h1 id="config_input_powermate-is-not-set">CONFIG_INPUT_POWERMATE is not set</h1>
+<h1 id="config_input_yealink-is-not-set">CONFIG_INPUT_YEALINK is not set</h1>
+<h1 id="config_input_cm109-is-not-set">CONFIG_INPUT_CM109 is not set</h1>
+<p>CONFIG_INPUT_UINPUT=y
+CONFIG_INPUT_GPIO=y</p>
+<p>…</p>
+<p>이럴 수가. 미라크와 같네요?</p>
+<p>이번에는 LG 베가X입니다.</p>
+<p>…</p>
+<h1 id="config_touchscreen_w90x900-is-not-set">CONFIG_TOUCHSCREEN_W90X900 is not set</h1>
+<h1 id="config_touchscreen_tps6507x-is-not-set">CONFIG_TOUCHSCREEN_TPS6507X is not set</h1>
+<h1 id="config_touchscreen_cy8c_ts-is-not-set-1">CONFIG_TOUCHSCREEN_CY8C_TS is not set</h1>
+<p>CONFIG_TOUCHSCREEN_QT602240=y
+CONFIG_INPUT_MISC=y</p>
+<h1 id="config_input_ad714x-is-not-set-1">CONFIG_INPUT_AD714X is not set</h1>
+<p>…</p>
+<p>ㅜㅜ… 아니 이게 말이 되나요?;;</p>
+<p>이번에는 베가 LTE입니다.</p>
+<p>…</p>
+<p>CONFIG_INPUT_JOYSTICK=y
+CONFIG_INPUT_TOUCHSCREEN=y</p>
+<h1 id="config_touchscreen_atmel_maxtouch-is-not-set">CONFIG_TOUCHSCREEN_ATMEL_MAXTOUCH is not set</h1>
+<h1 id="config_touchscreen_cy8c_ts-is-not-set-2">CONFIG_TOUCHSCREEN_CY8C_TS is not set</h1>
+<h1 id="config_touchscreen_cyttsp_i2c-is-not-set-1">CONFIG_TOUCHSCREEN_CYTTSP_I2C is not set</h1>
+<p>CONFIG_TOUCHSCREEN_QT602240=y
+CONFIG_INPUT_MISC=y
+CONFIG_INPUT_UINPUT=y</p>
+<p>…</p>
+<p>이제 서서히 멘탈의 증발이 느껴지시죠?</p>
+<p>미라크 A입니다. 베가 레이서와 같은 패널 셋팅이 되어 있습니다.</p>
+<p>…</p>
+<p>CONFIG_TOUCHSCREEN_MSM_LEGACY=y
+CONFIG_ANDROID_TOUCHSCREEN_MSM_HACKS=y</p>
+<h1 id="config_touchscreen_tps6507x-is-not-set-1">CONFIG_TOUCHSCREEN_TPS6507X is not set</h1>
+<h1 id="config_touchscreen_cy8c_ts-is-not-set-3">CONFIG_TOUCHSCREEN_CY8C_TS is not set</h1>
+<p>CONFIG_TOUCHSCREEN_CYTTSP_I2C=y
+CONFIG_INPUT_MISC=y</p>
+<p>…</p>
+<p>최종 멘붕을 만드는 LG 베가레이서의 커널 config입니다!!</p>
+<p>…</p>
+<h1 id="config_touchscreen_w90x900-is-not-set-1">CONFIG_TOUCHSCREEN_W90X900 is not set</h1>
+<h1 id="config_touchscreen_tps6507x-is-not-set-2">CONFIG_TOUCHSCREEN_TPS6507X is not set</h1>
+<h1 id="config_touchscreen_cy8c_ts-is-not-set-4">CONFIG_TOUCHSCREEN_CY8C_TS is not set</h1>
+<h1 id="config_touchscreen_cyttsp_i2c-is-not-set-2">CONFIG_TOUCHSCREEN_CYTTSP_I2C is not set</h1>
+<p>CONFIG_TOUCHSCREEN_SAIN_TOUCH=y
+CONFIG_INPUT_MISC=y</p>
+<h1 id="config_input_ad714x-is-not-set-2">CONFIG_INPUT_AD714X is not set</h1>
+<p>…</p>
+<p>왜 이 두 휴대폰만 이런 패널을 썼는지 의문이 사그라들지를 않습니다.. 과연 왜일까요.</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+itmir.tistory.com
+</a>  · Archived by luminousky
+</p> </footer> </body></html>
