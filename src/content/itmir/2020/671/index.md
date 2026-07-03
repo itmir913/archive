@@ -22,9 +22,7 @@ original_url: "https://itmir.tistory.com/671"
 
 <https://www.jooyon.co.kr/onlinedriver.php>
 
-[주연테크
-
-www.jooyon.co.kr](https://www.jooyon.co.kr/onlinedriver.php)
+[주연테크](https://www.jooyon.co.kr/onlinedriver.php)
 
 요즘 시대에 Active-X를 이용하는 것도 어이가 없지만, 무엇보다 제이탭을 인식하지 못했다.
 
@@ -50,9 +48,7 @@ www.jooyon.co.kr](https://www.jooyon.co.kr/onlinedriver.php)
 
 먼저 인터넷에서 구한 각종 드라이버 파일을 압축해둔 파일을 아래 링크를 클릭하여 다운로드 받는다.
 
-[jtab2-driver.zip
-
-7.39MB](https://github.com/itmir913/archive/releases/download/itmir-attachments/jtab2-driver.zip)
+[jtab2-driver.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/jtab2-driver.zip)
 
 이 파일을 다운로드한 뒤에 압축 해제한 각각의 폴더 들어가서 각각 설치하지 **않는다.**
 
@@ -96,11 +92,7 @@ www.jooyon.co.kr](https://www.jooyon.co.kr/onlinedriver.php)
 
 <https://downloadcenter.intel.com/ko/product/85552>
 
-[인텔 아톰® 프로세서 Z3700 시리즈용 인텔® HD 그래픽용 다운로드
-
-인텔 제품에 대한 지원 소프트웨어, 바이오스, 유틸리티, 펌웨어 및 패치를 포함하여 새로운 드라이버와 이전에 릴리스된 드라이버를 다운로드하십시오.
-
-downloadcenter.intel.com](https://downloadcenter.intel.com/ko/product/85552)
+[인텔 아톰® 프로세서 Z3700 시리즈용 인텔® HD 그래픽용 다운로드](https://downloadcenter.intel.com/ko/product/85552)
 
 시도하지는 않았지만, 주연테크 홈페이지에 있는 Z3700 시리즈 드라이버 대신 인텔 홈페이지에서 다운받아도 무방할거라고 생각한다. 오히려 더 최신버전일 수도 있다.
 

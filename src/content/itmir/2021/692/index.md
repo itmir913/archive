@@ -18,11 +18,7 @@ original_url: "https://itmir.tistory.com/692"
 
 [https://stevemiller.net/PureText/](https://stevemiller.net/PureText)
 
-[PureText
-
-PureText is a tiny tray utility that removes all text formatting from your clipboard and optionally pastes the resulting pure text to the active window with a single hotkey. Have you ever copied some text from a web page or Word document, and wanted to pas
-
-stevemiller.net](https://stevemiller.net/PureText)
+[PureText](https://stevemiller.net/PureText)
 > PureText is a tiny tray utility that removes all text formatting from your clipboard and optionally pastes the resulting pure text to the active window with a single hotkey.
 
 서식 없이 텍스트만 붙여넣는 단축키를 설정하여 사용할 수 있으며, 저는 기본값인 윈도우키+V로 사용중입니다.
@@ -35,9 +31,5 @@ stevemiller.net](https://stevemiller.net/PureText)
 
 공식 홈페이지에서 받은 PureText 6.2 프로그램을 백업용으로 첨부해둡니다.
 
-[puretext\_6.2\_32-bit.zip
-
-0.04MB](https://github.com/itmir913/archive/releases/download/itmir-attachments/puretext_6.2_32-bit.zip)
-[puretext\_6.2\_64-bit.zip
-
-0.04MB](https://github.com/itmir913/archive/releases/download/itmir-attachments/puretext_6.2_64-bit.zip)
+[puretext\_6.2\_32-bit.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/puretext_6.2_32-bit.zip)
+[puretext\_6.2\_64-bit.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/puretext_6.2_64-bit.zip)

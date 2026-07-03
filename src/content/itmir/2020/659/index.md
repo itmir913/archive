@@ -30,9 +30,7 @@ namocom.tistory.com](https://namocom.tistory.com/630)
 
 재배포 가능하고 개인 컴퓨터, 회사에서 모두 사용 가능하다고 하셨으니 마음껏 사용해도 된다.
 
-[HangulJasoFixer2.exe
-
-0.08MB](https://github.com/itmir913/archive/releases/download/itmir-attachments/HangulJasoFixer2.exe)
+[HangulJasoFixer2.exe](https://github.com/itmir913/archive/releases/download/itmir-attachments/HangulJasoFixer2.exe)
 
 - 2020.10.03 내용 추가
 
@@ -56,8 +54,4 @@ namocom.tistory.com](https://namocom.tistory.com/m/901)
 
 <https://dotnet.microsoft.com/download/dotnet-framework-runtime/net472>
 
-[Download .NET Framework 4.7.2 | Free official downloads
-
-Downloads for building and running applications with .NET Framework 4.7.2 . Get web installer, offline installer, and language pack downloads for .NET Framework.
-
-dotnet.microsoft.com](https://dotnet.microsoft.com/download/dotnet-framework/net472)
+[Download .NET Framework 4.7.2 | Free official downloads](https://dotnet.microsoft.com/download/dotnet-framework/net472)

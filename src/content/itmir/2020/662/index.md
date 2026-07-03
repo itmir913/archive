@@ -22,11 +22,7 @@ original_url: "https://itmir.tistory.com/662"
 
 <https://brettterpstra.com/ios-text-editors>
 
-[iTextEditors - iPhone and iPad text/code editors and writing tools compared
-
-Comparison chart of iPad and iPhone (iOS) text editing applications.
-
-brettterpstra.com](https://brettterpstra.com/ios-text-editors)
+[iTextEditors - iPhone and iPad text/code editors and writing tools compared](https://brettterpstra.com/ios-text-editors)
 
 ![](./images/img.jpg)
 

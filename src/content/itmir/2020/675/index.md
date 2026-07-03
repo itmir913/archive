@@ -28,11 +28,7 @@ JetBrains는 상당히 매력적인 IDE를 많이 개발하였다.
 
 <https://www.jetbrains.com/student>
 
-[Free Educational Licenses - Community Support
-
-Learn or teach how to code with best-of-industry tools from JetBrains. Free Educational Licenses for JetBrains' tools.
-
-www.jetbrains.com](https://www.jetbrains.com/student/)
+[Free Educational Licenses - Community Support](https://www.jetbrains.com/student/)
 
 접속하면 아래와 같은 모습이 나올 것이다.
 
