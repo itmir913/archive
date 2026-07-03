@@ -1,6 +1,12 @@
-<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="라이젠 CPU에서 VMware로 Mac OS인 Catalina를 설치하는 방법이다."><title>AMD Ryzen CPU로 VMWare에서 Mac OS 설치하기 — luminousky archive</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.BgW6xfjO.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2012 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">AMD Ryzen CPU로 VMWare에서 Mac OS 설치하기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2020-11-02T16:33:09.000Z"> 2020년 11월 3일 </time> <span class="post-category">Computer &amp; PC</span> <a href="https://itmir.tistory.com/676" class="post-original" target="_blank" rel="noopener noreferrer">
+<!DOCTYPE html><html lang="ko" class="antialiased"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="라이젠 CPU에서 VMware로 Mac OS인 Catalina를 설치하는 방법이다."><title>AMD Ryzen CPU로 VMWare에서 Mac OS 설치하기 — luminousky archive</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.Z8bcidDp.css">
+<style>html{scroll-behavior:smooth;overflow-y:scroll;scrollbar-width:thin;scrollbar-color:#d1d5db transparent}::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background-color:#d1d5db;border-radius:999px;-webkit-transition:background-color .15s;transition:background-color .15s}::-webkit-scrollbar-thumb:hover{background-color:#9ca3af}.prose pre.astro-code{padding:1rem 1.25rem}
+</style></head> <body class="bg-white text-gray-900 font-sans leading-relaxed"> <header class="sticky top-0 z-10 border-b border-gray-200 bg-white/90 backdrop-blur-sm px-6"> <div class="max-w-5xl mx-auto flex items-center justify-between h-14"> <a href="/archive/" class="text-base font-semibold text-gray-900 tracking-tight hover:text-blue-600 no-underline transition-colors">
+luminousky / ITMir
+</a> <span class="text-base text-gray-400">2012 – 2021</span> </div> </header> <main class="px-6"> <div class="max-w-5xl mx-auto pt-10 pb-20">  <article> <header class="mb-9 pb-6 border-b border-gray-200"> <a href="/archive/itmir/" class="inline-block text-base text-gray-400 mb-5 no-underline hover:text-blue-600 transition-colors">
+← 목록으로
+</a> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-3"> AMD Ryzen CPU로 VMWare에서 Mac OS 설치하기 </h1> <div class="flex items-center gap-3 flex-wrap"> <time class="text-base text-gray-400" datetime="2020-11-02T16:33:09.000Z"> 2020년 11월 3일 </time> <span class="text-base text-gray-400 bg-gray-100 px-2 py-0.5 rounded"> Computer &amp; PC </span> <a href="https://itmir.tistory.com/676" class="text-base text-gray-400 underline underline-offset-2" target="_blank" rel="noopener noreferrer">
 원본 보기 ↗
-</a> </div> <p class="post-description">라이젠 CPU에서 VMware로 Mac OS인 Catalina를 설치하는 방법이다.</p> </header> <div class="post-content"> <h2 id="서론">서론</h2>
+</a> </div> <p class="mt-3 mb-0 text-base text-gray-400 leading-relaxed"> 라이젠 CPU에서 VMware로 Mac OS인 Catalina를 설치하는 방법이다. </p> </header> <div class="prose prose-gray"> <h2 id="서론">서론</h2>
 <p>라이젠 CPU에서 VMware로 Mac OS인 Catalina를 설치하는 방법이다.</p>
 <p><a href="https://www.youtube.com/watch?v=gr2fQXgcb2U">이 유튜브 영상</a>을 참고하면 더 이해하기 쉬울 것이다.</p>
 <p>이번 포스팅은 카탈리나 버전을 설치하는 영상이므로 빅 서 버전은 <a href="https://www.youtube.com/watch?v=uD5mwLzcXRc">이 영상</a>을 참고하라.</p>
@@ -9,7 +15,6 @@
 <p>이를 위해서는 먼저 AMD-V가 활성화되어 있는지 확인해야 한다.</p>
 <p><a href="https://leomoon.com/downloads/desktop-apps/leomoon-cpu-v/">이곳</a>을 클릭하여 LeoMoon CPU-V 프로그램을 받은 다음, 실행하여 AMD-V가 활성화되어 있는지 확인한다.</p>
 <p>혹은 아래 첨부파일을 다운받아도 된다. 2020-11-03일자 공식 홈페이지에서 다운받은 파일이다.</p>
-<p><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/leomoon-dot-com_leomoon-cpu-v_win.zip">leomoon-dot-com_leomoon-cpu-v_win.zip</a></p>
 <p>프로그램을 실행하면 아래와 같은 스크린샷이 뜬다.</p>
 <p><img  src="/archive/_astro/img.BG-lqpRm_1xri4L.webp" alt="" width="362" height="442" loading="lazy" decoding="async"></p>
 <p>이렇게 AMD-v가 모두 활성화 되어 있어야 한다.</p>
@@ -36,7 +41,6 @@
 <p>그 이유는 unlocker를 설치하면 하위 폴더 tools 안에 darwin.iso가 생기기 때문이다.</p>
 <p>이 글을 읽으시는 분께서 다운받아야 하는 파일은 세 개인데, <strong>VMWare Player 15 버전</strong>, <strong>unlocker</strong>, <strong>Mac OS Catalina.iso 파일</strong>이다.</p>
 <p>필자는 <a href="https://blog.notepads.kr/124">이곳</a>의 블로그를 참고하여 맥 카탈리나 iso 파일을 다운로드 받았다.</p>
-<p><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/unlocker_v3.0.3.zip">unlocker_v3.0.3.zip</a></p>
 <p>VMWare Player 15버전을 설치한다음, unlocker 압축 파일을 다운받고 <strong>관리자 권한</strong>으로 win-install.cmd 파일을 실행한다.</p>
 <p><img  src="/archive/_astro/img_1.dvVO3xxr_1cUyw4.webp" alt="" width="1223" height="639" loading="lazy" decoding="async"></p>
 <p>그러면 약 600MB 정도의 파일을 다운로드 받고 설치한다.</p>
@@ -170,8 +174,8 @@
 <h2 id="참고">참고</h2>
 <p><a href="https://www.youtube.com/watch?v=gr2fQXgcb2U">https://www.youtube.com/watch?v=gr2fQXgcb2U</a></p>
 <p><a href="https://blog.notepads.kr/124">https://blog.notepads.kr/124</a></p>
-<p><a href="https://communities.vmware.com/thread/598528">https://communities.vmware.com/thread/598528</a></p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
-Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+<p><a href="https://communities.vmware.com/thread/598528">https://communities.vmware.com/thread/598528</a></p> </div>  </article>  </div> </main> <footer class="border-t border-gray-200 px-6 py-6 text-center"> <p class="text-base text-gray-400 m-0">
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 underline underline-offset-2">
 itmir.tistory.com
 </a>  · Archived by luminousky
 </p> </footer> </body></html>

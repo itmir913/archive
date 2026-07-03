@@ -1,6 +1,12 @@
-<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="cm10까지는 ramdisk_offset이라는것을 작성하지 않아도 그냥 빌드가 되었지만 cm10.1로 오면서 많은 변화가 나타났습니다"><title>ramdisk_offset 만들기 — luminousky archive</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.BgW6xfjO.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2012 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">ramdisk_offset 만들기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-07-20T15:57:09.000Z"> 2013년 7월 21일 </time> <span class="post-category">Android/Build</span> <a href="https://itmir.tistory.com/271" class="post-original" target="_blank" rel="noopener noreferrer">
+<!DOCTYPE html><html lang="ko" class="antialiased"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="cm10까지는 ramdisk_offset이라는것을 작성하지 않아도 그냥 빌드가 되었지만 cm10.1로 오면서 많은 변화가 나타났습니다"><title>ramdisk_offset 만들기 — luminousky archive</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.Z8bcidDp.css">
+<style>html{scroll-behavior:smooth;overflow-y:scroll;scrollbar-width:thin;scrollbar-color:#d1d5db transparent}::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background-color:#d1d5db;border-radius:999px;-webkit-transition:background-color .15s;transition:background-color .15s}::-webkit-scrollbar-thumb:hover{background-color:#9ca3af}.prose pre.astro-code{padding:1rem 1.25rem}
+</style></head> <body class="bg-white text-gray-900 font-sans leading-relaxed"> <header class="sticky top-0 z-10 border-b border-gray-200 bg-white/90 backdrop-blur-sm px-6"> <div class="max-w-5xl mx-auto flex items-center justify-between h-14"> <a href="/archive/" class="text-base font-semibold text-gray-900 tracking-tight hover:text-blue-600 no-underline transition-colors">
+luminousky / ITMir
+</a> <span class="text-base text-gray-400">2012 – 2021</span> </div> </header> <main class="px-6"> <div class="max-w-5xl mx-auto pt-10 pb-20">  <article> <header class="mb-9 pb-6 border-b border-gray-200"> <a href="/archive/itmir/" class="inline-block text-base text-gray-400 mb-5 no-underline hover:text-blue-600 transition-colors">
+← 목록으로
+</a> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-3"> ramdisk_offset 만들기 </h1> <div class="flex items-center gap-3 flex-wrap"> <time class="text-base text-gray-400" datetime="2013-07-20T15:57:09.000Z"> 2013년 7월 21일 </time> <span class="text-base text-gray-400 bg-gray-100 px-2 py-0.5 rounded"> Android/Build </span> <a href="https://itmir.tistory.com/271" class="text-base text-gray-400 underline underline-offset-2" target="_blank" rel="noopener noreferrer">
 원본 보기 ↗
-</a> </div> <p class="post-description">cm10까지는 ramdisk_offset이라는것을 작성하지 않아도 그냥 빌드가 되었지만 cm10.1로 오면서 많은 변화가 나타났습니다</p> </header> <div class="post-content"> <p>cm10까지는 ramdisk_offset이라는것을 작성하지 않아도 그냥 빌드가 되었지만 cm10.1로 오면서 많은 변화가 나타났습니다</p>
+</a> </div> <p class="mt-3 mb-0 text-base text-gray-400 leading-relaxed"> cm10까지는 ramdisk_offset이라는것을 작성하지 않아도 그냥 빌드가 되었지만 cm10.1로 오면서 많은 변화가 나타났습니다 </p> </header> <div class="prose prose-gray"> <p>cm10까지는 ramdisk_offset이라는것을 작성하지 않아도 그냥 빌드가 되었지만 cm10.1로 오면서 많은 변화가 나타났습니다</p>
 <p>이것이 왜 필요한지는 모르겟습니다.. 아마 mkbootimg 바이너리 파일의 소스가 변경된듯 합니다</p>
 <p>제 기억으로는 ramdisk_offset이 있는 소스가 낡은 소스로 알고 있는대 아닐지도 모르지만 왜 cm-10.1에서는 이 소스로 mkbootimg를 만들어 사용하는지 원…</p>
 <p>아무튼 빌드하다 보면 아래와 같은 오류가 나타나며 빌드가 안됩니다</p>
@@ -78,8 +84,8 @@
 <p>이렇게 해서 귀찮은 ramdisk_offset을 구하는 방법에 대해 알아보았습니다~</p>
 <p>도움이 되셨다면 추천 부탁드리고 널리 퍼트려 주세요~</p>
 <p>참고</p>
-<p>Sleepy님의 4.1.2 디바이스 소스로 4.2.1 빌드하기</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
-Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+<p>Sleepy님의 4.1.2 디바이스 소스로 4.2.1 빌드하기</p> </div>  </article>  </div> </main> <footer class="border-t border-gray-200 px-6 py-6 text-center"> <p class="text-base text-gray-400 m-0">
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 underline underline-offset-2">
 itmir.tistory.com
 </a>  · Archived by luminousky
 </p> </footer> </body></html>

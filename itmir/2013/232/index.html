@@ -1,6 +1,12 @@
-<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="서명 파일 만드는 것을 궁굼해 하시는 분들이 있어 apk-manager 에 적용이 가능한 안드로이드 서명 파일 만드는 방법과 툴을 소개해 드리고자 합니다."><title>나만의 서명파일(sign key)만들기 — luminousky archive</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.BgW6xfjO.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2012 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">나만의 서명파일(sign key)만들기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-06-05T10:23:49.000Z"> 2013년 6월 5일 </time> <span class="post-category">SmartPhone/Android</span> <a href="https://itmir.tistory.com/232" class="post-original" target="_blank" rel="noopener noreferrer">
+<!DOCTYPE html><html lang="ko" class="antialiased"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="서명 파일 만드는 것을 궁굼해 하시는 분들이 있어 apk-manager 에 적용이 가능한 안드로이드 서명 파일 만드는 방법과 툴을 소개해 드리고자 합니다."><title>나만의 서명파일(sign key)만들기 — luminousky archive</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.Z8bcidDp.css">
+<style>html{scroll-behavior:smooth;overflow-y:scroll;scrollbar-width:thin;scrollbar-color:#d1d5db transparent}::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background-color:#d1d5db;border-radius:999px;-webkit-transition:background-color .15s;transition:background-color .15s}::-webkit-scrollbar-thumb:hover{background-color:#9ca3af}.prose pre.astro-code{padding:1rem 1.25rem}
+</style></head> <body class="bg-white text-gray-900 font-sans leading-relaxed"> <header class="sticky top-0 z-10 border-b border-gray-200 bg-white/90 backdrop-blur-sm px-6"> <div class="max-w-5xl mx-auto flex items-center justify-between h-14"> <a href="/archive/" class="text-base font-semibold text-gray-900 tracking-tight hover:text-blue-600 no-underline transition-colors">
+luminousky / ITMir
+</a> <span class="text-base text-gray-400">2012 – 2021</span> </div> </header> <main class="px-6"> <div class="max-w-5xl mx-auto pt-10 pb-20">  <article> <header class="mb-9 pb-6 border-b border-gray-200"> <a href="/archive/itmir/" class="inline-block text-base text-gray-400 mb-5 no-underline hover:text-blue-600 transition-colors">
+← 목록으로
+</a> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-3"> 나만의 서명파일(sign key)만들기 </h1> <div class="flex items-center gap-3 flex-wrap"> <time class="text-base text-gray-400" datetime="2013-06-05T10:23:49.000Z"> 2013년 6월 5일 </time> <span class="text-base text-gray-400 bg-gray-100 px-2 py-0.5 rounded"> SmartPhone/Android </span> <a href="https://itmir.tistory.com/232" class="text-base text-gray-400 underline underline-offset-2" target="_blank" rel="noopener noreferrer">
 원본 보기 ↗
-</a> </div> <p class="post-description">서명 파일 만드는 것을 궁굼해 하시는 분들이 있어 apk-manager 에 적용이 가능한 안드로이드 서명 파일 만드는 방법과 툴을 소개해 드리고자 합니다.</p> </header> <div class="post-content"> <p>서명 파일 만드는 것을 궁굼해 하시는 분들이 있어 apk-manager 에 적용이 가능한 안드로이드 서명 파일 만드는 방법과 툴을 소개해 드리고자 합니다.</p>
+</a> </div> <p class="mt-3 mb-0 text-base text-gray-400 leading-relaxed"> 서명 파일 만드는 것을 궁굼해 하시는 분들이 있어 apk-manager 에 적용이 가능한 안드로이드 서명 파일 만드는 방법과 툴을 소개해 드리고자 합니다. </p> </header> <div class="prose prose-gray"> <p>서명 파일 만드는 것을 궁굼해 하시는 분들이 있어 apk-manager 에 적용이 가능한 안드로이드 서명 파일 만드는 방법과 툴을 소개해 드리고자 합니다.</p>
 <p>카카오톡 테마 apk 파일이나 어플을 개발시 나의 서명을 삽입하는 방법은 일단 서명 파일을 만들어야 합니다. 한번 만든 서명 파일을 계속 이용하시면 내 어플에 같은 나만의 서명이된 apk 파일을 배포 가능합니다.</p>
 <p>apk-manager에 적용이 가능한 서명 만드는 방법에 대해서 아시는 분들이 없어서 제가 개인적으로 안드로이드 apk에 적용이 가능하도록 배치 파일로 만들어 사용하고 있는 툴을 공개합니다.</p>
 <p>나만의 서명 파일을 만들기 위해서 apk-manager 의 other 폴더의 testkey.pk8, testkey.x509.pem 파일이 apk-manager의 12번 sign 시 적용이 되는 파일입니다. 이 2개의 파일을 생성하려면 첨부한 파일을 다운로드 받아서 C:\에 압축을 해제하면 아래와 같은 파일이 나옵니다. 아래 화면에서와 같은 폴더명과 위치를 사용하세요.</p>
@@ -20,8 +26,8 @@
 <h2 id="첨부파일">첨부파일</h2>
 <ul>
 <li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/openssl.zip">openssl.zip</a> <code>853 KB</code></li>
-</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
-Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
+</ul> </div>  </article>  </div> </main> <footer class="border-t border-gray-200 px-6 py-6 text-center"> <p class="text-base text-gray-400 m-0">
+Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 underline underline-offset-2">
 itmir.tistory.com
 </a>  · Archived by luminousky
 </p> </footer> </body></html>
