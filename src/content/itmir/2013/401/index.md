@@ -22,15 +22,15 @@ IE에서 윈도우 미디어 플레이어를 실행해야 들리는거 같군요
 
 by Me
 
-[QR-[2013.12.05]-161803.wav](./file/QR-[2013.12.05]-161803.wav)
+[QR-[2013.12.05]-161803.wav](https://github.com/itmir913/archive/releases/download/itmir-attachments/401-QR-20131205-161803.wav)
 
-[QR-[2013.12.05]-182800.wav](./file/QR-[2013.12.05]-182800.wav)
+[QR-[2013.12.05]-182800.wav](https://github.com/itmir913/archive/releases/download/itmir-attachments/401-QR-20131205-182800.wav)
 
-[QR-[2013.12.05]-183005.wav](./file/QR-[2013.12.05]-183005.wav)
+[QR-[2013.12.05]-183005.wav](https://github.com/itmir913/archive/releases/download/itmir-attachments/401-QR-20131205-183005.wav)
 
-[QR-[2013.12.05]-183430.wav](./file/QR-[2013.12.05]-183430.wav)
+[QR-[2013.12.05]-183430.wav](https://github.com/itmir913/archive/releases/download/itmir-attachments/401-QR-20131205-183430.wav)
 
-[QR-[2013.12.05]-183624.wav](./file/QR-[2013.12.05]-183624.wav)
+[QR-[2013.12.05]-183624.wav](https://github.com/itmir913/archive/releases/download/itmir-attachments/401-QR-20131205-183624.wav)
 
 너에게난 나에게 넌
 
@@ -40,9 +40,9 @@ by Me
 
 by Me
 
-[QR-[2013.12.05]-184210.wav](./file/QR-[2013.12.05]-184210.wav)
+[QR-[2013.12.05]-184210.wav](https://github.com/itmir913/archive/releases/download/itmir-attachments/401-QR-20131205-184210.wav)
 
-[QR-[2013.12.05]-184552.wav](./file/QR-[2013.12.05]-184552.wav)
+[QR-[2013.12.05]-184552.wav](https://github.com/itmir913/archive/releases/download/itmir-attachments/401-QR-20131205-184552.wav)
 
 둘다 망했으니 너무 감상하지 마시길 ㅠㅠㅠ
 

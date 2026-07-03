@@ -34,7 +34,7 @@ original_url: "https://itmir.tistory.com/646"
 
 ### 다운로드
 
-[정시 점수 공개 (2018.01.11).xlsx](./file/정시 점수 공개 (2018.01.11).xlsx)
+[정시 점수 공개 (2018.01.11).xlsx](https://github.com/itmir913/archive/releases/download/itmir-attachments/646-2018.01.11.xlsx).xlsx)
 
 파일이 업데이트 될 경우, </archive/itmir/2018/646>에서 확인해주세요.
 

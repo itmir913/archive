@@ -1,4 +1,4 @@
----
+﻿---
 title: "3) CyanogenMod Config.mk 구문"
 date: "2013-05-26T14:10:13+09:00"
 category: "Android/Build"
@@ -32,24 +32,31 @@ BoardConfig.mk는 다음 위치에 있습니다
 
 이제부터 BoardConfig.mk에 들어가는 내용에 대해 일부를(한 글에서 전체를 설명하기 매우 어렵습니다) 살펴보겠습니다
 
+```makefile
 -include device/pantech/msm8960-common/BoardConfigCommon.mk
+`````
 
 이 부분은 앞부분의 include만 봐도 알수 있드시 device/pantech/msm8960-common/BoardConfigCommon.mk라는 파일의 내용을 include하라는 명령어 입니다
 
+```makefile
 TARGET\_PROVIDES\_INIT\_RC := true
+`````
 
 init.rc를 cyanogenmod빌드시 생성되게 하지 않고 직접 만든 init.rc를 사용하겠다는 선언입니다
 
+```makefile
 TARGET\_SPECIFIC\_HEADER\_PATH := device/pantech/ef46l/include
+`````
 
 이 부분은 include할 파일들을 지정해 주는 구문인대요 특별하게 필요한 .c파일들을 사용할때 사용됩니다
 
-BOARD\_KERNEL\_BASE := 0x80200000  
-BOARD\_KERNEL\_PAGE\_SIZE := 2048  
-BOARD\_KERNEL\_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom androidboot.carrier=SKT-KOR user\_debug=31 msm\_rtb.filter=0x3F ehci-hcd.park=3 maxcpus=2 loglevel=0  
-  
-#BOARD\_FORCE\_RAMDISK\_ADDRESS := 0x82400000  
+```makefile
+BOARD\_KERNEL\_BASE := 0x80200000
+BOARD\_KERNEL\_PAGE\_SIZE := 2048
+BOARD\_KERNEL\_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom androidboot.carrier=SKT-KOR user\_debug=31 msm\_rtb.filter=0x3F ehci-hcd.park=3 maxcpus=2 loglevel=0
+#BOARD\_FORCE\_RAMDISK\_ADDRESS := 0x82400000
 BOARD\_MKBOOTIMG\_ARGS :=
+`````
 
 위 초록 박스에 있는 선언들은 부트이미지와 관련된 선언입니다
 
@@ -87,14 +94,15 @@ PRODUCT\_COPY\_FILES += \
 
 이 부분이 없을경우 "Boot.img에 필요한 Kernel이 없습니다" 오류가 나타나게 될것입니다
 
-TARGET\_USERIMAGES\_USE\_EXT4 := true  
-BOARD\_BOOTIMAGE\_PARTITION\_SIZE := 9437184  
-BOARD\_RECOVERYIMAGE\_PARTITION\_SIZE := 10485760  
-BOARD\_SYSTEMIMAGE\_PARTITION\_SIZE := 1073741824  
-BOARD\_USERDATAIMAGE\_PARTITION\_SIZE := 8589934592  
-BOARD\_FLASH\_BLOCK\_SIZE := 131072  
+```makefile
+TARGET\_USERIMAGES\_USE\_EXT4 := true
+BOARD\_BOOTIMAGE\_PARTITION\_SIZE := 9437184
+BOARD\_RECOVERYIMAGE\_PARTITION\_SIZE := 10485760
+BOARD\_SYSTEMIMAGE\_PARTITION\_SIZE := 1073741824
+BOARD\_USERDATAIMAGE\_PARTITION\_SIZE := 8589934592
+BOARD\_FLASH\_BLOCK\_SIZE := 131072
 BOARD\_VOLD\_MAX\_PARTITIONS := 33
-
+`````n
 !! 이부분은 잘 지정해 주셔야 합니다
 
 Boot파티션, 리커버리 파티션, 시스탬 파티션, data파티션등의 크기를 선언하고 있습니다
@@ -103,19 +111,25 @@ Boot파티션, 리커버리 파티션, 시스탬 파티션, data파티션등의 
 
 확인하는 방법은 cat /proc/mtd라고 하나, ICS이상부터는 /proc에 있는 파일을 보고 직접 확인해야 합니다
 
+```makefile
 BOARD\_CUSTOM\_RECOVERY\_KEYMAPPING := ../../device/[제조사]/[기기명]/recovery\_keys.c
+`````
 
 리커버리에 사용되는 키맵 파일을 우리가 만든 파일로 지정하는 선언 입니다
 
 리커버리 키 패치에 사용됩니다
 
+```makefile
 BOARD\_USES\_GENERIC\_AUDIO:= true
+`````
 
 'out/target/product/(기기명)/obj/lib/libaudio.so'를 만들 규칙이 없습니다.  멈춤
 
 이 오류를 해결하는대 필요한 문구 입니다
 
+```makefile
 USE\_CAMERA\_STUB:= true
+`````
 
 `out/target/product/(기기명)/obj/lib/libcamera.so'를 만들 규칙이 없습니다.  멈춤.
 
@@ -123,19 +137,25 @@ USE\_CAMERA\_STUB:= true
 
 vendor/\*/BoardConfigVendor.mk에 저런 값이 false되어 있다면 역시 true로 지정해야 합니다
 
+```makefile
 TARGET\_ARCH := arm
+`````
 
 cm-10.1을 빌드하려면 이 문구가 필요합니다
 
 만약 이 문구가 없을경우 brunch할때 "TARGET\_ARCH이 선언되어 있지 않습니다 TARGET\_ARCH을 선언하세요"와 같은 오류가 나타납니다
 
+```makefile
 RECOVERY\_GRAPHICS\_USE\_LINELENGTH := true
+`````
 
 리커버리의 그래픽이 깨질때 이 구문을 넣어 빌드하면 정상 작동 됩니다
 
 VegaRacer2 젤리빈 CWM을 빌드할경우 이 구문이 꼭 필요합니다
 
+```makefile
 BOARD\_CUSTOM\_GRAPHICS := ../../../device/제조사/기기명/graphics.c
+`````
 
 커스텀 그래픽 소스를 사용할때 사용되는 구문 입니다
 
@@ -190,21 +210,27 @@ PRODUCT\_COPY\_FILES += \
 
 저 구문을 짧게 줄여보면
 
+```makefile
 PRODUCT\_COPY\_FILES += device/common/gps/gps.conf\_AS:system/etc/gps.conf
+`````
 
 이렇게도 작성할수 있습니다
 
 이 문구는 common에서 gps.conf를 가져와라 라는 hPa님 소스안에 있는 구문입니다
 
+```makefile
 FRAMEWORKS\_BASE\_SUBDIRS += ../../$(LOCAL\_PATH)/ril/
+`````
 
 이렇게 hPa님의 소스에는 ril패치가 되어 있습니다
 
 하지만 이 방법으로 ril패치를 하는 건 cm10에서는 되지만 cm10.1에서는 직접 소스를 이동해서 작업해야 합니다
 
-PRODUCT\_AAPT\_CONFIG := normal hdpi xhdpi  
-PRODUCT\_AAPT\_PREF\_CONFIG := xhdpi  
+```makefile
+PRODUCT\_AAPT\_CONFIG := normal hdpi xhdpi
+PRODUCT\_AAPT\_PREF\_CONFIG := xhdpi
 PRODUCT\_LOCALES += ko\_KR xhdpi
+`````
 
 이 부분은 저도 아직은 잘 모르는 부분입니다..만
 
@@ -214,11 +240,15 @@ PRODUCT\_LOCALES += ko\_KR xhdpi
 
 마지막 줄은 현재 나라와 drawable을 결정하는것 같습니다
 
+```makefile
 $(call inherit-product-if-exists, vendor/pantech/ef46l/ef46l-vendor.mk)
+`````
 
 이런 구문으로 vendor/pantech/ef46l/ef46l-vendor.mk을 호출할수 있습니다
 
+```makefile
 DEVICE\_PACKAGE\_OVERLAYS += device/(제조사)/(기기명)/overlay
+`````
 
 이건 overlay를 지정하는 구문입니다
 

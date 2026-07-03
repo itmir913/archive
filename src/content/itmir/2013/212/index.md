@@ -16,4 +16,6 @@ original_url: "https://itmir.tistory.com/212"
 
 AndroidManifest.xml에서 아래 구문을 찾아 지워 주시면 됩니다
 
-> <category android:name="android.intent.category.LAUNCHER" />
+```xml
+<category android:name="android.intent.category.LAUNCHER" />
+```

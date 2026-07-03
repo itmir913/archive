@@ -22,7 +22,7 @@ original_url: "https://itmir.tistory.com/298"
 
 안드로이드에서 화면에 글자를 표시하는 방법은 두가지 정도가 있습니다
 
-android:text="안녕하십니까?"
+`android:text="안녕하십니까?"`
 
 처럼 그냥 글자를 넣는 방법이 있습니다'
 
@@ -62,21 +62,23 @@ android:text="안녕하십니까?"
 
 그렇다면 자바에서 어떻게 처리해야 할까요?
 
+```java
 String.format(getString(R.string.hello), getString(R.string.ok))
+```
 
 이렇게 String.format을 이용하시면 됩니다
 
 예를 들어 볼까요?
 
+```java
 TextView Test;
-
 Test = (TextView) findViewById(R.id.textview1);
-
 test.setText(String.format(getString(R.string.hello), "미르"));
+```
 
 뭐 이런 내용이 있다고 합시다
 
-string.xml에는 <string name="hello">%1$s님 안녕하세요!lt;/string>라고 되어 있습니다
+string.xml에는 `<string name="hello">%1$s님 안녕하세요!</string>`라고 되어 있습니다
 
 그렇다면 이때 앞에 있는 getString(R.string.hello)는 "%1$s님 안녕하세요!"이라는 글자인대 ,뒤에 "미르"라는 글자가 있으므로
 

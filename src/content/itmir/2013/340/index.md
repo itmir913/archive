@@ -30,12 +30,4 @@ original_url: "https://itmir.tistory.com/340"
 
 허락 받았습니다 ㅎㅎ
 
-[Weiyun.z01](./file/Weiyun.z01)
-
-[Weiyun.z02](./file/Weiyun.z02)
-
-[Weiyun.z03](./file/Weiyun.z03)
-
-[Weiyun.z04](./file/Weiyun.z04)
-
-[Weiyun.zip](./file/Weiyun.zip)
+*(Weiyun 무설치 파일 — 용량 초과로 GitHub Releases 미업로드, 파일 없음)*

@@ -26,23 +26,29 @@ overlay관련 문제 내용을 보면,
 
 위와 같은 오류가 발생합니다.
 
-이 오류는 <add-resource>를 이용해 해결할 수 있습니다.
+이 오류는 `<add-resource>`를 이용해 해결할 수 있습니다.
 
-> <add-resource type="string" name="오류난 overlay의 구문 이름"></add-resource>
+```xml
+<add-resource type="string" name="오류난 overlay의 구문 이름"></add-resource>
+```
 
 위 박스의 내용을 오류난 구문의 앞에 넣어주시면 됩니다.
 
 예를 들면,
 
+```xml
 <String name="testoverlay">overlay</String>
+```
 
 이 부분이 문제가 있다고 합니다.
 
-이때 아래 부분처럼 <add-resource>를 넣어주시면 해결됩니다.
+이때 아래 부분처럼 `<add-resource>`를 넣어주시면 해결됩니다.
 
+```xml
 <add-resource type="string" name="testoverlay"></add-resource>
 
 <String name="testoverlay">overlay</String>
+```
 
 만약 String이 아니라 bool 등 일경우 type을 적절히 바꿔주시면 되겠죠?
 

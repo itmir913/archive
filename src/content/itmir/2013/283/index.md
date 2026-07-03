@@ -1,4 +1,4 @@
----
+﻿---
 title: "안드로이드 탭을 구현해 보자, Fragment"
 date: "2013-07-29T09:27:04+09:00"
 category: "Android/App"
@@ -556,7 +556,9 @@ button1 = (Button) **view.**findViewById(R.id.button1);
 
 이렇게 아래로 이동하는것은 가능하며, API 14 (4.0)이상에서 사용가능합니다.
 
-<activity .. **android:uiOptions="splitActionBarWhenNarrow"** ..></activity>
+```xml
+<activity .. android:uiOptions="splitActionBarWhenNarrow" ..></activity>
+`````
 
 이 빨간 문구를 AndroidManifest.xml의 <activity> 부분에 넣어주세요.
 

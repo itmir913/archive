@@ -41,11 +41,13 @@ original_url: "https://itmir.tistory.com/111"
 이 파일을 받아주시길 바랍니다
 
 
+```javascript
 document.writeln('google\_ad\_client = "[클라이언트 코드]";');  
 document.writeln('/\* [광고 이름] \*/');  
 document.writeln('google\_ad\_slot = "[광고 슬롯]";');  
 document.writeln('google\_ad\_width = [광고 넓이];');  
 document.writeln('google\_ad\_height = [광고 높이];')
+```
 
 위 내용은 AdsenseM.js의 내용중 일부입니다
 
@@ -95,9 +97,10 @@ AdsenseM.js을 찾아 새탭에서 링크열기를 클릭해 주세요
 
 저 주소를 아래 코드에 넣습니다 (아래 코드가 게시글에 들어갈 코드입니다)
 
+```html
 <div style="width:300px; margin: auto;">
-
 <script type="text/javascript" src="[확인한 주소]/skin/images/AdsenseM.js"></script></div>
+```
 
 /skin/images/전까지만 복사해서 붙혀 넣으시면 되겠죠?
 
@@ -118,17 +121,14 @@ AdsenseM.js을 찾아 새탭에서 링크열기를 클릭해 주세요
 
 그다음 아래 내용을 작성해 주신다음 저장해 주시면 됩니다
 
+```html
 <TABLE width="100%">
-
 <TBODY>
-
 <TR>
-
 <TD align=center>
-
 [ 광고 코드 ]
-
 </DIV></TD></TR></TBODY></TABLE>
+```
 
 
 광고 코드 란에는 위에서 만든 게시글에 들어갈 코드를 넣어주시면 완성됩니다 ㅎㅎ

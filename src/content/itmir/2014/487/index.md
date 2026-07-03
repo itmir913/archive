@@ -146,7 +146,7 @@ o 시상내역 : 국무총리상 1명, 미래창조과학부장관상 12명, 한
 
 [2014 KOI 운영계획.hwp](https://github.com/itmir913/archive/releases/download/itmir-attachments/487-2014-KOI-plan.hwp)
 
-[제31회 한국정보올림피아드 세부계획 (홈페이지게시용).hwp](./file/제31회 한국정보올림피아드 세부계획 (홈페이지게시용).hwp)
+[제31회 한국정보올림피아드 세부계획 (홈페이지게시용).hwp](https://github.com/itmir913/archive/releases/download/itmir-attachments/487-KOI31-schedule.hwp).hwp)
 
 <https://docs.google.com/file/d/0B2t_9XLUrUKEcVRhWVhKTDZvYX>
 

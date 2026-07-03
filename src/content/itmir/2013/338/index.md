@@ -160,10 +160,6 @@ original_url: "https://itmir.tistory.com/338"
 
 **한글화 모바일 앱 다운로드 :   [TencentCloud\_fix2(SPAPA).apk](http://spapa1004.tistory.com/attachment/cfile23.uf@240DF14F522DF5CD11CCA2.apk)**
 
-미르의 미러 첨부파일
-
-[TencentCloud\_fix2(SPAPA).apk](./file/TencentCloud_fix2(SPAPA).apk)
-
 한글화 앱 추가수정 (초보자 가이드 한글화, 몇몇 부분 수정)
 
 
@@ -211,8 +207,6 @@ original_url: "https://itmir.tistory.com/338"
 
 **업데이트버전(1.6.0.360) 한글화 앱 :   [TencentCloud\_1.6.0.360(SPAPA).apk](http://spapa1004.tistory.com/attachment/cfile3.uf@236BAA345245B17E185402.apk)**
 
-[Tencent\_Cloud\_1.6.0.360(SPAPA).apk](./file/Tencent_Cloud_1.6.0.360(SPAPA).apk)
-
 **\* 대용량 클라우드 서비스**
 
 **바이두 무료 대용량 클라우드 서비소개 :  <http://spapa1004.tistory.com/51>**
@@ -246,8 +240,6 @@ original_url: "https://itmir.tistory.com/338"
 ![](./images/Screenshot_2013-09-10-00-10-48_2.png) ![](./images/Screenshot_2013-09-10-00-11-03_2.png)
 
 **업데이트버전(1.6.0.360) 한글화 앱 :   [TencentCloud\_1.6.0.360(SPAPA).apk](http://spapa1004.tistory.com/attachment/cfile3.uf@236BAA345245B17E185402.apk)**
-
-[Tencent\_Cloud\_1.6.0.360(SPAPA).apk](./file/Tencent_Cloud_1_1.6)
 
 **\* 대용량 클라우드 서비스**
 

@@ -132,7 +132,7 @@ QR코드 :       ![](./images/image_5.jpg)
 
 **바이두 클라우드 한글화 앱 다운로드 :   [BaiduCloud(SPAPA).apk](http://spapa1004.tistory.com/attachment/cfile5.uf@2453A247522E884834A3E7.apk)**
 
-[BaiduCloud\_fix(SPAPA).apk](./file/BaiduCloud_fix(SPAPA).apk)
+~~BaiduCloud\_fix(SPAPA).apk~~ *(파일 없음)*
 
 **PC클라이언트 프로그램을 한글화하신분이 계셔서 링크 같이 남겨드립니다.**
 
@@ -274,9 +274,9 @@ C:\Program Files\baidu\BaiduYunGuanjia
 
 블로그에서 클라이언트 다운로드
 
-[BaiduYun\_3.8.0.exe](./file/BaiduYun_3.8.0.exe)
+[BaiduYun\_3.8.0.exe](http://bcscdn.baidu.com/netdisk/BaiduYun_3.8.0.exe)
 
-[BaiduYunGuanjia\_4.1.0.exe](./file/BaiduYunGuanjia_4.1.0.exe)
+[BaiduYunGuanjia\_4.1.0.exe](http://bcscdn.baidu.com/netdisk/BaiduYunGuanjia_4.1.0.exe)
 
 **패쳐 다운로드 ↓↓↓↓**
 
@@ -345,7 +345,7 @@ C:\Program Files\baidu\BaiduYunGuanjia
 
 **업데이트버전(5.1.1) 한글화 앱 :**
 
-**[BaiduCloud\_5.1.1(SPAPA).apk](./file/BaiduCloud_5.1.1(SPAPA).apk)**
+~~BaiduCloud\_5.1.1(SPAPA).apk~~ *(파일 없음)*
 
 **\* 대용량 클라우드 서비스**
 
