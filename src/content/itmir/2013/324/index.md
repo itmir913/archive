@@ -1,4 +1,4 @@
----
+﻿﻿﻿---
 title: "티스토리 좋은 소스코드 표현방법"
 date: "2013-08-28T21:15:57+09:00"
 category: "Tistory"
@@ -66,85 +66,61 @@ styles폴더에서는 shCore.css파일과 shThemeDefault.css(또는 shTheme~.css
 
 그다음 위에 있는 HTML/CSS를 눌러서 html을 수정해 봅시다.
 
-<html>이라는 코드 아래에 어디든지 아래 코드를 복사해서 추가해 주세요.
+`<html>`이라는 코드 아래에 어디든지 아래 코드를 복사해서 추가해 주세요.
 
+```html
 <script type="text/javascript" src="./images/shCore.js"></script>
-
 <script type="text/javascript" src="./images/shLegacy.js"></script>
-
 <script type="text/javascript" src="./images/shBrushAppleScript.js"></script>
-
 <script type="text/javascript" src="./images/shBrushAS3.js"></script>
-
 <script type="text/javascript" src="./images/shBrushBash.js"></script>
-
 <script type="text/javascript" src="./images/shBrushColdFusion.js"></script>
-
 <script type="text/javascript" src="./images/shBrushCpp.js"></script>
-
 <script type="text/javascript" src="./images/shBrushCSharp.js"></script>
-
 <script type="text/javascript" src="./images/shBrushCss.js"></script>
-
 <script type="text/javascript" src="./images/shBrushDelphi.js"></script>
-
 <script type="text/javascript" src="./images/shBrushDiff.js"></script>
-
 <script type="text/javascript" src="./images/shBrushErlang.js"></script>
-
 <script type="text/javascript" src="./images/shBrushGroovy.js"></script>
-
 <script type="text/javascript" src="./images/shBrushJava.js"></script>
-
 <script type="text/javascript" src="./images/shBrushJavaFx.js"></script>
-
 <script type="text/javascript" src="./images/shBrushJScript.js"></script>
-
 <script type="text/javascript" src="./images/shBrushPerl.js"></script>
-
 <script type="text/javascript" src="./images/shBrushPhp.js"></script>
-
 <script type="text/javascript" src="./images/shBrushPlain.js"></script>
-
 <script type="text/javascript" src="./images/shBrushPowerShell.js"></script>
-
 <script type="text/javascript" src="./images/shBrushPython.js"></script>
-
 <script type="text/javascript" src="./images/shBrushRuby.js"></script>
-
 <script type="text/javascript" src="./images/shBrushSass.js"></script>
-
 <script type="text/javascript" src="./images/shBrushScala.js"></script>
-
 <script type="text/javascript" src="./images/shBrushSql.js"></script>
-
 <script type="text/javascript" src="./images/shBrushVb.js"></script>
-
 <script type="text/javascript" src="./images/shBrushXml.js"></script>
-
 <link type="text/css" rel="stylesheet" href="./images/shCore.css">
-
 <link type="text/css" rel="stylesheet" href="./images/shThemeDefault.css">
+```
 
-그다음 skin.html의 마지막 부분인   </body></html>위에 아래 코드를 또 넣어주세요.
+그다음 skin.html의 마지막 부분인  `</body></html>`위에 아래 코드를 또 넣어주세요.
 
+```html
 <pre class="brush: javascript">
-
 <script type="text/javascript">
 SyntaxHighlighter.defaults['toolbar'] = false;
 SyntaxHighlighter.all();
-
 </script>
+```
 
 자 그럼 이제 작업은 끝났습니다.
 
 이제 게시글을 작성할때 코드를 아래 html 소스 안에 넣어주시면 됩니다.
 
+```html
 <pre class="brush: 언어종류">
 
 // 코드내용을 이곳에 적습니다
 
 </pre>
+```
 
 이때 언어종류에는 javascript, c, java등등이 들어갈수 있습니다.
 
@@ -164,17 +140,19 @@ SyntaxHighlighter의 치명적인 단점이랄까요?
 
 여기서 프로그램의 설명과 방법을 확인하실수 있습니다.
 
-<pre>를 사용하지 않고 <script>를 사용하면 해결할수 있다고 합니다.
+`<pre>`를 사용하지 않고 `<script>`를 사용하면 해결할수 있다고 합니다.
 
-그러나 특정환경(모바일등등)에서는 아에 표시되지 않을 수 있고, 검색봇에게 <script>는 검색하지 않는다는 점이 단점이 되겠습니다.
+그러나 특정환경(모바일등등)에서는 아에 표시되지 않을 수 있고, 검색봇에게 `<script>`는 검색하지 않는다는 점이 단점이 되겠습니다.
 
-아래는 <script>로 사용한 코드의 예입니다. (모바일에서는 안보일겁니다, 또는 자바스크립트 사용여부를 확인하세요)
+아래는 `<script>`로 사용한 코드의 예입니다. (모바일에서는 안보일겁니다, 또는 자바스크립트 사용여부를 확인하세요)
 
+```html
 <script type="syntaxhighlighter" class="brush: js">
 
 // 코드를 입력하시면 됩니다
 
 </script>
+```
 
 이런식으로 작성해 주시면 됩니다.
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: "[1편] 티스토리에 구글 애드센스 (Google Adsense)를 넣어보자"
 date: "2013-02-05T22:01:01+09:00"
 category: "Tistory"
@@ -93,24 +93,26 @@ original_url: "https://itmir.tistory.com/110"
 
 다음이 광고 두개를 넣는 소스입니다.
 
-> <div>   
-> <TABLE border="0" cellspacing="0" cellpadding="0" height=280 width=680 >  
-> <TR>  
->        <TD align = "left"  width = 260>  
-> [ 애드센스 광고 소스 - 본문 상단 왼쪽]  
->  </TD>
->
->  <TD width = 10 >  
->  </TD>
->
->        <TD align = "left" width = 260>  
-> [ 애드센스 광고 소스 - 본문 상단 오른쪽]  
->  </TD>  
-> </TR>  
-> <TR>
->
-> </TABLE>  
-> </div>
+```html
+<div>
+<TABLE border="0" cellspacing="0" cellpadding="0" height=280 width=680 >
+<TR>
+       <TD align = "left"  width = 260>
+[ 애드센스 광고 소스 - 본문 상단 왼쪽]
+ </TD>
+
+ <TD width = 10 >
+ </TD>
+
+       <TD align = "left" width = 260>
+[ 애드센스 광고 소스 - 본문 상단 오른쪽]
+ </TD>
+</TR>
+<TR>
+
+</TABLE>
+</div>
+```
 
 자신의 광고 소스로 체워주신다음 skin.html의 알맞은 위치 에 넣어주시면 됩니다
 

@@ -28,11 +28,13 @@ original_url: "https://itmir.tistory.com/126"
 
 다음 코드를 넣어 주시면 됩니다 ㅎㅎ
 
+```html
 <div style="border:2px solid #d3d3d3; text-align:center; padding-top:20px; padding-bottom:20px;">
 
 애드센스 광고 소스
 
 </dev>
+```
 
 위 div코드를 광고 코드에 씌워주시면(?) 됩니다
 

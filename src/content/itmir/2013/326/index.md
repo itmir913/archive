@@ -30,4 +30,4 @@ package이름+서비스 이름
 
 예를 들면 com.example.service.myservice
 
-출처 : <a href="http://darkcher.tistory.com/184">http://darkcher.tistory.com/184</a>, 본인 수정
+출처 : [http://darkcher.tistory.com/184](http://darkcher.tistory.com/184), 본인 수정

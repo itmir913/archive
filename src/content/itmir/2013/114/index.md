@@ -31,7 +31,9 @@ original_url: "https://itmir.tistory.com/114"
 
 이 숫자를 아래 코드에 넣어주세요
 
-> <A onmouseover='img4.src="http://cfs.tistory.com/custom/blog/000/0000000/skin/images/bmr-200.jpg"' onmouseout='img4.src="http://cfs.tistory.com/custom/blog/000/0000000/skin/images/bmr-200\_o.jpg"' href="http://v.daum.net/user/plus?blogurl=http://블로그주소.tistory.com" target=blank><IMG name=img4 src="http://cfs.tistory.com/custom/blog/000/0000000/skin/images/bmr-200\_o.jpg"></A>
+```html
+<A onmouseover='img4.src="http://cfs.tistory.com/custom/blog/000/0000000/skin/images/bmr-200.jpg"' onmouseout='img4.src="http://cfs.tistory.com/custom/blog/000/0000000/skin/images/bmr-200\_o.jpg"' href="http://v.daum.net/user/plus?blogurl=http://블로그주소.tistory.com" target=blank><IMG name=img4 src="http://cfs.tistory.com/custom/blog/000/0000000/skin/images/bmr-200\_o.jpg"></A>
+```
 
 /000/0000000/에 자신의 블로그 코드를 넣어 주시면 되고 블로그주소에 자신의 블로그 주소를 기입해 주시면 됩니다
 

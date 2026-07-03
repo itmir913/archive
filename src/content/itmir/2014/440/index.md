@@ -56,7 +56,9 @@ original_url: "https://itmir.tistory.com/440"
 
 ![](./images/6.png)
 
-<center><a href=http://tistory.com/thankyou/2013/?nil=supporters\_banner><img src=(아까 복사한 이미지 주소)></a></center>
+```html
+<center><a href=http://tistory.com/thankyou/2013/?nil=supporters_banner><img src=(아까 복사한 이미지 주소)></a></center>
+```
 
 그다음 복사하시면 됩니다 ㅎㅎ
 
