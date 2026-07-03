@@ -31,5 +31,3 @@ lagfree는 menuconfig에서 선택 제거 하였습니다
 그리고 github를 사용해 보고 싶은대 방법을 잘 모르겠습니다;;
 
 알려주세요~
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) 2012-08-25 interactive와interactivex 추가.zip](/attachment/cfile22.uf@2169743D510601B33C16C9.zip)

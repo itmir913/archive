@@ -69,6 +69,3 @@ make.sh사용했고요 3:10분에 컴파일 완료 되었습니다
 
 이렇게 포스팅 해둬서 자료 남겨두는게 미래에 좋다고 하네요 ㅋㅋ
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) 2012-08-19 smartass 가버너 추가 두번째 시도.zip](/attachment/cfile24.uf@11722D3D510600241F51BD.zip)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) make.sh](/attachment/cfile8.uf@037AC83D510600260D72E8.sh)

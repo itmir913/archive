@@ -39,5 +39,3 @@ cm7을 만들었는대 fastboot모드에만 떠있습ㄴ디ㅏ...
 <http://cafe.naver.com/develoid/122078>
 
 <http://cafe.naver.com/take22/268322>
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) adb logcat.zip](/attachment/cfile22.uf@27398B3E5104E5382DC0A0.zip)

@@ -32,7 +32,6 @@ zImage 빌드와 모듈도 따로 나왔습니다.
 
 ps. 아무튼 요즘 너무 우분투를 안만져서 실력이 녹슬었는지 명령어가 기억이;;
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) 2012-08-18 순정 커널 빌드.zip](/attachment/cfile22.uf@035793505105FF4F310D0F.zip)
 
 +추가
 

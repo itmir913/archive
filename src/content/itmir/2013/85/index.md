@@ -15,5 +15,3 @@ original_url: "https://itmir.tistory.com/85"
 커널 내용물은 아까까지 수정한 내용물 입니다
 
 ![](./images/1.png)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) github 쉽게 배워보자.zip](/attachment/cfile3.uf@01287649510602C30D21B3.zip)

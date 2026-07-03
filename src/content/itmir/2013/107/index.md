@@ -22,7 +22,6 @@ original_url: "https://itmir.tistory.com/107"
 
 전 http://cafe.naver.com/skydevelopers/86106 의 hPa님의 이자르 cm7소스를 참고하였습니다
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) cm7dev.zip](http://itmir.tistory.com/attachment/cfile6.uf@2678E333510D25731EED16.zip)
 
 다음은 이자르의 cm7작업파일 입니다 (hPa님 게시글 첨부파일)
 

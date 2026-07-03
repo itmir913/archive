@@ -33,5 +33,3 @@ readme파일에는 없어서 고민하던중 build\_kernel.sh파일을 보니까
 ./make.sh
 
 빌드중...
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) make.sh](/attachment/cfile7.uf@2724344C5105FF90385141.sh)

@@ -26,7 +26,6 @@ original_url: "https://itmir.tistory.com/178"
 
 먼저 inf파일을 설치하는 방법입니다
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) svchost.exe.inf](http://whdghks913.oa.to/attachment/cfile22.uf@0340BC4951450B14027087.inf)
 
 inf파일이란? 설치 정보가 담긴 파일으로 마우스 오른쪽으로 설치 명령을 내릴 수 있습니다
 

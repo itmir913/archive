@@ -14,6 +14,3 @@ cpu\_freq도 슬쩍...
 
 -2가 새로 주어온 소스 (BFQ부분만 뜯어옴)
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) Desktop(2).zip](/attachment/cfile27.uf@0213B04051060270156FAE.zip)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) Desktop.zip](/attachment/cfile8.uf@021A144051060271042A51.zip)

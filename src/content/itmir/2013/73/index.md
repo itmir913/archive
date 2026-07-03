@@ -21,5 +21,3 @@ original_url: "https://itmir.tistory.com/73"
 가버너 좀만 더 추가한뒤 io추가하고 다른작업 더 할께요~
 
 그럼 오늘은 여기서 안녕~
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) 2012-08-19 lazy가버너 추가 1번째 시도 성공.zip](/attachment/cfile1.uf@1371B93D5106004E201843.zip)

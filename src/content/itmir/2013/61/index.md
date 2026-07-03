@@ -54,6 +54,3 @@ adb logcat
 
 ![](./images/Log2.png)
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) adb.zip](/attachment/cfile30.uf@0270AD455104DF4F2D87CE.zip)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/exe.gif) LogcatFilter.exe](/attachment/cfile9.uf@197A02455104DF52277775.exe)

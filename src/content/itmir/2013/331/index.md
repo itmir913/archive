@@ -30,7 +30,6 @@ CWM에서 롬을 설치하시듯이 설치하시면 됩니다
 
 위 링크에서 받을수 있지만 따로 첨부파일로 올려드리도록 하겠습니다
 
-[UPDATE-SuperSU-v1.60.zip](https://t1.daumcdn.net/cfile/tistory/221CD350522B25BF25)
 
 비지박스 제거
 

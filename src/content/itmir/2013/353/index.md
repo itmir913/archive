@@ -202,7 +202,6 @@ HEX에디터와 파일비교등등으로 겨우 이정도까지 했습니다.
 
 접기
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) 바이두클라우드한글패치.zip](http://w3tech.tistory.com/attachment/cfile22.uf@2764C04C522D04200C359C.zip)
 
 [바이두클라우드한글패치.zip](./file/바이두클라우드한글패치.zip)
 
@@ -234,7 +233,6 @@ HEX에디터와 파일비교등등으로 겨우 이정도까지 했습니다.
 
 파일은 아래
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) 바이두동기화한글패치.zip](http://w3tech.tistory.com/attachment/cfile3.uf@2617814C523AAB8817C9A7.zip)
 
 [바이두동기화한글패치.zip](./file/바이두동기화한글패치.zip)
 
@@ -282,7 +280,6 @@ C:\Program Files\baidu\BaiduYunGuanjia
 
 **패쳐 다운로드 ↓↓↓↓**
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) BaiduCloud\_Korean\_130928.zip](http://w3tech.tistory.com/attachment/cfile4.uf@2427D43852469E13083E64.zip)
 
 [BaiduCloud\_Korean\_130928.zip](./file/BaiduCloud_Korean_130928.zip)
 
@@ -367,4 +364,3 @@ C:\Program Files\baidu\BaiduYunGuanjia
 ## 첨부파일
 
 - [바이두.hwp](https://github.com/itmir913/archive/releases/download/itmir-attachments/353-baidu.hwp) `1.0 MB`
-

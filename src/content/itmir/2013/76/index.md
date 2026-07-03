@@ -34,8 +34,3 @@ original_url: "https://itmir.tistory.com/76"
 
 컴파일에 사용한 make.sh mkbootimg ramdisk.gz 압축해서 올립니다 ㅋㅋ
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) 2012-08-23 smoothass추가.zip](/attachment/cfile7.uf@15170F455106011F312AD0.zip)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) cpufreq\_smoothass.c](/attachment/cfile8.uf@142DE9455106012002A66E.c)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) make.sh준비물.zip](/attachment/cfile1.uf@2412D74551060122390421.zip)

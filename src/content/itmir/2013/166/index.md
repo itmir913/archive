@@ -82,7 +82,6 @@ class Switchcase
 }
 ```
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) Switchcase.java](http://whdghks913.tistory.com/attachment/cfile26.uf@25799B3B51305E9E3A0DF8.java)
 
 이렇게 구성했습니다.
 
@@ -131,7 +130,6 @@ class Switchcasebreak
 }
 ```
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) Switchcasebreak.java](http://whdghks913.tistory.com/attachment/cfile29.uf@137BAC3B51305FB939A43B.java)
 
 각 case마다 break를 넣었습니다.
 

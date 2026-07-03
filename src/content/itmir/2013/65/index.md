@@ -28,6 +28,3 @@ mkbootimg등을 직접 ~/bin에 넣으시던지, 귀찮으시면 [/archive/itmi
 
 그럼 오늘 포스팅은 이것으로 종료하겠습니다.
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) bootimg1.sh](/attachment/cfile5.uf@01132C3C5104E4B70567BE.sh)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) bootimg2.sh](/attachment/cfile28.uf@2008543C5104E4B714F270.sh)

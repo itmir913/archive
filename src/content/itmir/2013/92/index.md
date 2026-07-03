@@ -71,5 +71,3 @@ Kernel 폴더에서 실행하시면 됩니다.
 Vega에서 보내주신 run.sh파일을 첨부합니다
 
 다음 커널부터는 이렇게 sh파일으로 작성해 주셔서 동봉해 주시면 사용자가 더욱 편리할것 같습니다
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) run.sh](/attachment/cfile22.uf@187D2C4D510605563C269C.sh)

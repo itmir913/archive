@@ -107,5 +107,3 @@ fi
 너무 믿지는 마세요...;; 누구한태 배운게 아니라 저 혼자 추측해서 작성한 글이니...
 
 그럼 시험공부나 해야겠습니다;
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) Swap.sh](/attachment/cfile9.uf@274944335104D2D9302327.sh)

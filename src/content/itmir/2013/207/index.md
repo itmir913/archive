@@ -42,7 +42,6 @@ original_url: "https://itmir.tistory.com/207"
 
 [init.rooting.sh](./file/init.rooting.sh)
 
-[Root.zip](https://t1.daumcdn.net/cfile/tistory/2143884551837C3A19)
 
 나참; 어이 없네요.
 

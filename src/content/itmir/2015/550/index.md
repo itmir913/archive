@@ -286,7 +286,6 @@ function setup() {
 
 이미 jquery가 적용된 블로그의 경우 맨 윗 줄은 생략하셔야 합니다.
 
-<script>window.jQuery||document.write('<script src="http://s1.daumcdn.net/svc/original/U03/cssjs/jquery/jquery-1.11.0.min.js"><\/script>');</script>
 
 <script>
 

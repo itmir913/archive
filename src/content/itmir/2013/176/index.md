@@ -14,7 +14,6 @@ original_url: "https://itmir.tistory.com/176"
 
 새로 배우시는 것도 있으니 파일 다운로드 하신 다음에 집중해 주세요.
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) point.java](/attachment/cfile4.uf@2473193F514035D21F98D7.java)
 
 자 오늘은 예제의 길이가 아주 긴 관계로 하나씩 끊어서 살펴봐야 합니다.
 

@@ -36,7 +36,6 @@ class while1
 }
 ```
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) while1.java](http://itmir.tistory.com/attachment/cfile7.uf@25710F40513067D6161DE8.java)
 
 제 나름대로 재미있게 짜봤습니다. ㅋㅋ
 

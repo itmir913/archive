@@ -166,7 +166,6 @@ original_url: "https://itmir.tistory.com/338"
 
 한글화 앱 추가수정 (초보자 가이드 한글화, 몇몇 부분 수정)
 
-**PC 클라이언트 한글화 파일 :**[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) PC용 한글화.zip](http://spapa1004.tistory.com/attachment/cfile1.uf@246F4E38522C804B11E3A4.zip)
 
  미르의 미러 첨부파일
 

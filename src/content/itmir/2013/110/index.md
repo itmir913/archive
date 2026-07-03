@@ -114,7 +114,6 @@ original_url: "https://itmir.tistory.com/110"
 
 자신의 광고 소스로 체워주신다음 skin.html의 알맞은 위치 에 넣어주시면 됩니다
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/txt.gif) 애드센스 광고 2개 넣기.txt](http://itmir.tistory.com/attachment/cfile23.uf@17065B49511101D3073805.txt)
 
 소스는 첨부파일로 올려둡니다 ㅎㅎ
 

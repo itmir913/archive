@@ -78,7 +78,6 @@ class EndlessLoop
 }
 ```
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) EndlessLoop.java](/attachment/cfile10.uf@2244BD385139C3E20628A6.java)
 
 7과 15의 최소 공배수를 구하는 예제입니다. *(제가 응용해서 만들어 봤어요)*
 

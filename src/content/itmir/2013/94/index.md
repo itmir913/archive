@@ -18,7 +18,6 @@ original_url: "https://itmir.tistory.com/94"
 
 이 블로그는 마우스 오른쪽을 지원하지 않을 예정이기 때문에 명령어는 첨부해 두도록 하겠습니다
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/txt.gif) CWM Porting.txt](/attachment/cfile21.uf@017FDB4851065504075C1F.txt)
 
 또한 이글은 부족한 자료가 있을경우 보충될 예정입니다 ㅎㅎ
 
@@ -192,7 +191,6 @@ make -j4 otatools
 
 본격적으로 빌드 준비하기전 unpackbootimg를 설정해 줘야 합니다
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) unpackbootimg](/attachment/cfile3.uf@20473E4D510642992727D6)
 
 이 파일을 /bin에 넣어야 합니다
 
@@ -441,5 +439,4 @@ Recovery.img를 빌드하며 발생하는 몇몇 오류 해결법
 제가 격은 빌드 오류는 /archive/itmir/2013/41 에 모두 정리해 두었으니 참고 하시면 될듯 합니다 ㅎㅎ
 
   
-
 #포팅 #CWM포팅 #cm7포팅 #cm7 #cwm #리커버리 #리커버리 포팅 #큼칠 포팅 #cm7 포팅 #cm7 vhxld #cwm 포팅 #포팅방법

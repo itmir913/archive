@@ -42,7 +42,6 @@ x86은 컴퓨터가 32비트일때, x64는 컴퓨터가 64비트일때 받으셔
 
 이제 설치가 완료되었습니다 Apa manager을 압축풀어 주세요
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) Apk Manager 5.0.2 KO.zip](http://whdghks913.tistory.com/attachment/cfile1.uf@247318455115B38D1BECCC.zip)
 
 압축푼 폴더안에 많은 폴더가 있습니다
 

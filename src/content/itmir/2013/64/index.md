@@ -46,7 +46,6 @@ original_url: "https://itmir.tistory.com/64"
 
 아무튼 이런 기능이 있는 img원클릭 설치툴을 올리겠습니다.
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) img.zip](/attachment/cfile2.uf@196EE9355104E42C1E6D9C.zip)
 
 이글은
 

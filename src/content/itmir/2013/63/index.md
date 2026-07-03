@@ -88,6 +88,3 @@ fastboot boot 이미지명.img
 
 명령어는 첨부파일로 정리해 두었습니다
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) fastboot.zip](/attachment/cfile27.uf@2406263C5104E3951373FB.zip)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/txt.gif) 명령어.txt](/attachment/cfile23.uf@2208D63C5104E3960EC428.txt)

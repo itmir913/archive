@@ -70,67 +70,15 @@ Tab(탭)버튼을 눌러 OK를 눌러주세요.
 
 android-toolchain-eabi-4.7-2013.06-x86
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) android-toolchain-eabi-4.7-2013.06-x86.tar.z01](http://itmir.tistory.com/attachment/cfile7.uf@26053546523E53F932F41D.z01)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) android-toolchain-eabi-4.7-2013.06-x86.tar.z02](http://itmir.tistory.com/attachment/cfile1.uf@2102DE46523E5401331129.z02)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) android-toolchain-eabi-4.7-2013.06-x86.tar.z03](http://itmir.tistory.com/attachment/cfile21.uf@27717446523E540504F373.z03)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) android-toolchain-eabi-4.7-2013.06-x86.tar.z04](http://itmir.tistory.com/attachment/cfile26.uf@270A8546523E5409307456.z04)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) android-toolchain-eabi-4.7-2013.06-x86.tar.z05](http://itmir.tistory.com/attachment/cfile28.uf@270A4646523E540C30F92B.z05)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) android-toolchain-eabi-4.7-2013.06-x86.tar.z06](http://itmir.tistory.com/attachment/cfile2.uf@2775CE46523E54110262EC.z06)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) android-toolchain-eabi-4.7-2013.06-x86.tar.z07](http://itmir.tistory.com/attachment/cfile27.uf@230FD246523E54142F9B3A.z07)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) android-toolchain-eabi-4.7-2013.06-x86.tar.z08](http://itmir.tistory.com/attachment/cfile28.uf@220A0646523E541B2EF29C.z08)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) android-toolchain-eabi-4.7-2013.06-x86.tar.zip](http://itmir.tistory.com/attachment/cfile30.uf@270DE446523E541E2F3799.zip)
 
 arm-eabi-4.4.0
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) arm-eabi-4.4.0.z01](http://itmir.tistory.com/attachment/cfile27.uf@246C3B46523E543C062230.z01)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) arm-eabi-4.4.0.z02](http://itmir.tistory.com/attachment/cfile1.uf@237F2046523E544037427B.z02)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) arm-eabi-4.4.0.zip](http://itmir.tistory.com/attachment/cfile9.uf@2579BD46523E5442017AA1.zip)
 
 arm-eabi-4.4.3
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) arm-eabi-4.4.3.z01](http://itmir.tistory.com/attachment/cfile25.uf@253B5C41523E54562F7148.z01)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) arm-eabi-4.4.3.z02](http://itmir.tistory.com/attachment/cfile1.uf@21265141523E545A050A27.z02)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) arm-eabi-4.4.3.z03](http://itmir.tistory.com/attachment/cfile4.uf@21343741523E545E3270BD.z03)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) arm-eabi-4.4.3.z04](http://itmir.tistory.com/attachment/cfile26.uf@212D5B41523E5462029BEE.z04)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) arm-eabi-4.4.3.z05](http://itmir.tistory.com/attachment/cfile27.uf@2745DF41523E54662AAFA4.z05)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) arm-eabi-4.4.3.z06](http://itmir.tistory.com/attachment/cfile7.uf@273B3C41523E54692F1DCB.z06)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) arm-eabi-4.4.3.z07](http://itmir.tistory.com/attachment/cfile21.uf@26343541523E546D325E81.z07)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) arm-eabi-4.4.3.zip](http://itmir.tistory.com/attachment/cfile25.uf@2540A241523E54702DD658.zip)
 
 arm-eabi-4.6
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) arm-eabi-4.6.tar.z01](http://itmir.tistory.com/attachment/cfile6.uf@24381D41523E547E32F2AD.z01)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) arm-eabi-4.6.tar.z02](http://itmir.tistory.com/attachment/cfile5.uf@27304E41523E54843443A2.z02)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) arm-eabi-4.6.tar.z03](http://itmir.tistory.com/attachment/cfile26.uf@2145A141523E54882AA74B.z03)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) arm-eabi-4.6.tar.z04](http://itmir.tistory.com/attachment/cfile29.uf@2638A441523E548B2E3602.z04)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) arm-eabi-4.6.tar.z05](http://itmir.tistory.com/attachment/cfile24.uf@233B5C41523E548F30DB83.z05)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) arm-eabi-4.6.tar.z06](http://itmir.tistory.com/attachment/cfile5.uf@2139E141523E549831DE82.z06)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) arm-eabi-4.6.tar.z07](http://itmir.tistory.com/attachment/cfile26.uf@26423241523E549B2DDCD5.z07)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) arm-eabi-4.6.tar.zip](http://itmir.tistory.com/attachment/cfile5.uf@21584141523E549E258033.zip)
 
 참고 : arm-eabi-4.7, 4.8
 

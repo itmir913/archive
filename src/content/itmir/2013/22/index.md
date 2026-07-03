@@ -47,5 +47,3 @@ BOARD\_CUSTOM\_GRAPHICS := ../../../device/제조사/기기명/graphics.c
 (보드컨픽이 수정되었기 때문에 꼭 해주셔야 합니다)
 
 5. 빌드를 합니다 (make -j4 recoveryimage)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) recovery.img](/attachment/cfile10.uf@1578B1405104BE751CA1AE.img)

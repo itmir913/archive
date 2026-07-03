@@ -18,6 +18,3 @@ original_url: "https://itmir.tistory.com/8"
 
 참고로 중국포럼의 리커버리 기기명은 a740s의 것이고 제가 직접 빌드한 리커버리는 ef32k(a750k)입니다.
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) recovery.img](/attachment/cfile29.uf@155E494D5104B889303A47.img)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) recovery중국.img](/attachment/cfile7.uf@205F254D5104B88C2E1A3C.img)

@@ -50,7 +50,6 @@ class Break
 }
 ```
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) Break.java](/attachment/cfile6.uf@013B973C513202A32BBC8A.java)
 
 점점 소스의 양이 많아지는걸 느끼시겟나요?
 
@@ -124,7 +123,6 @@ class Continue
 }
 ```
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) Continue.java](/attachment/cfile27.uf@17627B34513205D3025F53.java)
 
 while문을 보시면 반복 영역이 실행되자 마자 if문이 실행됩니다.
 

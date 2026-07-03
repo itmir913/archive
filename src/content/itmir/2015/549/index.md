@@ -34,7 +34,6 @@ original_url: "https://itmir.tistory.com/549"
 
 소스 보기
 
-[Hi2015.zip](https://t1.daumcdn.net/cfile/tistory/2779A94554A8E3AC19)
 
 다른곳에서의 배포를 금지하며, </archive/itmir/2015/549> 링크만 허용합니다.
 

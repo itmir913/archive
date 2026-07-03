@@ -51,5 +51,3 @@ I/pixelflinger(   75): Needs: n=0x03545404 p=0x00000077 t0=0x00000a08 t1=0x0000
 I/pixelflinger(   75): Needs: n=0x03545404 p=0x00000077 t0=0x00000000 t1=0x00000000
 
 I/pixelflinger(   75): Needs: n=0x03545404 p=0x00000077 t0=0x00000a08 t1=0x00000000
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/txt.gif) log.txt](/attachment/cfile9.uf@234D1E415104BD711CB5C9.txt)

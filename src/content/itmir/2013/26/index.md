@@ -14,6 +14,3 @@ original_url: "https://itmir.tistory.com/26"
 
 이글도 그냥 윈도우에서 우분투로 파일을 넘기기 위한 글입니다..
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) CM10\_ef33s\_dev.zip.001](/attachment/cfile27.uf@2204B1465104C05B10874C.001)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) CM10\_ef33s\_dev.zip.002](/attachment/cfile9.uf@2175C2465104C05E250A55.002)

@@ -17,5 +17,3 @@ cm7부팅당시 백업한 디바이스 소스이며
 (그러므로 암호를걸어 보안유지를 하려 합니다)
 
 완벽함에 가까운 큼칠이 나온뒤에 모든 소스를 공개/배포하도록 하겟습니다
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) backup.7z](/attachment/cfile8.uf@132CE9445104BEA7327176.7z)

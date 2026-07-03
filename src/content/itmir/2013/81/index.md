@@ -11,5 +11,3 @@ original_url: "https://itmir.tistory.com/81"
 어디서 구했습니다
 
 그런데 사용법을 모르겠다는...
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) 0003-block-introduce-the-BFQ-I-O-scheduler.patch](/attachment/cfile21.uf@17199B405106021F03FD98.patch)

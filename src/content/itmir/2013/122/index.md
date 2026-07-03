@@ -41,9 +41,6 @@ FIXED IO issue. Improved overall IO performance.
 
 그럼 패치 방법을 포스팅 하도록 하겠습니다.
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) IM-A830L(K) IO fix by slayer\_b.zip](http://whdghks913.tistory.com/attachment/cfile29.uf@1713C4385115D1522E101A.zip)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) IM-A830S IO fix by slayer\_b.zip](http://whdghks913.tistory.com/attachment/cfile5.uf@267993385115D155448F77.zip)
 
 기기에 맞는 파일을 받아 sdcard에 넣어주세요.
 

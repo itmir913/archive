@@ -52,7 +52,6 @@ CWM등의 커스텀 리커버리 & 루트 익스플로러등 시스탬에 접근
 >
 > 원본 XDA 게시글 : http://forum.xda-developers.com/showthread.php?t=1749045
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) Velvet.apk](/attachment/cfile10.uf@131219455130956F13A440.apk)
 
 이것이 첫번째 방법입니다
 
@@ -68,19 +67,9 @@ CWM등의 커스텀 리커버리 & 루트 익스플로러등 시스탬에 접근
 
 -On/Offline 버전
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) M7\_Offline.zip](/attachment/cfile21.uf@1155D23351309BCD1E4F27.zip)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) M7\_Offline.z01](/attachment/cfile21.uf@1343C33351309BB0351151.z01)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) M7\_Offline.z02](/attachment/cfile26.uf@265E1D3351309BBA155C3C.z02)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) M7\_Offline.z03](/attachment/cfile22.uf@1860163351309BC5122B76.z03)
 
 -Only Online 버전
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) M7\_Online.zip](/attachment/cfile3.uf@0370003351309BE301D7C7.zip)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) M7\_Online.z01](/attachment/cfile30.uf@194ACE3351309BDA2E75DB.z01)
 
 zip분활압축하여 올려두었습니다
 
@@ -98,17 +87,6 @@ zip분활압축하여 올려두었습니다
 
 설치방법은 위와 같습니다
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) inverted\_M7\_Offline.z01](/attachment/cfile26.uf@19126E4C51309D7E2F2567.z01)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) inverted\_M7\_Offline.z02](/attachment/cfile10.uf@171C184C51309D8B2359A9.z02)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) inverted\_M7\_Offline.z03](/attachment/cfile23.uf@251BC84C51309D97244FC8.z03)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) inverted\_M7\_Offline.zip](/attachment/cfile3.uf@1118A04C51309DA227FA29.zip)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) inverted\_M7\_Online.z01](/attachment/cfile25.uf@161A894C51309DAF238602.z01)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) inverted\_M7\_Online.zip](/attachment/cfile29.uf@2031734C51309DB605F8FA.zip)
 
 인증샷!
 

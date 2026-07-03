@@ -24,6 +24,3 @@ bfq는 menuconfig에서 제외 해뒀습니다
 
 다른 소스 검색좀 해야 겠네요
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) 2012-08-26 vr과 smartass추가.zip](/attachment/cfile1.uf@155319415106029436C49A.zip)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) cpufreq\_smartass.c](/attachment/cfile8.uf@266B744151060295025058.c)

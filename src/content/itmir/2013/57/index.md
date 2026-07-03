@@ -140,10 +140,5 @@ Write ... OK
 
 명령어는 txt로 올려두었습니다
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/txt.gif) CWM 설치 명령어.txt](http://itmir.tistory.com/attachment/cfile30.uf@251FA84B5104D8BC311E26.txt)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) Fastboot Driver.zip](http://itmir.tistory.com/attachment/cfile9.uf@1528354B5104D8C020B14B.zip)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) Fastboot.zip](http://itmir.tistory.com/attachment/cfile7.uf@151CD84B5104D8C4357833.zip)
 
 [2013/01/27 - [강좌/팁/SmartPhone 강좌] - Boot.img Recovery.img 원클릭 적용툴](/archive/itmir/2013/27)

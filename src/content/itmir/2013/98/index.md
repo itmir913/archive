@@ -16,9 +16,6 @@ original_url: "https://itmir.tistory.com/98"
 
 구문은 다음 첨부파일을 확인해 주시면 감사드리겠습니다.
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/txt.gif) Kconfig.txt](/attachment/cfile4.uf@116CE94451088F612C095D.txt)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/txt.gif) Makefile.txt](/attachment/cfile7.uf@026CAE4451088F6129ABD4.txt)
 
 (제가 올려둔 Github의 commit를 확인해 보시려면
 
@@ -38,13 +35,6 @@ original_url: "https://itmir.tistory.com/98"
 
 제가 제 커널에 추가한 소스를 올려둘태니 참고하시면 될듯 합니다. ㅎㅎ
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) deadline-iosched.c](/attachment/cfile25.uf@20054B36510886AE11FB2F.c)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) noop-iosched.c](/attachment/cfile4.uf@03795C36510886AE1B268F.c)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) sio-iosched.c](/attachment/cfile9.uf@2515CE36510886AF072152.c)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) vr-iosched.c](/attachment/cfile5.uf@247CEA36510886AF17C74E.c)
 
 기본적으로 deadline이나 noop는 커널소스에 있을겁니다. sio나 vr만 받으셔도 될듯.
 

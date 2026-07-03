@@ -67,5 +67,3 @@ system/etc/wifi/wpa\_supplicant.conf
 출처: <http://siryua.sloud.kr/163967719>
 
 저 구문은 첨부파일에 올려져 있습니다
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/txt.gif) 통신사 와이파이.txt](/attachment/cfile7.uf@032935425104D6301903BB.txt)

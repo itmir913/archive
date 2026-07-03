@@ -118,7 +118,6 @@ Wi-Fi: com.android.settings.wifi.WifiSettings
 
 출처: http://forum.xda-developers.com/showthread.php?p=24317850
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/txt.gif) 설정창 ICS.txt](/attachment/cfile22.uf@1224D0415104D6ED177420.txt)
 
 ps. 다른 강좌에는
 

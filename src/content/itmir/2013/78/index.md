@@ -32,6 +32,3 @@ original_url: "https://itmir.tistory.com/78"
 
 +추가가 성공했습니다~!!!!
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) 2012-08-23 smartassv2 추가.zip](/attachment/cfile22.uf@147B0D3D5106019215D2C1.zip)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) cpufreq\_smartass2.c](/attachment/cfile24.uf@187AA63D51060193160F0A.c)

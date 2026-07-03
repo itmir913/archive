@@ -13,5 +13,3 @@ original_url: "https://itmir.tistory.com/95"
 나머지 모든 기능은 작동하지 않습니다
 
 혹시 몰라 암호를 걸어두었습니다 제목 그대로 백업용 글 입니다 ...
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) 2013-01-29.zip](/attachment/cfile27.uf@204AC74451076F2F314394.zip)

@@ -28,12 +28,6 @@ sk : 1.0.4
 
 KT 버전
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) joyn.olleh.zip.001](http://whdghks913.tistory.com/attachment/cfile2.uf@037C9934510CC88F10C623.001)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) joyn.olleh.zip.002](http://whdghks913.tistory.com/attachment/cfile29.uf@257F5634510CC8910D2A0F.002)
 
 SKT 버전
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) joyn.T.zip.001](http://whdghks913.tistory.com/attachment/cfile28.uf@267E4634510CC8930E6825.001)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) joyn.T.zip.002](http://whdghks913.tistory.com/attachment/cfile21.uf@037ABA34510CC89412D3B6.002)

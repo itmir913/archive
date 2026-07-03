@@ -32,7 +32,6 @@ AOSP또는 CM의 소스를 받을때 시간 엄청 걸리시죠?
 
 (요즘 빌드나 하지않고 팁만 올리는? 재민님 우분투깔았는대 와이파이가 안되서 소스를 받을수 없네요;; 드라이버 찾아서 깔아봤는대 모두 안됩니다. ㄷㄷ 11.04버전을 다시 깔아야 할 듯 합니다.)
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) sync.py](/attachment/cfile29.uf@245E20415104C637285AD6.py)
 
 참고글
 

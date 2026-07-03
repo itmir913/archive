@@ -14,7 +14,6 @@ original_url: "https://itmir.tistory.com/87"
 
 허상 오버 될수도 있겠네요...
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) 2012-08-27 오버클럭 도전 1번째.zip](/attachment/cfile10.uf@23072D4D510603BE1C2AAE.zip)
 
 **2012-09-03 허상오버... [밀린 일지 작성]**
 
@@ -41,5 +40,3 @@ original_url: "https://itmir.tistory.com/87"
 NieN형이 시간날때 알려준다 했지만 언젠지는 ㅇㅅㅇ
 
 모듈은 저번 최근 가버너 추가한 것의 모듈을 쓰면 될것 같다
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) boot-mir2.img](/attachment/cfile29.uf@25309849510603DC0224FB.img)

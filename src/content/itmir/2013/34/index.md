@@ -34,7 +34,6 @@ sudo chmod /bin/unpackbootimg
 
 로 넣을 수 있습니다.
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) unpackbootimg](/attachment/cfile10.uf@140867405104C6BD2BD055)
 
 +추가
 

@@ -25,5 +25,3 @@ syslinux 디스크알파벳:
 syslinux C:
 
 참조글 :<http://warmz.tistory.com/275>
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) syslinux-4.04.zip](http://itmir.tistory.com/attachment/cfile25.uf@016DAD3E5104C61018B3A6.zip)

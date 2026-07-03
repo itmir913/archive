@@ -34,6 +34,3 @@ kernel.patch파일을 이용해 2.6.35.9버전까지 마이너 패치 하였다.
 
 ![](./images/1351401950398_IMG_20121028_135445.jpg)
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) boot-new.img](/attachment/cfile30.uf@157EAC4F510604290F0227.img)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) wlan.ko](/attachment/cfile30.uf@177E284F5106042B10A5AF.ko)

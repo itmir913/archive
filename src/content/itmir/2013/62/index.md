@@ -23,5 +23,3 @@ etc/install-recovery.sh
 사용한 바이너리는 구글 앱스의 바이너리로 모든기종에 설치가 가능할것으로 예상합니다
 
 ps.만든 계기는 드림 나래 적용했다가 부팅이 되지 않아서 급하게 만들었습니다 ㅋㅋ
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) Del.zip](/attachment/cfile3.uf@03271F435104DF9716F187.zip)

@@ -40,7 +40,6 @@ original_url: "https://itmir.tistory.com/111"
 
 이 파일을 받아주시길 바랍니다
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) AdsenseM.js](http://whdghks913.tistory.com/attachment/cfile6.uf@121AA7445111D9D2250478.js)
 
 document.writeln('google\_ad\_client = "[클라이언트 코드]";');  
 document.writeln('/\* [광고 이름] \*/');  
@@ -102,7 +101,6 @@ AdsenseM.js을 찾아 새탭에서 링크열기를 클릭해 주세요
 
 /skin/images/전까지만 복사해서 붙혀 넣으시면 되겠죠?
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/txt.gif) 코드.txt](http://whdghks913.tistory.com/attachment/cfile23.uf@16463C465111E06A336EC0.txt)
 
 이제 게시글에 들어갈 코드가 완성되었습니다
 
@@ -132,7 +130,6 @@ AdsenseM.js을 찾아 새탭에서 링크열기를 클릭해 주세요
 
 </DIV></TD></TR></TBODY></TABLE>
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/txt.gif) 코드2.txt](http://whdghks913.tistory.com/attachment/cfile22.uf@2018C8455111E2B30737F4.txt)
 
 광고 코드 란에는 위에서 만든 게시글에 들어갈 코드를 넣어주시면 완성됩니다 ㅎㅎ
 

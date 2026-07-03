@@ -52,8 +52,5 @@ dd if=/dev/block/파티션 이름 of=/sdcard/추출한 파일이름.img bs=4096
 
 둘을 구분하는 방법은 부트이미지 뜯어서 내용물 확인하면 됩니다
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) boot.img](/attachment/cfile22.uf@156A8D505106051E31F6D5.img)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) recovery.img](/attachment/cfile28.uf@276E5F505106052328062B.img)
 
 용량이 딱 10MB ㅋㅋ

@@ -303,5 +303,3 @@ I:Set boot command ""
 이부분은 상관이 없습니다!
 
 고수님들 알려주세요!!!
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) recovery.log](/attachment/cfile9.uf@24224C455104BB8A0E595A.log)

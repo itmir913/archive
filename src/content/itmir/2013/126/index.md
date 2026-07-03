@@ -36,7 +36,6 @@ original_url: "https://itmir.tistory.com/126"
 
 위 div코드를 광고 코드에 씌워주시면(?) 됩니다
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/txt.gif) 소스.txt](http://whdghks913.tistory.com/attachment/cfile3.uf@14210D3B511A07F0101B88.txt)
 
 border:2px에는 테두리의 두께를 선택하시는 것이고요
 

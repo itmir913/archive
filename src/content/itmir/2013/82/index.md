@@ -28,6 +28,3 @@ m31님이 올려준 소스랑 크기 차이가 좀 나더라고요
 
 그럼 오늘은 그만 마치겠습니다
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) 2012-08-25 github에서 얻은 lulzactive소스 컴파일.zip](/attachment/cfile4.uf@2001F23D5106023E0BC0EF.zip)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/110706133414/blog/image/extension/unknown.gif) cpufreq\_lulzactive.c](/attachment/cfile10.uf@237AA63D510602411ABF95.c)

@@ -21,5 +21,3 @@ smartass2 추가가 안되었기에 다시 수정해본뒤 컴파일 ㅇㅅㅇ
 내일 해봐야 겠습니다...
 
 (솔직히 커널 만질시간 많이 없다능...)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) 2012-08-22 smartassV2.zip](/attachment/cfile8.uf@14139340510600F70A64E8.zip)

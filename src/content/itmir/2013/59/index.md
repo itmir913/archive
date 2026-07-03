@@ -22,6 +22,5 @@ xhdpi크기의 png파일을 hdpi크기의 이미지로 바꿔주는 프로그램
 
 참고하실분들은 받아두시면 도움이 될듯 합니다
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/exe.gif) resizer.exe](/attachment/cfile9.uf@1152234F5104DEAF07DAE1.exe)
 
 ![](./images/1.png)

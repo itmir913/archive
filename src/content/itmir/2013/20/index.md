@@ -33,5 +33,3 @@ adb가 정상적으로 잡히고 있습니다
 첨부파일으로 logcat을 첨부합니다
 
 한번 확인해 주시면 감사드리겟습니다...
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/txt.gif) log.txt](/attachment/cfile7.uf@2450FB415104BDD2179B59.txt)

@@ -16,7 +16,6 @@ original_url: "https://itmir.tistory.com/128"
 
 이럴때 사용하는 프로그램 Folder2 Iso 입니다.
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/exe.gif) Folder2 Iso.exe](http://whdghks913.tistory.com/attachment/cfile7.uf@170D533E511C9F1F097C18.exe)
 
 경로를 모두 설정한다음, Generate iso를 클릭해 주시면 ISO파일이 완성되어 나타나게 됩니다.
 

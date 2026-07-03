@@ -26,7 +26,6 @@ http://github.com/itmir913/Mir-Kernel
 
 아무튼 오늘은 그만 해야 할수도 있겠네요...
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) 2012-08-26 ondemandx추가.zip](/attachment/cfile3.uf@113C7D4C510602F61D1CF4.zip)
 
 **2012-08-26 superbad추가**
 
@@ -42,9 +41,6 @@ virtuous을 선택하는 동시에 프리징 걸리고 먹통되니 적용하지
 
 파일도 내렸어요 ㅇㅅㅇ
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) 2012-08-26 superbad추가.zip](/attachment/cfile22.uf@2768B84F5106032134EB6E.zip)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) 바탕화면.zip](/attachment/cfile25.uf@0179C74F5106032412EC29.zip)
 
 **2012-08-27 darkside추가**
 
@@ -56,6 +52,3 @@ darkside가버너 추가 완료
 
 ./make.sh
 
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) 2012-08-27 darkside 추가.zip](/attachment/cfile29.uf@177D834F510603400B0494.zip)
-
-[![](http://i1.daumcdn.net/cfs.tistory/v/0/blog/image/extension/zip.gif) 바탕화면.zip](/attachment/cfile9.uf@1176E34F51060343191341.zip)
