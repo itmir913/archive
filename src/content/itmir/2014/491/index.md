@@ -96,28 +96,28 @@ original_url: "https://itmir.tistory.com/491"
 
 블로그
 
-dlaqudgml100@naver.com
+[이메일 비공개]
 
-funfun072@gmail.com
+[이메일 비공개]
 
-jinjin0990@naver.com
+[이메일 비공개]
 
-rkdwjdgns200@naver.com
+[이메일 비공개]
 
-yulwon0612@naver.com
+[이메일 비공개]
 
 디벨
 
-znfqhdl12@naver.com
+[이메일 비공개]
 
-vi7070@naver.com
+[이메일 비공개]
 
-xhddlf5456@gmail.com
+[이메일 비공개]
 
 스다
 
-hch6852@naver.com (중복 이메일 주소로 대기중)
+[이메일 비공개] (중복 이메일 주소로 대기중)
 
-b00113@naver.com
+[이메일 비공개]
 
 축하드립니다~~

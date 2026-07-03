@@ -84,4 +84,4 @@ original_url: "https://itmir.tistory.com/139"
 
 모두 애드센스 많이 이용해서 부자되시길 ㅋ
 
-참고로 이 강좌는 ZERY(oppor\_z@naver.com)님의 압박(???)으로 작성되었습니다 ㅋㅋ
+참고로 이 강좌는 ZERY님의 압박(???)으로 작성되었습니다 ㅋㅋ
