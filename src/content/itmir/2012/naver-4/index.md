@@ -1,0 +1,49 @@
+---
+title: "각종 오류 해결 방법"
+date: "2012-09-05T00:00:00+09:00"
+category: "Android/Build"
+tags: []
+description: "AOSP 빌드 중 발생하는 brunch·make·Java 오류 해결 방법 정리"
+draft: false
+original_url: "https://blog.naver.com/whdghks913/20166024812"
+---
+
+지금까지 능력자 분들께서 알려주신 오류 해결법을 정리 해보았다
+
+brunch, make clobber 오류make clobber치면build/core/product_config.mk:196:  _nic.PRODUCTS.[[vendor/cyanogen/products/cyanogen_sunfire.mk]]: "device/motorola/sunfire/sunfire.mk" does not exist. 멈춤.brunch a750k는No command 'brunch' found, did you mean:Command 'branch' from package 'rheolef' (universe)brunch: command not found
+
+! 도라도라 : . build/envsetup.sh 한뒤에 brunch a750k 를 실행하세요... 호호 : 파일 추가는 하셨는지Vendor/cyanogen 에서 vendorsetup.sh를 수정해야하고Vendor/cyanogem/product 에서 cyanogen_기기명.mk를 작성하시고
+
+androidproduct.m 도 수정해야합니다Cyanogen_기기명.mk는 다른 파일들을 참고하시고 작성하시면 됩니다vendorsetup수정은 add_lunch_combo cyanogen_a750k - engTarget device명을 device/회사명 안에 기기명과 같게해야할겁니다
+
+Target device는 cyanogen_기기명.mk의 디바이스 부분이다libaudio을 만들규칙이 없습니다;;
+
+target Strip: libeffects (out/target/product/a750k/obj/lib/libeffects.so)make:  `out/target/product/a750k/obj/SHARED_LIBRARIES/libaudioflinger_intermediates/LINKED/libaudioflinger.so'에서 필요로 하는  타겟 `out/target/product/a750k/obj/lib/libaudio.so'를 만들 규칙이 없습니다.  멈춤.열씸히 빌드하고 있었는대 libaudio.so를 만들규칙이 없습니다 ㄷㄷ호호 : libaudio.so라는 파일을 해당경로에 가져다 놔도 되고Boardconfig.mk에 BOARD_USES_GENERIC_AUDIO:= true 라는 구문을 추가해주세요out/target/product/a750k/obj/SHARED_LIBRARIES/libaudioflinger_intermediates이경로폴더를 삭제했습니다libaudioflinger.so생성됬내요 ㅎ
+
+libcamera.so을 만들규칙이 없습니다;;make:  `out/target/product/ef32k/obj/SHARED_LIBRARIES/libcameraservice_intermediates/LINKED/libcameraservice.so'에서 필요로 하는  타겟 `out/target/product/ef32k/obj/lib/libcamera.so'를 만들 규칙이 없습니다.  멈춤.검색, 참고자료SDA: http://cafe.naver.com/skydevelopers/96508호호 : USE_CAMERA_STUB:= true을 추가해 주시면 됩니다램디스크 부분 (init부분)호호 : Init를 강제로 넣지 않는이상 자동으로 init가 빌드됩니다;;;;;INit는 미르님이 넣지않는이상 자동으로 빌드되구요Init.rc도 넣지않으면 알아서 던져주는데 그거 빼와서 원래 init.rc랑 섞어야합니다
+
+복사 명령어PRODUCT_COPY_FILES := \ device/pantech/a750k/init.rc:root/init.rc \이정도겠네요
+
+롬 매니저 오류잘가다가 오류;;make:  `out/target/product/a750k/system/app/RomManager.apk'에서 필요로 하는 타겟 `vendor/cyanogen/proprietary/RomManager.apk'를 만들 규칙이 없습니다. 멈춤.는 뭘까요?
+
+호호 : 저 위오류는 vendor/cyanogen에 gotuprommanager(이름이....여튼rommanager라고 되있는 파일있을겁니다)그걸 실행시켜주시면 해결됩니다벤더 수정후 오류make clobber
+
+부팅실패+리커버리로 강제 재부팅리커버리로 강제로 재부팅됬다는건 init.rc문제로 알고있습니다 init.rc확인해보시길
+
+일단 init.rc는 cm7에서 던져주는것을 쓰는게 좋습니다 그리고 나서 쓰는 기기의 init.rc와 적절하게 섞어주세요 그리고 추가오류가 뜨면 그에따른 수정을 해줘야합니다
+
+init.rc마운트 부분Init.rc에서 on fs on -emmc fs on -post fs부분파일보니 init.rc가 cm7에서 던저준거 같네요 저렇게 하면 부팅이 안됄거같습니다 init.rc는 cm7의 init.rc에 순정펌 init.rc를 섞고(pantech에서 추가한 사항들을 넣어주세요) 매크로를 이용해서 root폴더에 넣어주셔야 합니다그리고 추정건데 ueventd.rc또한 cm7에서 던져준것으로 추정되는데 ueventd.rc는 순정펌의 것을 root폴더에 매크로로 넣어주셔야합니다그리고 아마 root폴더에 init.qcom.rc또한 없을거 같은데 이것도 순정에서 매크로로 넣어주셔야 합니다 강제 리커버리 부분Init.rc에서(혹은 init.qcom.rc) 서비스중에 critical 라는 문구가 들어간 서비스가 3분이내에 몇번이상 종료되면 강제로 리커버리로 재부팅 된다고 하더라구요 ueventd.rc servicemanager 등으로 추측가능하겠네요
+
+http://m.cafe.naver.com/ArticleRead.nhn?clubid=24846429&menuid=78&articleid=880&query=%EC%82%AC%EB%9E%8C링크가시면 사람님의 작업파일이있습니다복사 매크로 부분ef18.mk(기기명.mk) 보시면 PRODUCT_COPY_FILES := \ 그리고 아래 경로들이 써있는데 그것이 복사해주는 매크로(?)라고 생각해주세요
+
+같은 위치 다른 문구가 있으면?Pantech것을 따라주셔야하는데 가장윗부분에 export BOOTCLASSPATH 부분은 c그대로 내비두세요
+
+기본적으로 부팅을 위해선 해당기기의 라이브러리나 바이너리들을 써야합니다;; 저번에 올려드린 링크참고해주세요 보시면 순정펌에서 바이너리들과 라이브러리들을 뽑아서 넣어주는것을 볼수있을거에요;;일단 다시 사람님 작업파일중 ef18.mk등을 참고해주세요
+
+어떻게 디바이스와 벤더를 구축하셨는지 모르겠네요;;여튼 바이너리파일과 라이브러리 일부파일의 순정사용은 거의 필수 겠지요..http://m.cafe.naver.com/ArticleRead.nhn?clubid=22277982&menuid=179&articleid=86106&query=hpa참고해주세요 ㅠㅠhpa님의 이자르cm7입니다저또한 여러 작업파일들을 참고하여 부팅에 성공할수있었어요 ㅠㅠ 이걸보시고 이해안가는부분이 있다면 도움을 드릴수 있지만 지금 상태로는 더움드리기가 힘드네요;;확실한건 servicemanager나 다른한파일이 문제를 일으키는걸로보이네요(아마 부팅에 필요한 바이너리파일이나 라이브러리파일들이 부족하기때문으로 감히 추측해봅니다) 일단 보내주시면 제기 init.rc수정해서 보내드리도록 하겠습니다
+
+큼칠 커널 init.rc부분의 framework경로를 일치시켜야 합니다 램디스크안의 init파일은 호호님이 언급하신것처럼 큼칠의 init를 써야하구요
+
+/bin/sh: lzop: not found오류 해결법커널 마이너 패치후 전 일어났습니다참고 자료: [http://cafe.naver.com/androiddevforum/1635,](http://cafe.naver.com/androiddevforum/1635,) [http://ez.analog.com/thread/14516](http://ez.analog.com/thread/14516)sudo apt-get install lzop 하시면 해결됩니다make:  [out/target/product/ef32k/obj/EXECUTABLES/openvpn_intermediates/LINKED/openvpn] 오류 1sudo apt-get install openvpn하니까 없어지는거 같네요...
+
+더 발견하면 따로 추가할께요~도라도라님, 호호님, 토깽이님의 말씀을 인용했습니다
