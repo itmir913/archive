@@ -1,6 +1,6 @@
 ---
 title: "GB 설정(Setting.apk) ICS화 하기"
-date: "2013-01-27T16:28:02+09:00"
+date: "2012-12-22T16:28:02+09:00"
 category: "SmartPhone/Android"
 tags: []
 description: "진저사용자 분들 이런 설정창 부러우셨나요?"

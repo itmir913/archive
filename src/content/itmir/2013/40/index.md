@@ -1,6 +1,6 @@
 ---
 title: "파일 MD5 체크 프로그램 / MD5 확인방법"
-date: "2013-01-27T16:04:03+09:00"
+date: "2012-11-17T16:04:03+09:00"
 category: "Computer & PC/Windows"
 tags: []
 description: "파일의 MD5가 필요한 경우가 있습니다."

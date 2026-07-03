@@ -1,6 +1,6 @@
 ---
 title: "Xhdpi의 이미지를 Hdpi의 이미지로 변환 해주는 프로그램"
-date: "2013-01-27T17:00:50+09:00"
+date: "2013-01-03T17:00:50+09:00"
 category: "SmartPhone"
 tags: []
 description: "xhdpi크기의 png파일을 hdpi크기의 이미지로 바꿔주는 프로그램 입니다"

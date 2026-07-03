@@ -1,6 +1,6 @@
 ---
 title: "VegaRacer2 Kernel 컴파일 sh"
-date: "2013-01-28T13:58:01+09:00"
+date: "2013-01-07T13:58:01+09:00"
 category: "Android/Kernel"
 tags: []
 description: "Vega 1:1 상담에서 베가 레이서2의 커널 컴파일 방법에 대한 문의를 넣었습니다"

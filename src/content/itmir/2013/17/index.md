@@ -1,6 +1,6 @@
 ---
 title: "2012-12-25 CM7 포팅 일지"
-date: "2013-01-27T14:37:14+09:00"
+date: "2012-12-25T14:37:14+09:00"
 category: "Android/Build"
 tags: []
 description: "cm7을 포팅하려고 한지 벌서 몇달이 지났습니다."

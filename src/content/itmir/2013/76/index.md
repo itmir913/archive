@@ -1,6 +1,6 @@
 ---
 title: "2012-08-23 smmthass가버너 추가 완료 [완료]"
-date: "2013-01-28T13:40:04+09:00"
+date: "2012-08-23T13:40:04+09:00"
 category: "Android/Kernel"
 tags: []
 description: "깃허브 대로 하니 추가가 되었네요 ㅋㅋ"

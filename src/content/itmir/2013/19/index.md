@@ -1,6 +1,6 @@
 ---
 title: "CM7을 빌드했습니다만 fastboot모드에서 진행하지 않습니다"
-date: "2013-01-27T14:39:00+09:00"
+date: "2013-01-18T14:39:00+09:00"
 category: "Android/Build"
 tags: []
 description: "오늘 cm7을 4시간 만에 모두 빌드 완료했습니다."

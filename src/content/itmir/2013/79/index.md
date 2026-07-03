@@ -1,6 +1,6 @@
 ---
 title: "2012-08-24-2012-08-25 interactive와 interactivex추가 lagfree제거"
-date: "2013-01-28T13:42:32+09:00"
+date: "2012-08-25T13:42:32+09:00"
 category: "Android/Kernel"
 tags: []
 description: "어제는 interactive을 추가했고"

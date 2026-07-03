@@ -1,6 +1,6 @@
 ---
 title: "Github 사용방법"
-date: "2013-01-27T15:59:05+09:00"
+date: "2012-10-26T15:59:05+09:00"
 category: "Computer & PC"
 tags: []
 description: "안드로이드 등을 주로 만지시는 분들은 소스 파일을 관리해야 할때가 많은데요."

@@ -1,6 +1,6 @@
 ---
 title: "SystemUI등이 디컴파일 안될때 방법"
-date: "2013-01-27T15:05:57+09:00"
+date: "2012-10-03T15:05:57+09:00"
 category: "SmartPhone/Android"
 tags: []
 description: "아샌부터인지 안되더라고요 디컴파일이..."

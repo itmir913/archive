@@ -1,6 +1,6 @@
 ---
 title: "어플의 종료를 막는 방법 [빌드프롭 트윅]"
-date: "2013-01-27T16:09:36+09:00"
+date: "2012-12-16T16:09:36+09:00"
 category: "SmartPhone/Android"
 tags: []
 description: "이 팁은 Diaz님께서 알려주셨습니다"

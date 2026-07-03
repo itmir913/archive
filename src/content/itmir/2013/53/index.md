@@ -1,6 +1,6 @@
 ---
 title: "커널에 Zram,Zcache를(을) 추가하자"
-date: "2013-01-27T16:24:00+09:00"
+date: "2012-12-21T16:24:00+09:00"
 category: "Android/Kernel"
 tags: []
 description: "Zram과 Zcache는 swap의 일종 입니다"

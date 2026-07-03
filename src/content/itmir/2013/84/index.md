@@ -1,6 +1,6 @@
 ---
 title: "2012-08-26 vr스케쥴러와 smartass가버너 추가"
-date: "2013-01-28T13:46:15+09:00"
+date: "2012-08-26T13:46:15+09:00"
 category: "Android/Kernel"
 tags: []
 description: "아까 bfq스케쥴러 찾으면서 얻은 소스에 vr도 있더라고요 ㅋㅋ"

@@ -1,6 +1,6 @@
 ---
 title: "우분투 64Bit unpackbootimg 오류 해결법"
-date: "2013-01-27T15:18:39+09:00"
+date: "2012-10-19T15:18:39+09:00"
 category: "Computer & PC/Ubuntu"
 tags: []
 description: "boot.img를 쪼개기 위해 unpackbootimg가 필요한데요."

@@ -1,6 +1,6 @@
 ---
 title: "recovery.img 빌드사이트에서 한것"
-date: "2013-01-28T13:54:56+09:00"
+date: "2012-07-10T13:54:56+09:00"
 category: "Android/Build"
 tags: []
 description: "android_device_PANTECH_ef32k.zip"

@@ -1,6 +1,6 @@
 ---
 title: "64Bit 우분투에서 32Bit 바이너리/프로그램 이용하기"
-date: "2013-01-27T15:20:28+09:00"
+date: "2012-12-25T15:20:28+09:00"
 category: "Computer & PC/Ubuntu"
 tags: []
 description: "unpackbootimg오류등 우분투 64비트버전에서 32비트의 응응 프로그램을 사용하기가 어렵습니다."

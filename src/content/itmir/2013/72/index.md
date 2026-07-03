@@ -1,6 +1,6 @@
 ---
 title: "2012-08-19 Smartass2 가버너 추가"
-date: "2013-01-28T13:35:52+09:00"
+date: "2012-08-19T13:35:52+09:00"
 category: "Android/Kernel"
 tags: []
 description: "./make.sh -j2명령어 때문인지 컴파일이 40분으로 된것 같네요 ㅋㅋㅋ"

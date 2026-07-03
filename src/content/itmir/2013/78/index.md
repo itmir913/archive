@@ -1,6 +1,6 @@
 ---
 title: "2012-08-23 SmartassV2추가 완료?!"
-date: "2013-01-28T13:41:57+09:00"
+date: "2012-08-23T13:41:57+09:00"
 category: "Android/Kernel"
 tags: []
 description: "왜 오류가 있었냐면 뭔가가 다른듯 한대"

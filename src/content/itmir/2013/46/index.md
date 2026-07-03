@@ -1,6 +1,6 @@
 ---
 title: "Swap 스크립트 제작 잡담"
-date: "2013-01-27T16:10:20+09:00"
+date: "2012-12-16T16:10:20+09:00"
 category: "SmartPhone/Android"
 tags: []
 description: "Swap 스크립트를 보면서 soul tools처럼 1번은 212mb, 2번은 512mb로 swap메ㅔ모리 크기를 설정하는 스크립트가 있으면 편하겠다 라는 생각이 들었습니다"

@@ -1,6 +1,6 @@
 ---
 title: "ADB logcat이 잡히지 않을때"
-date: "2013-01-27T17:29:48+09:00"
+date: "2013-01-18T17:29:48+09:00"
 category: "SmartPhone/Android"
 tags: []
 description: "adb 로그켓이 잡히지 않을때 정말 힘들죠?..."

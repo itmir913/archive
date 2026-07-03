@@ -1,6 +1,6 @@
 ---
 title: "★미라크a CM7부팅 성공★"
-date: "2013-01-27T14:41:55+09:00"
+date: "2013-01-20T14:41:55+09:00"
 category: "Android/Build"
 tags: []
 description: "다음 사진처럼 정상 부팅에 성공햇습니다!!!"

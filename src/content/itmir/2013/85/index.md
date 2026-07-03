@@ -1,6 +1,6 @@
 ---
 title: "2012-08-26 Github 등록 완료!!"
-date: "2013-01-28T13:47:03+09:00"
+date: "2012-08-26T13:47:03+09:00"
 category: "Android/Kernel"
 tags: []
 description: "커널 내용물은 아까까지 수정한 내용물 입니다"

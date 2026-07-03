@@ -1,6 +1,6 @@
 ---
 title: "BINX 사용 방법"
-date: "2013-01-27T16:20:48+09:00"
+date: "2012-12-21T16:20:48+09:00"
 category: "SmartPhone/Android"
 tags: []
 description: "스카이는 BINX를 이용하여 셀프 업데이트를 합니다"

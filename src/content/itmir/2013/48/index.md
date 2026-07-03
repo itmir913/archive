@@ -1,6 +1,6 @@
 ---
 title: "부트이미지(Boot.img) 분해/조립(?) 강좌"
-date: "2013-01-27T16:13:02+09:00"
+date: "2012-12-21T16:13:02+09:00"
 category: "Computer & PC/Ubuntu"
 tags: []
 description: "이 강좌에서 boot.img를 분해하고 조립(?)하는 방법을 배워보겠습니다."

@@ -1,6 +1,6 @@
 ---
 title: "XDA에 누군가 CM7 SOURCE를 올려두었습니다"
-date: "2013-01-27T16:07:25+09:00"
+date: "2012-12-14T16:07:25+09:00"
 category: "Android/Build"
 tags: []
 description: "이 소스는 구버전 소스이고 java.mk오류가 나므로 본인이 직접 압축해서 배포중인 소스를 사용해주시면 감사드리겠습니다~"

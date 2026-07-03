@@ -1,6 +1,6 @@
 ---
 title: "커스텀 리커버리 (CWM)설치방법"
-date: "2013-01-27T16:35:38+09:00"
+date: "2012-12-25T16:35:38+09:00"
 category: "SmartPhone/Android"
 tags: []
 description: "CWM Recovery를 설치하는 방법에 대해 포스팅 해보도록 하겠습니다"

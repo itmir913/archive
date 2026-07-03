@@ -1,6 +1,6 @@
 ---
 title: "VegaRacer2 SK 순정 boot.img recovery.img"
-date: "2013-01-28T13:57:30+09:00"
+date: "2012-10-01T13:57:30+09:00"
 category: "Android/Kernel"
 tags: []
 description: "참고로 7번이 boot.img 19번이 recovery.img 입니다"

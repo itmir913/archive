@@ -1,6 +1,6 @@
 ---
 title: "Boot.img Recovery.img 원클릭 적용툴"
-date: "2013-01-27T15:02:11+09:00"
+date: "2012-08-16T15:02:11+09:00"
 category: "SmartPhone/Android"
 tags: []
 description: "다들 어려워 하시기에 만들어 봤습니다."

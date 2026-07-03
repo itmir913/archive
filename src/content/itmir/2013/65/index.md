@@ -1,6 +1,6 @@
 ---
 title: "Boot.img등을 쪼개고 합쳐주는 스크립트"
-date: "2013-01-27T17:26:42+09:00"
+date: "2013-01-11T17:26:42+09:00"
 category: "Computer & PC/Ubuntu"
 tags: []
 description: "Boot.img등을 쪼개고 합치는 일이 번거로워 만들었습니다."

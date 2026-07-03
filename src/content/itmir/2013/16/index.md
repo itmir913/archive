@@ -1,6 +1,6 @@
 ---
 title: "CM7 포팅 재도전 문제는 Boot.img속 램디스크 추정"
-date: "2013-01-27T14:36:11+09:00"
+date: "2012-10-28T14:36:11+09:00"
 category: "Android/Build"
 tags: []
 description: "이 두개의 사진을 보아 미루어 짐작해볼때,"

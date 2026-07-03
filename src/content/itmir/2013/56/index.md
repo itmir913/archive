@@ -1,6 +1,6 @@
 ---
 title: "상단바 퀵패널의 통신사 문구 변경방법"
-date: "2013-01-27T16:30:54+09:00"
+date: "2012-12-24T16:30:54+09:00"
 category: "SmartPhone/Android"
 tags: []
 description: "퀵패널의 Olleh등의 통신사 문구를 변경하여 봅시다."

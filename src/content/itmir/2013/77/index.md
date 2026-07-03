@@ -1,6 +1,6 @@
 ---
 title: "2012-08-23 sio deadline추가완료"
-date: "2013-01-28T13:41:19+09:00"
+date: "2012-08-23T13:41:19+09:00"
 category: "Android/Kernel"
 tags: []
 description: "deadline은 기본커널에 있는대 컴파일 되지 않게 설정 되있더라고요 ㅋㅋ"

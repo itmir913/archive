@@ -1,6 +1,6 @@
 ---
 title: "USB나 CD에 Ubuntu를 구워 설치할때 오류 해결법 - syslinux"
-date: "2013-01-27T15:15:48+09:00"
+date: "2012-10-15T15:15:48+09:00"
 category: "Computer & PC/Ubuntu"
 tags: []
 description: "Start booting from USB device... SYSLINUX 3.84 2009-12-18 EBIOS Copyright (C) 1994-2009 H. Peter Anvin et al"

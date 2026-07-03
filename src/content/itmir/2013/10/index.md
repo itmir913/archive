@@ -1,6 +1,6 @@
 ---
 title: "CM7 포팅시작 2일째 토나올거같다 - 2012.08.30"
-date: "2013-01-27T14:23:41+09:00"
+date: "2012-08-30T14:23:41+09:00"
 category: "Android/Build"
 tags: []
 description: "지금까지 수없이 cm7포팅, cm 소스 수정, cm7 porting..... 검색하고 또 검색하였다."

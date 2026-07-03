@@ -1,6 +1,6 @@
 ---
 title: "2012-08-19 lazy 가버너 추가"
-date: "2013-01-28T13:36:42+09:00"
+date: "2012-08-19T13:36:42+09:00"
 category: "Android/Kernel"
 tags: []
 description: "이제 가버너는 총 2개를 더 추가해서 7개가 들어있습니다~"

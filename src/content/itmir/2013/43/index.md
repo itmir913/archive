@@ -1,6 +1,6 @@
 ---
 title: "CM7소스를 배포합니다"
-date: "2013-01-27T16:08:05+09:00"
+date: "2013-01-17T16:08:05+09:00"
 category: "Android/Build"
 tags: []
 description: "제가 repo로 받은뒤 누락된 부분을 직접 체운 소스를 배포합니다"

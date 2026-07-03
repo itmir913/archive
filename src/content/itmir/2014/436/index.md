@@ -1,6 +1,6 @@
 ---
 title: "스키장이 LG껀가봐요"
-date: "2014-01-20T12:03:45+09:00"
+date: "2014-01-19T12:03:45+09:00"
 category: "DailyLife"
 tags: []
 description: "오늘 새벽에 일어나서 ㅋㅋㅋ 스키장에 갔습니다."

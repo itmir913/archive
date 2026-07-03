@@ -1,6 +1,6 @@
 ---
 title: "베가레이서SK EF33S모델 CM10 작업 파일"
-date: "2013-01-27T14:51:29+09:00"
+date: "2013-01-24T14:51:29+09:00"
 category: "Android/Build"
 tags: []
 description: "필요 없는 벤더의 proprietary부분은 날렸습니다"

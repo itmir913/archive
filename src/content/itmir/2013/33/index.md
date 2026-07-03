@@ -1,6 +1,6 @@
 ---
 title: "repo sync 끊김 해결방법"
-date: "2013-01-27T15:16:27+09:00"
+date: "2012-10-16T15:16:27+09:00"
 category: "Computer & PC/Ubuntu"
 tags: []
 description: "AOSP또는 CM의 소스를 받을때 시간 엄청 걸리시죠?"

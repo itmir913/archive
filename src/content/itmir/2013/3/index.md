@@ -1,6 +1,6 @@
 ---
 title: "MIR ROM 정식버전 for KT-A750K"
-date: "2013-01-27T13:24:53+09:00"
+date: "2012-06-04T13:24:53+09:00"
 category: "SmartPhone/Android"
 tags: []
 description: "SDA와 테마카페, 이 블로그에서 배포됩니다."

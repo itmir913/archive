@@ -1,6 +1,6 @@
 ---
 title: "안드로이드의 LOG을 확인하자 - adb logcat / LogcatFilter.exe"
-date: "2013-01-27T17:03:34+09:00"
+date: "2013-01-07T17:03:34+09:00"
 category: "SmartPhone/Android"
 tags: []
 description: "사용자가 cm/miui등을 포팅할때, 혹은 일반 오류의 원인을 알고 싶을때 우리들은 log를 확인해 봅니다."

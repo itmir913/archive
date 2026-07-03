@@ -1,6 +1,6 @@
 ---
 title: "원클릭 IMG적용툴"
-date: "2013-01-27T17:25:08+09:00"
+date: "2013-01-09T17:25:08+09:00"
 category: "SmartPhone/Android"
 tags: []
 description: "물론 구조는 Zip Signer와 APK Manager와 비슷(?) 합니다"

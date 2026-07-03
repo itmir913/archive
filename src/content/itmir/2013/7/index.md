@@ -1,6 +1,6 @@
 ---
 title: "Mir Rom BRAVE is The FASTEST Speed for KT-A750K (KT미라크A)"
-date: "2013-01-27T14:14:29+09:00"
+date: "2012-10-18T14:14:29+09:00"
 category: "SmartPhone/Android"
 tags: []
 description: "Apple버전 이후 약 2달정도의 시간이 소요되었네요. ㄷㄷ"

@@ -1,6 +1,6 @@
 ---
 title: "2012-08-25 IO스케쥴러 BFQ 패치(?)파일 입니다"
-date: "2013-01-28T13:44:17+09:00"
+date: "2012-08-25T13:44:17+09:00"
 category: "Android/Kernel"
 tags: []
 description: "0003-block-introduce-the-BFQ-I-O-scheduler.patch"

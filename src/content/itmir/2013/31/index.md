@@ -1,6 +1,6 @@
 ---
 title: "FPS Unlock - 프레임 제한 해제하기"
-date: "2013-01-27T15:14:14+09:00"
+date: "2012-10-14T15:14:14+09:00"
 category: "SmartPhone/Android"
 tags: []
 description: "ICS이하 버전에는 모두 프레임 제한이라는게 걸려있다고 합니다"

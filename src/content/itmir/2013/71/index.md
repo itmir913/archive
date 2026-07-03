@@ -1,6 +1,6 @@
 ---
 title: "2012-08-19 smartass2 가버너 추가한뒤 빌드중"
-date: "2013-01-28T13:33:26+09:00"
+date: "2012-08-19T13:33:26+09:00"
 category: "Android/Kernel"
 tags: []
 description: "참고한 사이트:http://blog.naver.com/squake/20164009787"

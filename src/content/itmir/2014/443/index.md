@@ -1,6 +1,6 @@
 ---
 title: "[Update v2.4] Only3 (세번만) - 스마트폰 어플 중독방지"
-date: "2014-01-23T11:45:03+09:00"
+date: "2014-01-21T11:45:03+09:00"
 category: "Application"
 tags: []
 description: "Only3 (세번만) - 스마트폰 어플 중독방지"

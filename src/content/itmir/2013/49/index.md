@@ -1,6 +1,6 @@
 ---
 title: "hPa님의 베가N5 CM 통신 오류 해결방법"
-date: "2013-01-27T16:13:47+09:00"
+date: "2012-12-21T16:13:47+09:00"
 category: "Android/Build"
 tags: []
 description: "hPa님께서 알려주신 통신 오류 해결방법을 정리해 보았습니다"

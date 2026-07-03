@@ -1,6 +1,6 @@
 ---
 title: "Zip Signer - Signed by Signapk"
-date: "2013-01-27T16:03:11+09:00"
+date: "2012-11-10T16:03:11+09:00"
 category: "SmartPhone/Android"
 tags: []
 description: "자바 힙 사이즈를 설정할 수 있는 메뉴를 만들었습니다"

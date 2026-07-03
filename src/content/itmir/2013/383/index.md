@@ -1,6 +1,6 @@
 ---
 title: "하루에 어플을 실행할 횟수를 정하자! - 세번만 (BETA)"
-date: "2013-11-23T00:34:48+09:00"
+date: "2013-11-26T00:34:48+09:00"
 category: "Application"
 tags: []
 description: "세번만 (BETA) - 스마트폰 어플 중독방지"

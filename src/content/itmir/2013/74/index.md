@@ -1,6 +1,6 @@
 ---
 title: "2012-08-20 16개 가버너 추가 실패"
-date: "2013-01-28T13:37:24+09:00"
+date: "2012-08-20T13:37:24+09:00"
 category: "Android/Kernel"
 tags: []
 description: "으엉... smartass2와 lazy까지 컴파일이 안된듯 하네요 ㅠㅠ"

@@ -1,6 +1,6 @@
 ---
 title: "2012-08-25 github에서 복사한 lulzactive소스로 컴파일"
-date: "2013-01-28T13:44:52+09:00"
+date: "2012-08-25T13:44:52+09:00"
 category: "Android/Kernel"
 tags: []
 description: "아까 화면꺼짐 먹통의 원인이 lulzactive이었습니다"

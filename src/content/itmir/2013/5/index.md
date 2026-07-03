@@ -1,6 +1,6 @@
 ---
 title: "Mir Rom BETA - Apple For KT-A750K (KT 미라크A)"
-date: "2013-01-27T14:12:23+09:00"
+date: "2012-08-07T14:12:23+09:00"
 category: "SmartPhone/Android"
 tags: []
 description: "설치하신뒤 발생하는 데이터, 어플 날라감등의 문제(일어날일은 없겠지만요)는 책임지지 않습니다"

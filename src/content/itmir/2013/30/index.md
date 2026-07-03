@@ -1,6 +1,6 @@
 ---
 title: "나도 쫌 OTA좀 써보자 - OTA updater"
-date: "2013-01-27T15:07:31+09:00"
+date: "2012-10-10T15:07:31+09:00"
 category: "SmartPhone"
 tags: []
 description: "OTA란 over the air의 약자로 한마디로 그냥 폰 에서 바로 롬을 받는 것입니다"

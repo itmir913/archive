@@ -1,6 +1,6 @@
 ---
 title: "커널(menuconfig)에 대한 각종 설정 / 팁"
-date: "2013-01-27T15:51:26+09:00"
+date: "2012-10-22T15:51:26+09:00"
 category: "Android/Kernel"
 tags: []
 description: "이 글은 메가소마님 블로그에 포스팅된 내용을 제가 다시한번 정리하고 추가 한것임을 밝힙니다"

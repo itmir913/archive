@@ -1,6 +1,6 @@
 ---
 title: "윈도우의 망가진 부트로더를 되살려 보자"
-date: "2013-01-27T16:08:54+09:00"
+date: "2012-12-15T16:08:54+09:00"
 category: "Computer & PC/Windows"
 tags: []
 description: "우분투를 깔 때 리눅스 부트로더 GRUB가 윈도우의 부트로더를 덮어씌우게 됩니다."

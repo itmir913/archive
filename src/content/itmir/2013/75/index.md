@@ -1,6 +1,6 @@
 ---
 title: "2012-08-22 smartass2... [실패]"
-date: "2013-01-28T13:39:27+09:00"
+date: "2012-08-22T13:39:27+09:00"
 category: "Android/Kernel"
 tags: []
 description: "smartass2 추가가 안되었기에 다시 수정해본뒤 컴파일 ㅇㅅㅇ"

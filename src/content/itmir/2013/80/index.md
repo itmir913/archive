@@ -1,6 +1,6 @@
 ---
 title: "2012-08-25 lulzactive제거"
-date: "2013-01-28T13:43:53+09:00"
+date: "2012-08-25T13:43:53+09:00"
 category: "Android/Kernel"
 tags: []
 description: "kernel_dmesg_120825_17h29m.txt"

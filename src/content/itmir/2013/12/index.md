@@ -1,6 +1,6 @@
 ---
 title: "CM7 포팅 시작 4일째 zip완성! - 2012.09.02"
-date: "2013-01-27T14:26:58+09:00"
+date: "2012-09-02T14:26:58+09:00"
 category: "Android/Build"
 tags: []
 description: "후후! 겨후 완성했습니다아아아아아아~"

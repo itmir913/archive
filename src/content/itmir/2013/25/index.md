@@ -1,6 +1,6 @@
 ---
 title: "CM7 WIFI Fix가 안됩니다.."
-date: "2013-01-27T14:50:45+09:00"
+date: "2013-01-23T14:50:45+09:00"
 category: "Android/Build"
 tags: []
 description: "제가 Cm7을 미라크a라는 기기에 포팅을 시도하였습니다"

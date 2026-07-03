@@ -1,6 +1,6 @@
 ---
 title: "빌드한 ClockWorkMod Recovery - 화면 안짤림 - 기기명 ef32k (KT미라크A)"
-date: "2013-01-27T14:43:32+09:00"
+date: "2013-01-21T14:43:32+09:00"
 category: "Android/Build"
 tags: []
 description: "다음 사진처럼 CWM 화면이 나타납니다."

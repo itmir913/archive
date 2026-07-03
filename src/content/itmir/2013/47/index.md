@@ -1,6 +1,6 @@
 ---
 title: "Free my apps 사용법"
-date: "2013-01-27T16:11:13+09:00"
+date: "2012-12-19T16:11:13+09:00"
 category: "Application"
 tags: []
 description: "이 어플은 유로어풀을 꽁짜로 받을수 있게 해주는대요"
