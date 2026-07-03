@@ -8,7 +8,7 @@ draft: false
 original_url: "https://itmir.tistory.com/177"
 ---
 
-![](./images/S4.jpg)![](./images/sapphire_black01.png)
+![](./images/image.jpg)![](./images/image_1.jpg)
 
 갤럭시 S4가 출시되었습니다!
 

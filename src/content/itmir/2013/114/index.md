@@ -38,7 +38,7 @@ original_url: "https://itmir.tistory.com/114"
 
 이제 플러그인 설정에 들어간다음 배너출력을 활성화 해주세요
 
-![](./images/1.png)
+![](./images/image.jpg)
 
 그럼 사이드바에 배너출력이 생기게 됩니다
 

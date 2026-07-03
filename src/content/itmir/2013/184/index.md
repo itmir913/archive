@@ -150,7 +150,7 @@ repo init -u git://github.com/CyanogenMod/android.git -b **cm-10.1**
 
 서버의 사정에 따라 아주 빠를수도, 아주 느릴수도 있습니다
 
-![](./images/sync - 1.png)
+![](./images/sync-1.png)
 
 저는 cm10.1소스를 약 40분만에 유선으로 다운받았습니다 ㅎㅎ..
 
@@ -158,7 +158,7 @@ repo init -u git://github.com/CyanogenMod/android.git -b **cm-10.1**
 
 done이라 뜨면 완료된것입니다 ㅎㅎ
 
-![](./images/sync - 2.png)
+![](./images/sync-2.png)
 
 업데이트가 된것이 있는지 확인겸 다시한번 repo sync를 입력해 주시면 됩니다
 

@@ -16,7 +16,7 @@ original_url: "https://itmir.tistory.com/596"
 
 안드로이드 머터리얼 디자인도 전보다 더 반영하려고 노력했습니다.
 
-![](./images/WondangHighSchool - 1.jpg)
+![](./images/WondangHighSchool-1.jpg)
 
 메인화면은 두개의 탭으로 구성했습니다.
 
@@ -24,7 +24,7 @@ original_url: "https://itmir.tistory.com/596"
 
 두번째 탭은 나머지 기능이 나타나게 구현했습니다.
 
-![](./images/WondangHighSchool - 2.png)
+![](./images/WondangHighSchool-2.png)
 
 전에는 액티비티마다 ToolBar 색을 변경했는데 이번에는 그 작업이 좀 귀찮기도 해서 생략했습니다. 그래서 앱의 전체적인 통일성을 주었다고 생각합니다.
 
@@ -32,7 +32,7 @@ original_url: "https://itmir.tistory.com/596"
 
 몇시간 동안 학교에서 태블릿 가지고 구현한 별점 주기 기능입니다.
 
-![](./images/WondangHighSchool - 3.png)
+![](./images/WondangHighSchool-3.png)
 
 위 스샷은 급식 별점 주기 기능과 확인 기능이 동시에 찍혀있는데 이건 제가 만든 스샷이고 원래는 따로 따로 표시됩니다.
 
@@ -40,7 +40,7 @@ original_url: "https://itmir.tistory.com/596"
 
 이게 간단해 보여도 은근 복잡하더라고요
 
-![](./images/WondangHighSchool - 4.jpg)
+![](./images/WondangHighSchool-4.jpg)
 
 시간표는 기존 쓸데없이 자리만 차지하던 학년 반 정보를 ToolBar로 올리고 전체 레이아웃을 리스트뷰로 처리했습니다.
 
@@ -52,7 +52,7 @@ original_url: "https://itmir.tistory.com/596"
 
 시간표를 바꿀 때마다 앱을 업데이트하는 일이 번거로워서 만든 기능입니다.
 
-![](./images/WondangHighSchool - 5.png)
+![](./images/WondangHighSchool-5.png)
 
 학교 정보랑 일과 운영표 기능을 지워버리는 대신
 
@@ -62,7 +62,7 @@ original_url: "https://itmir.tistory.com/596"
 
 제 친구가 괜찮다고 해서 구현한 기능입니다 ㅋㅋ
 
-![](./images/WondangHighSchool - 6.png)
+![](./images/WondangHighSchool-6.png)
 
 그다음은 시험 시간표 기능인데요
 
@@ -74,7 +74,7 @@ original_url: "https://itmir.tistory.com/596"
 
 다음 시험부터 시험 시간표가 나오면 업데이트 해야죠 ㅋㅋ
 
-![](./images/WondangHighSchool - 7.png)
+![](./images/WondangHighSchool-7.png)
 
 이번 업데이트에서 일정 내용은 바뀌지 않았지만
 
@@ -84,7 +84,7 @@ original_url: "https://itmir.tistory.com/596"
 
 유일하게 오프라인으로도 가능한 기능이군요
 
-![](./images/WondangHighSchool - 8.png)
+![](./images/WondangHighSchool-8.png)
 
 설정도 달라진게 많이 없습니다.
 

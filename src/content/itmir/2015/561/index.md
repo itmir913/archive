@@ -8,7 +8,7 @@ draft: false
 original_url: "https://itmir.tistory.com/561"
 ---
 
-![](./images/샤오미 보조배터리.jpg)
+![](./images/샤오미-보조배터리.jpg)
 
 샤오미 보조배터리가 갖고싶어서(?) 구매해버렸네요 ㅋㅋ
 

@@ -85,7 +85,7 @@ i가 끼어 ivega가 되었습니다...
 
 먼저 처음의 경우
 
-!
+![](./images/img_001.png)
 
 사진이 좀 않좋습니다;
 보시면 아시다 싶이 Vega Studio 입니다 사진관 이군요 ㅋ
@@ -96,13 +96,13 @@ i가 끼어 ivega가 되었습니다...
 
 [www.vega.com](http://www.vega.com/)을 치시면 바로
 
-!
+![](./images/img_002.png)
 
 음? 이게 뭐지요?
 
 확대 해보겠습니다
 
-!
+![](./images/img_003.png)
 
 이게 뭘까요?
 

@@ -18,7 +18,7 @@ original_url: "https://itmir.tistory.com/129"
 
 바로 은행에 갔다 왔습니다. ㅋㅅㅋ
 
-![](./images/IMG_20130214_174731[1].jpg)
+![](./images/image.jpg)
 
 호호 가나 초콜릿을 받았습니다. ㅋㅋ
 

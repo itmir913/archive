@@ -66,7 +66,7 @@ Sign을  하기위해 개속 찾아봤는대요 ㅋㅋ
 그럼 Signed by SignAPK를 구경해 볼까요?  
 ![](./images/7.png)
 
-![](./images/1 (1).png)
+![](./images/1-1.png)
 
 이렇게 나타나게 됩니다 ㅋㅋ
 

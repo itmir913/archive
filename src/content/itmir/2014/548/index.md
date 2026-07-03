@@ -200,7 +200,7 @@ public void onCreate() {
 
 [[Development/App] - #17 커스텀 알림(Alert) 띄우기](/archive/itmir/2013/358)
 
-![](./images/레이아웃 인플레이터.jpg)
+![](./images/레이아웃-인플레이터.jpg)
 
 (이제야 우려먹네요;)
 

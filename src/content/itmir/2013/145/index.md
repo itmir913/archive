@@ -18,7 +18,7 @@ original_url: "https://itmir.tistory.com/145"
 
 다행히도(?) 빨리 빠져나온듯 합니다.
 
-![](./images/옥천 TML.png)
+![](./images/옥천-TML.png)
 
 (중요 개인정보는 제거하였습니다.)
 
@@ -44,15 +44,15 @@ original_url: "https://itmir.tistory.com/145"
 
 출발지는 경기 고양시입니다.
 
-![](./images/지도 출발.png)
+![](./images/지도-출발.png)
 
 출발지가 시청은 아니지만 정확한 출발 위치를 몰라 고양시청으로 지정하였습니다.
 
-![](./images/지도 경유.png)
+![](./images/지도-경유.png)
 
 경유지는 옥천입니다 옥천TML이 충청북도에 있다기에 이렇게 설정하였습니다.
 
-![](./images/지도 도착.png)
+![](./images/지도-도착.png)
 
 마지막으로 도착은 제가 사는곳 인천으로 설정하였습니다.
 

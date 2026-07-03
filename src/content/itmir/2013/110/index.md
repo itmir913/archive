@@ -48,7 +48,7 @@ original_url: "https://itmir.tistory.com/110"
 
 ![](./images/3.png)
 
-+ 새 광고 단위를 클릭하여 광고를 만들어 봅시다!![](./images/4.png)
++ 새 광고 단위를 클릭하여 광고를 만들어 봅시다!![](./images/image.jpg)
 
 ![](./images/5.png)
 
@@ -60,7 +60,7 @@ original_url: "https://itmir.tistory.com/110"
 
 이제 광고 코드를 복사해 볼까요?
 
-![](./images/6.png)
+![](./images/image_1.jpg)
 
 목록의 코드 가져오기 또는 위에서 "저장 및 코드 생성"을 하시면 코드가 나오게 되는대
 
@@ -68,7 +68,7 @@ original_url: "https://itmir.tistory.com/110"
 
 이제 티스토리에 돌아와서 설정 - HTML/CSS 편집에 들어가 주세요
 
-![](./images/7.png)
+![](./images/image_2.jpg)
 
 <div class="article">
 

@@ -47,3 +47,5 @@ http://m.cafe.naver.com/ArticleRead.nhn?clubid=24846429&menuid=78&articleid=880&
 /bin/sh: lzop: not found오류 해결법커널 마이너 패치후 전 일어났습니다참고 자료: [http://cafe.naver.com/androiddevforum/1635,](http://cafe.naver.com/androiddevforum/1635,) [http://ez.analog.com/thread/14516](http://ez.analog.com/thread/14516)sudo apt-get install lzop 하시면 해결됩니다make:  [out/target/product/ef32k/obj/EXECUTABLES/openvpn_intermediates/LINKED/openvpn] 오류 1sudo apt-get install openvpn하니까 없어지는거 같네요...
 
 더 발견하면 따로 추가할께요~도라도라님, 호호님, 토깽이님의 말씀을 인용했습니다
+
+![](./images/img_001.png)

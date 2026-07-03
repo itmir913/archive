@@ -8,9 +8,9 @@ draft: false
 original_url: "https://itmir.tistory.com/190"
 ---
 
-![](./images/선택 영역_001.jpg)
+![](./images/선택-영역_001.jpg)
 
-![](./images/선택 영역_002.png)
+![](./images/선택-영역_002.png)
 
 장장 약 24시간의 빌드를 끝내고 zip이 나왔습니다
 

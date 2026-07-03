@@ -46,17 +46,17 @@ FadingActionBar를 압축풀어보시면 .jar파일이 아닙니다
 
 추가한 FadingActionBar 프로젝트 마우스 오른쪽 - Properties에 들어가 주세요
 
-![](./images/01 Properties.jpg)
+![](./images/01-Properties.jpg)
 
 그다음 Library탭의 Is Library를 클릭해 주세요
 
 이미 체크되있는경우 패스합니다
 
-![](./images/02 isLibrary.png)
+![](./images/02-isLibrary.png)
 
 이제 FadingActionBar를 추가하고자 하는 프로젝트로 돌아온다음 위에서는 is Library를 체크했지만 지금은 Add - (추가한 프로젝트)를 클릭합니다
 
-![](./images/03 라이브러리추가.png)
+![](./images/03-라이브러리추가.png)
 
 ### 라이브러리 사용방법
 
@@ -87,7 +87,7 @@ helper.initActionBar(this);
 
 사진으로 비교해 보겠습니다
 
-![](./images/코드와 UI비교.png)
+![](./images/코드와-UI비교.png)
 
 색을 구분하여 알아보기 쉽도록 만들었습니다
 

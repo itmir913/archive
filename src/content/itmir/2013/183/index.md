@@ -34,7 +34,7 @@ original_url: "https://itmir.tistory.com/183"
 
 설치를 완료하셨다면 실행해 주시면 됩니다.
 
-![](./images/선택 영역_001.png)
+![](./images/선택-영역_001.png)
 
 그 다음 왼쪽 메뉴를 확인해 주세요.
 
@@ -56,7 +56,7 @@ original_url: "https://itmir.tistory.com/183"
 
 를 입력하신다음 엔터를 눌러 저장해 주시고 로그아웃 또는 재부팅을 해주시면 시스탬 트레이에 있는 nab의 모습을 보실수 있으실겁니다. ㅎㅎ
 
-![](./images/선택 영역_002.png)
+![](./images/선택-영역_002.png)
 
 (가장 왼쪽 아이콘 - Nabi)
 

@@ -8,9 +8,9 @@ draft: false
 original_url: "https://itmir.tistory.com/80"
 ---
 
-![](./images/ĸó (1).png)
+![](./images/캡처-1.png)
 
-![](./images/ĸó.png)
+![](./images/캡처.png)
 
 일러님 감사합니다 ㅎㅎ
 

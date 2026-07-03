@@ -175,7 +175,7 @@ integers[2] : 40
 
 위에서 설명한 내용을 그림으로 확인해보겠습니다.
 
-![](./images/한눈에 AsyncTask.png)
+![](./images/한눈에-AsyncTask.png)
 
 위 그림으로 어떻게 되는지 한 눈에 확인할 수 있습니다.
 

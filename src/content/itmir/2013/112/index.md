@@ -18,7 +18,7 @@ original_url: "https://itmir.tistory.com/112"
 
 구글 애드센스!! 정말 신청하기 힘들군요 ㄷㄷ
 
-![](./images/4.png)
+![](./images/image.jpg)
 
 허허...
 
@@ -28,13 +28,13 @@ original_url: "https://itmir.tistory.com/112"
 
 (혹시 저처럼 난감하신 분은 http://productforums.google.com/forum/#!forum/adsense-ko에 방문해 보세요)
 
-![](./images/캡처_1.png)
+![](./images/image_1.jpg)
 
 위 사진처럼 문의를 넣어본 결과 드디어 답변이 왔습니다 +\_+
 
 직접 확인하신다음 승인해 주셨네요 ㅎㅎ
 
-![](./images/캡처_2.png)
+![](./images/image_2.jpg)
 
 드디어 바라던 메일이 왔습니다 ㅋㅅㅋ
 

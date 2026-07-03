@@ -58,7 +58,7 @@ original_url: "https://itmir.tistory.com/484"
 
 스캔해서 아래에 첨부합니다.
 
-![](./images/동아리 목록.png)
+![](./images/동아리-목록.png)
 
 사실 프로그래밍 동아리는 있을지 몰랐어요. ㅋㅋ
 

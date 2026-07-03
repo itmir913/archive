@@ -8,11 +8,11 @@ draft: false
 original_url: "https://itmir.tistory.com/93"
 ---
 
-![](./images/IMG_20130128_153549.jpg)
+![](./images/image.jpg)
 
-![](./images/IMG_20130128_153556.jpg)
+![](./images/image_1.jpg)
 
-![](./images/IMG_20130128_153835.jpg)
+![](./images/image_2.jpg)
 
 다음 사진처럼 카메라가 작동합니다 ㅋㅋ  
 전에 libandroid\_runtime.so때문에 libcamera관련을 넣어준적이 있는듯 한대

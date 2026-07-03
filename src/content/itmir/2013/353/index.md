@@ -50,21 +50,21 @@ original_url: "https://itmir.tistory.com/353"
 
 E-mail과 비밀번호 인증코드만 입력하시고 "등록"을 클릭을 바로 회원 등록이 됩니다.
 
-![](./images/바이두2.png)
+![](./images/image.jpg)
 
 회원등록을 하셨다고 바로 로그인 할 수 있는건 아닙니다. 가입하신 이메일 주소로 인증메일이 날라옵니다.
 
 메일 본문의 중간에 있는 링크를 클릭하시면 인증이 이루어지고 그때부터 정상적으로 로그인이 가능합니다.
 
-![](./images/바이두5.png)
+![](./images/image_1.jpg)
 
 <http://pan.baidu.com/>  이제 바이두의 클라우드 웹페이지로 이동하여 로그인하시면됩니다.
 
-![](./images/바이두1.png)
+![](./images/image_2.jpg)
 
-![](./images/바이두3.png)
+![](./images/image_3.jpg)
 
-![](./images/바이두4.png)
+![](./images/image_4.jpg)
 
 PC용 클라이언트 프로그램 : <http://bcscdn.baidu.com/netdisk/BaiduYunGuanjia_4.1.0.exe>
 
@@ -74,7 +74,7 @@ PC용 클라이언트 프로그램 : <http://bcscdn.baidu.com/netdisk/BaiduYunG
 
 모바일 앱 다운 : <http://bs.baidu.com/netdisk/BaiduYunSetup_web_2T.apk>
 
-QR코드 :       ![](./images/바이두QR.jpg)
+QR코드 :       ![](./images/image_5.jpg)
 
 모바일 앱을 기기에 설치하신 후에 위에서 등록한 계정으로 똑같이 로그인하시면되구요.
 
@@ -82,7 +82,7 @@ QR코드 :       ![](./images/바이두QR.jpg)
 
 모두들 성공적으로 2TB 받으셨나요? ^^ ㅋㅋ
 
-![](./images/바이두6.png)
+![](./images/image_6.jpg)
 
 이상으로 "바이두(baidu) 클라우드"에 대한 간단한 포스팅을 마치도록 하겠습니다.
 
@@ -124,11 +124,11 @@ QR코드 :       ![](./images/바이두QR.jpg)
 
 **추천 한번씩 눌러주시면 큰 힘이 될거같습니다^^**
 
-![](./images/Screenshot_2013-09-09-21-19-26.png) ![](./images/Screenshot_2013-09-09-21-19-34.png) ![](./images/Screenshot_2013-09-09-21-19-40.png)
+![](./images/image_7.jpg) ![](./images/image_8.jpg) ![](./images/image_9.jpg)
 
-![](./images/Screenshot_2013-09-09-21-20-53.png) ![](./images/Screenshot_2013-09-09-21-20-59.png) ![](./images/Screenshot_2013-09-09-21-21-04.png)
+![](./images/image_10.jpg) ![](./images/image_11.jpg) ![](./images/image_12.jpg)
 
-![](./images/Screenshot_2013-09-09-21-21-45.png) ![](./images/Screenshot_2013-09-09-21-21-55.png) ![](./images/Screenshot_2013-09-09-21-22-08.png)
+![](./images/image_13.jpg) ![](./images/image_14.jpg) ![](./images/image_15.jpg)
 
 **바이두 클라우드 한글화 앱 다운로드 :   [BaiduCloud(SPAPA).apk](http://spapa1004.tistory.com/attachment/cfile5.uf@2453A247522E884834A3E7.apk)**
 
@@ -335,13 +335,13 @@ C:\Program Files\baidu\BaiduYunGuanjia
 
 **업데이트 버전으로 다시 한글화파일을 배포합니다.**
 
-![](./images/Screenshot_2013-10-28-09-39-06.png) ![](./images/Screenshot_2013-10-28-09-38-57.png) ![](./images/Screenshot_2013-10-28-09-35-26.png)
+![](./images/image_16.jpg) ![](./images/image_17.jpg) ![](./images/image_18.jpg)
 
 \* 업데이트 로그는 다음과 같습니다. 이번 업데이트에서 기능상의 별다른 변화는 없는듯하고,
 
 그냥 다운로드 관련하여 안정화만 있는듯 하네요..
 
-![](./images/11.png)
+![](./images/image_19.jpg)
 
 **업데이트버전(5.1.1) 한글화 앱 :**
 

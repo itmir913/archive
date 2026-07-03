@@ -28,7 +28,7 @@ CONFIG_ANDROID_TOUCHSCREEN_MSM_HACKS=y
 
 QT602240 부품은 그리 양질의 부품은 아닐 수도 있겠지만, 구글에 QT602240 datasheet이라 치면 다음과 같이 뜹니다.
 
-!
+![](./images/img_001.png)
 
 첫 페이지인데, 세 개가 쫙 뜨죠. 데이터시트가 있어야 편리한 개발이 가능하기 때문에 가끔 필요한 경우가 있습니다.
 
@@ -47,7 +47,7 @@ CONFIG_TOUCHSCREEN_CYTTSP_I2C=y
 
 이제 cyttsp_i2c datasheet 검색어로 검색을 해 보겠습니다.
 
-!
+![](./images/img_002.png)
 
 첫 페이지입니다. 확연히 다르네요. 패치 기록 웹문서 하나가 외로움을 달래줄 뿐입니다.
 

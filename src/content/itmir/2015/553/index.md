@@ -48,7 +48,7 @@ original_url: "https://itmir.tistory.com/553"
 
 아래 그림을 봐주세요
 
-![](./images/외부 버튼 설명.png)
+![](./images/외부-버튼-설명.png)
 
 오른쪽 아래에서 3번째에 마이크로 USB포트가 있습니다
 

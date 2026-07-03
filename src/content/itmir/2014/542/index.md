@@ -8,7 +8,7 @@ draft: false
 original_url: "https://itmir.tistory.com/542"
 ---
 
-![](./images/댓글 더보기 타이틀.png)
+![](./images/댓글-더보기-타이틀.png)
 
 페이스북같은 SNS처럼 티스토리에서도 댓글 더보기 기능을 넣을 수 있습니다.
 
@@ -22,7 +22,7 @@ skin.html의 </body>위에 스크립트 넣어주시면 작동합니다.
 
 참고로 "오늘 2014년 11월 07일" 올리신 글입니다~
 
-![](./images/댓글 더보기.jpg)
+![](./images/댓글-더보기.jpg)
 
 잘 작동하는군요. ㅎㅎ
 

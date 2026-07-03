@@ -20,7 +20,7 @@ original_url: "https://itmir.tistory.com/352"
 
 **퀴우360 클라우드 서비스는 36TB의 무료 용량을 제공하고 있습니다ㅎㄷㄷ**
 
-![](./images/1.png)
+![](./images/image.jpg)
 
 **대륙의 대용량 클라우드 서비스의 시작을 바이두와 퀴우360이 시작했다는 기사를 접했을때**
 
@@ -30,7 +30,7 @@ original_url: "https://itmir.tistory.com/352"
 
 **현재는 바이두가 2테라, 퀴우360은 36테라의 무료 용량을 제공하고 있더군요.**
 
-![](./images/2.png)
+![](./images/image_1.jpg)
 
 **뭐 기존의 바이두나 텐센트의 2테라,10테라만 해도 충분하긴한데...**
 
@@ -42,35 +42,35 @@ original_url: "https://itmir.tistory.com/352"
 
 **퀴우360 홈페이지 :    <http://yunpan.360.cn/>**
 
-![](./images/3.png)
+![](./images/image_2.jpg)
 
 **위처럼 메일주소와 비번 입력하시고 등록버튼 누르시면 바로 가입됩니다. 그 흔한 메일인증도 없습니다;;**
 
 **등록이 완료되면 바로 아래처럼 웹 클라우드 페이지로 이동됩니다.**
 
-![](./images/4.png)
+![](./images/image_3.jpg)
 
 **하지만....상단의 정보를 보시면 36테라는 커녕.... 용량이 5GB밖에 안됩니다.**
 
 **이제 36테라의 용량을 얻기위해 하셔야 거쳐야할 과정이 있습니다. 아래처럼 가운데 링크를 클릭해주세요**
 
-![](./images/5.png)
+![](./images/image_4.jpg)
 
 **링크를 클릭하시면 아래와 같이 다른 창이 하나 뜨실텐데...**
 
 **두가지의 조건을 충족시키면 총 36테라의 추가용량을 지급해줍니다.**
 
-![](./images/7.jpg)
+![](./images/image_5.jpg)
 
 **이제 아래의 스샷들 보시면서 차근차근 하나씩 따라하시면 됩니다.**
 
-![](./images/8.png)
+![](./images/image_6.jpg)
 
-![](./images/9.png)
+![](./images/image_7.jpg)
 
-![](./images/10.png)
+![](./images/image_8.jpg)
 
-![](./images/11.png)
+![](./images/image_9.jpg)
 
 **이제 다들 36테라 받으셨죠??^^ 텐센트와 바이두와 달리 하나의 모바일기기로**
 
@@ -80,11 +80,11 @@ original_url: "https://itmir.tistory.com/352"
 
 **PC클라이언트는 한글화가 부분적으로밖에 안되네요;;;**
 
-![](./images/Screenshot_2013-09-18-21-19-13.png)   ![](./images/Screenshot_2013-09-18-21-19-44.png)
+![](./images/image_10.jpg)   ![](./images/image_11.jpg)
 
-![](./images/Screenshot_2013-09-18-21-20-01.png)   ![](./images/Screenshot_2013-09-18-21-20-19.png)
+![](./images/image_12.jpg)   ![](./images/image_13.jpg)
 
-![](./images/12.png)
+![](./images/image_14.jpg)
 
 \* 참고로 이런 대용량의 클라우드 서비스가 가능한건 아마도 업로드하는 파일의 해시값을 분석하여
 
@@ -98,7 +98,7 @@ original_url: "https://itmir.tistory.com/352"
 
 **어떤분이 댓글로 아래와 같은 글을 남기셧는데.... 무슨근거로 이런 말씀을 하시는지;;;;**
 
-![](./images/123.png)
+![](./images/image_15.jpg)
 
 **제가 블로그에서 소개해드린 중국의 클라우드 서비스 3개와 드롭박스와 비교해봤을때...**
 
@@ -112,13 +112,13 @@ original_url: "https://itmir.tistory.com/352"
 
 **유용하게 쓰시라고 배포한 글에 저런 근거없는 댓글로 블로그를 비하하려는 의도가 뭔지 궁금하군요;;**
 
-![](./images/제목 없음.png)
+![](./images/image_16.jpg)
 
 **뭐...제가 굳이 중국 클라우드 프로그램을 두둔하려는것도 아니고 그럴 이유도 없습니다만...**
 
 **사실과는 다르게 왜곡시켜 문제를 제기하시니..... 반박할 필요는 있다 생각되서 좀 적어봅니다.**
 
-![](./images/123_1.png)
+![](./images/image_17.jpg)
 
 **어떤 기준을 두고 말씀하시는지는 모르겟지만..****단순히 CPU점유율을 보고 말씀하시는거라면...**
 
@@ -184,9 +184,9 @@ original_url: "https://itmir.tistory.com/352"
 
 **근거를 토대로 말씀해주세요.**
 
-![](./images/제목 없음.jpg)
+![](./images/image_18.jpg)
 
-![](./images/123_2.png)
+![](./images/image_19.jpg)
 
 [임베드 콘텐츠: http://videofarm.daum.net/controller/video/viewer/Video.html?vid=v33a4nmWyWMnyuuekkxehMW&play\_loc=daum\_tistory](http://videofarm.daum.net/controller/video/viewer/Video.html?vid=v33a4nmWyWMnyuuekkxehMW&play_loc=daum_tistory)
 
@@ -206,9 +206,9 @@ original_url: "https://itmir.tistory.com/352"
 
 **C:\Program Files\360\360WangPan\ 폴더안에 덮어쒸우시면 됩니다.**
 
-![](./images/Screenshot_2013-09-18-21-19-13_1.png)![](./images/Screenshot_2013-09-18-21-19-44_1.png)
+![](./images/image_20.jpg)![](./images/image_21.jpg)
 
-![](./images/Screenshot_2013-09-18-21-20-01_1.png)![](./images/Screenshot_2013-09-18-21-20-19_1.png)
+![](./images/image_22.jpg)![](./images/image_23.jpg)
 
 ![](./images/12_1.png)
 
@@ -246,7 +246,7 @@ original_url: "https://itmir.tistory.com/352"
 
 **3.3.2 버전으로 업데이트되어 다시 작업하여 올려드립니다.**
 
-![](./images/Screenshot_2013-10-27-00-54-36.png) ![](./images/Screenshot_2013-10-27-00-58-12.png) ![](./images/Screenshot_2013-10-27-00-55-25.png)
+![](./images/image_24.jpg) ![](./images/image_25.jpg) ![](./images/image_26.jpg)
 
 **업데이트버전(3.3.2) 한글화 앱 :   [com.qihoo.yunpan-update(3.3.2).apk](http://spapa1004.tistory.com/attachment/cfile27.uf@23541F4B526BE6AA395BF2.apk)**
 

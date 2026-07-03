@@ -8,7 +8,7 @@ draft: false
 original_url: "https://itmir.tistory.com/567"
 ---
 
-![](./images/자동회전이 사라짐_preview.jpg)
+![](./images/자동회전이-사라짐_preview.jpg)
 
 윈도우 8.1을 쓰는대... 자동회전 버튼이 없어졌습니다. ㅠㅠ
 
@@ -16,9 +16,9 @@ original_url: "https://itmir.tistory.com/567"
 
 이게 자동 회전버튼이 자주 쓰이는건 아닌지라 언제 없어졌는지도 모릅니다.
 
-![](./images/자동회전 정상.jpg)
+![](./images/자동회전-정상.jpg)
    
-![](./images/자동회전이 사라짐.jpg)
+![](./images/자동회전이-사라짐.jpg)
 
 (좌) 기존 (우) 사라짐
 
@@ -30,7 +30,7 @@ original_url: "https://itmir.tistory.com/567"
 
 스샷은 없지만 센서 부분에 방향 센서가 안뜨는거 같더군요.
 
-![](./images/장치관리자 센서.png)
+![](./images/장치관리자-센서.png)
 
 위 스샷은 정상으로 돌아왔을때 찍은 스샷입니다.
 

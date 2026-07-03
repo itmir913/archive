@@ -26,7 +26,7 @@ original_url: "https://itmir.tistory.com/359"
 
 ## [파일 탐색기 클래스 - FileList](http://ryulib.tistory.com/90)
 
-![](./images/screenshot.png)
+![](./images/image_1.jpg)
 
 안드로이드에서는 기본으로 제공하는 Delphi의 TOpenDialog 라이브러리가 없습니다.  따라서, 스스로 만들어서 해결해야 하는데, 검색된 소스나 방법들이 제 마음에 들지 않아 아래와 같이 만들어 봤습니다.  (급조한 것이기 때문에 아직 부족한 점이 많습니다.)
 

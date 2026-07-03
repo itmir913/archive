@@ -24,7 +24,7 @@ original_url: "https://itmir.tistory.com/457"
 
 젤리빈에 대해 발표되면서 향상된 Nofification에 대한 언급이 있었습니다
 
-![](./images/Google io 2012 notification.jpg)
+![](./images/Google-io-2012-notification.jpg)
 
 오늘 배울 내용은 이 구글 IO와 관련이 매우 깊습니다
 
@@ -46,21 +46,21 @@ Notification의 아이콘은 잘 아시다 싶이 상단바 부분, Notification
 
 기본적인 알림의 형식은 아래와 같아요
 
-![](./images/base layout.png)
+![](./images/base-layout.png)
 
 젤리빈(4.1)이상부터는 이 알림을 늘리고 줄일수가 있어요
 
-![](./images/expanded layout 1.png)
+![](./images/expanded-layout-1.png)
 
 이렇게 더 많은 정보를채울수 있습니다~
 
 스크린샷같은것은 그걸 알림에서 미리보기도 가능하고 바로 삭제 또는 공유가 가능하죠
 
-![](./images/expanded layout 2.png)
+![](./images/expanded-layout-2.png)
 
 또한 Action을 지정하면 알림에서 바로 작업을 할수 있습니다
 
-![](./images/expanded layout action.png)
+![](./images/expanded-layout-action.png)
 
 더 많은 유형이 있지만 생략하고 빨리 코드를 배워봅시다
 

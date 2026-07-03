@@ -20,7 +20,7 @@ original_url: "https://itmir.tistory.com/564"
 
 나중에 한번 더 갈아엎어야지요 ㅋㅋ
 
-![](./images/WondangHighSchool - 1.jpg)
+![](./images/WondangHighSchool-1.jpg)
 
 저번 디자인보다 훨씬 보기 좋네요
 
@@ -32,9 +32,9 @@ original_url: "https://itmir.tistory.com/564"
 
 오후 2시부터는 오늘의 저녁이 표시됩니다
 
-![](./images/WondangHighSchool - 2.jpg)
+![](./images/WondangHighSchool-2.jpg)
   
-![](./images/WondangHighSchool - 3.jpg)
+![](./images/WondangHighSchool-3.jpg)
 
 급식 데이터는 한번 로딩하면 다시 불러올때 데이터 없이 불러오기가 가능합니다
 
@@ -44,17 +44,17 @@ EX) WIFI로 2015-02-23 급식을 로딩했다면 2015-02-22(그주의 일요일)
 
 언제든지 데이터 없이 다시 볼수 있습니다
 
-![](./images/WondangHighSchool - 4.jpg)
+![](./images/WondangHighSchool-4.jpg)
   
-![](./images/WondangHighSchool - 5.jpg)
+![](./images/WondangHighSchool-5.jpg)
 
 시간표 디자인은 카드뷰를 사용했어요
 
 학교 일정은 디자인은 바뀌지 않았지만 여백부분만 바꿔 넣었습니다
 
-![](./images/WondangHighSchool - 6.jpg)
+![](./images/WondangHighSchool-6.jpg)
   
-![](./images/WondangHighSchool - 7.jpg)
+![](./images/WondangHighSchool-7.jpg)
 
 학교 소개, 교가, 연락처를 모와서 하나의 메뉴로 모두 집어넣었습니다
 

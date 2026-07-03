@@ -8,9 +8,9 @@ draft: false
 original_url: "https://blog.naver.com/whdghks913/20187502136"
 ---
 
-!
+![](./images/img_001.png)
 
-!
+![](./images/img_002.png)
 위 사진과 같습니다sk 베가레이서2 LucidOS커널
 멀티터치 10점으로 상향했습니다
 최대 5점 터치에서 10점 터치로 2배로 늘렸습니다

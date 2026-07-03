@@ -28,7 +28,7 @@ original_url: "https://itmir.tistory.com/488"
 
 ![](./images/OTG.png)
 
-![](./images/SD카드 OTG.png)
+![](./images/SD카드-OTG.png)
 
 한번 써봤는대 나쁘진 않습니다
 

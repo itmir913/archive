@@ -10,7 +10,7 @@ original_url: "https://itmir.tistory.com/284"
 
 허허... 결국에는 베레2가 제품에서 떠났군요. 허허..
 
-![](./images/마지막 su권한.png)
+![](./images/마지막-su권한.png)
 
 마지막 su권한이었습니다 ㅎㅎ..
 

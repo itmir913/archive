@@ -22,7 +22,7 @@ original_url: "https://itmir.tistory.com/436"
 
 ![](./images/20140119_144420.jpg)
 
-![](./images/곤지암 리조트.jpg)
+![](./images/곤지암-리조트.jpg)
 
 ![](./images/20140119_213339.jpg)
 

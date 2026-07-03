@@ -543,9 +543,9 @@ RingtonePreference도 content://media/internal/audio/media/xxxx의 형식으로
 
 그래서 MainActivity.java로 만들어 봤습니다
 
-![](./images/메인화면(전).png)
+![](./images/메인화면-전.png)
     
-![](./images/메인화면(후).png)
+![](./images/메인화면-후.png)
 
 메인 액티비티에서 설정된 값을 읽어와서 TextView에 뿌려주는 모습입니다
 

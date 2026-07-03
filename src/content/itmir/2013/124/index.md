@@ -8,9 +8,9 @@ draft: false
 original_url: "https://itmir.tistory.com/124"
 ---
 
-![](./images/IMG_20130211_173211.jpg)
+![](./images/image.jpg)
 
-![](./images/IMG_20130211_173155.jpg)
+![](./images/image_1.jpg)
 
 이것이 바로 진짜 젤리빈 입니다 ㅋㅋㅋㅋㅋㅋ
 

@@ -8,4 +8,4 @@ draft: false
 original_url: "https://itmir.tistory.com/152"
 ---
 
-![](./images/java 로고 투명.png)
+![](./images/java-로고-투명.png)

@@ -8,7 +8,7 @@ draft: false
 original_url: "https://itmir.tistory.com/524"
 ---
 
-![](./images/Google Play Store Logo.png)
+![](./images/Google-Play-Store-Logo.png)
 
 마켓에 올려진 어플의 버전을 받아서 반환하는 라이브러리 입니다
 

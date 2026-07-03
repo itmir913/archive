@@ -12,7 +12,7 @@ original_url: "https://itmir.tistory.com/119"
 
 다들 그리운 고향으로 떠나는 일이 남이있겠죠?ㅋ
 
-![](./images/ì„¤.jpg)
+![](./images/설.jpg)
 
 다들 새뱃돈 많이 챙기시길 바래요 ㅋㅋ *(그리고 그 돈의 일부를 제게 기부해 주시는 겁니다?)*
 

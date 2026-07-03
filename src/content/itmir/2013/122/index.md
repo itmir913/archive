@@ -54,19 +54,19 @@ SKT (IM-A830S) : IM-A830S IO fix by slayer\_b
 
 리커버리는 hPa님의 CWM 리커버리를 이용해 주시면 됩니다.
 
-![](./images/1.jpg)
+![](./images/image.jpg)
 
 install zip from sdcard를 선택해 주신 다음
 
-![](./images/2.jpg)
+![](./images/image_1.jpg)
 
 choose zip from sdcard를 선택해 주세요.
 
-![](./images/3.jpg)
+![](./images/image_2.jpg)
 
 다운받은 zip을 선택해 주신다음,
 
-![](./images/4.jpg)
+![](./images/image_3.jpg)
 
 Yes를 선택해서 눌러주시면 됩니다 ㅎㅎ
 

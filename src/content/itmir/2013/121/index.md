@@ -93,7 +93,7 @@ sdcard에 들어온다음 붙여넣기를 하시면 됩니다
 
 가져오신 apk를 place-apk-here-for-modding폴더에 넣으신후 Script.bat를 실행해 주세요
 
-![](./images/7.png)
+![](./images/image.jpg)
 
 우리가 주로 사용하는 메뉴는 9번, 10번, 11번, 22번 입니다
 
@@ -103,7 +103,7 @@ sdcard에 들어온다음 붙여넣기를 하시면 됩니다
 
 작업할 apk의 숫자를 눌러주시면 됩니다
 
-![](./images/9.png)
+![](./images/image_1.jpg)
 
 그럼 현재 프로젝트에 선택한 apk의 이름이 떠있게 됩니다
 
@@ -133,7 +133,7 @@ apk가 컴파일 되고 있습니다
 
 설치 어플이라면 12번 버튼으로 사인해 주시면 됩니다
 
-![](./images/캡처.png)
+![](./images/image_2.jpg)
 
 unsigned에서 수정한 파일을 원본 파일으로 가져와 주시면 됩니다
 

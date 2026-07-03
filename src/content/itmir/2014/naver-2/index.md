@@ -19,8 +19,8 @@ String을 xor, double같은걸 xor연산하는건 어떻게하는지 원...
 
 기회되면 파일 선택해서 바이트단위로 읽은다음 xor연산해서 암호화/복호화 어플도 만들어 보려고요(!)
 
-!
+![](./images/img_001.png)
 
-!
+![](./images/img_002.png)
 
-!
+![](./images/img_003.png)

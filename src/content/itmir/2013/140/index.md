@@ -8,7 +8,7 @@ draft: false
 original_url: "https://itmir.tistory.com/140"
 ---
 
-![](./images/Mir (2).png)
+![](./images/Mir-2.png)
 
 ![](./images/MIR.png)
 

@@ -18,7 +18,7 @@ original_url: "https://itmir.tistory.com/13"
 
 부팅될때 바로 adb devices로 체크 해 보았다
 
-![](./images/ĸó.png)
+![](./images/캡처.png)
 
 이걸 보시면 devices라고 뜨는거 보이시죠?
 

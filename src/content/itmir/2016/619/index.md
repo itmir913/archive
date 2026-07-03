@@ -82,7 +82,7 @@ original_url: "https://itmir.tistory.com/619"
 
 키보드 높이가 설정되지 않는 이유를 알아보기 위해 smali를 java로 변환해서 확인하였습니다.
 
-![](./images/java decompiler.png)
+![](./images/java-decompiler.png)
 
 드래그한 부분이 키보드 설정을 비활성화 하는 코드입니다.
 
@@ -102,7 +102,7 @@ original_url: "https://itmir.tistory.com/619"
 
 java.lang.NoSuchMethodError: java.lang.System.arraycopy
 
-![](./images/logcat filter.png)
+![](./images/logcat-filter.png)
 
 네... 해결방법이 안보여서 최소 API를 더 내리진 못했습니다.
 

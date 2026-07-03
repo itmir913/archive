@@ -26,9 +26,9 @@ original_url: "https://itmir.tistory.com/405"
 
 ![](./images/티스토리_안내03.jpg)
 
-![](./images/티스토리_안내01 (1).jpg)
+![](./images/티스토리_안내01-1.jpg)
 
-![](./images/티스토리_안내03 (1).jpg)
+![](./images/티스토리_안내03-1.jpg)
 
 보통
 

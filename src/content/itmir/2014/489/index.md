@@ -50,7 +50,7 @@ lite버전은 pro key 어플이 설치되었을경우 full버전으로 변경되
 
 그림으로 표현하면 아래와 같습니다.
 
-![](./images/lite버전이 pro버전으로.png)
+![](./images/lite버전이-pro버전으로.png)
 
 자, 위 사진을 분석하면 Unlocker를 이용한 어플이 크랙할 수 있는 여지를 살펴볼 수 있습니다.
 

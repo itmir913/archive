@@ -60,13 +60,13 @@ theme chooser라는 어플을 이용하면 SystemUI등을 교체하지 않고서
 
 아주 놀라운 기능이죠 ㅎㅎ
 
-![](./images/CM7-1.png)
+![](./images/image.jpg)
 
 다음 사진처럼 놀라운 기능을 숨기고 있는대요
 
 CM7에서는 CyanogenMod 설정을 통해 하단 상태표시줄등 많은 기능을 자체 내장하고 있습니다
 
-![](./images/CM7-2.jpg)
+![](./images/image_1.jpg)
 
 CM7의 Lock화면 입니다
 
@@ -104,7 +104,7 @@ MIUI의 경우 부분 테마 적용이 가능한대요
 
 이게 가능합니다 MIUI의 테마관리자 라는 기능을 이용한 방법이죠 ㅋㅋ
 
-![](./images/MIUI-3.jpg)
+![](./images/image_2.jpg)
 
 이게 MIUI의 홈화면 입니다
 
@@ -112,17 +112,17 @@ MIUI의 경우 부분 테마 적용이 가능한대요
 
 miui는 별도의 어플 서랍이 없으며 바로 저 홈화면이 어플 서랍입니다 해깔리지 마세요 ㅋㅅㅋ
 
-![](./images/MIUI-1.png)
+![](./images/image_3.jpg)
 
 아이폰 같기도 한 UI가 매력입니다 ㅎㅎ
 
-![](./images/MIUI-2.jpg)
+![](./images/image_4.jpg)
 
 MIUI의 Lock 화면 입니다
 
 참고로 처 락버튼을 두번 터치하면 뮤직 플레이어가 나오게 됩니다
 
-![](./images/MIUI-4.jpg)
+![](./images/image_5.jpg)
 
 유명한 상단바 입니다
 

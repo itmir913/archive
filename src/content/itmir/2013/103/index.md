@@ -40,7 +40,7 @@ original_url: "https://itmir.tistory.com/103"
 
 사용자 리뷰 한번 봅시다.
 
-![](./images/캡처.png)
+![](./images/image.jpg)
 
 etc....
 

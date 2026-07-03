@@ -76,11 +76,11 @@ adb logcat > log.txt
 
 이클립스를 통해 확인한 강제종료 원인입니다
 
-![](./images/이클립스 activity.png)
+![](./images/이클립스-activity.png)
 
 이 오류는 startActivity()사용할때 새로운 액티비티를 AndroidManifest.xml에 등록하지 않아서 생긴 문제입니다
 
-![](./images/이클립스 null.png)
+![](./images/이클립스-null.png)
 
 요건 null이 떠서 생긴 문제입니다
 

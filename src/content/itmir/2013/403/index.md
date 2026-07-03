@@ -8,7 +8,7 @@ draft: false
 original_url: "https://itmir.tistory.com/403"
 ---
 
-![](./images/고입 내신 성적.jpg)
+![](./images/고입-내신-성적.jpg)
 
 으어어어어어어
 

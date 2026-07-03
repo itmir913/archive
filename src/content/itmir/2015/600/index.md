@@ -26,7 +26,7 @@ original_url: "https://itmir.tistory.com/600"
 
 이 PC 초기화 메뉴의 시작을 누르면 초기화 옵션이 나타나게 됩니다.
 
-![](./images/스크린샷(1).png)
+![](./images/스크린샷-1.png)
 
 그런데 한가지 이상한 문구를 발견했습니다.
 
@@ -38,7 +38,7 @@ original_url: "https://itmir.tistory.com/600"
 
 그리고 복구 파일이 존재할 때 초기화를 하려 하면 아래와 같은 경고가 뜹니다.
 
-![](./images/스크린샷(2).png)
+![](./images/스크린샷-2.png)
 
 그런데 저 세번째 옵션으로 초기화를 할 때 Windows.old 폴더를 날려버려서 복구 할 수 없을텐데,
 

@@ -18,7 +18,7 @@ original_url: "https://itmir.tistory.com/338"
 
 **10TB 대용량 무료클라우드 서비스에 대해 알려드리도록 하겠습니다.**
 
-**![](./images/텐센트.png)**
+**![](./images/image.jpg)**
 
 사실 이 경쟁의 시작은 대륙의 "네이버"라고 할수있는 중국의 검색엔진 업체 "바이두"가 시작했습니다.
 
@@ -32,7 +32,7 @@ original_url: "https://itmir.tistory.com/338"
 
 1TB까지 용량을 확대한다고 발표했습니다. 중국은 땅도 넓고, 인구도 많고, 클라우드 용량도 역시;;;;ㅋ
 
-**![](./images/바이두.png)**
+**![](./images/image_1.jpg)**
 
 하지만 여기까지는 시작에 불구했습니다. 중국의 게임/메신져 업체인 텐센트가 대용량
 
@@ -60,7 +60,7 @@ original_url: "https://itmir.tistory.com/338"
 
 텐센트는 마치 "니들은 그거밖에 안되냐" 비꼬듯이 10TB의 용량을 들고나온것입니다;;;;
 
-![](./images/클라우드.png)
+![](./images/image_2.jpg)
 
 자 그럼 일단, 텐센트 10TB 클라우드 서비스의 장점을 살펴보면
 
@@ -72,7 +72,7 @@ original_url: "https://itmir.tistory.com/338"
 
 장점이 상당히 많고 큰 매력을 가지고 있는 서비스라고 생각이 됩니다. 제 개인적으론 드롭박스보다 맘에 듭니다;;
 
-![](./images/제목 없음.png)
+![](./images/image_3.jpg)
 
 하지만 장점이 많다고해서 단점이 없을수는 없겠죠. 국내 클라우드 서비스에 비해 다소 느린 다운/업로드 속도입니다.
 
@@ -92,7 +92,7 @@ original_url: "https://itmir.tistory.com/338"
 
 크롬처럼 번역기능이 있는 브라우저로 접속하시면 얼마든지 불편함없이 사용가능합니다.
 
-**![](./images/텐센트 웹.png)**
+**![](./images/image_4.jpg)**
 
 보다시피 누가봐도 단순하고 깔끔한 UI로 실질적으로 사용하는데 크게 문제가 되지않습니다.
 
@@ -102,7 +102,7 @@ original_url: "https://itmir.tistory.com/338"
 
 이정도면 중국어를 모르는사람은 쓰기 힘들겠죠;;;?? 하지만 실망하지 마세요..
 
-**![](./images/Screenshot_2013-09-07-04-36-00.png) ![](./images/Screenshot_2013-09-07-04-36-05.png) ![](./images/Screenshot_2013-09-07-04-36-18.png)**
+**![](./images/image_5.jpg) ![](./images/image_6.jpg) ![](./images/image_7.jpg)**
 
 저는 어떻게든 엄청난 고용량의 무료 클라우드 서비스를 쓰고야 말겠단 의지 하나로 정말 어렵게 한글화했습니다ㅡㅡ;
 
@@ -110,9 +110,9 @@ original_url: "https://itmir.tistory.com/338"
 
 가입 페이지와 10TB로 업그레이드하기까지 메뉴를 넣어봤습니다. 요거 하나면 가입부터 용량업글까지 간단합니다**^^**
 
-**![](./images/Screenshot_2013-09-07-02-56-54.png) ![](./images/Screenshot_2013-09-06-20-34-27.png) ![](./images/Screenshot_2013-09-07-03-00-44.png)**
+**![](./images/image_8.jpg) ![](./images/image_9.jpg) ![](./images/image_10.jpg)**
 
-**![](./images/Screenshot_2013-09-07-02-57-37.png) ![](./images/Screenshot_2013-09-07-03-30-08.png) ![](./images/Screenshot_2013-09-07-02-57-43.png)**
+**![](./images/image_11.jpg) ![](./images/image_12.jpg) ![](./images/image_13.jpg)**
 
 **깔끔하고 간편한 웹페이지와 한글화된 모바일앱만 있으면 PC나 모바일에서도 쓰는데 문제가 없겠죠??**
 
@@ -150,13 +150,13 @@ original_url: "https://itmir.tistory.com/338"
 
 그리고 앱을 통해 간편하게 회원가입과 용량 업그레이드를 진행할수 있도록 메뉴도 수정하였습니다.
 
-![](./images/111.png)
+![](./images/image_14.jpg)
 
-![](./images/Screenshot_2013-09-09-22-10-12.png) ![](./images/Screenshot_2013-09-10-00-10-42.png)
+![](./images/image_15.jpg) ![](./images/image_16.jpg)
 
-![](./images/Screenshot_2013-09-10-00-10-48.png) ![](./images/Screenshot_2013-09-10-00-11-03.png)
+![](./images/image_17.jpg) ![](./images/image_18.jpg)
 
-![](./images/제목 없음_1.jpg)
+![](./images/image_19.jpg)
 
 **한글화 모바일 앱 다운로드 :   [TencentCloud\_fix2(SPAPA).apk](http://spapa1004.tistory.com/attachment/cfile23.uf@240DF14F522DF5CD11CCA2.apk)**
 
@@ -203,7 +203,7 @@ original_url: "https://itmir.tistory.com/338"
 
 **크게 어떤점이 바뀌었는지는 모르겠지만... 업데이트 버전으로 다시 한글화파일을 배포합니다.**
 
-![](./images/111_1.png)
+![](./images/image_20.jpg)
 
 ![](./images/Screenshot_2013-09-09-22-10-12_1.png) ![](./images/Screenshot_2013-09-10-00-10-42_1.png)
 
@@ -239,7 +239,7 @@ original_url: "https://itmir.tistory.com/338"
 
 **크게 어떤점이 바뀌었는지는 모르겠지만... 업데이트 버전으로 다시 한글화파일을 배포합니다.**
 
-![](./images/111_2.png)
+![](./images/image_21.jpg)
 
 ![](./images/Screenshot_2013-09-09-22-10-12_2.png) ![](./images/Screenshot_2013-09-10-00-10-42_2.png)
 

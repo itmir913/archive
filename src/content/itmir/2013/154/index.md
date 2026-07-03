@@ -24,6 +24,8 @@ original_url: "https://itmir.tistory.com/154"
 
 구조를 나타내면 아래와 같습니다
 
+![](./images/구조.png)
+
 |  |
 | --- |
 |  |

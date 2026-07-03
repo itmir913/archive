@@ -46,7 +46,7 @@ original_url: "https://itmir.tistory.com/614"
 
 한번 사이트 모습을 확인해보도록 하겠습니다.
 
-![](./images/스크린샷(4).jpg)
+![](./images/스크린샷-4.jpg)
 
 다음은 해당 페이지에 존재하는 문구입니다.
 

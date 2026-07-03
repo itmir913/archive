@@ -18,7 +18,7 @@ original_url: "https://itmir.tistory.com/100"
 
 이것이 좋은 의미이고 또한 좋은 뜻이기를 바랍니다 ㅋㅋ!
 
-![](./images/sky.jpg)
+![](./images/image.jpg)
 
 저 광활한 우주를 날아오를 나로호!
 
@@ -42,7 +42,7 @@ original_url: "https://itmir.tistory.com/100"
 
 저 밑에서 등유(케로신)과 액화 산소를 이용한 불꽃이 뿜어져 나올것 입니다. ㅎㅎ
 
-![](./images/내부.jpg)
+![](./images/image_1.jpg)
 
 나로호의 질량은 140만톤정도라고 합니다.
 

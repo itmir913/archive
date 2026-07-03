@@ -14,7 +14,7 @@ original_url: "https://itmir.tistory.com/1"
 
 일단 <http://scmplayer.net/> 사이트에 들어가 줍시다.
 
-![](./images/BGM1.png)
+![](./images/image.jpg)
 
 그다음 어떤 스킨을 사용할건지 선택한다음 NEXT를 클릭해 줍시다.
 
@@ -24,7 +24,7 @@ original_url: "https://itmir.tistory.com/1"
 
 ![](./images/BGM2.png)
 
-![](./images/BGM3.png)
+![](./images/image_1.jpg)
 
 자동 재생등의 설정을 입력해 줍시다. ㅎㅎ
 
@@ -40,7 +40,7 @@ original_url: "https://itmir.tistory.com/1"
 
 기본재생목록 : 재생 목록을 기본으로 보여주게 할것인가?
 
-![](./images/BGM4.png)
+![](./images/image_2.jpg)
 
 이제 테그가 완성되었습니다.
 
@@ -50,7 +50,7 @@ original_url: "https://itmir.tistory.com/1"
 
 티스토리 설정에 들어가서 html/css설정에 들어가 주세요.
 
-![](./images/BGM5.png)
+![](./images/image_3.jpg)
 
 조기 파란색으로 박스친 부분에 태그를 넣어주세요.
 
