@@ -24,7 +24,7 @@ original_url: "https://itmir.tistory.com/418"
 
 http://www.google.com/calendar/ical/2oukaib1orcd1av7ufj8qec2b8%40group.calendar.google.com/public/basic.ics
 
-[code.txt](./file/code.txt)
+[code.txt](./files/code.txt)
 
 또는 이메일을 입력하라고 하면 아래를 입력하세요.
 

@@ -103,7 +103,7 @@ class doubleint {
 }
 ```
 
-[doubleint.java](./file/doubleint.java)
+[doubleint.java](./files/doubleint.java)
 
 소스를 보게 되면 float 변수의 마지막에 f를 붙이는 것을 알 수 있습니다.
 

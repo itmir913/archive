@@ -114,7 +114,7 @@ C:\Python27\python.exe make.py (만들어질 이름).exe
 
 이렇게 입력하면 dist폴더에 한개의 exe가 생성됩니다.
 
-[make.py](./file/make.py)
+[make.py](./files/make.py)
 
 출처 : <http://huddling.tistory.com/5>
 

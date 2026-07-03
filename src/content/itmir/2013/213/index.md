@@ -48,7 +48,7 @@ class money
 }
 ```
 
-[money.java](./file/money.java)
+[money.java](./files/money.java)
 
 자 이게 우리 예제의 소스입니다.
 

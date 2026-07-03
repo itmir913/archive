@@ -156,7 +156,7 @@ BOARD\_DT\_SIZE 223232
 
 [mkbootimg-master.zip](./file/mkbootimg-master.zip)
 
-[split\_bootimg\_dtb.pl](./file/split_bootimg_dtb.pl)
+[split\_bootimg\_dtb.pl](./files/split_bootimg_dtb.pl)
 
 [unpackbootimg](./file/unpackbootimg)
 

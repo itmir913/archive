@@ -3,7 +3,7 @@ title: "[프레지] Cloud 서비스에 대한 프레지"
 date: "2013-05-30T20:56:12+09:00"
 category: "DailyLife"
 tags: []
-description: ""
+description: "집에서 심심해서 만든 프레지 입니다"
 draft: false
 original_url: "https://itmir.tistory.com/226"
 ---

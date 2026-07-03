@@ -10,7 +10,7 @@ original_url: "https://itmir.tistory.com/241"
 
 Illustrious(charlie1024)님께서 만들어 주신 베가 No6의 강제 재부팅 커널 소스를 diff로 patch파일로 만들었습니다.
 
-[reboot.patch](./file/reboot.patch)
+[reboot.patch](./files/reboot.patch)
 
 [수정한pmic8xxx-pwrkey.zip](./file/수정한pmic8xxx-pwrkey.zip)
 

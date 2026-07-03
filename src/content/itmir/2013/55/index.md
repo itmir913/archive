@@ -34,7 +34,7 @@ apk manager로 디컴파일 해줍시다
 
 2. res/vaules 에 들어가서 strings.xml를 엽니다
 
-<string name="settings\_ics\_radio">WIRELESS &amp; NETWORKS</string>
+<string name="settings\_ics\_radio">WIRELESS & NETWORKS</string>
 
 <string name="settings\_radio\_more">More...</string>
 

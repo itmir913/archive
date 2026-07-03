@@ -102,13 +102,13 @@ make-boot파일이 완성되었습니다!
 
 위 명령어는 txt파일로 올려두었습니다.
 
-[boot.img 분해 조립.txt](./file/boot.img 분해 조립.txt)
+[boot.img 분해 조립.txt](./files/boot.img 분해 조립.txt)
 
 [mkbootimg](./file/mkbootimg)
 
 [unpackbootimg](./file/unpackbootimg)
 
-[split\_bootimg.pl](./file/split_bootimg.pl)
+[split\_bootimg.pl](./files/split_bootimg.pl)
 
 요즘 나온 스마트폰들은 대부분 ramdiskaddr을 지정해 주어야 부팅이 됩니다.
 

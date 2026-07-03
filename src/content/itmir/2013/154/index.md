@@ -38,11 +38,11 @@ original_url: "https://itmir.tistory.com/154"
 
 먼저 sh를 받아야 합니다
 
-[FileName\_Change\_0.sh](./file/FileName_Change_0.sh)
+[FileName\_Change\_0.sh](./files/FileName_Change_0.sh)
 
-[FileName\_Change\_1.sh](./file/FileName_Change_1.sh)
+[FileName\_Change\_1.sh](./files/FileName_Change_1.sh)
 
-[FileName\_Start.sh](./file/FileName_Start.sh)
+[FileName\_Start.sh](./files/FileName_Start.sh)
 
 파일 설명을 하자면 FileName\_Start.sh파일은 아로마 인스톨러가 시작할때 실행되어야 하는 파일입니다
 

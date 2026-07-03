@@ -8,7 +8,7 @@ draft: false
 original_url: "https://itmir.tistory.com/165"
 ---
 
-[Adsense 소스 백업.txt](./file/Adsense 소스 백업.txt)
+[Adsense 소스 백업.txt](./files/Adsense 소스 백업.txt)
 
 애드센스를 모두 지웠습니다
 

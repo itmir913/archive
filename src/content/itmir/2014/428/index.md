@@ -234,7 +234,7 @@ return-void
 
 아래는 diff로 소스를 분석한 patch파일 입니다.
 
-[DN.patch](./file/DN.patch)
+[DN.patch](./files/DN.patch)
 
 ---
 

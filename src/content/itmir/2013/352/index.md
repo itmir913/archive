@@ -214,7 +214,7 @@ original_url: "https://itmir.tistory.com/352"
 
 ******PC클라이언트 한글화파일 다운로드 :**
 
-[language.ini](./file/language.ini)
+[language.ini](./files/language.ini)
 
 **한글화 모바일 앱 다운로드 :**
 

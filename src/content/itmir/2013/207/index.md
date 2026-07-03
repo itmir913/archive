@@ -34,13 +34,13 @@ original_url: "https://itmir.tistory.com/207"
 
 [mkbootimg](./file/mkbootimg)
 
-[split\_bootimg.pl](./file/split_bootimg.pl)
+[split\_bootimg.pl](./files/split_bootimg.pl)
 
 [unpackbootimg](./file/unpackbootimg)
 
 2. 루팅 파일들
 
-[init.rooting.sh](./file/init.rooting.sh)
+[init.rooting.sh](./files/init.rooting.sh)
 
 
 나참; 어이 없네요.

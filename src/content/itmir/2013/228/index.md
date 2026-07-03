@@ -3,7 +3,7 @@ title: "[프레지] 일기예보 프레지"
 date: "2013-05-31T23:09:27+09:00"
 category: "DailyLife"
 tags: []
-description: ""
+description: "개속 연습중입니다 ㅎ"
 draft: false
 original_url: "https://itmir.tistory.com/228"
 ---

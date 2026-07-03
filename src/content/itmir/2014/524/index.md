@@ -40,7 +40,7 @@ v1 - 2014-09-05 첫 업로드
 
 [MarketVersionChecker.jar](./file/MarketVersionChecker.jar)
 
-[MarketVersionChecker.java](./file/MarketVersionChecker.java)
+[MarketVersionChecker.java](./files/MarketVersionChecker.java)
 
 [jsoup-1.7.3.jar](./file/jsoup-1.7.3.jar)
 

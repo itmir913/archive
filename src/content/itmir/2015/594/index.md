@@ -64,7 +64,7 @@ adb devices
 
 이 작업이 귀찮으신분들을 위해 간단한 배치파일을 만들었습니다.
 
-[adbconnect.bat](./file/adbconnect.bat)
+[adbconnect.bat](./files/adbconnect.bat)
 
 Chrome등 일부 웹 브라우저에서는 다운로드 오류가 발생할 수 있습니다.
 

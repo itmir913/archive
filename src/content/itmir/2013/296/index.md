@@ -52,7 +52,7 @@ class JavaScope
 }
 ```
 
-[JavaScope.java](./file/JavaScope.java)
+[JavaScope.java](./files/JavaScope.java)
 
 만약 변수의 스코프가 없다면, 이 소스는 불가능합니다.
 

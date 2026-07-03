@@ -3,7 +3,7 @@ title: "0516 - 컴퓨터 활용 능력 방과후"
 date: "2013-05-16T15:44:18+09:00"
 category: "DailyLife"
 tags: []
-description: ""
+description: "0516.xlsx"
 draft: false
 original_url: "https://itmir.tistory.com/217"
 ---

@@ -86,7 +86,7 @@ class method
 }
 ```
 
-[method.java](./file/method.java)
+[method.java](./files/method.java)
 
 자! 소스를 분석해 봅시다.
 

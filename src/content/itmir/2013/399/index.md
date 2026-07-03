@@ -46,7 +46,7 @@ classes.dex\_smali\_to\_java\_push : classes.dex를 jar파일으로 변환한다
 
 [apk\_dex\_tools\_whdghks913.zip](./file/apk_dex_tools_whdghks913.zip)
 
-[apk\_intstall-push.bat](./file/apk_intstall-push.bat)
+[apk\_intstall-push.bat](./files/apk_intstall-push.bat)
 
 ---
 

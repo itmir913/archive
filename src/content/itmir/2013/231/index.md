@@ -3,7 +3,7 @@ title: "LucidOS에 대한 어플"
 date: "2013-06-05T17:55:09+09:00"
 category: "Application"
 tags: []
-description: ""
+description: "간단하게 만들어본 어플 ㅎㅎ"
 draft: false
 original_url: "https://itmir.tistory.com/231"
 ---

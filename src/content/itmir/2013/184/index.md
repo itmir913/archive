@@ -20,7 +20,7 @@ CyanogenMod, 다들 아시죠?
 
 이 글의 명령어는 txt로 첨부해 뒀습니다
 
-[repo.txt](./file/repo.txt)
+[repo.txt](./files/repo.txt)
 
 그럼 기본적인 이해는 하셨다 생각하고 글을 진행해 보도록 하겠습니다
 
