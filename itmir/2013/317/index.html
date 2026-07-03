@@ -4,35 +4,41 @@
 <p>Spannable이라는 것을 이용해서 TextView의 많은 효과를 줄수 있는대요</p>
 <p>글자 클릭 이벤트, 일부의 색 변경을 할수 있습니다</p>
 <p>[JAVA]</p>
-<p>Spannable span;</p>
-<p>span = (Spannable) text1.getText();</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">Spannable span;</span></span>
+<span class="line"><span style="color:#24292E">span </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (Spannable) text1.</span><span style="color:#6F42C1">getText</span><span style="color:#24292E">();</span></span>
+<span class="line"></span></code></pre>
 <p>[XML]</p>
-<p>android:bufferType=“spannable”</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">android:bufferType="spannable"</span></span>
+<span class="line"></span></code></pre>
 <p>을 먼저 해주셔야 합니다</p>
 <p>아래는 글자 속성관련 코드입니다</p>
-<p>span.setSpan(new UnderlineSpan(), start, end,</p>
-<p>Spannable.SPAN_INCLUSIVE_INCLUSIVE);</p>
-<p>// 글자 일부만 밑줄</p>
-<p>span.setSpan(new ForegroundColorSpan(0xFF0B76C8), start, end,</p>
-<p>Spannable.SPAN_INCLUSIVE_INCLUSIVE);</p>
-<p>// 글자 일부만 색 변경</p>
-<p>span.setSpan(new BackgroundColorSpan(0xFF0B76C8), start, end,</p>
-<p>Spannable.SPAN_INCLUSIVE_INCLUSIVE);</p>
-<p>// 글자 일부 배경 변경</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">span.</span><span style="color:#6F42C1">setSpan</span><span style="color:#24292E">(</span><span style="color:#D73A49">new</span><span style="color:#6F42C1"> UnderlineSpan</span><span style="color:#24292E">(), start, end,</span></span>
+<span class="line"><span style="color:#24292E">        Spannable.SPAN_INCLUSIVE_INCLUSIVE);</span></span>
+<span class="line"><span style="color:#6A737D">// 글자 일부만 밑줄</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">span.</span><span style="color:#6F42C1">setSpan</span><span style="color:#24292E">(</span><span style="color:#D73A49">new</span><span style="color:#6F42C1"> ForegroundColorSpan</span><span style="color:#24292E">(</span><span style="color:#005CC5">0xFF0B76C8</span><span style="color:#24292E">), start, end,</span></span>
+<span class="line"><span style="color:#24292E">        Spannable.SPAN_INCLUSIVE_INCLUSIVE);</span></span>
+<span class="line"><span style="color:#6A737D">// 글자 일부만 색 변경</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">span.</span><span style="color:#6F42C1">setSpan</span><span style="color:#24292E">(</span><span style="color:#D73A49">new</span><span style="color:#6F42C1"> BackgroundColorSpan</span><span style="color:#24292E">(</span><span style="color:#005CC5">0xFF0B76C8</span><span style="color:#24292E">), start, end,</span></span>
+<span class="line"><span style="color:#24292E">        Spannable.SPAN_INCLUSIVE_INCLUSIVE);</span></span>
+<span class="line"><span style="color:#6A737D">// 글자 일부 배경 변경</span></span>
+<span class="line"></span></code></pre>
 <p>UnderlineSpan()는 밑줄 ForegroundColorSpan는 글자색, BackgroundColorSpan는 배경색을 설정합니다</p>
 <p>저기있는 start와 end는 처음부터 적용할 글자의 숫자인대요</p>
 <p>처음글자 0부터 시작해서 글자 하나하나마다 1씩 올라가고 공백도 포함됩니다</p>
 <p>아래는 클릭관련 코드입니다</p>
-<p>private void setClickSpan()</p>
-<p>{</p>
-<p>clickSpan = new ClickableSpan()</p>
-<p>{</p>
-<p>public void onClick(View v)</p>
-<p>{</p>
-<p>Toast.makeText(this, “클릭스팬 발생”, 1000).show();</p>
-<p>}</p>
-<p>}</p>
-<p>}</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">private</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> setClickSpan</span><span style="color:#24292E">()</span></span>
+<span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#24292E">    clickSpan </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> ClickableSpan</span><span style="color:#24292E">()</span></span>
+<span class="line"><span style="color:#24292E">    {</span></span>
+<span class="line"><span style="color:#D73A49">        public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> onClick</span><span style="color:#24292E">(View </span><span style="color:#E36209">v</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">        {</span></span>
+<span class="line"><span style="color:#24292E">            Toast.</span><span style="color:#6F42C1">makeText</span><span style="color:#24292E">(</span><span style="color:#005CC5">this</span><span style="color:#24292E">, </span><span style="color:#032F62">"클릭스팬 발생"</span><span style="color:#24292E">, </span><span style="color:#005CC5">1000</span><span style="color:#24292E">).</span><span style="color:#6F42C1">show</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
 <p>private void setSpan()</p>
 <p>{</p>
 <p>  Spannable span = (Spannable) textView.getText();</p>

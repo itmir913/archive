@@ -23,118 +23,158 @@
 <p>fragment같이 context를 상속하고 있다면 Context같은것을 넣어주시면 됩니다</p>
 <p>[미르의 팁]</p>
 <p>-상속을 어떻게 알수 있나요?</p>
-<p>public class MainActivity extends Activity {</p>
+<p>`java
+public class MainActivity extends Activity {</p>
 <p>이걸 보면 밑줄이 있죠? extends가 상속한다는 뜻입니다</p>
 <p>저건 Activity를 상속하고 있지요</p>
 <p>this다음 쉼표(,)뒤에는 토스트 메세지가 들어갑니다</p>
 <p>저렇게 큰따음표""로 묶어도 되고 R.string.(스트링 이름)으로 사용해도 됩니다</p>
 <p>R.string.(스트링 이름)을 쓸때는</p>
-<p>Toast.makeText(this, R.string.toast,Toast.LENGTH_SHORT).show();</p>
-<p>이런식으로 작성해 주시면 됩니다</p>
-<p>그 옆에 있는 Toast.LENGTH_SHORT는 얼마만큼 토스트 메세지를 띄우는 시간입니다</p>
-<p>Toast.LENGTH_LONG과</p>
-<p>Toast.LENGTH_SHORT이 들어갈수 있는데요</p>
-<p>long은 약 5초, short는 약 2초라 합니다</p>
-<p>안타깝지만 시간을 늘리거나 줄일수는 없다 합니다</p>
-<p>자 이렇게 Toast도 끝났습니다</p>
-<p>이건 짧아요</p>
-<p>그래서 도둑잡기 게임을 만들었는데요</p>
-<p>한번 봅시다 ㅎㅎ</p>
-<h3 id="9-3-도둑잡기-게임을-위한-rand함수-설명">9-3 도둑잡기 게임을 위한 rand함수 설명</h3>
-<p>도둑잡기 게임을 위해 우리는 rand라는 함수의 사용법을 알아야 합니다</p>
-<p>rand란 랜덤의 약자인데요</p>
-<p>자바에서 랜덤 숫자를 구할수 있는 함수 입니다</p>
-<p>rand의 자세한 내용은 <a href="/archive/itmir/2013/309">2013/08/14 - [미르의 개발 이야기/Java 배움터] - 번외 - rand함수를 이해하자</a></p>
-<p>에서 자세하게 다루고 있습니다</p>
-<p>우리는 아래 코드만 알면 됩니다</p>
-<p>num = ((int)(Math.random() * 9));<br>
-num++;</p>
-<p>이게 랜덤의 숫자를 구하는 가장 최소한의 두줄입니다 ㅎㅎㅎㅎㅎㅎㅎㅎ 제가 직접 짰어요</p>
-<p>곱하는 9는 도둑잡기에 쓰일 버튼이 9개라 1~9의 숫자가 나와야 하므로 9를 곱하는 겁니다</p>
-<p>그다음 1을 증가시켜야만 하고요</p>
-<p>그럼 rand도 살펴봤으니 직접 만들어 보겠습니다</p>
-<h3 id="9-4-도둑잡기-게임을-만들어봐요">9-4 도둑잡기 게임을 만들어봐요~</h3>
-<p>먼저 activity_main.xml의 코드 내용입니다</p>
-<p>&#x3C;Button<br>
-android:id=”@+id/button1”<br>
-android:layout_width=“80sp”<br>
-android:layout_height=“80sp”<br>
-android:layout_alignParentLeft=“true”<br>
-android:layout_alignParentTop=“true”<br>
-android:onClick=“ClickMethod”<br>
-/></p>
-<p>&#x3C;Button<br>
-android:id=”@+id/button2”<br>
-android:layout_width=“80sp”<br>
-android:layout_height=“80sp”<br>
-android:layout_alignBaseline=”@+id/button1”<br>
-android:layout_alignBottom=”@+id/button1”<br>
-android:layout_centerHorizontal=“true”<br>
-android:onClick=“ClickMethod”<br>
-/></p>
-<p>&#x3C;Button<br>
-android:id=”@+id/button3”<br>
-android:layout_width=“80sp”<br>
-android:layout_height=“80sp”<br>
-android:layout_alignBaseline=”@+id/button2”<br>
-android:layout_alignBottom=”@+id/button2”<br>
-android:layout_alignParentRight=“true”<br>
-android:onClick=“ClickMethod”<br>
-/></p>
-<p>&#x3C;Button<br>
-android:id=”@+id/button4”<br>
-android:layout_width=“80sp”<br>
-android:layout_height=“80sp”<br>
-android:layout_alignLeft=”@+id/button1”<br>
-android:layout_below=”@+id/button1”<br>
-android:layout_marginTop=“30dp”<br>
-android:onClick=“ClickMethod”<br>
-/></p>
-<p>&#x3C;Button<br>
-android:id=”@+id/button5”<br>
-android:layout_width=“80sp”<br>
-android:layout_height=“80sp”<br>
-android:layout_alignBaseline=”@+id/button4”<br>
-android:layout_alignBottom=”@+id/button4”<br>
-android:layout_alignLeft=”@+id/button2”<br>
-android:onClick=“ClickMethod”<br>
-/></p>
-<p>&#x3C;Button<br>
-android:id=”@+id/button6”<br>
-android:layout_width=“80sp”<br>
-android:layout_height=“80sp”<br>
-android:layout_alignBaseline=”@+id/button5”<br>
-android:layout_alignBottom=”@+id/button5”<br>
-android:layout_alignLeft=”@+id/button3”<br>
-android:onClick=“ClickMethod”<br>
-/></p>
-<p>&#x3C;Button<br>
-android:id=”@+id/button7”<br>
-android:layout_width=“80sp”<br>
-android:layout_height=“80sp”<br>
-android:layout_alignLeft=”@+id/button4”<br>
-android:layout_below=”@+id/button4”<br>
-android:layout_marginTop=“30dp”<br>
-android:onClick=“ClickMethod”<br>
-/></p>
-<p>&#x3C;Button<br>
-android:id=”@+id/button8”<br>
-android:layout_width=“80sp”<br>
-android:layout_height=“80sp”<br>
-android:layout_alignBaseline=”@+id/button7”<br>
-android:layout_alignBottom=”@+id/button7”<br>
-android:layout_alignLeft=”@+id/button5”<br>
-android:onClick=“ClickMethod”<br>
-/></p>
-<p>&#x3C;Button<br>
-android:id=”@+id/button9”<br>
-android:layout_width=“80sp”<br>
-android:layout_height=“80sp”<br>
-android:layout_alignBaseline=”@+id/button8”<br>
-android:layout_alignBottom=”@+id/button8”<br>
-android:layout_alignLeft=”@+id/button6”<br>
-android:onClick=“ClickMethod”<br>
-/></p>
+<p>“java
+Toast.makeText(this, R.string.toast,Toast.LENGTH_SHORT).show();</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span></span></span>
+<span class="line"><span>이런식으로 작성해 주시면 됩니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>그 옆에 있는 Toast.LENGTH_SHORT는 얼마만큼 토스트 메세지를 띄우는 시간입니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Toast.LENGTH_LONG과</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Toast.LENGTH_SHORT이 들어갈수 있는데요</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>long은 약 5초, short는 약 2초라 합니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>안타깝지만 시간을 늘리거나 줄일수는 없다 합니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>자 이렇게 Toast도 끝났습니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>이건 짧아요</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>그래서 도둑잡기 게임을 만들었는데요</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>한번 봅시다 ㅎㅎ</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### 9-3 도둑잡기 게임을 위한 rand함수 설명</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>도둑잡기 게임을 위해 우리는 rand라는 함수의 사용법을 알아야 합니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>rand란 랜덤의 약자인데요</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>자바에서 랜덤 숫자를 구할수 있는 함수 입니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>rand의 자세한 내용은 [2013/08/14 - [미르의 개발 이야기/Java 배움터] - 번외 - rand함수를 이해하자](/archive/itmir/2013/309)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>에서 자세하게 다루고 있습니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>우리는 아래 코드만 알면 됩니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>`java</span></span>
+<span class="line"><span>num = ((int)(Math.random() * 9));</span></span>
+<span class="line"><span>num++;</span></span>
+<span class="line"><span>`</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>이게 랜덤의 숫자를 구하는 가장 최소한의 두줄입니다 ㅎㅎㅎㅎㅎㅎㅎㅎ 제가 직접 짰어요</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>곱하는 9는 도둑잡기에 쓰일 버튼이 9개라 1~9의 숫자가 나와야 하므로 9를 곱하는 겁니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>그다음 1을 증가시켜야만 하고요</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>그럼 rand도 살펴봤으니 직접 만들어 보겠습니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### 9-4 도둑잡기 게임을 만들어봐요~</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>먼저 activity_main.xml의 코드 내용입니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>``xml</span></span>
+<span class="line"><span>&#x3C;Button  </span></span>
+<span class="line"><span> android:id="@+id/button1"  </span></span>
+<span class="line"><span> android:layout_width="80sp"  </span></span>
+<span class="line"><span> android:layout_height="80sp"  </span></span>
+<span class="line"><span> android:layout_alignParentLeft="true"  </span></span>
+<span class="line"><span> android:layout_alignParentTop="true"  </span></span>
+<span class="line"><span> android:onClick="ClickMethod"  </span></span>
+<span class="line"><span> /></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;Button  </span></span>
+<span class="line"><span> android:id="@+id/button2"  </span></span>
+<span class="line"><span> android:layout_width="80sp"  </span></span>
+<span class="line"><span> android:layout_height="80sp"  </span></span>
+<span class="line"><span> android:layout_alignBaseline="@+id/button1"  </span></span>
+<span class="line"><span> android:layout_alignBottom="@+id/button1"  </span></span>
+<span class="line"><span> android:layout_centerHorizontal="true"  </span></span>
+<span class="line"><span> android:onClick="ClickMethod"  </span></span>
+<span class="line"><span> />  </span></span>
+<span class="line"><span>   </span></span>
+<span class="line"><span> &#x3C;Button  </span></span>
+<span class="line"><span> android:id="@+id/button3"  </span></span>
+<span class="line"><span> android:layout_width="80sp"  </span></span>
+<span class="line"><span> android:layout_height="80sp"  </span></span>
+<span class="line"><span> android:layout_alignBaseline="@+id/button2"  </span></span>
+<span class="line"><span> android:layout_alignBottom="@+id/button2"  </span></span>
+<span class="line"><span> android:layout_alignParentRight="true"  </span></span>
+<span class="line"><span> android:onClick="ClickMethod"  </span></span>
+<span class="line"><span> /></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;Button  </span></span>
+<span class="line"><span> android:id="@+id/button4"  </span></span>
+<span class="line"><span> android:layout_width="80sp"  </span></span>
+<span class="line"><span> android:layout_height="80sp"  </span></span>
+<span class="line"><span> android:layout_alignLeft="@+id/button1"  </span></span>
+<span class="line"><span> android:layout_below="@+id/button1"  </span></span>
+<span class="line"><span> android:layout_marginTop="30dp"  </span></span>
+<span class="line"><span> android:onClick="ClickMethod"  </span></span>
+<span class="line"><span> /></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;Button  </span></span>
+<span class="line"><span> android:id="@+id/button5"  </span></span>
+<span class="line"><span> android:layout_width="80sp"  </span></span>
+<span class="line"><span> android:layout_height="80sp"  </span></span>
+<span class="line"><span> android:layout_alignBaseline="@+id/button4"  </span></span>
+<span class="line"><span> android:layout_alignBottom="@+id/button4"  </span></span>
+<span class="line"><span> android:layout_alignLeft="@+id/button2"  </span></span>
+<span class="line"><span> android:onClick="ClickMethod"  </span></span>
+<span class="line"><span> /></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;Button  </span></span>
+<span class="line"><span> android:id="@+id/button6"  </span></span>
+<span class="line"><span> android:layout_width="80sp"  </span></span>
+<span class="line"><span> android:layout_height="80sp"  </span></span>
+<span class="line"><span> android:layout_alignBaseline="@+id/button5"  </span></span>
+<span class="line"><span> android:layout_alignBottom="@+id/button5"  </span></span>
+<span class="line"><span> android:layout_alignLeft="@+id/button3"  </span></span>
+<span class="line"><span> android:onClick="ClickMethod"  </span></span>
+<span class="line"><span> /></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;Button  </span></span>
+<span class="line"><span> android:id="@+id/button7"  </span></span>
+<span class="line"><span> android:layout_width="80sp"  </span></span>
+<span class="line"><span> android:layout_height="80sp"  </span></span>
+<span class="line"><span> android:layout_alignLeft="@+id/button4"  </span></span>
+<span class="line"><span> android:layout_below="@+id/button4"  </span></span>
+<span class="line"><span> android:layout_marginTop="30dp"  </span></span>
+<span class="line"><span> android:onClick="ClickMethod"  </span></span>
+<span class="line"><span> /></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;Button  </span></span>
+<span class="line"><span> android:id="@+id/button8"  </span></span>
+<span class="line"><span> android:layout_width="80sp"  </span></span>
+<span class="line"><span> android:layout_height="80sp"  </span></span>
+<span class="line"><span> android:layout_alignBaseline="@+id/button7"  </span></span>
+<span class="line"><span> android:layout_alignBottom="@+id/button7"  </span></span>
+<span class="line"><span> android:layout_alignLeft="@+id/button5"  </span></span>
+<span class="line"><span> android:onClick="ClickMethod"  </span></span>
+<span class="line"><span> /></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;Button  </span></span>
+<span class="line"><span> android:id="@+id/button9"  </span></span>
+<span class="line"><span> android:layout_width="80sp"  </span></span>
+<span class="line"><span> android:layout_height="80sp"  </span></span>
+<span class="line"><span> android:layout_alignBaseline="@+id/button8"  </span></span>
+<span class="line"><span> android:layout_alignBottom="@+id/button8"  </span></span>
+<span class="line"><span> android:layout_alignLeft="@+id/button6"  </span></span>
+<span class="line"><span> android:onClick="ClickMethod"  </span></span>
+<span class="line"><span> /></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span></code></pre>
 <p>도둑잡기에 쓰일 9개 버튼을 만들었습니다</p>
 <p>이번 어플에서는 listener을 사용하지 않고 한 메소드로만 사용할 예정입니다</p>
 <p>왜냐, 메소드를 이용한 방법도 알아야 하고 listener을 사용하면 ID값을 찾고 일일히 listener을 연결해야 합니다</p>
@@ -184,7 +224,8 @@ if (num==9)<br>
 Toast.makeText(MainActivity.this,“도둑잡았다!“,Toast.LENGTH_SHORT).show();<br>
 break;<br>
 }<br>
-}</p>
+}
+`</p>
 <p>이 코드를 통채로 넣어버리면 됩니다</p>
 <p>버튼이 클릭할때마다 android:onClick으로 인해 저 메소드가 실행되는데요</p>
 <p>그때마다 랜덤값을 다시 구합니다</p>
@@ -205,12 +246,12 @@ break;<br>
 <p>예제소스는 원본글에서..</p>
 <p>이글은 [
 ] 에서 다시 보실수 있으며 원본 글의 저작권은 미르에게 있습니다</p>
-<p><a href="./file/ExampleToast&#x26;Rand.zip">ExampleToast&#x26;Rand.zip</a></p>
+<p><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleToastRand.zip">ExampleToast&#x26;Rand.zip</a></p>
 <p>개인 용도로 기능을 조금 추가해서 만든 도둑잡기 어플입니다</p>
 <p>도둑이면 진동을 울리도록 했습니다</p>
 <p>진동은 언제 한번 언급할겁니다</p>
-<p><a href="./file/ExampleToast&#x26;Rand.apk">ExampleToast&#x26;Rand.apk</a></p>
-<p><a href="./file/ExampleToast&#x26;Rand_1.zip">ExampleToast&#x26;Rand.zip</a></p>
+<p><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleToastRand.apk">ExampleToast&#x26;Rand.apk</a></p>
+<p><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleToastRand_1.zip">ExampleToast&#x26;Rand.zip</a></p>
 <hr>
 <h2 id="첨부파일">첨부파일</h2>
 <ul>

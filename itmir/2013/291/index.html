@@ -136,7 +136,7 @@
 <p>이렇게 해서 xml상의 코드를 살펴보았습니다</p>
 <p>다음에는 자바 코드와 관련된 textview를 살펴보고, 버튼을 약간 배운다음 버튼을 누르면 Textview의 내용이 바뀌는 어플을 만들어 보겠습니다</p>
 <p>이 글에 추가될것으로 추가될때 까지는 가져가지 마세요 ㅎㅎㅎ</p>
-<p><a href="./file/exampleTextView.zip">exampleTextView.zip</a></p>
+<p><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/exampleTextView.zip">exampleTextView.zip</a></p>
 <p>(xml만 수정한 예제소스)</p>
 <h3 id="5-3-java코드의-모든것">5-3 JAVA코드의 모든것</h3>
 <p>이번에는 java소스에서 건들여 보겠습니다</p>
@@ -175,29 +175,32 @@
 <p>그런대 이 메소드 위에 코드를 넣게 되면 메모리 상에 객체화 되지 않은 정보를 참조하려 하기 때문에 강제종료 오류가 발생합니다</p>
 <p><img  src="/archive/_astro/1-3.DLQ8TIe-_1SEhEa.webp" alt="" width="314" height="135" loading="lazy" decoding="async"></p>
 <p>그럼</p>
-<p>Btn_change = (Button) findViewById(R.id.button1);</p>
-<p>textview = (TextView) findViewById(R.id.textView1);</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">Btn_change </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (Button) </span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.button1);</span></span>
+<span class="line"><span style="color:#24292E">textview </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (TextView) </span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.textView1);</span></span>
+<span class="line"></span></code></pre>
 <p>을 적당한 공백을 두고 추가 하시면 됩니다</p>
 <p>이제 버튼을 사용자가 클릭했을때의 작업을 구현해야 합니다</p>
 <p>아직 버튼을 배우지 않아 모르지만 버튼을 클릭했을때의 기능 구현은 대표적으로 2가지(setOnClickListener을 이용, 메소드 이용)가 있는데요</p>
 <p>다음 시간에 구체적으로 살펴볼 예정이므로 오늘은 그냥 넘어가 봅시다</p>
 <p>(사실 여기서 쓰려다가 버튼에 넣는게 나을거 같아 보류해 둡니다 ㅎㅎ)</p>
 <p>onCreate메소드에</p>
-<p>Btn_change.setOnClickListener(listener);</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">Btn_change.</span><span style="color:#6F42C1">setOnClickListener</span><span style="color:#24292E">(listener);</span></span>
+<span class="line"></span></code></pre>
 <p>을, onCreate메소드가 끝나고 빈 공간에</p>
-<p>Button.OnClickListener listener = new Button.OnClickListener()</p>
-<p>{</p>
-<p> public void onClick(View v)//버튼을 클릭 하면 …</p>
-<p> {</p>
-<p>    switch(v.getId()){</p>
-<p>    case R.id.button1:</p>
-<p>    textview.setText(“미르의 It정복기 예제 소스”); // 또는 R.string.(이름)</p>
-<p>    textview.setTextSize(50);</p>
-<p>    textview.setTextColor(Color.GREEN); // 또는 RGB(255, 255, 255)</p>
-<p>    break;</p>
-<p>    }</p>
-<p> }</p>
-<p>     };</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">Button.OnClickListener listener </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#24292E"> Button.</span><span style="color:#6F42C1">OnClickListener</span><span style="color:#24292E">()</span></span>
+<span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> onClick</span><span style="color:#24292E">(View v)</span><span style="color:#6A737D">//버튼을 클릭 하면 ...</span></span>
+<span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">switch</span><span style="color:#24292E">(v.</span><span style="color:#6F42C1">getId</span><span style="color:#24292E">()){</span></span>
+<span class="line"><span style="color:#D73A49">case</span><span style="color:#24292E"> R.id.button1</span><span style="color:#D73A49">:</span></span>
+<span class="line"><span style="color:#24292E">textview.</span><span style="color:#6F42C1">setText</span><span style="color:#24292E">(</span><span style="color:#032F62">"미르의 It정복기 예제 소스"</span><span style="color:#24292E">); </span><span style="color:#6A737D">// 또는 R.string.(이름)</span></span>
+<span class="line"><span style="color:#24292E">textview.</span><span style="color:#6F42C1">setTextSize</span><span style="color:#24292E">(</span><span style="color:#005CC5">50</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">textview.</span><span style="color:#6F42C1">setTextColor</span><span style="color:#24292E">(Color.GREEN); </span><span style="color:#6A737D">// 또는 RGB(255, 255, 255)</span></span>
+<span class="line"><span style="color:#D73A49">break</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"><span style="color:#24292E">};</span></span>
+<span class="line"></span></code></pre>
 <p>을 추가해 주신다음 import해주세요</p>
 <p><img  src="/archive/_astro/1-4_1.DVi29Kzw_1tH5Ds.webp" alt="" width="420" height="423" loading="lazy" decoding="async"></p>
 <p>완성된 소스는 위 사진과 같습니다</p>
@@ -207,9 +210,10 @@
 <p>어떤 명령을 할것인지 지정해 주는겁니다</p>
 <p>이 포스팅에서는 자세히 다루지 않고 Button편에서 다루겠습니다</p>
 <p>우리가 주의깊게 봐야할건</p>
-<p>textview.setText(“미르의 It정복기 예제 소스”);</p>
-<p>textview.setTextSize(50);</p>
-<p>textview.setTextColor(Color.GREEN);</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">textview.</span><span style="color:#6F42C1">setText</span><span style="color:#24292E">(</span><span style="color:#032F62">"미르의 It정복기 예제 소스"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">textview.</span><span style="color:#6F42C1">setTextSize</span><span style="color:#24292E">(</span><span style="color:#005CC5">50</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">textview.</span><span style="color:#6F42C1">setTextColor</span><span style="color:#24292E">(Color.GREEN);</span></span>
+<span class="line"></span></code></pre>
 <p>입니다</p>
 <p>setText안에 어떤 글자를 넣느냐에 따라 달라지죠 ㅎㅎ</p>
 <p>만약 string을 통해 넣고 싶다면</p>
@@ -229,7 +233,7 @@
 <p>이렇게 해서 TextView의 모든것을 살펴보았습니다 ㅎㅎ</p>
 <p>기본적인 TextView의 사용법을 마스터 하신다면 무궁무진한 활용이 가능합니다 ㅎㅎ</p>
 <p>자바코드를 수정한 예제소스</p>
-<p><a href="./file/exampleTextView_java_code.zip">exampleTextView_java_code.zip</a></p>
+<p><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/exampleTextView_java_code.zip">exampleTextView_java_code.zip</a></p>
 <hr>
 <h2 id="첨부파일">첨부파일</h2>
 <ul>

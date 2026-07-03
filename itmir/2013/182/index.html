@@ -11,17 +11,19 @@
 <p>make: *** 파일 `/home/whdghks913/cluster/system/out/target/common/obj/APPS/framework-res_intermediates/package-export.apk’을(를) 지웁니다</p>
 </blockquote>
 <p>위와 같은 오류가 발생합니다.</p>
-<p>이 오류는 <add-resource>를 이용해 해결할 수 있습니다.</add-resource></p>
-<blockquote>
-<p><add-resource type="string" name="오류난 overlay의 구문 이름"></add-resource></p>
-</blockquote>
+<p>이 오류는 <code>&#x3C;add-resource></code>를 이용해 해결할 수 있습니다.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">add-resource</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"string"</span><span style="color:#6F42C1"> name</span><span style="color:#24292E">=</span><span style="color:#032F62">"오류난 overlay의 구문 이름"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">add-resource</span><span style="color:#24292E">></span></span>
+<span class="line"></span></code></pre>
 <p>위 박스의 내용을 오류난 구문의 앞에 넣어주시면 됩니다.</p>
 <p>예를 들면,</p>
-<p><string name="testoverlay">overlay</string></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">String</span><span style="color:#6F42C1"> name</span><span style="color:#24292E">=</span><span style="color:#032F62">"testoverlay"</span><span style="color:#24292E">>overlay&#x3C;/</span><span style="color:#22863A">String</span><span style="color:#24292E">></span></span>
+<span class="line"></span></code></pre>
 <p>이 부분이 문제가 있다고 합니다.</p>
-<p>이때 아래 부분처럼 <add-resource>를 넣어주시면 해결됩니다.</add-resource></p>
-<p><add-resource type="string" name="testoverlay"></add-resource></p>
-<p><string name="testoverlay">overlay</string></p>
+<p>이때 아래 부분처럼 <code>&#x3C;add-resource></code>를 넣어주시면 해결됩니다.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">add-resource</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"string"</span><span style="color:#6F42C1"> name</span><span style="color:#24292E">=</span><span style="color:#032F62">"testoverlay"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">add-resource</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">String</span><span style="color:#6F42C1"> name</span><span style="color:#24292E">=</span><span style="color:#032F62">"testoverlay"</span><span style="color:#24292E">>overlay&#x3C;/</span><span style="color:#22863A">String</span><span style="color:#24292E">></span></span>
+<span class="line"></span></code></pre>
 <p>만약 String이 아니라 bool 등 일경우 type을 적절히 바꿔주시면 되겠죠?</p>
 <p>출처: <a href="http://cafe.naver.com/develoid/165665">http://cafe.naver.com/develoid/165665</a>, 호호</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
 Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">

@@ -3,20 +3,31 @@
 </a> </div> <p class="post-description">언락커를 만들려면 설치된 어플을 한다음 언락커가 설치되었는지를 살펴봐야 합니다</p> </header> <div class="post-content"> <p>언락커를 만들려면 설치된 어플을 한다음 언락커가 설치되었는지를 살펴봐야 합니다</p>
 <p>마켓 결제 체크든지 이런 기능은 아직 잘 모르겠습니다..</p>
 <p>번외편으로 설치된 어플을 확인해보겠습니다</p>
-<p>private static final String CHECK_PACKAGE_NAME = “(확인하려는 어플의패키지명 대문자)”;</p>
-<p>// Package 설치여부 확인</p>
-<p>PackageManager pm = getPackageManager();</p>
-<p>try {</p>
-<p>pm.getApplicationInfo(CHECK_PACKAGE_NAME.toLowerCase(),</p>
-<p>PackageManager.GET_META_DATA);</p>
-<p>// 패키지가 있을경우 실행할 내용</p>
-<p>Toast.makeText(this,</p>
-<p>“PACKAGE 명 = ” + CHECK_PACKAGE_NAME.toLowerCase(),</p>
-<p>Toast.LENGTH_SHORT).show();</p>
-<p>} catch (NameNotFoundException e) {</p>
-<p>// 패키지가 없을경우 실행할 내용</p>
-<p>Toast.makeText(this, “PACKAGE 가 설치 되지 않았습니다.”, Toast.LENGTH_SHORT).show();</p>
-<p>}</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">private</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> final</span><span style="color:#24292E"> String CHECK_PACKAGE_NAME </span><span style="color:#D73A49">=</span><span style="color:#032F62"> "(확인하려는 어플의패키지명 대문자)"</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Package 설치여부 확인</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">PackageManager pm </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> getPackageManager</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">try</span><span style="color:#24292E"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    pm.</span><span style="color:#6F42C1">getApplicationInfo</span><span style="color:#24292E">(CHECK_PACKAGE_NAME.</span><span style="color:#6F42C1">toLowerCase</span><span style="color:#24292E">(),</span></span>
+<span class="line"><span style="color:#24292E">            PackageManager.GET_META_DATA);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // 패키지가 있을경우 실행할 내용</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    Toast.</span><span style="color:#6F42C1">makeText</span><span style="color:#24292E">(</span><span style="color:#005CC5">this</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">            "PACKAGE 명 = "</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> CHECK_PACKAGE_NAME.</span><span style="color:#6F42C1">toLowerCase</span><span style="color:#24292E">(),</span></span>
+<span class="line"><span style="color:#24292E">            Toast.LENGTH_SHORT).</span><span style="color:#6F42C1">show</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">} </span><span style="color:#D73A49">catch</span><span style="color:#24292E"> (NameNotFoundException </span><span style="color:#E36209">e</span><span style="color:#24292E">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // 패키지가 없을경우 실행할 내용</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    Toast.</span><span style="color:#6F42C1">makeText</span><span style="color:#24292E">(</span><span style="color:#005CC5">this</span><span style="color:#24292E">, </span><span style="color:#032F62">"PACKAGE 가 설치 되지 않았습니다."</span><span style="color:#24292E">, Toast.LENGTH_SHORT).</span><span style="color:#6F42C1">show</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
 <p>이정도만 써도 아실겁니다 ㅎㅎ</p>
 <p>출처 : <a href="http://arabiannight.tistory.com/86">http://arabiannight.tistory.com/86</a></p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
 Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">

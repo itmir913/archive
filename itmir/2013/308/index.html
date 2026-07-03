@@ -70,42 +70,47 @@
 <p>그다음 java로 넘어가주세요~</p>
 <p>public class MainActivity extends Activity {</p>
 <p>밑에 아래를 추가해 주세요</p>
-<p>ImageView up, down;</p>
-<p>Button change;</p>
-<p>int count=0;</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">ImageView up, down;</span></span>
+<span class="line"><span style="color:#24292E">Button change;</span></span>
+<span class="line"><span style="color:#D73A49">int</span><span style="color:#24292E"> count</span><span style="color:#D73A49">=</span><span style="color:#005CC5">0</span><span style="color:#24292E">;</span></span>
+<span class="line"></span></code></pre>
 <p>이미지뷰와 버튼을 정의하고 아래 있는 int count와 if를 이용해 버튼을 누를때 마다 바뀌도록 설정할겁니다</p>
 <p>마찬가지로 onCreate()안에 추가해 주세요</p>
-<p>up = (ImageView) findViewById(R.id.up);</p>
-<p>down = (ImageView) findViewById(R.id.down);</p>
-<p>change = (Button) findViewById(R.id.button1);</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">up </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (ImageView) </span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.up);</span></span>
+<span class="line"><span style="color:#24292E">down </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (ImageView) </span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.down);</span></span>
+<span class="line"><span style="color:#24292E">change </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (Button) </span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.button1);</span></span>
+<span class="line"></span></code></pre>
 <p>id값을 연결해 주는거죠?ㅎㅎ</p>
 <p>위 코드를 입력하고 바로 아래에 아래 코드를 복붙하면 됩니다</p>
-<p>change.setOnClickListener(new View.OnClickListener() {</p>
-<p>      public void onClick(View v) {</p>
-<p>      if (count==0){</p>
-<p>      up.setImageResource(R.drawable.down);</p>
-<p>          down.setImageResource(R.drawable.up);</p>
-<p>          up.invalidate();</p>
-<p>          down.invalidate();</p>
-<p>          count++;</p>
-<p>      }else{</p>
-<p>      up.setImageResource(R.drawable.up);</p>
-<p>          down.setImageResource(R.drawable.down);</p>
-<p>          up.invalidate();</p>
-<p>          down.invalidate();</p>
-<p>          count—;</p>
-<p>      }</p>
-<p>      }});</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">change.</span><span style="color:#6F42C1">setOnClickListener</span><span style="color:#24292E">(</span><span style="color:#D73A49">new</span><span style="color:#24292E"> View.</span><span style="color:#6F42C1">OnClickListener</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#D73A49">      public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> onClick</span><span style="color:#24292E">(View v) {</span></span>
+<span class="line"><span style="color:#D73A49">      if</span><span style="color:#24292E"> (count</span><span style="color:#D73A49">==</span><span style="color:#005CC5">0</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#24292E">      up.</span><span style="color:#6F42C1">setImageResource</span><span style="color:#24292E">(R.drawable.down);</span></span>
+<span class="line"><span style="color:#24292E">          down.</span><span style="color:#6F42C1">setImageResource</span><span style="color:#24292E">(R.drawable.up);</span></span>
+<span class="line"><span style="color:#24292E">          up.</span><span style="color:#6F42C1">invalidate</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">          down.</span><span style="color:#6F42C1">invalidate</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">          count</span><span style="color:#D73A49">++</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">      }</span><span style="color:#D73A49">else</span><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#24292E">      up.</span><span style="color:#6F42C1">setImageResource</span><span style="color:#24292E">(R.drawable.up);</span></span>
+<span class="line"><span style="color:#24292E">          down.</span><span style="color:#6F42C1">setImageResource</span><span style="color:#24292E">(R.drawable.down);</span></span>
+<span class="line"><span style="color:#24292E">          up.</span><span style="color:#6F42C1">invalidate</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">          down.</span><span style="color:#6F42C1">invalidate</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">          count</span><span style="color:#D73A49">--</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">      }</span></span>
+<span class="line"><span style="color:#24292E">      }});</span></span>
+<span class="line"></span></code></pre>
 <p>코드설명을 해보겠습니다</p>
 <p>onClickListener는 전에 배웠으므로 Pass</p>
-<p>up.setImageResource(R.drawable.down);</p>
-<p>down.setImageResource(R.drawable.up);</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">up.</span><span style="color:#6F42C1">setImageResource</span><span style="color:#24292E">(R.drawable.down);</span></span>
+<span class="line"><span style="color:#24292E">down.</span><span style="color:#6F42C1">setImageResource</span><span style="color:#24292E">(R.drawable.up);</span></span>
+<span class="line"></span></code></pre>
 <p>이 코드를 봅시다</p>
 <p>이미지 리소스를 찾아 지정해 주는 코드입니다 ㅎㅎ</p>
 <p>count가 0일때는 (처음이므로)up은 down이미지로, down은 up이미지로 바꿔줍니다</p>
 <p>그다음</p>
-<p>up.invalidate();</p>
-<p>down.invalidate();</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">up.</span><span style="color:#6F42C1">invalidate</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">down.</span><span style="color:#6F42C1">invalidate</span><span style="color:#24292E">();</span></span>
+<span class="line"></span></code></pre>
 <p>을 보면 이미지를 갱신하는, 즉 다시 화면에 뿌려주는 역할을 합니다</p>
 <p>아래에 있는 count++;는 count의 값을 하나 늘려서 다음에는 else부분이 실행되도록 하는것 이지요 ㅎㅎ</p>
 <p>실행 스샷을 보겠습니다</p>
@@ -121,7 +126,7 @@
 <p>안드로이드의 숙명입니다 ㅠㅠ</p>
 <p>그럼 다음강좌에서 봐요~</p>
 <p>이글에 사용된 두개의 이미지는 <a href="http://cafe.naver.com/ppc1004/22589">http://cafe.naver.com/ppc1004/22589</a>, <a href="http://cafe.naver.com/take22/273567%EC%97%90">http://cafe.naver.com/take22/273567에</a> 있습니다</p>
-<p><a href="./file/ExampleImageView.zip">ExampleImageView.zip</a></p>
+<p><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleImageView.zip">ExampleImageView.zip</a></p>
 <hr>
 <h2 id="첨부파일">첨부파일</h2>
 <ul>

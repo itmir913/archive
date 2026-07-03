@@ -41,7 +41,8 @@
 <p><img  src="/archive/_astro/1-8.C7WQm81y_ZYqtcr.webp" alt="" width="227" height="37" loading="lazy" decoding="async"></p>
 <p>색이 회색으로 바꼈고 어플에서 커서를 대면 저 글자는 사라집니다</p>
 <p>그리고 EditText소스를 보면</p>
-<requestfocus>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">requestFocus</span><span style="color:#24292E"> /></span></span>
+<span class="line"></span></code></pre>
 <p>라는게 있는데요</p>
 <p>이는 처음에 커서가 어디 있을거냐 라는것을 설정해 주는 겁니다</p>
 <p><img  src="/archive/_astro/1-9.DcShiuzH_Z13J7Aj.webp" alt="" width="232" height="164" loading="lazy" decoding="async"></p>
@@ -59,29 +60,35 @@
 <p>그럼 간단한 코드를 이용하여 입력한 값을 토스트로 띄어 보도록 하겠습니다. ㅎㅎ</p>
 <p>토스트는 다음시간쯤 배울 코드입니다.</p>
 <p>일단 버튼 하나 추가해 주세요.</p>
-<p>&#x3C;Button<br>
-        android:id=”@+id/button1”<br>
-        android:layout_width=“wrap_content”<br>
-        android:layout_height=“wrap_content”<br>
-        android:layout_below=”@+id/editText1”<br>
-        android:layout_centerHorizontal=“true”<br>
-        android:text=“Button” /></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">Button</span></span>
+<span class="line"><span style="color:#6F42C1">        android:id</span><span style="color:#24292E">=</span><span style="color:#032F62">"@+id/button1"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_below</span><span style="color:#24292E">=</span><span style="color:#032F62">"@+id/editText1"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_centerHorizontal</span><span style="color:#24292E">=</span><span style="color:#032F62">"true"</span></span>
+<span class="line"><span style="color:#6F42C1">        android:text</span><span style="color:#24292E">=</span><span style="color:#032F62">"Button"</span><span style="color:#24292E"> /></span></span>
+<span class="line"></span></code></pre>
 <p>이렇게 추가해 주시면 됩니다 ㅎㅎ</p>
 <p>-src/(패키지 이름)/MainActivity.java</p>
-<p>public class MainActivity extends Activity {<br>
- +EditText edittext;<br>
- +Button button;</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> MainActivity</span><span style="color:#D73A49"> extends</span><span style="color:#6F42C1"> Activity</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49"> +</span><span style="color:#24292E">EditText edittext;</span></span>
+<span class="line"><span style="color:#D73A49"> +</span><span style="color:#24292E">Button button;</span></span>
+<span class="line"></span></code></pre>
 <p>@Override</p>
 <p>이렇게 EditText와 Button을 추가해 주세요 (+표시는 추가하라는 표시로 +까지 추가하시는 분은 없길…)</p>
 <p>그다음 onCreate안에 아래 코드를 넣어봅시다</p>
-<p>edittext = (EditText) findViewById(R.id.editText1);<br>
-button = (Button) findViewById(R.id.button1);<br>
-  <br>
-button.setOnClickListener(new View.OnClickListener() { // 한 버튼만 OnClickListener를 연결합니다<br>
-       public void onClick(View v) { //버튼을 눌렀을때 어떤 작업을 할지 선언합니다<br>
-        String inPutText = edittext.getText().toString();<br>
-        Toast.makeText(MainActivity.this, inPutText,Toast.LENGTH_SHORT).show();<br>
-       }});</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">edittext </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (EditText) </span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.editText1);</span></span>
+<span class="line"><span style="color:#24292E">button </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (Button) </span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.button1);</span></span>
+<span class="line"><span style="color:#24292E">button.</span><span style="color:#6F42C1">setOnClickListener</span><span style="color:#24292E">(</span><span style="color:#D73A49">new</span><span style="color:#24292E"> View.</span><span style="color:#6F42C1">OnClickListener</span><span style="color:#24292E">() { </span><span style="color:#6A737D">// 한 버튼만 OnClickListener를 연결합니다</span></span>
+<span class="line"><span style="color:#D73A49">       public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> onClick</span><span style="color:#24292E">(View v) { </span><span style="color:#6A737D">//버튼을 눌렀을때 어떤 작업을 할지 선언합니다</span></span>
+<span class="line"><span style="color:#24292E">        ```java</span></span>
+<span class="line"><span style="color:#24292E">String inPutText </span><span style="color:#D73A49">=</span><span style="color:#24292E"> edittext.</span><span style="color:#6F42C1">getText</span><span style="color:#24292E">().</span><span style="color:#6F42C1">toString</span><span style="color:#24292E">();</span></span>
+<span class="line"></span></code></pre>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    ```java</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>Toast.makeText(MainActivity.this, inPutText, Toast.LENGTH_SHORT).show();</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>       }});</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>지금까지 제 강좌를 “모두” 정독하시고 외운정도까지 된다면 위에 있는 두 줄은 이해가 되실겁니다</p>
 <p>하지만 아래 있는 setOnClickListener는 처음보는 타입이죠 ㅎㅎ..</p>
 <p>원랜 버튼 배울때 언급했어야 하는데요 잠깐 언급하자면</p>
@@ -94,41 +101,72 @@ button.setOnClickListener(new View.OnClickListener() { // 한 버튼만 OnClickL
 <p>위처럼 특정 버튼 하나에만 한 리스너를 만드는 방식입니다</p>
 <p>버튼 하나만 리스너에 연결해 봤습니다</p>
 <p>그리고 한번 코드를 잘 살펴보면 이해가 안되는 코드 2줄이 있어야 합니다</p>
-<p>String inPutText = edittext.getText().toString();</p>
-<p>Toast.makeText(MainActivity.this, inPutText,Toast.LENGTH_SHORT).show();</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">String inPutText </span><span style="color:#D73A49">=</span><span style="color:#24292E"> edittext.</span><span style="color:#6F42C1">getText</span><span style="color:#24292E">().</span><span style="color:#6F42C1">toString</span><span style="color:#24292E">();</span></span>
+<span class="line"></span></code></pre>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">Toast.</span><span style="color:#6F42C1">makeText</span><span style="color:#24292E">(MainActivity.this, inPutText, Toast.LENGTH_SHORT).</span><span style="color:#6F42C1">show</span><span style="color:#24292E">();</span></span>
+<span class="line"></span></code></pre>
 <p>여기서 아래에 있는 토스트는 다음시간쯤 더 자세히 배우니 여기서는 그렇구나 하고 넘어가 주세요</p>
-<p>위에 있는 String inPutText = edittext.getText().toString();은 여기서 꼭 짚고 갈겁니다</p>
-<p>자바에서(사실 대부분의 언어가) 변수를 지정하는 방법은 다음과 같습니다</p>
-<p>[변수타입] [변수 이름] = [대입할 변수값]</p>
-<p>자바에서 =연산자는 오른쪽 값을 왼쪽에 대입한다 라는 뜻입니다</p>
-<p>자세한건 이쪽으로~</p>
-<p><a href="/archive/itmir/2013/157">2013/02/22 - [미르의 개발 이야기/Java 배움터] - 계산을 할수 있는 연산자에 대해 알아보자! - 1편</a></p>
-<p><a href="/archive/itmir/2013/158">2013/02/22 - [미르의 개발 이야기/Java 배움터] - 계산을 할수 있는 연산자에 대해 알아보자! - 2편</a></p>
-<p>그럼 다시 돌아와서 저 줄을 확인해 보면</p>
-<p>String(변수타입) inPutText(변수이름) = edittext.getText().toString();(변수값)</p>
-<p>이 됩니다</p>
-<p>String은 자바에서 문장을 저장하는 변수형(자바강좌를 참조하시길)이며 inPutText는 제가 임의로 지정하는 변수의 이름입니다</p>
-<p>’=’ 오른쪽에 있는 값들은 inPutText에 저장될 변수의 값이라는 것이죠</p>
-<p>그럼 변수값을 봐야겠죠</p>
-<p>edittext(edittext라는 EditText에서 참조한다).getText()(입력한 글자를 얻어온다).toString()(얻어온 글자를 스트링의 형태로 바꾼다)</p>
-<p>라는 뜻입니다</p>
-<p>getText().toString()는 각각 EditText에서 사용가능한 메소드라는 것만 알아두시고 지금은 그렇구나 하고 넘어갑시다 ㅎㅎ</p>
-<p>자 EditText에서 꼭 알아야할 코드를 살펴봤습니다</p>
-<p>테스트 해볼까요?</p>
-<p><img  src="/archive/_astro/Screenshot_2013-08-14-09-55-48.CA4W18Mt_Z7XLcp.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
-<p> 정상적으로 hint가 나옵니다 ㅎㅎ</p>
-<p><img  src="/archive/_astro/Screenshot_2013-08-14-09-55-56.DwZtQ0WH_285jyR.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
-<p>아까 inputtype를 number으로 설정하였기 때문에 저 EditText에는 숫자만 들어갑니다</p>
-<p>그리고 버튼을 눌렀더니 입력한 값이랑 똑같게 토스트 메세지가 나오는 모습을 확인해 봤습니다 ㅎㅎ</p>
-<p>오늘 배운 EditText는 아주 많이 쓰입니다</p>
-<p>안드로이드에서 글자 입력하는 모든 부분에 이 EditText가 쓰인다고 할수 있으니 꼭 아셔야 합니다!!</p>
-<p>예제 소스 : 네이버 카페에서는 다운이 제한됩니다</p>
-<p><a href="./file/ExampleEditText.zip">ExampleEditText.zip</a></p>
-<hr>
-<h2 id="첨부파일">첨부파일</h2>
-<ul>
-<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleEditText.zip">ExampleEditText.zip</a> <code>1.1 MB</code></li>
-</ul></requestfocus> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+<p>위에 있는 ```java
+String inPutText = edittext.getText().toString();</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span></span></span>
+<span class="line"><span>자바에서(사실 대부분의 언어가) 변수를 지정하는 방법은 다음과 같습니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[변수타입] [변수 이름] = [대입할 변수값]</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>자바에서 =연산자는 오른쪽 값을 왼쪽에 대입한다 라는 뜻입니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>자세한건 이쪽으로~</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[2013/02/22 - [미르의 개발 이야기/Java 배움터] - 계산을 할수 있는 연산자에 대해 알아보자! - 1편](/archive/itmir/2013/157)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[2013/02/22 - [미르의 개발 이야기/Java 배움터] - 계산을 할수 있는 연산자에 대해 알아보자! - 2편](/archive/itmir/2013/158)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>그럼 다시 돌아와서 저 줄을 확인해 보면</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>String(변수타입) inPutText(변수이름) = edittext.getText().toString();(변수값)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>이 됩니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>String은 자바에서 문장을 저장하는 변수형(자바강좌를 참조하시길)이며 inPutText는 제가 임의로 지정하는 변수의 이름입니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>'=' 오른쪽에 있는 값들은 inPutText에 저장될 변수의 값이라는 것이죠</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>그럼 변수값을 봐야겠죠</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>edittext(edittext라는 EditText에서 참조한다).getText()(입력한 글자를 얻어온다).toString()(얻어온 글자를 스트링의 형태로 바꾼다)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>라는 뜻입니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>getText().toString()는 각각 EditText에서 사용가능한 메소드라는 것만 알아두시고 지금은 그렇구나 하고 넘어갑시다 ㅎㅎ</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>자 EditText에서 꼭 알아야할 코드를 살펴봤습니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>테스트 해볼까요?</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>![](./images/Screenshot_2013-08-14-09-55-48.png)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> 정상적으로 hint가 나옵니다 ㅎㅎ</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>![](./images/Screenshot_2013-08-14-09-55-56.png)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>아까 inputtype를 number으로 설정하였기 때문에 저 EditText에는 숫자만 들어갑니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>그리고 버튼을 눌렀더니 입력한 값이랑 똑같게 토스트 메세지가 나오는 모습을 확인해 봤습니다 ㅎㅎ</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>오늘 배운 EditText는 아주 많이 쓰입니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>안드로이드에서 글자 입력하는 모든 부분에 이 EditText가 쓰인다고 할수 있으니 꼭 아셔야 합니다!!</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>예제 소스 : 네이버 카페에서는 다운이 제한됩니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[ExampleEditText.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleEditText.zip)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## 첨부파일</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>- [ExampleEditText.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleEditText.zip) `1.1 MB`</span></span>
+<span class="line"><span></span></span></code></pre> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
 Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
 itmir.tistory.com
 </a>  · Archived by luminousky

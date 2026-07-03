@@ -8,35 +8,43 @@
 <p>그리고 터미널을 켜서 그 폴더로 이동해 줍니다.</p>
 <p>이 강의에선 이해하기 쉽게 boot라는 폴더를 사용하겠습니다.</p>
 <p>다음 명령어로 폴더에 들어갑니다.</p>
-<p>cd ~/바탕화면/boot</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#005CC5">cd</span><span style="color:#032F62"> ~/바탕화면/boot</span></span>
+<span class="line"></span></code></pre>
 <p>그뒤 권한을 부여해줘야 합니다.</p>
-<p>chmod 777 unpackbootimg</p>
-<p>chmod 777 split_bootimg.pl</p>
-<p>chmod 777 mkbootimg</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">chmod</span><span style="color:#005CC5"> 777</span><span style="color:#032F62"> unpackbootimg</span></span>
+<span class="line"><span style="color:#6F42C1">chmod</span><span style="color:#005CC5"> 777</span><span style="color:#032F62"> split_bootimg.pl</span></span>
+<span class="line"><span style="color:#6F42C1">chmod</span><span style="color:#005CC5"> 777</span><span style="color:#032F62"> mkbootimg</span></span>
+<span class="line"></span></code></pre>
 <p>권한을 모두 주셨으면 본격적으로 작업에 들어갈까요?ㅎ</p>
-<p>./split_bootimg.pl boot.img</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">./split_bootimg.pl</span><span style="color:#032F62"> boot.img</span></span>
+<span class="line"></span></code></pre>
 <p>입력하시게 되면 Page size, Command line이 나타나게 됩니다.</p>
 <p>꼭 기억해 두세요!</p>
 <p>그 다음</p>
-<p>./unpackbootimg -i boot.img</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">./unpackbootimg</span><span style="color:#005CC5"> -i</span><span style="color:#032F62"> boot.img</span></span>
+<span class="line"></span></code></pre>
 <p>을 입력하시게 되면 BOARD_KERNEL_BASE이 나타납니다. 이것도 중요합니다!</p>
 <p>이제 램디스크 압축을 풀어봅시다.</p>
-<p>gzip -d boot.img-ramdisk.gz</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">gzip</span><span style="color:#005CC5"> -d</span><span style="color:#032F62"> boot.img-ramdisk.gz</span></span>
+<span class="line"></span></code></pre>
 <p>위 명령어를 입력하게 되면, cpio가 나타나게 됩니다.</p>
 <p>이 파일을 ramdisk라는 폴더를 만들어 그 폴더 안에 넣어 주세요.</p>
 <p>cd ramdisk 명령어를 쳐서 ramdisk 폴더로 이동합니다.</p>
-<p>cpio -i -F boot.img-ramdisk</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">cpio</span><span style="color:#005CC5"> -i</span><span style="color:#005CC5"> -F</span><span style="color:#032F62"> boot.img-ramdisk</span></span>
+<span class="line"></span></code></pre>
 <p>이제 위 명령어를 입력하시면, cpio의 내용물이 풀려지게 됩니다.</p>
 <p>이제 boot.img-ramdisk 파일은 삭제하셔도 됩니다.</p>
 <p>마음것 램디스크를 수정하세요!!</p>
 <p>램디스크를 모두 수정하셨다면 합쳐야 합니다.</p>
 <p>램디스크 파일이 들어있는 폴더속에서</p>
-<p>find . | cpio -o -H newc -O ../ramdisk</p>
-<p>cd ..</p>
-<p>gzip ramdisk</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">find</span><span style="color:#032F62"> .</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> cpio</span><span style="color:#005CC5"> -o</span><span style="color:#005CC5"> -H</span><span style="color:#032F62"> newc</span><span style="color:#005CC5"> -O</span><span style="color:#032F62"> ../ramdisk</span></span>
+<span class="line"><span style="color:#005CC5">cd</span><span style="color:#032F62"> ..</span></span>
+<span class="line"><span style="color:#6F42C1">gzip</span><span style="color:#032F62"> ramdisk</span></span>
+<span class="line"></span></code></pre>
 <p>를 입력하시면 램디스크 파일이 나타나게 됩니다.</p>
 <p>이제 커널과 램디스크 파일을 합쳐야 합니다.</p>
-<p>./mkbootimg —cmdline “(아까 얻은 Command line값)” —base 0x(아까 얻은 base값) —pagesize (아까 얻은 pagesize 값) —kernel boot.img-kernel —ramdisk ramdisk.gz -o make-boot.img</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">./mkbootimg</span><span style="color:#005CC5"> --cmdline</span><span style="color:#032F62"> "(아까 얻은 Command line값)"</span><span style="color:#005CC5"> --base</span><span style="color:#032F62"> 0x</span><span style="color:#24292E">(</span><span style="color:#6F42C1">아까</span><span style="color:#032F62"> 얻은</span><span style="color:#032F62"> base값</span><span style="color:#24292E">) </span><span style="color:#005CC5">--pagesize</span><span style="color:#24292E"> (아까 </span><span style="color:#032F62">얻은</span><span style="color:#032F62"> pagesize</span><span style="color:#032F62"> 값</span><span style="color:#24292E">) --kernel boot.img-kernel --ramdisk ramdisk.gz -o make-boot.img</span></span>
+<span class="line"></span></code></pre>
 <p>(위 mkbootimg명령어는 길어보이지만 한줄로 한번에 입력하셔야 합니다)</p>
 <p>아래는 M31님의 게시글안 사진 일부입니다.</p>
 <p><img  src="/archive/_astro/1.5yJ80_qT_Z26Ffvg.webp" alt="" width="493" height="169" loading="lazy" decoding="async"></p>
@@ -46,10 +54,10 @@
 <p>make-boot파일이 완성되었습니다!</p>
 <p>이것을 이제 기기에 적용하면 끝나게 됩니다.</p>
 <p>위 명령어는 txt파일로 올려두었습니다.</p>
-<p>[boot.img 분해 조립.txt](./file/boot.img 분해 조립.txt)</p>
-<p><a href="./file/mkbootimg">mkbootimg</a></p>
-<p><a href="./file/unpackbootimg">unpackbootimg</a></p>
-<p><a href="./file/split_bootimg.pl">split_bootimg.pl</a></p>
+<p>[boot.img 분해 조립.txt](./files/boot.img 분해 조립.txt)</p>
+<p><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/48-mkbootimg">mkbootimg</a></p>
+<p><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/48-unpackbootimg">unpackbootimg</a></p>
+<p><a href="./files/split_bootimg.pl">split_bootimg.pl</a></p>
 <p>요즘 나온 스마트폰들은 대부분 ramdiskaddr을 지정해 주어야 부팅이 됩니다.</p>
 <p>만약 부트 이미지 분해시 ramdiskaddr이 나올경우 아래 mkbootimg링크를 따라 들어가 업데이트된 파일을 받은다음 ./mkbootimg 명령어 마지막 부분(-o)전쪽에 “—ramdiskaddr 0x값” 을 넣어 주시면 됩니다.</p>
 <p><a href="/archive/itmir/2013/181">2013/03/24 - [강좌/팁/Ubuntu 강좌] - mkbootimg</a></p>

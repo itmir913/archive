@@ -15,14 +15,15 @@
 <p><img  src="/archive/_astro/1.BCpbzI2b_Z2kUCa9.webp" alt="" width="780" height="360" loading="lazy" decoding="async"></p>
 <p><img  src="/archive/_astro/1-1.BiJETLOQ_NOOEe.webp" alt="" width="780" height="360" loading="lazy" decoding="async"></p>
 <p>이렇게 드래그 해서 버튼 하나 만들어 주세요</p>
-<p>&#x3C;Button</p>
-<p>android:id=”@+id/button1”</p>
-<p>android:layout_width=“wrap_content”</p>
-<p>android:layout_height=“wrap_content”</p>
-<p>android:layout_alignParentTop=“true”</p>
-<p>android:layout_centerHorizontal=“true”</p>
-<p>android:layout_marginTop=“98dp”</p>
-<p>android:text=“Button” /></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">Button</span></span>
+<span class="line"><span style="color:#6F42C1">    android:id</span><span style="color:#24292E">=</span><span style="color:#032F62">"@+id/button1"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:layout_alignParentTop</span><span style="color:#24292E">=</span><span style="color:#032F62">"true"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:layout_centerHorizontal</span><span style="color:#24292E">=</span><span style="color:#032F62">"true"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:layout_marginTop</span><span style="color:#24292E">=</span><span style="color:#032F62">"98dp"</span></span>
+<span class="line"><span style="color:#6F42C1">    android:text</span><span style="color:#24292E">=</span><span style="color:#032F62">"Button"</span><span style="color:#24292E"> /></span></span>
+<span class="line"></span></code></pre>
 <p>버튼의 소스입니다</p>
 <p>지금까지 제 강좌를 모두 보셨다면 이 소스가 이해가 되실탠데요</p>
 <p>id값부여</p>
@@ -62,72 +63,78 @@
 <p>이때 사용하는 방법은 2가지가 있습니다</p>
 <p>메소드를 이용한 방법과 listener을 이용한 방법인데요</p>
 <p>여기서는 listener을 이용할것이므로 메소드에 관한 내용은 짧게 짚고 넘어갑시다(별로 추천하고 싶지 않은 방법인지라..)</p>
-<p>public void (메소드 이름) (View v) {</p>
-<p>Intent myintent = new Intent(this, (이동할 액티비티 이름).class);</p>
-<p>startActivity(myintent);</p>
-<p>}</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">public</span><span style="color:#6F42C1"> void</span><span style="color:#24292E"> (메소드 이름) (View v) {</span></span>
+<span class="line"><span style="color:#24292E">    Intent myintent </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> Intent</span><span style="color:#24292E">(</span><span style="color:#005CC5">this</span><span style="color:#24292E">, (이동할 액티비티 이름).class);</span></span>
+<span class="line"><span style="color:#6F42C1">    startActivity</span><span style="color:#24292E">(myintent);</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
 <p>자바코드의 아무데나(그렇다고 onCreate같은대 넣으시면 안되요) 위 메소드를 넣어줍시다</p>
 <p>(메소드 이름)란에는 원하는것을 입력하시면 됩니다</p>
-<p>android:onClick=“(메소드 이름)”</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">android:onClick="(메소드 이름)"</span></span>
+<span class="line"></span></code></pre>
 <p>xm으로 돌아와서 Button에 위 코드를 넣어줍시다</p>
 <p>그럼 버튼을 클릭할경우 (메소드 이름)이라는 메소드를 실행한다 라는 뜻입니다</p>
 <p>이 강좌에서는 listener을 이용할겁니다. xml의 onClick을 이용하는 예제는 다른 위젯을 배울 때 살펴보겠습니다.</p>
 <p>참고로, 저는 onClick을 더 선호합니다.</p>
 <p><img  src="/archive/_astro/1-7.C0HDqUnO_Z2lDpsl.webp" alt="" width="316" height="166" loading="lazy" decoding="async"></p>
 <p>이렇게 추가해 주세요</p>
-<p>public class MainActivity extends Activity {</p>
-<p><strong>Button button1;</strong></p>
-<p>@Override</p>
-<p>protected void onCreate(Bundle savedInstanceState) {</p>
-<p>super.onCreate(savedInstanceState);</p>
-<p>setContentView(R.layout.activity_main);</p>
-<p><strong>button1 = (Button)findViewById(R.id.button1);</strong></p>
-<p><strong>button1.setOnClickListener(listener);</strong></p>
-<p><strong>}</strong></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> MainActivity</span><span style="color:#D73A49"> extends</span><span style="color:#6F42C1"> Activity</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">Button button1;</span></span>
+<span class="line"><span style="color:#24292E">@</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">protected</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> onCreate</span><span style="color:#24292E">(Bundle </span><span style="color:#E36209">savedInstanceState</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#005CC5">super</span><span style="color:#24292E">.</span><span style="color:#6F42C1">onCreate</span><span style="color:#24292E">(savedInstanceState);</span></span>
+<span class="line"><span style="color:#6F42C1">setContentView</span><span style="color:#24292E">(R.layout.activity_main);</span></span>
+<span class="line"><span style="color:#24292E">button1 </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (Button)</span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.button1);</span></span>
+<span class="line"><span style="color:#24292E">button1.</span><span style="color:#6F42C1">setOnClickListener</span><span style="color:#24292E">(listener);</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
 <p>추가후, Import하는거 잊지 마시길</p>
 <p>그다음 빨간색 ’}‘아래에 아래 소스를 추가합시다</p>
-<p>Button.OnClickListener listener = new Button.OnClickListener()</p>
-<p>{</p>
-<p>public void onClick(View v)</p>
-<p>{</p>
-<p>switch(v.getId()){</p>
-<p>//case문이 들어갑니다</p>
-<p>}</p>
-<p>}</p>
-<p>};</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">Button.OnClickListener listener </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#24292E"> Button.</span><span style="color:#6F42C1">OnClickListener</span><span style="color:#24292E">()</span></span>
+<span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> onClick</span><span style="color:#24292E">(View v)</span></span>
+<span class="line"><span style="color:#24292E">    {</span></span>
+<span class="line"><span style="color:#D73A49">        switch</span><span style="color:#24292E">(v.</span><span style="color:#6F42C1">getId</span><span style="color:#24292E">()){</span></span>
+<span class="line"><span style="color:#6A737D">            //case문이 들어갑니다</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">};</span></span>
+<span class="line"></span></code></pre>
 <p>그다음 또 import해주시고요 ㅎ..</p>
 <p>switch-case문으로 어떤 버튼이 눌려졌는지 판단후 작업을 할겁니다</p>
-<p>case R.id.button1:</p>
-<p>Intent myintent = new Intent(this, (이동할 액티비티 이름).class);</p>
-<p>startActivity(myintent);</p>
-<p>break;</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">case</span><span style="color:#24292E"> R.id.button1</span><span style="color:#D73A49">:</span></span>
+<span class="line"><span style="color:#24292E">    Intent myintent </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> Intent</span><span style="color:#24292E">(</span><span style="color:#005CC5">this</span><span style="color:#24292E">, (이동할 액티비티 이름).class);</span></span>
+<span class="line"><span style="color:#6F42C1">    startActivity</span><span style="color:#24292E">(myintent);</span></span>
+<span class="line"><span style="color:#D73A49">    break</span><span style="color:#24292E">;</span></span>
+<span class="line"></span></code></pre>
 <p>이런 형태로 구현해 주세요</p>
 <p>완성된 소스를 봅시다</p>
 <p><img  src="/archive/_astro/1-8.By6iLatX_cBydg.webp" alt="" width="373" height="187" loading="lazy" decoding="async"></p>
 <p>여기서 Intent myintent = new Intent(this, Button.class);을 보시면 this앞에 MainActivity.이 있는데요</p>
 <p>만약 그냥 this라고 했을때 오류가 뜬다면 액티비티 이름을 붙혀주시면 오류가 해결됩니다</p>
 <p>완성된 소스를 보면</p>
-<p>public class MainActivity extends Activity {</p>
-<p><strong>Button button1;</strong></p>
-<p>@Override</p>
-<p>protected void onCreate(Bundle savedInstanceState) {</p>
-<p>super.onCreate(savedInstanceState);</p>
-<p>setContentView(R.layout.activity_main);</p>
-<p><strong>button1 = (Button) findViewById(R.id.button1);</strong></p>
-<p><strong>button1.setOnClickListener(listener);</strong></p>
-<p>}</p>
-<p><strong>Button.OnClickListener listener = new Button.OnClickListener()</strong></p>
-<p><strong>{</strong></p>
-<p><strong>public void onClick(View v)</strong></p>
-<p><strong>{</strong></p>
-<p><strong>switch(v.getId()){</strong></p>
-<p><strong>case R.id.button1:</strong></p>
-<p><strong>Intent myintent = new Intent(MainActivity.this, ButtonActivity.class);</strong></p>
-<p><strong>startActivity(myintent);</strong></p>
-<p><strong>break;</strong></p>
-<p><strong>}</strong></p>
-<p><strong>}</strong></p>
-<p><strong>};</strong></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> MainActivity</span><span style="color:#D73A49"> extends</span><span style="color:#6F42C1"> Activity</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">Button button1;</span></span>
+<span class="line"><span style="color:#24292E">@</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">protected</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> onCreate</span><span style="color:#24292E">(Bundle </span><span style="color:#E36209">savedInstanceState</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#005CC5">super</span><span style="color:#24292E">.</span><span style="color:#6F42C1">onCreate</span><span style="color:#24292E">(savedInstanceState);</span></span>
+<span class="line"><span style="color:#6F42C1">setContentView</span><span style="color:#24292E">(R.layout.activity_main);</span></span>
+<span class="line"><span style="color:#24292E">button1 </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (Button) </span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.button1);</span></span>
+<span class="line"><span style="color:#24292E">button1.</span><span style="color:#6F42C1">setOnClickListener</span><span style="color:#24292E">(listener);</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"><span style="color:#24292E">Button.OnClickListener listener </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#24292E"> Button.</span><span style="color:#6F42C1">OnClickListener</span><span style="color:#24292E">()</span></span>
+<span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> onClick</span><span style="color:#24292E">(View v)</span></span>
+<span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">switch</span><span style="color:#24292E">(v.</span><span style="color:#6F42C1">getId</span><span style="color:#24292E">()){</span></span>
+<span class="line"><span style="color:#D73A49">case</span><span style="color:#24292E"> R.id.button1</span><span style="color:#D73A49">:</span></span>
+<span class="line"><span style="color:#24292E">Intent myintent </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> Intent</span><span style="color:#24292E">(MainActivity.this, ButtonActivity.class);</span></span>
+<span class="line"><span style="color:#6F42C1">startActivity</span><span style="color:#24292E">(myintent);</span></span>
+<span class="line"><span style="color:#D73A49">break</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"><span style="color:#24292E">};</span></span>
+<span class="line"></span></code></pre>
 <p>입니다 (굵은 글씨 추가)</p>
 <p>만약 버튼을 2개이상 추가하려면 밑줄친 부분이 반복되겠죠??</p>
 <p><img  src="/archive/_astro/Screenshot_2013-08-04-11-38-25.aSTEVeFo_ZIx2oX.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
@@ -137,7 +144,7 @@
 <p>이렇게 해서 버튼에 대해서도 알아봤습니다</p>
 <p>버튼의 글자도 button1.setText();를 이용하여 변경이 가능합니다</p>
 <p>응용은 당신의 몫!</p>
-<p><a href="./file/Button.zip">Button.zip</a></p>
+<p><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/Button.zip">Button.zip</a></p>
 <hr>
 <h2 id="첨부파일">첨부파일</h2>
 <ul>

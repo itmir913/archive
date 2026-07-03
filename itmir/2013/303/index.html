@@ -9,21 +9,25 @@
 <p><img  src="/archive/_astro/Screenshot_2013-08-12-18-09-05.Dgys6y6A_oWLri.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
 <p>원리라 하자면 아주 간단합니다.</p>
 <p>전에보니 멀티윈도우에 추가하기 위해서는</p>
-<category android:name="android.intent.category.LAUNCHER">
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">category</span><span style="color:#6F42C1"> android:name</span><span style="color:#24292E">=</span><span style="color:#032F62">"android.intent.category.LAUNCHER"</span><span style="color:#24292E"> /></span></span>
+<span class="line"></span></code></pre>
 <p>밑에</p>
-<category android:name="android.intent.category.MULTIWINDOW\_LAUNCHER">
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">category</span><span style="color:#6F42C1"> android:name</span><span style="color:#24292E">=</span><span style="color:#032F62">"android.intent.category.MULTIWINDOW_LAUNCHER"</span><span style="color:#24292E"> /></span></span>
+<span class="line"></span></code></pre>
 <p>을 추가해야 하더군요</p>
-<category android:name="android.intent.category.LAUNCHER">
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">category</span><span style="color:#6F42C1"> android:name</span><span style="color:#24292E">=</span><span style="color:#032F62">"android.intent.category.LAUNCHER"</span><span style="color:#24292E"> /></span></span>
+<span class="line"></span></code></pre>
 <p>이 구문은 한 액티비티를 아이콘과 함께 런처에 표시하게 하겠다~라는 구문입니다</p>
 <p>이를 응용하여 사라지게 하고픈 어플을 디컴파일하여 AndroidManifast.xml에서 저 구문만 쏙 지워버리거나 하면 나타나지 않습니다</p>
 <p>멀티윈도우도 하나의 런처라 생각하면</p>
-<category android:name="android.intent.category.MULTIWINDOW\_LAUNCHER">
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">category</span><span style="color:#6F42C1"> android:name</span><span style="color:#24292E">=</span><span style="color:#032F62">"android.intent.category.MULTIWINDOW_LAUNCHER"</span><span style="color:#24292E"> /></span></span>
+<span class="line"></span></code></pre>
 <p>이라는 구문이 있는 어플만 저 화면에 뜨게 되는것 이지요<br>
 검색해보면 smali\com\sec\android\app\FlashBarService\FlashBarInfo.smali에서 담당하고 있습니다</p>
 <p>그럼 간단합니다</p>
 <p>저 어플을 디컴파일해서 쑈로롱 바꿔주면 되는겁니다 ㅎㅎ</p>
 <p>다른 어플의 도움을 받는것도 아니고 저 멀원어플만 수정한거니 아마 설정이 날아갈 일은 없을겁니다 ㅎㅎ</p>
-<p>너무 간단하게 끝나서 좋군요 ㅋㅋ</p></category></category></category></category> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+<p>너무 간단하게 끝나서 좋군요 ㅋㅋ</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
 Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
 itmir.tistory.com
 </a>  · Archived by luminousky

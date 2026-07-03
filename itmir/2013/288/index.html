@@ -13,12 +13,15 @@
 <p>화면이 다시 만들어 지면서 강제종료가 발생하는 겁니다</p>
 <p>그럼 해결해 봅시다</p>
 <p>AndroidManifest.xml에서 모든 Activity부분에</p>
-<p>android:configChanges=“keyboardHidden|orientation|”</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">android:configChanges="keyboardHidden|orientation|"</span></span>
+<span class="line"></span></code></pre>
 <p>또는</p>
-<p>android:configChanges=“keyboardHidden|orientation|screenSize”</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">android:configChanges="keyboardHidden|orientation|screenSize"</span></span>
+<span class="line"></span></code></pre>
 <p>을 추가해 주세요</p>
 <p>만약 안드로이드 3.2 허니콤(APU 13)이상이라면</p>
-<p>android:configChanges=“keyboardHidden|orientation|screenSize”</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">android:configChanges="keyboardHidden|orientation|screenSize"</span></span>
+<span class="line"></span></code></pre>
 <p>을 추가해 주셔야만 합니다</p>
 <p>관련 API입니다 (출처: <a href="http://developer.android.com/guide/topics/manifest/activity-element.html">http://developer.android.com/guide/topics/manifest/activity-element.html</a>, <a href="http://blog.naver.com/liar1938/30173022348">http://blog.naver.com/liar1938/30173022348</a>)</p>
 <p><img  src="/archive/_astro/orientation.9wiBdAJO_ZxywVN.webp" alt="" width="641" height="157" loading="lazy" decoding="async"></p>
@@ -36,18 +39,20 @@
 <p>메소드를 작성해야합니다. 이 메소드가 화면 회전시 onCreate() 메소드 대신 호출되게 되는거죠.</p>
 </blockquote>
 <p>그럼 이제 MainActivity에 아래 메소드를 추가해 줍시다</p>
-<p>public void onConfigurationChanged(Configuration newConfig) {</p>
-<p>        super.onConfigurationChanged(newConfig);</p>
-<p>        (이곳에 작업 내용을 적습니다, 생략 가능)</p>
-<p>}</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> onConfigurationChanged</span><span style="color:#24292E">(Configuration newConfig) {</span></span>
+<span class="line"><span style="color:#005CC5">    super</span><span style="color:#24292E">.</span><span style="color:#6F42C1">onConfigurationChanged</span><span style="color:#24292E">(newConfig);</span></span>
+<span class="line"><span style="color:#24292E">    (이곳에 작업 내용을 적습니다, 생략 가능)</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
 <p>만약 화면 전환시 알림을 뜨게 하고 싶다면</p>
-<p>if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE)</p>
-<p>{</p>
-<p>// 기기가 가로로 회전할때 할 작업</p>
-<p>} else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT)</p>
-<p>{</p>
-<p>// 기기가 세로로 회전할때 할 작업</p>
-<p>}</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">if</span><span style="color:#24292E"> (newConfig.orientation </span><span style="color:#D73A49">==</span><span style="color:#24292E"> Configuration.ORIENTATION_LANDSCAPE)</span></span>
+<span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#6A737D">    // 기기가 가로로 회전할때 할 작업</span></span>
+<span class="line"><span style="color:#24292E">} </span><span style="color:#D73A49">else</span><span style="color:#D73A49"> if</span><span style="color:#24292E"> (newConfig.orientation </span><span style="color:#D73A49">==</span><span style="color:#24292E"> Configuration.ORIENTATION_PORTRAIT)</span></span>
+<span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#6A737D">    // 기기가 세로로 회전할때 할 작업</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
 <p>이런식으로 작성해 주시면 됩니다</p>
 <p>확인결과 잘 작동하는군요 ㅎㅎ</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
 Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">

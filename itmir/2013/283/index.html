@@ -25,10 +25,11 @@
 <p>이 두개의 파일은 건들일 필요가 없더군요.</p>
 <p>기본적으로 아래와 같은 내용이 있을겁니다. MainActivity을 눌러 펼쳐주세요.</p>
 <p>MainActivity</p>
-<p>package com.tistory.whdghks913.exampletabs;</p>
-<p>import 생략</p>
-<p>public class MainActivity extends <strong>FragmentActivity</strong> implements</p>
-<p>ActionBar.TabListener {</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> com.tistory.whdghks913.exampletabs;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> 생략</span></span>
+<span class="line"><span style="color:#B31D28;font-style:italic">public</span><span style="color:#B31D28;font-style:italic"> class</span><span style="color:#24292E"> MainActivity </span><span style="color:#B31D28;font-style:italic">extends</span><span style="color:#24292E"> FragmentActivity </span><span style="color:#B31D28;font-style:italic">implements</span></span>
+<span class="line"><span style="color:#24292E">ActionBar.TabListener {</span></span>
+<span class="line"></span></code></pre>
 <p>/**</p>
 <p> * The {@link android.support.v4.view.PagerAdapter} that will provide</p>
 <p> * fragments for each of the sections. We use a</p>
@@ -203,47 +204,57 @@
 <p>이어서 각 탭에 들어갈 내용물들을 만들어 봅시다.</p>
 <p>만들고 있던 프로젝트에 마우스 오른쪽을 누른다음 New-other-Android Activity를 눌러주세요.</p>
 <p>아무렇게나 BlankActivity를 만들어 주신다음 소스를 확인해 봅시다.</p>
-<p>package com.tistory.whdghks913.exampletabs;</p>
-<p>import android.os.Bundle;</p>
-<p>import android.app.Activity;</p>
-<p>import android.view.Menu;</p>
-<p>public class Tabs1 extends Activity {</p>
-<p>@Override</p>
-<p>protected void onCreate(Bundle savedInstanceState) {</p>
-<p>super.onCreate(savedInstanceState);</p>
-<p>setContentView(R.layout.activity_tabs1);</p>
-<p>}</p>
-<p>@Override</p>
-<p>public boolean onCreateOptionsMenu(Menu menu) {</p>
-<p>// Inflate the menu; this adds items to the action bar if it is present.</p>
-<p>getMenuInflater().inflate(R.menu.tabs1, menu);</p>
-<p>return true;</p>
-<p>}</p>
-<p>}</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> com.tistory.whdghks913.exampletabs;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> android.os.Bundle;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> android.app.Activity;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> android.view.Menu;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> Tabs1</span><span style="color:#D73A49"> extends</span><span style="color:#6F42C1"> Activity</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">    protected</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> onCreate</span><span style="color:#24292E">(Bundle </span><span style="color:#E36209">savedInstanceState</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#005CC5">        super</span><span style="color:#24292E">.</span><span style="color:#6F42C1">onCreate</span><span style="color:#24292E">(savedInstanceState);</span></span>
+<span class="line"><span style="color:#6F42C1">        setContentView</span><span style="color:#24292E">(R.layout.activity_tabs1);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> boolean</span><span style="color:#6F42C1"> onCreateOptionsMenu</span><span style="color:#24292E">(Menu </span><span style="color:#E36209">menu</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#6A737D">        // Inflate the menu; this adds items to the action bar if it is present.</span></span>
+<span class="line"><span style="color:#6F42C1">        getMenuInflater</span><span style="color:#24292E">().</span><span style="color:#6F42C1">inflate</span><span style="color:#24292E">(R.menu.tabs1, menu);</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#005CC5"> true</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
 <p>너무 간단합니다. ㅎㅎ…;</p>
 <p>각 탭에 나타날 화면과 관련된 모든 자바 소스를 이곳에 기록해야 합니다.</p>
 <p>자 아래와 같이 그냥 수정해 주세요.</p>
-<p>package com.tistory.whdghks913.exampletabs;</p>
-<p>import android.annotation.SuppressLint;</p>
-<p>import android.content.Context;</p>
-<p>import android.os.Bundle;</p>
-<p>import android.support.v4.app.Fragment;</p>
-<p>import android.view.LayoutInflater;</p>
-<p>import android.view.View;</p>
-<p>import android.view.ViewGroup;</p>
-<p><strong>@SuppressLint(“ValidFragment”)</strong></p>
-<p>public class Tabs1 extends <strong>Fragment</strong> {</p>
-<p><strong>Context mContext;</strong></p>
-<p><strong>public Tabs1(Context context) {</strong></p>
-<p><strong>mContext = context;</strong></p>
-<p><strong>}</strong></p>
-<p><strong>@Override</strong></p>
-<p><strong>public View onCreateView(LayoutInflater inflater,</strong></p>
-<p><strong>ViewGroup container, Bundle savedInstanceState) {</strong></p>
-<p><strong>View view = inflater.inflate(R.layout.activity_tabs1</strong>**, null);**</p>
-<p><strong>return view;</strong></p>
-<p><strong>}</strong></p>
-<p>}</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> com.tistory.whdghks913.exampletabs;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> android.annotation.SuppressLint;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> android.content.Context;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> android.os.Bundle;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> android.support.v4.app.Fragment;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> android.view.LayoutInflater;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> android.view.View;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> android.view.ViewGroup;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">@</span><span style="color:#D73A49">SuppressLint</span><span style="color:#24292E">(</span><span style="color:#032F62">"ValidFragment"</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> Tabs1</span><span style="color:#D73A49"> extends</span><span style="color:#6F42C1"> Fragment</span><span style="color:#24292E"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    Context mContext;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#6F42C1"> Tabs1</span><span style="color:#24292E">(Context </span><span style="color:#E36209">context</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">        mContext </span><span style="color:#D73A49">=</span><span style="color:#24292E"> context;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#24292E"> View </span><span style="color:#6F42C1">onCreateView</span><span style="color:#24292E">(LayoutInflater </span><span style="color:#E36209">inflater</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">            ViewGroup </span><span style="color:#E36209">container</span><span style="color:#24292E">, Bundle </span><span style="color:#E36209">savedInstanceState</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">        View view </span><span style="color:#D73A49">=</span><span style="color:#24292E"> inflater.</span><span style="color:#6F42C1">inflate</span><span style="color:#24292E">(R.layout.activity_tabs1, </span><span style="color:#005CC5">null</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> view;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
 <p>위 원본 소스의 취소선은 삭제된 부분, 아래 소스의 굵은 부분은 추가, 수정된 부분입니다.</p>
 <p>밑줄 친 부분은 다들 아시는 것처럼 레이아웃을 결정하는 xml에 관한 구문입니다.</p>
 <p>MainActivity는 FragmentActivity를 상속하지만 탭에 들어갈 내용들은 Fragment을 상속(extends)해야 합니다.</p>
@@ -252,20 +263,22 @@
 <p><a href="http://developer.android.com/reference/android/support/v4/app/FragmentActivity.html">http://developer.android.com/reference/android/support/v4/app/FragmentActivity.html</a></p>
 <p>이제 이런 소스와 같이 나머지 탭에 들어갈 내용물들도 하나 씩 구성해 주시면 됩니다.</p>
 <p>모든 탭의 구성이 끝났다면 아까 MainActivity에서 건너뛰었던 부분으로 돌아가 이름을 지정해야하는데요.</p>
-<p>switch(position) {</p>
-<p>case 0:</p>
-<p>return new 첫번째탭에들어갈내용이담긴액티비티이름(mContext);</p>
-<p>case 1:</p>
-<p>return new 두번째탭에들어갈내용이담긴액티비티이름(mContext);</p>
-<p>case 2:</p>
-<p>return new 세번째탭에들어갈내용이담긴액티비티이름(mContext);</p>
-<p>}</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">switch</span><span style="color:#24292E">(position) {</span></span>
+<span class="line"><span style="color:#D73A49">case</span><span style="color:#005CC5"> 0</span><span style="color:#D73A49">:</span></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#D73A49"> new</span><span style="color:#24292E"> 첫번째탭에들어갈내용이담긴액티비티이름(mContext);</span></span>
+<span class="line"><span style="color:#D73A49">case</span><span style="color:#005CC5"> 1</span><span style="color:#D73A49">:</span></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#D73A49"> new</span><span style="color:#24292E"> 두번째탭에들어갈내용이담긴액티비티이름(mContext);</span></span>
+<span class="line"><span style="color:#D73A49">case</span><span style="color:#005CC5"> 2</span><span style="color:#D73A49">:</span></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#D73A49"> new</span><span style="color:#24292E"> 세번째탭에들어갈내용이담긴액티비티이름(mContext);</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
 <p>위 세 개의 문구를 만드신 Activity의 이름으로 변경해 주시면 됩니다.</p>
 <p>이제 빌드 해보시고 작동 시켜 보시면 각 탭과 연결된 xml에 기록된 내용물들이 탭 아래에 나타나는 것을 볼 수 있습니다.</p>
 <p>자 그런데 문제가 발생했습니다.</p>
 <p>우리가 탭을 구현하기 위해 쓴것은 Fragment, 그런대 Fragment에서는 findViewById가 잘 작동하지 않습니다.</p>
-<p>Button button1;</p>
-<p>button1 = (Button) **view.**findViewById(R.id.button1);</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">Button button1;</span></span>
+<span class="line"><span style="color:#24292E">button1 </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (Button) view.</span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.button1);</span></span>
+<span class="line"></span></code></pre>
 <p>이렇게 구현하시면 쉽게 작동됩니다. ㅎㅎ</p>
 <p>위치는 View view = inflater.inflate(R.layout.activity_tab1, null);와 return view;사이에 넣어주세요.</p>
 <p>실행 스샷</p>
@@ -276,11 +289,12 @@
 <p>일명 루익처럼 말이죠.</p>
 <p><img  src="/archive/_astro/device-2014-03-23-173735.CNwDGbbw_1LPDau.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
 <p>이렇게 아래로 이동하는것은 가능하며, API 14 (4.0)이상에서 사용가능합니다.</p>
-<p>&#x3C;activity .. <strong>android:uiOptions=“splitActionBarWhenNarrow”</strong> ..></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">activity</span><span style="color:#24292E"> .. </span><span style="color:#6F42C1">android:uiOptions</span><span style="color:#24292E">=</span><span style="color:#032F62">"splitActionBarWhenNarrow"</span><span style="color:#24292E"> ..>&#x3C;/</span><span style="color:#22863A">activity</span><span style="color:#24292E">></span></span>
+<span class="line"></span></code></pre>
 <p>이 빨간 문구를 AndroidManifest.xml의 <activity> 부분에 넣어주세요.</activity></p>
 <p>API 14보다 낮을경우, 이 구문은 무시됩니다.</p>
 <p>예제소스</p>
-<p><a href="./file/ExampleTabs.zip">ExampleTabs.zip</a></p>
+<p><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleTabs.zip">ExampleTabs.zip</a></p>
 <hr>
 <h2 id="첨부파일">첨부파일</h2>
 <ul>

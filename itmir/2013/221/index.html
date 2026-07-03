@@ -19,10 +19,12 @@
 <p>이 repo로 소스를 다운받을건대요</p>
 <p>처음으로 repo에게 어떤 소스를 받을것 인지 알려줍시다</p>
 <p>먼저 폴더를 생성해야 겠지요?</p>
-<p>mkdir ~/cm-10.1</p>
-<p>cd ~/cm-10.1</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">mkdir</span><span style="color:#032F62"> ~/cm-10.1</span></span>
+<span class="line"><span style="color:#005CC5">cd</span><span style="color:#032F62"> ~/cm-10.1</span></span>
+<span class="line"></span></code></pre>
 <p>이제 repo에게 “이 폴더에 이 소스를 받을거야”라고 말해 봅시다</p>
-<p>repo init -u git://github.com/CyanogenMod/android.git -b cm-10.1</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">repo</span><span style="color:#032F62"> init</span><span style="color:#005CC5"> -u</span><span style="color:#032F62"> git://github.com/CyanogenMod/android.git</span><span style="color:#005CC5"> -b</span><span style="color:#032F62"> cm-10.1</span></span>
+<span class="line"></span></code></pre>
 <p>이런씩으로 repo에게 어떤 소스를 받을건지 지정해 주시면 됩니다</p>
 <p>뒤에 있는 cm-10.1에 버전명을 넣으면 되는데요</p>
 <p>@GingerBread 이하</p>
@@ -51,13 +53,15 @@
 <p>원하시는 버전을 넣어 repo init를 해주시면 됩니다</p>
 <p><strong>2. repo sync</strong></p>
 <p>이제는 소스를 받아야 합니다</p>
-<p>repo sync</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">repo</span><span style="color:#032F62"> sync</span></span>
+<span class="line"></span></code></pre>
 <p>이렇게 입력하시면 소스의 다운로드가 시작됩니다</p>
 <p>되도록 유선으로 받으시길..</p>
 <p>프로세스를 더 할당하여 속도를 높일수 있는대요</p>
 <p>뒤에 -j(숫자)를 입력해 주시면 됩니다</p>
 <p>예를 들자면</p>
-<p>repo sync -j8</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">repo</span><span style="color:#032F62"> sync</span><span style="color:#005CC5"> -j8</span></span>
+<span class="line"></span></code></pre>
 <p>이런씩으로 말이죠</p>
 <p>이제 밥을 먹고 오시던지 놀다 오시던지 나갔다 오시던지 하시면 소스 다운이 완료됩니다</p>
 <p>1시간 안에 받을 생각을 하셨다면 바로 지워버리세요</p>
@@ -88,30 +92,47 @@
 <p>cd device/(제조사)/(기기명)로 터미널로 진입하신다음 기기를 USB로 연결하세요</p>
 <p>그다음 adb devices로 연결을 확인하시면 됩니다</p>
 <p>그 뒤</p>
-<p>./extract-files.sh</p>
-<p>을 입력하여 필요한 파일을 기기에서 pull하게 해주세요</p>
-<p>제가 사용하는 넥서스S의 경우 구글의 sh드라이버 지원이 끊겼습니다…</p>
-<p>레퍼런스의 지원이 끊기다니..</p>
-<p>이경우에는 Cyanogen에서 벤더를 제공하지 않으면 커스텀 벤더를 가져와야 하는데요</p>
-<p>TheMuppets라는 팀의 벤더를 가져와서 사용해 봅시다</p>
-<p>device/samsung/crespo에 들어가셔서 self-extractors을 보시면 필요한 벤더 파일을 보실수 있습니다</p>
-<p>이제 git clone으로 파일을 받아야 하는데요</p>
-<p>git clone은 아래와 같은 구조로 이루어져 있습니다</p>
-<p>git clone (가져올 repo주소) -b (가져올 브런치 이름)</p>
-<p>그럼 아래 박스를 입력하여 벤터를 가져와 봅시다</p>
-<p>git clone git://github.com/TheMuppets/proprietary_vendor_akm.git -b cm-10.1</p>
-<p>git clone git://github.com/TheMuppets/proprietary_vendor_broadcom.git -b cm-10.1</p>
-<p>git clone git://github.com/TheMuppets/proprietary_vendor_imgtec.git -b cm-10.1</p>
-<p>git clone git://github.com/TheMuppets/proprietary_vendor_nxp.git -b cm-10.1</p>
-<p>git clone git://github.com/TheMuppets/proprietary_vendor_samsung.git -b cm-10.1</p>
-<p>git clone git://github.com/TheMuppets/proprietary_vendor_widevine.git -b cm-10.1</p>
-<p>이제 다운받은 폴더의 이름을 변경하여 봅시다</p>
-<p>mv proprietary_vendor_akm akm</p>
-<p>mv proprietary_vendor_broadcom broadcom</p>
-<p>mv proprietary_vendor_imgtec imgtec</p>
-<p>mv proprietary_vendor_nxp nxp</p>
-<p>mv proprietary_vendor_samsung samsung</p>
-<p>mv proprietary_vendor_widevine widevine</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">./extract-files.sh</span></span>
+<span class="line"><span style="color:#032F62">`````</span><span style="color:#6F42C1">n</span></span>
+<span class="line"><span style="color:#6F42C1">을</span><span style="color:#032F62"> 입력하여 필요한 파일을 기기에서 pull하게 해주세요</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">제가</span><span style="color:#032F62"> 사용하는 넥서스S의 경우 구글의 sh드라이버 지원이 끊겼습니다...</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">레퍼런스의</span><span style="color:#032F62"> 지원이 끊기다니..</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">이경우에는</span><span style="color:#032F62"> Cyanogen에서 벤더를 제공하지 않으면 커스텀 벤더를 가져와야 하는데요</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">TheMuppets라는</span><span style="color:#032F62"> 팀의 벤더를 가져와서 사용해 봅시다</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">device/samsung/crespo에</span><span style="color:#032F62"> 들어가셔서 self-extractors을 보시면 필요한 벤더 파일을 보실수 있습니다</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">이제</span><span style="color:#032F62"> git clone으로 파일을 받아야 하는데요</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> clone은 아래와 같은 구조로 이루어져 있습니다</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62">```</span><span style="color:#6F42C1">bash</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> clone</span><span style="color:#24292E"> (가져올 </span><span style="color:#032F62">repo주소</span><span style="color:#24292E">) -b (</span><span style="color:#6F42C1">가져올</span><span style="color:#032F62"> 브런치</span><span style="color:#032F62"> 이름</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#032F62">`````</span><span style="color:#6F42C1">n</span></span>
+<span class="line"><span style="color:#6F42C1">그럼</span><span style="color:#032F62"> 아래 박스를 입력하여 벤터를 가져와 봅시다</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62">```</span><span style="color:#6F42C1">bash</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> clone</span><span style="color:#032F62"> git://github.com/TheMuppets/proprietary</span><span style="color:#005CC5">\_</span><span style="color:#032F62">vendor</span><span style="color:#005CC5">\_</span><span style="color:#032F62">akm.git</span><span style="color:#005CC5"> -b</span><span style="color:#032F62"> cm-10.1</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> clone</span><span style="color:#032F62"> git://github.com/TheMuppets/proprietary</span><span style="color:#005CC5">\_</span><span style="color:#032F62">vendor</span><span style="color:#005CC5">\_</span><span style="color:#032F62">broadcom.git</span><span style="color:#005CC5"> -b</span><span style="color:#032F62"> cm-10.1</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> clone</span><span style="color:#032F62"> git://github.com/TheMuppets/proprietary</span><span style="color:#005CC5">\_</span><span style="color:#032F62">vendor</span><span style="color:#005CC5">\_</span><span style="color:#032F62">imgtec.git</span><span style="color:#005CC5"> -b</span><span style="color:#032F62"> cm-10.1</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> clone</span><span style="color:#032F62"> git://github.com/TheMuppets/proprietary</span><span style="color:#005CC5">\_</span><span style="color:#032F62">vendor</span><span style="color:#005CC5">\_</span><span style="color:#032F62">nxp.git</span><span style="color:#005CC5"> -b</span><span style="color:#032F62"> cm-10.1</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> clone</span><span style="color:#032F62"> git://github.com/TheMuppets/proprietary</span><span style="color:#005CC5">\_</span><span style="color:#032F62">vendor</span><span style="color:#005CC5">\_</span><span style="color:#032F62">samsung.git</span><span style="color:#005CC5"> -b</span><span style="color:#032F62"> cm-10.1</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> clone</span><span style="color:#032F62"> git://github.com/TheMuppets/proprietary</span><span style="color:#005CC5">\_</span><span style="color:#032F62">vendor</span><span style="color:#005CC5">\_</span><span style="color:#032F62">widevine.git</span><span style="color:#005CC5"> -b</span><span style="color:#032F62"> cm-10.1</span></span>
+<span class="line"><span style="color:#032F62">`````</span><span style="color:#6F42C1">n</span></span>
+<span class="line"><span style="color:#6F42C1">이제</span><span style="color:#032F62"> 다운받은 폴더의 이름을 변경하여 봅시다</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62">```</span><span style="color:#6F42C1">bash</span></span>
+<span class="line"><span style="color:#6F42C1">mv</span><span style="color:#032F62"> proprietary</span><span style="color:#005CC5">\_</span><span style="color:#032F62">vendor</span><span style="color:#005CC5">\_</span><span style="color:#032F62">akm</span><span style="color:#032F62"> akm</span></span>
+<span class="line"><span style="color:#6F42C1">mv</span><span style="color:#032F62"> proprietary</span><span style="color:#005CC5">\_</span><span style="color:#032F62">vendor</span><span style="color:#005CC5">\_</span><span style="color:#032F62">broadcom</span><span style="color:#032F62"> broadcom</span></span>
+<span class="line"><span style="color:#6F42C1">mv</span><span style="color:#032F62"> proprietary</span><span style="color:#005CC5">\_</span><span style="color:#032F62">vendor</span><span style="color:#005CC5">\_</span><span style="color:#032F62">imgtec</span><span style="color:#032F62"> imgtec</span></span>
+<span class="line"><span style="color:#6F42C1">mv</span><span style="color:#032F62"> proprietary</span><span style="color:#005CC5">\_</span><span style="color:#032F62">vendor</span><span style="color:#005CC5">\_</span><span style="color:#032F62">nxp</span><span style="color:#032F62"> nxp</span></span>
+<span class="line"><span style="color:#6F42C1">mv</span><span style="color:#032F62"> proprietary</span><span style="color:#005CC5">\_</span><span style="color:#032F62">vendor</span><span style="color:#005CC5">\_</span><span style="color:#032F62">samsung</span><span style="color:#032F62"> samsung</span></span>
+<span class="line"><span style="color:#6F42C1">mv</span><span style="color:#032F62"> proprietary</span><span style="color:#005CC5">\_</span><span style="color:#032F62">vendor</span><span style="color:#005CC5">\_</span><span style="color:#032F62">widevine</span><span style="color:#032F62"> widevine</span></span>
+<span class="line"></span></code></pre>
 <p>mv명령어는 파일을 이동할때 쓰이지만 파일명 또는 폴더명을 변경할때도 사용됩니다</p>
 <p>(2) CyanogenMod 비공식 지원 기기 - 개발자분의 github에서 소스 다운</p>
 <p>이 방법은 device소스가 개발자분의 github등에 있는 경우 입니다</p>
@@ -141,9 +162,14 @@
 <p>아직 제 능력이 좋지 않아 이부분은 간단하게 설명해 드리겠습니다</p>
 <p>안드로이드 풀소스안 device/(제조사)/(코드네임) 폴더를 생성하신 다음</p>
 <p>BoardConfig.mk, device_(코드네임).mk등의 파일을 생성해야 합니다</p>
-<p>build/tools/device/mkvendor.sh으로 디바이스 소스의 기초를 생성할 수 있습니다</p>
-<p>순정 boot.img가 필요합니다</p>
-<p>build/tools/device/mkvendor.sh (제조사) (코드네임) (부트이미지경로)</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">build/tools/device/mkvendor.sh</span></span>
+<span class="line"><span style="color:#032F62">`````</span><span style="color:#6F42C1">으로</span><span style="color:#032F62"> 디바이스 소스의 기초를 생성할 수 있습니다</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">순정</span><span style="color:#032F62"> boot.img가 필요합니다</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62">```</span><span style="color:#6F42C1">bash</span></span>
+<span class="line"><span style="color:#6F42C1">build/tools/device/mkvendor.sh</span><span style="color:#24292E"> (제조사) (</span><span style="color:#6F42C1">코드네임</span><span style="color:#24292E">) (</span><span style="color:#6F42C1">부트이미지경로</span><span style="color:#24292E">)</span></span>
+<span class="line"></span></code></pre>
 <p>이렇게 입력해 주시면 기초적인 빌드에 필요한 파일, 즉 BoardConfig.mk등이 생성되어 나옵니다</p>
 <p>그다음은 완전 노가다 입니다</p>
 <p>cmdline등과 각종 Config설정을 BoardConfig.mk에 넣어주고 필요한 파일은 device_(코드네임).mk에 추가해 주고..</p>
@@ -152,9 +178,10 @@
 <p><strong>4. 빌드</strong></p>
 <p>이제 디바이스 소스를 생성하였습니다</p>
 <p>터미널로 이동하여 빌드를 시작해 봅시다</p>
-<p>. build/envsetup.sh</p>
-<p>lunch full_(기기명)-eng 또는 lunch cm_(기기명)-eng</p>
-<p>brunch (기기명)</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#005CC5">.</span><span style="color:#032F62"> build/envsetup.sh</span></span>
+<span class="line"><span style="color:#6F42C1">lunch</span><span style="color:#032F62"> full</span><span style="color:#005CC5">\_</span><span style="color:#24292E">(</span><span style="color:#6F42C1">기기명</span><span style="color:#24292E">)</span><span style="color:#032F62">-eng</span><span style="color:#032F62"> 또는</span><span style="color:#032F62"> lunch</span><span style="color:#032F62"> cm</span><span style="color:#005CC5">\_</span><span style="color:#24292E">(</span><span style="color:#6F42C1">기기명</span><span style="color:#24292E">)</span><span style="color:#032F62">-eng</span></span>
+<span class="line"><span style="color:#6F42C1">brunch</span><span style="color:#24292E"> (기기명)</span></span>
+<span class="line"></span></code></pre>
 <p>이 3개의 명령어로 빌드를 시작할 수 있습니다</p>
 <p>터미널을 새로 열었다면 꼭 . build/envsetup.sh를 실행해 줘야 합니다</p>
 <p>lunch명령어는 어떤 기기를 빌드할 것인지 설정해 주는 명령어로 make -j4 recoveryimage같은 명령어로 빌드시 필요합니다</p>

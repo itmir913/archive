@@ -10,7 +10,7 @@
 <p>그래서 그 방법을 오늘 소개하도록 할까 합니다. ㅎㅎ</p>
 <p>먼저 Syntax Highlighter을 다운받아야 합니다.</p>
 <p>공식 홈페이지 <a href="http://alexgorbatchev.com/SyntaxHighlighter">http://alexgorbatchev.com/SyntaxHighlighter</a>에서 받아도 되고, 아래 첨부파일을 받아도 됩니다.</p>
-<p><a href="./file/syntaxhighlighter_3.0.83.zip">syntaxhighlighter_3.0.83.zip</a></p>
+<p><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/syntaxhighlighter_3.0.83.zip">syntaxhighlighter_3.0.83.zip</a></p>
 <p>첨부하였습니다. 바로 받아주세요~ 2013-08-28 기준 최신 파일입니다.</p>
 <p>다운받은 다음, 압축을 풀어주세요.</p>
 <p>압축 풀면 나오는 폴더의 갯수는 5개정도 되지만, 지금 필요한건 몇 개 안됩니다.</p>
@@ -28,49 +28,52 @@
 <p>scripts폴더에서는 shCore.js와 shLegacy.js는 필수 파일 입니다.</p>
 <p>styles폴더에서는 shCore.css파일과 shThemeDefault.css(또는 shTheme~.css)파일도 무조건 넣어주셔야 합니다.</p>
 <p>그다음 위에 있는 HTML/CSS를 눌러서 html을 수정해 봅시다.</p>
-이라는 코드 아래에 어디든지 아래 코드를 복사해서 추가해 주세요.
-<script type="text/javascript" src="./images/shCore.js"></script>
-<script type="text/javascript" src="./images/shLegacy.js"></script>
-<script type="text/javascript" src="./images/shBrushAppleScript.js"></script>
-<script type="text/javascript" src="./images/shBrushAS3.js"></script>
-<script type="text/javascript" src="./images/shBrushBash.js"></script>
-<script type="text/javascript" src="./images/shBrushColdFusion.js"></script>
-<script type="text/javascript" src="./images/shBrushCpp.js"></script>
-<script type="text/javascript" src="./images/shBrushCSharp.js"></script>
-<script type="text/javascript" src="./images/shBrushCss.js"></script>
-<script type="text/javascript" src="./images/shBrushDelphi.js"></script>
-<script type="text/javascript" src="./images/shBrushDiff.js"></script>
-<script type="text/javascript" src="./images/shBrushErlang.js"></script>
-<script type="text/javascript" src="./images/shBrushGroovy.js"></script>
-<script type="text/javascript" src="./images/shBrushJava.js"></script>
-<script type="text/javascript" src="./images/shBrushJavaFx.js"></script>
-<script type="text/javascript" src="./images/shBrushJScript.js"></script>
-<script type="text/javascript" src="./images/shBrushPerl.js"></script>
-<script type="text/javascript" src="./images/shBrushPhp.js"></script>
-<script type="text/javascript" src="./images/shBrushPlain.js"></script>
-<script type="text/javascript" src="./images/shBrushPowerShell.js"></script>
-<script type="text/javascript" src="./images/shBrushPython.js"></script>
-<script type="text/javascript" src="./images/shBrushRuby.js"></script>
-<script type="text/javascript" src="./images/shBrushSass.js"></script>
-<script type="text/javascript" src="./images/shBrushScala.js"></script>
-<script type="text/javascript" src="./images/shBrushSql.js"></script>
-<script type="text/javascript" src="./images/shBrushVb.js"></script>
-<script type="text/javascript" src="./images/shBrushXml.js"></script>
-<link type="text/css" rel="stylesheet" href="./images/shCore.css">
-<link type="text/css" rel="stylesheet" href="./images/shThemeDefault.css">
-<p>그다음 skin.html의 마지막 부분인   위에 아래 코드를 또 넣어주세요.</p>
-<pre class="brush: javascript">
-<script type="text/javascript">
-SyntaxHighlighter.defaults['toolbar'] = false;
-SyntaxHighlighter.all();
-
-</script>
+<p><code>&#x3C;html></code>이라는 코드 아래에 어디든지 아래 코드를 복사해서 추가해 주세요.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shCore.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shLegacy.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shBrushAppleScript.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shBrushAS3.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shBrushBash.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shBrushColdFusion.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shBrushCpp.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shBrushCSharp.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shBrushCss.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shBrushDelphi.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shBrushDiff.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shBrushErlang.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shBrushGroovy.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shBrushJava.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shBrushJavaFx.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shBrushJScript.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shBrushPerl.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shBrushPhp.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shBrushPlain.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shBrushPowerShell.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shBrushPython.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shBrushRuby.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shBrushSass.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shBrushScala.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shBrushSql.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shBrushVb.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shBrushXml.js"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">link</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/css"</span><span style="color:#6F42C1"> rel</span><span style="color:#24292E">=</span><span style="color:#032F62">"stylesheet"</span><span style="color:#6F42C1"> href</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shCore.css"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">link</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/css"</span><span style="color:#6F42C1"> rel</span><span style="color:#24292E">=</span><span style="color:#032F62">"stylesheet"</span><span style="color:#6F42C1"> href</span><span style="color:#24292E">=</span><span style="color:#032F62">"./images/shThemeDefault.css"</span><span style="color:#24292E">></span></span>
+<span class="line"></span></code></pre>
+<p>그다음 skin.html의 마지막 부분인  <code>&#x3C;/body>&#x3C;/html></code>위에 아래 코드를 또 넣어주세요.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">pre</span><span style="color:#6F42C1"> class</span><span style="color:#24292E">=</span><span style="color:#032F62">"brush: javascript"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"text/javascript"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">SyntaxHighlighter.defaults[</span><span style="color:#032F62">'toolbar'</span><span style="color:#24292E">] </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> false</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">SyntaxHighlighter.</span><span style="color:#6F42C1">all</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"></span></code></pre>
 <p>자 그럼 이제 작업은 끝났습니다.</p>
 <p>이제 게시글을 작성할때 코드를 아래 html 소스 안에 넣어주시면 됩니다.</p>
-<pre class="brush: 언어종류">
-// 코드내용을 이곳에 적습니다
-
-</pre>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">pre</span><span style="color:#6F42C1"> class</span><span style="color:#24292E">=</span><span style="color:#032F62">"brush: 언어종류"</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">// 코드내용을 이곳에 적습니다</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">pre</span><span style="color:#24292E">></span></span>
+<span class="line"></span></code></pre>
 <p>이때 언어종류에는 javascript, c, java등등이 들어갈수 있습니다.</p>
 <p>자세한건 <a href="http://alexgorbatchev.com/SyntaxHighlighter/manual/brushes/">http://alexgorbatchev.com/SyntaxHighlighter/manual/brushes/</a>에서 참조해 주세요.^^</p>
 <ul>
@@ -82,17 +85,15 @@ SyntaxHighlighter.all();
 <p>간단한 프로그램을 찾았습니다.</p>
 <p><a href="http://emflant.tistory.com/42">http://emflant.tistory.com/42</a></p>
 <p>여기서 프로그램의 설명과 방법을 확인하실수 있습니다.</p>
-<pre>를 사용하지 않고 <script>를 사용하면 해결할수 있다고 합니다.
-
-그러나 특정환경(모바일등등)에서는 아에 표시되지 않을 수 있고, 검색봇에게 <script>는 검색하지 않는다는 점이 단점이 되겠습니다.
-
-아래는 <script>로 사용한 코드의 예입니다. (모바일에서는 안보일겁니다, 또는 자바스크립트 사용여부를 확인하세요)
-
-<script type="syntaxhighlighter" class="brush: js">
-
-// 코드를 입력하시면 됩니다
-
-</script>
+<p><code>&#x3C;pre></code>를 사용하지 않고 <code>&#x3C;script></code>를 사용하면 해결할수 있다고 합니다.</p>
+<p>그러나 특정환경(모바일등등)에서는 아에 표시되지 않을 수 있고, 검색봇에게 <code>&#x3C;script></code>는 검색하지 않는다는 점이 단점이 되겠습니다.</p>
+<p>아래는 <code>&#x3C;script></code>로 사용한 코드의 예입니다. (모바일에서는 안보일겁니다, 또는 자바스크립트 사용여부를 확인하세요)</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"syntaxhighlighter"</span><span style="color:#6F42C1"> class</span><span style="color:#24292E">=</span><span style="color:#032F62">"brush: js"</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">// 코드를 입력하시면 됩니다</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"></span></code></pre>
 <p>이런식으로 작성해 주시면 됩니다.</p>
 <p>예제는 <a href="http://alexgorbatchev.com/SyntaxHighlighter/manual/installation.html">http://alexgorbatchev.com/SyntaxHighlighter/manual/installation.html</a>에서 주워왔습니다.</p>
 <p>이글은 [] 에서 다시 보실수 있으며 원본 글의 저작권은 미르에게 있습니다.</p>
@@ -104,7 +105,7 @@ SyntaxHighlighter.all();
 <h2 id="첨부파일">첨부파일</h2>
 <ul>
 <li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/syntaxhighlighter_3.0.83.zip">syntaxhighlighter_3.0.83.zip</a> <code>174 KB</code></li>
-</ul></pre></pre> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
 Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
 itmir.tistory.com
 </a>  · Archived by luminousky
