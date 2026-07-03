@@ -28,20 +28,33 @@
 <p>그럼 그부분에 아래 구문을 넣어주시면 됩니다.</p>
 <blockquote>
 <p>config IOSCHED_SIO</p>
-<p>    tristate “Simple I/O scheduler”</p>
-<p>    default y</p>
-<p>    ---help---</p>
-<p>    The Simple I/O scheduler is an extremely simple scheduler,</p>
-<p>    based on noop and deadline, that relies on deadlines to</p>
-<p>    ensure fairness. The algorithm does not do any sorting but</p>
-<p>    basic merging, trying to keep a minimum overhead. It is aimed</p>
-<p>    mainly for aleatory access devices (eg: flash devices).</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>tristate "Simple I/O scheduler"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>default y</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>---help---</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>The Simple I/O scheduler is an extremely simple scheduler,</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>based on noop and deadline, that relies on deadlines to</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ensure fairness. The algorithm does not do any sorting but</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>basic merging, trying to keep a minimum overhead. It is aimed</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>mainly for aleatory access devices (eg: flash devices).</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>config IOSCHED_VR</p>
-<p>    tristate “V(R) I/O scheduler”</p>
-<p>    default y</p>
-<p>    ---help---</p>
-<p>     Requests are chosen according to SSTF with a penalty of rev_penalty</p>
-<p>     for switching head direction.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>tristate "V(R) I/O scheduler"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>default y</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>---help---</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> Requests are chosen according to SSTF with a penalty of rev_penalty</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> for switching head direction.</span></span>
+<span class="line"><span></span></span></code></pre>
 </blockquote>
 <p>어려우시다면 아래 사진을 봐주시면 이해가 빠르실겁니다.</p>
 <p><img  src="/archive/_astro/io1.Bde4HzgZ_DebIW.webp" alt="" width="591" height="356" loading="lazy" decoding="async"></p>
@@ -51,9 +64,11 @@
 <p>이게 끝나는 부분에 아래 구절을 넣어주시면 됩니다.</p>
 <blockquote>
 <p>config DEFAULT_SIO</p>
-<p>    bool “SIO” if IOSCHED_SIO=y</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>bool "SIO" if IOSCHED_SIO=y</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>config DEFAULT_VR</p>
-<p>    bool “VR” if IOSCHED_VR=y</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>bool "VR" if IOSCHED_VR=y</span></span>
+<span class="line"><span></span></span></code></pre>
 </blockquote>
 <p>아래 사진처럼 choice밑부분에 config DEFAULT를 넣어주시면 완료됩니다.</p>
 <p><img  src="/archive/_astro/io2.DlxxZihP_ZPzE6w.webp" alt="" width="547" height="412" loading="lazy" decoding="async"></p>

@@ -3,18 +3,18 @@
 </a> </div> <p class="post-description">전부터 시도했지만 안됬던게 하나 있었습니다.</p> </header> <div class="post-content"> <p>안녕하세요~</p>
 <p>티스토리 강좌는 오랜만이군요.</p>
 <p>전부터 시도했지만 안됬던게 하나 있었습니다.</p>
-<p>바로 Syntax Highlighter…</p>
+<p>바로 Syntax Highlighter…</p>
 <p>이게 뭐냐면… 티스토리 블로그를 보면 코드소스가 깔끔하게 정리된 블로그가 있습니다.</p>
 <p>이게 부러워서 게속 시도했지만 fail…</p>
 <p>그런대 오늘 성공했습니다!</p>
 <p>그래서 그 방법을 오늘 소개하도록 할까 합니다. ㅎㅎ</p>
-<p>먼저 Syntax Highlighter을 다운받아야 합니다.</p>
-<p>공식 홈페이지 <a href="http://alexgorbatchev.com/SyntaxHighlighter">http://alexgorbatchev.com/SyntaxHighlighter</a>에서 받아도 되고, 아래 첨부파일을 받아도 됩니다.</p>
+<p>먼저 Syntax Highlighter을 다운받아야 합니다.</p>
+<p>공식 홈페이지 <a href="http://alexgorbatchev.com/SyntaxHighlighter">http://alexgorbatchev.com/SyntaxHighlighter</a>에서 받아도 되고, 아래 첨부파일을 받아도 됩니다.</p>
 <p><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/syntaxhighlighter_3.0.83.zip">syntaxhighlighter_3.0.83.zip</a></p>
 <p>첨부하였습니다. 바로 받아주세요~ 2013-08-28 기준 최신 파일입니다.</p>
 <p>다운받은 다음, 압축을 풀어주세요.</p>
 <p>압축 풀면 나오는 폴더의 갯수는 5개정도 되지만, 지금 필요한건 몇 개 안됩니다.</p>
-<p>scripts와 styles가 필요한 폴더입니다.</p>
+<p>scripts와 styles가 필요한 폴더입니다.</p>
 <p>티스토리 관리자 페이지로 가서 Html을 수정해 봅시다.</p>
 <p><img  src="/archive/_astro/1.ClylBcqX_Z1g5COW.webp" alt="" width="780" height="301" loading="lazy" decoding="async"></p>
 <p>사진처럼 들어가 주세요.</p>
@@ -22,9 +22,9 @@
 <p>scripts폴더안에 있는 js파일중 원하는 파일을 업로드 해주세요.</p>
 <p>만약 너무 많다… 그렇다면 필요한 파일만 업로드 해도 됩니다.</p>
 <p>shBrush**.js파일은 나중에 지정할 소스 언어의 종류 입니다.</p>
-<p>shBrushCpp는 C, shBrushJava는 자바, shBrushDiff는 diff죠.</p>
-<p>이렇게 shBrush**.js중에서 자신이 필요한 파일만 업로드해도 됩니다.</p>
-<p>shCore.js같은 파일(shBrush가 없는파일들)은 모두 업로드 해주세요.</p>
+<p>shBrushCpp는 C, shBrushJava는 자바, shBrushDiff는 diff죠.</p>
+<p>이렇게 shBrush**.js중에서 자신이 필요한 파일만 업로드해도 됩니다.</p>
+<p>shCore.js같은 파일(shBrush가 없는파일들)은 모두 업로드 해주세요.</p>
 <p>scripts폴더에서는 shCore.js와 shLegacy.js는 필수 파일 입니다.</p>
 <p>styles폴더에서는 shCore.css파일과 shThemeDefault.css(또는 shTheme~.css)파일도 무조건 넣어주셔야 합니다.</p>
 <p>그다음 위에 있는 HTML/CSS를 눌러서 html을 수정해 봅시다.</p>
@@ -75,13 +75,13 @@
 <span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">pre</span><span style="color:#24292E">></span></span>
 <span class="line"></span></code></pre>
 <p>이때 언어종류에는 javascript, c, java등등이 들어갈수 있습니다.</p>
-<p>자세한건 <a href="http://alexgorbatchev.com/SyntaxHighlighter/manual/brushes/">http://alexgorbatchev.com/SyntaxHighlighter/manual/brushes/</a>에서 참조해 주세요.^^</p>
+<p>자세한건 <a href="http://alexgorbatchev.com/SyntaxHighlighter/manual/brushes/">http://alexgorbatchev.com/SyntaxHighlighter/manual/brushes/</a>에서 참조해 주세요.^^</p>
 <ul>
-<li>모바일 환경에서 코드가 안보일경우 또는 하이라이딩(강조표시)가 안될경우.</li>
+<li>모바일 환경에서 코드가 안보일경우 또는 하이라이딩(강조표시)가 안될경우.</li>
 </ul>
 <p>SyntaxHighlighter의 치명적인 단점이랄까요?</p>
-<p>코드에 &#x3C; 나 >가있으면 작동을 하지 않습니다…;</p>
-<p>&#x3C;는 &#x3C;으로, >는 >으로 치환해 줘야 하는데요.</p>
+<p>코드에 &#x3C; 나 >가있으면 작동을 하지 않습니다…;</p>
+<p>&#x3C;는 &#x3C;으로, >는 >으로 치환해 줘야 하는데요.</p>
 <p>간단한 프로그램을 찾았습니다.</p>
 <p><a href="http://emflant.tistory.com/42">http://emflant.tistory.com/42</a></p>
 <p>여기서 프로그램의 설명과 방법을 확인하실수 있습니다.</p>
@@ -95,12 +95,12 @@
 <span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
 <span class="line"></span></code></pre>
 <p>이런식으로 작성해 주시면 됩니다.</p>
-<p>예제는 <a href="http://alexgorbatchev.com/SyntaxHighlighter/manual/installation.html">http://alexgorbatchev.com/SyntaxHighlighter/manual/installation.html</a>에서 주워왔습니다.</p>
+<p>예제는 <a href="http://alexgorbatchev.com/SyntaxHighlighter/manual/installation.html">http://alexgorbatchev.com/SyntaxHighlighter/manual/installation.html</a>에서 주워왔습니다.</p>
 <p>이글은 [] 에서 다시 보실수 있으며 원본 글의 저작권은 미르에게 있습니다.</p>
 <p>+추가</p>
 <p><a href="http://prev.kr/app/ColorScripter/">http://prev.kr/app/ColorScripter/</a></p>
 <p>ColorScripter라는것도 있습니다.</p>
-<p>이것은 html 자바스크립트를 사용할수 없는 환경, 즉 Syntax Highlighter을 못쓰는 환경에서 사용가능한 방법입니다.</p>
+<p>이것은 html 자바스크립트를 사용할수 없는 환경, 즉 Syntax Highlighter을 못쓰는 환경에서 사용가능한 방법입니다.</p>
 <hr>
 <h2 id="첨부파일">첨부파일</h2>
 <ul>

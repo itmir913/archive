@@ -4,7 +4,7 @@
 <p>글을 작성한지 오래 지난 포스팅의 경우 지금과 다른 점이 생길 수 있습니다.</p>
 <p>블로그에 글이 조금밖에 없는경우에는 직접 살펴볼수도 있지만 100개만 넘어가도 힘든일인데요.</p>
 <p>어떻게 해야 할까 생각하다 정말 좋은 방법이 있어 알려드리려고 합니다.</p>
-<p>먼저 이 글은 뭐하라님의 <a href="http://nubiz.tistory.com/551">http://nubiz.tistory.com/551</a> 글을 바탕으로 작성된 것임을 말씀드립니다.</p>
+<p>먼저 이 글은 뭐하라님의 <a href="http://nubiz.tistory.com/551">http://nubiz.tistory.com/551</a> 글을 바탕으로 작성된 것임을 말씀드립니다.</p>
 <h3 id="완성된-스크린샷-살펴보기">완성된 스크린샷 살펴보기</h3>
 <p>직접 적용한 스크린샷을 확인해보겠습니다.</p>
 <p><img  src="/archive/_astro/preview-pc.nZZJQIKx_1BiFou.webp" alt="" width="837" height="381" loading="lazy" decoding="async"></p>
@@ -17,7 +17,7 @@
 <p>티스토리도 글, 댓글, 방명록등등이 티스토리만의 DB에 저장될 것입니다.</p>
 <p>이 티스토리 DB는 우리들이 임의로 건들수가 없습니다.</p>
 <p>그래서 방문자가 오류를 제보하면 그것을 저장해주는 저장소가 필요합니다.</p>
-<p>이때 구글 스프레드시트를 데이터 저장 용도로 사용할 예정입니다.</p>
+<p>이때 구글 스프레드시트를 데이터 저장 용도로 사용할 예정입니다.</p>
 <p><a href="https://drive.google.com">구글 드라이브(클릭)</a>에 접속하셔서 새로 만들기 - Google 스프레드시트를 선택해주세요.</p>
 <p><img  src="/archive/_astro/google_drive-1.DbTgBz3n_Z13cBj6.webp" alt="" width="283" height="401" loading="lazy" decoding="async"></p>
 <p>또는 바로 <a href="https://docs.google.com/spreadsheets">구글 스프레드시트(클릭)</a>에서 새로 만들기 해주세요.</p>
@@ -26,77 +26,106 @@
 <p>초록색 박스로 둘러싼 “시트1”은 아래에서 중요합니다.</p>
 <p>원하는대로 수정하셔도 되지만, 수정한 다음에는 꼭 기억하세요.</p>
 <p><img  src="/archive/_astro/googlesheets_1.F5D3_3Yc_Z9MGzw.webp" alt="" width="852" height="442" loading="lazy" decoding="async"></p>
-<p>A1부터 C1까지를 각각 Timestamp, path, memo로 체워주세요.</p>
+<p>A1부터 C1까지를 각각 Timestamp, path, memo로 체워주세요.</p>
 <p><img  src="/archive/_astro/googlesheets_1-2.OKcBTnru_lQBhI.webp" alt="" width="352" height="164" loading="lazy" decoding="async"></p>
 <p>그다음에 도구 - 스트립트 편집기를 눌러주세요.</p>
 <p><img  src="/archive/_astro/googlesheets_2.MS91Is7D_Z2dYO3X.webp" alt="" width="160" height="274" loading="lazy" decoding="async"></p>
 <p>그러면 아래와 같은 창이 뜹니다.</p>
-<p>스크립트 만들기 - 빈 프로젝트를 선택해주세요.</p>
+<p>스크립트 만들기 - 빈 프로젝트를 선택해주세요.</p>
 <p><img  src="/archive/_astro/googlesheets_3._rCClt51_ZRWl1a.webp" alt="" width="610" height="497" loading="lazy" decoding="async"></p>
 <p>그럼 아래와 같은 모습이 나타납니다.</p>
 <p><img  src="/archive/_astro/googlesheets_4.Cxl88hOx_uz60L.webp" alt="" width="881" height="357" loading="lazy" decoding="async"></p>
 <p>저기있는 function myFunction() { } 을 모두 지우고 아래 내용을 복사해서 넣어주세요.</p>
-<p>//  1. Enter sheet name where data is to be written below</p>
+<p>//  1. Enter sheet name where data is to be written below</p>
 <p>var SHEET_NAME = “<strong>시트1</strong>”;</p>
-<p>//  2. Run > setup</p>
+<p>//  2. Run > setup</p>
 <p>//</p>
-<p>//  3. Publish > Deploy as web app</p>
-<p>//    - enter Project Version name and click ‘Save New Version’</p>
-<p>//    - set security level and enable service (most likely execute as ‘me’ and access ‘anyone, even anonymously)</p>
+<p>//  3. Publish > Deploy as web app</p>
+<p>//    - enter Project Version name and click ‘Save New Version’</p>
+<p>//    - set security level and enable service (most likely execute as ‘me’ and access ‘anyone, even anonymously)</p>
 <p>//</p>
-<p>//  4. Copy the ‘Current web app URL’ and post this in your form/script action</p>
+<p>//  4. Copy the ‘Current web app URL’ and post this in your form/script action</p>
 <p>//</p>
-<p>//  5. Insert column names on your destination sheet matching the parameter names of the data you are passing in (exactly matching case)</p>
+<p>//  5. Insert column names on your destination sheet matching the parameter names of the data you are passing in (exactly matching case)</p>
 <p>var SCRIPT_PROP = PropertiesService.getScriptProperties(); // new property service</p>
 <p>// If you don’t want to expose either GET or POST methods you can comment out the appropriate function</p>
 <p>function doGet(e){</p>
-<p>  return handleResponse(e);</p>
+<p>return handleResponse(e);</p>
 <p>}</p>
 <p>function doPost(e){</p>
-<p>  return handleResponse(e);</p>
+<p>return handleResponse(e);</p>
 <p>}</p>
 <p>function handleResponse(e) {</p>
-<p>  // shortly after my original solution Google announced the LockService[1]</p>
-<p>  // this prevents concurrent access overwritting data</p>
-<p>  // [1] <a href="http://googleappsdeveloper.blogspot.co.uk/2011/10/concurrency-and-google-apps-script.html">http://googleappsdeveloper.blogspot.co.uk/2011/10/concurrency-and-google-apps-script.html</a></p>
-<p>  // we want a public lock, one that locks for all invocations</p>
-<p>  var lock = LockService.getPublicLock();</p>
-<p>  lock.waitLock(30000);  // wait 30 seconds before conceding defeat.</p>
-<p>  try {</p>
-<p>    // next set where we write the data - you could write to multiple/alternate destinations</p>
-<p>    var doc = SpreadsheetApp.openById(SCRIPT_PROP.getProperty(“key”));</p>
-<p>    var sheet = doc.getSheetByName(SHEET_NAME);</p>
-<p>    // we’ll assume header is in row 1 but you can override with header_row in GET/POST data</p>
-<p>    var headRow = e.parameter.header_row || 1;</p>
-<p>    var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];</p>
-<p>    var nextRow = sheet.getLastRow()+1; // get next row</p>
-<p>    var row = [];</p>
-<p>    // loop through the header columns</p>
-<p>    for (i in headers){</p>
-<p>      if (headers[i] == “Timestamp”){ // special case if you include a ‘Timestamp’ column</p>
-<p>        row.push(new Date());</p>
-<p>      } else { // else use header name to get data</p>
-<p>        row.push(e.parameter[headers[i]]);</p>
-<p>      }</p>
-<p>    }</p>
-<p>    // more efficient to set values as [][] array than individually</p>
-<p>    sheet.getRange(nextRow, 1, 1, row.length).setValues([row]);</p>
-<p>    // return json success results</p>
-<p>    return ContentService</p>
-<p>          .createTextOutput(JSON.stringify({“result”:“success”, “row”: nextRow}))</p>
-<p>          .setMimeType(ContentService.MimeType.JSON);</p>
-<p>  } catch(e){</p>
-<p>    // if error return this</p>
-<p>    return ContentService</p>
-<p>          .createTextOutput(JSON.stringify({“result”:“error”, “error”: e}))</p>
-<p>          .setMimeType(ContentService.MimeType.JSON);</p>
-<p>  } finally { //release lock</p>
-<p>    lock.releaseLock();</p>
-<p>  }</p>
+<p>// shortly after my original solution Google announced the LockService[1]</p>
+<p>// this prevents concurrent access overwritting data</p>
+<p>// [1] <a href="http://googleappsdeveloper.blogspot.co.uk/2011/10/concurrency-and-google-apps-script.html">http://googleappsdeveloper.blogspot.co.uk/2011/10/concurrency-and-google-apps-script.html</a></p>
+<p>// we want a public lock, one that locks for all invocations</p>
+<p>var lock = LockService.getPublicLock();</p>
+<p>lock.waitLock(30000);  // wait 30 seconds before conceding defeat.</p>
+<p>try {</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// next set where we write the data - you could write to multiple/alternate destinations</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>var doc = SpreadsheetApp.openById(SCRIPT_PROP.getProperty("key"));</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>var sheet = doc.getSheetByName(SHEET_NAME);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// we'll assume header is in row 1 but you can override with header_row in GET/POST data</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>var headRow = e.parameter.header_row || 1;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>var nextRow = sheet.getLastRow()+1; // get next row</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>var row = [];</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// loop through the header columns</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>for (i in headers){</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  if (headers[i] == "Timestamp"){ // special case if you include a 'Timestamp' column</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    row.push(new Date());</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  } else { // else use header name to get data</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    row.push(e.parameter[headers[i]]);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// more efficient to set values as [][] array than individually</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>sheet.getRange(nextRow, 1, 1, row.length).setValues([row]);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// return json success results</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return ContentService</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>      .createTextOutput(JSON.stringify({"result":"success", "row": nextRow}))</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>      .setMimeType(ContentService.MimeType.JSON);</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>} catch(e){</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// if error return this</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return ContentService</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>      .createTextOutput(JSON.stringify({"result":"error", "error": e}))</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>      .setMimeType(ContentService.MimeType.JSON);</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>} finally { //release lock</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>lock.releaseLock();</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>}</p>
 <p>}</p>
 <p>function setup() {</p>
-<p>    var doc = SpreadsheetApp.getActiveSpreadsheet();</p>
-<p>    SCRIPT_PROP.setProperty(“key”, doc.getId());</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>var doc = SpreadsheetApp.getActiveSpreadsheet();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>SCRIPT_PROP.setProperty("key", doc.getId());</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>}</p>
 <p>맨위에 있는 시트1은 오류를 기록할 시트의 이름입니다.</p>
 <p>위에서 수정하셨다면 이것도 바꿔주세요.</p>
@@ -113,9 +142,8 @@
 <p>마지막으로 게시 - 웹 앱으로 배포…을 눌러주세요.</p>
 <p><img  src="/archive/_astro/googlesheets_9.Bd-qKqhU_ZoO2Jl.webp" alt="" width="342" height="94" loading="lazy" decoding="async"></p>
 <p>프로젝트 버전 옆 새 버전 저장을 눌러주세요.</p>
-<p><img  src="/archive/_astro/googlesheets_10.WTtfccXv_1Qaif4.webp" alt="" width="447" height="425" loading="lazy" decoding="async">
-   
-<img  src="/archive/_astro/googlesheets_10-2.BIavM2dj_Z29q3g7.webp" alt="" width="445" height="421" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/googlesheets_10.WTtfccXv_1Qaif4.webp" alt="" width="447" height="425" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/googlesheets_10-2.BIavM2dj_Z29q3g7.webp" alt="" width="445" height="421" loading="lazy" decoding="async"></p>
 <p>앱을 실행할 사용자는 ‘나’</p>
 <p>웹에 액세스할 수 있는 사용자는 **누구나(익명 사용자 포함)**으로 꼭 바꿔주세요.</p>
 <p><img  src="/archive/_astro/googlesheets_11.B2y39Ddz_20qEJR.webp" alt="" width="446" height="267" loading="lazy" decoding="async"></p>
@@ -125,106 +153,153 @@
 <h3 id="티스토리-htmlcss-수정하기">티스토리 html/css 수정하기</h3>
 <p>이제 마지막 작업으로 html과 css만 수정해주시면 적용이 완료됩니다.</p>
 <p>오류 제보 버튼 html 소스를 넣고 싶으신 위치에 넣어주시면 됩니다.</p>
-<div id="sendComment">
-<p>  </p><p>오류 제보하기</p><p></p>
-<p>  </p><div><p></p>
-<p>    <input type="checkbox" value="내용상 오류가 있음">내용상 오류가 있음<br></p>
-<p>    <input type="checkbox" value="표시에 문제가 있음">표시에 문제가 있음<br></p>
-<p>    <input type="checkbox" value="기타 수정이 필요함">기타 수정이 필요함<br></p>
-<p>    <textarea placeholder="구체적 내용이나 기타 의견을 남겨주세요."></textarea><br></p>
-<p>    <input type="button" value="보내기" onclick="sendComment();"></p>
-<p>    <a href="http://nubiz.tistory.com/551">(?)</a></p>
-<p>  </p></div><p></p>
-</div>
-<div style="clear:both">
-<p>그다음 skin.html의 부분에 아래 코드를 넣어주시되, 하늘색으로 표시한 부분에는 위에서 복사한 URL을 넣어주세요.</p>
-<p>참고로 맨 위의 첫 줄은 jquery입니다.</p>
-<p>이미 jquery가 적용된 블로그의 경우 맨 윗 줄은 생략하셔야 합니다.</p>
-<script>
-
-//오류제보하기 - http://nubiz.tistory.com/551
-
-$("#sendComment>p").click(function(){
-
-  $("#sendComment>div").toggle(300);
-
-});
-
-function sendComment (){
-
-  $("#sendComment \*").attr("disabled","");
-
-  var errors = []
-
-  $("#sendComment :checkbox:checked").each(function(i){
-
-    errors[i] = $(this).val();
-
-  });
-
-  var comment = $("#sendComment textarea").val();
-
-  $.ajax({
-
-    url: "**https://script.google.com/macros/s/###############################/exec**",
-
-    data: {
-
-      path: decodeURIComponent(location.pathname),
-
-      memo: errors+" / "+comment
-
-    },
-
-    type: "POST",
-
-    success:function(){
-
-      alert("빠른 시일 내에 검토해보겠습니다.\n감사합니다.");
-
-      $("#sendComment :disabled").removeAttr("disabled");
-
-      $("#sendComment textarea").val('');
-
-      $("#sendComment :checkbox").prop("checked",false);
-
-    }
-
-  });
-
-}
-
-</script>
-<p>마지막으로 style.css에 아래 코드를 넣어주세요.</p>
-<p>#sendComment {</p>
-<p>  width:140px;</p>
-<p>  background:#eee;</p>
-<p>  padding:10px;</p>
-<p>  border:#999 solid 1px;</p>
-<p>  font-size:0.8em;</p>
-<p>  float:right;</p>
-<p>}</p>
-<p>#sendComment p {</p>
-<p>  line-height:2em;</p>
-<p>  padding:0; margin:0;</p>
-<p>}</p>
-<p>#sendComment div {</p>
-<p>  display:none;</p>
-<p>}</p>
-<p>#sendComment a {</p>
-<p>  text-decoration:none;</p>
-<p>  color:#aaa;</p>
-<p>  margin-left:65px;</p>
-<p>}</p>
-<p>그러면 모든 작업이 끝납니다.</p>
-<h3 id="어떻게-기록되나요">어떻게 기록되나요?</h3>
-<p>어떻게 기록되는지 궁금해하실까봐 스샷을 하나 더 준비했습니다.</p>
-<p><img  src="/archive/_astro/test.Bstyi5Dr_2eeF2Q.webp" alt="" width="421" height="114" loading="lazy" decoding="async"></p>
-<p><a href="https://docs.google.com/spreadsheets/d/1BkK9_Yozyrzbbv4OVBFjdUCZw7SdYDPERDUs1uCpkgs/pubhtml">https://docs.google.com/spreadsheets/d/1BkK9_Yozyrzbbv4OVBFjdUCZw7SdYDPERDUs1uCpkgs/pubhtml</a></p>
-<p>테스트 해보고 싶으신 분께서는 이 글에 하셔도 좋지만 꼭 테스트라고 말씀해주세요.. ㅎㅎ</p>
-<h3 id="참조">참조</h3>
-<p><a href="http://nubiz.tistory.com/538">http://nubiz.tistory.com/538</a></p>
-<p><a href="http://nubiz.tistory.com/551">http://nubiz.tistory.com/551</a></p></div> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> id</span><span style="color:#24292E">=</span><span style="color:#032F62">"sendComment"</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">  &#x3C;</span><span style="color:#22863A">p</span><span style="color:#24292E">>오류 제보하기&#x3C;/</span><span style="color:#22863A">p</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">  &#x3C;</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">input</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"checkbox"</span><span style="color:#6F42C1"> value</span><span style="color:#24292E">=</span><span style="color:#032F62">"내용상 오류가 있음"</span><span style="color:#24292E">/>내용상 오류가 있음&#x3C;</span><span style="color:#22863A">br</span><span style="color:#24292E">/></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">input</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"checkbox"</span><span style="color:#6F42C1"> value</span><span style="color:#24292E">=</span><span style="color:#032F62">"표시에 문제가 있음"</span><span style="color:#24292E">/>표시에 문제가 있음&#x3C;</span><span style="color:#22863A">br</span><span style="color:#24292E">/></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">input</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"checkbox"</span><span style="color:#6F42C1"> value</span><span style="color:#24292E">=</span><span style="color:#032F62">"기타 수정이 필요함"</span><span style="color:#24292E">/>기타 수정이 필요함&#x3C;</span><span style="color:#22863A">br</span><span style="color:#24292E">/></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">textarea</span><span style="color:#6F42C1"> placeholder</span><span style="color:#24292E">=</span><span style="color:#032F62">"구체적 내용이나 기타 의견을 남겨주세요."</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">textarea</span><span style="color:#24292E">>&#x3C;</span><span style="color:#22863A">br</span><span style="color:#24292E">/></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">input</span><span style="color:#6F42C1"> type</span><span style="color:#24292E">=</span><span style="color:#032F62">"button"</span><span style="color:#6F42C1"> value</span><span style="color:#24292E">=</span><span style="color:#032F62">"보내기"</span><span style="color:#6F42C1"> onclick</span><span style="color:#24292E">=</span><span style="color:#032F62">"</span><span style="color:#6F42C1">sendComment</span><span style="color:#032F62">();"</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">a</span><span style="color:#6F42C1"> href</span><span style="color:#24292E">=</span><span style="color:#032F62">"http://nubiz.tistory.com/551"</span><span style="color:#24292E">>(?)&#x3C;/</span><span style="color:#22863A">a</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">  &#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> style</span><span style="color:#24292E">=</span><span style="color:#032F62">"clear:both"</span><span style="color:#B31D28;font-style:italic"> /</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">`</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">그다음 skin.html의 &#x3C;/</span><span style="color:#22863A">body</span><span style="color:#24292E">>부분에 아래 코드를 넣어주시되, 하늘색으로 표시한 부분에는 위에서 복사한 URL을 넣어주세요.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">참고로 맨 위의 첫 줄은 jquery입니다.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">이미 jquery가 적용된 블로그의 경우 맨 윗 줄은 생략하셔야 합니다.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">//오류제보하기 - http://nubiz.tistory.com/551</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">$</span><span style="color:#24292E">(</span><span style="color:#032F62">"#sendComment>p"</span><span style="color:#24292E">).</span><span style="color:#6F42C1">click</span><span style="color:#24292E">(</span><span style="color:#D73A49">function</span><span style="color:#24292E">(){</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">  $</span><span style="color:#24292E">(</span><span style="color:#032F62">"#sendComment>div"</span><span style="color:#24292E">).</span><span style="color:#6F42C1">toggle</span><span style="color:#24292E">(</span><span style="color:#005CC5">300</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">function</span><span style="color:#6F42C1"> sendComment</span><span style="color:#24292E"> (){</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">  $</span><span style="color:#24292E">(</span><span style="color:#032F62">"#sendComment </span><span style="color:#005CC5">\*</span><span style="color:#032F62">"</span><span style="color:#24292E">).</span><span style="color:#6F42C1">attr</span><span style="color:#24292E">(</span><span style="color:#032F62">"disabled"</span><span style="color:#24292E">,</span><span style="color:#032F62">""</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">  var</span><span style="color:#24292E"> errors </span><span style="color:#D73A49">=</span><span style="color:#24292E"> []</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">  $</span><span style="color:#24292E">(</span><span style="color:#032F62">"#sendComment :checkbox:checked"</span><span style="color:#24292E">).</span><span style="color:#6F42C1">each</span><span style="color:#24292E">(</span><span style="color:#D73A49">function</span><span style="color:#24292E">(</span><span style="color:#E36209">i</span><span style="color:#24292E">){</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    errors[i] </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> $</span><span style="color:#24292E">(</span><span style="color:#005CC5">this</span><span style="color:#24292E">).</span><span style="color:#6F42C1">val</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">  });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">  var</span><span style="color:#24292E"> comment </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> $</span><span style="color:#24292E">(</span><span style="color:#032F62">"#sendComment textarea"</span><span style="color:#24292E">).</span><span style="color:#6F42C1">val</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">  $.</span><span style="color:#6F42C1">ajax</span><span style="color:#24292E">({</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    url: </span><span style="color:#032F62">"**https://script.google.com/macros/s/###############################/exec**"</span><span style="color:#24292E">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    data: {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">      path: </span><span style="color:#6F42C1">decodeURIComponent</span><span style="color:#24292E">(location.pathname),</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">      memo: errors</span><span style="color:#D73A49">+</span><span style="color:#032F62">" / "</span><span style="color:#D73A49">+</span><span style="color:#24292E">comment</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    type: </span><span style="color:#032F62">"POST"</span><span style="color:#24292E">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">    success</span><span style="color:#24292E">:</span><span style="color:#D73A49">function</span><span style="color:#24292E">(){</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">      alert</span><span style="color:#24292E">(</span><span style="color:#032F62">"빠른 시일 내에 검토해보겠습니다.</span><span style="color:#005CC5">\n</span><span style="color:#032F62">감사합니다."</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">      $</span><span style="color:#24292E">(</span><span style="color:#032F62">"#sendComment :disabled"</span><span style="color:#24292E">).</span><span style="color:#6F42C1">removeAttr</span><span style="color:#24292E">(</span><span style="color:#032F62">"disabled"</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">      $</span><span style="color:#24292E">(</span><span style="color:#032F62">"#sendComment textarea"</span><span style="color:#24292E">).</span><span style="color:#6F42C1">val</span><span style="color:#24292E">(</span><span style="color:#032F62">''</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">      $</span><span style="color:#24292E">(</span><span style="color:#032F62">"#sendComment :checkbox"</span><span style="color:#24292E">).</span><span style="color:#6F42C1">prop</span><span style="color:#24292E">(</span><span style="color:#032F62">"checked"</span><span style="color:#24292E">,</span><span style="color:#005CC5">false</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">  });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">script</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">마지막으로 style.css에 아래 코드를 넣어주세요.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">#sendComment {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">  width:140px;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">  background:#eee;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">  padding:10px;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">  border:#999 solid 1px;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">  font-size:0.8em;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">  float:right;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">#sendComment p {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">  line-height:2em;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">  padding:0; margin:0;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">#sendComment div {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">  display:none;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">#sendComment a {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">  text-decoration:none;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">  color:#aaa;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">  margin-left:65px;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">그러면 모든 작업이 끝납니다.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">### 어떻게 기록되나요?</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">어떻게 기록되는지 궁금해하실까봐 스샷을 하나 더 준비했습니다.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">![](./images/test.png)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#B31D28;font-style:italic">https://docs.google.com/spreadsheets/d/1BkK9_Yozyrzbbv4OVBFjdUCZw7SdYDPERDUs1uCpkgs/pubhtml</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">테스트 해보고 싶으신 분께서는 이 글에 하셔도 좋지만 꼭 테스트라고 말씀해주세요.. ㅎㅎ</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">### 참조</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#B31D28;font-style:italic">http://nubiz.tistory.com/538</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#B31D28;font-style:italic">http://nubiz.tistory.com/551</span><span style="color:#24292E">></span></span>
+<span class="line"></span></code></pre> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
 Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
 itmir.tistory.com
 </a>  · Archived by luminousky

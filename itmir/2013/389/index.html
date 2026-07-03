@@ -1,75 +1,136 @@
-<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Preference (프리퍼런스) 데이터 백업 복원 하기"><title>Preference (프리퍼런스) 데이터 백업 복원 하기 — luminousky archive</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.BgW6xfjO.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2012 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">Preference (프리퍼런스) 데이터 백업 복원 하기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-11-24T05:01:04.000Z"> 2013년 11월 24일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/389" class="post-original" target="_blank" rel="noopener noreferrer">
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Android Preference 데이터를 파일로 백업하고 복원하는 코드를 정리했습니다."><title>Preference (프리퍼런스) 데이터 백업 복원 하기 — luminousky archive</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.BgW6xfjO.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2012 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">Preference (프리퍼런스) 데이터 백업 복원 하기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-11-24T05:01:04.000Z"> 2013년 11월 24일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/389" class="post-original" target="_blank" rel="noopener noreferrer">
 원본 보기 ↗
-</a> </div> <p class="post-description">Preference (프리퍼런스) 데이터 백업 복원 하기</p> </header> <div class="post-content"> <p>Preference (프리퍼런스) 데이터 백업 복원 하기</p>
-<p>Preference를 백업하기 위한 코드 입니다</p>
+</a> </div> <p class="post-description">Android Preference 데이터를 파일로 백업하고 복원하는 코드를 정리했습니다.</p> </header> <div class="post-content"> <p>Preference를 백업하기 위한 코드 입니다</p>
 <p>private boolean saveSharedPreferencesToFile(File dst) {</p>
-<p>    boolean res = false;</p>
-<p>    ObjectOutputStream output = null;</p>
-<p>    try {</p>
-<p>        output = new ObjectOutputStream(new FileOutputStream(dst));</p>
-<p>        SharedPreferences pref =</p>
-<p>                            getSharedPreferences(prefName, MODE_PRIVATE);</p>
-<p>        output.writeObject(pref.getAll());</p>
-<p>        res = true;</p>
-<p>    } catch (FileNotFoundException e) {</p>
-<p>        e.printStackTrace();</p>
-<p>    } catch (IOException e) {</p>
-<p>        e.printStackTrace();</p>
-<p>    }finally {</p>
-<p>        try {</p>
-<p>            if (output != null) {</p>
-<p>                output.flush();</p>
-<p>                output.close();</p>
-<p>            }</p>
-<p>        } catch (IOException ex) {</p>
-<p>            ex.printStackTrace();</p>
-<p>        }</p>
-<p>    }</p>
-<p>    return res;</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>boolean res = false;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ObjectOutputStream output = null;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>try {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    output = new ObjectOutputStream(new FileOutputStream(dst));</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    SharedPreferences pref =</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>                        getSharedPreferences(prefName, MODE_PRIVATE);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    output.writeObject(pref.getAll());</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    res = true;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>} catch (FileNotFoundException e) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    e.printStackTrace();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>} catch (IOException e) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    e.printStackTrace();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}finally {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    try {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        if (output != null) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>            output.flush();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>            output.close();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    } catch (IOException ex) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        ex.printStackTrace();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return res;</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>}</p>
 <p>@SuppressWarnings({ “unchecked” })</p>
 <p>private boolean loadSharedPreferencesFromFile(File src) {</p>
-<p>    boolean res = false;</p>
-<p>    ObjectInputStream input = null;</p>
-<p>    try {</p>
-<p>        input = new ObjectInputStream(new FileInputStream(src));</p>
-<p>            Editor prefEdit = getSharedPreferences(prefName, MODE_PRIVATE).edit();</p>
-<p>            prefEdit.clear();</p>
-<p>            Map&#x3C;String, ?> entries = (Map&#x3C;String, ?>) input.readObject();</p>
-<p>            for (Entry&#x3C;String, ?> entry : entries.entrySet()) {</p>
-<p>                Object v = entry.getValue();</p>
-<p>                String key = entry.getKey();</p>
-<p>                if (v instanceof Boolean)</p>
-<p>                    prefEdit.putBoolean(key, ((Boolean) v).booleanValue());</p>
-<p>                else if (v instanceof Float)</p>
-<p>                    prefEdit.putFloat(key, ((Float) v).floatValue());</p>
-<p>                else if (v instanceof Integer)</p>
-<p>                    prefEdit.putInt(key, ((Integer) v).intValue());</p>
-<p>                else if (v instanceof Long)</p>
-<p>                    prefEdit.putLong(key, ((Long) v).longValue());</p>
-<p>                else if (v instanceof String)</p>
-<p>                    prefEdit.putString(key, ((String) v));</p>
-<p>            }</p>
-<p>            prefEdit.commit();</p>
-<p>        res = true;</p>
-<p>    } catch (FileNotFoundException e) {</p>
-<p>        e.printStackTrace();</p>
-<p>    } catch (IOException e) {</p>
-<p>        e.printStackTrace();</p>
-<p>    } catch (ClassNotFoundException e) {</p>
-<p>        e.printStackTrace();</p>
-<p>    }finally {</p>
-<p>        try {</p>
-<p>            if (input != null) {</p>
-<p>                input.close();</p>
-<p>            }</p>
-<p>        } catch (IOException ex) {</p>
-<p>            ex.printStackTrace();</p>
-<p>        }</p>
-<p>    }</p>
-<p>    return res;</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>boolean res = false;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ObjectInputStream input = null;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>try {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    input = new ObjectInputStream(new FileInputStream(src));</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        Editor prefEdit = getSharedPreferences(prefName, MODE_PRIVATE).edit();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        prefEdit.clear();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        Map&#x3C;String, ?> entries = (Map&#x3C;String, ?>) input.readObject();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        for (Entry&#x3C;String, ?> entry : entries.entrySet()) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>            Object v = entry.getValue();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>            String key = entry.getKey();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>            if (v instanceof Boolean)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>                prefEdit.putBoolean(key, ((Boolean) v).booleanValue());</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>            else if (v instanceof Float)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>                prefEdit.putFloat(key, ((Float) v).floatValue());</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>            else if (v instanceof Integer)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>                prefEdit.putInt(key, ((Integer) v).intValue());</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>            else if (v instanceof Long)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>                prefEdit.putLong(key, ((Long) v).longValue());</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>            else if (v instanceof String)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>                prefEdit.putString(key, ((String) v));</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        prefEdit.commit();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    res = true;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>} catch (FileNotFoundException e) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    e.printStackTrace();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>} catch (IOException e) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    e.printStackTrace();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>} catch (ClassNotFoundException e) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    e.printStackTrace();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}finally {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    try {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        if (input != null) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>            input.close();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    } catch (IOException ex) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        ex.printStackTrace();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return res;</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>}</p>
-<p>출처 : <a href="http://stackoverflow.com/questions/10864462/how-can-i-backup-sharedpreferences-to-sd-card">http://stackoverflow.com/questions/10864462/how-can-i-backup-sharedpreferences-to-sd-card</a></p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+<p>출처 : <a href="http://stackoverflow.com/questions/10864462/how-can-i-backup-sharedpreferences-to-sd-card">http://stackoverflow.com/questions/10864462/how-can-i-backup-sharedpreferences-to-sd-card</a></p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
 Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
 itmir.tistory.com
 </a>  · Archived by luminousky

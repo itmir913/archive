@@ -5,7 +5,7 @@
 <p>시험기간때문에…</p>
 <p>아무튼 빨리 시작합니다!!</p>
 <p>참고로 15번 seekbar예제소스는 이 글이 올라가는 즉시 첨부되어 집니다</p>
-<p>이글이 올라와 있다면 <a href="/archive/itmir/2013/347">#15 SeekBar로 화면 밝기 조절해 보자</a> 강좌의 아랫부분에 예제소스가 첨부되어 있는겁니다 ㅎㅎ</p>
+<p>이글이 올라와 있다면 <a href="/archive/itmir/2013/347">#15 SeekBar로 화면 밝기 조절해 보자</a> 강좌의 아랫부분에 예제소스가 첨부되어 있는겁니다 ㅎㅎ</p>
 <p>16번째 이 강좌의 예제소스도 17번째 강좌가 올라오면 첨부되어 집니다</p>
 <h2 id="토글버튼체크박스라디오버튼">토글버튼,체크박스,라디오버튼</h2>
 <h3 id="16-1-뭐지-한번에-3개는">16-1 뭐지 한번에 3개는?</h3>
@@ -21,7 +21,7 @@
 <h3 id="16-2-어떻게-만들어-볼까">16-2 어떻게 만들어 볼까?</h3>
 <p>이 질문의 답은 추후에 여러분이 스스로 답해서 만들어 보세요</p>
 <p>저는 이렇게 답하겠습니다</p>
-<p>“먼저 체크박스에 선택을 하면 나머지 토글버튼, 라디오 버튼이 아래에 나타나고</p>
+<p>“먼저 체크박스에 선택을 하면 나머지 토글버튼, 라디오 버튼이 아래에 나타나고</p>
 <p>각각 선택할때마다 토스트 알림이 나오도록 만들어 보겠습니다”</p>
 <h3 id="16-3-이론적-배경은">16-3 이론적 배경은?</h3>
 <p>없어도 됩니다 ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ</p>
@@ -35,41 +35,59 @@
 <p><img  src="/archive/_astro/3.DuCtnl-K_17gx5q.webp" alt="" width="197" height="235" loading="lazy" decoding="async"></p>
 <p>추가하자 마자 코드를 보면 다음과 같습니다</p>
 <p>&#x3C;RelativeLayout</p>
-<p>    android:layout_width=“wrap_content”</p>
-<p>    android:layout_height=“wrap_content”</p>
-<p>    android:layout_below=”@+id/checkBox1”</p>
-<p>    android:layout_centerHorizontal=“true”</p>
-<p>    android:layout_marginTop=“28dp” ></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>android:layout_width="wrap_content"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_height="wrap_content"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_below="@+id/checkBox1"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_centerHorizontal="true"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_marginTop="28dp" ></span></span>
+<span class="line"><span></span></span></code></pre>
 
 <p>잘 추가되었습니다. ㅎㅎ</p>
 <p>몇가지 수정해봅시다</p>
-<p>일단 크기를 모두 match_parent으로 바꿔줄까요?</p>
+<p>일단 크기를 모두 match_parent으로 바꿔줄까요?</p>
 <p>작으면 추가하기도 힘드니까요ㅋ</p>
 <p>그다음에 id값도 줍시다</p>
 <p>android:id=”@+id/Layout”</p>
 <p>이거면 되겠죠??</p>
 <p>만들어진 코드는 아래와 같습니다</p>
 <p>&#x3C;CheckBox</p>
-<p>    android:id=”@+id/checkBox1”</p>
-<p>    android:layout_width=“wrap_content”</p>
-<p>    android:layout_height=“wrap_content”</p>
-<p>    android:layout_alignParentTop=“true”</p>
-<p>    android:layout_centerHorizontal=“true”</p>
-<p>    android:layout_marginTop=“45dp”</p>
-<p>    android:text=“체크하시면 나타납니다” /></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>android:id="@+id/checkBox1"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_width="wrap_content"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_height="wrap_content"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_alignParentTop="true"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_centerHorizontal="true"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_marginTop="45dp"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:text="체크하시면 나타납니다" /></span></span>
+<span class="line"><span></span></span></code></pre>
 <p>&#x3C;RelativeLayout</p>
-<p>    android:id=”@+id/Layout”</p>
-<p>    android:layout_width=“match_parent”</p>
-<p>    android:layout_height=“match_parent”</p>
-<p>    android:layout_below=”@+id/checkBox1”</p>
-<p>    android:layout_centerHorizontal=“true”</p>
-<p>    android:layout_marginTop=“28dp” ></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>android:id="@+id/Layout"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_width="match_parent"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_height="match_parent"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_below="@+id/checkBox1"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_centerHorizontal="true"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_marginTop="28dp" ></span></span>
+<span class="line"><span></span></span></code></pre>
 
 <p><img  src="/archive/_astro/4.TTwqXl3n_Z4vqvr.webp" alt="" width="256" height="409" loading="lazy" decoding="async"></p>
 <p>호호 잘되어 가고 있군요</p>
 <p>이제 우리는 저 파란상자, 즉 아까 추가한 레이아웃에 필요한 것을 넣을겁니다</p>
 <p>필요한건 3가지</p>
-<p>ToggleButton, RadioGroup, RadioButton입니다</p>
+<p>ToggleButton, RadioGroup, RadioButton입니다</p>
 <p>[미르의 팁]</p>
 <p>Q. 라디오 버튼과 체크박스는 뭐가 다를까요?</p>
 <p>A. 체크박스는 여러개를 선택할수 있습니다</p>
@@ -87,39 +105,56 @@
 <p>…물론 그냥 코드를 던져주진 않을겁니다</p>
 <p>처음 라디오 그룹을 지정할때의 코드입니다</p>
 <p>&#x3C;RadioGroup</p>
-<p>    android:id=”@+id/Radiogroup”</p>
-<p>    android:layout_width=“wrap_content”</p>
-<p>    android:layout_height=“wrap_content”</p>
-<p>    android:layout_below=”@+id/toggleButton1”</p>
-<p>    android:layout_centerHorizontal=“true”</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>android:id="@+id/Radiogroup"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_width="wrap_content"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_height="wrap_content"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_below="@+id/toggleButton1"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_centerHorizontal="true"</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>android:orientation=“vertical”</strong></p>
 <p><strong>android:padding=“5dp”</strong>></p>
 <p>id값 주고있고… 특별한건 일단 두개 말곤 눈에 안틔죠?</p>
 <p>android:orientation은 정렬 방향입니다</p>
 <p>두개가 들어갈수 있는데요 horizontal는 수평(왼쪽에서 오른쪽으로 배열),</p>
 <p>verticall은 수직(위에서 아래로)배열 방법입니다</p>
-<p>우리는 위에서 아래로 배열이 필요하니 verticall을 쓰죠</p>
+<p>우리는 위에서 아래로 배열이 필요하니 verticall을 쓰죠</p>
 <p>android:padding은 여백입니다</p>
 <p>라디오 버튼 사이의 여백을 결정해 줍니다</p>
 <p>그다음!!</p>
 <p>&#x3C;RadioButton</p>
-<p>        android:id=”@+id/radioButton1”</p>
-<p>        android:layout_width=“wrap_content”</p>
-<p>        android:layout_height=“wrap_content”</p>
-<p>        android:layout_marginTop=“27dp”</p>
-<p>        android:text=“남자” /></p>
-<p>    &#x3C;RadioButton</p>
-<p>        android:id=”@+id/radioButton2”</p>
-<p>        android:layout_width=“wrap_content”</p>
-<p>        android:layout_height=“wrap_content”</p>
-<p>        android:layout_alignLeft=”@+id/radioButton1”</p>
-<p>        android:layout_below=”@+id/radioButton1”</p>
-<p>        android:text=“여자” /></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    android:id="@+id/radioButton1"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    android:layout_width="wrap_content"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    android:layout_height="wrap_content"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    android:layout_marginTop="27dp"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    android:text="남자" /></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;RadioButton</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    android:id="@+id/radioButton2"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    android:layout_width="wrap_content"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    android:layout_height="wrap_content"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    android:layout_alignLeft="@+id/radioButton1"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    android:layout_below="@+id/radioButton1"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    android:text="여자" /></span></span>
+<span class="line"><span></span></span></code></pre>
 <p>요놈들은 뭐…</p>
 <p>설명할게 없네요</p>
-<p><radiobutton>인것 말고는 모두 <button>과 같으니 말이죠 ㅋㅋ<p></p>
+<p><code>&#x3C;RadioButton></code>인것 말고는 모두 <code>&#x3C;Button></code>과 같으니 말이죠 ㅋㅋ</p>
 <p>마지막으로 라디오 그룹을 닫아줘야 하므로</p>
-
+<p><code>&#x3C;/RadioGroup></code></p>
 <p>을 입력해 주세요!!!!</p>
 <p>이제 레이아웃은 다 짠거 같네요</p>
 <p><img  src="/archive/_astro/6.YF1CW0cu_2iXoqE.webp" alt="" width="257" height="410" loading="lazy" decoding="async"></p>
@@ -163,8 +198,8 @@
 <p>setOnCheckedChangeListener</p>
 <p>뜻 그대로 체크가 변경될때마다 확인할 리스너를 결정하는 일입니다</p>
 <p>버튼만들때 많이 만져봤죠?</p>
-<p>체크박스를 해제/선택할때마다 리스너 안에있는 onCheckedChanged 메소드가 실행됩니다</p>
-<p>체크박스가 선택되어 있다면 isChecked의 값은 true가 됩니다</p>
+<p>체크박스를 해제/선택할때마다 리스너 안에있는 onCheckedChanged 메소드가 실행됩니다</p>
+<p>체크박스가 선택되어 있다면 isChecked의 값은 true가 됩니다</p>
 <p>즉 체크되어 있다면!!!! if구문에 의해 레이아웃이 화면에 보여지게 됩니다 (setVisibility)</p>
 <p>반대로 체크 해제를 한다면 isChecked의 값이 false가 되므로</p>
 <p>레이아웃이 화면에 안보이게 되죠</p>
@@ -208,7 +243,7 @@
 <p>위에서 설명을 안한거 같습니다만… 라디오 버튼은 여러개중 <strong>한개</strong>만 선택가능합니다</p>
 <p>체크박스는 여러개를 동시에 선택이 가능하지만 라디오 버튼은 단 한개!!!</p>
 <p>코드는 체크박스와 비슷하나.. int checkedId를 주목해 주세요</p>
-<p>이 리스너의 onCheckedChanged메소드는 체크한 라디오 버튼의 id값을 넘겨주는군요</p>
+<p>이 리스너의 onCheckedChanged메소드는 체크한 라디오 버튼의 id값을 넘겨주는군요</p>
 <p>switch문으로 id값을 확인하여 토스트 메세지를 띄워주고 있습니다 ㅎㅎ</p>
 <p>자, 끝났습니다 코드도!!</p>
 <p>설명이 부족하거나 어려운건 알려주세요~</p>
@@ -216,24 +251,22 @@
 <p><img  src="/archive/_astro/Screenshot_2013-10-04-18-32-21.CFsdBC6C_Z1WXMYj.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
 <p><img  src="/archive/_astro/Screenshot_2013-10-04-18-32-26.ANX6-9Le_La47q.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
 <p>체크하면 정상적으로 나머지 것들이 표시됩니다 ㅎㅎ</p>
-<p><img  src="/archive/_astro/Screenshot_2013-10-04-18-32-34.BEFJRA1I_rjURx.webp" alt="" width="250" height="111" loading="lazy" decoding="async">
-  
-<img  src="/archive/_astro/Screenshot_2013-10-04-18-32-38.B3nifWlw_ZyEu66.webp" alt="" width="250" height="90" loading="lazy" decoding="async"></p>
-<p><img  src="/archive/_astro/Screenshot_2013-10-04-18-32-43.DxZDNF7u_1f20w7.webp" alt="" width="250" height="101" loading="lazy" decoding="async">
-  
-<img  src="/archive/_astro/Screenshot_2013-10-04-18-32-46.BDLWgoc8_Z1x6I7o.webp" alt="" width="250" height="96" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/Screenshot_2013-10-04-18-32-34.BEFJRA1I_rjURx.webp" alt="" width="250" height="111" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/Screenshot_2013-10-04-18-32-38.B3nifWlw_ZyEu66.webp" alt="" width="250" height="90" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/Screenshot_2013-10-04-18-32-43.DxZDNF7u_1f20w7.webp" alt="" width="250" height="101" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/Screenshot_2013-10-04-18-32-46.BDLWgoc8_Z1x6I7o.webp" alt="" width="250" height="96" loading="lazy" decoding="async"></p>
 <p>테스트 결과, 정상적으로 동작하는것을 확인할수 있습니다!!</p>
 <p>이렇게 한시간 반에 걸쳐 강좌가 끝났습니다 ㅎ..</p>
 <p>강좌 하나 쓰는건 한시간 반에서 두시간.. 덧글은 1초!!</p>
 <p>정성을 생각해서라도 따뜻한 덧글 달아주세요~</p>
 <p>그리고 이번 강좌는 설명이 뭔가 자신이 없네요;</p>
-<p>설명이 오락가락 한거 같은데 이해 안된거 있으시면 꼭!! 알려주세요!!</p>
+<p>설명이 오락가락 한거 같은데 이해 안된거 있으시면 꼭!! 알려주세요!!</p>
 <p><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/Example16.zip">Example16.zip</a></p>
 <hr>
 <h2 id="첨부파일">첨부파일</h2>
 <ul>
 <li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/Example16.zip">Example16.zip</a> <code>1.3 MB</code></li>
-</ul></button></radiobutton></p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
 Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
 itmir.tistory.com
 </a>  · Archived by luminousky

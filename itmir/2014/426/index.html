@@ -15,12 +15,10 @@
 <p>따라서 오늘 약 2시간의 뻘짓결과 수정을 모두 마쳐 넥서스S에서도 정상 작동을 하기에 수정본 업로드 합니다</p>
 <p>스크린샷 - 넥서스S</p>
 <p><img  src="/archive/_astro/Screenshot_2014-01-10-17-49-44.DzKEMq9Z_Okllw.webp" alt="" width="118" height="117" loading="lazy" decoding="async"></p>
-<p><img  src="/archive/_astro/Screenshot_2014-01-10-17-42-04.Dssl4meg_Z1kRovf.webp" alt="" width="400" height="666" loading="lazy" decoding="async">
-   
-<img  src="/archive/_astro/Screenshot_2014-01-10-17-43-34.ByobRgu7_29h9Gf.webp" alt="" width="400" height="666" loading="lazy" decoding="async"></p>
-<p><img  src="/archive/_astro/Screenshot_2014-01-10-17-44-24.DMJzhT9N_Zcacod.webp" alt="" width="400" height="666" loading="lazy" decoding="async">
-   
-<img  src="/archive/_astro/Screenshot_2014-01-10-17-44-36.D2Wbmjdj_26Qbhs.webp" alt="" width="400" height="666" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/Screenshot_2014-01-10-17-42-04.Dssl4meg_Z1kRovf.webp" alt="" width="400" height="666" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/Screenshot_2014-01-10-17-43-34.ByobRgu7_29h9Gf.webp" alt="" width="400" height="666" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/Screenshot_2014-01-10-17-44-24.DMJzhT9N_Zcacod.webp" alt="" width="400" height="666" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/Screenshot_2014-01-10-17-44-36.D2Wbmjdj_26Qbhs.webp" alt="" width="400" height="666" loading="lazy" decoding="async"></p>
 <p>2014-01-04 수정내역</p>
 <p>-홈화면 런처에 키보드 설정 아이콘 추가 (ㅈ..절때로 웃음투자님의 LG키보드 따라한거 아닙니다 ㅎㅎ;;)</p>
 <p>-hdpi기종에서 확인/취소 버튼이 짤려 안보이던 문제 일부 수정</p>
@@ -46,28 +44,36 @@
 <p>E/AndroidRuntime( 3612): <strong>java.lang.UnsatisfiedLinkError: Cannot load library: load_library(linker.cpp:771): library “/system/lib/libdhwr.so” not found</strong></p>
 <p>E/AndroidRuntime( 3612): at java.lang.Runtime.load(Runtime.java:340)</p>
 <p>E/AndroidRuntime( 3612): at java.lang.System.load(System.java:507)</p>
-<p>여기서 /system/lib/libdhwr.so 보이시나요?</p>
-<p>강제종료가 났던 원인은 /system/lib/libdhwr.so파일이 없었기 때문입니다</p>
+<p>여기서 /system/lib/libdhwr.so 보이시나요?</p>
+<p>강제종료가 났던 원인은 /system/lib/libdhwr.so파일이 없었기 때문입니다</p>
 <p>그래서 덧글을 달아주신 분들중 저 so 파일을 lib폴더에 넣어주면 작동이 되는 분들이 계신거 였고요 (넥스에도 넣으면 작동됨)</p>
 <p>하지만 제가 만들고 싶은건 “순정”에서 돌아가는 전기종 어플 이므로 찾아봤습니다</p>
-<p>이상한건 어플내/lib/armeabi-v7a폴더에 libdhwr.so파일이 분명 있었습니다</p>
+<p>이상한건 어플내/lib/armeabi-v7a폴더에 libdhwr.so파일이 분명 있었습니다</p>
 <p>원래 저기서 가져와야 하는게 맞는대 이상하게 /system/lib폴더를 찾고 있었습니다</p>
 <p>아무리 뒤져봐도 해결이 안나오니 classes.dex를 java코드로 변환하서 뒤져봤습니다</p>
-<p>libjni_skyime.so를 호출하는 java는 com/pantech/inputmethod/skyime/Utils이더라고요</p>
+<p>libjni_skyime.so를 호출하는 java는 com/pantech/inputmethod/skyime/Utils이더라고요</p>
 <p>smali를 java로 변환한 코드입니다</p>
 <p>public static void <strong>loadNativeLibrary()</strong>{</p>
-<p>    try{</p>
-<p>        if (SkyIMEData.USE_SYSTEM_LIBRARY){</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>try{</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    if (SkyIMEData.USE_SYSTEM_LIBRARY){</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>System.loadLibrary</strong>(“jni_skyime”);</p>
-<p>            return;</p>
-<p>        }</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>        return;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>System.load</strong>(“/data/data/com.pantech.inputmethod.skyime/lib/libjni_skyime.so”);</p>
-<p>        return;</p>
-<p>    }catch (UnsatisfiedLinkError localUnsatisfiedLinkError){</p>
-<p>        Log.e(TAG, “Could not load native library jni_skyime”);</p>
-<p>    }</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    return;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}catch (UnsatisfiedLinkError localUnsatisfiedLinkError){</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    Log.e(TAG, "Could not load native library jni_skyime");</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>}</p>
-<p>여기서 System.loadLibrary()와 System.load()의 차이를 알았습니다</p>
+<p>여기서 System.loadLibrary()와 System.load()의 차이를 알았습니다</p>
 <p>System.loadLibrary() : path를 기준으로 찾음, 경로를 설정할 필요가 없음</p>
 <p>System.load() : 절대 경로로 찾음, 파일위치가 필요</p>
 <p>저 굵은 부분 코드를 smali로 보면 아래와 같습니다</p>
@@ -79,46 +85,59 @@
 <p>com/pantech/inputmethod/keyboard/ProximityInfo</p>
 <p>com/pantech/inputmethod/skyime/BinaryDictionary</p>
 <p>두곳입니다</p>
-<p>그다음 libdhwr.so를 검색하면 com/diotek/dhwr/DHWR.smali에서 찾을수 있습니다</p>
+<p>그다음 libdhwr.so를 검색하면 com/diotek/dhwr/DHWR.smali에서 찾을수 있습니다</p>
 <p>static{</p>
-<p>    String str = <strong>GetLibraryPath</strong>(“4.00”);</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>String str = **GetLibraryPath**("4.00");</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>if (str != null)</strong></p>
 <p><strong>System.load(str);</strong></p>
 <p>while (true){</p>
-<p>        DTYPE_NONE = BIT_FLAG(0);</p>
-<p>        DTYPE_MULTI_CHARS = BIT_FLAG(1);</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    DTYPE_NONE = BIT_FLAG(0);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    DTYPE_MULTI_CHARS = BIT_FLAG(1);</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>생략</p>
-<p>        mResult = new Result();</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    mResult = new Result();</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>return;</strong></p>
 <p><strong>System.loadLibrary(“dhwr”);</strong></p>
-<p>        // 리턴하면 그 아래에 있는 코드는 쓸모가 없죠…</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    // 리턴하면 그 아래에 있는 코드는 쓸모가 없죠...</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>}</p>
 <p>}</p>
 <p>…</p>
 <p>public static String GetLibraryPath(String paramString){</p>
-<p>    if (new File(“/data/data/com.diotek.dhwr.addon/lib/libdhwr.so”).exists());</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>if (new File("/data/data/com.diotek.dhwr.addon/lib/libdhwr.so").exists());</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>label135:</p>
 <p>while (true)</p>
-<p>   try{</p>
-<p>            FileInputStream localFileInputStream = new FileInputStream(“/data/data/com.diotek.dhwr.addon/lib/libdhwrex.so”);</p>
-<p>            byte[] arrayOfByte = new byte[localFileInputStream.available()];</p>
-<p>            localFileInputStream.read(arrayOfByte, 0, arrayOfByte.length);</p>
-<p>            String[] arrayOfString = new String(arrayOfByte, “ascii”).split(”\.”);</p>
-<p>            if (arrayOfString.length != 3)</p>
-<p>   break label135;</p>
-<p>            if (paramString.compareTo(arrayOfString[0] + ”.” + arrayOfString[1]) != 0){</p>
-<p>   break label135;</p>
-<p>                localFileInputStream.close();</p>
+<p>try{</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>        FileInputStream localFileInputStream = new FileInputStream("/data/data/com.diotek.dhwr.addon/lib/libdhwrex.so");</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        byte[] arrayOfByte = new byte[localFileInputStream.available()];</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        localFileInputStream.read(arrayOfByte, 0, arrayOfByte.length);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        String[] arrayOfString = new String(arrayOfByte, "ascii").split("\\.");</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        if (arrayOfString.length != 3)</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>break label135;</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>        if (paramString.compareTo(arrayOfString[0] + "." + arrayOfString[1]) != 0){</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>break label135;</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>            localFileInputStream.close();</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>return “/system/lib/libdhwr.so”;</strong></p>
 <p>}</p>
 <p>Integer.parseInt(arrayOfString[2]);</p>
 <p>continue;</p>
 <p>}catch (Exception localException){</p>
-<p>   continue;</p>
+<p>continue;</p>
 <p>}</p>
 <p>}</p>
-<p>초반부분쯤 GetLibraryPath()메소드를 호출하고 그게 null값이 아니라면 System.load();를 하고 있어요</p>
-<p>그런대 GetLibraryPath()이 조금 이상합니다 그래서 해석 포기</p>
+<p>초반부분쯤 GetLibraryPath()메소드를 호출하고 그게 null값이 아니라면 System.load();를 하고 있어요</p>
+<p>그런대 GetLibraryPath()이 조금 이상합니다 그래서 해석 포기</p>
 <p>아무튼 /system/lib/libdhwr.so가 리턴되서 System.load()에 들어가게 되는대…</p>
 <p>이 파일이 없는 기기들이 있었죠?</p>
 <p>그래서 강종 오류가 떴던거 같습니다</p>
@@ -129,7 +148,7 @@
 <p>invoke-static {v1}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V</p>
 <p>로 바꿔줍니다</p>
 <p>이상…!!</p>
-<p>출처 : <a href="http://www.androidpub.com/2256339">http://www.androidpub.com/2256339</a></p>
+<p>출처 : <a href="http://www.androidpub.com/2256339">http://www.androidpub.com/2256339</a></p>
 <p><a href="http://www.androidpub.com/2256339">http://blog.naver.com/todangs/80133439961</a></p>
 <p><a href="http://www.androidpub.com/2256339">http://blog.naver.com/lestat85/150167148465</a></p>
 <hr>

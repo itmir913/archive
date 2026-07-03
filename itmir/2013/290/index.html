@@ -49,7 +49,7 @@
 <p><img  src="/archive/_astro/2-4.ByneWRgn_ZNQXIg.webp" alt="" width="549" height="241" loading="lazy" decoding="async"></p>
 <p>자! 여기에는 TextView라는것이 있어요! 이게 화면에 표시해 주는건가봐요. ㅋㅋㅋㅎㅎ</p>
 <p>그런대 여기에도 hello World! 라는건 없습니다…</p>
-<p>다만 android:text=“@string/hello_world”라는것만 있군요.</p>
+<p>다만 android:text=“@string/hello_world”라는것만 있군요.</p>
 <p>@string은 res/values/string.xml에서 값을 참조한다는 뜻입니다.</p>
 <p>그럼 확인해 봐야겠지요??</p>
 <p><img  src="/archive/_astro/2-5.DTT_Xhmo_1r1rY1.webp" alt="" width="657" height="132" loading="lazy" decoding="async"></p>
@@ -62,10 +62,10 @@
 <p>안드로이드는 AndroidManifest.xml에 나와있는 Activity를 실행합니다.</p>
 </li>
 <li>
-<p>MainActivity.java파일은 setContentView(R.layout.activity_main);코드로 res/layout/activity_main.xml을 호출합니다. (1번 위, 3번)</p>
+<p>MainActivity.java파일은 setContentView(R.layout.activity_main);코드로 res/layout/activity_main.xml을 호출합니다. (1번 위, 3번)</p>
 </li>
 <li>
-<p>activity_main.xml파일에서는 android:text=“@string/hello_world”구문으로 res/values/string.xml의 값을 참조 합니다. (1번 아래, 4번)</p>
+<p>activity_main.xml파일에서는 android:text=“@string/hello_world”구문으로 res/values/string.xml의 값을 참조 합니다. (1번 아래, 4번)</p>
 </li>
 <li>
 <p>hello_world로 설정된 값을 activity_main에 준다음, 완성된 화면을 MainActivity.java에 보내줍니다. (2번)</p>
@@ -85,15 +85,15 @@
 <p><img  src="/archive/_astro/%EB%B2%88%EC%99%B8.BEB5c-hU_18fc87.webp" alt="" width="639" height="734" loading="lazy" decoding="async"></p>
 <p>OK 누르면 완료됩니다</p>
 <p>그럼 이제 어플에 추가하고 바꿔볼까요?</p>
-<p>-<string name="hello\_world">Hello world!</string></p>
-<p>+<string name="hello\_world">미르의 안드로이드 정복기!</string></p>
+<p>-<string name="hello_world">Hello world!</string></p>
+<p>+<string name="hello_world">미르의 안드로이드 정복기!</string></p>
 <p>-는 제거, +는 추가란 뜻으로 git써보신적 있으시다면 바로 아실겁니다. ㅎㅎ</p>
 <p>원래는 values-ko폴더를 만들어서 넣지만 지금은 그냥 넣어보겠습니다.</p>
 <p>참고로 values폴더는 en(영어), 모든 언어의 기준 string을 기록하며.</p>
 <p>values-(나라 코드)는 만약 시스탬이 (나라코드)일경우 이 언어를 사용하라~ 라는 뜻입니다.</p>
 <p>이제 activity_main.xml으로 돌아와서 아래에 있는 Graphical Layout(그래픽 레이아웃)을 눌러주세요.</p>
 <p><img  src="/archive/_astro/2-7.DmbdGxxT_1KX7oV.webp" alt="" width="579" height="243" loading="lazy" decoding="async"></p>
-<p>정상적으로 변경되었습니다. ㅎㅎ</p>
+<p>정상적으로 변경되었습니다. ㅎㅎ</p>
 <p>이로써 values/string.xml을 수정하면 표시되는 글자를 변경할 수 있다라는 사실을 배웠습니다.</p>
 <p>이렇게 해서 4번째 강좌가 끝났습니다ㅎ..</p>
 <p>설명을 쉽게 한다 해도 어려운 부분이 꼭 있습니다.</p>

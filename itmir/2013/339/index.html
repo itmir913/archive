@@ -31,30 +31,43 @@
 <p>from distutils.core import setup</p>
 <p>import py2exe</p>
 <p>excludes = [</p>
-<p>    “pywin”,</p>
-<p>    “pywin.debugger”,</p>
-<p>    “pywin.debugger.dbgcon”,</p>
-<p>    “pywin.dialogs”,</p>
-<p>    “pywin.dialogs.list”,</p>
-<p>    “win32com.server”,</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"pywin",</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>"pywin.debugger",</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>"pywin.debugger.dbgcon",</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>"pywin.dialogs",</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>"pywin.dialogs.list",</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>"win32com.server",</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>]</p>
 <p>options = {</p>
-<p>    “bundle_files”: 1,                 # create singlefile exe</p>
-<p>    “compressed”  : 1,                 # compress the library archive</p>
-<p>    “excludes”    : excludes,</p>
-<p>    “dll_excludes”: [“w9xpopen.exe”]   # we don’t need this</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"bundle_files": 1,                 # create singlefile exe</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>"compressed"  : 1,                 # compress the library archive</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>"excludes"    : excludes,</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>"dll_excludes": ["w9xpopen.exe"]   # we don't need this</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>}</p>
 <p>setup(</p>
-<p>    options = {“py2exe”: options},</p>
-<p>    zipfile = None,</p>
-<p>    console = [“컴파일할파일명.py”]</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>options = {"py2exe": options},</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>zipfile = None,</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>console = ["컴파일할파일명.py"]</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>)</p>
 <p>아까 만든 make.py의 내용을 위와 같이 바꿔주세요.</p>
 <p>위와 마찬가지로</p>
 <p>C:\Python27\python.exe make.py (만들어질 이름).exe</p>
-<p>이렇게 입력하면 dist폴더에 한개의 exe가 생성됩니다.</p>
+<p>이렇게 입력하면 dist폴더에 한개의 exe가 생성됩니다.</p>
 <p><a href="./files/make.py">make.py</a></p>
-<p>출처 : <a href="http://huddling.tistory.com/5">http://huddling.tistory.com/5</a></p>
+<p>출처 : <a href="http://huddling.tistory.com/5">http://huddling.tistory.com/5</a></p>
 <hr>
 <h2 id="첨부파일">첨부파일</h2>
 <ul>

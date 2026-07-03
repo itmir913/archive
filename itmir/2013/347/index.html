@@ -52,15 +52,22 @@
 <p>seekbar.setOnSeekBarChangeListener(new SeekBar_Listener());</p>
 <p>위처럼 class를 새로 만들어서 리스너를 만들수 있습니다</p>
 <p>class SeekBar_Listener implements OnSeekBarChangeListener {</p>
-<p>        public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {</p>
-<p>        }</p>
-<p>        public void onStartTrackingTouch(SeekBar seekBar) {</p>
-<p>        }</p>
-<p>        public void onStopTrackingTouch(SeekBar seekBar) {</p>
-<p>        }</p>
-<p>    }</p>
-<p>그러나 우리는 이렇게 class라는걸 따로 안만들고 setOnSeekBarChangeListener에 바로 리스너 메소드를 연결해 보겠습니다</p>
-<p>(위 하얀박스 코드를 그대로 복사하는 멍청이는 없길 설명을 똑바로 안들었단 소리입니다)</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    public void onStartTrackingTouch(SeekBar seekBar) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    public void onStopTrackingTouch(SeekBar seekBar) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>그러나 우리는 이렇게 class라는걸 따로 안만들고 setOnSeekBarChangeListener에 바로 리스너 메소드를 연결해 보겠습니다</p>
+<p>(위 하얀박스 코드를 그대로 복사하는 멍청이는 없길 설명을 똑바로 안들었단 소리입니다)</p>
 <p>seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {</p>
 <p>@Override</p>
 <p>public void onStartTrackingTouch(SeekBar seekBar) {</p>
@@ -84,8 +91,8 @@
 <p>setOnSeekBarChangeListener을 연결하며 바로 작업할 내용을 지정해 주고있는데요</p>
 <p>하얀박스와 차이점은 하얀박스는 아래에서 또는 딴곳에서 리스너를 생성하고, 방금 본 소스는 리스너를 지정하며 바로 할 작업을 명시해 주는겁니다</p>
 <p>위치의 차이만 있을뿐 같답니다~</p>
-<p>주로 사용하는 메소드인 onProgressChanged에다가 화면 밝기를 바꾸는 소스를 넣어보겠습니다</p>
-<p>onProgressChanged()안에 있는 int progress를 보시면 굵은글씨로 해뒀는데요</p>
+<p>주로 사용하는 메소드인 onProgressChanged에다가 화면 밝기를 바꾸는 소스를 넣어보겠습니다</p>
+<p>onProgressChanged()안에 있는 int progress를 보시면 굵은글씨로 해뒀는데요</p>
 <p>현재 SeekBar의 진행 정도를 표시하는 값입니다</p>
 <p>max를 100으로 지정했으니 최대로 올리면 저 값은 100이 되고 가장 아래로 바꾸면 0이 됩니다</p>
 <p>저 메소드 안에 아래 코드를 넣어보겠습니다</p>
@@ -117,10 +124,16 @@
 <li>
 <p>seekbar.setOnSeekBarChangeListener를 이용해 시크바의 값이 변할때마다 어떤 작업을 할건지를 결정할수 있다</p>
 </li>
+<li>
+<p>onStartTrackingTouch는 터치해서 끌기 시작할때 호출되는 메소드다</p>
+</li>
+<li>
+<p>onStopTrackingTouch는 onStartTrackingTouch와 정반대 메소드이다</p>
+</li>
+<li>
+<p>onProgressChanged는 값이 변할때마다 실행되는 메소드이고, 가장 자주 쓰이는 메소드이다</p>
+</li>
 </ol>
-<p>3. onStartTrackingTouch는 터치해서 끌기 시작할때 호출되는 메소드다</p>
-<p>4. onStopTrackingTouch는 onStartTrackingTouch와 정반대 메소드이다</p>
-<p>5. onProgressChanged는 값이 변할때마다 실행되는 메소드이고, 가장 자주 쓰이는 메소드이다</p>
 <p>WindowManager.LayoutParams params = getWindow().getAttributes();</p>
 <p>params.screenBrightness = (float) progress / 100;</p>
 <p>getWindow().setAttributes(params);</p>
@@ -129,21 +142,22 @@
 <p>간단한 SeekBar라고 해도 배울께 많습니다</p>
 <p>전 최선을 다해 쉽게 풀어쓰려고 하는대…잘 이해가 되는지 모르겠네요</p>
 <p>이해 안되는 부분 질문해 주시면 감사드리겠습니다~(정리 6번은 이해 안되도 정상입니다)</p>
-<p>예제소스는 강좌16편이 나올때 이 부분에 업로드 됩니다</p>
+<p>예제소스는 강좌16편이 나올때 이 부분에 업로드 됩니다</p>
 <p>즉 이 Text아래에 첨부되어 집니다</p>
 <p><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleSeekbar.zip">ExampleSeekbar.zip</a></p>
 <p>[참고] - 시스탬 화면 밝기를 조절하는 방법은 무엇일까요?</p>
 <p>안드로이드의 화면 밝기 값은 실제로는 두가지가 있습니다</p>
 <p>이 강좌에서 배운 윈도우 매니저를 이용한 방법과 실제 화면 밝기 설정 값입니다</p>
 <p>실제 화면 밝기를 조절하는 방법은 아래와 같습니다</p>
-<uses-permission android:name="android.permission.WRITE\_SETTINGS">
+<uses-permission android:name="android.permission.WRITE_SETTINGS">
 <p>import android.provider.Settings;</p>
 <p>Settings.System.putInt(getContentResolver(), “screen_brightness”, 0~255);</p>
 <p>화면 밝기 설정값은 0~255로 설정할수 있습니다</p>
 <p>그러나 윈도우 매니저의 밝기 값은 0~100(%)이며, 0을 입력할경우 화면이 꺼져버립니다</p>
 <p>참고로 자동 밝기 상태인지 확인후, 자동밝기가 아닐경우 설정하는 코드는 아래와 같습니다</p>
 <p>if(Settings.System.getInt(getContentResolver(), Settings.System.SCREEN_BRIGHTNESS_MODE) != 1)</p>
-<p>    Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_BRIGHTNESS_MODE, 1);</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_BRIGHTNESS_MODE, 1);</span></span>
+<span class="line"><span></span></span></code></pre>
 <hr>
 <h2 id="첨부파일">첨부파일</h2>
 <ul>

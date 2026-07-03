@@ -45,9 +45,9 @@
 <p>Notification notification = new Notification(icon, tickerText, when);</p>
 <p>이런 형식으로 되어 있습니다</p>
 <ul>
-<li>Icon : 알림의 아이콘 입니다</li>
+<li>Icon : 알림의 아이콘 입니다</li>
 <li>tickerText : 잠시 표시될 글자입니다 예를 들자면 “새로운 메시지가 도착했습니다”</li>
-<li>when : 알림이 표시될 시간입니다 밀리 세컨드초 단위로, System.currentTimeMillis()를 입력하면 지금 당장이 됩니다</li>
+<li>when : 알림이 표시될 시간입니다 밀리 세컨드초 단위로, System.currentTimeMillis()를 입력하면 지금 당장이 됩니다</li>
 </ul>
 <p>그다음 flags를 봅시다</p>
 <p>플래그는 아래가 있는데요 보통 일반 알림인지, 진행중 알림인지 선택할때 사용합니다</p>
@@ -55,7 +55,7 @@
 <li>FLAG_AUTO_CANCEL : 알림을 터치하면 사라짐</li>
 <li>FLAG_ONGOING_EVENT : 진행중 알림</li>
 </ul>
-<p>4번째줄의 notification.defaults는 있어도 되고 없어도 됩니다</p>
+<p>4번째줄의 notification.defaults는 있어도 되고 없어도 됩니다</p>
 <p>전 소리와 진동을 사용할것이기 때문에 저런 속성을 주었고요 진동만, 또는 소리만 하는 방법은 아래와 같아요</p>
 <ul>
 <li>notification.defaults = Notification.DEFAULT_SOUND ;</li>
@@ -63,8 +63,8 @@
 </ul>
 <p>그 아래의 number는 미확인 알림의 개수라고 생각하시면 됩니다</p>
 <p>999이상은 999+라고 표시되는것 같습니다 참고하세요</p>
-<p>6번째 줄의 PendingIntent는 자세하게 설명은 힘드나 알림을 터치하면 실행할 액티비티(또는 서비스)를 지정해 주고 있어요</p>
-<p>마지막의 PendingIntent.FLAG_UPDATE_CURRENT에 대해 조금 보충해 드리자면</p>
+<p>6번째 줄의 PendingIntent는 자세하게 설명은 힘드나 알림을 터치하면 실행할 액티비티(또는 서비스)를 지정해 주고 있어요</p>
+<p>마지막의 PendingIntent.FLAG_UPDATE_CURRENT에 대해 조금 보충해 드리자면</p>
 <ul>
 <li>FLAG_CANCEL_CURRENT : 이전에 생성한 PendingIntent 는 취소하고 새롭게 만듭니다</li>
 <li>FLAG_NO_CREATE : 생성된 PendingIntent를 반환하여 재사용 합니다</li>
@@ -77,13 +77,13 @@
 <li>context : context객체, this (Context에 대해 이해하려면 골치아파요)</li>
 <li>contentTitle : 상단바 알림 제목</li>
 <li>contentText : 상단바 알림 내용</li>
-<li>contentIntent : 실행할 작업이 담긴 PendingIntent</li>
+<li>contentIntent : 실행할 작업이 담긴 PendingIntent</li>
 </ul>
-<p>마지막으로 notify에 대해 설명드리겠습니다</p>
+<p>마지막으로 notify에 대해 설명드리겠습니다</p>
 <p>nm.notify(id, notification)</p>
 <ul>
 <li>id : 알림을 구분할 상수, 알림을 지울때 이 id가 필요합니다</li>
-<li>notification : 위에서 만든 notification 객체</li>
+<li>notification : 위에서 만든 notification 객체</li>
 </ul>
 <p>자, API설명이 모두 끝났습니다</p>
 <p>스크린샷은 아래와 같아요</p>
@@ -120,16 +120,16 @@
 <p>mBuilder의 옵션을 하나씩 살펴볼께요</p>
 <ul>
 <li>setSmallIcon : 아이콘입니다 구 소스의 icon이랑 같습니다</li>
-<li>setTicker : 알림이 뜰때 잠깐 표시되는 Text이며, 구 소스의 tickerText이랑 같습니다</li>
-<li>setWhen : 알림이 표시되는 시간이며, 구 소스의 when이랑 같습니다</li>
-<li>setNumber : 미확인 알림의 개수이며, 구 소스의 notification.number랑 같습니다</li>
-<li>setContentTitle : 상단바 알림 제목이며, 구 소스의 contentTitle랑 같습니다</li>
-<li>setContentText : 상단바 알림 내용이며, 구 소스의 contentText랑 같습니다</li>
-<li>setDefaults : 기본 설정이며, 구 소스의 notification.defaults랑 같습니다</li>
-<li>setContentIntent : 실행할 작업이 담긴 PendingIntent이며, 구 소스의 contentIntent랑 같습닏</li>
-<li>setAutoCancel : 터치하면 자동으로 지워지도록 설정하는 것이며, 구 소스의 FLAG_AUTO_CANCEL랑 같습니다</li>
-<li>setPriority : 우선순위입니다, 구 소스의 notification.priority랑 같습니다만 구글 개발자 API를 보면 API 16이상부터 사용이 가능하다고 합니다</li>
-<li>setOngoing : 진행중알림 이며, 구 소스의 FLAG_ONGOING_EVENT랑 같습니다</li>
+<li>setTicker : 알림이 뜰때 잠깐 표시되는 Text이며, 구 소스의 tickerText이랑 같습니다</li>
+<li>setWhen : 알림이 표시되는 시간이며, 구 소스의 when이랑 같습니다</li>
+<li>setNumber : 미확인 알림의 개수이며, 구 소스의 notification.number랑 같습니다</li>
+<li>setContentTitle : 상단바 알림 제목이며, 구 소스의 contentTitle랑 같습니다</li>
+<li>setContentText : 상단바 알림 내용이며, 구 소스의 contentText랑 같습니다</li>
+<li>setDefaults : 기본 설정이며, 구 소스의 notification.defaults랑 같습니다</li>
+<li>setContentIntent : 실행할 작업이 담긴 PendingIntent이며, 구 소스의 contentIntent랑 같습닏</li>
+<li>setAutoCancel : 터치하면 자동으로 지워지도록 설정하는 것이며, 구 소스의 FLAG_AUTO_CANCEL랑 같습니다</li>
+<li>setPriority : 우선순위입니다, 구 소스의 notification.priority랑 같습니다만 구글 개발자 API를 보면 API 16이상부터 사용이 가능하다고 합니다</li>
+<li>setOngoing : 진행중알림 이며, 구 소스의 FLAG_ONGOING_EVENT랑 같습니다</li>
 <li>addAction : 알림에서 바로 어떤 활동을 할지 선택하는 것이며, 스샷찍은다음 삭제/공유 같은것이 이에 해당합니다</li>
 </ul>
 <p>Builder에서 사용되는 대표적인, 또는 대부분의 옵션을 살펴봤어요</p>
@@ -140,7 +140,7 @@
 <p>스크린샷이랑 코드설명이랑 함께 보시면 더 확실히 알수 있을것입니다</p>
 <h3 id="26-5-compatbuilder를-이용한-알림방식">26-5 CompatBuilder를 이용한 알림방식</h3>
 <p>Builder가 4.1부터만 되기 때문에 그 아래 버전은 사용이 불가능합니다</p>
-<p>그래서 호환성을 위해 NotificationCompat.Builder라는것이 존재한다고 합니다</p>
+<p>그래서 호환성을 위해 NotificationCompat.Builder라는것이 존재한다고 합니다</p>
 <p>만… Builder랑 차이가 없습니다</p>
 <p>그래서 코드만 드리고 지나가도록 하겠습니다</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">NotificationManager nm </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (NotificationManager) </span><span style="color:#6F42C1">getSystemService</span><span style="color:#24292E">(Context.NOTIFICATION_SERVICE);</span></span>
@@ -175,13 +175,13 @@
 <span class="line"></span></code></pre>
 <p>큰 사진을 표시할때 사용할수 있습니다</p>
 <p>기본적인 뼈대는 Builder와 완벽하게 같으며 그 아래에 위 코드만 추가해 주시면 됩니다</p>
-<p>일단 Builder와 속성이 모두 같기 때문에 Notification.BigPictureStyle(3번줄)의 속성만 언급하겠습니다</p>
+<p>일단 Builder와 속성이 모두 같기 때문에 Notification.BigPictureStyle(3번줄)의 속성만 언급하겠습니다</p>
 <ul>
-<li>setBigContentTitle : 알림을 늘린후, 제목입니다</li>
+<li>setBigContentTitle : 알림을 늘린후, 제목입니다</li>
 <li>setSummaryText : 알림을 늘린후, 내용입니다</li>
 <li>bigPicture : 표시할 사진을 입력해 주면 됩니다</li>
 </ul>
-<p>그다음 8번줄을 보시면 setStyle이라고 나와 있습니다</p>
+<p>그다음 8번줄을 보시면 setStyle이라고 나와 있습니다</p>
 <p>… 아시겠죠 말안해도?ㅋㅋ</p>
 <p>bigPicture은 스크린샷 찍은후 사용되는 방법입니다</p>
 <p>아래는 스크린샷 입니다</p>
@@ -256,7 +256,7 @@
 <span class="line"><span style="color:#24292E">    }</span></span>
 <span class="line"><span style="color:#24292E">}).</span><span style="color:#6F42C1">start</span><span style="color:#24292E">();</span></span>
 <span class="line"></span></code></pre>
-<p>첫번째줄의 setProgress는 ProgressBar에서 많이 본것 맞죠?ㅋㅋ</p>
+<p>첫번째줄의 setProgress는 ProgressBar에서 많이 본것 맞죠?ㅋㅋ</p>
 <p>mBuilder.setProgress(max, progress, indeterminate)</p>
 <ul>
 <li>max : ProgressBar의 최대 값입니다, android:max와 같습니다</li>
@@ -344,12 +344,12 @@
 <span class="line"><span style="color:#24292E">    }</span></span>
 <span class="line"><span style="color:#24292E">}).</span><span style="color:#6F42C1">start</span><span style="color:#24292E">();</span></span>
 <span class="line"></span></code></pre>
-<p>7번의 RemoteViews에 대한 자세한 지식은 <a href="http://huewu.blog.me/110089286698">http://huewu.blog.me/110089286698</a>를 참조해 주세요</p>
-<p>14번에서 contentView = mRemoteView이렇게 되어 있는데요</p>
-<p>이제부터 setProgress는 contentView를 이용해 진행됩니다</p>
+<p>7번의 RemoteViews에 대한 자세한 지식은 <a href="http://huewu.blog.me/110089286698">http://huewu.blog.me/110089286698</a>를 참조해 주세요</p>
+<p>14번에서 contentView = mRemoteView이렇게 되어 있는데요</p>
+<p>이제부터 setProgress는 contentView를 이용해 진행됩니다</p>
 <p>contentView에 대해서는 커스텀 알림 만들기 강좌에 나올것 같습니다</p>
 <p>커스텀 알림이란 지금 배우는 모든 형식을 안쓰고 도돌폰같이 직접 디자인 하는겁니다 ㅎㅎ</p>
-<p>아무튼 리모트뷰와 contentView를 이용해서 프로그래스바를 조절합니다</p>
+<p>아무튼 리모트뷰와 contentView를 이용해서 프로그래스바를 조절합니다</p>
 <p>25~26을 봐주세요</p>
 <p>GB에서는 이런 방식으로 프로그래스바를 돌려야 합니다</p>
 <p>그래서 모양도 ICS보다 안이뻐요</p>
@@ -364,7 +364,7 @@
 <p>강좌 하나 쓰는거 너무 힘듭니다 ㅠㅠ</p>
 <p>그럼 설 잘보내세요~~</p>
 <p><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleNofitication.zip">ExampleNofitication.zip</a></p>
-<p>참조 : <a href="http://androidhuman.com/507">http://androidhuman.com/507</a></p>
+<p>참조 : <a href="http://androidhuman.com/507">http://androidhuman.com/507</a></p>
 <p><a href="http://stunstun.tistory.com/101">http://stunstun.tistory.com/101</a></p>
 <p><a href="http://darksilber.tistory.com/114">http://darksilber.tistory.com/114</a></p>
 <p><a href="http://aroundck.tistory.com/2134">http://aroundck.tistory.com/2134</a></p>

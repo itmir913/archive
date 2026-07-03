@@ -1,30 +1,48 @@
-<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="public  void volumeDown(View v){"><title>볼륨 조절 메소드 — luminousky archive</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.BgW6xfjO.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2012 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">볼륨 조절 메소드</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-07-07T08:01:01.000Z"> 2013년 7월 7일 </time> <span class="post-category">Application</span> <a href="https://itmir.tistory.com/262" class="post-original" target="_blank" rel="noopener noreferrer">
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="public  void volumeDown(View v){"><title>볼륨 조절 메소드 — luminousky archive</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.BgW6xfjO.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2012 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">볼륨 조절 메소드</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-07-07T08:01:01.000Z"> 2013년 7월 7일 </time> <span class="post-category">Application</span> <a href="https://itmir.tistory.com/262" class="post-original" target="_blank" rel="noopener noreferrer">
 원본 보기 ↗
-</a> </div> <p class="post-description">public  void volumeDown(View v){</p> </header> <div class="post-content"> <p>// 볼륨 낮추는 메소드</p>
-<p>public  void volumeDown(View v){</p>
-<p>    AudioManager am = (AudioManager)getSystemService(Context.AUDIO_SERVICE);</p>
-<p>    // 현재 볼륨 가져오기</p>
-<p>    int volume = am.getStreamVolume(AudioManager.STREAM_MUSIC); //volume은 0~15 사이어야 함</p>
-<p>    // volume이 0보다 클 때만 키우기 동작</p>
-<p>    if(volume > 0) {</p>
-<p>        am.setStreamVolume(AudioManager.STREAM_MUSIC, volume-1, AudioManager.FLAG_PLAY_SOUND);</p>
-<p>    }else {</p>
-<p>        Toast.makeText(getApplicationContext(), “현재 최저음량입니다.”, Toast.LENGTH_SHORT).show();</p>
-<p>    }</p>
+</a> </div> <p class="post-description">public  void volumeDown(View v){</p> </header> <div class="post-content"> <p>// 볼륨 낮추는 메소드</p>
+<p>public  void volumeDown(View v){</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>AudioManager am = (AudioManager)getSystemService(Context.AUDIO_SERVICE);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 현재 볼륨 가져오기</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>int volume = am.getStreamVolume(AudioManager.STREAM_MUSIC); //volume은 0~15 사이어야 함</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// volume이 0보다 클 때만 키우기 동작</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>if(volume > 0) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    am.setStreamVolume(AudioManager.STREAM_MUSIC, volume-1, AudioManager.FLAG_PLAY_SOUND);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}else {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    Toast.makeText(getApplicationContext(), "현재 최저음량입니다.", Toast.LENGTH_SHORT).show();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>}</p>
 <p>// 볼륨 높이는 메소드</p>
-<p>public  void volumeUp(View v){</p>
-<p>    AudioManager am = (AudioManager)getSystemService(Context.AUDIO_SERVICE);</p>
-<p>    // 현재 볼륨 가져오기</p>
-<p>    int volume = am.getStreamVolume(AudioManager.STREAM_MUSIC);</p>
-<p>     // volume이 15보다 작을 때만 키우기 동작</p>
-<p>    if(volume &#x3C; 15) {</p>
-<p>        am.setStreamVolume(AudioManager.STREAM_MUSIC, volume+1, AudioManager.FLAG_PLAY_SOUND);</p>
-<p>    }else {</p>
-<p>        Toast.makeText(getApplicationContext(), “현재 최고음량입니다.”, Toast.LENGTH_SHORT).show();</p>
-<p>    }</p>
+<p>public  void volumeUp(View v){</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>AudioManager am = (AudioManager)getSystemService(Context.AUDIO_SERVICE);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 현재 볼륨 가져오기</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>int volume = am.getStreamVolume(AudioManager.STREAM_MUSIC);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> // volume이 15보다 작을 때만 키우기 동작</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>if(volume &#x3C; 15) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    am.setStreamVolume(AudioManager.STREAM_MUSIC, volume+1, AudioManager.FLAG_PLAY_SOUND);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}else {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    Toast.makeText(getApplicationContext(), "현재 최고음량입니다.", Toast.LENGTH_SHORT).show();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>}</p>
-<p>출처 : <a href="http://iamsungeun.blog.me/100191287357">http://iamsungeun.blog.me/100191287357</a></p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+<p>출처 : <a href="http://iamsungeun.blog.me/100191287357">http://iamsungeun.blog.me/100191287357</a></p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
 Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
 itmir.tistory.com
 </a>  · Archived by luminousky

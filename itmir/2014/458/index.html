@@ -15,15 +15,15 @@
 <p><img  src="/archive/_astro/Screenshot_2014-01-30-16-04-10.DIgcAt-6_2oei8y.webp" alt="" width="400" height="354" loading="lazy" decoding="async"></p>
 <p>이 강좌를 모두 마스터 한다면 위 사진처럼 진짜 문자 전송이 되는 앱을 만들수 있습니다</p>
 <p>AndroidManifest.xml에 아래 권한을 추가해주세요</p>
-<uses-permission android:name="android.permission.SEND\_SMS">
-<uses-permission android:name="android.permission.RECEIVE\_SMS">
-<uses-permission android:name="android.permission.READ\_PHONE\_STATE">
+<uses-permission android:name="android.permission.SEND_SMS">
+<uses-permission android:name="android.permission.RECEIVE_SMS">
+<uses-permission android:name="android.permission.READ_PHONE_STATE">
 <h3 id="27-2-main-layout">27-2 Main Layout</h3>
 <p>오랜만에 메인 레이아웃부터 시작해보겠습니다</p>
 <p>필수로 있어야 하는건 “받는사람 번호”와 “보낼 메세지”, “전송 버튼”정도 인데요</p>
 <p>저는 TextView, EditText, TextView, EditText, Button순으로 배치했습니다</p>
-<p>각자 알아서 마음대로 배치하되, 두개의 EditText의 id값은 각각 smsNumber, smsText으로 하고</p>
-<p>Button은 android:onClick=“sendSMS”속성을 넣어줍시다</p>
+<p>각자 알아서 마음대로 배치하되, 두개의 EditText의 id값은 각각 smsNumber, smsText으로 하고</p>
+<p>Button은 android:onClick=“sendSMS”속성을 넣어줍시다</p>
 <h3 id="27-3-문자를-전송하자">27-3 문자를 전송하자</h3>
 <p>findViewById는 모두 생략하겠습니다</p>
 <p>onClick에 맞게 메소드를 하나 만들어 보겠습니다</p>
@@ -51,9 +51,9 @@
 <p>sendTextMessage에대해 조금 알아보겠습니다</p>
 <ul>
 <li>destinationAddress : 받는사람의 Phone Number입니다 신기하게도 String형식입니다</li>
-<li>scAddress : 이건 잘 모르겠습니다 일단 null을 입력해 주세요 (구글API : is the service center address or null to use the current default SMSC)</li>
+<li>scAddress : 이건 잘 모르겠습니다 일단 null을 입력해 주세요 (구글API : is the service center address or null to use the current default SMSC)</li>
 <li>text : 문자의 내용입니다</li>
-<li>sentIntent : 문자 전송에 관련한 PendingIntent입니다 null을 넣어도 되지만 저는 전송 확인결과를 알아보기 위해 이것도 사용할 예정입니다</li>
+<li>sentIntent : 문자 전송에 관련한 PendingIntent입니다 null을 넣어도 되지만 저는 전송 확인결과를 알아보기 위해 이것도 사용할 예정입니다</li>
 <li>deliveryIntent : 문자 도착에 관련한 PendingIntent라고 합니다 null을 넣어도 되지만 한번 이것도 사용해 보겠습니다</li>
 </ul>
 <p>그럼 sendSMS()를 살펴보겠습니다</p>
@@ -109,7 +109,7 @@
 <span class="line"><span style="color:#24292E">    mSmsManager.</span><span style="color:#6F42C1">sendTextMessage</span><span style="color:#24292E">(smsNumber, </span><span style="color:#005CC5">null</span><span style="color:#24292E">, smsText, sentIntent, deliveredIntent);</span></span>
 <span class="line"><span style="color:#24292E">}</span></span>
 <span class="line"></span></code></pre>
-<p>두번째~세번째 줄의 PendingIntent에 대해 따로 때어내어 설명하도록 하겠습니다</p>
+<p>두번째~세번째 줄의 PendingIntent에 대해 따로 때어내어 설명하도록 하겠습니다</p>
 <p>PendingIntent sentIntent = PendingIntent.getBroadcast(this, 0, new Intent(“SMS_SENT_ACTION”), 0);</p>
 <p>PendingIntent deliveredIntent = PendingIntent.getBroadcast(this, 0, new Intent(“SMS_DELIVERED_ACTION”), 0);</p>
 <p>각각 위에서부터 문자 전송, 문자 수신에 관련하여 sendTextMessage()에 넘겨줄 값들입니다</p>
@@ -117,7 +117,7 @@
 <p>그 아래에 있는 코드들을 보면 registerReceiver가 있고, new IntentFilter()가 있습니다</p>
 <p>registerReceiver는 우리 브로드캐스트리시버할때 한번 사용한 적이 있습니다</p>
 <p>BroadCast를 등록해 주는 역할을 했었는데요</p>
-<p>그 아래의 IntentFilter도 그 강좌에서 한 적이 잇습니다</p>
+<p>그 아래의 IntentFilter도 그 강좌에서 한 적이 잇습니다</p>
 <p><a href="/archive/itmir/2014/424">[Development/App] - #24 Broadcast Receiver로 문자(SMS) 수신해보자</a></p>
 <p><img  src="/archive/_astro/%EC%BA%A1%EC%B2%98.CqdHu4f0_1dVwb2.webp" alt="" width="721" height="442" loading="lazy" decoding="async"></p>
 <p>뭐.. 이런씩으로 말이죠</p>
@@ -250,11 +250,16 @@
 <p>브로드캐스트에서 액티비티를 실행하므로 setFlags를 이용합니다</p>
 <p>마지막으로 액티비티를 실행하면 브로드캐스트로 할일은 끝입니다</p>
 <p>AndroidManifest.xml에 방금 만든 브로드캐스트를 등록합시다</p>
-<receiver android:name="whdghks913.tistory.examplesendsms.SMSBroadCast">
-<p>    <intent-filter android:priority="9999"></intent-filter></p>
-<p>        <action android:name="android.provider.Telephony.SMS\_RECEIVED"></action></p>
-<p>    </p>
-</receiver>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">receiver</span><span style="color:#6F42C1"> android:name</span><span style="color:#24292E"> =</span><span style="color:#032F62">"whdghks913.tistory.examplesendsms.SMSBroadCast"</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">intent-filter</span><span style="color:#6F42C1"> android:priority</span><span style="color:#24292E">=</span><span style="color:#032F62">"9999"</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#22863A">action</span><span style="color:#6F42C1"> android:name</span><span style="color:#24292E">=</span><span style="color:#032F62">"android.provider.Telephony.SMS_RECEIVED"</span><span style="color:#24292E"> /></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;/</span><span style="color:#22863A">intent-filter</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">receiver</span><span style="color:#24292E">></span></span>
+<span class="line"></span></code></pre>
 <h3 id="27-5-문자를-수신하자---activity편">27-5 문자를 수신하자 - Activity편</h3>
 <p>java파일을 하나 만들어 주세요 이름은 ShowSMSActivity.java입니다</p>
 <p>이 java파일에는 아래 코드만 추가해 주면 끝입니다</p>
@@ -278,9 +283,8 @@
 <activity android:name="whdghks913.tistory.examplesendsms.ShowSMSActivity">
 <p>이제 완성입니다~~</p>
 <p>작동 결과를 확인해 봅시다</p>
-<p><img  src="/archive/_astro/Screenshot_2014-01-30-15-56-11.Dyuji53X_ZxLNxw.webp" alt="" width="400" height="711" loading="lazy" decoding="async">
-    
-<img  src="/archive/_astro/Screenshot_2014-01-30-15-56-29.BFji-U2I_ZBWBeo.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/Screenshot_2014-01-30-15-56-11.Dyuji53X_ZxLNxw.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/Screenshot_2014-01-30-15-56-29.BFji-U2I_ZBWBeo.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
 <p>문자전송과 수신이 모두 정상적으로 이루어 지는것을 확인해 볼수 있습니다~</p>
 <p>요즘 강좌 길이가 상상을 초월할 정도로 길어져서 제가 무슨말 하는지도 못알아 먹을때가 있어요 ㅠㅠ</p>
 <p>정성 가득 썼는데 글이 무시(?)당할때도 있는 것 같아요…</p>
@@ -290,7 +294,7 @@
 <p>이 강좌의 예제소스는 28번 강좌가 나오는 즉시 업로드 됩니다</p>
 <p>카페에서는 원본글에서만 다운로드가 가능합니다</p>
 <p><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleSendSMS.zip">ExampleSendSMS.zip</a></p>
-<p>참조 : <a href="http://developer.android.com/reference/android/telephony/gsm/SmsManager.html">http://developer.android.com/reference/android/telephony/gsm/SmsManager.html</a></p>
+<p>참조 : <a href="http://developer.android.com/reference/android/telephony/gsm/SmsManager.html">http://developer.android.com/reference/android/telephony/gsm/SmsManager.html</a></p>
 <p>/archive/itmir/2014/424</p>
 <hr>
 <h2 id="첨부파일">첨부파일</h2>

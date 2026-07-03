@@ -19,7 +19,7 @@
 <p>즉, 안드로이드에서 보내주는 이벤트를 수신해서 처리하는 곳이 바로 브로드캐스트리시버 입니다</p>
 <p>그리고 브로드캐스트리시버는 우선순위에 따라 순차적으로 메세지가 전달됩니다</p>
 <p>가장 우선순위가 높은 리시버에게 이벤트를 보내고, 그아래, 그아래…으로 전달됩니다</p>
-<p>이 BroadcastReceiver는 정적 리시버와 동적 리시버로 나눌수 있는데요</p>
+<p>이 BroadcastReceiver는 정적 리시버와 동적 리시버로 나눌수 있는데요</p>
 <p>정적 리시버는 AndroidManifest.xml에 등록하며, 동적 리시버는 매니페스트에 등록하지 않습니다</p>
 <h3 id="24-2-broadcast-receiver에서-받을수-있는-이벤트는-무엇이-있나요">24-2 Broadcast Receiver에서 받을수 있는 이벤트는 무엇이 있나요?</h3>
 <p>브로드캐스트에서 받을수 있는 액션이 무엇이 있는지 조금만 살펴보겠습니다</p>
@@ -67,10 +67,14 @@
 <p>import android.content.Context;</p>
 <p>import android.content.Intent;</p>
 <p>public class Broadcast extends <strong>BroadcastReceiver</strong> {</p>
-<p>    @Override</p>
-<p>    public void <strong>onReceive</strong>(Context context, Intent intent) {</p>
-<p>    // 수신한 액션을 이 onReceive메소드에서 처리하게 됩니다</p>
-<p>    }</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>@Override</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>public void **onReceive**(Context context, Intent intent) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 수신한 액션을 이 onReceive메소드에서 처리하게 됩니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>}</p>
 <p>달랑 메소드 하나만 있습니다</p>
 <p>저 onReceive메소드에서 액션을 수신하여 처리할 코드를 입력해 주면 되는데요</p>
@@ -79,16 +83,20 @@
 <p>으로 어떤 액션인지 알수 있습니다</p>
 <p>예를들어 화면 on, off, 부팅 완료, sms수신의 경우</p>
 <p>if (<strong>Intent.ACTION_BOOT_COMPLETED</strong>.equals(intent.getAction())){</p>
-<p>    // 부팅완료</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// 부팅완료</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>}</p>
 <p>if (<strong>Intent.ACTION_SCREEN_ON</strong> == intent.getAction()) {</p>
-<p>    // 화면 켜짐</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// 화면 켜짐</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>}</p>
 <p>if (<strong>Intent.ACTION_SCREEN_OFF</strong> == intent.getAction()) {</p>
-<p>    // 화면 꺼짐</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// 화면 꺼짐</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>}</p>
 <p>if (<strong>“android.provider.Telephony.SMS_RECEIVED”</strong>.equals(intent.getAction())) {</p>
-<p>    // sms 수신</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// sms 수신</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>}</p>
 <p>이렇게 if문을 통해 구현해 주시면 됩니다 (이때 ==이나 equals나 상관이 없다고합니다만 잘 모르겠네요)</p>
 <p>참고로 Intent.ACTION_BOOT_COMPLETED이나 “android.intent.action.BOOT_COMPLETED”이나 같다고 합니다만 전자는 java에서, 후자는 xml에서 자주 보이는군요</p>
@@ -108,24 +116,32 @@
 <h3 id="24-4-androidmanifestxml에-등록하자-정적-등록">24-4 AndroidManifest.xml에 등록하자 (정적 등록)</h3>
 <p>정적 등록이라는건 한번 등록하면 수정이 안됩니다 (무조건 수신)</p>
 <p>그러나 java에서 등록하면 xml보다 유동적으로 등록/해제가 가능합니다</p>
-<p>사실 브로드캐스트는 등록할 필요가 그닥 없으며, xml에 등록을 해도 받지 못하는 액션도 있습니다</p>
+<p>사실 브로드캐스트는 등록할 필요가 그닥 없으며, xml에 등록을 해도 받지 못하는 액션도 있습니다</p>
 <p>그런 액션은 동적으로 등록해야 합니다 (24-5 참조)</p>
 <p>한번 등록해 봅시다</p>
-<receiver android:name="whdghks913.tistory.examplebroadcastreceiver.Broadcast">
-<p>    &#x3C;intent-filter <strong>android:priority=“9999”</strong>></p>
-<p>        <action android:name="**android.intent.action.BOOT\_COMPLETED**"></action></p>
-<p>        <action android:name="**android.provider.Telephony.SMS\_RECEIVED**"></action></p>
-<p>    </p>
-</receiver>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">receiver</span><span style="color:#6F42C1"> android:name</span><span style="color:#24292E"> =</span><span style="color:#032F62">"whdghks913.tistory.examplebroadcastreceiver.Broadcast"</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">intent-filter</span><span style="color:#6F42C1"> android:priority</span><span style="color:#24292E">=</span><span style="color:#032F62">"9999"</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#22863A">action</span><span style="color:#6F42C1"> android:name</span><span style="color:#24292E">=</span><span style="color:#032F62">"android.intent.action.BOOT_COMPLETED"</span><span style="color:#24292E">/></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#22863A">action</span><span style="color:#6F42C1"> android:name</span><span style="color:#24292E">=</span><span style="color:#032F62">"android.provider.Telephony.SMS_RECEIVED"</span><span style="color:#24292E"> /></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;/</span><span style="color:#22863A">intent-filter</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">receiver</span><span style="color:#24292E">></span></span>
+<span class="line"></span></code></pre>
 <p>receiver를 등록하였습니다</p>
-<p>저기서 android:priority는 우선순위로, 숫자가 높을수록 우선순위가 높습니다</p>
+<p>저기서 android:priority는 우선순위로, 숫자가 높을수록 우선순위가 높습니다</p>
 <p>우선순위가 높은 리시버 부터 순차적으로 메세지가 전달됩니다</p>
 <p>그런대 화면 on, off는 없네요?</p>
-<p>그것은 위에서 말했드시 일부 액션은 xml에 등록해도 액션을 받을수 없습니다</p>
-<p>그러므로 아래에서 살펴볼 registerReceiver()메소드를 이용해 등록해야만 합니다</p>
-<p>마지막으로 부팅완료와 sms수신은 권한이 필요합니다</p>
-<uses-permission android:name="android.permission.RECEIVE\_BOOT\_COMPLETED">
-<uses-permission android:name="android.permission.RECEIVE\_SMS">
+<p>그것은 위에서 말했드시 일부 액션은 xml에 등록해도 액션을 받을수 없습니다</p>
+<p>그러므로 아래에서 살펴볼 registerReceiver()메소드를 이용해 등록해야만 합니다</p>
+<p>마지막으로 부팅완료와 sms수신은 권한이 필요합니다</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">uses-permission</span><span style="color:#6F42C1"> android:name</span><span style="color:#24292E">=</span><span style="color:#032F62">"android.permission.RECEIVE_BOOT_COMPLETED"</span><span style="color:#24292E"> /></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">uses-permission</span><span style="color:#6F42C1"> android:name</span><span style="color:#24292E">=</span><span style="color:#032F62">"android.permission.RECEIVE_SMS"</span><span style="color:#24292E"> /></span></span>
+<span class="line"></span></code></pre>
 <h3 id="24-5-registerreceiver로-등록하자-동적-등록">24-5 registerReceiver()로 등록하자 (동적 등록)</h3>
 <p>24-4에서 등록하지 못한 Screen on과 off는 동적으로 java파일에서만 등록이 가능한 액션의 대표적인 예입니다</p>
 <p>이번에는 동적으로 등록해 보겠습니다</p>
@@ -145,12 +161,14 @@
 <p>마지막으로 어플을 종료할때 호출되는 onDestroy()메소드를 만들어 액티비티가 종료되면 등록을 해제합시다</p>
 <p>@Override</p>
 <p>protected void onDestroy() {</p>
-<p>    super.onDestroy();</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>super.onDestroy();</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>unregisterReceiver(myReceiver);</strong></p>
-<p>    Log.d(“onDestory()”,“브로드캐스트리시버 해제됨”);</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Log.d("onDestory()","브로드캐스트리시버 해제됨");</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>}</p>
 <p>unregisterReceiver()로 등록을 해제할수 있습니다</p>
-<p>이렇게 등록된 리시버는 <strong>등록한 액티비티가 사라지거나 하면 등록이 해제되는 단점</strong>이 있어 죽지 않는 서비스에서 등록합니다</p>
+<p>이렇게 등록된 리시버는 <strong>등록한 액티비티가 사라지거나 하면 등록이 해제되는 단점</strong>이 있어 죽지 않는 서비스에서 등록합니다</p>
 <h3 id="24-6-문자-내용-수신-코드">24-6 문자 내용 수신 코드</h3>
 <p>아래는 문자 내용을 수신하는 코드입니다</p>
 <p>// SMS 메시지를 파싱합니다.</p>
@@ -158,8 +176,10 @@
 <p>Object messages[] = (Object[])bundle.get(“pdus”);</p>
 <p>SmsMessage smsMessage[] = new SmsMessage[messages.length];</p>
 <p>for(int i = 0; i &#x3C; messages.length; i++) {</p>
-<p>    // PDU 포맷으로 되어 있는 메시지를 복원합니다.</p>
-<p>    smsMessage[i] = SmsMessage.createFromPdu((byte[])messages[i]);</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// PDU 포맷으로 되어 있는 메시지를 복원합니다.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>smsMessage[i] = SmsMessage.createFromPdu((byte[])messages[i]);</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>}</p>
 <p>// SMS 수신 시간 확인</p>
 <p>Date curDate = new Date(smsMessage[0].getTimestampMillis());</p>
@@ -184,7 +204,7 @@
 <h2 id="첨부파일">첨부파일</h2>
 <ul>
 <li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleBroadcastReceiver.zip">ExampleBroadcastReceiver.zip</a> <code>636 KB</code></li>
-</ul></uses-permission></uses-permission> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+</ul> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
 Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
 itmir.tistory.com
 </a>  · Archived by luminousky

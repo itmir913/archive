@@ -11,13 +11,17 @@
 <p>일부만 그런지는 몰라도 말이죠 ㅋㅋ</p>
 <p>예를 들면 if를 끝내는건 fi, case를 끝내는건 esac처럼 말이죠 ㅎㅎ</p>
 <p>제가 알게된건</p>
-<p> read nember</p>
-<p> case $nember in</p>
-<p>  1)</p>
+<p>read nember</p>
+<p>case $nember in</p>
+<ol>
+<li></li>
+</ol>
 <p>명령어 ~~~</p>
-<p>  2)</p>
+<ol start="2">
+<li></li>
+</ol>
 <p>명령어~~~</p>
-<p> esac</p>
+<p>esac</p>
 <p>이렇게 구성된다는 점이었습니다.</p>
 <p>read는 아마 숫자등의 입력을 저장하는것 같습니다.</p>
 <p>그 옆 nember는 함수 같아요 그 숫자를 저장한뒤</p>
@@ -40,9 +44,9 @@
 <p>이걸 응용한다면 내용이 겹치지 않게 파일을 생성할수 있을것 같은데요</p>
 <p>예를 들면</p>
 <p>if busybox [ “<code>busybox grep run-parts /system/etc/install-recovery.sh</code>” ]; then</p>
-<p> echo ""</p>
+<p>echo ""</p>
 <p>else</p>
-<p> echo “busybox run-parts /system/etc/init.d;” >> /system/etc/install-recovery.sh</p>
+<p>echo “busybox run-parts /system/etc/init.d;” >> /system/etc/install-recovery.sh</p>
 <p>fi</p>
 <p>이렇게 작성하게 된다면 install recovery파일에 run-parts가 있다면 패스, 없다면 저 문구를 넣어서 중복을 피할수 있게 될것 같습니다</p>
 <p>(아마 스크립트 개발자분들은 더 자세히 아실듯 해요 ㅋ)</p>

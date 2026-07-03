@@ -25,24 +25,37 @@
 <p>원래 아무폴더에 넣어도 되나</p>
 <p>안드로이드 시스탬에서 미디어 파일은 raw폴더에 넣자 라는 암묵적인 약속이 있기에 그렇게 하는겁니다</p>
 <p>ㅁ..물론 강제는 아닙니다</p>
-<h3 id="18-2레이아웃-패스">18-2 레이아웃 패스</h3>
+<h3 id="18-2-레이아웃-패스">18-2 레이아웃 패스</h3>
 <p>점점 강좌가 나갈수록 레이아웃은 간단해 집니다</p>
 <p>&#x3C;Button</p>
-<p>    android:id=”@+id/button1”</p>
-<p>    android:layout_width=“wrap_content”</p>
-<p>    android:layout_height=“wrap_content”</p>
-<p>    android:layout_alignParentTop=“true”</p>
-<p>    android:layout_centerHorizontal=“true”</p>
-<p>    android:layout_marginTop=“50dp”</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>android:id="@+id/button1"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_width="wrap_content"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_height="wrap_content"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_alignParentTop="true"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_centerHorizontal="true"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_marginTop="50dp"</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>android:onClick=“button”</strong></p>
-<p>    android:text=“@string/start” /></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>android:text="@string/start" /></span></span>
+<span class="line"><span></span></span></code></pre>
 <p>&#x3C;SeekBar</p>
-<p>    android:id=”@+id/seekBar1”</p>
-<p>    android:layout_width=“match_parent”</p>
-<p>    android:layout_height=“wrap_content”</p>
-<p>    android:layout_alignParentLeft=“true”</p>
-<p>    android:layout_below=”@+id/button1”</p>
-<p>    android:layout_marginTop=“30dp” /></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>android:id="@+id/seekBar1"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_width="match_parent"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_height="wrap_content"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_alignParentLeft="true"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_below="@+id/button1"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_marginTop="30dp" /></span></span>
+<span class="line"><span></span></span></code></pre>
 <p>모두 한번 배운 내용이므로 언급없이 진행하겠습니다</p>
 <p>만약 이 코드가 이해가 안가신다면 이 글의 정독을 멈추고 저번 강좌를 정독해 주세요</p>
 <p>중요한거라곤… onClick말고는 없습니다 ㅎ</p>
@@ -83,14 +96,14 @@
 <p>music.seekTo(progress);</p>
 <p>}</p>
 <p>});</p>
-<p>먼저 seekbar.setMax(music.getDuration()); 이부분을 봅시다</p>
-<p>setMax는 배운 것이므로 아시고 music.getDuration()는 뭘까요?</p>
+<p>먼저 seekbar.setMax(music.getDuration()); 이부분을 봅시다</p>
+<p>setMax는 배운 것이므로 아시고 music.getDuration()는 뭘까요?</p>
 <p>이건 음악의 총 길이를 가져오는 코드입니다</p>
 <p>즉 SeekBar의 총 길이를 음악의 총길이로 설정하는 것이지요!</p>
 <p>그아래에는 Listener가 있네요</p>
 <p>onProgressChanged()를 봅시다</p>
 <p>여기서 볼수 있는 코드는 두줄, 그 전 fromUser에 대해 배워봅시다</p>
-<p>onProgressChanged()메소드가 실행될때 세번째로 값이 넘어오는 fromUser</p>
+<p>onProgressChanged()메소드가 실행될때 세번째로 값이 넘어오는 fromUser</p>
 <p>이것은 사용자가 움직여서 값이 변한거면 true, 소스 또는 setProgress등으로 변한것이면 false가 됩니다</p>
 <p>아래 코드를 봅시다</p>
 <p>if(fromUser)</p>
@@ -98,7 +111,7 @@
 <p>이것을 보면 사용자가 SeekBar를 움직였을때만 if가 실행되게 되었습니다</p>
 <p>그럼 또 seekTo는 뭐냐…</p>
 <p>간단합니다 재생 위치를 바꿔주는 것입니다</p>
-<p>즉 SeekBar를 사용자가 움직일때마다 재생 위치가 변하는 거죠</p>
+<p>즉 SeekBar를 사용자가 움직일때마다 재생 위치가 변하는 거죠</p>
 <p>이제 위에서 버튼에 주었던 android:onClick과 맞는 메소드를 만들어야 겠죠??</p>
 <p>public void button(View v){</p>
 <p>if(<strong>music.isPlaying()</strong>){</p>
@@ -121,14 +134,14 @@
 <p>Thread();</p>
 <p>}</p>
 <p>}</p>
-<p>자, 먼저 music.isPlaying()를 봅시다</p>
+<p>자, 먼저 music.isPlaying()를 봅시다</p>
 <p>이름에서 알다싶이 이건 재생중이면 true, 아니면 false를 반환합니다</p>
 <p>재생중이면 정지, 재생중이 아니면 재생</p>
 <p>뭐 이런것이죠 ㅎ</p>
-<p>그다음에 설명해야 할건 seekTo입니다</p>
+<p>그다음에 설명해야 할건 seekTo입니다</p>
 <p>이것은 어디를 재생할것인지 설정하는것으로 위에서 언급한 내용 그대로 입니다</p>
 <p>다만 여기서는 0으로 설정해 처음으로 돌아가는 것이죠 ㅎㅎ</p>
-<p>마지막 Thread();는 Thread라는 이름을 가진 메소드를 실행하는 것입니다</p>
+<p>마지막 Thread();는 Thread라는 이름을 가진 메소드를 실행하는 것입니다</p>
 <p>아직 정의하지 않았으므로 만들어 봅시다</p>
 <p>public void Thread(){</p>
 <p>Runnable task = new Runnable(){</p>
@@ -155,10 +168,10 @@
 <p>}</p>
 <p>대부분 위에서 언급된것인대…</p>
 <p>Runnable이라던지 Thread는 20번대 강좌에서 자세하게 배울 예정이므로 지금은 패스해 줍시다</p>
-<p>지금 배울것은 seekbar.setProgress(music.getCurrentPosition()); 부분 입니다</p>
+<p>지금 배울것은 seekbar.setProgress(music.getCurrentPosition()); 부분 입니다</p>
 <p>music.getCurrentPosition()은 뭘까요?</p>
 <p>눈치 빠르신 분들은 아시겠지만 이건 현재 재생되고 있는 위치를 가져오는 겁니다</p>
-<p>Thread.sleep(1000);으로 인해 1초씩 건너서 쉬므로</p>
+<p>Thread.sleep(1000);으로 인해 1초씩 건너서 쉬므로</p>
 <p>1초마다 SeekBar가 움직이게 됩니다</p>
 <p>이렇게 해서 노래를 재생하는 방법에 대해 알아봤습니다</p>
 <p>구동영상은 동영상으로 확인해 보겠습니다</p>
@@ -166,12 +179,12 @@
 <p>모든 기능이 잘 작동하는것으로 확인되었습니다 ㅎㅎ</p>
 <p>조금 어려웠나요?</p>
 <p>당장 이해가 안되더라도 쭉 가다보면 언젠간 이해가 될겁니다 ㅎㅎ</p>
-<p>이 강좌의 예제소스는 19번 강좌가 나오는 즉시 업로드 됩니다</p>
+<p>이 강좌의 예제소스는 19번 강좌가 나오는 즉시 업로드 됩니다</p>
 <p>카페에서는 원본글에서만 다운로드가 가능합니다</p>
 <p>예제소스 다운로드 :</p>
 <p>다음 강좌는 진동에 대해 살펴볼 생각입니다</p>
 <p>대부분의 강좌에서 진동은 그냥 위잉~ 이렇게만 언급하는대 제 강좌에서는 진동에 패턴까지 넣어서 위잉~…<del>윙</del>… 이런거 까지 해보도록 하겠습니다 ㅎㅎ</p>
-<p>참조 : <a href="http://nephilim.tistory.com/56">http://nephilim.tistory.com/56</a></p>
+<p>참조 : <a href="http://nephilim.tistory.com/56">http://nephilim.tistory.com/56</a></p>
 <p><a href="http://naiacinn.tistory.com/109">http://naiacinn.tistory.com/109</a></p>
 <p><a href="http://indy9052.blog.me/120142002766">http://indy9052.blog.me/120142002766</a></p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
 Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">

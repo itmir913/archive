@@ -6,7 +6,7 @@
 <p>지금부터 이 Logcat에 대해 알아보겠습니다</p>
 <h3 id="logcat이란">Logcat이란?</h3>
 <p>로그켓은 안드로이드의 디버깅에 사용되는 방법입니다</p>
-<p>일반 C나 자바에서는 printf();나 System.out.println();등을 사용하는대 이것과 마찬가지로 정보를 출력해 주는 역할을 합니다</p>
+<p>일반 C나 자바에서는 printf();나 System.out.println();등을 사용하는대 이것과 마찬가지로 정보를 출력해 주는 역할을 합니다</p>
 <p>다만 전자는 console창에, logcat은 Logcat창에 뜨는겁니다</p>
 <p>안드로이드 앱 개발자의 영원한 친구입니다 로크겟은</p>
 <p>꼭 알아두세요</p>
@@ -22,7 +22,7 @@
 <p><a href="/archive/itmir/2013/61">[SmartPhone] - 안드로이드의 LOG을 확인하자 - adb logcat / LogcatFilter.exe</a></p>
 <p>adb logcat</p>
 <p>이런 명령어를 입력하면 로크켓이 cmd창에 나타납니다</p>
-<p>이를 txt파일에 저장하려면 >를 이용해서 가능합니다</p>
+<p>이를 txt파일에 저장하려면 >를 이용해서 가능합니다</p>
 <p>adb logcat > log.txt</p>
 <p>아래는 스크린샷 입니다</p>
 <p><img  src="/archive/_astro/cmd.Dc-RKnFu_2elx2q.webp" alt="" width="677" height="202" loading="lazy" decoding="async"></p>
@@ -32,7 +32,7 @@
 <p>이떻게 가능한가..?</p>
 <p>어플이 강제종료가 되게 되면 알림이 나타납니다</p>
 <p><img  src="/archive/_astro/device-2014-09-13-100631.DyPVqSmd_Z1ELI5T.webp" alt="" width="354" height="160" loading="lazy" decoding="async"></p>
-<p>이때 왜 강제종료가 일어났는지에 대해 AndroidRuntime이 그 원인을 로그켓에 표시합니다</p>
+<p>이때 왜 강제종료가 일어났는지에 대해 AndroidRuntime이 그 원인을 로그켓에 표시합니다</p>
 <p>이클립스를 통해 확인한 강제종료 원인입니다</p>
 <p><img  src="/archive/_astro/%EC%9D%B4%ED%81%B4%EB%A6%BD%EC%8A%A4-activity.BPF4g_Vk_6loHh.webp" alt="" width="838" height="417" loading="lazy" decoding="async"></p>
 <p>이 오류는 startActivity()사용할때 새로운 액티비티를 AndroidManifest.xml에 등록하지 않아서 생긴 문제입니다</p>

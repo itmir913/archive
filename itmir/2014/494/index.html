@@ -1,22 +1,22 @@
 <!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="삼성 펌웨어의 경우 펌웨어를 tar파일로 뽑아낼수 있습니다"><title>system.img.ext4를 분해(Unpack)에서 System Dump를 추출하자 — luminousky archive</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.BgW6xfjO.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2012 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">system.img.ext4를 분해(Unpack)에서 System Dump를 추출하자</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-05-06T04:53:55.000Z"> 2014년 5월 6일 </time> <span class="post-category">SmartPhone/Android</span> <a href="https://itmir.tistory.com/494" class="post-original" target="_blank" rel="noopener noreferrer">
 원본 보기 ↗
 </a> </div> <p class="post-description">삼성 펌웨어의 경우 펌웨어를 tar파일로 뽑아낼수 있습니다</p> </header> <div class="post-content"> <p>삼성 펌웨어의 경우 펌웨어를 tar파일로 뽑아낼수 있습니다</p>
-<p>이 tar 압축파일 안에는 system.img.ext4이라는 파일이 존재합니다</p>
+<p>이 tar 압축파일 안에는 system.img.ext4이라는 파일이 존재합니다</p>
 <p>이것이 system dump파일인대요</p>
 <p>아쉽지만 이 상태로는 우리가 추출하고자 하는 dump파일을 뽑아낼수 없습니다</p>
 <p>그래서 저걸 img로 변환한다음 추출해야 합니다</p>
-<p>이번에는 system.img.ext4을 분해해서 System 덤프를 뽑아내보도록 하겠습니다</p>
+<p>이번에는 system.img.ext4을 분해해서 System 덤프를 뽑아내보도록 하겠습니다</p>
 <p>[필요한 프로그램]</p>
 <p><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/sgs2img.exe">sgs2img.exe</a></p>
 <p>[ext2explore v2.2.71.zip](<a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/ext2explore">https://github.com/itmir913/archive/releases/download/itmir-attachments/ext2explore</a> v2.2.71.zip)</p>
 <hr>
 <p><strong>1. system.img.ext4을 Img확장자로 변환하자</strong></p>
-<p>먼저 펌웨어 파일에서 system.img.ext4을 압축해제 해야 합니다</p>
-<p>알집 또는 반디집 같은 프로그램으로 tar펌웨어에서 system.img.ext4을 압축해제 해주세요</p>
+<p>먼저 펌웨어 파일에서 system.img.ext4을 압축해제 해야 합니다</p>
+<p>알집 또는 반디집 같은 프로그램으로 tar펌웨어에서 system.img.ext4을 압축해제 해주세요</p>
 <p><img  src="/archive/_astro/1.DdATbmGN_SPxY9.webp" alt="" width="820" height="524" loading="lazy" decoding="async"></p>
 <p>용량이 큰 파일이므로 압축해제 하는대 시간이 많이 소요될 수 있습니다</p>
 <p><img  src="/archive/_astro/2.CxGj_302_Z2h2YKo.webp" alt="" width="566" height="253" loading="lazy" decoding="async"></p>
-<p>압축 해제가 모두 되셨다면 압축푼 system.img.ext4와 다운받은 sgs2img파일을 한 폴더에 몰아 넣어 주세요</p>
+<p>압축 해제가 모두 되셨다면 압축푼 system.img.ext4와 다운받은 sgs2img파일을 한 폴더에 몰아 넣어 주세요</p>
 <p><img  src="/archive/_astro/3.kdp1bbpl_6t11.webp" alt="" width="881" height="555" loading="lazy" decoding="async"></p>
 <p>폴더의 이름은 system.img_dump로 지정하였습니다</p>
 <p>폴더 안에서 쉬프트키(Shift)를 누른후 마우스 오른쪽을 클릭하시면 여기서 명령 창 열기(W)가 나타납니다</p>
@@ -30,11 +30,11 @@
 <p><img  src="/archive/_astro/4.DEP2-Kl5_Yd82n.webp" alt="" width="677" height="442" loading="lazy" decoding="async"></p>
 <p>용량이 크므로 작업하는대도 시간이 많이 소요됩니다</p>
 <p>제경우 노트3 펌웨어를 작업하는대 약 1시간 정도 걸린듯 합니다</p>
-<p>작업이 끝나면 Convertor ending work.이라는 문구가 나타납니다</p>
+<p>작업이 끝나면 Convertor ending work.이라는 문구가 나타납니다</p>
 <p><img  src="/archive/_astro/5.VAsVZBjF_ZtMJDI.webp" alt="" width="677" height="170" loading="lazy" decoding="async"></p>
-<p>만들어진 img파일은 아래 사진을 보시면 원본 system.img.ext4파일보다 용량이 조금 큰걸로 확인할 수 있습니다</p>
+<p>만들어진 img파일은 아래 사진을 보시면 원본 system.img.ext4파일보다 용량이 조금 큰걸로 확인할 수 있습니다</p>
 <p><img  src="/archive/_astro/6.VTVCn4Xl_sQLM.webp" alt="" width="435" height="480" loading="lazy" decoding="async"></p>
-<p>이제 ext2explore.exe를 실행해 주세요</p>
+<p>이제 ext2explore.exe를 실행해 주세요</p>
 <p>무설치 프로그램 입니다</p>
 <p>그다음 File - Open Image를 선택해주신다음 system.img를 열어주세요</p>
 <p><img  src="/archive/_astro/7.DdAQOX-x_Z1BiyKY.webp" alt="" width="816" height="624" loading="lazy" decoding="async"></p>

@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="이번 강좌는 전에 Preference강좌와 이어지는 내용입니다"><title>#31 PreferenceActivity를 사용하여 설정(Setting)을 만들어보자 — luminousky archive</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.BgW6xfjO.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2012 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">#31 PreferenceActivity를 사용하여 설정(Setting)을 만들어보자</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-08-23T16:44:12.000Z"> 2014년 8월 24일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/523" class="post-original" target="_blank" rel="noopener noreferrer">
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="이번 강좌는 전에 Preference강좌와 이어지는 내용입니다"><title>#31 PreferenceActivity를 사용하여 설정(Setting)을 만들어보자 — luminousky archive</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.BgW6xfjO.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2012 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">#31 PreferenceActivity를 사용하여 설정(Setting)을 만들어보자</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-08-23T16:44:12.000Z"> 2014년 8월 24일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/523" class="post-original" target="_blank" rel="noopener noreferrer">
 원본 보기 ↗
-</a> </div> <p class="post-description">이번 강좌는 전에 Preference강좌와 이어지는 내용입니다</p> </header> <div class="post-content"> <p>이번 강좌는 전에 Preference강좌와 이어지는 내용입니다</p>
+</a> </div> <p class="post-description">이번 강좌는 전에 Preference강좌와 이어지는 내용입니다</p> </header> <div class="post-content"> <p>이번 강좌는 전에 Preference강좌와 이어지는 내용입니다</p>
 <p>먼저 읽으시기 전에 아래 강좌를 한번 읽어보시는것을 강력 추천드립니다</p>
 <p><a href="/archive/itmir/2013/393">[Development/App] - #21 Preference(프리퍼런스)</a></p>
 <p>그리고 이번 글부터 글양식을 조금 바꿔봤어요 ㅋㅋ 아마 원본글이 아니면 깨질수도 있을거 같아요</p>
@@ -73,23 +73,22 @@
 <span class="line"><span style="color:#6F42C1">    android:title</span><span style="color:#24292E">=</span><span style="color:#032F62">"이름 공개 범위"</span><span style="color:#24292E"> /></span></span>
 <span class="line"></span></code></pre>
 <ul>
-<li>android:defaultValue : 기본값입니다 이건 boolean이 될수도 있고 String이 될수도 있습니다 각각의 프리퍼런스마다 다릅니다</li>
-<li>android:key : 일반 프리퍼런스를 쓸때는 getString(“이름”, “기본값”);의 형식으로 사용했었습니다, 이때 “이름”에 해당하는것이 android:key입니다</li>
+<li>android:defaultValue : 기본값입니다 이건 boolean이 될수도 있고 String이 될수도 있습니다 각각의 프리퍼런스마다 다릅니다</li>
+<li>android:key : 일반 프리퍼런스를 쓸때는 getString(“이름”, “기본값”);의 형식으로 사용했었습니다, 이때 “이름”에 해당하는것이 android:key입니다</li>
 <li>android:summaryOff : 주로 On Off를 할수 있는 프리퍼런스에서 사용합니다, Off상태의 부가설명 입니다</li>
-<li>android:summaryOn : 위와 마찬가지로, On상태의 부가설명 입니다</li>
+<li>android:summaryOn : 위와 마찬가지로, On상태의 부가설명 입니다</li>
 <li>android:dependency : 이건 다른 프리퍼런스의 android:key값을 집어넣어주는데요 그 프리퍼런스가 비활성화면 나도 비활성화, 활성화면 나도 활성화..</li>
 </ul>
 <p>기본적으로 속성을 알아봤어요</p>
 <p>스크린샷으로 확인도 해보겠습니다</p>
-<p><img  src="/archive/_astro/%EC%82%AC%EC%9A%A9%EC%9E%90%EC%9D%B4%EB%A6%84%ED%99%9C%EC%84%B1%ED%99%94.B2tZPYZQ_Z2cSiV8.webp" alt="" width="400" height="296" loading="lazy" decoding="async">
-   
-<img  src="/archive/_astro/%EC%82%AC%EC%9A%A9%EC%9E%90%EC%9D%B4%EB%A6%84%EB%B9%84%ED%99%9C%EC%84%B1%ED%99%94.-8jBC-nt_iafAT.webp" alt="" width="400" height="298" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/%EC%82%AC%EC%9A%A9%EC%9E%90%EC%9D%B4%EB%A6%84%ED%99%9C%EC%84%B1%ED%99%94.B2tZPYZQ_Z2cSiV8.webp" alt="" width="400" height="296" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/%EC%82%AC%EC%9A%A9%EC%9E%90%EC%9D%B4%EB%A6%84%EB%B9%84%ED%99%9C%EC%84%B1%ED%99%94.-8jBC-nt_iafAT.webp" alt="" width="400" height="298" loading="lazy" decoding="async"></p>
 <p>이 사진으로 2가지를 알수 있어요</p>
-<p>체크박스에 따라 summaryOn, summaryOff의 글자가 번갈아 가며 표시됩니다</p>
+<p>체크박스에 따라 summaryOn, summaryOff의 글자가 번갈아 가며 표시됩니다</p>
 <p>참고로 on, off를 안쓰로 그냥 summary도 있습니다 좀있다 나올때 다시 설명하겠습니다</p>
-<p>그리고 android:dependency=“useUserName”에 의해 비활성화 됬을때 나머지 두개도 같이 비활성화 되는 모습을 살펴볼수 있습니다</p>
+<p>그리고 android:dependency=“useUserName”에 의해 비활성화 됬을때 나머지 두개도 같이 비활성화 되는 모습을 살펴볼수 있습니다</p>
 <p>일부 예제는 setEnable(boolean)메소드를 이용해 컨트롤 하기도 하는대 이게 가장 쉬운 방법입니다</p>
-<p>위에서 ListPreference의 두가지 속성을 설명하지 않았습니다 이어서 보도록 하겠습니다</p>
+<p>위에서 ListPreference의 두가지 속성을 설명하지 않았습니다 이어서 보도록 하겠습니다</p>
 <p>android:negativeButtonText=“@null”</p>
 <p>android:positiveButtonText=“@null”</p>
 <p>이 두개의 속성은 딱 보면 알수 있어서 넘어가겠습니다</p>
@@ -102,27 +101,33 @@
 <p>실제 values/array.xml을 보겠습니다</p>
 <p>파일 만들어 주세요</p>
 <string-array name="userNameOpen">
-<p>    <item>항상 공개</item></p>
-<p>    <item>친구에게만</item></p>
-<p>    <item>비공개</item></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>&#x3C;item>항상 공개&#x3C;/item></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;item>친구에게만&#x3C;/item></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;item>비공개&#x3C;/item></span></span>
+<span class="line"><span></span></span></code></pre>
 </string-array>
-<string-array name="userNameOpen\_values">
-<p>    <item>1</item></p>
-<p>    <item>0</item></p>
-<p>    <item>-1</item></p>
+<string-array name="userNameOpen_values">
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>&#x3C;item>1&#x3C;/item></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;item>0&#x3C;/item></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;item>-1&#x3C;/item></span></span>
+<span class="line"><span></span></span></code></pre>
 </string-array>
 <p>위에서 써둔대로 android:entries는 리스트에 표시될 값을 말합니다</p>
 <p>하나를 선택하면 선택한 index를 따져서 android:entryValues에 지정한 index의 값이 저장됩니다</p>
 <p>스샷을 보면서 말씀드리는게 좋을것 같습니다</p>
 <p><img  src="/archive/_astro/%EC%9D%B4%EB%A6%84%EA%B3%B5%EA%B0%9C%EB%B2%94%EC%9C%84.CQTt1HwL_1Wa6c8.webp" alt="" width="400" height="273" loading="lazy" decoding="async"></p>
-<p>제가 항상 공개를 선택하면 android:entryValues에 있는 첫번째 값인 1이 저장되고</p>
+<p>제가 항상 공개를 선택하면 android:entryValues에 있는 첫번째 값인 1이 저장되고</p>
 <p>친구에게만을 선택하면 0이, 비공개를 선택하면 -1이 저장되는 원리입니다</p>
 <p>EditTextPreference의 일부 속성도 살펴보진 않았지만 이름만 보면 바로 알수 있어 스크린샷만 확인후 넘어가도록 하겠습니다</p>
 <p><img  src="/archive/_astro/%EC%82%AC%EC%9A%A9%EC%9E%90%EC%9D%B4%EB%A6%84%EC%84%A4%EC%A0%95.jrZUjh0k_Z2qWpC2.webp" alt="" width="400" height="209" loading="lazy" decoding="async"></p>
 <h3 id="자동-업데이트-설정하기">자동 업데이트 설정하기</h3>
 <p>스크린샷에서 자동 업데이트 부분은 스위치로 되어 있었습니다</p>
 <p>그리고 구분 탭이 있었는데요 먼저 구분 탭부터 살짝 보겠습니다</p>
-<p>구분탭은 PreferenceCategory입니다</p>
+<p>구분탭은 PreferenceCategory입니다</p>
 <p>그냥 아무런 설정없이 일반 레이아웃처럼 카테고리로 다른 프리퍼런스를 묶어주시면 됩니다</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">&#x3C;</span><span style="color:#24292E">PreferenceCategory android</span><span style="color:#D73A49">:</span><span style="color:#24292E">title</span><span style="color:#D73A49">=</span><span style="color:#032F62">"자동 업데이트"</span><span style="color:#D73A49"> ></span></span>
 <span class="line"></span>
@@ -161,23 +166,22 @@
 <p>RingtonePreference는 실제 어플에서는 잘 안쓰지만 알림음을 설정할때 쓰므로 한번 살펴보겠습니다</p>
 <ul>
 <li>android:defaultValue=“content://settings/system/notification_sound” : 위에서 한번 본 기본 값입니다, RingtonePreference는 신기하게 저걸 쓰네요</li>
-<li>android:ringtoneType=“notification” : 표시할 소리 종류 입니다, all, ringtone, notification, alarm을 집어넣을수 있습니다</li>
+<li>android:ringtoneType=“notification” : 표시할 소리 종류 입니다, all, ringtone, notification, alarm을 집어넣을수 있습니다</li>
 <li>android:showSilent=“true” : “무음” 표시 여부 입니다</li>
 </ul>
 <p>이렇게 자동 업데이트 부분을 끝냈습니다</p>
 <p>스크린샷으로 확인하고 다음으로 넘어가겠습니다</p>
-<p><img  src="/archive/_astro/%EC%9E%90%EB%8F%99%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%ED%99%9C%EC%84%B1%ED%99%94.DJAwpBHS_1qpVaK.webp" alt="" width="400" height="258" loading="lazy" decoding="async">
-    
-<img  src="/archive/_astro/%EC%9E%90%EB%8F%99%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%EB%B9%84%ED%99%9C%EC%84%B1%ED%99%94.DnPWBAX7_Z19HInH.webp" alt="" width="400" height="258" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/%EC%9E%90%EB%8F%99%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%ED%99%9C%EC%84%B1%ED%99%94.DJAwpBHS_1qpVaK.webp" alt="" width="400" height="258" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/%EC%9E%90%EB%8F%99%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%EB%B9%84%ED%99%9C%EC%84%B1%ED%99%94.DnPWBAX7_Z19HInH.webp" alt="" width="400" height="258" loading="lazy" decoding="async"></p>
 <p><img  src="/archive/_astro/%EC%95%8C%EB%A6%BC%EC%86%8C%EB%A6%AC.DC_eZQVA_Z2kzrcy.webp" alt="" width="400" height="771" loading="lazy" decoding="async"></p>
 <p>아 자동업데이트부분에서 알고 넘어갈게 하나 더 있습니다</p>
-<p>여기서 저는 android:dependency을 단계별로 주었습니다</p>
+<p>여기서 저는 android:dependency을 단계별로 주었습니다</p>
 <p>자동 업데이트가 켜져야 알림사용이 켜지고</p>
 <p>알림사용이 켜져야 알림 소리가 켜집니다</p>
 <p>잘 파악해두세요!</p>
 <h3 id="어플-정보-부분">어플 정보 부분</h3>
 <p>이부분은 위에서 나온 프리퍼런스를 사용하지 않고 “그냥” 프리퍼런스를 사용합니다</p>
-<p>스크린샷에 나온대로 xml을 사용해서 개발자 정보(새로운 액티비티 열기)와 메일 보내기(Url)을 할수 있습니다</p>
+<p>스크린샷에 나온대로 xml을 사용해서 개발자 정보(새로운 액티비티 열기)와 메일 보내기(Url)을 할수 있습니다</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">PreferenceCategory</span><span style="color:#6F42C1"> android:title</span><span style="color:#24292E">=</span><span style="color:#032F62">"어플 정보"</span><span style="color:#24292E"> ></span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">Preference</span></span>
@@ -210,7 +214,7 @@
 <p>드디어 xml코드를 정복했습니다!</p>
 <p>그런대 한가지 빼먹은게 있는데요 바로 액티비티를 만들지 않았습니다</p>
 <p>지금 만든 xml을 불러들일 액티비티를 하나 만들어 봅시다</p>
-<p>이름은 SettingsActivity.java로하고  내용은 아래와 같습니다</p>
+<p>이름은 SettingsActivity.java로하고  내용은 아래와 같습니다</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> SettingsActivity</span><span style="color:#D73A49"> extends</span><span style="color:#6F42C1"> PreferenceActivity</span><span style="color:#24292E"> {</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Override</span></span>
@@ -221,7 +225,7 @@
 <span class="line"><span style="color:#24292E">    }</span></span>
 <span class="line"><span style="color:#24292E">}</span></span>
 <span class="line"></span></code></pre>
-<p>SettingActivity를 이클립스를 통해 만들면 onCreate()가 아니라 onPostCreate()를 사용하더라고요</p>
+<p>SettingActivity를 이클립스를 통해 만들면 onCreate()가 아니라 onPostCreate()를 사용하더라고요</p>
 <p>두개의 차이점은 모르겠습니다</p>
 <p>익숙한 onCreate로 바꿔도 문제는 없는것 같습니다</p>
 <p>자, 사실상 액티비티는 저정도만 작성해줘도 됩니다</p>
@@ -230,23 +234,34 @@
 <p>액티비티를 java파일만 만드신 분은 없겠죠..?</p>
 <p>아래는 기본적으로 추가해주시면 됩니다</p>
 <p>&#x3C;activity</p>
-<p>    android:name=“whdghks913.tistory.examplepreferenceactivity.SettingsActivity”</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>android:name="whdghks913.tistory.examplepreferenceactivity.SettingsActivity"</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>android:label=“@string/action_settings” ></p>
 
 <p>&#x3C;item</p>
-<p>    android:id=”@+id/action_settings”</p>
-<p>    android:orderInCategory=“100”</p>
-<p>    android:showAsAction=“ifRoom”</p>
-<p>    android:icon=“@android:drawable/ic_menu_manage”</p>
-<p>    android:title=“@string/action_settings”/></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>android:id="@+id/action_settings"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:orderInCategory="100"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:showAsAction="ifRoom"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:icon="@android:drawable/ic_menu_manage"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:title="@string/action_settings"/></span></span>
+<span class="line"><span></span></span></code></pre>
 <p>@Override</p>
 <p>public boolean onOptionsItemSelected(MenuItem item) {</p>
 <p>int itemId = item.getItemId();</p>
-<p>    if (itemId == R.id.action_settings) {</p>
-<p>        Intent SettingActivity = new Intent(this, SettingsActivity.class);</p>
-<p>        startActivity(SettingActivity);</p>
-<p>    }</p>
-<p>    return super.onOptionsItemSelected(item);</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>if (itemId == R.id.action_settings) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    Intent SettingActivity = new Intent(this, SettingsActivity.class);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    startActivity(SettingActivity);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return super.onOptionsItemSelected(item);</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>}</p>
 <h3 id="최근-앱의-설정에는-선택한-항목이-summary에-표시되요">최근 앱의 설정에는 선택한 항목이 Summary에 표시되요</h3>
 <p>이게 java에서 다뤄야할 가장 어려운 난제입니다</p>
@@ -280,10 +295,10 @@
 <span class="line"></span></code></pre>
 <p>이 메소드를 이용해 각각의 프리퍼런스에 리스너를 연결해 줄겁니다</p>
 <p>2번째 줄 소스가 리스너를 연결해 주고 있고,</p>
-<p>4~5번째 줄에서 리스너의 onPreferenceChange()메소드를 호출하고 있습니다</p>
+<p>4~5번째 줄에서 리스너의 onPreferenceChange()메소드를 호출하고 있습니다</p>
 <p>(왜 onPreferenceChange()를 호출하냐면 초기 Summary를 설정하기 위함입니다)</p>
 <p>마지막으로 프리퍼런스를 저 메소드에 집어넣어줘야 하는데요</p>
-<p>PreferenceActivity에서는 findPreference(String)으로 Preference를 찾을수 있습니다</p>
+<p>PreferenceActivity에서는 findPreference(String)으로 Preference를 찾을수 있습니다</p>
 <p>addPreferencesFromResource(R.xml.pref_settings);</p>
 <p>아래에 아래 3개의 코드를 넣어주세요</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#6F42C1">setOnPreferenceChange</span><span style="color:#24292E">(</span><span style="color:#6F42C1">findPreference</span><span style="color:#24292E">(</span><span style="color:#032F62">"userName"</span><span style="color:#24292E">));</span></span>
@@ -291,8 +306,8 @@
 <span class="line"><span style="color:#6F42C1">setOnPreferenceChange</span><span style="color:#24292E">(</span><span style="color:#6F42C1">findPreference</span><span style="color:#24292E">(</span><span style="color:#032F62">"autoUpdate_ringtone"</span><span style="color:#24292E">));</span></span>
 <span class="line"></span></code></pre>
 <p>이제… 얼마 안남았어요 진짜 힘드네요;</p>
-<p>다시 onPreferenceChange리스너로 돌아와 주세요</p>
-<p>리스너에 연결한 Preference는 EditTextPreference, ListPreference, RingtonePreference 총 3가지 입니다</p>
+<p>다시 onPreferenceChange리스너로 돌아와 주세요</p>
+<p>리스너에 연결한 Preference는 EditTextPreference, ListPreference, RingtonePreference 총 3가지 입니다</p>
 <p>이 3개를 각각 구분해서 Summary를 지정해 줘야 합니다</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">String stringValue </span><span style="color:#D73A49">=</span><span style="color:#24292E"> newValue.</span><span style="color:#6F42C1">toString</span><span style="color:#24292E">();</span></span>
 <span class="line"></span>
@@ -329,12 +344,12 @@
 <span class="line"><span style="color:#24292E">}</span></span>
 <span class="line"></span></code></pre>
 <p>리스너 안에 이 if문을 넣어주시면 됩니다</p>
-<p>간단히 설명하자면 public boolean onPreferenceChange(Preference preference, Object newValue)에서</p>
-<p>앞이 값이 변경된 Preference이고 Object가 변경된 값입니다</p>
+<p>간단히 설명하자면 public boolean onPreferenceChange(Preference preference, Object newValue)에서</p>
+<p>앞이 값이 변경된 Preference이고 Object가 변경된 값입니다</p>
 <p>이를 이용해 어떤 Preference에서 값변동이 일어났는지 확인하고, 3가지 경우에 따라 선택한 값을 띄워야 합니다</p>
 <p>EditTextPreference는 newValue가 변경된 값이지만</p>
-<p>ListPreference는 android:entryValues의 값으로 newValue가 옵니다</p>
-<p>RingtonePreference도 content://media/internal/audio/media/xxxx의 형식으로 오기 때문에 (무음은 ""으로 옵니다)</p>
+<p>ListPreference는 android:entryValues의 값으로 newValue가 옵니다</p>
+<p>RingtonePreference도 content://media/internal/audio/media/xxxx의 형식으로 오기 때문에 (무음은 ""으로 옵니다)</p>
 <p>이런 형식의 String을 변환해서 선택한 값으로 바꿔줘야 합니다</p>
 <p>바꿔주는 코드가 if문안 내용물들 입니다</p>
 <h3 id="settingactivityjava를-끝냈습니다">SettingActivity.java를 끝냈습니다</h3>
@@ -343,19 +358,18 @@
 <p>스크롤 압박 엄청 심할듯 하네요 아마 제일 긴 강좌가 되지 않을지..</p>
 <p>저장된 값을 일반 Activity에서 불러올때는 어떻게 할까요?</p>
 <p>그래서 MainActivity.java로 만들어 봤습니다</p>
-<p><img  src="/archive/_astro/%EB%A9%94%EC%9D%B8%ED%99%94%EB%A9%B4-%EC%A0%84.D16VXKPs_2hlLvp.webp" alt="" width="400" height="711" loading="lazy" decoding="async">
-    
-<img  src="/archive/_astro/%EB%A9%94%EC%9D%B8%ED%99%94%EB%A9%B4-%ED%9B%84._pyvHAnM_Z6t0MR.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/%EB%A9%94%EC%9D%B8%ED%99%94%EB%A9%B4-%EC%A0%84.D16VXKPs_2hlLvp.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/%EB%A9%94%EC%9D%B8%ED%99%94%EB%A9%B4-%ED%9B%84._pyvHAnM_Z6t0MR.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
 <p>메인 액티비티에서 설정된 값을 읽어와서 TextView에 뿌려주는 모습입니다</p>
 <p>아 매우 중요한 내용을 까먹을뻔 했네요</p>
-<p>PreferenceActivity의 addPreferencesFromResource()는 만들어지는 xml의 이름을 지정하지 못합니다</p>
+<p>PreferenceActivity의 addPreferencesFromResource()는 만들어지는 xml의 이름을 지정하지 못합니다</p>
 <p>원래는 getSharedPreferences(“String name”, int mode) 이걸로 사용했었는데요</p>
-<p>PreferenceActivity에서 저장된 값은 PerferenceManager.getDefaultSharedPreferences(Context context)을 통해 가져와야 합니다</p>
+<p>PreferenceActivity에서 저장된 값은 PerferenceManager.getDefaultSharedPreferences(Context context)을 통해 가져와야 합니다</p>
 <p>(깨알같이 전 #21강좌에 올라와 있네요 ㅋㅋ)</p>
 <p>xml파일이 저장되는 위치는 다들 아시겠지만</p>
 <p>/data/data/(패키지명)/shared_prefs/(패지키명)_preferences.xml</p>
 <p>입니다</p>
-<p>예를들면 이 예제앱은 /data/data/whdghks913.tistory.examplepreferenceactivity/shared_prefs/whdghks913.tistory.examplepreferenceactivity_preferences.xml 입니다</p>
+<p>예를들면 이 예제앱은 /data/data/whdghks913.tistory.examplepreferenceactivity/shared_prefs/whdghks913.tistory.examplepreferenceactivity_preferences.xml 입니다</p>
 <h3 id="다른-액티비티는-예제앱-소스를-참고해-주세요">다른 액티비티는 예제앱 소스를 참고해 주세요</h3>
 <p>불러오는 방법 및 위에서 개발자 정보 할때 나온 MadeByActivity.java같은부분은 스크롤이 너무 길어져 생략하겠습니다</p>
 <p>앞으로 글 올라오는 주기가 한달 이상 될거 같아 예제앱을 바로 올려두겠습니다</p>

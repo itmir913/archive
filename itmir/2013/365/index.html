@@ -37,23 +37,39 @@
 <p>이번 레이아웃도 저번 강좌와 마찬가지로 심플합니다</p>
 <p>버튼 2개만 만들어 주시고 각각 버튼에 다른 onClick속성을 주시길 바랍니다</p>
 <p>&#x3C;Button</p>
-<p>    android:id=”@+id/button1”</p>
-<p>    android:layout_width=“wrap_content”</p>
-<p>    android:layout_height=“wrap_content”</p>
-<p>    android:layout_alignParentTop=“true”</p>
-<p>    android:layout_centerHorizontal=“true”</p>
-<p>    android:layout_marginTop=“50dp”</p>
-<p>    android:onClick=“Vibrator_basic”</p>
-<p>    android:text=“일반 진동” /></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>android:id="@+id/button1"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_width="wrap_content"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_height="wrap_content"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_alignParentTop="true"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_centerHorizontal="true"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_marginTop="50dp"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:onClick="Vibrator_basic"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:text="일반 진동" /></span></span>
+<span class="line"><span></span></span></code></pre>
 <p>&#x3C;Button</p>
-<p>    android:id=”@+id/button2”</p>
-<p>    android:layout_width=“wrap_content”</p>
-<p>    android:layout_height=“wrap_content”</p>
-<p>    android:layout_alignLeft=”@+id/button1”</p>
-<p>    android:layout_below=”@+id/button1”</p>
-<p>    android:layout_marginTop=“20dp”</p>
-<p>    android:onClick=“Vibrator_pattern”</p>
-<p>    android:text=“패턴 진동” /></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>android:id="@+id/button2"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_width="wrap_content"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_height="wrap_content"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_alignLeft="@+id/button1"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_below="@+id/button1"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_marginTop="20dp"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:onClick="Vibrator_pattern"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:text="패턴 진동" /></span></span>
+<span class="line"><span></span></span></code></pre>
 <p>(그대로 따라하지 말라고 빨간색으로 했습니다 직접 짜는 연습을 하세요)</p>
 <p>레이아웃 끝~</p>
 <h3 id="19-4-자바-소스편">19-4 자바 소스편</h3>
@@ -66,7 +82,7 @@
 <p>진동은 시스탬 서비스의 한 종류 이므로 이렇게 바로 불러오는 것만으로도 바로 사용이 가능합니다</p>
 <p>사전 작업은 모두 마쳤습니다</p>
 <p>이제 Vibrator의 사용법을 알아볼까 합니다</p>
-<p>첫번째 일반 진동버튼에 정의된 onClick은 Vibrator_basic이므로 메소드 이름을 Vibrator_basic으로 만들어 봅시다</p>
+<p>첫번째 일반 진동버튼에 정의된 onClick은 Vibrator_basic이므로 메소드 이름을 Vibrator_basic으로 만들어 봅시다</p>
 <p>public void Vibrator_basic(View v){</p>
 <p>}</p>
 <p>10번 초반강좌에서 배웠던 방법, Button의 onClick사용은 너무 자주 쓰이니 꼭 숙지해 주세요</p>
@@ -80,7 +96,7 @@
 <p><img  src="/archive/_astro/2.D9nDq41y_ZHvjyS.webp" alt="" width="424" height="270" loading="lazy" decoding="async"></p>
 <p>이렇게 괄호 ()안에 커서를 올리고 컨트롤+스페이스를 누르면 뭐가 들어갈수 있는지 나옵니다</p>
 <p>저기 보시면 millisecond라고 되어 있네요</p>
-<p>그림처럼 밀리세컨드 초(millisecond)로 사용해 주시면 되는대…</p>
+<p>그림처럼 밀리세컨드 초(millisecond)로 사용해 주시면 되는대…</p>
 <p>밀리세컨드 초란? 시간의 단위인데요 1초가 1000밀리세컨드초 입니다</p>
 <p>즉 1000=1초, 2000=2초 이렇게 외우시면 됩니다</p>
 <p><strong>안드로이드에서 정밀한 숫자를 위해 자주 쓰이는 숫자 단위이니 꼭 숙지해 두세요</strong></p>
@@ -127,7 +143,7 @@
 <p>무한 반복을 종료하려면 vide.cancel();을 사용하면 됩니다</p>
 <p>이 상자를 이해하기 위해서는 index값이라는 선행지식이 필요합니다</p>
 <p>index값이란? 배열에서 쓰이는 값인데요</p>
-<p>아까 배운 long[] pattern = { 0, 500, 200, 400, 100 };과 관련이 있습니다</p>
+<p>아까 배운 long[] pattern = { 0, 500, 200, 400, 100 };과 관련이 있습니다</p>
 
 
 
@@ -175,7 +191,7 @@
 <p>자! 이제 끝났습니다~</p>
 <p>정작 배운코드는 3~4줄이 안되지만 설명은 좀 길었습니다</p>
 <p>아무튼 이렇게 진동을 마스터 하셨음이라 믿고 저는 이만 가봅니다~</p>
-<p>이 강좌의 예제소스는 20번 강좌가 나오는 즉시 업로드 됩니다</p>
+<p>이 강좌의 예제소스는 20번 강좌가 나오는 즉시 업로드 됩니다</p>
 <p>카페에서는 원본글에서만 다운로드가 가능합니다</p>
 <p>예제소스 다운로드 :</p>
 <p><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleVibration.zip">ExampleVibration.zip</a></p>

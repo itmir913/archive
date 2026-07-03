@@ -4,7 +4,7 @@
 <p>쓰레드와 핸들러를 이용하여 구현하는 것보다 AsyncTask를 사용하는것이 더 효율적입니다.</p>
 <p>AsyncTask에 관한 예제를 포스팅 했으므로, 이 글을 읽고 Thread와 Handler를 이용해서 작업하시기보다</p>
 <p>안드로이드에서 제공하는 AsyncTask를 이용해서 구현하시길 바랍니다.</p>
-<p>AsyncTask에 관한 글 바로가기 : <a href="/archive/itmir/2016/624">[Development/App] - #34 AsyncTask를 사용해보자</a></p>
+<p>AsyncTask에 관한 글 바로가기 : <a href="/archive/itmir/2016/624">[Development/App] - #34 AsyncTask를 사용해보자</a></p>
 </blockquote>
 <p>20번대 강좌입니다 ㅎㅎ</p>
 <p>이번강좌부터는 대부분 소스위주로 볼 예정입니다</p>
@@ -24,7 +24,7 @@
 <p>전에 프로그레스바 예제등을 통해 한 두번 접해보았습니다</p>
 <p>그리고 우리는 쓰레드를 처음 사용하는것도 아닙니다</p>
 <p>왜냐? 어플을 실행하면 처음에 메인 쓰레드라는것이 생기기 때문입니다</p>
-<p>이 메인 쓰레드는 안드로이드에서 우리가 함부로 접근이 불가능 하게 막아뒀습니다</p>
+<p>이 메인 쓰레드는 안드로이드에서 우리가 함부로 접근이 불가능 하게 막아뒀습니다</p>
 <p>또한 메인 쓰레드에서만 UI를 변경할수 있습니다</p>
 <p>안정성을 위함이라 하는데… 아무튼 쓰레드에 대한 기본 지식은 여기까지 알아두셔도 됩니다</p>
 <p>쓰레드는 반복작업같은 것을 주로 하는데요</p>
@@ -44,33 +44,54 @@
 <p>이 강좌를 잘 보면 당신도 멀쩡한 카운트 다운 어플을 만들어 배포할수 있을겁니다 ^^</p>
 <h3 id="20-3-레이아웃은-어떻게-구성할까요">20-3 레이아웃은 어떻게 구성할까요?</h3>
 <p>저만 그런진 몰라도 저는 일단 어떻게 어플을 만들까 라는 아이디어가 생각나면 직관적으로 레이아웃이 떠오르더라고요 +_+</p>
-<p>레이아웃은 아무렇게나 짜도 되지만 꼭 EditText, Button, TextView로 짜주시고, TextView의 글자를 없애주세요</p>
+<p>레이아웃은 아무렇게나 짜도 되지만 꼭 EditText, Button, TextView로 짜주시고, TextView의 글자를 없애주세요</p>
 <p>(사실 매번 강좌쓸때마다 예제를 어떻게 만들까를 강좌 쓰면서 생각하지요 -_-)</p>
 <p>&#x3C;EditText</p>
-<p>    android:id=”@+id/EditText”</p>
-<p>    android:layout_width=“match_parent”</p>
-<p>    android:layout_height=“wrap_content”</p>
-<p>    android:layout_alignParentTop=“true”</p>
-<p>    android:layout_centerHorizontal=“true”</p>
-<p>    android:inputType=“number” ></p>
-<p>    <requestfocus></requestfocus></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>android:id="@+id/EditText"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_width="match_parent"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_height="wrap_content"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_alignParentTop="true"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_centerHorizontal="true"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:inputType="number" ></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;requestFocus /></span></span>
+<span class="line"><span></span></span></code></pre>
 
 <p>&#x3C;Button</p>
-<p>    android:id=”@+id/Button”</p>
-<p>    android:layout_width=“wrap_content”</p>
-<p>    android:layout_height=“wrap_content”</p>
-<p>    android:layout_below=”@+id/EditText”</p>
-<p>    android:layout_centerHorizontal=“true”</p>
-<p>    android:onClick=“Button_Click”</p>
-<p>    android:text=“입력하시고 터치하세요” /></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>android:id="@+id/Button"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_width="wrap_content"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_height="wrap_content"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_below="@+id/EditText"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_centerHorizontal="true"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:onClick="Button_Click"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:text="입력하시고 터치하세요" /></span></span>
+<span class="line"><span></span></span></code></pre>
 <p>&#x3C;TextView</p>
-<p>    android:id=”@+id/Count_TextView”</p>
-<p>    android:layout_width=“wrap_content”</p>
-<p>    android:layout_height=“wrap_content”</p>
-<p>    android:layout_below=”@+id/Button”</p>
-<p>    android:layout_centerHorizontal=“true”</p>
-<p>    android:layout_marginTop=“30dp”</p>
-<p>    android:textSize=“50dp” /></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>android:id="@+id/Count_TextView"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_width="wrap_content"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_height="wrap_content"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_below="@+id/Button"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_centerHorizontal="true"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:layout_marginTop="30dp"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>android:textSize="50dp" /></span></span>
+<span class="line"><span></span></span></code></pre>
 <p>저는 이렇게 짰습니다 ㅎㅎ</p>
 <h3 id="20-4-자바소스로-넘어와-주세요">20-4 자바소스로 넘어와 주세요</h3>
 <p>먼저 맨날 하던거 해봅시다</p>
@@ -93,7 +114,7 @@
 <p>Count_TextView = (TextView) findViewById(R.id.Count_TextView);</p>
 <p>Button = (Button) findViewById(R.id.Button);</p>
 <p>마지막으로 버튼을 눌렀을때 어떤 작업을 할지 메소드를 만들어 줘야합니다</p>
-<p>전에 많이 만든것처럼 이름이 Button_Click인 메소드를 만들어 주세요</p>
+<p>전에 많이 만든것처럼 이름이 Button_Click인 메소드를 만들어 주세요</p>
 <p>(사실 이부분까지 쓰고 혼자서 예제를 만들어 봤는데요 꽤 길더라고요 ㅎㅎ;;)</p>
 <p>자잘한 부분으로 쪼개서 봅시다</p>
 <p><strong>Part 1</strong></p>
@@ -143,12 +164,12 @@
 <p>private static class MyHandler extends Handler {</p>
 <p>private final WeakReference<mainactivity> mActivity;</mainactivity></p>
 <p>public MyHandler(MainActivity activity) {</p>
-<p> mActivity = new WeakReference<mainactivity>(activity);</mainactivity></p>
+<p>mActivity = new WeakReference<mainactivity>(activity);</mainactivity></p>
 <p>}</p>
 <p>@Override</p>
 <p>public void handleMessage(Message msg) {</p>
 <p>MainActivity activity = mActivity.get();</p>
-<p>   if (activity != null) {</p>
+<p>if (activity != null) {</p>
 <p>/**</p>
 <p>* 넘겨받은 what값을 이용해 실행할 작업을 분류합니다</p>
 <p>*/</p>
@@ -171,7 +192,7 @@
 <p>저기 보이는 what이라는것은 메세지를 구분할때 쓰입니다</p>
 <p>sendEmptyMessage의 경우에는 sendEmptyMessage(int what)으로, ()안에 what의 값을 넣어 핸들러에게 전달하고요</p>
 <p>sendMessage같은것은 message를 보냅니다</p>
-<p>전달된 message객체에는 what값외 arg1, arg2, obj등을 보낼수 있습니다</p>
+<p>전달된 message객체에는 what값외 arg1, arg2, obj등을 보낼수 있습니다</p>
 <p>what의 값에 따라 어떤 행동을 할것인지 정해주면 됩니다</p>
 <p>지금은 예제이므로 로그를 띄워 확인해 보는 작업을 해보았습니다</p>
 <p>Runnable task = new Runnable(){</p>
@@ -189,13 +210,13 @@
 <p>}</p>
 <p>};</p>
 <p>이 부분은 Runnable을 정의하는 부분입니다</p>
-<p>Runnable에 관해서는 나중에 더 자세히 다룰예정입니다</p>
+<p>Runnable에 관해서는 나중에 더 자세히 다룰예정입니다</p>
 <p>일단 Thread가 시작되면 저 run()메소드가 실행되게 됩니다</p>
 <p>이때 while문으로 입력한 숫자가 0보다 크면 실행되게 만듭니다(0이거나 0보다 작으면 실행이 안됩니다)</p>
 <p>Thread.sleep(1000);부분은 try-catch로 묶여 있습니다</p>
 <p>예외처리인데요 이것도 나중에 더 배워보도록 합시다</p>
 <p>그아래 handler가 중요합니다</p>
-<p>위에서 설명한것처럼 sendEmptyMessage()는 int형 숫자를 전달합니다</p>
+<p>위에서 설명한것처럼 sendEmptyMessage()는 int형 숫자를 전달합니다</p>
 <p>이는 핸들러에서 msg.what으로 참조가 가능합니다 (위 참조)</p>
 <p>sendEmptyMessage()아래에는 Message객체를 이용한 핸들러 메세지 전달법도 설명하고 있습니다</p>
 <p>Thread thread = new Thread(task);</p>
@@ -209,12 +230,16 @@
 <p>원문 : <a href="http://www.androiddesignpatterns.com/2013/01/inner-class-handler-memory-leak.html">http://www.androiddesignpatterns.com/2013/01/inner-class-handler-memory-leak.html</a></p>
 <p>아래의 코드를 생각해보자</p>
 <p>public class SampleActivity extends Activity {</p>
-<p>  private final Handler mLeakyHandler = new Handler() {</p>
-<p>    @Override</p>
-<p>    public void handleMessage(Message msg) {</p>
-<p>      // …</p>
-<p>    }</p>
-<p>  }</p>
+<p>private final Handler mLeakyHandler = new Handler() {</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>@Override</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>public void handleMessage(Message msg) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  // ...</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>}</p>
 <p>}</p>
 <p>위의 코드는 괜찮아 보일지 몰라도 상당한 양의 메모리 릭을 발생시킬 수 있다.</p>
 <p>그리고 Android Lint는 “In Android, Handler classes should be static or leaks might occur.”라는 Warning을 보여줄 것이다. 그럼 어디서 메모리 릭이 발생할 수 있는지 알아보자.</p>
@@ -223,7 +248,7 @@
 <p>Android Application이 실행될 때, Framework에서는 Application의 메인 쓰레드를 위한 Looper Object를 생성한다. Looper는 단순한 메시지 큐를 생성하여 Message들을 처리하고, Application의 Lifecycle과 동일한 Lifecycle을 갖는다.</p>
 </li>
 <li>
-<p>메인 쓰레드에서 생성된 Handler는 Looper의 메시지 큐에 속하게 된다.  메시지 큐로 전달 된 Message들은Handler에 대한 reference를 갖고 있어야만, Looper가 해당 메시지를 처리할 수 있다.   Looper가 메시지를 처리할 때 Handler#handleMessage(Message)를 호출해야 하기 때문.</p>
+<p>메인 쓰레드에서 생성된 Handler는 Looper의 메시지 큐에 속하게 된다.  메시지 큐로 전달 된 Message들은Handler에 대한 reference를 갖고 있어야만, Looper가 해당 메시지를 처리할 수 있다.   Looper가 메시지를 처리할 때 Handler#handleMessage(Message)를 호출해야 하기 때문.</p>
 </li>
 <li>
 <p>Java에서는 non-static inner class와 anonymous class는 outer class에 대한 implicit reference를 갖고, static inner class의 경우에는 갖지 않는다.</p>
@@ -231,23 +256,35 @@
 </ol>
 <p>그래서 메모리 릭은 어디서 발생하는가?</p>
 <p>public class SampleActivity extends Activity {</p>
-<p>  private final Handler mLeakyHandler = new Handler() {</p>
-<p>    @Override</p>
-<p>    public void handleMessage(Message msg) {</p>
-<p>      // …</p>
-<p>    }</p>
-<p>  }</p>
-<p>  @Override</p>
-<p>  protected void onCreate(Bundle savedInstanceState) {</p>
-<p>    super.onCreate(savedInstanceState);</p>
-<p>    // Post a message and delay its execution for 10 minutes.</p>
-<p>    mLeakyHandler.postDelayed(new Runnable() {</p>
-<p>      @Override</p>
-<p>      public void run() { }</p>
-<p>    }, 600000);</p>
-<p>    // Go back to the previous Activity.</p>
-<p>    finish();</p>
-<p>  }</p>
+<p>private final Handler mLeakyHandler = new Handler() {</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>@Override</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>public void handleMessage(Message msg) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  // ...</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>}</p>
+<p>@Override</p>
+<p>protected void onCreate(Bundle savedInstanceState) {</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>super.onCreate(savedInstanceState);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// Post a message and delay its execution for 10 minutes.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>mLeakyHandler.postDelayed(new Runnable() {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  @Override</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  public void run() { }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}, 600000);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// Go back to the previous Activity.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>finish();</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>}</p>
 <p>}</p>
 <p>위의 코드에서는 Activity가 종료되더라도, Delayed Message는 처리되기 전까지 메인 쓰레드의 메시지 큐에 10분간 남아있을 것이다.</p>
 <p>이때 Delayed Message는 Handler에 대한 reference를 갖고 있고, Handler는 outer class에 대한 reference를 갖고 있다. 위의 예에서 outer class는 SampleActivity에 해당한다.</p>
@@ -256,44 +293,63 @@
 <p>위 문제를 해결하기 위해서는 Handler를 static inner class로 정의하거나, 새로운 파일에 subclass해야 한다. static inner class는 outer class에 대한 implicit reference를 갖기 않기 때문에 Activity Context가 Garbage Collect되는 것을 방해하지 않을 것이다.</p>
 <p>만약 Handler 내부에서 Activity의 method를 호출해야 할 경우 Activity의 WeakReference를 갖도록 한다.</p>
 <p>public class SampleActivity extends Activity {</p>
-<p>  /**</p>
-<p>   * Instances of static inner classes do not hold an implicit</p>
-<p>   * reference to their outer class.</p>
-<p>   */</p>
-<p>    private static class MyHandler extends Handler {</p>
-<p>    private final WeakReference<sampleactivity> mActivity;</sampleactivity></p>
-<p>    public MyHandler(SampleActivity activity) {</p>
-<p>      mActivity = new WeakReference<sampleactivity>(activity);</sampleactivity></p>
-<p>    }</p>
-<p>    @Override</p>
-<p>    public void handleMessage(Message msg) {</p>
-<p>      SampleActivity activity = mActivity.get();</p>
-<p>      if (activity != null) {</p>
-<p>        // …</p>
-<p>      }</p>
-<p>    }</p>
-<p>  }</p>
-<p>  private final MyHandler mHandler = new MyHandler(this);</p>
-<p>  /**</p>
-<p>   * Instances of anonymous classes do not hold an implicit</p>
-<p>   * reference to their outer class when they are “static”.</p>
-<p>   */</p>
-<p>  private static final Runnable sRunnable = new Runnable() {</p>
-<p>      @Override</p>
-<p>      public void run() { }</p>
-<p>  };</p>
-<p>  @Override</p>
-<p>  protected void onCreate(Bundle savedInstanceState) {</p>
-<p>    super.onCreate(savedInstanceState);</p>
-<p>    // Post a message and delay its execution for 10 minutes.</p>
-<p>    mHandler.postDelayed(sRunnable, 600000);</p>
-<p>    // Go back to the previous Activity.</p>
-<p>    finish();</p>
-<p>  }</p>
+<p>/**</p>
+<p>* Instances of static inner classes do not hold an implicit</p>
+<p>* reference to their outer class.</p>
+<p>*/</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>private static class MyHandler extends Handler {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>private final WeakReference&#x3C;SampleActivity> mActivity;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>public MyHandler(SampleActivity activity) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  mActivity = new WeakReference&#x3C;SampleActivity>(activity);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>@Override</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>public void handleMessage(Message msg) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  SampleActivity activity = mActivity.get();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  if (activity != null) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    // ...</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>}</p>
+<p>private final MyHandler mHandler = new MyHandler(this);</p>
+<p>/**</p>
+<p>* Instances of anonymous classes do not hold an implicit</p>
+<p>* reference to their outer class when they are “static”.</p>
+<p>*/</p>
+<p>private static final Runnable sRunnable = new Runnable() {</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>  @Override</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  public void run() { }</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>};</p>
+<p>@Override</p>
+<p>protected void onCreate(Bundle savedInstanceState) {</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>super.onCreate(savedInstanceState);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// Post a message and delay its execution for 10 minutes.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>mHandler.postDelayed(sRunnable, 600000);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// Go back to the previous Activity.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>finish();</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>}</p>
 <p>}</p>
 <p>static inner class와 non-static inner class는 큰 차이가 없는 것 같지만, 실제로는 모든 Android 개발자들이 이해해야 하는 중요한 부분이다.</p>
 <p>만약 inner class가 Activity의 Lifecycle에 종속적이지 않다면, non-static inner class로 선언하지 말고, static inner class로 선언한 뒤, weak reference를 갖도록 하자</p>
-<p>쓰레드를 실행하고 핸들러에게 메세지를 전달하는 과정을 그림으로 표시하면 다음과 같습니다</p>
+<p>쓰레드를 실행하고 핸들러에게 메세지를 전달하는 과정을 그림으로 표시하면 다음과 같습니다</p>
 <p><img  src="/archive/_astro/4.DpkAbjcw_2eJtyR.webp" alt="" width="780" height="484" loading="lazy" decoding="async"></p>
 <p>(이야 제가봐도 잘만든거 같아요 ㅎㅎ(?))</p>
 <p>자, 이렇게 모든 코드를 살펴보았고, 직접 짜봤습니다</p>
@@ -303,9 +359,8 @@
 <p>그 메세지를 받은 핸들러가 setText작업을 정상적으로 하여, 완성되는 것이지요 ㅎㅎ</p>
 <p>끝났습니다~~</p>
 <p>항상 하는 완성작을 확인해 보겠습니다</p>
-<p><img  src="/archive/_astro/Screenshot_2013-10-31-21-04-03.BKjUAtU8_ZS54TW.webp" alt="" width="400" height="711" loading="lazy" decoding="async">
-    
-<img  src="/archive/_astro/Screenshot_2013-10-31-21-04-15.CED_uBXo_1xWwXP.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/Screenshot_2013-10-31-21-04-03.BKjUAtU8_ZS54TW.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/Screenshot_2013-10-31-21-04-15.CED_uBXo_1xWwXP.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
 <p>이렇게 입력한 값이 정상적으로 카운트 다운 되는것을 확인할수 있습니다 ㅎㅎ</p>
 <p>우아 이 강좌 쓰는데만 <strong>구상하는데 2일, 쓰는데 3시간</strong>이 걸린거 같네요 ;;</p>
 <p>이번 강좌는 너무 힘들게 작성했습니다 ㅠㅠ</p>
@@ -315,8 +370,8 @@
 <p>정말 어플개발에 꼭 필요한 지식을 배울려고 합니다 ㅎㅎ</p>
 <p>br /></p>
 <p>그리고 문자입력창 옆에 있는 길이 확인란 있죠? 50/140 뭐 이런거..</p>
-<p>넘어가면 MMS이고… 이거 한번 구현해 볼까 합니다 ㅎㅎ</p>
-<p>이 강좌의 예제소스는 21번 강좌가 나오는 즉시 업로드 됩니다</p>
+<p>넘어가면 MMS이고… 이거 한번 구현해 볼까 합니다 ㅎㅎ</p>
+<p>이 강좌의 예제소스는 21번 강좌가 나오는 즉시 업로드 됩니다</p>
 <p>원본글에서만 다운로드가 가능합니다</p>
 <p>예제소스 다운로드 :</p>
 <p><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleThreadHandler.zip">ExampleThreadHandler.zip</a></p>

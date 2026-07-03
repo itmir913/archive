@@ -5,7 +5,7 @@
 지금까지 제 라이브러리를 사용해주신 모든 분들께 감사의 말씀을 드리며, 아래 사이트로 접속하여 정부에서 공개한 API 정보를 확인하시기 바랍니다.<br>
 <a href="https://open.neis.go.kr/portal/data/dataset/searchDatasetPage.do">https://open.neis.go.kr/portal/data/dataset/searchDatasetPage.do</a></p>
 <p>나이스의 보안프로그램 적용으로 급식 파싱 라이브러리 사용이 제한될 수 있으며, 영구적으로 사용이 불가능할 수도 있습니다.</p>
-<p>자세한 내용은 <a href="/archive/itmir/2016/614">[Application] - 나이스 보안 프로그램과 현재 급식 파싱 불가능 관련</a>을 참고하세요.</p>
+<p>자세한 내용은 <a href="/archive/itmir/2016/614">[Application] - 나이스 보안 프로그램과 현재 급식 파싱 불가능 관련</a>을 참고하세요.</p>
 <p>급식 라이브러리 가이드가 작성되었습니다.</p>
 <p>오래된 이 글보다 아래 가이드 글을 참고해주세요!</p>
 <p>&#x3C;/archive/itmir/2015/579></p>
@@ -56,7 +56,7 @@
 <p><strong>인터넷 사용 권한을 AndroidManifest.xml에 추가하셔야 되요</strong></p>
 <p>당연한 사실..!</p>
 <uses-permission android:name="android.permission.INTERNET">
-<uses-permission android:name="android.permission.ACCESS\_NETWORK\_STATE">
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE">
 <p>이거 두개는 필수로 넣어주셔야 합니다</p>
 <h2 id="2-android-meal-library">2. Android Meal Library</h2>
 <p><strong>[다운로드]</strong></p>
@@ -70,7 +70,7 @@
 <p>오픈소스 사이트에는 Thread를 이용한 방법말고 AsyncTask를 이용한 방법으로 변경하였습니다.</p>
 <p>개발자분께서는 꼭 <strong>AsyncTask로 파싱을 해주시길 바랍니다.</strong></p>
 <p><strong>첨부한 AndroidMealLibrary.zip 프로젝트를 삭제</strong>합니다.</p>
-<p><strong>라이브러리는 언제나 오류를 수정하여 변경</strong>되므로 이 글에 첨부된 파일보다 위 링크에 있는 자료를 사용하는것이 더 빠른 방법입니다.</p>
+<p><strong>라이브러리는 언제나 오류를 수정하여 변경</strong>되므로 이 글에 첨부된 파일보다 위 링크에 있는 자료를 사용하는것이 더 빠른 방법입니다.</p>
 <p>오픈소스에는 날짜를 지정해서 급식을 가져오는 기능등의 예가 포함되어 있습니다.</p>
 <p>오픈소스 어플을 테스트해보고 싶으신 분께서는 아래 주소로 접속해서 앱을 받아주시기 바랍니다.</p>
 <p><a href="https://play.google.com/store/apps/details?id=wondang.icehs.kr.whdghks913.wondanghighschool">https://play.google.com/store/apps/details?id=wondang.icehs.kr.whdghks913.wondanghighschool</a></p>
@@ -103,7 +103,7 @@
 <li>2018-02-12 MealLibrary Version 8 Update</li>
 </ul>
 <p><a href="https://github.com/itmir913/wondanghighschool">https://github.com/itmir913/wondanghighschool</a></p>
-<p>위 오픈소스 사이트의 app/src/main/java/toast/library/meal/MealLibrary.java 파일을 받아주세요.</p>
+<p>위 오픈소스 사이트의 app/src/main/java/toast/library/meal/MealLibrary.java 파일을 받아주세요.</p>
 <p>가장 최신 파일입니다.</p>
 <p>두 라이브러리를 받아서 자신의 프로젝트에 추가해 주세요</p>
 <h3 id="1-파싱-설명">(1) 파싱 설명</h3>
@@ -155,7 +155,7 @@
 <p>EX) 인천 : ice.go.kr</p>
 <p><strong>schulCode</strong> : 학교 고유 코드번호 입니다</p>
 <p>교육청에서 학교를 구분할때, 학교에 공문을 내릴때 사용하며 아래 참조에서 코드를 찾을수도 있습니다</p>
-<p>EX) 인천의 학교 코드 검색 : <a href="http://hes.ice.go.kr/sts%5C_sci%5C_si00%5C_001.do">http://hes.ice.go.kr/sts\_sci\_si00\_001.do</a> (학교 검색후 E10000xxxx 부분)</p>
+<p>EX) 인천의 학교 코드 검색 : <a href="http://hes.ice.go.kr/sts_sci_si00_001.do">http://hes.ice.go.kr/sts_sci_si00_001.do</a> (학교 검색후 E10000xxxx 부분)</p>
 <p><strong>schulCrseScCode</strong>는 학교 분류입니다</p>
 <p>“1” : 병설유치원</p>
 <p>“2” : 초등학교</p>

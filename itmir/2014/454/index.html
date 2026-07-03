@@ -1,10 +1,10 @@
-<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="리눅스(Linux)에서 빌드시간을 단축하는대 사용되는 가장 대표적인 방법은 ccache와 distcc입니다."><title>Ubuntu 빌드 시간 단축하기 - ccache — luminousky archive</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.BgW6xfjO.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2012 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">Ubuntu 빌드 시간 단축하기 - ccache</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-01-27T04:46:40.000Z"> 2014년 1월 27일 </time> <span class="post-category">Computer &amp; PC/Ubuntu</span> <a href="https://itmir.tistory.com/454" class="post-original" target="_blank" rel="noopener noreferrer">
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="리눅스(Linux)에서 빌드시간을 단축하는대 사용되는 가장 대표적인 방법은 ccache와 distcc입니다."><title>Ubuntu 빌드 시간 단축하기 - ccache — luminousky archive</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.BgW6xfjO.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2012 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">Ubuntu 빌드 시간 단축하기 - ccache</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2014-01-27T04:46:40.000Z"> 2014년 1월 27일 </time> <span class="post-category">Computer &amp; PC/Ubuntu</span> <a href="https://itmir.tistory.com/454" class="post-original" target="_blank" rel="noopener noreferrer">
 원본 보기 ↗
-</a> </div> <p class="post-description">리눅스(Linux)에서 빌드시간을 단축하는대 사용되는 가장 대표적인 방법은 ccache와 distcc입니다.</p> </header> <div class="post-content"> <p>리눅스(Linux)에서 빌드시간을 단축하는대 사용되는 가장 대표적인 방법은 ccache와 distcc입니다.</p>
+</a> </div> <p class="post-description">리눅스(Linux)에서 빌드시간을 단축하는대 사용되는 가장 대표적인 방법은 ccache와 distcc입니다.</p> </header> <div class="post-content"> <p>리눅스(Linux)에서 빌드시간을 단축하는대 사용되는 가장 대표적인 방법은 ccache와 distcc입니다.</p>
 <p>ccache는 빌드결과를 모와뒀다가 재빌드시 빌드 시간을 줄여주는 것이고,</p>
 <p>distcc는 컴퓨터 두 대 이상을 사용하여 “분산”빌드 하는 형식입니다.</p>
 <p>일단 설명하는것과 사용하기 편한 ccache를 먼저 다뤄보겠습니다.</p>
-<p>공식 사이트는 <a href="http://ccache.samba.org/">http://ccache.samba.org/</a> 입니다.</p>
+<p>공식 사이트는 <a href="http://ccache.samba.org/">http://ccache.samba.org/</a> 입니다.</p>
 <h2 id="1-ccache설치하기">1. ccache설치하기</h2>
 <p>리눅스중 fedora는 이미 기본 설치되어 있다고 하고요 Ubuntu는 따로 설치해야 합니다.</p>
 <p>Ubuntu도 apt-get로 손쉽게 설치할수 있습니다.</p>
@@ -35,7 +35,7 @@
 <p>캐쉬 폴더와 현재 캐쉬 파일 크기, 최대 캐쉬파일 크기를 확인할수 있습니다.</p>
 <p><img  src="/archive/_astro/3.D1TUaEbu_Z2k6qP7.webp" alt="" width="547" height="145" loading="lazy" decoding="async"></p>
 <p>빌드 결과가 이상하여 캐쉬를 지우고 싶을경우에는,</p>
-<p>ccache -C</p>
+<p>ccache -C</p>
 <p>이렇게 하면 현재 저장된 캐쉬가 지워집니다.</p>
 <p><img  src="/archive/_astro/4.L651bqUU_2igWLc.webp" alt="" width="274" height="34" loading="lazy" decoding="async"></p>
 <p>최대 캐쉬 크기를 변경하고 싶다면 아래를 입력하세요.</p>

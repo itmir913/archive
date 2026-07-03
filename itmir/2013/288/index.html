@@ -5,10 +5,10 @@
 <p><a href="/archive/itmir/2013/283">2013/07/29 - [미르의 개발 이야기/어플 개발 강좌] - 안드로이드 탭을 구현해 보자, Fragment</a></p>
 <p>의 문제점을 보면 화면을 회전할경우 어플리케이션이 강제종료된다는 점이었습니다</p>
 <p>이번에 네타냥님의 도움으로 이 문제를 해결하게 되어 한번 글을 올려볼까 하는대요 ㅎ</p>
-<p>제 글실력이 부족하여 못알아 들으신경우 <a href="http://blog.naver.com/liar1938/30173022348">http://blog.naver.com/liar1938/30173022348</a>으로 가시면 더욱 자세하게 아실수 있으실겁니다 ㅎㅎ</p>
+<p>제 글실력이 부족하여 못알아 들으신경우 <a href="http://blog.naver.com/liar1938/30173022348">http://blog.naver.com/liar1938/30173022348</a>으로 가시면 더욱 자세하게 아실수 있으실겁니다 ㅎㅎ</p>
 <p>으아아아아아 컴이 렉걸렸어요 ;;</p>
 <p>왜 문제가 발생하느냐…</p>
-<p>기기의 화면을 전환할때는 onDestroy()와 onCreate()가 호출되면서 바뀐 화면이 화면에 나타납니다</p>
+<p>기기의 화면을 전환할때는 onDestroy()와 onCreate()가 호출되면서 바뀐 화면이 화면에 나타납니다</p>
 <p>그런대 이때 모든 Activity의 필드, 변수가 초기화 되는대요</p>
 <p>화면이 다시 만들어 지면서 강제종료가 발생하는 겁니다</p>
 <p>그럼 해결해 봅시다</p>
@@ -23,12 +23,12 @@
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">android:configChanges="keyboardHidden|orientation|screenSize"</span></span>
 <span class="line"></span></code></pre>
 <p>을 추가해 주셔야만 합니다</p>
-<p>관련 API입니다 (출처: <a href="http://developer.android.com/guide/topics/manifest/activity-element.html">http://developer.android.com/guide/topics/manifest/activity-element.html</a>, <a href="http://blog.naver.com/liar1938/30173022348">http://blog.naver.com/liar1938/30173022348</a>)</p>
+<p>관련 API입니다 (출처: <a href="http://developer.android.com/guide/topics/manifest/activity-element.html">http://developer.android.com/guide/topics/manifest/activity-element.html</a>, <a href="http://blog.naver.com/liar1938/30173022348">http://blog.naver.com/liar1938/30173022348</a>)</p>
 <p><img  src="/archive/_astro/orientation.9wiBdAJO_ZxywVN.webp" alt="" width="641" height="157" loading="lazy" decoding="async"></p>
-<p>직역하자면 target API 버전이 13이상이라면 android:configChanges에 screenSize도 추가해 주라네요..</p>
+<p>직역하자면 target API 버전이 13이상이라면 android:configChanges에 screenSize도 추가해 주라네요..</p>
 <p>아오… 제 머리가 안돌아가서 글 인용하겠습니다…</p>
 <blockquote>
-<p>‘android:configChanges’ 속성은 화면전환시 자동으로 onDstroy()와 onCreate()를 호출하지 않고 onConfigurationChanged()  메소드 호출하여 내가 원하는 내용으로 환경 설정을 하겠다고 안드로이드에게 알려줍니다. 네, 이렇게되면 Activity를 재생성하지 않아도 되는거죠. ^^ 화면회전이 생길 때, 안드로이드 시스템이 아니라 액티비티 내부에서 직접 이벤트를 관리하게 됩니다.</p>
+<p>‘android:configChanges’ 속성은 화면전환시 자동으로 onDstroy()와 onCreate()를 호출하지 않고 onConfigurationChanged()  메소드 호출하여 내가 원하는 내용으로 환경 설정을 하겠다고 안드로이드에게 알려줍니다. 네, 이렇게되면 Activity를 재생성하지 않아도 되는거죠. ^^ 화면회전이 생길 때, 안드로이드 시스템이 아니라 액티비티 내부에서 직접 이벤트를 관리하게 됩니다.</p>
 <p>그런데 orientation 환경 변화는 이해가 가는데 keyboardHidden 값은 왜 주는 걸까요?</p>
 <p>keyboardHidden이란 키보드가 보여지거나 숨겨지는 변경사항인데, 키보드 히든 구성을</p>
 <p>주는 것은 기존에 물리적 키보드가 장착되어 있는 모바일 기기와의 호환성 때문</p>
@@ -44,7 +44,7 @@
 <span class="line"><span style="color:#24292E">    (이곳에 작업 내용을 적습니다, 생략 가능)</span></span>
 <span class="line"><span style="color:#24292E">}</span></span>
 <span class="line"></span></code></pre>
-<p>만약 화면 전환시 알림을 뜨게 하고 싶다면</p>
+<p>만약 화면 전환시 알림을 뜨게 하고 싶다면</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">if</span><span style="color:#24292E"> (newConfig.orientation </span><span style="color:#D73A49">==</span><span style="color:#24292E"> Configuration.ORIENTATION_LANDSCAPE)</span></span>
 <span class="line"><span style="color:#24292E">{</span></span>
 <span class="line"><span style="color:#6A737D">    // 기기가 가로로 회전할때 할 작업</span></span>

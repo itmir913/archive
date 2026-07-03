@@ -7,7 +7,7 @@
 <p>※ 주의</p>
 <ol>
 <li>
-<p>유료 어플의 크랙파일 배포는 저작권 법에 의해 처벌될 수 있습니다.</p>
+<p>유료 어플의 크랙파일 배포는 저작권 법에 의해 처벌될 수 있습니다.</p>
 </li>
 <li>
 <p>크랙한 apk파일은 배포하지 마세요.</p>
@@ -24,18 +24,18 @@
 </ol>
 <p>안드로이드 어플을 사용하다 보면, 사용할 수 있는 기기를 제한한다던지, 마켓에서 라이센스를 확인하여 실행을 막던지하는 어플이 많이 있습니다.</p>
 <p>그 예로 기기를 제한하는 경우는 <a href="https://itmir.tistory.com/407">전에 크랙한 V노트</a>가 있겠고, 라이센스 확인은 대표적으로 <a href="/archive/itmir/2014/463">파워 앰프 앱</a>이 존재합니다.</p>
-<p>(파워앰프는 난독화가 되어 있어, 디컴파일도 안되는점 이해하시고, 크랙이 잘 안됩니다. 삽질하지 마시길…)</p>
+<p>(파워앰프는 난독화가 되어 있어, 디컴파일도 안되는점 이해하시고, 크랙이 잘 안됩니다. 삽질하지 마시길…)</p>
 <p>이런 어플들이 언제까지나 크랙되지 않는다면 안심이고 다행이지만, 안타깝게도 안드로이드는 java를 이용하여 어플을 만들기 때문에 디컴파일/분해가 가능합니다.</p>
 <p>즉 네이티브로 만들지 않는이상 모든 안드로이드 어플이 이론 상 뚤릴 수 있습니다.</p>
 <p>이번에는 주로 사용되는 크랙방법과, 제가 주로 사용하는 크랙방법에 대해 모두 다뤄보겠습니다.</p>
-<p>다시한번 말하지만 <strong>이 방법을 사용하여 어플을 크랙한뒤에, 그 파일을 절대 배포하지 마세요. 필자는 여러분의 법 위반을 책임질 수 없습니다.</strong></p>
+<p>다시한번 말하지만 <strong>이 방법을 사용하여 어플을 크랙한뒤에, 그 파일을 절대 배포하지 마세요. 필자는 여러분의 법 위반을 책임질 수 없습니다.</strong></p>
 <p><strong>학습용으로만 이 글을 읽어주시고, 앱의 보안을 향상시키기 위해 이 글을 읽어주세요.</strong></p>
 <p>그럼, 시작하겠습니다.</p>
 <p>제가 사용하는 앱 크랙 방법에는 몇 가지 종류가 있습니다.</p>
 <p>그 중에서 이 글에서는 대표적인 두 가지 방법만 다뤄보겠습니다.</p>
 <ol>
 <li>
-<p>건너뛰기 (점프)</p>
+<p>건너뛰기 (점프)</p>
 </li>
 <li>
 <p>무조건 true반환</p>
@@ -63,50 +63,86 @@
 <p><img  src="/archive/_astro/Screenshot_2013-12-15-12-02-50.D7iPsSLo_Z1KEzzC.webp" alt="" width="356" height="65" loading="lazy" decoding="async"></p>
 <p>저 글자는 R.string으로 가져오므로, res/values-ko/string.xml을 찾아보면 나옵니다.</p>
 <p><img  src="/archive/_astro/3-%EC%A7%80%EC%9B%90%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EB%AA%A8%EB%8D%B8.DRZKHSRo_Z1AGG2Q.webp" alt="" width="580" height="25" loading="lazy" decoding="async"></p>
-<p>이제 string의 이름 not_support_device을 res/values/public.xml에서 찾아주세요.</p>
+<p>이제 string의 이름 not_support_device을 res/values/public.xml에서 찾아주세요.</p>
 <p><img  src="/archive/_astro/3-%EC%A7%80%EC%9B%90%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EB%AA%A8%EB%8D%B8-2.UUbuKl1u_ZP5erB.webp" alt="" width="539" height="20" loading="lazy" decoding="async"></p>
-<p>마지막으로 id값인 0x7f0b01cd을 smali폴더에서 찾아주시면, 저 문장을 띄우는 곳이 어디인지를 알 수 있습니다.</p>
+<p>마지막으로 id값인 0x7f0b01cd을 smali폴더에서 찾아주시면, 저 문장을 띄우는 곳이 어디인지를 알 수 있습니다.</p>
 <p>라이센스 체크 부분이 어디인지 발견했으면, 이제 수정해 봅시다.</p>
 <p>.method public onCreate(Landroid/os/Bundle;)V</p>
-<p>    // 윗부분 코드 생략</p>
-<p>    .line 65</p>
-<p>    :cond_0</p>
-<p>    sget-object v4, Landroid/os/Build;-><strong>MODEL</strong>:Ljava/lang/String;</p>
-<p>    // <strong>[01] 부분</strong></p>
-<p>    // 기기명을 가져오는 부분</p>
-<p>    const/4 v5, 0x2</p>
-<p>    invoke-virtual {v4, v6, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;</p>
-<p>    move-result-object v2</p>
-<p>    .line 67</p>
-<p>    .local v2, “modelName”:Ljava/lang/String;</p>
-<p>    const-string v4, “IM”</p>
-<p>    invoke-virtual {v2, v4}, Ljava/lang/String;-><strong>equals</strong>(Ljava/lang/Object;)Z</p>
-<p>    move-result v4</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// 윗부분 코드 생략</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.line 65</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>:cond_0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>sget-object v4, Landroid/os/Build;->**MODEL**:Ljava/lang/String;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// **[01] 부분**</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 기기명을 가져오는 부분</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const/4 v5, 0x2</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>invoke-virtual {v4, v6, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>move-result-object v2</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.line 67</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.local v2, "modelName":Ljava/lang/String;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const-string v4, "IM"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>invoke-virtual {v2, v4}, Ljava/lang/String;->**equals**(Ljava/lang/Object;)Z</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>move-result v4</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>if-nez v4, :cond_2</strong></p>
-<p>    // <strong>[02] 부분</strong></p>
-<p>    // 정상적이면 cond_2로 점프해서 어플 종료 부분을 건너뜁니다</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// **[02] 부분**</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 정상적이면 cond_2로 점프해서 어플 종료 부분을 건너뜁니다</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>.line 69</p>
-<p>    const v4, <strong>0x7f0b01cd</strong></p>
-<p>    // 아까 찾은 어플 종료 토스트 문구</p>
-<p>    invoke-static {p0, v4, v7}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;</p>
-<p>    move-result-object v4</p>
-<p>    invoke-virtual {v4}, Landroid/widget/Toast;->show()V</p>
-<p>    // <strong>[03] 부분</strong></p>
-<p>    // 토스트 알림을 띄웁니다</p>
-<p>    .line 70</p>
-<p>    invoke-virtual {p0}, Lcom/pantech/app/skypen_extend/page/SkyPenLauncher;->finish()V</p>
-<p>    // <strong>[04] 부분</strong></p>
-<p>    // 어플을 종료합니다</p>
-<p>    .line 105</p>
-<p>    :cond_1</p>
-<p>    :goto_0</p>
-<p>    return-void</p>
-<p>    .line 74</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>const v4, **0x7f0b01cd**</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 아까 찾은 어플 종료 토스트 문구</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>invoke-static {p0, v4, v7}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>move-result-object v4</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>invoke-virtual {v4}, Landroid/widget/Toast;->show()V</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// **[03] 부분**</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 토스트 알림을 띄웁니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.line 70</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>invoke-virtual {p0}, Lcom/pantech/app/skypen_extend/page/SkyPenLauncher;->finish()V</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// **[04] 부분**</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 어플을 종료합니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.line 105</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>:cond_1</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>:goto_0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return-void</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.line 74</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>:cond_2</strong></p>
-<p>    // <strong>[05] 부분</strong></p>
-<p>    // 이 부분으로 넘어와야 어플이 정상 실행됩니다</p>
-<p>    sget-boolean v4, Lcom/pantech/app/skypen_extend/SkyPenFeature;->USE_MARKET:Z</p>
-<p>    // 아래 코드 생략</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// **[05] 부분**</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 이 부분으로 넘어와야 어플이 정상 실행됩니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>sget-boolean v4, Lcom/pantech/app/skypen_extend/SkyPenFeature;->USE_MARKET:Z</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 아래 코드 생략</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>.end method</p>
 <p>위 코드는 onCreate메소드 안에 있는 코드입니다.</p>
 <p>onCreate는 어플이 실행될때(자세하게는 액티비티가 실행될 때) 처음으로 호출되는 메소드 입니다.</p>
@@ -114,8 +150,8 @@
 <p>저부분이 현재 기기의 모델명을 가져오는 부분입니다.</p>
 <p>[03] 부분이 토스트 알림을 띄우는 부분이고,</p>
 <p>[04] 부분이 어플을 종료하는 부분입니다.</p>
-<p>[02] 부분에서 equals이라는 것이 등장하는데, equals은 같다라는 뜻입니다.</p>
-<p>그 아래 <strong>if-nez v4, :cond_2</strong>을 주목해서 볼 필요가 있습니다.</p>
+<p>[02] 부분에서 equals이라는 것이 등장하는데, equals은 같다라는 뜻입니다.</p>
+<p>그 아래 <strong>if-nez v4, :cond_2</strong>을 주목해서 볼 필요가 있습니다.</p>
 <p>smali문법을 잠시 확인해 보면,</p>
 <p>if-nez v0, :cond_0</p>
 <p>v0 값이 0이 아니라면 cond_0 으로 넘어간다.</p>
@@ -128,37 +164,64 @@
 <p>그렇다면 저 if문에서 아래부분 [04]를 생략하고 [05]부분으로 점프해야 합니다.</p>
 <p>방법은 두 가지 정도 있습니다.</p>
 <p>어플을 종료하는 부분을 지워버리던가, 점프를 하는 if문에서 어떤 값이든 true가 나오도록 하던가.</p>
-<p>전자의 경우 잘 맟춰가며 지워버리면 되고, 후자의 경우 if-nez의 반대인 if-eqz을 추가하면 됩니다. (smali의 if를 살펴볼려면 맨 아래로 스크롤하세요.)</p>
+<p>전자의 경우 잘 맟춰가며 지워버리면 되고, 후자의 경우 if-nez의 반대인 if-eqz을 추가하면 됩니다. (smali의 if를 살펴볼려면 맨 아래로 스크롤하세요.)</p>
 <p>.method public onCreate(Landroid/os/Bundle;)V</p>
-<p> // 윗부분 코드 생략</p>
-<p>    .line 65</p>
-<p>    :cond_0</p>
-<p>    sget-object v4, Landroid/os/Build;->MODEL:Ljava/lang/String;</p>
-<p>    const/4 v5, 0x2</p>
-<p>    invoke-virtual {v4, v6, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;</p>
-<p>    move-result-object v2</p>
-<p>    .line 67</p>
-<p>    .local v2, “modelName”:Ljava/lang/String;</p>
-<p>    const-string v4, “IM”</p>
-<p>    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</p>
-<p>    move-result v4</p>
-<p>    if-nez v4, :cond_2</p>
+<p>// 윗부분 코드 생략</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>.line 65</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>:cond_0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>sget-object v4, Landroid/os/Build;->MODEL:Ljava/lang/String;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const/4 v5, 0x2</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>invoke-virtual {v4, v6, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>move-result-object v2</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.line 67</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.local v2, "modelName":Ljava/lang/String;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const-string v4, "IM"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>move-result v4</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>if-nez v4, :cond_2</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>if-eqz v4, :cond_2</p>
-<p>    .line 69</p>
-<p>    const v4, 0x7f0b01cd</p>
-<p>    invoke-static {p0, v4, v7}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;</p>
-<p>    move-result-object v4</p>
-<p>    invoke-virtual {v4}, Landroid/widget/Toast;->show()V</p>
-<p>    .line 70</p>
-<p>    invoke-virtual {p0}, Lcom/pantech/app/skypen_extend/page/SkyPenLauncher;->finish()V</p>
-<p>    .line 105</p>
-<p>    :cond_1</p>
-<p>    :goto_0</p>
-<p>    return-void</p>
-<p>    .line 74</p>
-<p>    :cond_2</p>
-<p>    sget-boolean v4, Lcom/pantech/app/skypen_extend/SkyPenFeature;->USE_MARKET:Z</p>
-<p>    // 아래 코드 생략</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>.line 69</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const v4, 0x7f0b01cd</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>invoke-static {p0, v4, v7}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>move-result-object v4</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>invoke-virtual {v4}, Landroid/widget/Toast;->show()V</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.line 70</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>invoke-virtual {p0}, Lcom/pantech/app/skypen_extend/page/SkyPenLauncher;->finish()V</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.line 105</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>:cond_1</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>:goto_0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return-void</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.line 74</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>:cond_2</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>sget-boolean v4, Lcom/pantech/app/skypen_extend/SkyPenFeature;->USE_MARKET:Z</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 아래 코드 생략</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>.end method</p>
 <p>제일 간단하게 한 문구를 추가해서 0이든 0이 아니든 cond_2로 점프할수 있도록 수정하면 됩니다.</p>
 <p>if를 지우고 goto를 사용하여 어떤 경우든 통과되도록 작업해도 될거라 예상합니다.</p>
@@ -176,43 +239,68 @@
 <p>무조건 true 반환 예제는 직접 만들어 사용했습니다.</p>
 <p>먼저 java소스코드를 보겠습니다.</p>
 <p>public class MainActivity extends Activity {</p>
-<p>    EditText editText;</p>
-<p>    Button button;</p>
-<p>    @Override</p>
-<p>    protected void onCreate(Bundle savedInstanceState) {</p>
-<p>        super.onCreate(savedInstanceState);</p>
-<p>        setContentView(R.layout.activity_main);</p>
-<p>        editText = (EditText) findViewById(R.id.editText);</p>
-<p>        button = (Button) findViewById(R.id.button);</p>
-<p>        button.setOnClickListener(new OnClickListener() {</p>
-<p>        @Override</p>
-<p>        public void onClick(View v) {</p>
-<p>                // TODO Auto-generated method stub</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>EditText editText;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Button button;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>@Override</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>protected void onCreate(Bundle savedInstanceState) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    super.onCreate(savedInstanceState);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    setContentView(R.layout.activity_main);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    editText = (EditText) findViewById(R.id.editText);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    button = (Button) findViewById(R.id.button);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    button.setOnClickListener(new OnClickListener() {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    @Override</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    public void onClick(View v) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>            // TODO Auto-generated method stub</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>String inputText = editText.getText().toString();</strong></p>
-<p>                // [01] 부분 : editText에 입력한 값을 가져옵니다</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>            // [01] 부분 : editText에 입력한 값을 가져옵니다</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>Boolean license = SerialCheck(inputText);</strong></p>
-<p>                // [02] 부분 : SerialCheck메소드를 호출하여 반환되는 값을 저장합니다</p>
-<p>                if(<strong>! license</strong>){</p>
-<p>                        Toast.makeText(MainActivity.this, “잘못된 키”, Toast.LENGTH_SHORT).show();</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>            // [02] 부분 : SerialCheck메소드를 호출하여 반환되는 값을 저장합니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>            if(**! license**){</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>                    Toast.makeText(MainActivity.this, "잘못된 키", Toast.LENGTH_SHORT).show();</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>finish();</strong></p>
-<p>                }else{</p>
-<p>                        Toast.makeText(MainActivity.this, “정상 키”, Toast.LENGTH_LONG).show();</p>
-<p>                }</p>
-<p>        }</p>
-<p>    });</p>
-<p>    }</p>
-<p>    public boolean SerialCheck(String inputText){</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>            }else{</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>                    Toast.makeText(MainActivity.this, "정상 키", Toast.LENGTH_LONG).show();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>            }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>});</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>public boolean SerialCheck(String inputText){</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>if(inputText.equals(“미르의 IT 정복기”))</strong></p>
 <p><strong>return true;</strong></p>
-<p>            // [03] 부분 : 입력한 값이 맞을경우 true를 반환합니다</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>        // [03] 부분 : 입력한 값이 맞을경우 true를 반환합니다</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>return false;</strong></p>
-<p>    }</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>}</p>
 <p>이 예제를 잘 분석해 봅시다.</p>
 <p>심플하긴 하나 이 하나의 파일안에 무조건 true로 반환이라는 목표가 모두 들어 있습니다.</p>
 <p>[01] 부분을 보면 EditText에 입력한 값을 가져오도록 하고 있습니다.</p>
-<p>[02] 부분에서는 SerialCheck라는 메소드가 호출되고 있는데요 이때 입력한 값을 넘겨주고 있습니다.</p>
-<p>즉 시리얼 체크는 SerialCheck메소드에서 이루어 지고 있네요.</p>
+<p>[02] 부분에서는 SerialCheck라는 메소드가 호출되고 있는데요 이때 입력한 값을 넘겨주고 있습니다.</p>
+<p>즉 시리얼 체크는 SerialCheck메소드에서 이루어 지고 있네요.</p>
 <p>[03] 부분이 중요합니다.</p>
 <p>입력한 값이 시리얼 키와 동일할경우 true를 반환하지만,</p>
 <p>다를경우 false를 반환하고 있습니다.</p>
@@ -220,105 +308,172 @@
 <p>smali를 보겠습니다.</p>
 <p><strong>MainActivity$1.smali</strong></p>
 <p>.method public onClick(Landroid/view/View;)V</p>
-<p>    // 윗부분 코드 생략</p>
-<p>    invoke-virtual {v2}, Landroid/widget/EditText;->getText()Landroid/text/Editable;</p>
-<p>    move-result-object v2</p>
-<p>    invoke-interface {v2}, Landroid/text/Editable;->toString()Ljava/lang/String;</p>
-<p>    move-result-object v0</p>
-<p>    .line 29</p>
-<p>    .local v0, “inputText”:Ljava/lang/String;</p>
-<p>    iget-object v2, p0, Lwhdghks913/tistory/exampleserial/MainActivity$1;->this$0:Lwhdghks913/tistory/exampleserial/MainActivity;</p>
-<p>    invoke-virtual {v2, v0}, Lwhdghks913/tistory/exampleserial/MainActivity;->**SerialCheck(Ljava/lang/String;)**Z</p>
-<p>    // [01] 부분 : 시리얼 체크 메소드를 호출하는 부분입니다</p>
-<p>    move-result v2</p>
-<p>    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</p>
-<p>    move-result-object v1</p>
-<p>    .line 30</p>
-<p>    .local v1, “license”:Ljava/lang/Boolean;</p>
-<p>    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z</p>
-<p>    move-result v2</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// 윗부분 코드 생략</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>invoke-virtual {v2}, Landroid/widget/EditText;->getText()Landroid/text/Editable;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>move-result-object v2</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>invoke-interface {v2}, Landroid/text/Editable;->toString()Ljava/lang/String;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>move-result-object v0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.line 29</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.local v0, "inputText":Ljava/lang/String;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>iget-object v2, p0, Lwhdghks913/tistory/exampleserial/MainActivity$1;->this$0:Lwhdghks913/tistory/exampleserial/MainActivity;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>invoke-virtual {v2, v0}, Lwhdghks913/tistory/exampleserial/MainActivity;->**SerialCheck(Ljava/lang/String;)**Z</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// [01] 부분 : 시리얼 체크 메소드를 호출하는 부분입니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>move-result v2</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>move-result-object v1</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.line 30</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.local v1, "license":Ljava/lang/Boolean;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>move-result v2</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>if-nez v2, :cond_0</strong></p>
-<p>    .line 31</p>
-<p>    iget-object v2, p0, Lwhdghks913/tistory/exampleserial/MainActivity$1;->this$0:Lwhdghks913/tistory/exampleserial/MainActivity;</p>
-<p>    const-string v3, “\uc798\ubabb\ub41c \ud0a4”</p>
-<p>    const/4 v4, 0x0</p>
-<p>    invoke-static {v2, v3, v4}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;</p>
-<p>    move-result-object v2</p>
-<p>    invoke-virtual {v2}, Landroid/widget/Toast;->show()V</p>
-<p>    .line 32</p>
-<p>    iget-object v2, p0, Lwhdghks913/tistory/exampleserial/MainActivity$1;->this$0:Lwhdghks913/tistory/exampleserial/MainActivity;</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>.line 31</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>iget-object v2, p0, Lwhdghks913/tistory/exampleserial/MainActivity$1;->this$0:Lwhdghks913/tistory/exampleserial/MainActivity;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const-string v3, "\uc798\ubabb\ub41c \ud0a4"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const/4 v4, 0x0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>invoke-static {v2, v3, v4}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>move-result-object v2</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>invoke-virtual {v2}, Landroid/widget/Toast;->show()V</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.line 32</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>iget-object v2, p0, Lwhdghks913/tistory/exampleserial/MainActivity$1;->this$0:Lwhdghks913/tistory/exampleserial/MainActivity;</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>invoke-virtual {v2}, Lwhdghks913/tistory/exampleserial/MainActivity;->finish()V</strong></p>
-<p>    // [02] 부분 : 시리얼 키가 안맞을경우 종료하는 부분</p>
-<p>    .line 36</p>
-<p>    :goto_0</p>
-<p>    return-void</p>
-<p>    .line 34</p>
-<p>    :cond_0</p>
-<p>    iget-object v2, p0, Lwhdghks913/tistory/exampleserial/MainActivity$1;->this$0:Lwhdghks913/tistory/exampleserial/MainActivity;</p>
-<p>    const-string v3, “\uc815\uc0c1 \ud0a4”</p>
-<p>    const/4 v4, 0x1</p>
-<p>    invoke-static {v2, v3, v4}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;</p>
-<p>    move-result-object v2</p>
-<p>    invoke-virtual {v2}, Landroid/widget/Toast;->show()V</p>
-<p>    goto :goto_0</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// [02] 부분 : 시리얼 키가 안맞을경우 종료하는 부분</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.line 36</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>:goto_0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return-void</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.line 34</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>:cond_0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>iget-object v2, p0, Lwhdghks913/tistory/exampleserial/MainActivity$1;->this$0:Lwhdghks913/tistory/exampleserial/MainActivity;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const-string v3, "\uc815\uc0c1 \ud0a4"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const/4 v4, 0x1</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>invoke-static {v2, v3, v4}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>move-result-object v2</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>invoke-virtual {v2}, Landroid/widget/Toast;->show()V</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>goto :goto_0</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>.end method</p>
 <hr>
 <p><strong>MainActivity.smali</strong></p>
 <p>.method public SerialCheck(Ljava/lang/String;)Z</p>
-<p>    .locals 1</p>
-<p>    .param p1, “inputText”    # Ljava/lang/String;</p>
-<p>    .prologue</p>
-<p>    .line 41</p>
-<p>    const-string v0, “\ubbf8\ub974\uc758 IT \uc815\ubcf5\uae30”</p>
-<p>    invoke-virtual {p1, v0}, Ljava/lang/String;-><strong>equals</strong>(Ljava/lang/Object;)Z</p>
-<p>    move-result v0</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>.locals 1</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.param p1, "inputText"    # Ljava/lang/String;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.prologue</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.line 41</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const-string v0, "\ubbf8\ub974\uc758 IT \uc815\ubcf5\uae30"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>invoke-virtual {p1, v0}, Ljava/lang/String;->**equals**(Ljava/lang/Object;)Z</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>move-result v0</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>if-eqz v0, :cond_0</strong></p>
-<p>    .line 42</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>.line 42</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>const/4 v0, 0x1</strong></p>
-<p>    .line 43</p>
-<p>    :goto_0</p>
-<p>    return v0</p>
-<p>    :cond_0</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>.line 43</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>:goto_0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return v0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>:cond_0</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>const/4 v0, 0x0</strong></p>
-<p>    // [03] 부분 : true또는 false를 반환하는 부분</p>
-<p>    goto :goto_0</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// [03] 부분 : true또는 false를 반환하는 부분</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>goto :goto_0</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>.end method</p>
 <p>[01] 부분을 봐주세요.</p>
-<p>이부분이 버튼을 눌렀을때 SerialCheck라는 메소드가 호출되는 부분입니다.</p>
+<p>이부분이 버튼을 눌렀을때 SerialCheck라는 메소드가 호출되는 부분입니다.</p>
 <p>[02] 부분은 반환되는 값이 true면 진행, false면 종료부분인데, 이 부분은 그닥 건들 필요는 없습니다.</p>
 <p>[03] 부분이 매우매우 중요합니다.</p>
 <p>중요해서 빨강 상자로 묶었습니다.</p>
 <p>if-eqz를 볼까요?</p>
-<p>맨아래 참고를 보시면 if-eqz는 v0이 0이면 cond_0으로 넘어가는 구문입니다.</p>
+<p>맨아래 참고를 보시면 if-eqz는 v0이 0이면 cond_0으로 넘어가는 구문입니다.</p>
 <p>0은 false를 뜻하고 있습니다.</p>
-<p>즉 위에 있는 equals(같다)가 false일경우 if-eqz로 인해 cond_0으로 넘어가게 됩니다.</p>
-<p>true일경우 if-eqz를 지나쳐서 아래에 있는 .line 42을 실행하게 되고,</p>
+<p>즉 위에 있는 equals(같다)가 false일경우 if-eqz로 인해 cond_0으로 넘어가게 됩니다.</p>
+<p>true일경우 if-eqz를 지나쳐서 아래에 있는 .line 42을 실행하게 되고,</p>
 <p>const/4 v0, 0x1으로 true가 반환됩니다.</p>
 <p>그렇다면,</p>
-<p>const/4 v0, 0x0을 const/4 v0, 0x1으로 바꿔주면 어떤 경우든지 true가 반환될겁니다.</p>
+<p>const/4 v0, 0x0을 const/4 v0, 0x1으로 바꿔주면 어떤 경우든지 true가 반환될겁니다.</p>
 <p>.method public SerialCheck(Ljava/lang/String;)Z</p>
-<p>    .locals 1</p>
-<p>    .param p1, “inputText”    # Ljava/lang/String;</p>
-<p>    .prologue</p>
-<p>    .line 41</p>
-<p>    const-string v0, “\ubbf8\ub974\uc758 IT \uc815\ubcf5\uae30”</p>
-<p>    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</p>
-<p>    move-result v0</p>
-<p>    if-eqz v0, :cond_0</p>
-<p>    .line 42</p>
-<p>    const/4 v0, 0x1</p>
-<p>    .line 43</p>
-<p>    :goto_0</p>
-<p>    return v0</p>
-<p>    :cond_0</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>.locals 1</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.param p1, "inputText"    # Ljava/lang/String;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.prologue</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.line 41</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const-string v0, "\ubbf8\ub974\uc758 IT \uc815\ubcf5\uae30"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>move-result v0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>if-eqz v0, :cond_0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.line 42</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const/4 v0, 0x1</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.line 43</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>:goto_0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return v0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>:cond_0</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>const/4 v0, 0x1</p>
-<p>    goto :goto_0</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>goto :goto_0</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>.end method</p>
 <p>정말 되는지 확인해 봅시다.</p>
 <p>먼저 수정하기 전 상황입니다.</p>
-<p><img  src="/archive/_astro/device-2013-12-15-130210.Cdm1gr3f_2uuhmL.webp" alt="" width="291" height="256" loading="lazy" decoding="async">
-   
-<img  src="/archive/_astro/device-2013-12-15-130328.DDQ1zvt8_1IUS5S.webp" alt="" width="283" height="263" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/device-2013-12-15-130210.Cdm1gr3f_2uuhmL.webp" alt="" width="291" height="256" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/device-2013-12-15-130328.DDQ1zvt8_1IUS5S.webp" alt="" width="283" height="263" loading="lazy" decoding="async"></p>
 <p>이걸 보시면 “미르의 IT 정복기”라는 문구만 정상 키 라고 나오는 걸 확인할수 있습니다.</p>
 <p>아래는 수정한 후 입니다.</p>
 <p><img  src="/archive/_astro/device-2013-12-15-132848.Cqc9TlGZ_QDztU.webp" alt="" width="290" height="259" loading="lazy" decoding="async"></p>

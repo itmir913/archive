@@ -4,26 +4,34 @@
 <p>Plugin is too old, please update to a more recent version, or set ANDROID_DAILY_OVERRIDE environment variable to</p>
 <p>Error:Could not find com.android.tools.build:gradle:2.0.0.</p>
 <p>Searched in the following locations:</p>
-<p>    file:/C:/Program Files/AndroidStudio/gradle/m2repository/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.pom</p>
-<p>    file:/C:/Program Files/AndroidStudio/gradle/m2repository/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.jar</p>
-<p>    <a href="https://jcenter.bintray.com/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.pom">https://jcenter.bintray.com/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.pom</a></p>
-<p>    <a href="https://jcenter.bintray.com/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.jar">https://jcenter.bintray.com/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.jar</a></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>file:/C:/Program Files/AndroidStudio/gradle/m2repository/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.pom</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>file:/C:/Program Files/AndroidStudio/gradle/m2repository/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.jar</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>https://jcenter.bintray.com/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.pom</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>https://jcenter.bintray.com/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.jar</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>Required by:</p>
-<p>    :ReportCard:unspecified</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>:ReportCard:unspecified</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>해결 방법</p>
 <p>필자는 이 오류를 해결하기 위해 Android Studio와 SDK를 지우고 다시 깔았지만 해결이 안되었다 :)</p>
 <p>app/build.gradle 파일이 아닌(Not)</p>
 <p><app source="">/build.gradle 파일을 수정해야 한다.</app></p>
 <p>dependencies {</p>
-<p>    classpath ‘com.android.tools.build:gradle:2.0.0-alpha1’</p>
-<p>    // NOTE: Do not place your application dependencies here; they belong</p>
-<p>    // in the individual module build.gradle files</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>classpath 'com.android.tools.build:gradle:2.0.0-alpha1'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// NOTE: Do not place your application dependencies here; they belong</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// in the individual module build.gradle files</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>}</p>
 <p>필자는 classpath의 마지막 부분이 alpha1 으로 되어 있었다.</p>
 <p>이 부분을 alpha3으로 바꿔서 해결하였다.</p>
 <p>alpha3으로 바꾼 이유는</p>
 <p><a href="https://jcenter.bintray.com/com/android/tools/build/gradle/">https://jcenter.bintray.com/com/android/tools/build/gradle/</a></p>
-<p>이 사이트의 맨 마지막이 2.0.0-alpha3 이었기 때문이다.</p>
+<p>이 사이트의 맨 마지막이 2.0.0-alpha3 이었기 때문이다.</p>
 <p>출처 / 팁</p>
 <p>없다.</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
 Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">

@@ -5,7 +5,7 @@
 </blockquote>
 <p>맨 처음 어플을 만들게 되면서 가장 먼저 생각한 것은 바로 [탭, Tabs]이었습니다.</p>
 <p>무엇보다도 양옆으로 스크롤 하면서 사용할 수 있는 Fixed Tab + Scroll이 가장 마음에 들었는데요!</p>
-<p>제가 네이버를 찾아보며 가장 설명이 잘되어 있는 곳은 <a href="http://blog.naver.com/liar1938/30171663892">http://blog.naver.com/liar1938/30171663892</a> 이라 생각됩니다.</p>
+<p>제가 네이버를 찾아보며 가장 설명이 잘되어 있는 곳은 <a href="http://blog.naver.com/liar1938/30171663892">http://blog.naver.com/liar1938/30171663892</a> 이라 생각됩니다.</p>
 <p>그러나 모든 것은 직접 써봐야 더 능통해 지므로 서평이 끝난 지금, 지금부터 어플 강좌를 하나씩 시작하겠습니다.</p>
 <p>이 강좌를 통해 알수 있는것들</p>
 <p>Fragment</p>
@@ -13,7 +13,7 @@
 <p>Fragment에서 id값 찾기</p>
 <p>먼저 프로젝트를 만들어 주세요.</p>
 <p><img  src="/archive/_astro/1.CisiJSLY_1XuBk5.webp" alt="" width="477" height="29" loading="lazy" decoding="async"></p>
-<p>Min API 11이상부터 Fixed Tabs + Swipe라는 네비게이션 타입을 지원하는 것으로 알고 있습니다.</p>
+<p>Min API 11이상부터 Fixed Tabs + Swipe라는 네비게이션 타입을 지원하는 것으로 알고 있습니다.</p>
 <p>적절하게 잡아주시고,</p>
 <p><img  src="/archive/_astro/2.DnhX8S6q_ZvKg1g.webp" alt="" width="575" height="175" loading="lazy" decoding="async"></p>
 <p>이렇게 Navigation Type를 “Fixed Tabs + Swipe”로 결정해 주세요. ㅎㅎ</p>
@@ -31,17 +31,17 @@
 <span class="line"><span style="color:#24292E">ActionBar.TabListener {</span></span>
 <span class="line"></span></code></pre>
 <p>/**</p>
-<p> * The {@link android.support.v4.view.PagerAdapter} that will provide</p>
-<p> * fragments for each of the sections. We use a</p>
-<p> * {@link android.support.v4.app.FragmentPagerAdapter} derivative, which</p>
-<p> * will keep every loaded fragment in memory. If this becomes too memory</p>
-<p> * intensive, it may be best to switch to a</p>
-<p> * {@link android.support.v4.app.FragmentStatePagerAdapter}.</p>
-<p> */</p>
+<p>* The {@link android.support.v4.view.PagerAdapter} that will provide</p>
+<p>* fragments for each of the sections. We use a</p>
+<p>* {@link android.support.v4.app.FragmentPagerAdapter} derivative, which</p>
+<p>* will keep every loaded fragment in memory. If this becomes too memory</p>
+<p>* intensive, it may be best to switch to a</p>
+<p>* {@link android.support.v4.app.FragmentStatePagerAdapter}.</p>
+<p>*/</p>
 <p>SectionsPagerAdapter mSectionsPagerAdapter;</p>
 <p>/**</p>
-<p> * The {@link ViewPager} that will host the section contents.</p>
-<p> */</p>
+<p>* The {@link ViewPager} that will host the section contents.</p>
+<p>*/</p>
 <p>ViewPager mViewPager;</p>
 <p>@Override</p>
 <p>protected void onCreate(Bundle savedInstanceState) {</p>
@@ -53,7 +53,7 @@
 <p>// Create the adapter that will return a fragment for each of the three</p>
 <p>// primary sections of the app.</p>
 <p>mSectionsPagerAdapter = new SectionsPagerAdapter(</p>
-<p>getApplicationContext(), getSupportFragmentManager());</p>
+<p>getApplicationContext(), getSupportFragmentManager());</p>
 <p>// Set up the ViewPager with the sections adapter.</p>
 <p>mViewPager = (ViewPager) findViewById(R.id.pager);</p>
 <p>mViewPager.setAdapter(mSectionsPagerAdapter);</p>
@@ -100,9 +100,9 @@
 <p>FragmentTransaction fragmentTransaction) {</p>
 <p>}</p>
 <p>/**</p>
-<p> * A {@link FragmentPagerAdapter} that returns a fragment corresponding to</p>
-<p> * one of the sections/tabs/pages.</p>
-<p> */</p>
+<p>* A {@link FragmentPagerAdapter} that returns a fragment corresponding to</p>
+<p>* one of the sections/tabs/pages.</p>
+<p>*/</p>
 <p>public class SectionsPagerAdapter extends FragmentPagerAdapter {</p>
 <p>Context mContext;</p>
 <p>public SectionsPagerAdapter(Context context, FragmentManager fm) {</p>
@@ -142,12 +142,12 @@
 <p>/**</p>
 <p>* A dummy fragment representing a section of the app, but that simply</p>
 <p>* displays dummy text.</p>
-<p> */</p>
+<p>*/</p>
 <p>public static class DummySectionFragment extends Fragment {</p>
 <p>/**</p>
 <p>* The fragment argument representing the section number for this</p>
-<p> * fragment.</p>
-<p> */</p>
+<p>* fragment.</p>
+<p>*/</p>
 <p>public static final String ARG_SECTION_NUMBER = “section_number”;</p>
 <p>public DummySectionFragment() {</p>
 <p>}</p>
@@ -165,7 +165,7 @@
 <p>}</p>
 <p>}</p>
 <p>이 소스가 이 예제 어플에서 가장 중요한 소스입니다.</p>
-<p>먼저, 처음 빨간색으로 칠해져 있는 메소드 public Fragment getItem(int position)의 경우 아래와 같이 변경이 필요합니다.</p>
+<p>먼저, 처음 빨간색으로 칠해져 있는 메소드 public Fragment getItem(int position)의 경우 아래와 같이 변경이 필요합니다.</p>
 <p>@Override</p>
 <p>public Fragment getItem(int position) {</p>
 <p>// getItem is called to instantiate the fragment for the given page.</p>
@@ -181,25 +181,25 @@
 <p>}</p>
 <p>return null;</p>
 <p>}</p>
-<p>그런대 여기서도 수정이 필요한데요, “첫번째탭에들어갈내용이담긴액티비티이름”… 길긴하지만 일단 가봅시다.</p>
+<p>그런대 여기서도 수정이 필요한데요, “첫번째탭에들어갈내용이담긴액티비티이름”… 길긴하지만 일단 가봅시다.</p>
 <p>이 부분도 수정이 필요합니다.</p>
 <p>그런대 지금은 필요가 없으니 일단 넘어가겠습니다.</p>
-<p>분홍색으로 칠해진 것은 추가가 필요합니다. ㅎㅎ</p>
-<p>그다음 초록색으로 칠해져 있는 return 3; 은 탭의 갯수를 반환합니다.</p>
+<p>분홍색으로 칠해진 것은 추가가 필요합니다. ㅎㅎ</p>
+<p>그다음 초록색으로 칠해져 있는 return 3; 은 탭의 갯수를 반환합니다.</p>
 <p>이미 눈치채신 분들은 아시겠지만 탭의 갯수를 줄이려면 이 값을 줄인 다음 switch-case문도 줄여주면 되겠지요??</p>
 <p>DummySectionFragment로 탭을 구현할 수도 있지만, onCreateView() 메소드는 inflater 객체를 사용하여 뷰를</p>
 <p>반환하여 화면에 뿌려주므로, getItem() 메소드로 탭 화면을 지정할 때에 비해 코드가 길어지므로 지워버립니다.</p>
 <p>마지막 파란색 부분은 탭의 이름입니다.</p>
 <p>return getString(<strong>R.string.title_section1</strong>).toUpperCase(l);</p>
 <p>굵고 밑줄친 부분이 탭의 이름이 되는대요 이부분은 어떻게 이루어져 있냐,</p>
-<p><strong>R</strong>(R.java파일을 참조합니다)<strong>.string</strong>(R파일중 string부분을 참조합니다, 즉 values/string.xml을 참조합니다)</p>
+<p><strong>R</strong>(R.java파일을 참조합니다)<strong>.string</strong>(R파일중 string부분을 참조합니다, 즉 values/string.xml을 참조합니다)</p>
 <p><strong>.title_section1</strong>(title_section1이란 이름의 값을 반환합니다)</p>
 <p>이렇게 생각하시면됩니다. 저도 이렇게 생각했고요.</p>
 <p>(이글이 올려지는 당시가 강좌가 하나도 올라와 있지 않지만, 시간이 지나 강좌를 많이 쓴 다음 차례가 되면 순서를 바꿀텐데</p>
 <p>그때쯤이면 더 쉽게 이해가 되실겁니다. 지금은 이해하지 않아도 됩니다.)</p>
 <p>그럼 탭의 이름을 수정하기 위해서는 values/string.xml을 수정해야겠죠?</p>
 <p>이 부분은 너무 쉬우니 따로 말씀드리지는 않겠습니다.</p>
-<p>밑줄이 그어 있는 onCreateOptionsMenu 메소드는 메뉴키를 누르면 뜨는 내용을 정의하는겁니다. 필요없으니 삭제합니다.</p>
+<p>밑줄이 그어 있는 onCreateOptionsMenu 메소드는 메뉴키를 누르면 뜨는 내용을 정의하는겁니다. 필요없으니 삭제합니다.</p>
 <p>이제 MainActivity는 끝났습니다.</p>
 <p>이어서 각 탭에 들어갈 내용물들을 만들어 봅시다.</p>
 <p>만들고 있던 프로젝트에 마우스 오른쪽을 누른다음 New-other-Android Activity를 눌러주세요.</p>
@@ -256,9 +256,9 @@
 <span class="line"><span style="color:#24292E">}</span></span>
 <span class="line"></span></code></pre>
 <p>위 원본 소스의 취소선은 삭제된 부분, 아래 소스의 굵은 부분은 추가, 수정된 부분입니다.</p>
-<p>밑줄 친 부분은 다들 아시는 것처럼 레이아웃을 결정하는 xml에 관한 구문입니다.</p>
-<p>MainActivity는 FragmentActivity를 상속하지만 탭에 들어갈 내용들은 Fragment을 상속(extends)해야 합니다.</p>
-<p>혹시 Fragment에 대해 더 알고 싶으시다면</p>
+<p>밑줄 친 부분은 다들 아시는 것처럼 레이아웃을 결정하는 xml에 관한 구문입니다.</p>
+<p>MainActivity는 FragmentActivity를 상속하지만 탭에 들어갈 내용들은 Fragment을 상속(extends)해야 합니다.</p>
+<p>혹시 Fragment에 대해 더 알고 싶으시다면</p>
 <p><a href="http://developer.android.com/guide/components/fragments.html">http://developer.android.com/guide/components/fragments.html</a></p>
 <p><a href="http://developer.android.com/reference/android/support/v4/app/FragmentActivity.html">http://developer.android.com/reference/android/support/v4/app/FragmentActivity.html</a></p>
 <p>이제 이런 소스와 같이 나머지 탭에 들어갈 내용물들도 하나 씩 구성해 주시면 됩니다.</p>
@@ -274,13 +274,13 @@
 <span class="line"></span></code></pre>
 <p>위 세 개의 문구를 만드신 Activity의 이름으로 변경해 주시면 됩니다.</p>
 <p>이제 빌드 해보시고 작동 시켜 보시면 각 탭과 연결된 xml에 기록된 내용물들이 탭 아래에 나타나는 것을 볼 수 있습니다.</p>
-<p>자 그런데 문제가 발생했습니다.</p>
+<p>자 그런데 문제가 발생했습니다.</p>
 <p>우리가 탭을 구현하기 위해 쓴것은 Fragment, 그런대 Fragment에서는 findViewById가 잘 작동하지 않습니다.</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">Button button1;</span></span>
 <span class="line"><span style="color:#24292E">button1 </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (Button) view.</span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.button1);</span></span>
 <span class="line"></span></code></pre>
 <p>이렇게 구현하시면 쉽게 작동됩니다. ㅎㅎ</p>
-<p>위치는 View view = inflater.inflate(R.layout.activity_tab1, null);와 return view;사이에 넣어주세요.</p>
+<p>위치는 View view = inflater.inflate(R.layout.activity_tab1, null);와 return view;사이에 넣어주세요.</p>
 <p>실행 스샷</p>
 <p><img  src="/archive/_astro/Screenshot_2013-07-29-09-24-35.zLbM8Sv-_Zhq7Sz.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
 <p><img  src="/archive/_astro/Screenshot_2013-07-29-09-24-40.CQqEG5VE_Z1rBV5S.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>

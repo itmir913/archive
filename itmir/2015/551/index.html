@@ -192,8 +192,8 @@
 <p>onReceive()는 브로드캐스트리시버에서 배웠기에 넘어가겠습니다</p>
 <p>onUpdate()는 위젯 갱신 주기에 따라 위젯을 갱신할때 호출됩니다</p>
 <p>onEnabled()는 위젯이 처음 생성될때 호출되며, 동일한 위젯의 경우 처음 호출됩니다</p>
-<p>onDisabled()는 위젯의 마지막 인스턴스가 제거될때 호출됩니다</p>
-<p>onDeleted()는 위젯이 사용자에 의해 제거될때 호출됩니다</p>
+<p>onDisabled()는 위젯의 마지막 인스턴스가 제거될때 호출됩니다</p>
+<p>onDeleted()는 위젯이 사용자에 의해 제거될때 호출됩니다</p>
 <p>여기서 지금 사용할 메소드는 onUpdate()입니다</p>
 <p>위젯은 위젯 id로 구분되는데요</p>
 <p>모든 위젯을 동시에 갱신하기 위해 추가된 모든 위젯 id를 가져오는 코드를 onUpdate()안에 넣어줍시다</p>
@@ -278,7 +278,8 @@
 <p>AndroidManifest.xml에 정의된 Activity에는 아래 인탠트 필터를 넣어주세요</p>
 <blockquote>
 <intent-filter>
-<p>    <action android:name="android.appwidget.action.APPWIDGET\_CONFIGURE"></action></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>&#x3C;action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" /></span></span>
+<span class="line"><span></span></span></code></pre>
 </intent-filter>
 </blockquote>
 <p>이제 중요한게 남았는데요</p>
@@ -288,8 +289,10 @@
 <blockquote>
 <p>Bundle mExtras = getIntent().getExtras();</p>
 <p>if (mExtras != null) {</p>
-<p>    mAppWidgetId = mExtras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID,</p>
-<p>    AppWidgetManager.INVALID_APPWIDGET_ID);</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>mAppWidgetId = mExtras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID,</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>AppWidgetManager.INVALID_APPWIDGET_ID);</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>}</p>
 </blockquote>
 <p>onCreate()안에서 위젯 id를 가져오는 소스입니다</p>

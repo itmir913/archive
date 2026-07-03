@@ -18,9 +18,12 @@
 <blockquote>
 <p>init.qcom.rc에</p>
 <p>service skytestserver /system/bin/skytestserver</p>
-<p>    class main</p>
-<p>    socket skytest stream 666</p>
-<p>    user root</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>class main</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>socket skytest stream 666</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>user root</span></span>
+<span class="line"><span></span></span></code></pre>
 </blockquote>
 <p>추가 (위치는 service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post_boot.sh 요 놈 바로 위에가 적당할 겁니다.)</p>
 <p>마지막으로 skytestserver가 libhardware_legacy.so에 다음 두 함수를 원하므로 Dummy로 추가합니다.</p>
@@ -28,11 +31,13 @@
 <blockquote>
 <p>int wifi_load_mfg_driver()</p>
 <p>{</p>
-<p>    return 0;</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>return 0;</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>}</p>
 <p>int wifi_unload_mfg_driver()</p>
 <p>{</p>
-<p>    return 0;</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>return 0;</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>}</p>
 </blockquote>
 <p>추가 및 libhardware_legacy.so 빌드</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>

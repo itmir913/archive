@@ -7,7 +7,7 @@
 <p>BoardConfig.mk는 소스의 가장 핵심이라고 할수 있는 부분입니다</p>
 <p>소스를 보면 Android.mk라는 파일이 있는대 우리가 안드로이드 풀 소스를 빌드하게 되면 이 Android.mk를 참조해서 빌드합니다</p>
 <p>그리고 Android.mk는 BoardConfig.mk에 선언되어 있는 구문을</p>
-<p>ifdef (선언 내용) 이라는 구문으로 이 값의 true와 false여부를 판단해 어떤 파일을 빌드에 사용할 것인지를 결정하게 됩니다</p>
+<p>ifdef (선언 내용) 이라는 구문으로 이 값의 true와 false여부를 판단해 어떤 파일을 빌드에 사용할 것인지를 결정하게 됩니다</p>
 <p>BoardConfig.mk는 다음 위치에 있습니다</p>
 <p>(풀 소스 위치)/device/(제조사)/(코드네임)</p>
 <p>그냥 봐서는 이해가 되지 않을수 있기에 예제를 들어 설명하도록 하겠습니다 <a href="https://github.com/itmir913/android_device_pantech_ef46l/blob/cm-10.1/BoardConfig.mk">(예제 바로가기)</a></p>
@@ -33,21 +33,21 @@
 <p>여기서 중요한건 cm10까지만 해도 BOARD_FORCE_RAMDISK_ADDRESS으로 사용되었습니다만</p>
 <p>cm10.1부터는 BOARD_MKBOOTIMG_ARGS을 사용해야 합니다</p>
 <p>BOARD_MKBOOTIMG_ARGS의 값부분에는 ramdisk_offset이 들어가야 하는대요 이 부분은 디벨로이드에 자료가 있더라고요 참고하시길..</p>
-<p>WIFI_DRIVER_MODULE_NAME          := wlan<br>
-WIFI_DRIVER_MODULE_PATH          := “/system/lib/modules/wlan.ko”<br>
-WPA_SUPPLICANT_VERSION           := VER_0_8_X<br>
-BOARD_WPA_SUPPLICANT_DRIVER      := NL80211<br>
-BOARD_HOSTAPD_DRIVER             := NL80211<br>
-BOARD_WLAN_DEVICE                := qcwcn<br>
-WIFI_DRIVER_FW_PATH_STA          := “sta”<br>
-WIFI_DRIVER_FW_PATH_AP           := “ap”<br>
-WIFI_DRIVER_FW_PATH_P2P          := “p2p”</p>
+<p>WIFI_DRIVER_MODULE_NAME          := wlan<br>
+WIFI_DRIVER_MODULE_PATH          := “/system/lib/modules/wlan.ko”<br>
+WPA_SUPPLICANT_VERSION           := VER_0_8_X<br>
+BOARD_WPA_SUPPLICANT_DRIVER      := NL80211<br>
+BOARD_HOSTAPD_DRIVER             := NL80211<br>
+BOARD_WLAN_DEVICE                := qcwcn<br>
+WIFI_DRIVER_FW_PATH_STA          := “sta”<br>
+WIFI_DRIVER_FW_PATH_AP           := “ap”<br>
+WIFI_DRIVER_FW_PATH_P2P          := “p2p”</p>
 <p>이 부분은 모두 WIFI관련 선언입니다</p>
 <p>모듈의 이름과 kernel컴파일시 나오는 wifi모듈의 위치, 무선랜의 칩셋등을 정의해 주고 있습니다</p>
 <p>TARGET_PREBUILT_KERNEL := device/pantech/ef46l/kernel<br>
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)</p>
 <p>PRODUCT_COPY_FILES += \<br>
-    $(LOCAL_KERNEL):kernel \</p>
+$(LOCAL_KERNEL):kernel \</p>
 <p>이 부분은 kernel을 빌드한 커널, 즉 zImage로 사용하며, 이것을 out/tatget/product/(기기명)으로 이동시켜주는 역할을 합니다</p>
 <p>이 부분이 없을경우 “Boot.img에 필요한 Kernel이 없습니다” 오류가 나타나게 될것입니다</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="makefile"><code><span class="line"><span style="color:#24292E">TARGET\_USERIMAGES\_USE\_EXT4 := true</span></span>
@@ -73,11 +73,11 @@ LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)</p>
 <p>리커버리 키 패치에 사용됩니다</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="makefile"><code><span class="line"><span style="color:#24292E">BOARD\_USES\_GENERIC\_AUDIO:= true</span></span>
 <span class="line"></span></code></pre>
-<p>‘out/target/product/(기기명)/obj/lib/libaudio.so’를 만들 규칙이 없습니다.  멈춤</p>
+<p>‘out/target/product/(기기명)/obj/lib/libaudio.so’를 만들 규칙이 없습니다.  멈춤</p>
 <p>이 오류를 해결하는대 필요한 문구 입니다</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="makefile"><code><span class="line"><span style="color:#24292E">USE\_CAMERA\_STUB:= true</span></span>
 <span class="line"></span></code></pre>
-<p>`out/target/product/(기기명)/obj/lib/libcamera.so’를 만들 규칙이 없습니다.  멈춤.</p>
+<p>`out/target/product/(기기명)/obj/lib/libcamera.so’를 만들 규칙이 없습니다.  멈춤.</p>
 <p>이 오류를 해결하는대 필요한 문구 입니다</p>
 <p>vendor/*/BoardConfigVendor.mk에 저런 값이 false되어 있다면 역시 true로 지정해야 합니다</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="makefile"><code><span class="line"><span style="color:#24292E">TARGET\_ARCH := arm</span></span>
@@ -99,21 +99,22 @@ LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)</p>
 <p>같은 파일이니 혼동 없으시길 바랍니다</p>
 <p>이 이름은 AndroidProducts.mk을 열면 나오는</p>
 <p>PRODUCT_MAKEFILES := \<br>
-    $(LOCAL_DIR)/device_ef46l.mk</p>
+$(LOCAL_DIR)/device_ef46l.mk</p>
 <p>에 따라 달라집니다</p>
 <p>device.mk는 필요한 파일을 out/tatget/product/(기기명)으로 이동시켜 주는 역할을 합니다</p>
 <p>복사 명령어 라고 생각하시면 되는대요</p>
 <p>이 명령어는 아래와 같은 형식으로 이루어져 있습니다</p>
 <p>PRODUCT_COPY_FILES += \<br>
-    (복사할 파일이 있는 위치):(복사할 파일의 위치) \</p>
-<p>    (복사할 파일이 있는 위치):(복사할 파일의 위치)</p>
+(복사할 파일이 있는 위치):(복사할 파일의 위치) \</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>(복사할 파일이 있는 위치):(복사할 파일의 위치)</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>복사할 파일이 있는 위치는 예를 들자면</p>
 <p>device/pantech/ef46l/configs/media_profiles.xml입니다</p>
 <p>또 복사할 파일의 위치는 예를 들자면</p>
 <p>system/etc/media_profiles.xml입니다</p>
 <p>즉 이걸 조합해 보면</p>
 <p>PRODUCT_COPY_FILES += \<br>
-    device/pantech/ef46l/configs/media_profiles.xml:system/etc/media_profiles.xml</p>
+device/pantech/ef46l/configs/media_profiles.xml:system/etc/media_profiles.xml</p>
 <p>이렇게 구성해 주면 됩니다</p>
 <p>(복사할 파일의 위치)에서 중요한건 system/etc등의 경로를 지정해야 합니다</p>
 <p>(복사할 파일의 위치) 앞에 “out/tatget/product/(기기명)/“이 생략 되어 있다고 생각하시면 됩니다</p>

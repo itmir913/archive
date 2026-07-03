@@ -18,12 +18,12 @@
 <p>권한을 모두 주셨으면 본격적으로 작업에 들어갈까요?ㅎ</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">./split_bootimg.pl</span><span style="color:#032F62"> boot.img</span></span>
 <span class="line"></span></code></pre>
-<p>입력하시게 되면 Page size, Command line이 나타나게 됩니다.</p>
+<p>입력하시게 되면 Page size, Command line이 나타나게 됩니다.</p>
 <p>꼭 기억해 두세요!</p>
 <p>그 다음</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">./unpackbootimg</span><span style="color:#005CC5"> -i</span><span style="color:#032F62"> boot.img</span></span>
 <span class="line"></span></code></pre>
-<p>을 입력하시게 되면 BOARD_KERNEL_BASE이 나타납니다. 이것도 중요합니다!</p>
+<p>을 입력하시게 되면 BOARD_KERNEL_BASE이 나타납니다. 이것도 중요합니다!</p>
 <p>이제 램디스크 압축을 풀어봅시다.</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">gzip</span><span style="color:#005CC5"> -d</span><span style="color:#032F62"> boot.img-ramdisk.gz</span></span>
 <span class="line"></span></code></pre>
@@ -35,7 +35,7 @@
 <p>이제 위 명령어를 입력하시면, cpio의 내용물이 풀려지게 됩니다.</p>
 <p>이제 boot.img-ramdisk 파일은 삭제하셔도 됩니다.</p>
 <p>마음것 램디스크를 수정하세요!!</p>
-<p>램디스크를 모두 수정하셨다면 합쳐야 합니다.</p>
+<p>램디스크를 모두 수정하셨다면 합쳐야 합니다.</p>
 <p>램디스크 파일이 들어있는 폴더속에서</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">find</span><span style="color:#032F62"> .</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> cpio</span><span style="color:#005CC5"> -o</span><span style="color:#005CC5"> -H</span><span style="color:#032F62"> newc</span><span style="color:#005CC5"> -O</span><span style="color:#032F62"> ../ramdisk</span></span>
 <span class="line"><span style="color:#005CC5">cd</span><span style="color:#032F62"> ..</span></span>

@@ -1,9 +1,8 @@
-<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="사용자 어플 (User App)을 시스탬 어플 (System App)으로 변환하기"><title>사용자 어플 (User App)을 시스탬 어플 (System App)으로 변환하기 — luminousky archive</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.BgW6xfjO.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2012 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">사용자 어플 (User App)을 시스탬 어플 (System App)으로 변환하기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-11-24T14:02:00.000Z"> 2013년 11월 24일 </time> <span class="post-category">SmartPhone/Android</span> <a href="https://itmir.tistory.com/385" class="post-original" target="_blank" rel="noopener noreferrer">
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Deodex/Odex 개념 설명과 함께 사용자 어플을 시스템 어플로 변환하는 방법을 소개합니다."><title>사용자 어플 (User App)을 시스탬 어플 (System App)으로 변환하기 — luminousky archive</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.BgW6xfjO.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2012 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">사용자 어플 (User App)을 시스탬 어플 (System App)으로 변환하기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-11-24T14:02:00.000Z"> 2013년 11월 24일 </time> <span class="post-category">SmartPhone/Android</span> <a href="https://itmir.tistory.com/385" class="post-original" target="_blank" rel="noopener noreferrer">
 원본 보기 ↗
-</a> </div> <p class="post-description">사용자 어플 (User App)을 시스탬 어플 (System App)으로 변환하기</p> </header> <div class="post-content"> <p><strong>사용자 어플 (User App)을 시스탬 어플 (System App)으로 변환하기</strong></p>
-<p><strong>Deodex → Odex</strong></p>
+</a> </div> <p class="post-description">Deodex/Odex 개념 설명과 함께 사용자 어플을 시스템 어플로 변환하는 방법을 소개합니다.</p> </header> <div class="post-content"> <p><strong>Deodex → Odex</strong></p>
 <p>먼저 이 글은 웃음 투자님의 글을 바탕으로 만들어진 글임을 밝힘니다</p>
-<p>원본글은 : <a href="http://softdx.kr/60171824456">http://softdx.kr/60171824456</a> 입니다</p>
+<p>원본글은 : <a href="http://softdx.kr/60171824456">http://softdx.kr/60171824456</a> 입니다</p>
 <p>사용자 어플을 시스탬 어플로 만들려고 하신적 많으시죠?</p>
 <p>그런대 나의 롬이 odex롬입니다…</p>
 <p>귀찮은 작업을 하게 되는대요</p>
@@ -11,7 +10,7 @@
 <p>adb shell su</p>
 <p>./dexopt-wrapper (어플 이름).apk a.odex $BOOTCLASSPATH</p>
 <p>busybox dd if=/system/app/(어플 이름).odex of=a.odex bs=1 count=20 skip=52 seek=52 conv=notrunc</p>
-<p>mv a.odex (어플 이름).odex</p>
+<p>mv a.odex (어플 이름).odex</p>
 <p>이러한 작업이 필요합니다</p>
 <p>그런대 이 방법은 이상하게도 실패 하시는 분들이 너무 많습니다</p>
 <p>그래서 이 게시글에서는 간단하지만 잘 알려지지 않은 방법을 소개 하려 합니다</p>
@@ -33,8 +32,10 @@
 <li>
 <p>원본 어플을 열어 classes.dex파일을 제거합니다</p>
 </li>
+<li>
+<p>classes.dex가 제거된 apk와 odex파일을 system/app에 집어 넣습니다</p>
+</li>
 </ol>
-<p>5. classes.dex가 제거된 apk와 odex파일을 system/app에 집어 넣습니다</p>
 <p>끝~</p>
 <p>여기서 뭔가 발견하셨습니까?</p>
 <p>바로 달빅캐쉬가 odex파일이라는 사실입니다</p>

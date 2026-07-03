@@ -12,7 +12,7 @@
 <p>위에서 말한대로 안드로이드에서는 프리퍼런스라는 것을 제공하고 있습니다</p>
 <p>즉 이것을 사용하면 간단한 데이터를 저장하고 읽어올수 있습니다</p>
 <p>그리고 이 방법은 xml으로 처리하기 때문에 동작속도가 조금 느린 단점이 있습니다</p>
-<p>파일의 위치는 data/data/[패키지 이름]/shared_prefs에 저장되며</p>
+<p>파일의 위치는 data/data/[패키지 이름]/shared_prefs에 저장되며</p>
 <p>저장되는 방식은 키이름(Keyname)-저장된 값(value Pair)의 쌍으로 저장됩니다</p>
 <h3 id="21-2-동작-예시-화면과-예제">21-2 동작 예시 화면과 예제</h3>
 <p>이해를 쉽게 하기 위해 예를 하나 들어보겠습니다</p>
@@ -34,8 +34,8 @@
 <p>그다음 기록할 파일을 불러옵니다</p>
 <p>setting = getSharedPreferences(“setting”, 0);</p>
 <p>이때 앞에 있는 setting은 기록할 xml의 이름입니다</p>
-<p>위에서 설명한대로 data/data/[패키지 이름]/shared_prefs에 저장되는대 이름이 setting.xml인 파일이 생성됩니다</p>
-<p>즉 data/data/[패키지 이름]/shared_prefs/setting.xml이 생성됩니다</p>
+<p>위에서 설명한대로 data/data/[패키지 이름]/shared_prefs에 저장되는대 이름이 setting.xml인 파일이 생성됩니다</p>
+<p>즉 data/data/[패키지 이름]/shared_prefs/setting.xml이 생성됩니다</p>
 <p>뒤에 있는 0은 무슨뜻을 뜻하는지 설명드리자면</p>
 <p>0 : 읽기, 쓰기 가능</p>
 <p>MODE_WORLD_READABLE : 읽기 공유</p>
@@ -47,7 +47,7 @@
 <p>(1) getPreferences(int mode) : mode를 설정한다는것은 getSharedPreferences와 같지만 xml파일이름이 현재 액티비티의 이름으로 설정됩니다</p>
 <p>즉 액티비티 파일의 이름이 MirExample이라면 xml 파일 이름도 MirExample가 됩니다</p>
 <p><strong>(2) getSharedPreferences(“String name”, int mode) : xml 파일의 이름과 mode를 모두 지정할 수 있습니다</strong></p>
-<p>(3) PerferenceManager.getDefaultSharedPreferences(Context context) : 환경 설정 액티비티에서 설정한 값이 저장된 SharedPreferences의 데이터에 접근할 때 사용합니다.</p>
+<p>(3) PerferenceManager.getDefaultSharedPreferences(Context context) : 환경 설정 액티비티에서 설정한 값이 저장된 SharedPreferences의 데이터에 접근할 때 사용합니다.</p>
 <p>마지막으로 설정값을 가져오는 방법입니다</p>
 <p>setting.getBoolean(key, defValue);</p>
 <p>setting.getFloat(key, defValue);</p>
@@ -63,10 +63,10 @@
 <p>그런대 설정값을 가져오는것만으로는 실제 사용이 불가능 합니다</p>
 <p>값을 저장도 해야죠?</p>
 <p>그래서 저장, 즉 기록을 위해 또 하나 editor라는 것을 정의해야 합니다</p>
-<p>SharedPreferences.Editor editor;</p>
+<p>SharedPreferences.Editor editor;</p>
 <p>이번에는 Editor라는것이 붙었습니다</p>
 <p>editor= setting.edit();</p>
-<p>이렇게 editor로 사용할때는 이미 정의한 SharedPreferences에 “.edit()“를 붙혀 이Preference의 에디터 역할을 할것이다 라고 해주시면 됩니다</p>
+<p>이렇게 editor로 사용할때는 이미 정의한 SharedPreferences에 “.edit()“를 붙혀 이Preference의 에디터 역할을 할것이다 라고 해주시면 됩니다</p>
 <p>사용방법은 아래와 같습니다</p>
 <p>editor.putBoolean(arg0, arg1);</p>
 <p>editor.putFloat(key, value);</p>
@@ -76,11 +76,11 @@
 <p>로딩과 마찬가지로 Boolean, Float, Int, Long, String이라는 형을 기록할 수 있습니다</p>
 <p>마지막으로 값의 변동을 저장하기 위해서는 꼭!!! 아래와 같은 명령어가 필요합니다</p>
 <p><strong>editor.commit();</strong></p>
-<p>또는 editor.apply();</p>
+<p>또는 editor.apply();</p>
 <p>무조건 이 명령어가 처리되어야 실제로 xml에 값이 기록되게 됩니다</p>
 <p>기록된 값을 지우는 방법은 아래와 같습니다</p>
 <p>전체 제거 : editor.clear();</p>
-<p>부분 제거 : editor.remove(key);</p>
+<p>부분 제거 : editor.remove(key);</p>
 <p>자, 이제 값의 불러오기와 저장까지 모두 할수 있게 되었습니다</p>
 <p>그럼 실제 예제를 통해 살펴보겠습니다</p>
 <h3 id="21-4-이번에-만들-예제는">21-4 이번에 만들 예제는?</h3>
@@ -161,24 +161,23 @@
 <p>첫번째 줄의 getBoolean은 Boolean타입의 데이터를 가져오겠다 라는 표시이고요,</p>
 <p>처음에 실행을 하게 되면 설정된 값이 없습니다</p>
 <p>그러므로 기본값인 false가 반환되어 처음 실행시에는 저 if문이 작동되지 않게 됩니다</p>
-<p>두번째와 세번째 줄을 보면 getString이라고 되어 있는대 이렇게 ID값과 PW값을 불러와서 EditText에 setText로 적용하는 모습입니다</p>
+<p>두번째와 세번째 줄을 보면 getString이라고 되어 있는대 이렇게 ID값과 PW값을 불러와서 EditText에 setText로 적용하는 모습입니다</p>
 <p>마지막으로 자동로그인이 활성화 되었으므로 CheckBox도 활성화 표시를 해줍니다</p>
 <p>끝났습니다~</p>
 <p>이제 작동을 확인해 보겠습니다</p>
-<p><img  src="/archive/_astro/device-2013-11-28-145134.Cf6QzhdT_cC5O2.webp" alt="" width="400" height="711" loading="lazy" decoding="async">
-   
-<img  src="/archive/_astro/device-2013-11-28-145157.B8x1Xlo-_1XtDpy.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/device-2013-11-28-145134.Cf6QzhdT_cC5O2.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/device-2013-11-28-145157.B8x1Xlo-_1XtDpy.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
 <p>자동 로그인 체크박스를 선택하게 되면 입력한 값이 저장이 되고, 어플을 껐다 켜도 그 값이 유지됩니다 ㅎㅎ</p>
 <p>이번시간에는 가장 간단한 프리퍼런스 사용방법을 익혀 봤는데요</p>
 <p>조금 시간이 지난후에는 좀더 복잡한 프리퍼런스 사용법과 일명 설정화면?</p>
 <p>시스탬의 설정 어플과 비슷한 프리퍼런스에 대해 알아보겠습니다</p>
-<p>이 강좌의 예제소스는 22번 강좌가 나오는 즉시 업로드 됩니다</p>
+<p>이 강좌의 예제소스는 22번 강좌가 나오는 즉시 업로드 됩니다</p>
 <p>카페에서는 원본글에서만 다운로드가 가능합니다</p>
 <p>예제소스 다운로드 :</p>
 <p><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/ExamplePreference.zip">ExamplePreference.zip</a></p>
 <p>(ps. 몇일뒤에 20번 강좌 핸들러 메모리 릭을 수정한 강좌를 올릴 계획입니다만 변경될수 있습니다)</p>
 <p>(ps2. 정말 힘들게, 유용한 정보만 골라서 몇시간동안 찾아 올리고 있습니다 꼭 덧글한마디씩 해주시면 감사드리겠습니다)</p>
-<p>참조 : <a href="http://blog.naver.com/liar1938/30173930915">http://blog.naver.com/liar1938/30173930915</a></p>
+<p>참조 : <a href="http://blog.naver.com/liar1938/30173930915">http://blog.naver.com/liar1938/30173930915</a></p>
 <hr>
 <h2 id="첨부파일">첨부파일</h2>
 <ul>

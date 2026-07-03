@@ -6,12 +6,12 @@
 <p><strong>또한 아직 확실하지 않은 부분과 비정확한 내용도 기록되어 있으니 판단해서 받아드리시길 바랍니다</strong></p>
 <p>항상 부족한 부분이 있으면 보충/보완될 예정입니다</p>
 <p>ClockWorkMod Recovery, 줄여서 CWM 이라고도 언급합니다</p>
-<p>이 리버커리는 Koush라는 분께서 작업하시고 계시는 커스텀 리커버리 입니다</p>
+<p>이 리버커리는 Koush라는 분께서 작업하시고 계시는 커스텀 리커버리 입니다</p>
 <p>다들 아시다 싶이 CM의 소스를 받으면 bootable/recovery폴더에 CWM관련 파일들이 있지요</p>
 <p><a href="https://github.com/cyanogenmod/android_bootable_recovery">htt</a><a href="https://github.com/cyanogenmod/android_bootable_recovery">ps://github.com/cyanogenmod/android_bootable_recovery</a></p>
 <p>이 링크를 들어가 보셔도 recovery폴더의 내용물을 확인 하실수 있으십니다</p>
 <p>이제 CWM에 대해 하나하나 살펴보도록 하겠습니다 (jellybean(cm10)기준)</p>
-<p><strong>1. CWM-based Recovery말고 내 이름을 넣어보자</strong></p>
+<p><strong>1. CWM-based Recovery말고 내 이름을 넣어보자</strong></p>
 <p>우리는 CWM을 들어가면 아래 나오는 CWM-based-recovery등을 바꿔보고 싶습니다</p>
 <p>Android.mk를 열어봐 주시면 아래와 같은 내용이 있습니다</p>
 <p>ifdef I_AM_KOUSH</p>
@@ -25,107 +25,164 @@
 <p><strong>RECOVERY_VERSION := $(RECOVERY_NAME) v6.0.2.8</strong></p>
 <p><strong>LOCAL_CFLAGS += -DRECOVERY_VERSION=”$(RECOVERY_VERSION)”</strong></p>
 <p>Recovery Name을 설정해 주는 부분이 보이시나요?</p>
-<p>제 생각에는 BoardConfig.mk에 I_AM_KOUSH := true 라면 RECOVERY_NAME은 ClockworkMod Recovery로,</p>
-<p>만약 지정되지 않았거나 false라면 CWM-based Recovery라고 설정되어 진다고 예상할 수 있습니다</p>
+<p>제 생각에는 BoardConfig.mk에 I_AM_KOUSH := true 라면 RECOVERY_NAME은 ClockworkMod Recovery로,</p>
+<p>만약 지정되지 않았거나 false라면 CWM-based Recovery라고 설정되어 진다고 예상할 수 있습니다</p>
 <p>즉 이 부분의 수정이 이루어 진다면 표시되는 이름의 수정이 가능할 것이라는 뜻이 되겠지요</p>
 <p>RECOVERY_VERSION := $(RECOVERY_NAME) v6.0.2.8<br>
-바로 이부분과 RECOVERY_NAME부분을 수정해 주면 재작자의 이름도 넣을수 있을겁니다</p>
+바로 이부분과 RECOVERY_NAME부분을 수정해 주면 재작자의 이름도 넣을수 있을겁니다</p>
 <p><strong>RECOVERY_NAME을 CWM-based Recovery말고 다른 이름으로 수정해서 빌드해 보세요</strong></p>
 <p>아직까지 BoardConfig.mk에 구문을 추가해 이름을 지정하는건 모르겠습니다</p>
 <p><strong>2. Power Off 추가하기</strong></p>
 <p>그냥 빌드하다 보면 버튼이 맞지 않을 경우가 생깁니다</p>
 <p>예를 들자면 볼륨위-아래-위 키를 눌러 활성화 시킨다음에서야 확인이 가능하다는 것이지요</p>
-<p>cwm - 5.x.x.x 버전에서는 default_recovery_ui.c파일이,</p>
+<p>cwm - 5.x.x.x 버전에서는 default_recovery_ui.c파일이,</p>
 <p>cwm - 6.x.x.x 버전에서는 default_recovery_keys.c파일이 키를 담당하고 있습니다</p>
 <p>그럼 CWM6에서는 ui.c가 없냐? 그건 아닙니다</p>
-<p>소스를 다운받지 않아도 <a href="https://github.com/CyanogenMod/android_bootable_recovery/blob/jellybean/default_recovery_ui.c">github에서 확인</a>해 보시면 default_recovery_ui.c에는</p>
+<p>소스를 다운받지 않아도 <a href="https://github.com/CyanogenMod/android_bootable_recovery/blob/jellybean/default_recovery_ui.c">github에서 확인</a>해 보시면 default_recovery_ui.c에는</p>
 <p>char* MENU_ITEMS[] = { “reboot system now”,</p>
-<p>                       “install zip from sdcard”,</p>
-<p>                       “install zip from sideload”,</p>
-<p>                       “wipe data/factory reset”,</p>
-<p>                       “wipe cache partition”,</p>
-<p>                       “backup and restore”,</p>
-<p>                       “mounts and storage”,</p>
-<p>                       “advanced”,</p>
-<p>                       “power off”,</p>
-<p>                       NULL };</p>
-<p>이런 부분이 있는대요 짐작해 보컨대 cwm6버전에서는 default_recovery_ui.c는 화면에 표시되는 메뉴를 나타낸다고 짐작할 수 있습니다</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>                   "install zip from sdcard",</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>                   "install zip from sideload",</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>                   "wipe data/factory reset",</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>                   "wipe cache partition",</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>                   "backup and restore",</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>                   "mounts and storage",</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>                   "advanced",</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>                   "power off",</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>                   NULL };</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>이런 부분이 있는대요 짐작해 보컨대 cwm6버전에서는 default_recovery_ui.c는 화면에 표시되는 메뉴를 나타낸다고 짐작할 수 있습니다</p>
 <p>여기서 뭔가를 발견해 보자면 power off 버튼이 사라진것을 눈치 채실수 있으신대요</p>
 <p><a href="https://github.com/CyanogenMod/android_bootable_recovery/commit/cd3705e4aba68274f7033a32bfc0d9b1010a4513">https://github.com/CyanogenMod/android_bootable_recovery/commit/cd3705e4aba68274f7033a32bfc0d9b1010a4513</a></p>
-<p>이 commit을 보면 Koush께서 이 부분을 삭제 하신것을 알수 있습니다</p>
+<p>이 commit을 보면 Koush께서 이 부분을 삭제 하신것을 알수 있습니다</p>
 <p>그런대 메뉴만 삭제하셨지 기능은 제거하지 않으셨는대요</p>
-<p><a href="https://github.com/CyanogenMod/android_bootable_recovery/blob/jellybean/extendedcommands.c">이 파일을 참고해 주시면 됩니다</a> - extendedcommands.c</p>
+<p><a href="https://github.com/CyanogenMod/android_bootable_recovery/blob/jellybean/extendedcommands.c">이 파일을 참고해 주시면 됩니다</a> - extendedcommands.c</p>
 <p>선택 버튼만 사라진 거라면 되돌릴수 있겠죠?</p>
 <p>char* MENU_ITEMS[] = { “reboot system now”,</p>
-<p>                       “install zip from sdcard”,</p>
-<p>                       “install zip from sideload”,</p>
-<p>                       “wipe data/factory reset”,</p>
-<p>                       “wipe cache partition”,</p>
-<p>                       “backup and restore”,</p>
-<p>                       “mounts and storage”,</p>
-<p>                       “advanced”,</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>                   "install zip from sdcard",</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>                   "install zip from sideload",</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>                   "wipe data/factory reset",</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>                   "wipe cache partition",</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>                   "backup and restore",</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>                   "mounts and storage",</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>                   "advanced",</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>“power off”,</strong></p>
-<p>                       NULL };</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>                   NULL };</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>이렇게 수정해 주시면 됩니다</p>
 <p><strong>3. 키 바꾸기</strong></p>
 <p>자 이제 막바지에 접어들고 있군요</p>
-<p>참고글 : <a href="http://cafe.naver.com/androidhacker/461">http://cafe.naver.com/androidhacker/461</a></p>
+<p>참고글 : <a href="http://cafe.naver.com/androidhacker/461">http://cafe.naver.com/androidhacker/461</a></p>
 <p>이번에는 키를 변경해 보도록 하겠습니다</p>
-<p>아까 언급한것처럼 default_recovery_ui.c와 default_recovery_keys.c을 봐주시면 됩니다</p>
-<p>CWM6을 기준으로 설명하고 있으므로 default_recovery_keys.c을 기준으로 설명하겠습니다</p>
+<p>아까 언급한것처럼 default_recovery_ui.c와 default_recovery_keys.c을 봐주시면 됩니다</p>
+<p>CWM6을 기준으로 설명하고 있으므로 default_recovery_keys.c을 기준으로 설명하겠습니다</p>
 <p>int device_handle_key(int key_code, int visible) {</p>
-<p>    if (visible) {</p>
-<p>        switch (key_code) {</p>
-<p>            case KEY_CAPSLOCK:</p>
-<p>            case KEY_DOWN:</p>
-<p>            case KEY_VOLUMEDOWN:</p>
-<p>            case KEY_MENU:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>if (visible) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    switch (key_code) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        case KEY_CAPSLOCK:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        case KEY_DOWN:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        case KEY_VOLUMEDOWN:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        case KEY_MENU:</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>return HIGHLIGHT_DOWN;</strong></p>
-<p>            case KEY_LEFTSHIFT:</p>
-<p>            case KEY_UP:</p>
-<p>            case KEY_VOLUMEUP:</p>
-<p>            case KEY_HOME:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>        case KEY_LEFTSHIFT:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        case KEY_UP:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        case KEY_VOLUMEUP:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        case KEY_HOME:</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>return HIGHLIGHT_UP;</strong></p>
-<p>            case KEY_POWER:</p>
-<p>                if (ui_get_showing_back_button()) {</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>        case KEY_POWER:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>            if (ui_get_showing_back_button()) {</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>return SELECT_ITEM;</strong></p>
-<p>                }</p>
-<p>                if (!get_allow_toggle_display() &#x26;&#x26; !ui_root_menu) {</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>            }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>            if (!get_allow_toggle_display() &#x26;&#x26; !ui_root_menu) {</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>return GO_BACK;</strong></p>
-<p>                }</p>
-<p>                break;</p>
-<p>            case KEY_LEFTBRACE:</p>
-<p>            case KEY_ENTER:</p>
-<p>            case BTN_MOUSE:</p>
-<p>            case KEY_CAMERA:</p>
-<p>            case KEY_F21:</p>
-<p>            case KEY_SEND:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>            }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>            break;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        case KEY_LEFTBRACE:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        case KEY_ENTER:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        case BTN_MOUSE:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        case KEY_CAMERA:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        case KEY_F21:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        case KEY_SEND:</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>return SELECT_ITEM;</strong></p>
-<p>            case KEY_END:</p>
-<p>            case KEY_BACKSPACE:</p>
-<p>            case KEY_SEARCH:</p>
-<p>                if (ui_get_showing_back_button()) {</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>        case KEY_END:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        case KEY_BACKSPACE:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        case KEY_SEARCH:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>            if (ui_get_showing_back_button()) {</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>return SELECT_ITEM;</strong></p>
-<p>                }</p>
-<p>                if (!get_allow_toggle_display() &#x26;&#x26; !ui_root_menu) {</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>            }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>            if (!get_allow_toggle_display() &#x26;&#x26; !ui_root_menu) {</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>return GO_BACK;</strong></p>
-<p>                }</p>
-<p>            case KEY_BACK:</p>
-<p>                if (!ui_root_menu) {</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>            }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        case KEY_BACK:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>            if (!ui_root_menu) {</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>return GO_BACK;</strong></p>
-<p>                }</p>
-<p>        }</p>
-<p>    }</p>
-<p>    return NO_ACTION;</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>            }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return NO_ACTION;</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>}</p>
 <p>아! 딱 감이 오시는 분들도 계실겁니다</p>
 <p>짤라서 보도록 하겠습니다</p>
 <p>case KEY_LEFTBRACE:</p>
-<p>            case KEY_ENTER:</p>
-<p>            case BTN_MOUSE:</p>
-<p>            case KEY_CAMERA:</p>
-<p>            case KEY_F21:</p>
-<p>            case KEY_SEND:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>        case KEY_ENTER:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        case BTN_MOUSE:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        case KEY_CAMERA:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        case KEY_F21:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        case KEY_SEND:</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>return SELECT_ITEM;</strong></p>
 <p>만약 KEY_XXX가 눌려졌을경우 SELECT_ITEM을 반환한다 라는 뜻입니다</p>
 <p>어떠한 키가 눌려졌는지를 확인한 다음 값을 반환해서 작동하는 방식으로 되어 있지요</p>
@@ -135,14 +192,20 @@
 <p>또한 소스를 수정하지 않고 BoardConfig.mk을 통해서 소스를 수정 할 수 있습니다</p>
 <p>BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/[제조사]/[기기명]/recovery_keys.c</p>
 <p>BOARD_CUSTOM_RECOVERY_KEYMAPPING옵션으로 자신이 수정한 key.c를 사용해 주셔도 되지요~</p>
-<p>hPa님의 소스를 보시면 (<a href="https://github.com/985hPaKicK/android%5C_device%5C_pantech%5C_ef46l/blob/jellybean/recovery/recovery%5C_keys.c">https://github.com/985hPaKicK/android\_device\_pantech\_ef46l/blob/jellybean/recovery/recovery\_keys.c</a> )</p>
+<p>hPa님의 소스를 보시면 (<a href="https://github.com/985hPaKicK/android_device_pantech_ef46l/blob/jellybean/recovery/recovery_keys.c">https://github.com/985hPaKicK/android_device_pantech_ef46l/blob/jellybean/recovery/recovery_keys.c</a> )</p>
 <p>if (ui_get_showing_back_button()) {</p>
-<p>                    return SELECT_ITEM;</p>
-<p>                }</p>
-<p>                if (!get_allow_toggle_display() &#x26;&#x26; !ui_root_menu) {</p>
-<p>                    return GO_BACK;</p>
-<p>                }</p>
-<p>                break;</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>                return SELECT_ITEM;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>            }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>            if (!get_allow_toggle_display() &#x26;&#x26; !ui_root_menu) {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>                return GO_BACK;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>            }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>            break;</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>부분이 없는것을 확인할 수 있습니다</p>
 <p>볼륨위-아래-위를 했을때 변하는 키의 값 같은대요 이런게 필요 없으시다면 지우셔도 될거 같습니다~</p>
 <p>이렇게 해서 ClockWorkMod Recovery에 대해 살펴봤습니다</p>

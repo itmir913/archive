@@ -4,15 +4,18 @@
 <p><img  src="/archive/_astro/%EC%BA%A1%EC%B2%98.CS2COhFQ_1NPg8S.webp" alt="" width="697" height="144" loading="lazy" decoding="async"></p>
 <p>보시면 저기 Mir옆에 + 표시가 있죠?</p>
 <p>이 + 표시를 지우는 방법입니다.</p>
-<p>커널소스의 scripts/setlocalversion 파일을 열어주세요.</p>
-<p>그다음 res=“$res${scm:++}“를 찾아주세요.</p>
+<p>커널소스의 scripts/setlocalversion 파일을 열어주세요.</p>
+<p>그다음 res=“$res${scm:++}“를 찾아주세요.</p>
 <h1 id="localversion-is-not-specified">LOCALVERSION= is not specified</h1>
-<p>    if test ”${LOCALVERSION+set}” != “set”; then</p>
-<p>        scm=$(scm_version —short)</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>if test "${LOCALVERSION+set}" != "set"; then</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    scm=$(scm_version --short)</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>res=“$res${scm:++}”</strong></p>
-<p>    fi</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>fi</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>저 부분을 삭제해 주시면 됩니다.</p>
-<p>관련 commit : <a href="https://github.com/itmir913/android_kernel_pantech_ef47s/commit/581747b2023ca16021beff799df7ef585c39923c">https://github.com/itmir913/android_kernel_pantech_ef47s/commit/581747b2023ca16021beff799df7ef585c39923c</a></p>
+<p>관련 commit : <a href="https://github.com/itmir913/android_kernel_pantech_ef47s/commit/581747b2023ca16021beff799df7ef585c39923c">https://github.com/itmir913/android_kernel_pantech_ef47s/commit/581747b2023ca16021beff799df7ef585c39923c</a></p>
 <p>참고 : thanks for bestmjh47</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
 Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
 itmir.tistory.com

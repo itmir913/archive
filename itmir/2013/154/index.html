@@ -6,7 +6,7 @@
 <p>아마 아로마 인스톨러의 <strong>극한 응용 방법</strong>이 아닐까 생각되는군요..</p>
 <p>그럼 (비)활성화 방법을 살펴보겠습니다</p>
 <p>제가 전에 정말 좋은 아로마 인스톨러 응용법을 생각해 냈습니다</p>
-<p>메뉴박스에서 메뉴를 선택할때 그 메뉴가 비활성화 되어 있으면 활성화를 하고 활성화 안내 알림을 띄우고, 만약 활성화가 되어있었다면 비활성화하고 비활성화 안내 알림을 띄우는 방식입니다</p>
+<p>메뉴박스에서 메뉴를 선택할때 그 메뉴가 비활성화 되어 있으면 활성화를 하고 활성화 안내 알림을 띄우고, 만약 활성화가 되어있었다면 비활성화하고 비활성화 안내 알림을 띄우는 방식입니다</p>
 <p>구조를 나타내면 아래와 같습니다</p>
 <p><img  src="/archive/_astro/%EA%B5%AC%EC%A1%B0.0MEmS5zo_Z2vy6Ot.webp" alt="" width="477" height="198" loading="lazy" decoding="async"></p>
 
@@ -85,8 +85,10 @@
 <p>그럼 스크립트를 aroma-config에서 실행하면 끝나게 됩니다</p>
 <p>aroma-config의 첫 부분에 아래 구문을 넣어주세요</p>
 <p>setvar(</p>
-<p>    “resexec_retstatus”,</p>
-<p>    resexec(“sh/FileName_Start.sh”)</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"resexec_retstatus",</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>resexec("sh/FileName_Start.sh")</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>);</p>
 <p>위 구문은 아로마 인스톨러 원문에도 있던 구문입니다</p>
 <p>아로마 인스톨러에서 쉘 스크립트를 실행시키는 방법이 위 문구말고는 없는것 같더라고요..</p>
@@ -94,28 +96,38 @@
 <p>config가운데 넣으시면 값이 다시 초기화 될수 있습니다</p>
 <p>참고 - setvar에 대해</p>
 <p>참고로 setvar은 시스탬 정보등을 파악할때 사용하는 스크립트 입니다</p>
-<p>위 코드의 resexec_retstatus은 sh를 실행시킨다음 그곳에 저장하라는 뜻의 코드입니다 (지우지 마세요 ㅋ)</p>
-<p>아무튼 위 코드를 ini_set 코드 아래쯤 넣어주시면 아로마 인스톨러가 처음 시작할때 자동으로 실행됩니다</p>
+<p>위 코드의 resexec_retstatus은 sh를 실행시킨다음 그곳에 저장하라는 뜻의 코드입니다 (지우지 마세요 ㅋ)</p>
+<p>아무튼 위 코드를 ini_set 코드 아래쯤 넣어주시면 아로마 인스톨러가 처음 시작할때 자동으로 실행됩니다</p>
 <p>그러면서 아로마 인스톨러의 작업폴더인 /tmp/aroma에 FileName.prop가 들어가게 되며 자동으로 비활성화 코드가 들어가게 됩니다</p>
 <p>이제 메뉴 박스를 만들어 주신다음 if절로 메뉴가 선택되면 아래 구문이 실행되도록 만들어 주세요</p>
-<p>if  (prop(“FileName.prop”,“selected.1”)==“0”) then</p>
-<p>    setvar(</p>
-<p>        “Adfree_enable”,</p>
-<p>        resexec(“sh/FileName_Change_1.sh”)</p>
-<p>    );</p>
-<p>    alert(“알림”,“FileName를 활성화 했습니다 - 현재 상태:활성화”, “@info”);</p>
+<p>if  (prop(“FileName.prop”,“selected.1”)==“0”) then</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>setvar(</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    "Adfree_enable",</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    resexec("sh/FileName_Change_1.sh")</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>alert("알림","FileName를 활성화 했습니다 - 현재 상태:활성화", "@info");</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>else</p>
-<p>    setvar(</p>
-<p>        “Adfree_disable”,</p>
-<p>        resexec(“sh/FileName_Change_0.sh”)</p>
-<p>    );</p>
-<p>    alert(“알림”,“FileName를 비활성화 했습니다 - 현재 상태:비활성화”, “@info”);</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>setvar(</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    "Adfree_disable",</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    resexec("sh/FileName_Change_0.sh")</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>alert("알림","FileName를 비활성화 했습니다 - 현재 상태:비활성화", "@info");</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>endif;</p>
 <p>위 구문을 넣어 주시면 됩니다</p>
 <p>다중 if를 사용해서 구현해야 합니다</p>
 <p>메뉴가 선택될경우 위 파란 상자안 구문이 실행될수 있도록 말이죠</p>
 <p>약간 해석하자면 처음에 Start.sh를 실행해서 현재 값이 0입니다</p>
-<p>if절의 처음을 보면 FileName.prop의 값이 selected.1=0이라면 Change_1.sh를 실행해서 값을 1로 바꾼다음 활성화 하고</p>
+<p>if절의 처음을 보면 FileName.prop의 값이 selected.1=0이라면 Change_1.sh를 실행해서 값을 1로 바꾼다음 활성화 하고</p>
 <p>값이 1이라면(값이 0이 아니라면) Change_0.sh를 실행해서 값을 0으로 바꾼다음 비활성화 하는 구조입니다</p>
 <p>처음부분에서 0으로 만들고 사용자가 터치를 한번 하면 1로 바뀌게 되며 또다시 터치를 하게 되면 0으로 바꾸는 방식이 되죠</p>
 <p>이렇게 aroma-config에 들어갈 내용이 마쳐졌습니다</p>

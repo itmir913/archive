@@ -26,13 +26,13 @@
 <p>[sudo] password for whdghks:</p>
 <p>이때 아무것도 없는 빈파일이 나타나거나 혹은 파일이 없다는 오류가 나타나게 된다면 2번 방법을 시도해 주시길 바랍니다.</p>
 <p>grub를 열어보면</p>
-<p>grub_default     0</p>
+<p>grub_default     0</p>
 <p>이런 구문을 보실 수 있을겁니다. (대문자로 되어있을수도 있음)</p>
 <p>이제 이 값을 변경해 주면 됩니다.</p>
 <p>값은 어떻게 나오게 될까요?</p>
 <p>아래 sudo update-grub 부분 밑에 설명하겠습니다.</p>
 <p>그뒤 타임 아웃 시간도 지정할수 있습니다. 단위는 (초)입니다.</p>
-<p>timeout     10</p>
+<p>timeout     10</p>
 <p><img  src="/archive/_astro/2.KeH3ka0h_Ztc0tT.webp" alt="" width="550" height="330" loading="lazy" decoding="async"></p>
 <p>파일을 수정하신 후, 저장을 하기 바랍니다. (sudo또는 루트계정이 아닐경우 저장이 되지 않습니다.)</p>
 <p>이제 수정하셨다면 반영을 해야겠죠?</p>
@@ -49,12 +49,12 @@
 <p>이게 좀 애매 합니다…</p>
 <p>그냥 막노동으로 하셔도 됩니다;;</p>
 <p>저는 어떻게 했냐면요</p>
-<p>Ubuntu, with Linux 2.6.38-16                               0</p>
-<p>Ubuntu, with Linux 2.6.38-16 (복구 모드)               1<br>
-Previous Linux versions                                     2<br>
-Memory test (memtest86+)                                   3<br>
-Memory test (memtest86+, serial console 115200)   3<br>
-Windows 7 (loader) (on /dev/sda1)                     4</p>
+<p>Ubuntu, with Linux 2.6.38-16                               0</p>
+<p>Ubuntu, with Linux 2.6.38-16 (복구 모드)               1<br>
+Previous Linux versions                                     2<br>
+Memory test (memtest86+)                                   3<br>
+Memory test (memtest86+, serial console 115200)   3<br>
+Windows 7 (loader) (on /dev/sda1)                     4</p>
 <p>이렇게 생각하였습니다.</p>
 <p>우분투부터 0, 1,</p>
 <p>Previous Linux versions이 2이고요.</p>
@@ -66,7 +66,7 @@ Windows 7 (loader) (on /dev/sda1)                     4</p>
 <li>/boot/grub/menu.lst 파일 수정 (Grub)</li>
 </ol>
 <p>/etc/default/grub 파일이 없고 /boot/grub/menu.lst 파일이 있는 경우 이것을 수정해야 하는데요.</p>
-<p><strong>sudo gedit /boot/grub/menu.lst</strong><br>
+<p><strong>sudo gedit /boot/grub/menu.lst</strong><br>
 <strong>sudo update-grub</strong></p>
 <p>방법은 1번과 같으므로 또 다시 언급하지는 않겠습니다.</p>
 <p>이렇게 팁을 마치겠습니다.</p>

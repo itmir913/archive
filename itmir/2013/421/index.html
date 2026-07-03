@@ -1,13 +1,17 @@
 <!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="직접 수정한 어플을 실행했을 때, Toast 알림을 띄우는 smali코드입니다."><title>[Smali] Toast 알림 띄우기 — luminousky archive</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.BgW6xfjO.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2012 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">[Smali] Toast 알림 띄우기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-12-31T03:48:18.000Z"> 2013년 12월 31일 </time> <span class="post-category">Android/App</span> <a href="https://itmir.tistory.com/421" class="post-original" target="_blank" rel="noopener noreferrer">
 원본 보기 ↗
 </a> </div> <p class="post-description">직접 수정한 어플을 실행했을 때, Toast 알림을 띄우는 smali코드입니다.</p> </header> <div class="post-content"> <p>직접 수정한 어플을 실행했을 때, Toast 알림을 띄우는 smali코드입니다.</p>
-<p>예로 크랙어플의 경우 처음 실행 시 “cracked by 어쩌구”라는 Toast가 나타나는데요.</p>
+<p>예로 크랙어플의 경우 처음 실행 시 “cracked by 어쩌구”라는 Toast가 나타나는데요.</p>
 <p>이를 위한 smali 코드입니다.</p>
 <p>const-string v0, “나타낼 문구”</p>
-<p>    const/4 v1, 0x0</p>
-<p>    invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;</p>
-<p>    move-result-object v0</p>
-<p>    invoke-virtual {v0}, Landroid/widget/Toast;->show()V</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>const/4 v1, 0x0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>move-result-object v0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>invoke-virtual {v0}, Landroid/widget/Toast;->show()V</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>v0이 smali에서 사용되는 변수인데, 중복되지 않도록 어찌어찌 하시면 될 듯 합니다.</p>
 <p>그리고 나타낼 문구가 한글일 경우 따로 변환해줘야 합니다.</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
 Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">

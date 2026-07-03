@@ -4,7 +4,7 @@
 <p>전체 화면 캡쳐로, 스크롤 해야 하는 부분까지 한번에 캡쳐할수 있는 기능입니다</p>
 <p>이 기능을 내 WebView에 추가하고 싶다면 이글을 주의깊게 봐주세요</p>
 <p>WebView의 전체화면 캡쳐 기능을 Jar 라이브러리로 만들었습니다</p>
-<p>이름은 WebViewAllCapture입니다~</p>
+<p>이름은 WebViewAllCapture입니다~</p>
 <p>현재 WebView의 상태를 저장하는 방법에는 두가지가 있습니다</p>
 <p>하나는 허니콤에서 추가된 saveArchive()를 이용하는 방법과</p>
 <p>나머지는 이 전체화면 캡쳐 입니다</p>
@@ -16,7 +16,7 @@
 <p><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/WebViewAllCapture.jar">WebViewAllCapture.jar</a></p>
 <p>2014-02-13 : v1 첫 릴리즈</p>
 <p>먼저 스크린샷을 저장할때 sdcard를 사용하므로 퍼미션을주어야 합니다</p>
-<uses-permission android:name="android.permission.WRITE\_EXTERNAL\_STORAGE">
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE">
 <p>이 라이브러리의 사용방법은 아래와 같습니다</p>
 <p>WebViewAllCapture mAllCapture = new WebViewAllCapture();</p>
 <p>먼저 new를 해주신다음에 아래 코드로 캡쳐합니다</p>
@@ -25,7 +25,7 @@
 <p>mAllCapture.onWebViewAllCapture(mWebView, mFilePath, mScreenShotName, mFormat)</p>
 <ul>
 <li>mWebView : 캡쳐할 화면이 나타나있는 WebView입니다</li>
-<li>mFilePath : 스크린샷 파일이 저장될 위치를 String으로 입력하시면 되며, 마지막에 ”/“을 꼭 붙혀야 합니다 ex) “/sdcard/”</li>
+<li>mFilePath : 스크린샷 파일이 저장될 위치를 String으로 입력하시면 되며, 마지막에 ”/“을 꼭 붙혀야 합니다 ex) “/sdcard/”</li>
 <li>mScreenShotName : 스크린샷 파일의 이름을 입력하시면 되며, 이때 확장자 까지 넣어주셔야 합니다</li>
 <li>mFormat : 캡쳐 파일의 확장자를 따로 지정할때 사용합니다 (기본값은 PNG입니다)</li>
 </ul>

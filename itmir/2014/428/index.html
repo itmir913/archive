@@ -7,8 +7,8 @@
 <p>[알림]</p>
 <p>이 글은 안드로이드 보안의 헛점과 난독화의 한계를 나타내는 글입니다.</p>
 <p>[분석도구]</p>
-<p>smali to java: <a href="/archive/itmir/2013/399">[SmartPhone] - Apk Dex Tools (Apk Manager)</a></p>
-<p>apk manager: <a href="/archive/itmir/2013/121">[SmartPhone] - Apk Manager 5.0.2 다운/사용법 및 Java 설정</a></p>
+<p>smali to java: <a href="/archive/itmir/2013/399">[SmartPhone] - Apk Dex Tools (Apk Manager)</a></p>
+<p>apk manager: <a href="/archive/itmir/2013/121">[SmartPhone] - Apk Manager 5.0.2 다운/사용법 및 Java 설정</a></p>
 <p>[분석대상]</p>
 <p>이름: 드림나래</p>
 <p>패키지: angeloid.dreamnarae.v3</p>
@@ -27,79 +27,129 @@
 <p>smali 언어가 보기 싫어 java로 변환해 분석하면 더욱 편리합니다. (분석도구 첫번째)</p>
 <p>이때 분석 키워드는,</p>
 <p>pro, license, proversion, inapp등 유료를 나타내는 단어로 검색합니다.</p>
-<p>드림나래같은 경우는 매인 액티비티가 smali/angeloid/dreamnarae/v3/main/MainActivity.java 입니다.</p>
+<p>드림나래같은 경우는 매인 액티비티가 smali/angeloid/dreamnarae/v3/main/MainActivity.java 입니다.</p>
 <p>이 액티비티 부터 조사해 보면 나옵니다. Boolean반환 메소드라던지.. 코드라던지.</p>
 <p>3.0.5 버전부터 난독화가 되어 있어 메소드 명은 알아보지 못하지만, inapp으로 검색하니 a()Z메소드가 MainActivity.java에 있더라고요.</p>
 <p>smali언어를 보기 싫어 java로 보면 아래와 같더군요.</p>
 <p>public static boolean a()</p>
-<p>  {</p>
-<p>    try</p>
-<p>    {</p>
-<p>      Bundle localBundle = n.a(3, “angeloid.dreamnarae.v3”, “inapp”, null);</p>
-<p>      int i1 = localBundle.getInt(“RESPONSE_CODE”);</p>
-<p>      ArrayList localArrayList = null;</p>
-<p>      if (i1 == 0)</p>
-<p>        localArrayList = localBundle.getStringArrayList(“INAPP_PURCHASE_ITEM_LIST”);</p>
-<p>      if ((i1 == 0) &#x26;&#x26; (localArrayList.size() > 0))</p>
-<p>      {</p>
-<p>        boolean bool = ((String)localArrayList.get(0)).equals(“angel_unlock”);</p>
-<p>        if (bool)</p>
+<p>{</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>try</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>{</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  Bundle localBundle = n.a(3, "angeloid.dreamnarae.v3", "inapp", null);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  int i1 = localBundle.getInt("RESPONSE_CODE");</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  ArrayList localArrayList = null;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  if (i1 == 0)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    localArrayList = localBundle.getStringArrayList("INAPP_PURCHASE_ITEM_LIST");</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  if ((i1 == 0) &#x26;&#x26; (localArrayList.size() > 0))</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    boolean bool = ((String)localArrayList.get(0)).equals("angel_unlock");</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    if (bool)</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>return true;</strong></p>
-<p>      }</p>
-<p>    }</p>
-<p>    catch (RemoteException localRemoteException)</p>
-<p>    {</p>
-<p>    }</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>  }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>catch (RemoteException localRemoteException)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>{</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>return false;</strong></p>
-<p>  }</p>
+<p>}</p>
 <p>smali는 아래와 같습니다.</p>
 <p>.method public static a()Z</p>
-<p>    .locals 7</p>
-<p>    .prologue</p>
-<p>    const/4 v0, 0x0</p>
-<p>    const/4 v1, 0x0</p>
-<p>    .line 179</p>
-<p>    :try_start_0</p>
-<p>    sget-object v2, Langeloid/dreamnarae/v3/main/MainActivity;->n:Lcom/a/a/a/a;</p>
-<p>    — 모두 생략 —</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>.locals 7</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.prologue</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const/4 v0, 0x0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const/4 v1, 0x0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.line 179</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>:try_start_0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>sget-object v2, Langeloid/dreamnarae/v3/main/MainActivity;->n:Lcom/a/a/a/a;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>-- 모두 생략 --</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>.end method</p>
 <p>그래서 그냥 아래처럼 코드를 바꿔버리면 무조건 true가 반환됩니다.</p>
 <p>.method public static a()Z</p>
-<p>    .locals 7</p>
-<p>    .prologue</p>
-<p>    const/4 v0, 0x<strong>1</strong></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>.locals 7</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.prologue</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const/4 v0, 0x**1**</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>return v0</strong></p>
-<p>    const/4 v1, 0x0</p>
-<p>    .line 179</p>
-<p>    :try_start_0</p>
-<p>    sget-object v2, Langeloid/dreamnarae/v3/main/MainActivity;->n:Lcom/a/a/a/a;</p>
-<p>    — 모두 생략 —</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>const/4 v1, 0x0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.line 179</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>:try_start_0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>sget-object v2, Langeloid/dreamnarae/v3/main/MainActivity;->n:Lcom/a/a/a/a;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>-- 모두 생략 --</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>.end method</p>
-<p>그다음 검색해보면 smali/angeloid/dreamnarae/v3/tweak/Angel_Biling.java에도 있는거 같아서 아래처럼 수정합니다.</p>
+<p>그다음 검색해보면 smali/angeloid/dreamnarae/v3/tweak/Angel_Biling.java에도 있는거 같아서 아래처럼 수정합니다.</p>
 <p>public void a()</p>
-<p>  {</p>
-<p>    try</p>
-<p>    {</p>
-<p>      startIntentSenderForResult(((PendingIntent)a.a(3, getPackageName(), “angel_unlock”, “inapp”, null).getParcelable(“BUY_INTENT”)).getIntentSender(), 1001, new Intent(), Integer.valueOf(0).intValue(), Integer.valueOf(0).intValue(), Integer.valueOf(0).intValue());</p>
-<p>      return;</p>
-<p>    }</p>
-<p>    catch (Exception localException)</p>
-<p>    {</p>
-<p>    }</p>
-<p>  }</p>
+<p>{</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>try</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>{</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  startIntentSenderForResult(((PendingIntent)a.a(3, getPackageName(), "angel_unlock", "inapp", null).getParcelable("BUY_INTENT")).getIntentSender(), 1001, new Intent(), Integer.valueOf(0).intValue(), Integer.valueOf(0).intValue(), Integer.valueOf(0).intValue());</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  return;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>catch (Exception localException)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>{</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>}</p>
 <h1 id="virtual-methods">virtual methods</h1>
 <p>.method public a()V</p>
-<p>    .locals 7</p>
-<p>    .prologue</p>
-<p>    .line 132</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>.locals 7</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.prologue</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.line 132</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>return-void</p>
-<p>    :try_start_0</p>
-<p>    const-string v3, “angel”</p>
-<p>    .line 133</p>
-<p>    sget-object v0, Langeloid/dreamnarae/v3/tweak/Angel_Biling;->a:Lcom/a/a/a/a;</p>
-<p>    const/4 v1, 0x3</p>
-<p>    invoke-virtual {p0}, Langeloid/dreamnarae/v3/tweak/Angel_Biling;->getPackageName()Ljava/lang/String;</p>
-<p>    — 생략 —</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>:try_start_0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const-string v3, "angel"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.line 133</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>sget-object v0, Langeloid/dreamnarae/v3/tweak/Angel_Biling;->a:Lcom/a/a/a/a;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const/4 v1, 0x3</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>invoke-virtual {p0}, Langeloid/dreamnarae/v3/tweak/Angel_Biling;->getPackageName()Ljava/lang/String;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>-- 생략 --</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>.end method</p>
 <p>아래부분을 실행하지 말고 그냥 리턴해버리면 끝;</p>
 <p><img  src="/archive/_astro/20140111_093603.DhWek7AF_1Ww5X1.webp" alt="" width="435" height="580" loading="lazy" decoding="async"></p>

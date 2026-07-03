@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="지금까지 제가 격은 문제와 그 해결법에 대해 정리하도록 하겠습니다"><title>CM 빌드/ Apk 컴파일 등에서 나타나는 오류 해결법 [정리] — luminousky archive</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.BgW6xfjO.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2012 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">CM 빌드/ Apk 컴파일 등에서 나타나는 오류 해결법 [정리]</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2012-12-05T07:05:56.000Z"> 2012년 12월 5일 </time> <span class="post-category">Android/Build</span> <a href="https://itmir.tistory.com/41" class="post-original" target="_blank" rel="noopener noreferrer">
 원본 보기 ↗
 </a> </div> <p class="post-description">지금까지 제가 격은 문제와 그 해결법에 대해 정리하도록 하겠습니다</p> </header> <div class="post-content"> <p>지금까지 제가 격은 문제와 그 해결법에 대해 정리하도록 하겠습니다</p>
-<p>참고로 이 글은 <a href="http://whdghks913.blog.me/20166024812">http://whdghks913.blog.me/20166024812</a> 게시글을 옮긴 것이며</p>
-<p>티스토리에는 <a href="http://whdghks913.blog.me/20166024812">http://whdghks913.blog.me/20166024812</a>게시글을 따로 포스팅 하지 않았습니다</p>
+<p>참고로 이 글은 <a href="http://whdghks913.blog.me/20166024812">http://whdghks913.blog.me/20166024812</a> 게시글을 옮긴 것이며</p>
+<p>티스토리에는 <a href="http://whdghks913.blog.me/20166024812">http://whdghks913.blog.me/20166024812</a>게시글을 따로 포스팅 하지 않았습니다</p>
 <p>앞으로의 내용추가는 이 게시글 에서 갱신하도록 하겠습니다</p>
 <p>대부분의 해결은 능력자 분들의 말씀을 인용한것입니다 인용시 그 분:말씀 이렇게 작성하였습니다</p>
 <p><strong>CM빌드 오류</strong></p>
@@ -27,15 +27,15 @@
 <p>Target device는 cyanogen_기기명.mk의 디바이스 부분이다</p>
 <p><strong>libaudio을 만들규칙이 없습니다;;</strong></p>
 <p>target Strip: libeffects (out/target/product/a750k/obj/lib/libeffects.so)</p>
-<p>make: *** <code>out/target/product/a750k/obj/SHARED\_LIBRARIES/libaudioflinger\_intermediates/LINKED/libaudioflinger.so'에서 필요로 하는  타겟 </code>out/target/product/a750k/obj/lib/libaudio.so’를 만들 규칙이 없습니다.  멈춤.</p>
+<p>make: *** <code>out/target/product/a750k/obj/SHARED_LIBRARIES/libaudioflinger_intermediates/LINKED/libaudioflinger.so'에서 필요로 하는  타겟 </code>out/target/product/a750k/obj/lib/libaudio.so’를 만들 규칙이 없습니다.  멈춤.</p>
 <p>호호 : libaudio.so라는 파일을 해당경로에 가져다 놔도 되고</p>
 <p>Boardconfig.mk에 BOARD_USES_GENERIC_AUDIO:= true 라는 구문을 추가해주세요</p>
 <p>나의 해결법 : out/target/product/a750k/obj/SHARED_LIBRARIES/libaudioflinger_intermediates</p>
-<p>이경로폴더를 삭제했습니다 libaudioflinger.so 생성 완료</p>
+<p>이경로폴더를 삭제했습니다 libaudioflinger.so 생성 완료</p>
 <p><strong>libcamera.so을 만들규칙이 없습니다</strong></p>
-<p>make: *** <code>out/target/product/ef32k/obj/SHARED\_LIBRARIES/libcameraservice\_intermediates/LINKED/libcameraservice.so'에서 필요로 하는  타겟 </code>out/target/product/ef32k/obj/lib/libcamera.so’를 만들 규칙이 없습니다.  멈춤.</p>
-<p>검색, 참고자료SDA: <a href="http://cafe.naver.com/skydevelopers/96508">http://cafe.naver.com/skydevelopers/96508</a></p>
-<p>호호 : Boardconfig.mk에 USE_CAMERA_STUB:= true을 추가해 주시면 됩니다</p>
+<p>make: *** <code>out/target/product/ef32k/obj/SHARED_LIBRARIES/libcameraservice_intermediates/LINKED/libcameraservice.so'에서 필요로 하는  타겟 </code>out/target/product/ef32k/obj/lib/libcamera.so’를 만들 규칙이 없습니다.  멈춤.</p>
+<p>검색, 참고자료SDA: <a href="http://cafe.naver.com/skydevelopers/96508">http://cafe.naver.com/skydevelopers/96508</a></p>
+<p>호호 : Boardconfig.mk에 USE_CAMERA_STUB:= true을 추가해 주시면 됩니다</p>
 <p><strong>램디스크 부분 (init부분)</strong></p>
 <p>호호 : Init를 강제로 넣지 않는이상 자동으로 init가 빌드됩니다;;;;;</p>
 <p>INit는 미르님이 넣지않는이상 자동으로 빌드되구요</p>
@@ -115,14 +115,14 @@
 <p>make: *** [out/target/product/generic/obj/STATIC_LIBRARIES/libwebcore_intermediates/WebCore/css/CSSPropertyNames.h] Error 25</p>
 <p>make: *** Deleting file `out/target/product/generic/obj/STATIC_LIBRARIES/libwebcore_intermediates/WebCore/css/CSSPropertyNames.h ‘</p>
 <p>sudo apt-get install gperf</p>
-<p>참고 : <a href="http://cafe.naver.com/nexusdevelops/7381">http://cafe.naver.com/nexusdevelops/7381</a> <a href="http://cafeblog.search.naver.com/search.naver?where=article&#x26;query=out%2Fhost%2Flinux-x86%2Fobj%2FEXECUTABLES%2Facp_intermedlates%2Facp.o&#x26;cafe_url=nexusdevelops&#x26;sm=tab_crs&#x26;ie=utf8">( 검색 유입 )</a></p>
+<p>참고 : <a href="http://cafe.naver.com/nexusdevelops/7381">http://cafe.naver.com/nexusdevelops/7381</a> <a href="http://cafeblog.search.naver.com/search.naver?where=article&#x26;query=out%2Fhost%2Flinux-x86%2Fobj%2FEXECUTABLES%2Facp_intermedlates%2Facp.o&#x26;cafe_url=nexusdevelops&#x26;sm=tab_crs&#x26;ie=utf8">( 검색 유입 )</a></p>
 <p><strong>predefs.h 파일 에러</strong></p>
 <p>/usr/include/features.h:324:26: fatal error: bits/predefs.h: No such file or directory</p>
 <p>sudo apt-get install gcc-multilib</p>
 <p><strong>센서 픽스방법</strong></p>
 <p>BOARD_NEEDS_CUTILS_LOG := true</p>
 <p>구문 추가</p>
-<p>출처: <a href="http://cafe.naver.com/skydevelopers/104865">http://cafe.naver.com/skydevelopers/104865</a> (hPa님)</p>
+<p>출처: <a href="http://cafe.naver.com/skydevelopers/104865">http://cafe.naver.com/skydevelopers/104865</a> (hPa님)</p>
 <p><strong>overlay 문제 해결</strong></p>
 <p>target Export Resources: framework-res (/home/whdghks913/cluster/system/out/target/common/obj/APPS/framework-res_intermediates/package-export.apk)</p>
 <p>device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:30: error: Resource at config_networkLocationProviderPackageName appears in overlay but not in the base package; use <strong><add-resource></add-resource></strong> to add.<br>
@@ -150,8 +150,8 @@ make: *** 파일 `/home/whdghks913/cluster/system/out/target/common/obj/APPS/fra
 <p><a href="http://ac100.wikispaces.com/Wpa_supplicant">http://ac100.wikispaces.com/Wpa_supplicant</a></p>
 <p>이 사이트에서 제시하고 있는</p>
 <p>CONFIG_DRIVER_NL80211 := true</p>
-<p>BOARD_WPA_SUPPLICANT_PRIVATE_LIB        := lib_driver_cmd_bcmdhd<br>
-BOARD_HOSTAPD_PRIVATE_LIB               := lib_driver_cmd_bcmdhd<br>
+<p>BOARD_WPA_SUPPLICANT_PRIVATE_LIB        := lib_driver_cmd_bcmdhd<br>
+BOARD_HOSTAPD_PRIVATE_LIB               := lib_driver_cmd_bcmdhd<br>
 이 문구를 BoardConfig.mk에 추가한다음 빌드해 보면</p>
 <p>NOTICE-TARGET-STATIC_LIBRARIES-lib_driver_cmd_bcmdhd을 만들 규칙이 없다고 나타납니다</p>
 <p>그러므로 저는 hostapd를 빌드하는 소스의 위치, 즉 external/wpa_supplicant_8/hostapd위치에 있는 android.config을 열어보면</p>
@@ -168,7 +168,8 @@ BOARD_HOSTAPD_PRIVATE_LIB               := lib_driver_cmd_bcmdhd<b
 <p><a href="/archive/itmir/2013/188">2013/04/06 - [강좌/팁/커널/빌드 강좌] - NO BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR, using only generic configuration</a></p>
 <p>출처 : <a href="http://forum.xda-developers.com/showthread.php?p=35522843">http://forum.xda-developers.com/showthread.php?p=35522843</a></p>
 <p>In file included from hardware/qcom/display/liboverlay/overlayImpl.h:34:0,</p>
-<p>                                 from hardware/qcom/display/liboverlay/overlay.cpp:31:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>                             from hardware/qcom/display/liboverlay/overlay.cpp:31:</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>hardware/qcom/display/liboverlay/overlayRotator.h: In member function ‘virtual int overlay::MdssRot::getDstMemId() const’:</p>
 <p>hardware/qcom/display/liboverlay/overlayRotator.h:444:21: <strong>error: ‘const struct msmfb_overlay_data’ has no member named ‘dst_data’</strong></p>
 <p>hardware/qcom/display/liboverlay/overlayRotator.h: In member function ‘virtual uint32_t overlay::MdssRot::getDstOffset() const’:</p>
@@ -176,30 +177,36 @@ BOARD_HOSTAPD_PRIVATE_LIB               := lib_driver_cmd_bcmdhd<b
 <p>make: *** [/home/obi-wan-kenobi/mydev/android-source/cm10point1/out/target/product/e730/obj/SHARED_LIBRARIES/liboverlay_intermediates/overlay.o] Error 1</p>
 <p>이 오류는 뭔가 선언되지 않아 발생하는 오류라 생각(일뿐 자세하게는 모릅니다)합니다</p>
 <p>오류를 해결하기 위해 include을 찾아야 하는대요</p>
-<p>플레폼 소스폴더안에서 msm_mdp.h을 찾으시던지 아니면 이 파일을 직접 include하고 있다던지 아무튼 파일을 열어주세요</p>
+<p>플레폼 소스폴더안에서 msm_mdp.h을 찾으시던지 아니면 이 파일을 직접 include하고 있다던지 아무튼 파일을 열어주세요</p>
 <p>include/linux/msm_mdp.h을 열어주셨으면 아래를 찾아주세요</p>
 <p>“struct msmfb_overlay_data”</p>
 <p>이게 없다면 아래 문장을 추가해 주시고 있다면 보충해 주세요</p>
 <p>struct msmfb_overlay_data {</p>
-<p>         uint32_t id;</p>
-<p>         struct msmfb_data data;</p>
-<p>         uint32_t version_key;</p>
-<p>         struct msmfb_data plane1_data;</p>
-<p>         struct msmfb_data plane2_data;</p>
-<p>         struct msmfb_data dst_data;</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>     uint32_t id;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>     struct msmfb_data data;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>     uint32_t version_key;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>     struct msmfb_data plane1_data;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>     struct msmfb_data plane2_data;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>     struct msmfb_data dst_data;</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>};</p>
 <p><a href="http://forum.cyanogenmod.org/topic/70073-building-cm-101-422/">http://forum.cyanogenmod.org/topic/70073-building-cm-101-422/</a></p>
 <p><strong>hardware/qcom/display/libgralloc/fb_priv.h:48:26: error: field ‘fence’ has incomplete type</strong></p>
 <p><strong>hardware/qcom/display/libgralloc/fb_priv.h:49:31: error: field ‘commit’ has incomplete type</strong></p>
 <p>이 오류도 선언과 관련있는거라 생각됩니다</p>
-<p>오류가 뜨는 파일인 fb_priv.h을 열어</p>
+<p>오류가 뜨는 파일인 fb_priv.h을 열어</p>
 <p>struct mdp_buf_fence fence;</p>
 <p>struct mdp_display_commit commit;</p>
 <p>이 두개를 추가해 주시고 필요로 하는 h파일을 include할수 있도록 아래도 추가해 주세요</p>
 <p>#include &#x3C;linux/fb.h></p>
 <p>#include &#x3C;linux/msm_mdp.h></p>
 <p>모두 추가했는대도 문제가 발생한다면 현재 include하고 있는 폴더를 잠시 주석처리해 둔다음 빌드하시면 정상적으로 됩니다</p>
-<p>출처: <a href="http://forum.cyanogenmod.org/topic/70073-building-cm-101-422/">http://forum.cyanogenmod.org/topic/70073-building-cm-101-422/</a></p>
+<p>출처: <a href="http://forum.cyanogenmod.org/topic/70073-building-cm-101-422/">http://forum.cyanogenmod.org/topic/70073-building-cm-101-422/</a></p>
 <p><strong>out/target/product/(기기명)/obj/KERNEL_OBJ/usr’를 만들 규칙이 없습니다. 멈춤.[1]</strong><br>
 이 오류는 그냥 obj/KERNEL_OBJ/usr 폴더를 만들어 주면 됩니다</p>
 <p>DEVICE=기기명</p>
@@ -216,7 +223,7 @@ BOARD_HOSTAPD_PRIVATE_LIB               := lib_driver_cmd_bcmdhd<b
 <li>디바이스 소스-삼성 폴더에 들어가시면 cooper이라는 폴더가 있는대요</li>
 </ol>
 <p>(이것은 갤럭시 Ace의 코드네임 입니다)</p>
-<p>이 다바이스 소스안 recovery폴더에 있는 graphics.c를 가져와 자신의 디바이스 폴더에 넣습니다</p>
+<p>이 다바이스 소스안 recovery폴더에 있는 graphics.c를 가져와 자신의 디바이스 폴더에 넣습니다</p>
 <ol start="2">
 <li>
 <p>자신이 만든 logo.rle를 포팅하려는 기기의 소스폴더안에 넣습니다</p>
@@ -239,11 +246,11 @@ BOARD_HOSTAPD_PRIVATE_LIB               := lib_driver_cmd_bcmdhd<b
 <ol start="5">
 <li>빌드를 합니다 (make -j4 recoveryimage)</li>
 </ol>
-<p><strong>[출처]</strong> <a href="http://blog.naver.com/whdghks913/20176732787">빌드한 ClockWorkMod Recovery - 화면 안짤림 - 기기명 ef32k (KT미라크A)</a>|<strong>작성자</strong> <a href="http://blog.naver.com/whdghks913">미르</a></p>
+<p><strong>[출처]</strong> <a href="http://blog.naver.com/whdghks913/20176732787">빌드한 ClockWorkMod Recovery - 화면 안짤림 - 기기명 ef32k (KT미라크A)</a>|<strong>작성자</strong> <a href="http://blog.naver.com/whdghks913">미르</a></p>
 <p><strong>기타 우분투 문제</strong></p>
 <p><strong>/bin/sh: lzop: not found오류 해결법</strong></p>
 <p>커널 마이너 패치후 일어났습니다</p>
-<p>참고 자료: <a href="http://cafe.naver.com/androiddevforum/1635,">http://cafe.naver.com/androiddevforum/1635,</a> <a href="http://ez.analog.com/thread/14516">http://ez.analog.com/thread/14516</a></p>
+<p>참고 자료: <a href="http://cafe.naver.com/androiddevforum/1635,">http://cafe.naver.com/androiddevforum/1635,</a> <a href="http://ez.analog.com/thread/14516">http://ez.analog.com/thread/14516</a></p>
 <p>sudo apt-get install lzop 하시면 해결됩니다</p>
 <p><strong>make menuconfig문제</strong></p>
 <p>ncurses을 설치해 주세요</p>

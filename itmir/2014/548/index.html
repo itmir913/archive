@@ -37,10 +37,10 @@
 <p>그리고.. 최상위에 떠다니는 “뷰” 이므로 화면위에 있을 “뷰”를 만들어 줘야 하는데요</p>
 <p>두가지로 나눌수 있습니다</p>
 <p>하나는 터치가 되는 뷰, 나머지는 터치가 안되는 뷰</p>
-<p>전자는 터치이벤트를 받을수 있어서 팝업 동영상등에, 뒤는 터치를 못받으므로 스크린필터? 이런 용도로 씁니다</p>
+<p>전자는 터치이벤트를 받을수 있어서 팝업 동영상등에, 뒤는 터치를 못받으므로 스크린필터? 이런 용도로 씁니다</p>
 <p>물론 둘다 만들어 볼겁니다 ㅎㅎ</p>
 <p>터치이벤트를 못받는 뷰와 관련된 레이아웃 파일 입니다</p>
-<p>이름 : always_on_top_view_not_touch.xml</p>
+<p>이름 : always_on_top_view_not_touch.xml</p>
 <p><img  src="/archive/_astro/2.CPFP3QqC_aexsU.webp" alt="" width="319" height="100" loading="lazy" decoding="async"></p>
 <p>코드 보기</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">LinearLayout</span><span style="color:#6F42C1"> xmlns:android</span><span style="color:#24292E">=</span><span style="color:#032F62">"http://schemas.android.com/apk/res/android"</span></span>
@@ -66,13 +66,13 @@
 <p>이 TextView는 나중에 중앙에 항상 뜨도록 만들겠습니다</p>
 <p>또하나는 터치를 받을수 있는 뷰인데요</p>
 <p>간단하게 이미지뷰 하나만 뒀습니다</p>
-<p>이름 : always_on_top_view_touch.xml</p>
+<p>이름 : always_on_top_view_touch.xml</p>
 <p><img  src="/archive/_astro/3.GCTy4lfz_1Q6ey0.webp" alt="" width="317" height="121" loading="lazy" decoding="async"></p>
 <p>터치 이벤트를 받아서 뭐할건가.. 생각해봤는데요</p>
 <p>그냥 움직여보겠습니다</p>
 <h3 id="최상단-액티비티를-띄우려면-권한이-필요해요">최상단 액티비티를 띄우려면 권한이 필요해요</h3>
 <p>화면에 뷰를 추가하기 위한 권한을 추가해 줍시다</p>
-<uses-permission android:name="android.permission.SYSTEM\_ALERT\_WINDOW">
+<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW">
 <h3 id="서비스-생성하기">서비스 생성하기</h3>
 <p>최상단 뷰를 만들기 위해 서비스를 사용해야 합니다</p>
 <p>이 강좌에서는 터치가 되는것, 안되는것 두가지를 만들 예정이므로 서비스를 2개 생성해야 합니다</p>
@@ -80,16 +80,18 @@
 <p><a href="/archive/itmir/2013/414">[Development/App] - #23 Service (서비스)에 대해 알아보자</a></p>
 <p>[java] : 파일 생성</p>
 <p>AlwaysTopServiceTouch.java - 서비스 생성 (링크 참조해서 생성하세요)</p>
-<p>AlwaysTopServiceNotTouch.java - 서비스 생성 (링크 참조해서 생성하세요)</p>
+<p>AlwaysTopServiceNotTouch.java - 서비스 생성 (링크 참조해서 생성하세요)</p>
 <p>[AndroidManifest.xml] : 코드 추가</p>
 <service android:name="itmir.tistory.examplewindowview.AlwaysTopServiceNotTouch">
 <service android:name="itmir.tistory.examplewindowview.AlwaysTopServiceTouch">
 <p>[MainActivity.java] : 메소드 추가</p>
 <p>public void mStart(View v) {</p>
-<p>    startService(new Intent(this, AlwaysTopServiceNotTouch.class));</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>startService(new Intent(this, AlwaysTopServiceNotTouch.class));</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>}</p>
 <p>public void mStop(View v) {</p>
-<p>    stopService(new Intent(this, AlwaysTopServiceNotTouch.class));</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>stopService(new Intent(this, AlwaysTopServiceNotTouch.class));</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>}</p>
 <h3 id="alwaystopservicenottouch-서비스를-봐주세요">AlwaysTopServiceNotTouch 서비스를 봐주세요</h3>
 <p>자… 서비스까지 잘 생성하셨으리라 믿고 넘어가겠습니다</p>
@@ -136,12 +138,12 @@
 <ul>
 <li>WindowManager.LayoutParams.WRAP_CONTENT</li>
 </ul>
-<p>이건 WRAP_CONTENT가 눈에 잘 들어오실탠대 생각하시는 그거 맞습니다</p>
+<p>이건 WRAP_CONTENT가 눈에 잘 들어오실탠대 생각하시는 그거 맞습니다</p>
 <ul>
 <li>WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY</li>
 </ul>
 <p>이건 항상 최상위에 있도록 해주는 타입입니다</p>
-<p>반대로 아래에서 사용하게될 WindowManager.LayoutParams.TYPE_PHONE은 터치 이벤트도 받을수 있습니다</p>
+<p>반대로 아래에서 사용하게될 WindowManager.LayoutParams.TYPE_PHONE은 터치 이벤트도 받을수 있습니다</p>
 <ul>
 <li>WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH</li>
 </ul>
@@ -153,9 +155,8 @@
 <p>(아시는분 계시다면 덧글로 꼭 알려주세요!)</p>
 <p>그럼.. 이제 터치 못받는건 마무리 해볼께요</p>
 <p>아래는 스크린샷 입니다</p>
-<p><img  src="/archive/_astro/device-2014-12-17-174604.C8ZFxtmN_Z1tcfQO.webp" alt="" width="400" height="711" loading="lazy" decoding="async">
-   
-<img  src="/archive/_astro/device-2014-12-17-174616.BSEvqIfG_vemFh.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/device-2014-12-17-174604.C8ZFxtmN_Z1tcfQO.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/device-2014-12-17-174616.BSEvqIfG_vemFh.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
 <h3 id="alwaystopservicetouch-서비스를-봐주세요">AlwaysTopServiceTouch 서비스를 봐주세요</h3>
 <p>중요한건 위에서 다 언급했기 때문에 바뀐 점만 언급하고 마치려 합니다</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">mView.</span><span style="color:#6F42C1">setOnTouchListener</span><span style="color:#24292E">(mViewTouchListener);</span></span>
@@ -174,7 +175,7 @@
 <li>WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE</li>
 </ul>
 <p>포커스를 가지지 않게 합니다</p>
-<p>그리고 mView.setOnTouchListener(mViewTouchListener); 이부분에서 mViewTouchListener를 언급하지 않았네요</p>
+<p>그리고 mView.setOnTouchListener(mViewTouchListener); 이부분에서 mViewTouchListener를 언급하지 않았네요</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">private</span><span style="color:#D73A49"> float</span><span style="color:#24292E"> mTouchX, mTouchY;</span></span>
 <span class="line"><span style="color:#D73A49">private</span><span style="color:#D73A49"> int</span><span style="color:#24292E"> mViewX, mViewY;</span></span>
 <span class="line"></span>
@@ -212,14 +213,13 @@
 <span class="line"><span style="color:#24292E">};</span></span>
 <span class="line"></span></code></pre>
 <p>뭐.. 이런구조인데요</p>
-<p>중요한건 터치이벤트 리스너를 받을수 있고, 그 이벤트를 받아서 mParams을 수정하고, updateViewLayout()로 위치를 수정한다 라는 원리입니다</p>
-<p><img  src="/archive/_astro/Screenshot_2014-12-17-17-47-51.B3tY1sM6_ZNXT0K.webp" alt="" width="400" height="711" loading="lazy" decoding="async">
-   
-<img  src="/archive/_astro/Screenshot_2014-12-17-17-48-11.CuyMoyOY_175ntg.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<p>중요한건 터치이벤트 리스너를 받을수 있고, 그 이벤트를 받아서 mParams을 수정하고, updateViewLayout()로 위치를 수정한다 라는 원리입니다</p>
+<p><img  src="/archive/_astro/Screenshot_2014-12-17-17-47-51.B3tY1sM6_ZNXT0K.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/Screenshot_2014-12-17-17-48-11.CuyMoyOY_175ntg.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
 <h3 id="예제-다운로드">예제 다운로드</h3>
 <p><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleWindowView.zip">ExampleWindowView.zip</a></p>
 <h3 id="마치며">마치며</h3>
-<p>강좌 완성도를 점차 올리고 싶은데 시간도 없고.. 내용도 어렵고 해서 강좌를 자주 올리지 못하네요..</p>
+<p>강좌 완성도를 점차 올리고 싶은데 시간도 없고.. 내용도 어렵고 해서 강좌를 자주 올리지 못하네요..</p>
 <p>그리고 제 필력이 약해서 정확하게 이해하실수 있으실지도 모르겠습니다</p>
 <p>예제소스도 함께 첨부했으니 이해가 안되신다면 소스 확인해보세요~</p>
 <p>글 한번 쓰는거 너무 오래걸리고 힘드네요…</p>

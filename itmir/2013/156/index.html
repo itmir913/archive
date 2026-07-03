@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="전 강좌 상수에 이어 강좌를 계속 진행 하도록 하겠습니다."><title>자료형은 언제든지 변환될 수 있습니다 — luminousky archive</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.BgW6xfjO.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2012 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">자료형은 언제든지 변환될 수 있습니다</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2013-02-22T01:12:55.000Z"> 2013년 2월 22일 </time> <span class="post-category">Programming/Java</span> <a href="https://itmir.tistory.com/156" class="post-original" target="_blank" rel="noopener noreferrer">
 원본 보기 ↗
 </a> </div> <p class="post-description">전 강좌 상수에 이어 강좌를 계속 진행 하도록 하겠습니다.</p> </header> <div class="post-content"> <p>전 강좌 상수에 이어 강좌를 계속 진행 하도록 하겠습니다.</p>
-<p>제목과 마찬가지로 자료형은 언제든지 필요에 따라, 연산을 위해 변환될 수 있습니다.</p>
+<p>제목과 마찬가지로 자료형은 언제든지 필요에 따라, 연산을 위해 변환될 수 있습니다.</p>
 <p>간단한 예를 들어 설명해 보도록 하겠습니다.</p>
 <blockquote>
 <p>short mir1=7;</p>
@@ -17,11 +17,11 @@
 <p>7 = 00000000 00000000 00000000 00000111</p>
 <p>6 = 00000000 00000000 00000000 00000110</p>
 <p>이렇게 변환이 됩니다.</p>
-<p>“그냥 0만 붙이면 되네요. ㅋㅋㅋㅋㅋㅋㅋㅋ 아주 쉽네 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ”</p>
+<p>“그냥 0만 붙이면 되네요. ㅋㅋㅋㅋㅋㅋㅋㅋ 아주 쉽네 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ”</p>
 <p>라고 생각하실 수 있는대 이건 잘못된 생각입니다.</p>
 <p>short와 int는 모두 정수를 표현하며 바이트 크기 차이만 있기 때문에 간단하게 변환이 이루어 집니다.</p>
 <p>하지만 int형의 1과 float형의 1.0은 완전 다르게 표현이 됩니다.</p>
-<p>1   = 00000000 00000000 00000000 00000001</p>
+<p>1   = 00000000 00000000 00000000 00000001</p>
 <p>1.0 = 00111111 10000000 00000000 00000000</p>
 <p>이렇게 완전 다르게 표현이 되는겁니다.</p>
 <p>그러므로 정수 1이 실수 1.0으로 형 변환 된다면 전혀 다른 비트로 구성되어 저장되는 것이지요.</p>
@@ -40,10 +40,10 @@
 <p>그렇다면 정수와 실수의 계산은 이렇게 이루어 질까요?</p>
 <p>위에서 살펴본 int형의 1과 float형의 1.0을 가지고 더해보겠습니다.</p>
 <blockquote>
-<p>  00000000 00000000 00000000 00000001    /* int형 1 */</p>
-<p>  00111111 10000000 00000000 00000000    /* float형 1.0 */</p>
+<p>00000000 00000000 00000000 00000001    /* int형 1 */</p>
+<p>00111111 10000000 00000000 00000000    /* float형 1.0 */</p>
 <p>+----------------------------------</p>
-<p>  ???????? ???????? ???????? ????????</p>
+<p>???????? ???????? ???????? ????????</p>
 </blockquote>
 <p>자료의 표현 방식이 다르니 계산도 불가능한 것 이지요.</p>
 <p>1+1.0을 계산하기 위해서는 자료의 표현 방식을 일치 시켜 계산해야만 합니다.</p>
@@ -76,7 +76,7 @@
 <p>20.0f+3.2f가 되는 것이지요.</p>
 <p>그래서 23.2f가 만들어 졌습니다 이제 이걸 num에 저장하려 보니까.</p>
 <p>변수의 자료형이 double형입니다.</p>
-<p>마지막으로 float형 변수는 또다시 double형 변수로 변환되어 저장되는 것이지요.</p>
+<p>마지막으로 float형 변수는 또다시 double형 변수로 변환되어 저장되는 것이지요.</p>
 <p>이렇게 java에서 자동으로 이루어 지는 형 변환에 대해 알아봤습니다.</p>
 <p>이제는 우리가 임의적으로 형 변환을 하는 방법에 대해 알아보겠습니다.</p>
 <blockquote>

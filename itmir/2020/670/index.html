@@ -28,7 +28,7 @@
 <p>나머지는 모두 체크 해제해도 무방하며, Merge and Diff Tool (P4Merge)만 체크하여 설치합니다.</p>
 <h2 id="환경-변수-등록">환경 변수 등록</h2>
 <p>별다른 설정을 건들지 않고 설치하였다면 P4Merge의 설치 위치는 다음과 같을 것입니다.</p>
-<p>C:\Program Files\Perforce</p>
+<p>C:\Program Files\Perforce</p>
 <p>이 폴더를 PATH에 등록합시다.</p>
 <p><img  src="/archive/_astro/img_4.C7EYpgcW_ZoemoR.webp" alt="" width="677" height="664" loading="lazy" decoding="async"></p>
 <p>환경 변수에 C:\Program Files\Perforce 폴더를 추가해주면 됩니다.</p>
@@ -65,12 +65,17 @@
 <p>[diff] tool = winmerge</p>
 <p>[merge] tool = winmerge</p>
 <p>[difftool “WinMerge”]</p>
-<p>    cmd = “C:\Program Files\WinMerge\WinMergeU.exe” -e -u -dl “Old $BASE” -dr “New $BASE” “$LOCAL” “$REMOTE”</p>
-<p>    trustExitCode = true</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>cmd = "C:\\Program Files\\WinMerge\\WinMergeU.exe" -e -u -dl "Old $BASE" -dr "New $BASE" "$LOCAL" "$REMOTE"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>trustExitCode = true</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>[mergetool “WinMerge”]</p>
-<p>    cmd = “C:\Program Files\WinMerge\WinMergeU.exe” -e -u -dl “Local” -dm “Base” -dr “Remote” “$LOCAL” “$BASE” “$REMOTE” -o “$MERGED”</p>
-<p>    trustExitCode = true</p>
-<p>    keepBackup = false</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>cmd = "C:\\Program Files\\WinMerge\\WinMergeU.exe" -e -u -dl "Local" -dm "Base" -dr "Remote" "$LOCAL" "$BASE" "$REMOTE" -o "$MERGED"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>trustExitCode = true</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>keepBackup = false</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>참고 : <a href="https://coderwall.com/p/76wmzq/winmerge-as-git-difftool-on-windows">https://coderwall.com/p/76wmzq/winmerge-as-git-difftool-on-windows</a></p>
 <p>그리하면 아래 스크린샷처럼 WinMerge를 git difftool과 git mergetool으로 사용할 수 있습니다.</p>
 <p><img  src="/archive/_astro/img_8.JHOGd85U_Z1U9ucw.webp" alt="" width="1424" height="739" loading="lazy" decoding="async"></p>

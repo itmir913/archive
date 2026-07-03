@@ -6,15 +6,24 @@
 <p>아무튼 빌드하다 보면 아래와 같은 오류가 나타나며 빌드가 안됩니다</p>
 <p>Target boot image: /home/whdghks913/cm_lucid/system/out/target/product/ef46l/boot.img</p>
 <p>usage: mkbootimg</p>
-<p>       —kernel <filename></filename></p>
-<p>       —ramdisk <filename></filename></p>
-<p>       [ —second &#x3C;2ndbootloader-filename> ]</p>
-<p>       [ —cmdline <kernel-commandline> ]</kernel-commandline></p>
-<p>       [ —board <boardname> ]</boardname></p>
-<p>       [ —base </p><address> ]<p></p>
-<p>       [ —pagesize <pagesize> ]</pagesize></p>
-<p>       [ —ramdisk_offset </p><address> ]<p></p>
-<p>       -o|—output <filename></filename></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>   --kernel &#x3C;filename></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   --ramdisk &#x3C;filename></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   [ --second &#x3C;2ndbootloader-filename> ]</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   [ --cmdline &#x3C;kernel-commandline> ]</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   [ --board &#x3C;boardname> ]</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   [ --base &#x3C;address> ]</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   [ --pagesize &#x3C;pagesize> ]</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   [ --ramdisk_offset &#x3C;address> ]</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   -o|--output &#x3C;filename></span></span>
+<span class="line"><span></span></span></code></pre>
 <p>make: *** [/home/whdghks913/cm_lucid/system/out/target/product/ef46l/boot.img] 오류 1</p>
 <p>어이가 없죠… 갑자기 mkbootimg의 usage가 나오다니..</p>
 <p>이건 ramdisk_offset을 지정하지 않았기 때문에 발생합니다</p>
@@ -57,7 +66,7 @@
 </ol>
 <p>자, 좀 복잡하기도 합니다..</p>
 <p>마켓에 진수 변환이 가능한 어플도 있고 편법으로 윈도우7에 내장되어 있는 기본 계산기로도 진수 변환은 가능하나 자세한 언급은 생략하겠습니다</p>
-<p>이제 최종 ramdisk_offset의 값을 필요로 하는 BOARD_MKBOOTIMG_ARGS에 넣어줘야 하는대요</p>
+<p>이제 최종 ramdisk_offset의 값을 필요로 하는 BOARD_MKBOOTIMG_ARGS에 넣어줘야 하는대요</p>
 <p>이것도 그냥</p>
 <p>BOARD_MKBOOTIMG_ARGS := 나온 값</p>
 <p>이렇게 넣어줘 버리면 안됩니다</p>
@@ -69,7 +78,7 @@
 <p>이렇게 해서 귀찮은 ramdisk_offset을 구하는 방법에 대해 알아보았습니다~</p>
 <p>도움이 되셨다면 추천 부탁드리고 널리 퍼트려 주세요~</p>
 <p>참고</p>
-<p>Sleepy님의 4.1.2 디바이스 소스로 4.2.1 빌드하기</p></address></address> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+<p>Sleepy님의 4.1.2 디바이스 소스로 4.2.1 빌드하기</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
 Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
 itmir.tistory.com
 </a>  · Archived by luminousky

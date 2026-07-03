@@ -2,21 +2,25 @@
 원본 보기 ↗
 </a> </div> <p class="post-description">먼저 이 강좌는 SDA, 디벨로이드, ADF카페에 보급(?)되며 티스토리와 네이버의 글양식 차이로 인해 사진과 글씨가 깨져 보일 경우 원본 링크로 와서 감상해 주시길 바랍니다.</p> </header> <div class="post-content"> <p>먼저 이 강좌는 SDA, 디벨로이드, ADF카페에 보급(?)되며 티스토리와 네이버의 글양식 차이로 인해 사진과 글씨가 깨져 보일 경우 원본 링크로 와서 감상해 주시길 바랍니다.</p>
 <p>안녕하세요.</p>
-<p>이번에 살펴볼 switch문은 말 그대로 스위치 입니ㅏㄷ. <em>(←고의적 오타)</em></p>
+<p>이번에 살펴볼 switch문은 말 그대로 스위치 입니ㅏㄷ. <em>(←고의적 오타)</em></p>
 <p>if~else와 비슷하면서도 다른 문구이니 꼭 숙지해 두시길 바랍니다.</p>
 <p>스위치 문은 case와 default라는 레이블로 구성이 됩니다.</p>
 <p>한번 기본 구성을 살펴보도록 하겠습니다.</p>
 <blockquote>
 <p>switch(Mir)</p>
 <p>{</p>
-<p>  case 1:</p>
-<p>    … .</p>
-<p>  case 2:</p>
-<p>    … .</p>
-<p>  case 3:</p>
-<p>    … .</p>
-<p>  default:</p>
-<p>    … .</p>
+<p>case 1:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>. . . .</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>case 2:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>. . . .</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>case 3:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>. . . .</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>default:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>. . . .</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>}</p>
 </blockquote>
 <p>이런 구성을 가지고 있습니다.</p>
@@ -24,10 +28,10 @@
 <p><img  src="/archive/_astro/%EC%BA%A1%EC%B2%98.BdHtCYn0_i3l9s.webp" alt="" width="589" height="301" loading="lazy" decoding="async"></p>
 <p>제 허접한 그림 솜씨로 한번 표현해 봤습니다. ㅠㅠ 역시 그림에는 절대로 소질이 없네요..</p>
 <p>아무튼 이런 구조로 실행 됩니다.</p>
-<p>case라는 레이블은 switch의 값이 n이라면 여기서부터 시작하세요. 라는 뜻을 가지고 있으며,</p>
+<p>case라는 레이블은 switch의 값이 n이라면 여기서부터 시작하세요. 라는 뜻을 가지고 있으며,</p>
 <p>default 레이블은 값 n에 해당하는 레이블(case)이 없다면 여기서 부터 실행하세요!라는 뜻으로 이해하시면 됩니다. ㅎㅎ</p>
 <p>한번 예제를 통해 보도록 하겠습니다.</p>
-<p>이런 종류의 문구는 엄청난 설명보다 하나의 예제가 도움이 더 많이 되는 듯 해요.</p>
+<p>이런 종류의 문구는 엄청난 설명보다 하나의 예제가 도움이 더 많이 되는 듯 해요.</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> Switchcase</span></span>
 <span class="line"><span style="color:#24292E">{</span></span>
 <span class="line"><span style="color:#D73A49"> public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">)</span></span>

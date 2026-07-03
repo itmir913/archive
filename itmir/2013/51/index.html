@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="이 강좌는 사람님의 강좌를 바탕으로 제작되었습니다"><title>커널 컴파일을 위한 기본 설정 구축하기 — luminousky archive</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.BgW6xfjO.css"></head> <body> <header class="site-header"> <div class="header-inner"> <a href="/archive/" class="site-title">luminousky / ITMir</a> <span class="site-period">2012 – 2021</span> </div> </header> <main> <div class="content-wrapper">  <article> <header class="post-header"> <a href="/archive/itmir/" class="post-back">← 목록으로</a> <h1 class="post-title">커널 컴파일을 위한 기본 설정 구축하기</h1> <div class="post-meta"> <time class="post-meta-date" datetime="2012-12-21T07:22:05.000Z"> 2012년 12월 21일 </time> <span class="post-category">Android/Kernel</span> <a href="https://itmir.tistory.com/51" class="post-original" target="_blank" rel="noopener noreferrer">
 원본 보기 ↗
 </a> </div> <p class="post-description">이 강좌는 사람님의 강좌를 바탕으로 제작되었습니다</p> </header> <div class="post-content"> <p>이 강좌는 사람님의 강좌를 바탕으로 제작되었습니다</p>
-<p>원본글은 <a href="http://cafe.naver.com/tdadevelop/3581">http://cafe.naver.com/tdadevelop/3581</a> 입니다</p>
+<p>원본글은 <a href="http://cafe.naver.com/tdadevelop/3581">http://cafe.naver.com/tdadevelop/3581</a> 입니다</p>
 <p>환경 구축 스크립트도 만들어 두었습니다</p>
 <p>포스팅중</p>
 <p>위 링크를 참고하세요~</p>
@@ -14,14 +14,14 @@
 <ol start="2">
 <li>필수 패키지 설치</li>
 </ol>
-<p>sudo apt-get install git-core gnupg flex bison gperf libsdl1.2-dev libesd0-dev build-essential zip curl</p>
+<p>sudo apt-get install git-core gnupg flex bison gperf libsdl1.2-dev libesd0-dev build-essential zip curl</p>
 <p>libncurses5-dev zlib1g-dev valgrind</p>
 <p>이래되도 한줄입니다 ㄷ</p>
 <p>전부 입력해 주세요</p>
 <p>이제 자바를 설치해야 합니다</p>
-<p>sudo add-apt-repository “deb <a href="http://kr.archive.ubuntu.com/ubuntu/">http://kr.archive.ubuntu.com/ubuntu/</a> hardy multiverse”</p>
+<p>sudo add-apt-repository “deb <a href="http://kr.archive.ubuntu.com/ubuntu/">http://kr.archive.ubuntu.com/ubuntu/</a> hardy multiverse”</p>
 <p>sudo add-apt-repository “deb</p>
-<p><a href="http://kr.archive.ubuntu.com/ubuntu/">http://kr.archive.ubuntu.com/ubuntu/</a> hardy-updates multiverse”</p>
+<p><a href="http://kr.archive.ubuntu.com/ubuntu/">http://kr.archive.ubuntu.com/ubuntu/</a> hardy-updates multiverse”</p>
 <p>이렇게 입력해 주시면 됩니다</p>
 <p>두 명령어는 우분투에 자바를 어디어 받을지 각인시켜 줍니다</p>
 <p>그다음</p>
@@ -33,7 +33,7 @@
 <li>툴체인 설치</li>
 </ol>
 <p><a href="http://www.mediafire.com/file/msmnxt8n6xj6ayf/arm-eabi-4.4.0.zip">http://www.mediafire.com/file/msmnxt8n6xj6ayf/arm-eabi-4.4.0.zip</a></p>
-<p>위 링크에 들어가 arm-eabi-4.4.0을 받아 줍니다</p>
+<p>위 링크에 들어가 arm-eabi-4.4.0을 받아 줍니다</p>
 <p>이것을 최상단 폴더(/home/계정명/)에 넣에 주시면 됩니다</p>
 <p>그뒤</p>
 <p>cd ~/arm-eabi-4.4.0/bin</p>
@@ -44,7 +44,7 @@
 <p>chmod +x ./*</p>
 <p>cd ~/arm-eabi-4.4.0/libexec/gcc/arm-eabi/4.4.0/install-tools</p>
 <p>chmod +x ./*</p>
-<p>모두다 쳐주세요 ㄷ</p>
+<p>모두다 쳐주세요 ㄷ</p>
 <p>마지막으로</p>
 <p>gedit ~/.bashrc</p>
 <p>를 입력하시면 편집기가 뜰탠대요 맨밑에</p>

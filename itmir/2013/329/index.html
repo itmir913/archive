@@ -47,35 +47,30 @@ android:progress : 현재 위치를 지정해 주는 속성</p>
 <p>또한, 일일히 OnClickListener을 지정하기 귀찮으니 버튼에는 onClick속성을 넣어줍시다 ㅎ</p>
 <p>android:onClick=“Start”</p>
 <p>완성된 xml의 코드는 다음과 같습니</p>
-<p>&#x3C;ProgressBar<br>
-        android:id=”@+id/progressBar1”<br>
-        style=“?android:attr/progressBarStyleHorizontal”<br>
-        android:layout_width=“match_parent”<br>
-        android:layout_height=“wrap_content”<br>
-        android:layout_alignParentTop=“true”<br>
-        android:layout_centerHorizontal=“true”<br>
-        android:max=“1000”<br>
-        android:layout_marginTop=“64dp” /></p>
-<p>    &#x3C;EditText<br>
-        android:id=”@+id/editText1”<br>
-        android:layout_width=“wrap_content”<br>
-        android:layout_height=“wrap_content”<br>
-        android:layout_below=”@+id/progressBar1”<br>
-        android:layout_centerHorizontal=“true”<br>
-        android:layout_marginTop=“14dp”<br>
-        android:inputType=“number”<br>
-        android:ems=“10” ></p>
-<p>        <requestfocus><br>
-    </requestfocus></p>
-<p>    &#x3C;Button<br>
-        android:id=”@+id/button1”<br>
-        android:layout_width=“wrap_content”<br>
-        android:layout_height=“wrap_content”<br>
-        android:layout_below=”@+id/editText1”<br>
-        android:layout_centerHorizontal=“true”<br>
-        android:layout_marginTop=“18dp”<br>
-        android:onClick=“Start”<br>
-        android:text=“Button” /></p>
+<p><progressbar android:id="@+id/progressBar1" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignparenttop="true" android:layout_centerhorizontal="true" android:max="1000" android:layout_margintop="64dp"></progressbar></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>&#x3C;EditText  </span></span>
+<span class="line"><span>    android:id="@+id/editText1"  </span></span>
+<span class="line"><span>    android:layout_width="wrap_content"  </span></span>
+<span class="line"><span>    android:layout_height="wrap_content"  </span></span>
+<span class="line"><span>    android:layout_below="@+id/progressBar1"  </span></span>
+<span class="line"><span>    android:layout_centerHorizontal="true"  </span></span>
+<span class="line"><span>    android:layout_marginTop="14dp"  </span></span>
+<span class="line"><span>    android:inputType="number"  </span></span>
+<span class="line"><span>    android:ems="10" ></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    &#x3C;requestFocus />  </span></span>
+<span class="line"><span>&#x3C;/EditText></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;Button  </span></span>
+<span class="line"><span>    android:id="@+id/button1"  </span></span>
+<span class="line"><span>    android:layout_width="wrap_content"  </span></span>
+<span class="line"><span>    android:layout_height="wrap_content"  </span></span>
+<span class="line"><span>    android:layout_below="@+id/editText1"  </span></span>
+<span class="line"><span>    android:layout_centerHorizontal="true"  </span></span>
+<span class="line"><span>    android:layout_marginTop="18dp"  </span></span>
+<span class="line"><span>    android:onClick="Start"  </span></span>
+<span class="line"><span>    android:text="Button" /></span></span>
+<span class="line"><span></span></span></code></pre>
 <p>자, 그럼 여기서 각 역할을 설명해 보겠습니다</p>
 <p>먼저, EditText에 숫자를 입력하면 입력즉시 프로그레스바를 진행하도록 설정할겁니다</p>
 <p>그다음, 버튼을 누르면 1초마다 프로그레스바가 움직이도록 설정할겁니다</p>
@@ -85,9 +80,9 @@ android:progress : 현재 위치를 지정해 주는 속성</p>
 <p>아래 초록 박스의 굵은 글씨가 추가된 부분입니다</p>
 <p>public class MainActivity extends Activity <strong>implements Runnable</strong> {<br>
 <strong>ProgressBar progressBar1;<br>
- EditText editText1;<br>
- int progress=0;<br>
- Thread thread;</strong></p>
+EditText editText1;<br>
+int progress=0;<br>
+Thread thread;</strong></p>
 <p>… 중략</p>
 <p>이 예제에서는 Thread에 대해 설명하진 않으니 일단 넘어가 주세요~</p>
 <p>그다음 onCreate안에</p>
@@ -96,33 +91,31 @@ android:progress : 현재 위치를 지정해 주는 속성</p>
 <p>을 추가해 줍시다</p>
 <p>그다음 그 아래에 editText의 값이 변하는 즉시 적용되게 해야 합니다</p>
 <p>똑똑한 EditText를 만들어 봅시다</p>
-<p>editText1.<strong>addTextChangedListener</strong>(new TextWatcher() {<br>
-  <br>
-   @Override<br>
-   public void afterTextChanged(Editable arg0) {<br>
-    <br>
-   }</p>
-<p>   @Override<br>
-   public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {<br>
-    <br>
-   }</p>
-<p>   @Override<br>
-   public void onTextChanged(CharSequence arg0, int arg1, int arg2,<br>
-     int arg3) {<br>
-    // TODO Auto-generated method stub<br>
-    /**<br>
-     * 만약 입력한 값이 공백(없음, "")이라면 강제종료 오류가 뜨므로 이 전체를 try문으로 감싸 오류를 막습니다<br>
-     */<br>
-    try {<br>
-      // Integer.parseInt()는 String을 Int로 바꿔줍니다<br>
-     progress = Integer.parseInt(editText1.getText().toString());<br>
-     progressBar1.setProgress(progress);</p>
-<p>     //setProgress는 프로그레스바의 진행정도를 지정해 줍니다, ()안에는 int형 숫자가 들어갈수 있습니다<br>
-    } catch (Exception e) {<br>
-     <br>
-    }<br>
-   }<br>
-  });</p>
+<p>editText1.<strong>addTextChangedListener</strong>(new TextWatcher() {</p>
+<p>@Override<br>
+public void afterTextChanged(Editable arg0) {</p>
+<p>}</p>
+<p>@Override<br>
+public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {</p>
+<p>}</p>
+<p>@Override<br>
+public void onTextChanged(CharSequence arg0, int arg1, int arg2,<br>
+int arg3) {<br>
+// TODO Auto-generated method stub<br>
+/**<br>
+* 만약 입력한 값이 공백(없음, "")이라면 강제종료 오류가 뜨므로 이 전체를 try문으로 감싸 오류를 막습니다<br>
+*/<br>
+try {<br>
+// Integer.parseInt()는 String을 Int로 바꿔줍니다<br>
+progress = Integer.parseInt(editText1.getText().toString());<br>
+progressBar1.setProgress(progress);</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span> //setProgress는 프로그레스바의 진행정도를 지정해 줍니다, ()안에는 int형 숫자가 들어갈수 있습니다  </span></span>
+<span class="line"><span>} catch (Exception e) {  </span></span>
+<span class="line"><span>   </span></span>
+<span class="line"><span>}  </span></span>
+<span class="line"><span></span></span></code></pre>
+<p>}<br>
+});</p>
 <p>addTextChangedListener라는 것을 이용하여 구현되었는데요</p>
 <p>이것은 EditText의 내용물이 바뀔때마다 호출됩니다</p>
 <p>예를들자면 카카오톡의 비밀번호기능인데요</p>
@@ -134,9 +127,9 @@ android:progress : 현재 위치를 지정해 주는 속성</p>
 <p>이제 나머지 한 기능도 구현해 봅시다</p>
 <p>두개의 메소드를 추가해 줘야 합니다</p>
 <p>public void Start(View v){<br>
-    thread = new Thread(this);<br>
-    thread.start();<br>
- }</p>
+thread = new Thread(this);<br>
+thread.start();<br>
+}</p>
 <p>하나는 버튼xml에서 지정한 onClick에 필요한 메소드입니다</p>
 <p>thread라는것을 시작해 주는 소스가 보이시나요?</p>
 <p>thread.start();라는것은 아~ 드쓰레라는걸 시작하는거구나 라는것을 아실수 있으실겁니다</p>
@@ -144,17 +137,17 @@ android:progress : 현재 위치를 지정해 주는 속성</p>
 <p>그건 run이라는 이름을 가진 메소드에서 지정해 줄수 있습니다</p>
 <p>@Override<br>
 public void run(){<br>
-    progress=0;<br>
-    while(progress&#x3C;100){<br>
-        ++progress;<br>
-        progressBar1.setProgress(progress);<br>
-    try {<br>
-        thread.sleep(1000);<br>
-    } catch (InterruptedException e) {<br>
-        // TODO Auto-generated catch block<br>
-        e.printStackTrace();<br>
-    }<br>
-    }<br>
+progress=0;<br>
+while(progress&#x3C;100){<br>
+++progress;<br>
+progressBar1.setProgress(progress);<br>
+try {<br>
+thread.sleep(1000);<br>
+} catch (InterruptedException e) {<br>
+// TODO Auto-generated catch block<br>
+e.printStackTrace();<br>
+}<br>
+}<br>
 }</p>
 <p>음… 지금쯤이면 이 코드를 보면 대충은 아실수 있지 않나요?</p>
 <p>드쓰레를 시작하면 처음에는 progress의 값을 0으로 만듭니다</p>

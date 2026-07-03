@@ -32,58 +32,82 @@
 <p>var SCRIPT_PROP = PropertiesService.getScriptProperties(); // new property service</p>
 <p>// If you don’t want to expose either GET or POST methods you can comment out the appropriate function</p>
 <p>function doGet(e){</p>
-<p>  return handleResponse(e);</p>
+<p>return handleResponse(e);</p>
 <p>}</p>
 <p>function doPost(e){</p>
-<p>  return handleResponse(e);</p>
+<p>return handleResponse(e);</p>
 <p>}</p>
 <p>function handleResponse(e) {</p>
-<p>  // shortly after my original solution Google announced the LockService[1]</p>
-<p>  // this prevents concurrent access overwritting data</p>
-<p>  // [1] <a href="http://googleappsdeveloper.blogspot.co.uk/2011/10/concurrency-and-google-apps-script.html">http://googleappsdeveloper.blogspot.co.uk/2011/10/concurrency-and-google-apps-script.html</a></p>
-<p>  // we want a public lock, one that locks for all invocations</p>
-<p>  var lock = LockService.getPublicLock();</p>
-<p>  lock.waitLock(30000);  // wait 30 seconds before conceding defeat.</p>
-<p>  try {</p>
-<p>    var SHEET_NAME = e.parameter[“sheet_name”];</p>
-<p>    // next set where we write the data - you could write to multiple/alternate destinations</p>
-<p>    var doc = SpreadsheetApp.openById(SCRIPT_PROP.getProperty(“key”));</p>
-<p>    var sheet = doc.getSheetByName(SHEET_NAME);</p>
-<p>    // we’ll assume header is in row 1 but you can override with header_row in GET/POST data</p>
-<p>    var headRow = e.parameter.header_row || 1;</p>
-<p>    var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];</p>
-<p>    var nextRow = sheet.getLastRow()+1; // get next row</p>
-<p>    var row = [];</p>
-<p>    // loop through the header columns</p>
-<p>    for (i in headers){</p>
-<p>      if (headers[i] == “Timestamp”){ // special case if you include a ‘Timestamp’ column</p>
-<p>        row.push(new Date());</p>
-<p>      } else { // else use header name to get data</p>
-<p>        row.push(e.parameter[headers[i]]);</p>
-<p>      }</p>
-<p>    }</p>
-<p>    // more efficient to set values as [][] array than individually</p>
-<p>    sheet.getRange(nextRow, 1, 1, row.length).setValues([row]);</p>
-<p>    // return json success results</p>
-<p>    return ContentService</p>
-<p> .createTextOutput(JSON.stringify({“result”:“success”, “row”: nextRow}))</p>
-<p> .setMimeType(ContentService.MimeType.JSON);</p>
-<p>  } catch(e){</p>
-<p>    // if error return this</p>
-<p>    return ContentService</p>
-<p> .createTextOutput(JSON.stringify({“result”:“error”, “error”: e}))</p>
-<p> .setMimeType(ContentService.MimeType.JSON);</p>
-<p>  } finally { //release lock</p>
-<p>    lock.releaseLock();</p>
-<p>  }</p>
+<p>// shortly after my original solution Google announced the LockService[1]</p>
+<p>// this prevents concurrent access overwritting data</p>
+<p>// [1] <a href="http://googleappsdeveloper.blogspot.co.uk/2011/10/concurrency-and-google-apps-script.html">http://googleappsdeveloper.blogspot.co.uk/2011/10/concurrency-and-google-apps-script.html</a></p>
+<p>// we want a public lock, one that locks for all invocations</p>
+<p>var lock = LockService.getPublicLock();</p>
+<p>lock.waitLock(30000);  // wait 30 seconds before conceding defeat.</p>
+<p>try {</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>var SHEET_NAME = e.parameter["sheet_name"];</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// next set where we write the data - you could write to multiple/alternate destinations</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>var doc = SpreadsheetApp.openById(SCRIPT_PROP.getProperty("key"));</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>var sheet = doc.getSheetByName(SHEET_NAME);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// we'll assume header is in row 1 but you can override with header_row in GET/POST data</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>var headRow = e.parameter.header_row || 1;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>var nextRow = sheet.getLastRow()+1; // get next row</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>var row = [];</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// loop through the header columns</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>for (i in headers){</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  if (headers[i] == "Timestamp"){ // special case if you include a 'Timestamp' column</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    row.push(new Date());</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  } else { // else use header name to get data</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    row.push(e.parameter[headers[i]]);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// more efficient to set values as [][] array than individually</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>sheet.getRange(nextRow, 1, 1, row.length).setValues([row]);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// return json success results</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return ContentService</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>.createTextOutput(JSON.stringify({“result”:“success”, “row”: nextRow}))</p>
+<p>.setMimeType(ContentService.MimeType.JSON);</p>
+<p>} catch(e){</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// if error return this</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return ContentService</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>.createTextOutput(JSON.stringify({“result”:“error”, “error”: e}))</p>
+<p>.setMimeType(ContentService.MimeType.JSON);</p>
+<p>} finally { //release lock</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>lock.releaseLock();</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>}</p>
 <p>}</p>
 <p>function setup() {</p>
-<p>  var doc = SpreadsheetApp.getActiveSpreadsheet();</p>
-<p>  SCRIPT_PROP.setProperty(“key”, doc.getId());</p>
+<p>var doc = SpreadsheetApp.getActiveSpreadsheet();</p>
+<p>SCRIPT_PROP.setProperty(“key”, doc.getId());</p>
 <p>}</p>
 <p>기본적인 내용은 오류 제보와 차이가 없지만</p>
 <p>위 박스의 코드는 시트 이름을 정의하지 않습니다.</p>
-<p>그대신 한가지 차이점이 있다면 html post의 sheet_name을 가져옵니다.</p>
+<p>그대신 한가지 차이점이 있다면 html post의 sheet_name을 가져옵니다.</p>
 <p>그래서 시트를 많이 만든뒤 각각의 시트에 html post를 따로 넣고 싶다면</p>
 <p>sheet_name만 바꿔서 post를 날려주면 됩니다.</p>
 <p><img  src="/archive/_astro/googlesheets_6.bChjMCMh_Z1FIC6s.webp" alt="" width="976" height="475" loading="lazy" decoding="async"></p>
@@ -121,7 +145,7 @@
 <ul>
 <li>2015-12-20</li>
 </ul>
-<p>제 학교앱 소스를 가지고 연구하시다 실수로라도 공지사항에 글을 게시할 수 없도록 소스를 보완했습니다.</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
+<p>제 학교앱 소스를 가지고 연구하시다 실수로라도 공지사항에 글을 게시할 수 없도록 소스를 보완했습니다.</p> </div>  </article>  </div> </main> <footer class="site-footer"> <p>
 Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer">
 itmir.tistory.com
 </a>  · Archived by luminousky

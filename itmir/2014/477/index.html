@@ -54,7 +54,7 @@
 <span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">LinearLayout</span><span style="color:#24292E">></span></span>
 <span class="line"></span></code></pre>
 <p>이제 리스트뷰의 한 아이템에 표시될 레이아웃을 정의해야 합니다.</p>
-<p>이 레이아웃 파일의 이름은 listview_item.xml으로 합시다.</p>
+<p>이 레이아웃 파일의 이름은 listview_item.xml으로 합시다.</p>
 <p><img  src="/archive/_astro/item-xml.B2LQodJ2_1kSPlR.webp" alt="" width="610" height="150" loading="lazy" decoding="async"></p>
 <p>이렇게 리스트뷰의 한 아이템에는 위 그림처럼 정보가 배열될것입니다.</p>
 <p><img  src="/archive/_astro/2.S-tGf3zi_1VKC4f.webp" alt="" width="429" height="557" loading="lazy" decoding="async"></p>
@@ -104,7 +104,7 @@
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">private</span><span style="color:#24292E"> ListView mListView </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> null</span><span style="color:#24292E">;</span></span>
 <span class="line"><span style="color:#D73A49">private</span><span style="color:#24292E"> ListViewAdapter mAdapter </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> null</span><span style="color:#24292E">;</span></span>
 <span class="line"></span></code></pre>
-<p>그럼 ListViewAdapter에 빨간 줄이 생길겁니다.</p>
+<p>그럼 ListViewAdapter에 빨간 줄이 생길겁니다.</p>
 <p>당황하지 마시고 아직 Adapter class를 작성하지 않아서 생긴 문제이므로 넘어가 주세요.</p>
 <p>그다음에 ViewHolder라는 class를 작성해 봅시다.</p>
 <p>onCreate()아래에 추가해 주세요.</p>
@@ -199,7 +199,7 @@
 <span class="line"><span style="color:#24292E">}</span></span>
 <span class="line"></span></code></pre>
 <p>한 아이템의 정보를 담고 있을 java파일을 만들었습니다.</p>
-<p>아래에 있는 ALPHA_COMPARATOR는 리스트뷰의 아이템을 쇼트(알파벳 순서대로 정렬)하기 위한 메소드이며, AppInfo예제를 참조했습니다.</p>
+<p>아래에 있는 ALPHA_COMPARATOR는 리스트뷰의 아이템을 쇼트(알파벳 순서대로 정렬)하기 위한 메소드이며, AppInfo예제를 참조했습니다.</p>
 <p>다시 MainActivity.java로 돌아와 보면 빨간줄이 사라져 있을겁니다.</p>
 <p>이제 getView()를 손봐줍시다.</p>
 <p><img  src="/archive/_astro/7.9sEvG_X1_ZcTrsP.webp" alt="" width="607" height="485" loading="lazy" decoding="async"></p>
@@ -239,7 +239,7 @@
 <span class="line"></span></code></pre>
 <p>4번째 줄의 if문을 봐주세요.</p>
 <p>getView는 한 아이템에 들어갈 레이아웃을 지정해 주는 메소드라고 배웠습니다.</p>
-<p>넘어오는 값은 int position과 View convertView등이 있는데요.</p>
+<p>넘어오는 값은 int position과 View convertView등이 있는데요.</p>
 <p>position은 리스트뷰의 순서입니다. (아이템의 순서)</p>
 <p>convertView는 한 아이템의 화면 인데요.</p>
 <p>convertView가 어떻게 null이 될수 있을까요?</p>
@@ -314,9 +314,8 @@
 <p>아까 Adapter에 추가한 addItem()메소드를 onCreate()안에서 사용하여 아이템을 추가하였습니다.</p>
 <p>또한 리스트뷰를 터치하면 터치한 아이템의 제목이 나타나도록 하였습니다.</p>
 <p>스크린샷을 보겠습니다.</p>
-<p><img  src="/archive/_astro/Screenshot_2014-02-18-11-51-02.BOVVcD-m_2kLG20.webp" alt="" width="400" height="711" loading="lazy" decoding="async">
-    
-<img  src="/archive/_astro/Screenshot_2014-02-18-11-51-09.rtZzcoRv_Z15YJBs.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/Screenshot_2014-02-18-11-51-02.BOVVcD-m_2kLG20.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
+<p><img  src="/archive/_astro/Screenshot_2014-02-18-11-51-09.rtZzcoRv_Z15YJBs.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>
 <p>정상적으로 아이템이 나타나며, 터치할경우 제목이 나타나는것을 확인할 수 있습니다.</p>
 <ul>
 <li>2015-08-30 내용 보충</li>
