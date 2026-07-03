@@ -3,7 +3,7 @@ title: "#19 어플에서 진동을 사용하는 2가지 방법"
 date: "2013-10-28T19:21:48+09:00"
 category: "Android/App"
 tags: []
-description: "허... 벌서 19번이라니; 20번대 강좌부터는 조금 복잡한 쓰래드랑 핸들러같은 "소스"위주로 배울 예정입니다"
+description: "허... 벌서 19번이라니; 20번대 강좌부터는 조금 복잡한 쓰래드랑 핸들러같은 \"소스\"위주로 배울 예정입니다"
 draft: false
 original_url: "https://itmir.tistory.com/365"
 ---

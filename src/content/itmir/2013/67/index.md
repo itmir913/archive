@@ -3,7 +3,7 @@ title: "과연 스마트폰의 루팅은 좋지 못한 행동인가?"
 date: "2013-01-28T10:09:46+09:00"
 category: "Note"
 tags: []
-description: ""루팅이란 리눅스에서 최고 권한을 얻는 행위이다""
+description: "\"루팅이란 리눅스에서 최고 권한을 얻는 행위이다\""
 draft: false
 original_url: "https://itmir.tistory.com/67"
 ---

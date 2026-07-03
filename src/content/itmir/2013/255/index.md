@@ -3,7 +3,7 @@ title: "카카오톡 보이스톡 3G 손실률 상황"
 date: "2013-06-20T16:26:44+09:00"
 category: "News"
 tags: []
-description: "카카오톡에서 지원하는 기능중 "보이스 톡"이라는 기능이 있습니다"
+description: "카카오톡에서 지원하는 기능중 \"보이스 톡\"이라는 기능이 있습니다"
 draft: false
 original_url: "https://itmir.tistory.com/255"
 ---

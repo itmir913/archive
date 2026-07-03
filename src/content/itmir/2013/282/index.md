@@ -3,7 +3,7 @@ title: "어플 개발 강좌 포스팅을 시작합니다"
 date: "2013-07-29T08:23:17+09:00"
 category: "Android/App"
 tags: []
-description: "이 게시판의 처음 글들을 보시면 "Do it 안드로이드 앱 프로그래밍"이라는 책의 개봉기와 서평이 올라와 있는대요,"
+description: "이 게시판의 처음 글들을 보시면 \"Do it 안드로이드 앱 프로그래밍\"이라는 책의 개봉기와 서평이 올라와 있는대요,"
 draft: false
 original_url: "https://itmir.tistory.com/282"
 ---

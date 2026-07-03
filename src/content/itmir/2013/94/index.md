@@ -3,7 +3,7 @@ title: "나도 CM7 포팅해 보자 - CWM을 포팅해보자"
 date: "2013-01-28T19:32:56+09:00"
 category: "Android/Build"
 tags: []
-description: "제가 "나도 CM7을 포팅해 보자" 라는 종류의 글을 몇번 적어보려 합니다"
+description: "제가 \"나도 CM7을 포팅해 보자\" 라는 종류의 글을 몇번 적어보려 합니다"
 draft: false
 original_url: "https://itmir.tistory.com/94"
 ---
