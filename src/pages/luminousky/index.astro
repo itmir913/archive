@@ -18,14 +18,18 @@ for (const post of allPosts) {
   }
 }
 
+const projectOrder = Object.keys(PROJECTS);
 const projects = [...byProject.keys()].sort((a, b) => {
-  return byProject.get(a)![0].data.date.getTime() - byProject.get(b)![0].data.date.getTime();
+  const ai = projectOrder.indexOf(a);
+  const bi = projectOrder.indexOf(b);
+  return (ai === -1 ? Infinity : ai) - (bi === -1 ? Infinity : bi);
 });
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 function formatDate(d: Date) {
   return d.toLocaleDateString('en-US', {
+    year: 'numeric',
     month: 'short',
     day: 'numeric',
     timeZone: 'Asia/Seoul',
@@ -48,36 +52,77 @@ function formatDate(d: Date) {
     <p class="text-base text-gray-400">아직 게시된 기록이 없습니다.</p>
   ) : (
     <>
-      <div class="mb-8 rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
-        <div class="px-4 py-3 flex flex-wrap gap-1.5">
-          <button
-            data-proj="__all__"
-            type="button"
-            class="filter-proj-btn text-base px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:border-gray-400 dark:hover:border-gray-500 transition-colors cursor-pointer whitespace-nowrap"
-          >
-            전체
-          </button>
-          {projects.map((slug) => (
+      <!-- 검색 + 정렬 토글 카드 -->
+      <div class="mb-6 rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
+
+        <!-- 검색 -->
+        <div class="flex items-center gap-3 px-4">
+          <svg class="w-4 h-4 flex-shrink-0 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
+          </svg>
+          <input
+            type="search"
+            id="search-input"
+            placeholder="검색 (제목 · 본문)..."
+            autocomplete="off"
+            class="flex-1 py-3.5 text-base font-sans bg-transparent border-0 outline-none text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-600"
+          />
+        </div>
+
+        <!-- 정렬 토글 + 프로젝트 필터 -->
+        <div id="browse-controls" class="px-4 py-3 border-t border-gray-100 dark:border-gray-800 flex flex-wrap items-center gap-2">
+          <!-- 정렬 토글 -->
+          <div class="flex gap-1 mr-2">
             <button
-              data-proj={slug}
+              id="mode-project-btn"
+              type="button"
+              class="mode-btn text-base px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors cursor-pointer whitespace-nowrap"
+            >
+              프로젝트
+            </button>
+            <button
+              id="mode-timeline-btn"
+              type="button"
+              class="mode-btn text-base px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors cursor-pointer whitespace-nowrap"
+            >
+              시간순
+            </button>
+          </div>
+
+          <!-- 구분선 -->
+          <div id="proj-divider" class="w-px h-5 bg-gray-200 dark:bg-gray-700 mx-1 self-center"></div>
+
+          <!-- 프로젝트 필터 -->
+          <div id="proj-filters" class="flex flex-wrap gap-1.5">
+            <button
+              data-proj="__all__"
               type="button"
               class="filter-proj-btn text-base px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:border-gray-400 dark:hover:border-gray-500 transition-colors cursor-pointer whitespace-nowrap"
             >
-              {projectNames.get(slug)}<span class="ml-1.5 text-gray-300 dark:text-gray-600">{byProject.get(slug)!.length}</span>
+              전체
             </button>
-          ))}
+            {projects.map((slug) => (
+              <button
+                data-proj={slug}
+                type="button"
+                class="filter-proj-btn text-base px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:border-gray-400 dark:hover:border-gray-500 transition-colors cursor-pointer whitespace-nowrap"
+              >
+                {projectNames.get(slug)}<span class="ml-1.5 text-gray-300 dark:text-gray-600">{byProject.get(slug)!.length}</span>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
+      <p id="filter-status" aria-live="polite" class="text-base text-gray-400 mt-3 mb-2 empty:hidden"></p>
+
+      <!-- 프로젝트 뷰 -->
       <div id="browse-view">
         {projects.map((projectSlug) => {
           const posts = byProject.get(projectSlug)!;
           const displayName = projectNames.get(projectSlug)!;
           return (
-            <section
-              class="project-section mb-12"
-              data-proj={projectSlug}
-            >
+            <section class="project-section mb-12" data-proj={projectSlug}>
               <div class="flex items-center gap-3 mb-4">
                 <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 m-0">{displayName}</h2>
                 <span class="text-base text-gray-400 font-normal">{posts.length}</span>
@@ -88,7 +133,7 @@ function formatDate(d: Date) {
                   const [projSlug, num] = post.slug.split('/');
                   return (
                     <li class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-6 py-3.5 border-b border-gray-100 dark:border-gray-800 last:border-b-0">
-                      <span class="sm:w-20 sm:flex-shrink-0 text-base text-gray-400 tabular-nums pt-px">
+                      <span class="sm:w-32 sm:flex-shrink-0 text-base text-gray-400 tabular-nums pt-px">
                         {formatDate(post.data.date)}
                       </span>
                       <div class="flex-1 min-w-0">
@@ -112,6 +157,46 @@ function formatDate(d: Date) {
           );
         })}
       </div>
+
+      <!-- 시간순 뷰 -->
+      <div id="timeline-view" class="hidden">
+        <ul class="list-none p-0 m-0">
+          {allPosts.map((post) => {
+            const [projSlug, num] = post.slug.split('/');
+            const displayName = projectNames.get(projSlug) ?? projSlug;
+            return (
+              <li class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-6 py-3.5 border-b border-gray-100 dark:border-gray-800 last:border-b-0">
+                <span class="sm:w-32 sm:flex-shrink-0 text-base text-gray-400 tabular-nums pt-px">
+                  {formatDate(post.data.date)}
+                </span>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-baseline gap-2.5 flex-wrap">
+                    <a
+                      href={`${base}/luminousky/${projSlug}/${num}/`}
+                      class="text-base font-semibold text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 no-underline transition-colors"
+                    >
+                      {post.data.title}
+                    </a>
+                    <span class="text-base text-violet-400 whitespace-nowrap flex-shrink-0">{displayName}</span>
+                  </div>
+                  {post.data.description && (
+                    <p class="text-base text-gray-400 m-0 mt-0.5 leading-snug">
+                      {post.data.description}
+                    </p>
+                  )}
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+
+      <!-- Search 뷰: Pagefind 결과 -->
+      <div id="search-view" class="hidden">
+        <p id="search-result-count" class="text-base text-gray-400 mb-6"></p>
+        <ul id="search-result-list" class="list-none p-0 m-0 space-y-6"></ul>
+        <p id="search-no-results" class="hidden text-base text-gray-400">결과가 없습니다.</p>
+      </div>
     </>
   )}
 </BaseLayout>
@@ -120,34 +205,207 @@ function formatDate(d: Date) {
   .filter-proj-btn.active {
     @apply bg-violet-600 border-violet-600 text-white;
   }
+  .mode-btn.active {
+    @apply bg-gray-900 border-gray-900 text-white dark:bg-gray-100 dark:border-gray-100 dark:text-gray-900;
+  }
 </style>
 
 <script>
+  const searchInput = document.getElementById('search-input') as HTMLInputElement | null;
+  const modeProjectBtn = document.getElementById('mode-project-btn') as HTMLButtonElement | null;
+  const modeTimelineBtn = document.getElementById('mode-timeline-btn') as HTMLButtonElement | null;
+  const projDivider = document.getElementById('proj-divider') as HTMLElement | null;
+  const projFilters = document.getElementById('proj-filters') as HTMLElement | null;
   const projBtns = document.querySelectorAll<HTMLButtonElement>('.filter-proj-btn');
   const projectSections = document.querySelectorAll<HTMLElement>('section.project-section');
+  const browseView = document.getElementById('browse-view') as HTMLElement | null;
+  const timelineView = document.getElementById('timeline-view') as HTMLElement | null;
+  const searchView = document.getElementById('search-view') as HTMLElement | null;
+  const browseControls = document.getElementById('browse-controls') as HTMLElement | null;
+  const filterStatus = document.getElementById('filter-status') as HTMLElement | null;
+  const searchResultList = document.getElementById('search-result-list') as HTMLElement | null;
+  const searchResultCount = document.getElementById('search-result-count') as HTMLElement | null;
+  const searchNoResults = document.getElementById('search-no-results') as HTMLElement | null;
 
+  const base = (import.meta as any).env.BASE_URL.replace(/\/$/, '');
+
+  type ViewMode = 'browse-project' | 'browse-timeline' | 'search';
+
+  let mode: 'project' | 'timeline' = 'project';
   let selectedProj = '__all__';
+  let query = '';
 
-  function syncUI() {
+  // Pagefind
+  let pf: any = null;
+  let pfReady = false;
+  async function getPagefind() {
+    if (pfReady) return pf;
+    try {
+      pf = await import(/* @vite-ignore */ `${base}/pagefind/pagefind.js`);
+      await pf.init();
+      pfReady = true;
+    } catch {
+      pfReady = false;
+      pf = null;
+    }
+    return pf;
+  }
+
+  function setView(v: ViewMode) {
+    const isSearch = v === 'search';
+    const isTimeline = v === 'browse-timeline';
+    browseView?.classList.toggle('hidden', isSearch || isTimeline);
+    timelineView?.classList.toggle('hidden', isSearch || !isTimeline);
+    searchView?.classList.toggle('hidden', !isSearch);
+
+    // 프로젝트 필터는 project 모드에서만
+    if (projFilters) projFilters.style.display = (isSearch || isTimeline) ? 'none' : '';
+    if (projDivider) projDivider.style.display = (isSearch || isTimeline) ? 'none' : '';
+    if (filterStatus && isSearch) filterStatus.textContent = '';
+  }
+
+  function syncModeUI() {
+    modeProjectBtn?.classList.toggle('active', mode === 'project');
+    modeTimelineBtn?.classList.toggle('active', mode === 'timeline');
+  }
+
+  function syncProjUI() {
     projBtns.forEach((btn) => {
       btn.classList.toggle('active', btn.dataset.proj === selectedProj);
     });
   }
 
-  function applyFilter() {
+  function applyProjectFilter() {
+    let visible = 0;
     projectSections.forEach((sec) => {
       const show = selectedProj === '__all__' || sec.dataset.proj === selectedProj;
-      (sec as HTMLElement).style.display = show ? '' : 'none';
+      sec.style.display = show ? '' : 'none';
+      if (show) visible++;
     });
-    syncUI();
+    if (filterStatus) {
+      filterStatus.textContent = selectedProj !== '__all__' ? `${visible}개 프로젝트 표시 중` : '';
+    }
+    syncProjUI();
+    pushURL();
   }
+
+  function renderSearchResults(results: any[]) {
+    if (!searchResultList || !searchResultCount || !searchNoResults) return;
+    if (results.length === 0) {
+      searchResultList.innerHTML = '';
+      searchNoResults.classList.remove('hidden');
+      searchResultCount.textContent = '';
+      return;
+    }
+    searchNoResults.classList.add('hidden');
+    searchResultCount.textContent = `${results.length}개 결과`;
+    searchResultList.innerHTML = results.map((item) => {
+      const href = item.url;
+      const title = item.meta?.title || '제목 없음';
+      const excerpt = item.excerpt || '';
+      return `<li class="border-b border-gray-100 dark:border-gray-800 pb-6 last:border-b-0">
+        <a href="${href}" class="text-base font-semibold text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 no-underline transition-colors block mb-1">${title}</a>
+        <p class="text-base text-gray-500 dark:text-gray-400 m-0 leading-relaxed">${excerpt}</p>
+      </li>`;
+    }).join('');
+  }
+
+  async function runSearch(q: string) {
+    if (q.length < 2) {
+      setView(mode === 'project' ? 'browse-project' : 'browse-timeline');
+      if (mode === 'project') applyProjectFilter();
+      return;
+    }
+    setView('search');
+    pushURL();
+
+    const engine = await getPagefind();
+    if (!engine) {
+      if (searchNoResults) {
+        searchNoResults.textContent = '전문 검색은 빌드 후 사용 가능합니다.';
+        searchNoResults.classList.remove('hidden');
+      }
+      if (searchResultCount) searchResultCount.textContent = '';
+      return;
+    }
+
+    const result = await engine.search(q);
+    const data = await Promise.all(result.results.slice(0, 30).map((r: any) => r.data()));
+    renderSearchResults(data);
+  }
+
+  function readURL() {
+    const p = new URLSearchParams(window.location.search);
+    const m = p.get('mode');
+    if (m === 'timeline') mode = 'timeline';
+    const proj = p.get('proj');
+    if (proj) selectedProj = proj;
+    query = p.get('q') || '';
+  }
+
+  function pushURL() {
+    const p = new URLSearchParams();
+    if (mode === 'timeline') p.set('mode', 'timeline');
+    if (selectedProj !== '__all__') p.set('proj', selectedProj);
+    if (query) p.set('q', query);
+    const qs = p.toString();
+    history.replaceState(null, '', location.pathname + (qs ? '?' + qs : ''));
+  }
+
+  // Init
+  readURL();
+  if (searchInput) searchInput.value = query;
+  syncModeUI();
+  syncProjUI();
+
+  if (query.length >= 2) {
+    runSearch(query);
+  } else if (mode === 'timeline') {
+    setView('browse-timeline');
+  } else {
+    setView('browse-project');
+    applyProjectFilter();
+  }
+
+  // Event listeners
+  modeProjectBtn?.addEventListener('click', () => {
+    if (mode === 'project') return;
+    mode = 'project';
+    syncModeUI();
+    if (query.length >= 2) {
+      runSearch(query);
+    } else {
+      setView('browse-project');
+      applyProjectFilter();
+    }
+    pushURL();
+  });
+
+  modeTimelineBtn?.addEventListener('click', () => {
+    if (mode === 'timeline') return;
+    mode = 'timeline';
+    syncModeUI();
+    if (query.length >= 2) {
+      runSearch(query);
+    } else {
+      setView('browse-timeline');
+    }
+    pushURL();
+  });
 
   projBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       selectedProj = btn.dataset.proj || '__all__';
-      applyFilter();
+      applyProjectFilter();
     });
   });
 
-  syncUI();
+  let debounce: ReturnType<typeof setTimeout>;
+  searchInput?.addEventListener('input', () => {
+    clearTimeout(debounce);
+    debounce = setTimeout(() => {
+      query = searchInput!.value.toLowerCase().trim();
+      runSearch(query);
+    }, 300);
+  });
 </script>

@@ -61,3 +61,13 @@ html.dark .astro-code span {
   content-visibility: auto;
   contain-intrinsic-size: auto 800px;
 }
+
+/* prose 영역 URL·긴 문자열 overflow 방지 */
+.prose {
+  overflow-wrap: anywhere;
+}
+
+.prose a,
+.prose code {
+  word-break: break-word;
+}
