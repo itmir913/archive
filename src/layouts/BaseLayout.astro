@@ -4,69 +4,73 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  section?: 'itmir' | 'timeline';
 }
 
-const { title, description = 'ITMir 아카이브 · 2012–2021 · luminousky' } = Astro.props;
+const {
+  title,
+  description = 'luminousky · 2012–',
+  section,
+} = Astro.props;
+
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+function navLink(s: 'itmir' | 'timeline') {
+  const active = section === s;
+  return active
+    ? 'text-base font-medium text-gray-900 no-underline px-3 py-1.5 rounded-md bg-gray-100 transition-colors'
+    : 'text-base font-medium text-gray-400 no-underline px-3 py-1.5 rounded-md hover:text-gray-900 hover:bg-gray-50 transition-colors';
+}
 ---
 
 <!DOCTYPE html>
-<html lang="ko" class="antialiased">
+<html lang="ko" class="antialiased scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <title>{title} — luminousky archive</title>
+    <title>{title} — luminousky</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"
     />
   </head>
-  <body class="bg-white text-gray-900 font-sans leading-relaxed">
-    <header class="sticky top-0 z-10 border-b border-gray-200 bg-white/90 backdrop-blur-sm px-6">
-      <div class="max-w-5xl mx-auto flex items-center justify-between h-14">
+  <body class="bg-white text-gray-900 font-sans min-h-screen flex flex-col">
+
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-black/[0.06]">
+      <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
         <a
           href={`${base}/`}
-          class="text-base font-semibold text-gray-900 tracking-tight hover:text-blue-600 no-underline transition-colors"
+          class="text-base font-semibold tracking-tight text-gray-900 no-underline hover:text-blue-600 transition-colors"
         >
           luminousky
         </a>
         <nav class="flex items-center gap-1">
-          <a
-            href={`${base}/itmir/`}
-            class="text-base text-gray-500 hover:text-gray-900 no-underline transition-colors px-3 py-1 rounded-md hover:bg-gray-100"
-          >
-            ITMir
-          </a>
-          <a
-            href={`${base}/timeline/`}
-            class="text-base text-gray-500 hover:text-gray-900 no-underline transition-colors px-3 py-1 rounded-md hover:bg-gray-100"
-          >
-            Timeline
-          </a>
+          <a href={`${base}/itmir/`} class={navLink('itmir')}>ITMir</a>
+          <a href={`${base}/timeline/`} class={navLink('timeline')}>Timeline</a>
         </nav>
       </div>
     </header>
 
-    <main class="px-6">
-      <div class="max-w-5xl mx-auto pt-10 pb-20">
+    <main class="flex-1">
+      <div class="max-w-5xl mx-auto px-6 py-14">
         <slot />
       </div>
     </main>
 
-    <footer class="border-t border-gray-200 px-6 py-6 text-center">
-      <p class="text-base text-gray-400 m-0">
-        Originally published on{' '}
+    <footer class="border-t border-gray-100 mt-auto">
+      <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-between">
+        <span class="text-base text-gray-400">luminousky · 2012 –</span>
         <a
           href="https://itmir.tistory.com"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-gray-400 underline underline-offset-2"
+          class="text-base text-gray-400 hover:text-gray-600 no-underline transition-colors"
         >
-          itmir.tistory.com
+          itmir.tistory.com ↗
         </a>
-        {' '}· Archived by luminousky
-      </p>
+      </div>
     </footer>
+
   </body>
 </html>

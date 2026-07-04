@@ -13,7 +13,6 @@ for (const post of allPosts) {
 }
 const years = [...byYear.keys()].sort((a, b) => Number(b) - Number(a));
 
-// 카테고리 + 포스트 수
 const catCounts = new Map<string, number>();
 for (const post of allPosts) {
   if (post.data.category) {
@@ -33,11 +32,11 @@ function formatDate(d: Date) {
 }
 ---
 
-<BaseLayout title="ITMir 아카이브">
-  <!-- Hero -->
+<BaseLayout title="ITMir 아카이브" section="itmir">
+  <!-- Header -->
   <div class="mb-10">
     <p class="text-base text-blue-500 font-medium m-0 mb-2">Chapter 1</p>
-    <h1 class="text-4xl font-bold tracking-tight m-0 mb-3 leading-tight">ITMir 아카이브</h1>
+    <h1 class="text-4xl font-bold tracking-tight m-0 mb-3">ITMir</h1>
     <p class="text-base text-gray-400 m-0">
       {allPosts.length}개 포스트 · {years.length}년 · {allCategories.length}개 카테고리
     </p>
@@ -50,7 +49,7 @@ function formatDate(d: Date) {
       id="search-input"
       placeholder="검색..."
       autocomplete="off"
-      class="w-full px-4 py-2.5 text-base font-sans border border-gray-200 rounded-lg outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-50 transition-all bg-white text-gray-900 placeholder-gray-300"
+      class="w-full px-4 py-2.5 text-base font-sans bg-gray-50 border border-gray-200 rounded-xl outline-none focus:bg-white focus:border-blue-400 focus:ring-2 focus:ring-blue-50 transition-all text-gray-900 placeholder-gray-400"
     />
 
     {allCategories.length > 0 && (
@@ -93,31 +92,31 @@ function formatDate(d: Date) {
     )}
   </div>
 
-  <!-- 필터 결과 수 -->
-  <p id="filter-status" aria-live="polite" class="text-base text-gray-400 mb-2 empty:hidden"></p>
+  <p id="filter-status" aria-live="polite" class="text-base text-gray-400 mb-3 empty:hidden"></p>
 
-  <!-- 연도 내비게이션 -->
+  <!-- 연도 점프 -->
   <nav aria-label="연도별 이동" class="flex flex-wrap gap-x-4 gap-y-1 mb-10">
     {years.map((year) => (
       <a
         href={`#year-${year}`}
-        class="text-base text-gray-400 hover:text-gray-900 transition-colors no-underline whitespace-nowrap"
+        class="text-base text-gray-400 hover:text-gray-900 transition-colors no-underline"
       >
         {year}
       </a>
     ))}
   </nav>
 
-  <!-- 연도별 포스트 목록 -->
+  <!-- 포스트 목록 -->
   {years.map((year) => {
     const posts = byYear.get(year)!;
     return (
       <section id={`year-${year}`} class="mb-12 scroll-mt-20">
-        <h2 class="text-xl font-bold tracking-tight m-0 mb-3 flex items-baseline gap-2 text-gray-900">
-          {year}
-          <span class="text-base font-normal text-gray-400">{posts.length}</span>
-        </h2>
-        <div class="h-px bg-gray-100 mb-3"></div>
+        <div class="flex items-center gap-3 mb-4">
+          <h2 class="text-xl font-bold text-gray-900 m-0">{year}</h2>
+          <span class="text-base text-gray-400 font-normal">{posts.length}</span>
+          <div class="flex-1 h-px bg-gray-100"></div>
+        </div>
+
         <ul class="list-none p-0 m-0">
           {posts.map((post) => {
             const [postYear, postNum] = post.slug.split('/');
@@ -128,15 +127,15 @@ function formatDate(d: Date) {
             ].filter(Boolean).join(' ').toLowerCase();
             return (
               <li
-                class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-5 py-3 border-b border-gray-100 last:border-b-0 group"
+                class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-6 py-3.5 border-b border-gray-100 last:border-b-0"
                 data-cat={post.data.category || ''}
                 data-search={searchText}
               >
-                <span class="sm:w-24 sm:flex-shrink-0 text-base text-gray-400 whitespace-nowrap tabular-nums pt-0.5">
+                <span class="sm:w-20 sm:flex-shrink-0 text-base text-gray-400 tabular-nums pt-px">
                   {formatDate(post.data.date)}
                 </span>
                 <div class="flex-1 min-w-0">
-                  <div class="flex items-center gap-2 flex-wrap">
+                  <div class="flex items-baseline gap-2.5 flex-wrap">
                     <a
                       href={`${base}/itmir/${postYear}/${postNum}/`}
                       class="text-base font-semibold text-gray-900 hover:text-blue-600 no-underline transition-colors"
@@ -168,9 +167,6 @@ function formatDate(d: Date) {
   .filter-cat-btn.active {
     @apply bg-blue-600 border-blue-600 text-white;
   }
-  .filter-cat-btn.active span {
-    @apply text-blue-200;
-  }
 </style>
 
 <script>
@@ -191,13 +187,8 @@ function formatDate(d: Date) {
   function setPanelOpen(open: boolean) {
     panelOpen = open;
     if (catPanel) {
-      if (open) {
-        catPanel.classList.remove('hidden');
-        catPanel.classList.add('flex');
-      } else {
-        catPanel.classList.add('hidden');
-        catPanel.classList.remove('flex');
-      }
+      catPanel.classList.toggle('hidden', !open);
+      catPanel.classList.toggle('flex', open);
     }
     if (catArrow) catArrow.textContent = open ? '▴' : '▾';
     if (catToggle) catToggle.setAttribute('aria-expanded', String(open));
@@ -231,29 +222,21 @@ function formatDate(d: Date) {
 
   function applyFilter() {
     let visible = 0;
-
     allItems.forEach((li) => {
-      const itemCat = li.dataset.cat || '';
-      const itemText = li.dataset.search || '';
-
-      const catMatch = selectedCats.size === 0 || selectedCats.has(itemCat);
-      const textMatch = !query || itemText.includes(query);
-
+      const catMatch = selectedCats.size === 0 || selectedCats.has(li.dataset.cat || '');
+      const textMatch = !query || (li.dataset.search || '').includes(query);
       const show = catMatch && textMatch;
       li.style.display = show ? '' : 'none';
       if (show) visible++;
     });
-
     yearSections.forEach((sec) => {
       const any = Array.from(sec.querySelectorAll<HTMLLIElement>('li[data-search]')).some(
         (li) => li.style.display !== 'none',
       );
       sec.style.display = any ? '' : 'none';
     });
-
     const filtered = selectedCats.size > 0 || query;
     if (filterStatus) filterStatus.textContent = filtered ? `${visible}개 표시 중` : '';
-
     updateSelectedLabel();
     pushURL();
   }
@@ -261,34 +244,22 @@ function formatDate(d: Date) {
   function syncUI() {
     catBtns.forEach((btn) => {
       const c = btn.dataset.cat;
-      if (c === '__all__') {
-        btn.classList.toggle('active', selectedCats.size === 0);
-      } else {
-        btn.classList.toggle('active', selectedCats.has(c!));
-      }
+      btn.classList.toggle('active', c === '__all__' ? selectedCats.size === 0 : selectedCats.has(c!));
     });
   }
 
   readURL();
   if (searchInput) searchInput.value = query;
-
   if (selectedCats.size > 0) setPanelOpen(true);
-
   syncUI();
   applyFilter();
 
-  catToggle?.addEventListener('click', () => {
-    setPanelOpen(!panelOpen);
-  });
-
+  catToggle?.addEventListener('click', () => setPanelOpen(!panelOpen));
   catBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       const c = btn.dataset.cat;
-      if (c === '__all__') {
-        selectedCats.clear();
-      } else if (c) {
-        selectedCats.has(c) ? selectedCats.delete(c) : selectedCats.add(c);
-      }
+      if (c === '__all__') selectedCats.clear();
+      else if (c) selectedCats.has(c) ? selectedCats.delete(c) : selectedCats.add(c);
       syncUI();
       applyFilter();
     });
