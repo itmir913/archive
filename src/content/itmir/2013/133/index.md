@@ -38,8 +38,6 @@ After Rooting 시리즈는 루팅후 대중적으로 많이 하는 부분을 다
 
 부팅 음도 무음으로 만들고 싶으시다면 더보기를 클릭!
 
-더보기
-
 [부팅 무음.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/133-boot-silence.zip)
 
 파일을 추가로 받은다음 압축을 풀어서

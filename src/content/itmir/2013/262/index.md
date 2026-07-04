@@ -8,6 +8,7 @@ draft: false
 original_url: "https://itmir.tistory.com/262"
 ---
 
+```java
 // 볼륨 낮추는 메소드
 
 public  void volumeDown(View v){
@@ -55,5 +56,6 @@ public  void volumeUp(View v){
     }
 
 }
+```
 
 출처 : <http://iamsungeun.blog.me/100191287357>

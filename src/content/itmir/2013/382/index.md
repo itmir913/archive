@@ -36,8 +36,6 @@ original_url: "https://itmir.tistory.com/382"
 
 [원본글 스크린샷]
 
-더보기
-
 ![](./images/NSC20131123_001357.jpg)
 
 [출처] : <http://blog.naver.com/pluulove84/100153350054>

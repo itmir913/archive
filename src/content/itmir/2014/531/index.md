@@ -18,8 +18,6 @@ original_url: "https://itmir.tistory.com/531"
 
 아래 더보기를 누르시면 2014-09-12 기준 앱 설명에 나와있는 포함된 오픈소스 라이브러리 목록이 나옵니다
 
-더보기
-
 Libraries included:
 
 -------------------

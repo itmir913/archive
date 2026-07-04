@@ -41,11 +41,13 @@ py파일을 하나 생성해 줍시다.
 
 이름은 make.py로 해줍시다.
 
+```python
 from distutils.core import setup
 
 import py2exe
 
 setup(console=['컴파일할파일명.py'])
+```
 
 내용은 위와 같이 심플합니다. ㅎㅎ
 
@@ -53,7 +55,9 @@ setup(console=['컴파일할파일명.py'])
 
 그다음 cmd에서
 
+```
 C:\Python27\python.exe make.py (만들어질 이름).exe
+```
 
 그럼 dist폴더에 만들어진 exe가 존재하는데요.
 
@@ -61,6 +65,7 @@ C:\Python27\python.exe make.py (만들어질 이름).exe
 
 하나의 exe로 만드는 방법은 아래와 같습니다.
 
+```python
 from distutils.core import setup
 
 import py2exe
@@ -102,12 +107,15 @@ setup(
     console = ["컴파일할파일명.py"]
 
 )
+```
 
 아까 만든 make.py의 내용을 위와 같이 바꿔주세요.
 
 위와 마찬가지로
 
+```
 C:\Python27\python.exe make.py (만들어질 이름).exe
+```
 
 이렇게 입력하면 dist폴더에 한개의 exe가 생성됩니다.
 

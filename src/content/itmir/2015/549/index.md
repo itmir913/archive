@@ -24,8 +24,6 @@ original_url: "https://itmir.tistory.com/549"
 
 [Hi2015.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/Hi2015.apk)
 
-스샷보기
-
 ![](./images/device-2014-12-31-162603.png)
 
 브금 : 아이폰 광고음악 music every day

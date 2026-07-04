@@ -200,18 +200,11 @@ HEX에디터와 파일비교등등으로 겨우 이정도까지 했습니다.
 
 압축파일 안에 TXT문서를 읽으시기바랍니다.
 
-접기
-
-
-접기
-
 바이두 클라우드 윈도우용 프로그램 링크입니다.
 
 <http://bcscdn.baidu.com/netdisk/BaiduYun_3.8.0.exe>
 
 (동기화 프로그램)
-
-접기
 
 ![](./images/yun01.png)
 
@@ -231,7 +224,6 @@ HEX에디터와 파일비교등등으로 겨우 이정도까지 했습니다.
 
 파일은 아래
 
-
 경로
 
 win7
@@ -245,8 +237,6 @@ winXP
 ```
 C:\Program Files\baidu\BaiduYun
 ```
-
-접기
 
 <http://bcscdn.baidu.com/netdisk/BaiduYunGuanjia_4.1.0.exe>
 
@@ -275,7 +265,6 @@ C:\Program Files\baidu\BaiduYunGuanjia
 [BaiduYunGuanjia_4.1.0.exe](http://bcscdn.baidu.com/netdisk/BaiduYunGuanjia_4.1.0.exe)
 
 **패쳐 다운로드 ↓↓↓↓**
-
 
 **제목 : 바이두 클라우드 한국어 패치 프로그램 AHK로 만들기**
 
@@ -308,7 +297,6 @@ C:\Program Files\baidu\BaiduYunGuanjia
 실행시 당연히 해당 경로에 그림과 파일이 있어야 합니다.
 
 아래는 실행파일과 패치파일이 포함된 압축 파일입니다.
-
 
 실행한 화면입니다.
 

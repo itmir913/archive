@@ -44,8 +44,6 @@ Groove를 사용하려면 Media Feature Pack을 설치해야 합니다.
 
 (열기) 링크가 사라졌을 때를 대비해서 방법을 적어둠
 
-접기
-
 ![](./images/update_download_and_install.png)
 
 이제 미디어 기능 팩을 마이크로소프트 홈페이지에서 다운받아 설치해도 이미 설치되어 있다고 뜨지 않고 위 스샷처럼 정상 설치됩니다.

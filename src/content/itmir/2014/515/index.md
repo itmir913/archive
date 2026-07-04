@@ -44,8 +44,6 @@ original_url: "https://itmir.tistory.com/515"
 
 이 강좌에서 배울 애니메이션은 4가지이고, Set이라는건 두가지 이상의 효과를 동시에 사용할때 사용합니다
 
-더보기
-
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -116,8 +114,6 @@ res/anim에는 5가지의 xml 파일을 만들꺼예요
 
 ![](./images/3.png)
 
-더보기
-
 ```java
 <?xml version="1.0" encoding="utf-8"?>
 <alpha xmlns:android="http://schemas.android.com/apk/res/android"
@@ -152,8 +148,6 @@ res/anim에는 5가지의 xml 파일을 만들꺼예요
 
 이중 android:interpolator에 들어가는 속성에 대해 자세한 설명을 더보기 처리 해두었습니다
 
-더보기
-
 linear_interpolator : 일정하게 진행이 된다
 
 accelerate_interpolator : 점점 속도를 더해가며 빠르게 진행한다
@@ -179,8 +173,6 @@ android:shareInterpolator="false" : 하위 애니메이션에 각각 다른 inte
 다음은 회전을 담당하는 rotate입니다
 
 ![](./images/4.png)
-
-더보기
 
 ```java
 <?xml version="1.0" encoding="utf-8"?>
@@ -225,8 +217,6 @@ View가 회전할때 회전의 중심이 되는 중심 축을 설정합니다
 
 ![](./images/5.png)
 
-더보기
-
 ```java
 <?xml version="1.0" encoding="utf-8"?>
 <scale xmlns:android="http://schemas.android.com/apk/res/android"
@@ -254,8 +244,6 @@ View가 회전할때 회전의 중심이 되는 중심 축을 설정합니다
 
 ![](./images/6.png)
 
-더보기
-
 ```java
 <?xml version="1.0" encoding="utf-8"?>
 <translate xmlns:android="http://schemas.android.com/apk/res/android"
@@ -277,8 +265,6 @@ View가 회전할때 회전의 중심이 되는 중심 축을 설정합니다
 이건... 그냥 <set> </set>으로 여러 애니메이션들을 묶어주시면 됩니다 ㅋㅋㅋ
 
 ![](./images/7.png)
-
-더보기
 
 ```java
 <?xml version="1.0" encoding="utf-8"?>
