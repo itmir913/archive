@@ -98,20 +98,21 @@ function formatDate(d: Date) {
       </div>
     )}
 
-    <!-- 연도 점프 -->
-    <nav id="year-nav" aria-label="연도별 이동" class="px-4 py-3 flex flex-wrap gap-x-5 gap-y-1 bg-gray-50 dark:bg-gray-900/50 border-t border-gray-100 dark:border-gray-800">
-      {years.map((year) => (
-        <a
-          href={`#year-${year}`}
-          class="text-base text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors no-underline"
-        >
-          {year}
-        </a>
-      ))}
-    </nav>
   </div>
 
-  <p id="filter-status" aria-live="polite" class="text-base text-gray-400 mb-6 empty:hidden"></p>
+  <p id="filter-status" aria-live="polite" class="text-base text-gray-400 mt-3 mb-2 empty:hidden"></p>
+
+  <!-- 연도 점프: 포스트 목록의 목차, browse 모드에서만 표시 -->
+  <nav id="year-nav" aria-label="연도별 이동" class="flex flex-wrap gap-x-5 gap-y-1 mb-8 mt-4">
+    {years.map((year) => (
+      <a
+        href={`#year-${year}`}
+        class="text-base text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors no-underline"
+      >
+        {year}
+      </a>
+    ))}
+  </nav>
 
   <!-- Browse 뷰: 연도별 포스트 목록 -->
   <div id="browse-view">
