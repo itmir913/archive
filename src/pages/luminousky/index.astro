@@ -249,7 +249,7 @@ function formatDate(d: Date) {
   type ViewMode = 'browse-project' | 'browse-timeline' | 'search';
 
   let mode: 'project' | 'timeline' = 'project';
-  let selectedProj = '__all__';
+  let selectedProjs = new Set<string>();
   let query = '';
 
   // Pagefind
@@ -287,19 +287,20 @@ function formatDate(d: Date) {
 
   function syncProjUI() {
     projBtns.forEach((btn) => {
-      btn.classList.toggle('active', btn.dataset.proj === selectedProj);
+      const p = btn.dataset.proj;
+      btn.classList.toggle('active', p === '__all__' ? selectedProjs.size === 0 : selectedProjs.has(p!));
     });
   }
 
   function applyProjectFilter() {
     let visible = 0;
     projectSections.forEach((sec) => {
-      const show = selectedProj === '__all__' || sec.dataset.proj === selectedProj;
+      const show = selectedProjs.size === 0 || selectedProjs.has(sec.dataset.proj || '');
       sec.style.display = show ? '' : 'none';
       if (show) visible++;
     });
     if (filterStatus) {
-      filterStatus.textContent = selectedProj !== '__all__' ? `${visible} projects shown` : '';
+      filterStatus.textContent = selectedProjs.size > 0 ? `${visible} projects shown` : '';
     }
     syncProjUI();
     pushURL();
@@ -359,14 +360,14 @@ function formatDate(d: Date) {
     const m = p.get('mode');
     if (m === 'timeline') mode = 'timeline';
     const proj = p.get('proj');
-    if (proj) selectedProj = proj;
+    if (proj) selectedProjs = new Set(proj.split(',').filter(Boolean));
     query = p.get('q') || '';
   }
 
   function pushURL() {
     const p = new URLSearchParams();
     if (mode === 'timeline') p.set('mode', 'timeline');
-    if (selectedProj !== '__all__') p.set('proj', selectedProj);
+    if (selectedProjs.size > 0) p.set('proj', [...selectedProjs].join(','));
     if (query) p.set('q', query);
     const qs = p.toString();
     history.replaceState(null, '', location.pathname + (qs ? '?' + qs : ''));
@@ -415,7 +416,9 @@ function formatDate(d: Date) {
 
   projBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
-      selectedProj = btn.dataset.proj || '__all__';
+      const p = btn.dataset.proj;
+      if (p === '__all__') selectedProjs.clear();
+      else if (p) selectedProjs.has(p) ? selectedProjs.delete(p) : selectedProjs.add(p);
       applyProjectFilter();
     });
   });
