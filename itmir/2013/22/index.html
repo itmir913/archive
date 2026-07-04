@@ -31,19 +31,29 @@ luminousky
 <p>device_기기명.mk에 다음과 같은 내용을 추가합니다.</p>
 </li>
 </ol>
-<h1 id="logorle">Logo.rle</h1>
-<p>PRODUCT_COPY_FILES += \</p>
-<p>device/제조사/기기명/logo.rle:root/logo.rle \</p>
-<p>device/제조사/기기명/logo.rle:root/initlogo.rle</p>
-<h1 id="custom-graphics">Custom Graphics</h1>
-<p>BOARD_CUSTOM_GRAPHICS := ../../../device/제조사/기기명/graphics.c</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Logo.rle</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>PRODUCT_COPY_FILES += \</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>device/제조사/기기명/logo.rle:root/logo.rle \</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>device/제조사/기기명/logo.rle:root/initlogo.rle</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Custom Graphics</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>BOARD_CUSTOM_GRAPHICS := ../../../device/제조사/기기명/graphics.c</span></span>
+<span class="line"><span></span></span></code></pre>
 <ol start="4">
-<li>make clobber을 해줍니다.</li>
+<li><code>make clobber</code>을 해줍니다.</li>
 </ol>
 <p>(보드컨픽이 수정되었기 때문에 꼭 해주셔야 합니다)</p>
 <ol start="5">
-<li>빌드를 합니다 (make -j4 recoveryimage)</li>
-</ol> </div> <!-- 태그 -->  <!-- 이전 / 다음 --> <nav class="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800 grid grid-cols-1 sm:grid-cols-2 gap-3" data-pagefind-ignore> <div> <a href="/archive/itmir/2013/21/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
+<li>빌드를 합니다 (<code>make -j4 recoveryimage</code>)</li>
+</ol>
+<h2 id="첨부파일">첨부파일</h2>
+<ul>
+<li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/22-recovery.img">22-recovery.img</a> — CWM Recovery (ef32k / KT 미라크A)</li>
+</ul> </div> <!-- 태그 -->  <!-- 이전 / 다음 --> <nav class="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800 grid grid-cols-1 sm:grid-cols-2 gap-3" data-pagefind-ignore> <div> <a href="/archive/itmir/2013/21/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
 ← 이전
 </span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> ★미라크a CM7부팅 성공★ </span> </a> </div> <div> <a href="/archive/itmir/2013/23/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all sm:text-right"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
 다음 →
