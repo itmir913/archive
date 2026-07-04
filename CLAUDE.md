@@ -24,11 +24,22 @@ itmir-archive/
         {project-slug}/{num}/
           index.md
         template/index.md           ← 글쓰기 템플릿 (draft: true)
-  src/
     data/
       luminousky-projects.ts        ← project-slug → 표시 이름 매핑 (여기만 관리)
-  metadata/
-    itmir-releases-manifest.json    ← Releases 파일 매니페스트
+      timeline-curated.ts           ← 타임라인 수동 큐레이션 데이터
+    layouts/BaseLayout.astro        ← 공통 레이아웃 (OG태그, 다크모드 토글, nav)
+    pages/
+      index.astro                   ← /archive/ 홈
+      itmir/index.astro             ← /archive/itmir/ 포스트 목록 + Pagefind 전문검색
+      itmir/[year]/[post_num]/      ← /archive/itmir/{year}/{num}/ 개별 포스트
+      timeline/index.astro          ← /archive/timeline/ 타임라인
+      luminousky/index.astro        ← /archive/luminousky/ 포스트 목록 (프로젝트 필터)
+      luminousky/[project]/[num]/   ← /archive/luminousky/{project}/{num}/ 개별 포스트
+    styles/global.css
+    utils/
+      pagefind.ts                   ← Pagefind 지연 초기화 공통 모듈
+  scripts/
+    check-releases.ps1              ← Releases ↔ content 참조 일치 점검 (pwsh)
   .gitattributes
 ```
 
@@ -69,10 +80,12 @@ Chapter 1은 보존 아카이브다. 과거 글을 "개선"하지 않는다.
 - 한글 포함 파일 → `{post번호}-{설명}.{ext}` 형태
 - 예: `133-boot-silence.zip`, `401-QR-20131205-161803.wav`
 
-## 현재 상태 (2026-07-04)
+Releases ↔ content 참조 일치 점검은 `pwsh scripts/check-releases.ps1` 실행 (gh CLI 필요).
+
+## 현재 상태 (2026-07-05)
 
 - **아카이브 변환 완료**: 657개 포스트, 이미지 fullsize 원본으로 정리 완료
-- **GitHub Releases 업로드 완료**: 197개 파일, 271 MB
+- **GitHub Releases 업로드 완료**: 196개 파일 (275 MB)
 - **Astro 사이트 구축 완료 + 배포 완료**: luminousky.com/archive, push시 자동 반영
 - **Git**: GPG 서명, main 브랜치
 
@@ -95,25 +108,6 @@ main 브랜치         →  GitHub Actions (.github/workflows/deploy.yml)
 - pagefind 전문검색 인덱스는 빌드 시 자동 생성됨 — 별도 관리 불필요
 - 개발 서버(`npm run dev`)에서는 pagefind 인덱스가 없으므로 전문검색 비활성 상태
 
-## Astro 사이트 구조
-
-```
-src/
-  layouts/BaseLayout.astro     ← 공통 레이아웃 (OG태그, 다크모드 토글, nav)
-  pages/
-    index.astro                ← /archive/ 홈
-    itmir/index.astro          ← /archive/itmir/ 포스트 목록 + Pagefind 전문검색
-    itmir/[year]/[post_num]/   ← /archive/itmir/{year}/{num}/ 개별 포스트
-    timeline/index.astro       ← /archive/timeline/ 타임라인
-    luminousky/index.astro     ← /archive/luminousky/ 포스트 목록 (프로젝트 필터)
-    luminousky/[project]/[num]/  ← /archive/luminousky/{project}/{num}/ 개별 포스트
-  data/timeline-curated.ts     ← 타임라인 수동 큐레이션 데이터
-  content/
-    itmir/{year}/{num}/index.md
-    luminousky/{project-slug}/{num}/index.md  ← Chapter 2 포스트
-    luminousky/template/index.md              ← 글쓰기 템플릿 (draft: true)
-```
-
 ## Chapter 2 (luminousky) 글쓰기 안내
 
 ### frontmatter 스키마
@@ -121,7 +115,7 @@ src/
 ```yaml
 ---
 title: "제목"
-date: "2026-07-04T12:00:00+09:00"
+date: "2026-07-05T12:00:00+09:00"
 description: "한 줄 요약"
 draft: true
 ---
@@ -147,9 +141,12 @@ draft: true
 
 ## Claude Code 행동 규칙
 
-- **preview 도구 일체 사용 금지** — 토큰 소모 과다. `preview_screenshot`, `preview_snapshot`, `preview_inspect`, `preview_eval`, `preview_network` 등 모두 금지. 서버 에러 확인이 필요하면 `preview_logs` (서버 사이드 로그) 만 허용. 코드 편집 결과는 코드를 읽어서 판단하고, 시각적 검증을 위해 브라우저를 열지 않는다.
+### 금지 사항
 
-## Tailwind CSS 규칙
+- **preview 도구 일체 사용 금지** — 토큰 소모 과다. `preview_screenshot`, `preview_snapshot`, `preview_inspect`, `preview_eval`, `preview_network` 등 모두 금지. 서버 에러 확인이 필요하면 `preview_logs` (서버 사이드 로그) 만 허용. 코드 편집 결과는 코드를 읽어서 판단하고, 시각적 검증을 위해 브라우저를 열지 않는다.
+- **push 금지** — `git push`는 사용자가 명시적으로 요청할 때만 실행한다. 커밋 후 자동으로 push하지 않는다.
+
+### Tailwind CSS 규칙
 
 - **최소 글씨 크기: `text-base` (1rem / 16px)**
 - `text-xs`, `text-sm` 사용 금지
@@ -157,9 +154,11 @@ draft: true
 - 글씨 크기는 Tailwind 기본 스케일 사용: `text-base`, `text-lg`, `text-xl`, `text-2xl`, `text-3xl`, `text-4xl` …
 - 더 큰 크기에서 스케일에 딱 맞는 값이 없을 때만 `text-[...]` 임의 값 허용
 
-## Git 규칙
+### Git 규칙
 
-- 커밋 메시지에 `Co-Authored-By:` 등 AI 공동 작성자 표기 금지
+- 커밋 메시지에 AI 관련 문구 일체 금지: `Co-Authored-By:`, `Generated with`, `🤖` 등 모든 형태
+- 커밋은 요청 시 자동 실행한다
+- **push는 사용자가 명시적으로 요청할 때만 실행한다**
 
 ## 알려진 사항
 
