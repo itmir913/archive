@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="ko" class="antialiased scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="교사 PC 1대가 서버 역할을 하고 학생들은 브라우저로 접속하는 고등학교 정보 교과용 LMS"><title>CodeClan LMS — 학내망 전용 LMS + 온라인 저지 시스템 설계 — luminousky</title><!-- 다크모드 FOUC 방지 — 렌더링 전 클래스 적용 --><script>
+      (function () {
+        var t = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (t === 'dark' || (!t && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script><!-- OG / Twitter 메타태그 --><meta property="og:type" content="article"><meta property="og:site_name" content="luminousky"><meta property="og:title" content="CodeClan LMS — 학내망 전용 LMS + 온라인 저지 시스템 설계 — luminousky"><meta property="og:description" content="교사 PC 1대가 서버 역할을 하고 학생들은 브라우저로 접속하는 고등학교 정보 교과용 LMS"><meta property="og:url" content="https://luminousky.com/archive/luminousky/cs-education/1/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="CodeClan LMS — 학내망 전용 LMS + 온라인 저지 시스템 설계 — luminousky"><meta name="twitter:description" content="교사 PC 1대가 서버 역할을 하고 학생들은 브라우저로 접속하는 고등학교 정보 교과용 LMS"><link rel="canonical" href="https://luminousky.com/archive/luminousky/cs-education/1/"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.DDAyxcKJ.css"><script type="module" src="/archive/_astro/hoisted.B59K8Pw9.js"></script></head> <body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans min-h-screen flex flex-col transition-colors"> <header class="sticky top-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-black/[0.06] dark:border-white/[0.06]"> <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"> <a href="/archive/" class="text-base font-semibold tracking-tight text-gray-900 dark:text-gray-100 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+luminousky
+</a> <nav class="flex items-center gap-1"> <a href="/archive/" class="text-base font-medium text-gray-900 dark:text-gray-100 no-underline px-3 py-1.5 rounded-md bg-gray-100 dark:bg-gray-800 transition-colors">Archive</a> <a href="/archive/timeline/" class="text-base font-medium text-gray-400 dark:text-gray-500 no-underline px-3 py-1.5 rounded-md hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Timeline</a> <button id="theme-toggle" aria-label="Toggle dark mode" class="ml-1 p-2 rounded-md text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"> <!-- 라이트 모드에서 표시 (달 아이콘 → 다크로 전환) --> <svg id="icon-moon" class="w-5 h-5 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> <!-- 다크 모드에서 표시 (해 아이콘 → 라이트로 전환) --> <svg id="icon-sun" class="w-5 h-5 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> </nav> </div> </header> <main class="flex-1"> <div class="max-w-5xl mx-auto px-6 py-14">  <div class="max-w-2xl mx-auto"> <a href="/archive/luminousky/" data-pagefind-ignore class="inline-block text-base text-gray-400 mb-8 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+← luminousky
+</a> <header class="mb-10" data-pagefind-ignore> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-5 text-gray-900 dark:text-gray-100"> CodeClan LMS — 학내망 전용 LMS + 온라인 저지 시스템 설계 </h1> <div class="flex flex-wrap items-center gap-3 text-base text-gray-400"> <time datetime="2026-04-30T15:00:00.000Z"> May 1, 2026 </time> <span aria-hidden="true">·</span> <span class="text-violet-500">CS Education</span> </div> <p class="mt-4 mb-0 text-lg text-gray-500 dark:text-gray-400 leading-relaxed border-l-2 border-gray-200 dark:border-gray-700 pl-4"> 교사 PC 1대가 서버 역할을 하고 학생들은 브라우저로 접속하는 고등학교 정보 교과용 LMS </p> </header> <div class="prose prose-gray dark:prose-invert max-w-none" data-pagefind-body> <h2 id="배경">배경</h2>
+<p>고등학교 정보 교과에서 프로그래밍 수업을 할 때 겪는 문제가 있다. 학생들이 제출한 코드를 어떻게 채점하고 관리할 것인가. 외부 온라인 저지 시스템을 쓰면 학내망 제한이나 가입 절차가 문제가 된다. 에디터에서 직접 복붙을 받으면 비효율적이다.</p>
+<p>해결책: 교사 PC 1대가 Tauri 앱 + Axum 서버를 실행하고, 학생들은 같은 Wi-Fi의 브라우저로 접속한다. 외부 인터넷 없이 학내망만으로 완결되는 구조다.</p>
+<h2 id="기술-스택">기술 스택</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>레이어</th><th>기술</th><th>선택 이유</th></tr></thead><tbody><tr><td>데스크탑 앱</td><td>Tauri 2.0</td><td>트레이 상주, 닫기→숨김, Windows 단일 배포</td></tr><tr><td>백엔드</td><td>Rust + Axum</td><td>Axum 0.0.0.0:8080으로 학내망 접근 허용</td></tr><tr><td>DB</td><td>SQLite WAL</td><td>단일 파일, max_connections=1 단일 writer 큐</td></tr><tr><td>프론트엔드</td><td>Vue 3 + Vite + TypeScript + Pinia</td><td>Rust 바이너리에 임베드</td></tr><tr><td>���타일</td><td>Tailwind CSS v4</td><td>@tailwindcss/vite</td></tr><tr><td>국제화</td><td>vue-i18n</td><td>한국어 하드코딩 금지, <code>$t('key')</code> 필수</td></tr><tr><td>채점 엔진</td><td>DMOJ wbox</td><td>포터블 Python/GCC/Java</td></tr></tbody></table>
+<p>SQLite WAL 모드 + <code>max_connections=1</code>��� 단일 writer 직렬화를 강제해서 동시 채점 요청에서도 DB 충돌이 없도록 한다.</p>
+<h2 id="도메인-모델">도메인 모델</h2>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>classes (수업: 과목+분반 조합)</span></span>
+<span class="line"><span>  └─ teacher_id</span></span>
+<span class="line"><span>  └─ students (학생 명단)</span></span>
+<span class="line"><span>  └─ lessons (차시)</span></span>
+<span class="line"><span>  └─ assessments (수행평가)</span></span>
+<span class="line"><span>       └─ sessions (CREATED → LOBBY → RUNNING → CLOSED)</span></span>
+<span class="line"><span>            └─ submissions</span></span>
+<span class="line"><span>            └─ submission_drafts</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>problems (문항, 전역 공유, type 1~5)</span></span>
+<span class="line"><span>attendance_records (출석 스냅샷)</span></span>
+<span class="line"><span>auth_tokens (교사 쿠키 세션, 12시간)</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>수행평가 세션은 4단계 상태를 가진다. LOBBY는 학생들이 대기하는 단계로, 교사가 RUNNING으로 전환하면 타이머가 시작된다.</p>
+<h2 id="채점-엔진-설계">채점 엔진 설계</h2>
+<p>DMOJ의 <code>wbox</code>를 포터블 실행 환경으로 번들링한다. Python, GCC(C/C++), Java를 별도 설치 없이 쓸 수 있다. 채점 엔진은 별도 <code>judge/</code> crate로 분리한다.</p>
+<p>Phase 1: <code>tokio</code> 타임아웃으로 TLE 처리.<br>
+Phase 2: Windows Job Object로 메모리/CPU 사용량 제한.</p>
+<h2 id="구현-현황">구현 현황</h2>
+<p>목업 10개(<code>docs/mockups/01~10_*.html</code>)가 완성된 상태에서 <code>dev</code> 브랜치 단계별 구현 중이다. 목업을 먼저 완성하고 백엔드/프론트를 구현하는 순서를 지킨다.</p>
+<p><code>master</code> 브랜치에는 Phase 0~9 구현체가 있���, <code>dev</code> 브랜치에서 전면 재설계 중이다. 핵심 변경은 <code>divisions</code> 기반 → <code>classes</code> 기반으로의 도메�� 모델 재정립이다.</p>
+<p>완료된 단계:</p>
+<ul>
+<li>0~1단계: Tauri+Axum 뼈대, 초기 설정 화면</li>
+<li>2단계: 교사/학생 인증 (argon2, 쿠키 세션)</li>
+<li>3단계: 교사 홈, 어드민 뷰, 학생 홈, 설정</li>
+<li>4단계: 수업 상세(ClassDetailView), 학생 관리</li>
+<li>5단계: 문제 은행 (3유형: short_answer/multiple_choice/code_submit)</li>
+</ul> </div> <nav class="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800 grid grid-cols-1 sm:grid-cols-2 gap-3" data-pagefind-ignore> <div> <a href="/archive/luminousky/cs-education/2/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">← Prev</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> 교수학습 시각화 자료 — HTML 강의노트·docx 자동생성 시스템 개요 </span> </a> </div> <div>  </div> </nav> </div>  </div> </main> <footer class="border-t border-gray-100 dark:border-gray-800 mt-auto"> <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-end gap-6"> <a href="https://luminousky.com" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+luminousky.com ↗
+</a> <a href="https://github.com/itmir913" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+GitHub ↗
+</a> </div> </footer>  </body> </html>

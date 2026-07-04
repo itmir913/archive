@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="ko" class="antialiased scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="한국 고등학교 학교장추천전형 점수·순위·추천 관리를 위한 학내망 단일 exe 시스템"><title>학교장추천자 선발 관리 시스템 — 개요와 기술 스택 — luminousky</title><!-- 다크모드 FOUC 방지 — 렌더링 전 클래스 적용 --><script>
+      (function () {
+        var t = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (t === 'dark' || (!t && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script><!-- OG / Twitter 메타태그 --><meta property="og:type" content="article"><meta property="og:site_name" content="luminousky"><meta property="og:title" content="학교장추천자 선발 관리 시스템 — 개요와 기술 스택 — luminousky"><meta property="og:description" content="한국 고등학교 학교장추천전형 점수·순위·추천 관리를 위한 학내망 단일 exe 시스템"><meta property="og:url" content="https://luminousky.com/archive/luminousky/principal-candidate-manager/1/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="학교장추천자 선발 관리 시스템 — 개요와 기술 스택 — luminousky"><meta name="twitter:description" content="한국 고등학교 학교장추천전형 점수·순위·추천 관리를 위한 학내망 단일 exe 시스템"><link rel="canonical" href="https://luminousky.com/archive/luminousky/principal-candidate-manager/1/"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.DDAyxcKJ.css"><script type="module" src="/archive/_astro/hoisted.B59K8Pw9.js"></script></head> <body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans min-h-screen flex flex-col transition-colors"> <header class="sticky top-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-black/[0.06] dark:border-white/[0.06]"> <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"> <a href="/archive/" class="text-base font-semibold tracking-tight text-gray-900 dark:text-gray-100 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+luminousky
+</a> <nav class="flex items-center gap-1"> <a href="/archive/" class="text-base font-medium text-gray-900 dark:text-gray-100 no-underline px-3 py-1.5 rounded-md bg-gray-100 dark:bg-gray-800 transition-colors">Archive</a> <a href="/archive/timeline/" class="text-base font-medium text-gray-400 dark:text-gray-500 no-underline px-3 py-1.5 rounded-md hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Timeline</a> <button id="theme-toggle" aria-label="Toggle dark mode" class="ml-1 p-2 rounded-md text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"> <!-- 라이트 모드에서 표시 (달 아이콘 → 다크로 전환) --> <svg id="icon-moon" class="w-5 h-5 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> <!-- 다크 모드에서 표시 (해 아이콘 → 라이트로 전환) --> <svg id="icon-sun" class="w-5 h-5 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> </nav> </div> </header> <main class="flex-1"> <div class="max-w-5xl mx-auto px-6 py-14">  <div class="max-w-2xl mx-auto"> <a href="/archive/luminousky/" data-pagefind-ignore class="inline-block text-base text-gray-400 mb-8 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+← luminousky
+</a> <header class="mb-10" data-pagefind-ignore> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-5 text-gray-900 dark:text-gray-100"> 학교장추천자 선발 관리 시스템 — 개요와 기술 스택 </h1> <div class="flex flex-wrap items-center gap-3 text-base text-gray-400"> <time datetime="2026-04-14T15:00:00.000Z"> April 15, 2026 </time> <span aria-hidden="true">·</span> <span class="text-violet-500">Principal Candidate Manager</span> </div> <p class="mt-4 mb-0 text-lg text-gray-500 dark:text-gray-400 leading-relaxed border-l-2 border-gray-200 dark:border-gray-700 pl-4"> 한국 고등학교 학교장추천전형 점수·순위·추천 관리를 위한 학내망 단일 exe 시스템 </p> </header> <div class="prose prose-gray dark:prose-invert max-w-none" data-pagefind-body> <h2 id="배경">배경</h2>
+<p>한국 고등학교의 학교장추천전형은 대학별 선발 기준에 따라 학생 점수를 계산하고 추천자를 결정하는 복잡한 과정이다. 엑셀로 관리하면 실수가 생기고, 담임 교사와 관리자 간 데이터 공유가 어렵다. 이 과정을 학내 네트워크 안에서 웹 UI로 처리하는 단일 실행 파일(<code>pcm.exe</code>)을 만들었다.</p>
+<h2 id="기술-스택">기술 스택</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>레이어</th><th>기술</th><th>선택 이유</th></tr></thead><tbody><tr><td>프론트엔드</td><td>Vue 3 + Vite + Tailwind CSS v4</td><td>SPA, @tailwindcss/vite</td></tr><tr><td>백엔드</td><td>Rust + Axum 0.7 + SQLx 0.8</td><td>타입 안전, 단일 바이너리</td></tr><tr><td>DB</td><td>SQLite WAL</td><td>단일 파일, 트랜잭션 안전</td></tr><tr><td>배포</td><td>rust-embed</td><td>프론트엔드를 바이너리에 임베드, 단일 .exe</td></tr><tr><td>인증</td><td>JWT + bcrypt</td><td>관리자/담임 역할 분리</td></tr></tbody></table>
+<p>dev 빌드는 <code>cargo run --features dev</code> + Vite dev server를 <code>concurrently</code>로 실행한다. 프로덕션에서는 rust-embed로 Vite 빌드 결과물이 바이너리에 포함된다.</p>
+<h2 id="주요-기능">주요 기능</h2>
+<p><strong>관리자 워크플로우</strong></p>
+<ol>
+<li>학급·학생·영역·대학 기초 설정 (Excel 업로드)</li>
+<li>라운드 열기 (OPEN → CLOSED → FINALIZED)</li>
+<li>점수 계산 실행</li>
+<li>결과 확인 및 추천 확정</li>
+<li>Excel 내보내기</li>
+</ol>
+<p><strong>담임 워크플로우</strong></p>
+<ol>
+<li>라운드 OPEN 시 teacher_editable 전형요소의 학생별 값 웹 입력</li>
+<li>지원자 등록 (학생 + 대학 선택)</li>
+<li>자신의 학급 결과 조회</li>
+</ol>
+<h2 id="역할-분리">역할 분리</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>역할</th><th>접근 범위</th></tr></thead><tbody><tr><td>관리자</td><td>전체 데이터 조회·수정, 점수 계산, 추천 확정</td></tr><tr><td>담임</td><td>자기 학급 학생의 값 입력, 지원 등록, 결과 조회</td></tr></tbody></table>
+<p>담임은 JWT 토큰에 <code>grade/class_no</code>가 포함되어 자동으로 자기 학급만 필터링된다.</p>
+<h2 id="점수-계산-설계">점수 계산 설계</h2>
+<p>점수 계산은 반드시 Rust 백엔드에서만 수행한다. 프론트엔드는 <code>score-preview</code> API를 호출해 표시만 한다. 학교장 추천 결과가 실제 입시에 영향을 미치므로 프론트엔드 계산은 법적·신뢰성 리스크가 있다.</p>
+<p>영역 유형:</p>
+<ul>
+<li><strong>NUMERIC</strong>: 내신 등급 등 구간 환산표(range_table) 적용</li>
+<li><strong>CATEGORY</strong>: 수상 실적 등 범주 매핑(category_map) 적용</li>
+<li><strong>MANUAL</strong>: 봉사 시간 등 직접 값 입력, 최댓값 제한</li>
+</ul>
+<h2 id="상태-전이">상태 전이</h2>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>라운드: OPEN ↔ CLOSED → FINALIZED</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>CLOSED 라운드의 데이터는 DB 트리거로 삭제·수정이 차단된다. <code>abandoned=1</code> 업데이트만 예외 허용된다.</p>
+<h2 id="테스트">테스트</h2>
+<p>259개 단위·통합 테스트가 전부 통과한다. <code>tests/</code> 디렉토리 기반으로 구성하고 <code>src/lib.rs</code>로 bin+lib 크레이트 구조를 만들어 외부 테스트에서 내부 함수를 임포트할 수 있다.</p> </div> <nav class="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800 grid grid-cols-1 sm:grid-cols-2 gap-3" data-pagefind-ignore> <div>  </div> <div> <a href="/archive/luminousky/principal-candidate-manager/2/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all sm:text-right"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">Next →</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> 학교장추천자 선발 관리 시스템 — Float-Free 아키텍처와 핵심 설계 결정 </span> </a> </div> </nav> </div>  </div> </main> <footer class="border-t border-gray-100 dark:border-gray-800 mt-auto"> <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-end gap-6"> <a href="https://luminousky.com" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+luminousky.com ↗
+</a> <a href="https://github.com/itmir913" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+GitHub ↗
+</a> </div> </footer>  </body> </html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="ko" class="antialiased scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="교사가 생기부 PDF·Excel을 업로드하면 금칙어·점검 키워드를 자동 탐색·강조하는 Tauri 2 데스크탑 앱"><title>학교생활기록부 일괄 점검 프로그램 — 개요와 아키텍처 — luminousky</title><!-- 다크모드 FOUC 방지 — 렌더링 전 클래스 적용 --><script>
+      (function () {
+        var t = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (t === 'dark' || (!t && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script><!-- OG / Twitter 메타태그 --><meta property="og:type" content="article"><meta property="og:site_name" content="luminousky"><meta property="og:title" content="학교생활기록부 일괄 점검 프로그램 — 개요와 아키텍처 — luminousky"><meta property="og:description" content="교사가 생기부 PDF·Excel을 업로드하면 금칙어·점검 키워드를 자동 탐색·강조하는 Tauri 2 데스크탑 앱"><meta property="og:url" content="https://luminousky.com/archive/luminousky/teacher-utility-kit/4/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="학교생활기록부 일괄 점검 프로그램 — 개요와 아키텍처 — luminousky"><meta name="twitter:description" content="교사가 생기부 PDF·Excel을 업로드하면 금칙어·점검 키워드를 자동 탐색·강조하는 Tauri 2 데스크탑 앱"><link rel="canonical" href="https://luminousky.com/archive/luminousky/teacher-utility-kit/4/"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.DDAyxcKJ.css"><script type="module" src="/archive/_astro/hoisted.B59K8Pw9.js"></script></head> <body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans min-h-screen flex flex-col transition-colors"> <header class="sticky top-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-black/[0.06] dark:border-white/[0.06]"> <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"> <a href="/archive/" class="text-base font-semibold tracking-tight text-gray-900 dark:text-gray-100 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+luminousky
+</a> <nav class="flex items-center gap-1"> <a href="/archive/" class="text-base font-medium text-gray-900 dark:text-gray-100 no-underline px-3 py-1.5 rounded-md bg-gray-100 dark:bg-gray-800 transition-colors">Archive</a> <a href="/archive/timeline/" class="text-base font-medium text-gray-400 dark:text-gray-500 no-underline px-3 py-1.5 rounded-md hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Timeline</a> <button id="theme-toggle" aria-label="Toggle dark mode" class="ml-1 p-2 rounded-md text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"> <!-- 라이트 모드에서 표시 (달 아이콘 → 다크로 전환) --> <svg id="icon-moon" class="w-5 h-5 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> <!-- 다크 모드에서 표시 (해 아이콘 → 라이트로 전환) --> <svg id="icon-sun" class="w-5 h-5 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> </nav> </div> </header> <main class="flex-1"> <div class="max-w-5xl mx-auto px-6 py-14">  <div class="max-w-2xl mx-auto"> <a href="/archive/luminousky/" data-pagefind-ignore class="inline-block text-base text-gray-400 mb-8 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+← luminousky
+</a> <header class="mb-10" data-pagefind-ignore> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-5 text-gray-900 dark:text-gray-100"> 학교생활기록부 일괄 점검 프로그램 — 개요와 아키텍처 </h1> <div class="flex flex-wrap items-center gap-3 text-base text-gray-400"> <time datetime="2026-05-31T15:00:00.000Z"> June 1, 2026 </time> <span aria-hidden="true">·</span> <span class="text-violet-500">Teacher Utility Kit</span> </div> <p class="mt-4 mb-0 text-lg text-gray-500 dark:text-gray-400 leading-relaxed border-l-2 border-gray-200 dark:border-gray-700 pl-4"> 교사가 생기부 PDF·Excel을 업로드하면 금칙어·점검 키워드를 자동 탐색·강조하는 Tauri 2 데스크탑 앱 </p> </header> <div class="prose prose-gray dark:prose-invert max-w-none" data-pagefind-body> <h2 id="배경">배경</h2>
+<p>학교생활기록부 작성 후 금칙어·부적절 표현이 포함되어 있는지 전수 점검하는 작업은 수작업으로 하기 어렵다. PDF와 Excel 두 포맷을 모두 지원하고, 발견된 키워드를 시각적으로 강조한 결과물을 내보내는 데스크탑 앱(<code>WordFinderApp</code>)을 만들었다.</p>
+<h2 id="기술-스택">기술 스택</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>레이어</th><th>기술</th><th>선택 이유</th></tr></thead><tbody><tr><td>프론트엔드</td><td>Vue 3 (Composition API) + Pinia + Tailwind CSS v4</td><td>SPA, 단방향 상태 흐름</td></tr><tr><td>데스크탑</td><td>Tauri 2</td><td>Rust 기반 경량 데스크탑 래퍼, 단일 exe</td></tr><tr><td>PDF 처리</td><td>pdfjs-dist (Web Worker)</td><td>브라우저 호환 PDF 파싱, 비동기 처리</td></tr><tr><td>Excel 처리</td><td>SheetJS/xlsx (Web Worker)</td><td>.xlsx 셀 단위 파싱</td></tr><tr><td>아이콘</td><td>@lucide/vue</td><td></td></tr><tr><td>폰트</td><td>Pretendard</td><td></td></tr></tbody></table>
+<h2 id="핵심-아키텍처-원칙">핵심 아키텍처 원칙</h2>
+<p><strong>단방향 IPC</strong>: 컴포넌트는 <code>invoke()</code>를 직접 호출하지 않는다. 모든 Tauri IPC 호출은 <code>src/stores/app.js</code>(Pinia store action)에서만 한다. 컴포넌트는 store action을 dispatch할 뿐이다.</p>
+<p><strong>Web Worker 격리</strong>: PDF 파싱(pdfjs)과 Excel 파싱(SheetJS)은 무거운 연산이다. <code>src/workers/processor.worker.js</code>에서 처리해 UI 스레드 블로킹을 방지한다.</p>
+<p><strong>파일 I/O는 Rust</strong>: 파일 읽기/쓰기는 <code>src-tauri/src/lib.rs</code>의 Rust command가 담당한다.</p>
+<h2 id="컴포넌트-구조">컴포넌트 구조</h2>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>src/</span></span>
+<span class="line"><span>  stores/app.js              ← 전체 상태 + 모든 actions</span></span>
+<span class="line"><span>  workers/</span></span>
+<span class="line"><span>    processor.worker.js      ← PDF/Excel 처리 (Web Worker)</span></span>
+<span class="line"><span>  components/</span></span>
+<span class="line"><span>    TitleBar.vue</span></span>
+<span class="line"><span>    CsvSection.vue           ← 키워드 CSV 설정</span></span>
+<span class="line"><span>    ActionBar.vue            ← 처리 시작 버튼</span></span>
+<span class="line"><span>    tabs/</span></span>
+<span class="line"><span>      GuideTab.vue</span></span>
+<span class="line"><span>      FileTab.vue            ← 파일 업로드</span></span>
+<span class="line"><span>      LogTab.vue             ← 처리 로그</span></span>
+<span class="line"><span>      DownloadTab.vue        ← 결과 다운로드</span></span>
+<span class="line"><span>  App.vue                    ← 레이아웃만 담당</span></span>
+<span class="line"><span></span></span></code></pre>
+<h2 id="주요-기능">주요 기능</h2>
+<p><strong>키워드 CSV</strong>: 점검할 단어 목록을 CSV로 관리한다. 3단계 fallback: 사용자가 선택한 CSV → 실행 파일 옆 <code>default.csv</code> → 앱 내장 목록(macOS용).</p>
+<p><strong>Excel 처리</strong>: 셀 단위 독립 매칭(행 join 방식 제거). 발견여부가 <code>TRUE</code>인 행은 노란색으로 강조된다. 재처리 시 기존 발견여부·발견된 단어 컬럼을 제거 후 재생성한다.</p>
+<p><strong>PDF 처리</strong>: pdfjs-dist로 텍스트 추출 후 키워드 매칭. 매칭 성공 시점에만 북마크를 생성한다.</p>
+<p><strong>연속 공백 검사</strong>: Excel 전용(PDF는 pdfjs 추출 특성상 지원 불가).</p>
+<p><strong>발견된 단어 표시</strong>: 실제 매칭된 텍스트가 아닌 원본 키워드로 표시한다 — 오탈자 변형 텍스트보다 교사가 의도한 키워드를 바로 알아보기 편하다.</p>
+<h2 id="설계-결정-fail-fast">설계 결정: Fail-Fast</h2>
+<p><code>unwrap_or(0)</code> 같은 silent fallback을 금지한다. 점검 결과에서 오탐(false negative)이 발생하는 것이 앱 오류보다 훨씬 나쁜 결과다. 예상치 못한 상태에서는 즉시 에러를 노출한다.</p>
+<h2 id="csv-fallback-설계">CSV Fallback 설계</h2>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>1. 사용자 수동 선택 CSV</span></span>
+<span class="line"><span>2. 실행 파일과 같은 디렉토리의 default.csv</span></span>
+<span class="line"><span>3. 앱 바이너리에 내장된 기본 목록 (macOS 배포용)</span></span>
+<span class="line"><span></span></span></code></pre>
+<p><code>default.csv</code>가 없어도 앱이 동작하도록 하되, 사용자 정의 목록을 우선 적용한다.</p> </div> <nav class="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800 grid grid-cols-1 sm:grid-cols-2 gap-3" data-pagefind-ignore> <div> <a href="/archive/luminousky/teacher-utility-kit/5/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">← Prev</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> 교원 연수·학습지 자료 — docx 자동생성 시스템 </span> </a> </div> <div>  </div> </nav> </div>  </div> </main> <footer class="border-t border-gray-100 dark:border-gray-800 mt-auto"> <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-end gap-6"> <a href="https://luminousky.com" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+luminousky.com ↗
+</a> <a href="https://github.com/itmir913" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+GitHub ↗
+</a> </div> </footer>  </body> </html>
