@@ -1,6 +1,5 @@
 import { defineConfig, passthroughImageService } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
-import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://luminousky.com',
@@ -23,5 +22,5 @@ export default defineConfig({
     },
   },
 
-  integrations: [tailwind(), sitemap()],
+  integrations: [tailwind()],
 });
