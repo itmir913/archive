@@ -114,7 +114,7 @@ make-boot파일이 완성되었습니다!
 
 위 명령어는 txt파일로 올려두었습니다.
 
-[boot.img 분해 조립.txt](./files/boot.img 분해 조립.txt)
+[boot.img 분해 조립.txt](./files/boot.img%20분해%20조립.txt)
 
 [mkbootimg](https://github.com/itmir913/archive/releases/download/itmir-attachments/48-mkbootimg)
 
@@ -134,7 +134,7 @@ make-boot파일이 완성되었습니다!
 
 ## 첨부파일
 
-- [boot.img 분해 조립.txt](./files/boot.img 분해 조립.txt)
+- [boot.img 분해 조립.txt](./files/boot.img%20분해%20조립.txt)
 - [mkbootimg](https://github.com/itmir913/archive/releases/download/itmir-attachments/48-mkbootimg) `32 KB`
 - [split_bootimg.pl](./files/split_bootimg.pl)
 - [unpackbootimg](https://github.com/itmir913/archive/releases/download/itmir-attachments/48-unpackbootimg) `17 KB`

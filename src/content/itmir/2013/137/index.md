@@ -1,4 +1,4 @@
----
+﻿---
 title: "티스토리 블로그의 로딩속도를 개선해 보자!"
 date: "2013-02-17T00:00:37+09:00"
 category: "Tistory"
@@ -32,7 +32,7 @@ original_url: "https://itmir.tistory.com/137"
 
 관리자 모드 - HTML/CSS 편집에 들어가 `<html>` 위에 넣어주시면 됩니다
 
-[gzip 코드.txt](./files/gzip 코드.txt)
+[gzip 코드.txt](./files/gzip%20코드.txt)
 
 ![](./images/캡처.png)
 
@@ -66,4 +66,4 @@ This Page is **Gzipped**
 
 ## 첨부파일
 
-- [gzip 코드.txt](./files/gzip 코드.txt)
+- [gzip 코드.txt](./files/gzip%20코드.txt)

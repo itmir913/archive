@@ -1,4 +1,4 @@
----
+﻿---
 title: "애드센스 소스 백업"
 date: "2013-03-01T12:26:24+09:00"
 category: "Note"
@@ -8,7 +8,7 @@ draft: false
 original_url: "https://itmir.tistory.com/165"
 ---
 
-[Adsense 소스 백업.txt](./files/Adsense 소스 백업.txt)
+[Adsense 소스 백업.txt](./files/Adsense%20소스%20백업.txt)
 
 애드센스를 모두 지웠습니다
 
@@ -18,4 +18,4 @@ original_url: "https://itmir.tistory.com/165"
 
 ## 첨부파일
 
-- [Adsense 소스 백업.txt](./files/Adsense 소스 백업.txt)
+- [Adsense 소스 백업.txt](./files/Adsense%20소스%20백업.txt)

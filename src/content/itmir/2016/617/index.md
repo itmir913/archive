@@ -1,4 +1,4 @@
----
+﻿---
 title: "WolframAlpha를 아시나요?"
 date: "2016-07-27T23:19:30+09:00"
 category: "Application"
@@ -102,4 +102,4 @@ MS와 제휴한 뒤 bing에서 울프럼 알파 엔진을 사용할 수 있고, 
 
 참고
 
-Wolfram Alpha 나무위키 : [https://namu.wiki/w/Wolfram](https://namu.wiki/w/Wolfram%20Alpha)[Alpha](https://namu.wiki/w/Wolfram Alpha)
+Wolfram Alpha 나무위키 : [https://namu.wiki/w/Wolfram](https://namu.wiki/w/Wolfram%20Alpha)[Alpha](https://namu.wiki/w/Wolfram%20Alpha)

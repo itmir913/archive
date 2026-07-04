@@ -1,4 +1,4 @@
----
+﻿---
 title: "64Bit 우분투에서 32Bit 바이너리/프로그램 이용하기"
 date: "2012-12-25T15:20:28+09:00"
 category: "Computer & PC/Ubuntu"
@@ -38,7 +38,7 @@ libc6-i386
 
 그후 unpackbootimg등의 32비트 바이너리도 정상적으로 값이 나왔습니다.
 
-[32bit 64bit.sh](./files/32bit 64bit.sh)
+[32bit 64bit.sh](./files/32bit%2064bit.sh)
 
 참고: <http://blog.naver.com/01191879872/10071037107>
 
@@ -48,4 +48,4 @@ libc6-i386
 
 ## 첨부파일
 
-- [32bit 64bit.sh](./files/32bit 64bit.sh)
+- [32bit 64bit.sh](./files/32bit%2064bit.sh)
