@@ -30,7 +30,7 @@ export default {
             'code::before': { content: 'none' },
             'code::after': { content: 'none' },
             code: {
-              fontFamily: '"Fira Code", Consolas, Monaco, monospace',
+              fontFamily: '"Fira Code", Consolas, Monaco, PretendardVariable, Pretendard, monospace',
               fontWeight: '400',
               fontSize: '0.875em',
               backgroundColor: theme('colors.gray[100]'),
@@ -45,6 +45,7 @@ export default {
               borderRadius: '0',
             },
             pre: {
+              fontFamily: '"Fira Code", Consolas, Monaco, PretendardVariable, Pretendard, monospace',
               borderRadius: '6px',
               border: `1px solid ${theme('colors.gray[200]')}`,
               fontSize: '0.875rem',

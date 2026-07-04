@@ -32,6 +32,11 @@ html.dark {
   background-color: #6b7280;
 }
 
+/* pre, code 한글 폰트 — Fira Code 등 모노 폰트는 한글 글리프가 없으므로 Pretendard를 fallback으로 명시 */
+pre, code {
+  font-family: "Fira Code", Consolas, Monaco, PretendardVariable, Pretendard, monospace;
+}
+
 /* Shiki 코드 블록 패딩 + 가로 스크롤 */
 .prose pre.astro-code {
   padding: 1rem 1.25rem;
