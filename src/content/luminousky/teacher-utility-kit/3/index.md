@@ -1,65 +1,82 @@
 ﻿---
-title: "입시자료 통합검색 — Google Drive Boolean 검색 시스템"
-date: "2026-04-01T00:00:00+09:00"
-description: "외부 서버 없이 Google Apps Script만으로 구축한 입시 PDF 키워드 검색 웹앱, 그리고 Docker 독립 서버 버전"
+title: "학교생활기록부 일괄 점검 프로그램 — 개요와 아키텍처"
+date: "2026-06-01T00:00:00+09:00"
+description: "교사가 생기부 PDF·Excel을 업로드하면 금칙어·점검 키워드를 자동 탐색·강조하는 Tauri 2 데스크탑 앱"
 draft: false
 ---
 
 ## 배경
 
-학교에는 입시 관련 PDF가 수백 개 쌓인다. 대학별 모집요강, 전형 안내, 면접 자료 등이 Google Drive 공유 폴더에 올라오는데, 특정 키워드로 어떤 파일이 있는지 빠르게 찾을 방법이 없었다. Google Drive 검색은 파일명만 보거나 전체 텍스트 검색이 부정확했다.
+학교생활기록부 작성 후 금칙어·부적절 표현이 포함되어 있는지 전수 점검하는 작업은 수작업으로 하기 어렵다. PDF와 Excel 두 포맷을 모두 지원하고, 발견된 키워드를 시각적으로 강조한 결과물을 내보내는 데스크탑 앱(`WordFinderApp`)을 만들었다.
 
-요구사항:
-- 외부 서버·회원가입 없이 Google Workspace for Education만으로 구축
-- 학교 교사라면 누구나 링크 하나로 접근
+## Python + PyQt6에서 Tauri로
 
-두 가지 버전을 만들었다. GAS(Google Apps Script) 버전은 서버 없이 구동되고, Docker(Node.js+Express+SQLite) 버전은 OAuth2 기반 독립 서버다.
+첫 구현은 Python + PyQt6 + PyInstaller(`--onedir --windowed`)였다. 그런데 학교 PC에서 실행하면 **"DLL 차단되어 실행할 수 없습니다"** 오류가 발생했다. Windows AppLocker가 Python 런타임과 Qt DLL 조합을 차단한 것이다.
 
-## 핵심 기능: Boolean 검색 파서
+Tauri로 포팅하면서 이 문제가 해결됐다. Rust 네이티브 컴파일 결과물은 Python 런타임도, Qt DLL도 없는 단일 `.exe`다. AppLocker가 차단하던 대상 자체가 없어진다.
 
-단순 키워드 검색이 아닌 `AND / OR / NOT` 연산자를 지원한다.
+기술 선택이 기존 luminousky 스택과도 자연스럽게 맞았다 — Rust 백엔드는 이미 다른 프로젝트에서 쓰고 있었고, Vue.js도 마찬가지였다.
+
+## 기술 스택
+
+| 레이어 | 기술 | 선택 이유 |
+|--------|------|----------|
+| 프론트엔드 | Vue 3 (Composition API) + Pinia + Tailwind CSS v4 | SPA, 단방향 상태 흐름 |
+| 데스크탑 | Tauri 2 | Rust 기반 경량 데스크탑 래퍼, 단일 exe |
+| PDF 처리 | pdfjs-dist (Web Worker) | 브라우저 호환 PDF 파싱, 비동기 처리 |
+| Excel 처리 | SheetJS/xlsx (Web Worker) | .xlsx 셀 단위 파싱 |
+| 아이콘 | @lucide/vue | |
+| 폰트 | Pretendard | |
+
+## 핵심 아키텍처 원칙
+
+**단방향 IPC**: 컴포넌트는 `invoke()`를 직접 호출하지 않는다. 모든 Tauri IPC 호출은 `src/stores/app.js`(Pinia store action)에서만 한다. 컴포넌트는 store action을 dispatch할 뿐이다.
+
+**Web Worker 격리**: PDF 파싱(pdfjs)과 Excel 파싱(SheetJS)은 무거운 연산이다. `src/workers/processor.worker.js`에서 처리해 UI 스레드 블로킹을 방지한다.
+
+**파일 I/O는 Rust**: 파일 읽기/쓰기는 `src-tauri/src/lib.rs`의 Rust command가 담당한다.
+
+## 컴포넌트 구조
 
 ```
-논술 AND 면접          → 두 키워드 모두 포함한 파일
-(인문계 OR 자연계) AND 서울대
-논술 NOT 면접         → 논술은 있지만 면접은 없는 파일
+src/
+  stores/app.js              ← 전체 상태 + 모든 actions
+  workers/
+    processor.worker.js      ← PDF/Excel 처리 (Web Worker)
+  components/
+    TitleBar.vue
+    CsvSection.vue           ← 키워드 CSV 설정
+    ActionBar.vue            ← 처리 시작 버튼
+    tabs/
+      GuideTab.vue
+      FileTab.vue            ← 파일 업로드
+      LogTab.vue             ← 처리 로그
+      DownloadTab.vue        ← 결과 다운로드
+  App.vue                    ← 레이아웃만 담당
 ```
 
-### 파서 구현
+## 주요 기능
 
-`tokenize()` → `BooleanParser.parse()` → `evaluate()` 3단계 파이프라인으로 처리한다.
+**키워드 CSV**: 점검할 단어 목록을 CSV로 관리한다. 3단계 fallback: 사용자가 선택한 CSV → 실행 파일 옆 `default.csv` → 앱 내장 목록(macOS용).
 
-**tokenize**: `|||` 구분자 방식. `AND/OR/NOT`과 괄호 앞뒤에 `|||`를 삽입해서 split한다. 공백 포함 키워드(`서울 대학교`)를 하나의 토큰으로 보존하는 것이 핵심이다.
+**Excel 처리**: 셀 단위 독립 매칭(행 join 방식 제거). 발견여부가 `TRUE`인 행은 노란색으로 강조된다. 재처리 시 기존 발견여부·발견된 단어 컬럼을 제거 후 재생성한다.
 
-**BooleanParser**: ES5 생성자+prototype 방식. 우선순위는 `NOT > AND > OR`. 닫는 괄호가 없어도 자동 보완한다.
+**PDF 처리**: pdfjs-dist로 텍스트 추출 후 키워드 매칭. 매칭 성공 시점에만 북마크를 생성한다.
 
-**evaluate**: 집합 연산. AND는 단락평가(왼쪽 empty면 Drive API 호출 생략), NOT은 `getAllFileIds() - evaluate(operand)` 차집합이다.
+**연속 공백 검사**: Excel 전용(PDF는 pdfjs 추출 특성상 지원 불가).
 
-## 캐시 구조
+**발견된 단어 표시**: 실제 매칭된 텍스트가 아닌 원본 키워드로 표시한다 — 오탈자 변형 텍스트보다 교사가 의도한 키워드를 바로 알아보기 편하다.
 
-GAS의 CacheService는 키당 100KB 제한이 있어 직접 청크 분할을 구현했다.
+## 설계 결정: Fail-Fast
 
-- **메타데이터 캐시**: 30,000자 단위로 분할. 키: `meta_chunk_0`, `meta_chunk_1`, ...
-- **키워드 캐시**: 동일 청크 방식. 키: `kw_{keyword}_0`, `kw_{keyword}_1`, ...
+`unwrap_or(0)` 같은 silent fallback을 금지한다. 점검 결과에서 오탐(false negative)이 발생하는 것이 앱 오류보다 훨씬 나쁜 결과다. 예상치 못한 상태에서는 즉시 에러를 노출한다.
 
-한글은 JS UTF-16 기준 1자 = 1 코드 유닛이므로 30,000자 분할이 안전하다.
+## CSV Fallback 설계
 
-## 트리거 스케줄 (GAS)
+```
+1. 사용자 수동 선택 CSV
+2. 실행 파일과 같은 디렉토리의 default.csv
+3. 앱 바이너리에 내장된 기본 목록 (macOS 배포용)
+```
 
-| 시각 | 함수 |
-|------|------|
-| 02:00 | `rebuildMetadataIndex` — BFS로 Drive 전체 재색인 |
-| 02:30 / 07:30 / 12:30 / 17:30 | `warmCache` — 상위 100개 키워드 사전 캐싱 |
-| 03:00 | `purgeStaleKeywords` — 3일 미검색 키워드 삭제 |
-
-## 12차 검증까지의 여정
-
-초기 구현 후 12차례 검증 세션을 거쳤다. 주요 수정 내역:
-
-- **NOT 연산자 버그**: `getAllFileIds()` 차집합으로 수정
-- **Drive API 인젝션**: 작은따옴표, 큰따옴표 이스케이프 추가
-- **청크 사이즈**: 한글 멀티바이트를 고려해 90,000자 → 30,000자로 감소
-- **경쟁 조건**: `rebuildMetadataIndex`와 정기 트리거 간 `LockService.tryLock(0)` 추가
-- **XSS 패턴**: `onclick="window.open('${url}')"` → `data-url` 속성 방식으로 교체
-
-마지막 검증에서 `testBooleanParser` 64개, `testDriveIntegration` 8개 전원 통과.
+`default.csv`가 없어도 앱이 동작하도록 하되, 사용자 정의 목록을 우선 적용한다.

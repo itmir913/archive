@@ -1,55 +1,65 @@
 ﻿---
-title: "ITMir 아카이브 — 보존 철학과 Astro 기반 아키텍처"
+title: "입시자료 통합검색 — Google Drive Boolean 검색 시스템"
 date: "2026-04-01T00:00:00+09:00"
-description: "2013~2021년 ITMir 블로그 657개 포스트를 정적 사이트로 영구 보존하기까지"
+description: "외부 서버 없이 Google Apps Script만으로 구축한 입시 PDF 키워드 검색 웹앱, 그리고 Docker 독립 서버 버전"
 draft: false
 ---
 
-## 왜 만들었나
+## 배경
 
-`itmir.tistory.com`은 2013년부터 2021년까지 운영한 블로그다. 티스토리가 언제 서비스를 종료하거나 포맷을 바꿔도 이상하지 않은 시점이 됐고, 이미 이미지 일부가 깨진 상태였다. 포스트 657개를 내가 통제할 수 있는 형태로 옮겨두지 않으면 사라질 수 있다.
+학교에는 입시 관련 PDF가 수백 개 쌓인다. 대학별 모집요강, 전형 안내, 면접 자료 등이 Google Drive 공유 폴더에 올라오는데, 특정 키워드로 어떤 파일이 있는지 빠르게 찾을 방법이 없었다. Google Drive 검색은 파일명만 보거나 전체 텍스트 검색이 부정확했다.
 
-단순히 HTML을 긁어오는 방식으로는 부족했다. 내용을 검색하고, 타임라인으로 보고, 미래에도 읽을 수 있어야 했다. 그래서 Markdown 기반 정적 사이트로 변환·보존하기로 했다.
+요구사항:
+- 외부 서버·회원가입 없이 Google Workspace for Education만으로 구축
+- 학교 교사라면 누구나 링크 하나로 접근
 
-## 변환 파이프라인
+두 가지 버전을 만들었다. GAS(Google Apps Script) 버전은 서버 없이 구동되고, Docker(Node.js+Express+SQLite) 버전은 OAuth2 기반 독립 서버다.
 
-티스토리 백업 XML에서 정적 사이트까지 4단계로 처리했다:
+## 핵심 기능: Boolean 검색 파서
 
-```
-convert.py           → XML → Markdown 변환 (657개 index.md)
-compress_images.py   → PNG → JPG 압축, fullsize 원본 우선
-add_attachments.py   → 첨부파일 목록 ## 첨부파일 섹션으로 삽입
-validate.py          → 빈 본문, 깨진 이미지 링크 검증
-```
-
-이미지와 첨부파일은 GitHub Releases(`itmir-attachments` 태그)에 올려 URL로 참조한다. `.db` 파일이나 클라우드 스토리지 대신 Releases를 선택한 이���는 git 레포와 같은 곳에 영구 보관되고 용량 제한이 넉넉하기 때문이다.
-
-## 기술 스택
-
-### Astro
-
-정적 사이트 생성기�� Astro를 선택했다. Content Collections 기능으로 `src/content/itmir/{year}/{num}/index.md` 구조를 타입 안전하게 다룰 수 있고, 빌드 결과물이 순수 HTML이라 GitHub Pages에 그대로 올린다.
-
-### Tailwind CSS v4
-
-UI 스타일링에 Tailwind v4를 사용했다. 다크 모드는 `class` 방식으로 토글하고, 최소 글씨 크기는 `text-base`(16px)를 원칙으로 했다.
-
-### Pagefind
-
-전문 검색 인덱스를 빌드 후 생성한다. CDN 없이 정적 파일만으로 검색이 동작하므로 오프라인에서도 완전히 작동한다. `pagefind --site dist/archive` 명령이 GitHub Actions 워크플로에 포함되어 있다.
-
-## 사이트 구조
+단순 키워드 검색이 아닌 `AND / OR / NOT` 연산자를 지원한다.
 
 ```
-/archive/                    홈
-/archive/itmir/              Chapter 1 포스트 목록 + 전문검색
-/archive/itmir/{year}/{num}/ 개별 포스트
-/archive/timeline/           수동 큐레이션 타임라인
-/archive/luminousky/         Chapter 2 — 프로젝트 기록 (이 글)
+논술 AND 면접          → 두 키워드 모두 포함한 파일
+(인문계 OR 자연계) AND 서울대
+논술 NOT 면접         → 논술은 있지만 면접은 없는 파일
 ```
 
-Chapter 1(ITMir)은 보존 아카이브이므로 본문 맞춤법·내용 수정을 금지한��. 깨진 링크 복구와 Markdown 문법 수정만 허용한다. Chapter 2(luminousky)는 현재 진행 중인 프로젝트들의 설계 기록이다.
+### 파서 구현
 
-## 배포
+`tokenize()` → `BooleanParser.parse()` → `evaluate()` 3단계 파이프라인으로 처리한다.
 
-`main` 브랜치 push → GitHub Actions `deploy.yml` 실행 → `npm ci && npm run build` → `pagefind` 인덱스 생성 → `gh-pages` 브랜치 배포 → `luminousky.com/archive` 반영. `dist/`는 `.gitignore`에 포함되며 소스만 관리한다.
+**tokenize**: `|||` 구분자 방식. `AND/OR/NOT`과 괄호 앞뒤에 `|||`를 삽입해서 split한다. 공백 포함 키워드(`서울 대학교`)를 하나의 토큰으로 보존하는 것이 핵심이다.
+
+**BooleanParser**: ES5 생성자+prototype 방식. 우선순위는 `NOT > AND > OR`. 닫는 괄호가 없어도 자동 보완한다.
+
+**evaluate**: 집합 연산. AND는 단락평가(왼쪽 empty면 Drive API 호출 생략), NOT은 `getAllFileIds() - evaluate(operand)` 차집합이다.
+
+## 캐시 구조
+
+GAS의 CacheService는 키당 100KB 제한이 있어 직접 청크 분할을 구현했다.
+
+- **메타데이터 캐시**: 30,000자 단위로 분할. 키: `meta_chunk_0`, `meta_chunk_1`, ...
+- **키워드 캐시**: 동일 청크 방식. 키: `kw_{keyword}_0`, `kw_{keyword}_1`, ...
+
+한글은 JS UTF-16 기준 1자 = 1 코드 유닛이므로 30,000자 분할이 안전하다.
+
+## 트리거 스케줄 (GAS)
+
+| 시각 | 함수 |
+|------|------|
+| 02:00 | `rebuildMetadataIndex` — BFS로 Drive 전체 재색인 |
+| 02:30 / 07:30 / 12:30 / 17:30 | `warmCache` — 상위 100개 키워드 사전 캐싱 |
+| 03:00 | `purgeStaleKeywords` — 3일 미검색 키워드 삭제 |
+
+## 12차 검증까지의 여정
+
+초기 구현 후 12차례 검증 세션을 거쳤다. 주요 수정 내역:
+
+- **NOT 연산자 버그**: `getAllFileIds()` 차집합으로 수정
+- **Drive API 인젝션**: 작은따옴표, 큰따옴표 이스케이프 추가
+- **청크 사이즈**: 한글 멀티바이트를 고려해 90,000자 → 30,000자로 감소
+- **경쟁 조건**: `rebuildMetadataIndex`와 정기 트리거 간 `LockService.tryLock(0)` 추가
+- **XSS 패턴**: `onclick="window.open('${url}')"` → `data-url` 속성 방식으로 교체
+
+마지막 검증에서 `testBooleanParser` 64개, `testDriveIntegration` 8개 전원 통과.
