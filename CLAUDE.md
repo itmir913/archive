@@ -147,7 +147,7 @@ draft: true
 
 ## Claude Code 행동 규칙
 
-- **`preview_screenshot` 사용 금지** — 토큰 소모 과다. UI 검증은 `preview_snapshot`, `preview_inspect`, `preview_console_logs` 등 텍스트 기반 도구만 사용.
+- **preview 도구 일체 사용 금지** — 토큰 소모 과다. `preview_screenshot`, `preview_snapshot`, `preview_inspect`, `preview_eval`, `preview_network` 등 모두 금지. 서버 에러 확인이 필요하면 `preview_logs` (서버 사이드 로그) 만 허용. 코드 편집 결과는 코드를 읽어서 판단하고, 시각적 검증을 위해 브라우저를 열지 않는다.
 
 ## Tailwind CSS 규칙
 

@@ -11,7 +11,7 @@ interface Props {
 
 const {
   title,
-  description = 'luminousky · 2012–',
+  description = 'luminousky · archive',
   ogType = 'website',
   section,
   pagefindIgnore = false,
@@ -79,7 +79,7 @@ function navLink(s: 'archive' | 'timeline') {
           <a href={`${base}/timeline/`} class={navLink('timeline')}>Timeline</a>
           <button
             id="theme-toggle"
-            aria-label="다크 모드 전환"
+            aria-label="Toggle dark mode"
             class="ml-1 p-2 rounded-md text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
           >
             <!-- 라이트 모드에서 표시 (달 아이콘 → 다크로 전환) -->

@@ -31,7 +31,7 @@ const projectSlug = post.slug.split('/')[0];
 const projectName = PROJECTS[projectSlug] ?? post.data.project ?? projectSlug;
 
 function formatDate(d: Date) {
-  return d.toLocaleDateString('ko-KR', {
+  return d.toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -91,7 +91,7 @@ function postUrl(p: typeof post) {
               href={postUrl(prevPost)}
               class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all"
             >
-              <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">← 이전</span>
+              <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">← Prev</span>
               <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug">
                 {prevPost.data.title}
               </span>
@@ -104,7 +104,7 @@ function postUrl(p: typeof post) {
               href={postUrl(nextPost)}
               class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all sm:text-right"
             >
-              <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">다음 →</span>
+              <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">Next →</span>
               <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug">
                 {nextPost.data.title}
               </span>

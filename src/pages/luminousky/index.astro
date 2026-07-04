@@ -37,19 +37,19 @@ function formatDate(d: Date) {
 }
 ---
 
-<BaseLayout title="luminousky" description="기술적 결정과 프로젝트 기록 — luminousky 아카이브 Chapter 2." section="archive" pagefindIgnore>
+<BaseLayout title="luminousky" description="Technical decisions and project notes — luminousky archive Chapter 2." section="archive" pagefindIgnore>
   <div class="mb-10">
     <p class="text-base text-violet-500 font-medium m-0 mb-2">Chapter 2</p>
     <h1 class="text-4xl font-bold tracking-tight m-0 mb-3">luminousky</h1>
     <p class="text-base text-gray-400 m-0">
       {allPosts.length > 0
-        ? `${allPosts.length}개 기록 · ${projects.length}개 프로젝트`
-        : '기록 준비 중'}
+        ? `${allPosts.length} posts · ${projects.length} projects`
+        : 'No posts yet'}
     </p>
   </div>
 
   {allPosts.length === 0 ? (
-    <p class="text-base text-gray-400">아직 게시된 기록이 없습니다.</p>
+    <p class="text-base text-gray-400">No posts published yet.</p>
   ) : (
     <>
       <!-- 검색 + 정렬 토글 카드 -->
@@ -63,7 +63,7 @@ function formatDate(d: Date) {
           <input
             type="search"
             id="search-input"
-            placeholder="검색 (제목 · 본문)..."
+            placeholder="Search (title · content)..."
             autocomplete="off"
             class="flex-1 py-3.5 text-base font-sans bg-transparent border-0 outline-none text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-600"
           />
@@ -78,14 +78,14 @@ function formatDate(d: Date) {
               type="button"
               class="mode-btn text-base px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors cursor-pointer whitespace-nowrap"
             >
-              프로젝트
+              Projects
             </button>
             <button
               id="mode-timeline-btn"
               type="button"
               class="mode-btn text-base px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors cursor-pointer whitespace-nowrap"
             >
-              시간순
+              Timeline
             </button>
           </div>
 
@@ -99,7 +99,7 @@ function formatDate(d: Date) {
               type="button"
               class="filter-proj-btn text-base px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:border-gray-400 dark:hover:border-gray-500 transition-colors cursor-pointer whitespace-nowrap"
             >
-              전체
+              All
             </button>
             {projects.map((slug) => (
               <button
@@ -195,7 +195,7 @@ function formatDate(d: Date) {
       <div id="search-view" class="hidden">
         <p id="search-result-count" class="text-base text-gray-400 mb-6"></p>
         <ul id="search-result-list" class="list-none p-0 m-0 space-y-6"></ul>
-        <p id="search-no-results" class="hidden text-base text-gray-400">결과가 없습니다.</p>
+        <p id="search-no-results" class="hidden text-base text-gray-400">No results.</p>
       </div>
     </>
   )}
@@ -283,7 +283,7 @@ function formatDate(d: Date) {
       if (show) visible++;
     });
     if (filterStatus) {
-      filterStatus.textContent = selectedProj !== '__all__' ? `${visible}개 프로젝트 표시 중` : '';
+      filterStatus.textContent = selectedProj !== '__all__' ? `${visible} projects shown` : '';
     }
     syncProjUI();
     pushURL();
@@ -298,10 +298,10 @@ function formatDate(d: Date) {
       return;
     }
     searchNoResults.classList.add('hidden');
-    searchResultCount.textContent = `${results.length}개 결과`;
+    searchResultCount.textContent = `${results.length} results`;
     searchResultList.innerHTML = results.map((item) => {
       const href = item.url;
-      const title = item.meta?.title || '제목 없음';
+      const title = item.meta?.title || 'Untitled';
       const excerpt = item.excerpt || '';
       return `<li class="border-b border-gray-100 dark:border-gray-800 pb-6 last:border-b-0">
         <a href="${href}" class="text-base font-semibold text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 no-underline transition-colors block mb-1">${title}</a>
@@ -322,7 +322,7 @@ function formatDate(d: Date) {
     const engine = await getPagefind();
     if (!engine) {
       if (searchNoResults) {
-        searchNoResults.textContent = '전문 검색은 빌드 후 사용 가능합니다.';
+        searchNoResults.textContent = 'Full-text search is available after build.';
         searchNoResults.classList.remove('hidden');
       }
       if (searchResultCount) searchResultCount.textContent = '';

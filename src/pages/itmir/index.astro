@@ -32,13 +32,13 @@ function formatDate(d: Date) {
 }
 ---
 
-<BaseLayout title="ITMir 아카이브" description="657개 기술 기록 · 2012–2021 · Android, Linux, 앱 개발, 그리고 그 사이의 모든 것" section="archive" pagefindIgnore>
+<BaseLayout title="ITMir Archive" description="657 posts · 2012–2021 · Android, Linux, app development, and everything in between" section="archive" pagefindIgnore>
   <!-- Header -->
   <div class="mb-10">
     <p class="text-base text-blue-500 font-medium m-0 mb-2">Chapter 1</p>
     <h1 class="text-4xl font-bold tracking-tight m-0 mb-3">ITMir</h1>
     <p class="text-base text-gray-400 m-0">
-      {allPosts.length}개 포스트 · {years.length}년 · {allCategories.length}개 카테고리
+      {allPosts.length} posts · {years.length} years · {allCategories.length} categories
     </p>
   </div>
 
@@ -53,7 +53,7 @@ function formatDate(d: Date) {
       <input
         type="search"
         id="search-input"
-        placeholder="검색 (제목 · 본문)..."
+        placeholder="Search (title · content)..."
         autocomplete="off"
         class="flex-1 py-3.5 text-base font-sans bg-transparent border-0 outline-none text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-600"
       />
@@ -68,14 +68,14 @@ function formatDate(d: Date) {
           aria-controls="cat-panel"
           class="flex items-center gap-1.5 text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors cursor-pointer select-none"
         >
-          <span>카테고리</span>
+          <span>Category</span>
           <span id="cat-selected-label" class="text-blue-500 hidden"></span>
           <span id="cat-arrow" aria-hidden="true">▾</span>
         </button>
         <div
           id="cat-panel"
           role="group"
-          aria-label="카테고리 필터"
+          aria-label="Category filter"
           class="hidden flex-wrap gap-1.5 mt-2.5"
         >
           <button
@@ -83,7 +83,7 @@ function formatDate(d: Date) {
             type="button"
             class="filter-cat-btn text-base px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:border-gray-400 dark:hover:border-gray-500 transition-colors cursor-pointer whitespace-nowrap"
           >
-            전체
+            All
           </button>
           {allCategories.map((cat) => (
             <button
@@ -103,7 +103,7 @@ function formatDate(d: Date) {
   <p id="filter-status" aria-live="polite" class="text-base text-gray-400 mt-3 mb-2 empty:hidden"></p>
 
   <!-- 연도 점프: 포스트 목록의 목차, browse 모드에서만 표시 -->
-  <nav id="year-nav" aria-label="연도별 이동" class="flex flex-wrap gap-x-5 gap-y-1 mb-8 mt-4">
+  <nav id="year-nav" aria-label="Jump to year" class="flex flex-wrap gap-x-5 gap-y-1 mb-8 mt-4">
     {years.map((year) => (
       <a
         href={`#year-${year}`}
@@ -176,7 +176,7 @@ function formatDate(d: Date) {
   <div id="search-view" class="hidden">
     <p id="search-result-count" class="text-base text-gray-400 mb-6"></p>
     <ul id="search-result-list" class="list-none p-0 m-0 space-y-6"></ul>
-    <p id="search-no-results" class="hidden text-base text-gray-400">결과가 없습니다.</p>
+    <p id="search-no-results" class="hidden text-base text-gray-400">No results.</p>
   </div>
 </BaseLayout>
 
@@ -252,7 +252,7 @@ function formatDate(d: Date) {
       catSelectedLabel.textContent = '';
       catSelectedLabel.classList.add('hidden');
     } else {
-      catSelectedLabel.textContent = `(${selectedCats.size}개 선택)`;
+      catSelectedLabel.textContent = `(${selectedCats.size} selected)`;
       catSelectedLabel.classList.remove('hidden');
     }
   }
@@ -287,7 +287,7 @@ function formatDate(d: Date) {
       sec.style.display = any ? '' : 'none';
     });
     const filtered = selectedCats.size > 0;
-    if (filterStatus) filterStatus.textContent = filtered ? `${visible}개 표시 중` : '';
+    if (filterStatus) filterStatus.textContent = filtered ? `${visible} shown` : '';
     updateSelectedLabel();
     pushURL();
   }
@@ -301,10 +301,10 @@ function formatDate(d: Date) {
       return;
     }
     searchNoResults.classList.add('hidden');
-    searchResultCount.textContent = `${results.length}개 결과`;
+    searchResultCount.textContent = `${results.length} results`;
     searchResultList.innerHTML = results.map((item) => {
       const href = item.url;
-      const title = item.meta?.title || '제목 없음';
+      const title = item.meta?.title || 'Untitled';
       const excerpt = item.excerpt || '';
       return `<li class="border-b border-gray-100 dark:border-gray-800 pb-6 last:border-b-0">
         <a href="${href}" class="text-base font-semibold text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 no-underline transition-colors block mb-1">${title}</a>
@@ -327,7 +327,7 @@ function formatDate(d: Date) {
       // Pagefind 미사용 시 (개발 환경) — 제목 필터로 대체
       if (searchResultCount) searchResultCount.textContent = '';
       if (searchNoResults) {
-        searchNoResults.textContent = '전문 검색은 빌드 후 사용 가능합니다.';
+        searchNoResults.textContent = 'Full-text search is available after build.';
         searchNoResults.classList.remove('hidden');
       }
       return;
