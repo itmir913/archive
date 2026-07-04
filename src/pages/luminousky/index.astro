@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { PROJECTS } from '../../data/luminousky-projects';
 
 const allPosts = await getCollection('luminousky', ({ data }) => !data.draft);
 allPosts.sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
@@ -12,7 +13,9 @@ for (const post of allPosts) {
   const projectSlug = post.slug.split('/')[0];
   if (!byProject.has(projectSlug)) byProject.set(projectSlug, []);
   byProject.get(projectSlug)!.push(post);
-  if (!projectNames.has(projectSlug)) projectNames.set(projectSlug, post.data.project);
+  if (!projectNames.has(projectSlug)) {
+    projectNames.set(projectSlug, PROJECTS[projectSlug] ?? post.data.project ?? projectSlug);
+  }
 }
 
 const projects = [...byProject.keys()].sort((a, b) => {

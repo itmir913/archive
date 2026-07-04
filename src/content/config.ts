@@ -18,7 +18,7 @@ const luminousky = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),
-    project: z.string(),
+    project: z.string().optional(),
     description: z.string().optional().default(''),
     draft: z.boolean().default(false),
   }),

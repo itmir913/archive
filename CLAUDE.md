@@ -24,6 +24,9 @@ itmir-archive/
         {project-slug}/{num}/
           index.md
         template/index.md           ← 글쓰기 템플릿 (draft: true)
+  src/
+    data/
+      luminousky-projects.ts        ← project-slug → 표시 이름 매핑 (여기만 관리)
   metadata/
     itmir-releases-manifest.json    ← Releases 파일 매니페스트
   .gitattributes
@@ -119,11 +122,12 @@ src/
 ---
 title: "제목"
 date: "2026-07-04T12:00:00+09:00"
-project: "프로젝트 표시명"
 description: "한 줄 요약"
-draft: false
+draft: true
 ---
 ```
+
+`project` 필드는 **사용하지 않는다.** 프로젝트 표시 이름은 `src/data/luminousky-projects.ts`에서 `{project-slug} → 표시 이름` 형태로 중앙 관리한다. 새 프로젝트 추가 시 이 파일에 한 줄만 추가하면 된다.
 
 ### 새 포스트 작성 방법
 
@@ -131,7 +135,8 @@ draft: false
 2. 경로: `src/content/luminousky/{project-slug}/{num}/index.md`
    - `{project-slug}`: ASCII-safe 프로젝트 디렉토리명 (예: `school-record-app`)
    - `{num}`: 해당 프로젝트 내 순번 (1부터 시작)
-3. frontmatter의 `title`, `date`, `project`, `draft: false` 수정 후 본문 작성
+3. frontmatter의 `title`, `date` 수정, `draft: true`로 설정 후 본문 작성 (`project` 필드는 추가하지 않는다)
+   - **새 프로젝트 slug라면** `src/data/luminousky-projects.ts`에 `'slug': '표시 이름'` 한 줄 추가
 4. **이미지 첨부**: 같은 폴더에 `images/` 디렉토리 생성 → `![설명](./images/파일명.jpg)` 형태로 참조
 5. **파일 첨부**: GitHub Releases에 업로드 → URL 패턴 `https://github.com/itmir913/archive/releases/download/itmir-attachments/{filename}`
 
