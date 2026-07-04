@@ -80,7 +80,7 @@ function formatDate(d: Date) {
         <!-- 정렬 토글 + 프로젝트 필터 -->
         <div id="browse-controls" class="px-4 py-3 border-t border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-800/50 flex flex-wrap items-center gap-2">
           <!-- 정렬 토글 -->
-          <div class="flex gap-1 mr-2">
+          <div class="flex items-center mr-3">
             <button
               id="mode-project-btn"
               type="button"
@@ -88,6 +88,7 @@ function formatDate(d: Date) {
             >
               Projects
             </button>
+            <div class="w-px h-4 bg-gray-200 dark:bg-gray-700 mx-1.5 flex-shrink-0"></div>
             <button
               id="mode-timeline-btn"
               type="button"
@@ -96,9 +97,6 @@ function formatDate(d: Date) {
               Timeline
             </button>
           </div>
-
-          <!-- 구분선 -->
-          <div id="proj-divider" class="w-px h-5 bg-gray-200 dark:bg-gray-700 mx-1 self-center"></div>
 
           <!-- 프로젝트 필터 -->
           <div id="proj-filters" class="flex flex-wrap gap-1.5">
@@ -234,7 +232,6 @@ function formatDate(d: Date) {
   const searchInput = document.getElementById('search-input') as HTMLInputElement | null;
   const modeProjectBtn = document.getElementById('mode-project-btn') as HTMLButtonElement | null;
   const modeTimelineBtn = document.getElementById('mode-timeline-btn') as HTMLButtonElement | null;
-  const projDivider = document.getElementById('proj-divider') as HTMLElement | null;
   const projFilters = document.getElementById('proj-filters') as HTMLElement | null;
   const projBtns = document.querySelectorAll<HTMLButtonElement>('.filter-proj-btn');
   const projectSections = document.querySelectorAll<HTMLElement>('section.project-section');
@@ -280,7 +277,6 @@ function formatDate(d: Date) {
 
     // 프로젝트 필터는 project 모드에서만
     if (projFilters) projFilters.style.display = (isSearch || isTimeline) ? 'none' : '';
-    if (projDivider) projDivider.style.display = (isSearch || isTimeline) ? 'none' : '';
     if (filterStatus && isSearch) filterStatus.textContent = '';
   }
 
