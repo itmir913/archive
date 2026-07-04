@@ -13,3 +13,9 @@ original_url: "https://itmir.tistory.com/24"
 먼저 와이파이부터 픽스하고 소리 픽스를 두 번째로 할겁니다.
 
 한 번 구동샷 보시겠어요?ㅎㅎ
+
+## 첨부파일
+
+<video controls width="100%" style="max-width:512px">
+  <source src="https://github.com/itmir913/archive/releases/download/itmir-attachments/24-cm7-demo.mp4" type="video/mp4">
+</video>

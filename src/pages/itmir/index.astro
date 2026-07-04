@@ -303,7 +303,7 @@ function formatDate(d: Date) {
     searchNoResults.classList.add('hidden');
     searchResultCount.textContent = `${results.length}개 결과`;
     searchResultList.innerHTML = results.map((item) => {
-      const href = base + item.url;
+      const href = item.url;
       const title = item.meta?.title || '제목 없음';
       const excerpt = item.excerpt || '';
       return `<li class="border-b border-gray-100 dark:border-gray-800 pb-6 last:border-b-0">
