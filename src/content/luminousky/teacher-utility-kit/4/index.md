@@ -9,6 +9,14 @@ draft: false
 
 학교생활기록부 작성 후 금칙어·부적절 표현이 포함되어 있는지 전수 점검하는 작업은 수작업으로 하기 어렵다. PDF와 Excel 두 포맷을 모두 지원하고, 발견된 키워드를 시각적으로 강조한 결과물을 내보내는 데스크탑 앱(`WordFinderApp`)을 만들었다.
 
+## Python + PyQt6에서 Tauri로
+
+첫 구현은 Python + PyQt6 + PyInstaller(`--onedir --windowed`)였다. 그런데 학교 PC에서 실행하면 **"DLL 차단되어 실행할 수 없습니다"** 오류가 발생했다. Windows AppLocker가 Python 런타임과 Qt DLL 조합을 차단한 것이다.
+
+Tauri로 포팅하면서 이 문제가 해결됐다. Rust 네이티브 컴파일 결과물은 Python 런타임도, Qt DLL도 없는 단일 `.exe`다. AppLocker가 차단하던 대상 자체가 없어진다.
+
+기술 선택이 기존 luminousky 스택과도 자연스럽게 맞았다 — Rust 백엔드는 이미 다른 프로젝트에서 쓰고 있었고, Vue.js도 마찬가지였다.
+
 ## 기술 스택
 
 | 레이어 | 기술 | 선택 이유 |
