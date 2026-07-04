@@ -13,4 +13,15 @@ const itmir = defineCollection({
   }),
 });
 
-export const collections = { itmir };
+const luminousky = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    project: z.string(),
+    description: z.string().optional().default(''),
+    draft: z.boolean().default(false),
+  }),
+});
+
+export const collections = { itmir, luminousky };
