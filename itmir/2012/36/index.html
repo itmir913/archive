@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="ko" class="antialiased scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="이 글은 메가소마님 블로그에 포스팅된 내용을 제가 다시한번 정리하고 추가 한것임을 밝힙니다"><title>커널(menuconfig)에 대한 각종 설정 / 팁 — luminousky</title><!-- 다크모드 FOUC 방지 — 렌더링 전 클래스 적용 --><script>
+      (function () {
+        var t = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (t === 'dark' || (!t && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script><!-- OG / Twitter 메타태그 --><meta property="og:type" content="website"><meta property="og:site_name" content="luminousky"><meta property="og:title" content="커널(menuconfig)에 대한 각종 설정 / 팁 — luminousky"><meta property="og:description" content="이 글은 메가소마님 블로그에 포스팅된 내용을 제가 다시한번 정리하고 추가 한것임을 밝힙니다"><meta property="og:url" content="https://luminousky.com/archive/itmir/2012/36/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="커널(menuconfig)에 대한 각종 설정 / 팁 — luminousky"><meta name="twitter:description" content="이 글은 메가소마님 블로그에 포스팅된 내용을 제가 다시한번 정리하고 추가 한것임을 밝힙니다"><link rel="canonical" href="https://luminousky.com/archive/itmir/2012/36/"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.tpnWxIaM.css"><script type="module" src="/archive/_astro/hoisted.B59K8Pw9.js"></script></head> <body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans min-h-screen flex flex-col transition-colors"> <header class="sticky top-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-black/[0.06] dark:border-white/[0.06]"> <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"> <a href="/archive/" class="text-base font-semibold tracking-tight text-gray-900 dark:text-gray-100 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+luminousky
+</a> <nav class="flex items-center gap-1"> <a href="/archive/" class="text-base font-medium text-gray-900 dark:text-gray-100 no-underline px-3 py-1.5 rounded-md bg-gray-100 dark:bg-gray-800 transition-colors">Archive</a> <a href="/archive/timeline/" class="text-base font-medium text-gray-400 dark:text-gray-500 no-underline px-3 py-1.5 rounded-md hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Timeline</a> <button id="theme-toggle" aria-label="다크 모드 전환" class="ml-1 p-2 rounded-md text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"> <!-- 라이트 모드에서 표시 (달 아이콘 → 다크로 전환) --> <svg id="icon-moon" class="w-5 h-5 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> <!-- 다크 모드에서 표시 (해 아이콘 → 라이트로 전환) --> <svg id="icon-sun" class="w-5 h-5 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> </nav> </div> </header> <main class="flex-1"> <div class="max-w-5xl mx-auto px-6 py-14">  <div class="max-w-2xl mx-auto"> <!-- 뒤로 (검색 인덱싱 제외) --> <a href="/archive/itmir/" data-pagefind-ignore class="inline-block text-base text-gray-400 mb-8 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+← ITMir
+</a> <!-- 헤더 --> <header class="mb-10" data-pagefind-ignore> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-5 text-gray-900 dark:text-gray-100"> 커널(menuconfig)에 대한 각종 설정 / 팁 </h1> <div class="flex flex-wrap items-center gap-3 text-base text-gray-400"> <time datetime="2012-10-22T06:51:26.000Z"> 2012년 10월 22일 </time>  <span aria-hidden="true">·</span> <span>Android/Kernel</span>   <span aria-hidden="true">·</span> <a href="https://itmir.tistory.com/36" class="text-gray-400 underline underline-offset-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" target="_blank" rel="noopener noreferrer">
+원본 ↗
+</a>  </div> <p class="mt-4 mb-0 text-lg text-gray-500 dark:text-gray-400 leading-relaxed border-l-2 border-gray-200 dark:border-gray-700 pl-4"> 이 글은 메가소마님 블로그에 포스팅된 내용을 제가 다시한번 정리하고 추가 한것임을 밝힙니다 </p> </header> <!-- 본문 (전문 검색 인덱싱 대상) --> <div class="prose prose-gray dark:prose-invert max-w-none" data-pagefind-body> <p>이 글은 메가소마님 블로그에 포스팅된 내용을 제가 다시한번 정리하고 추가 한것임을 밝힙니다</p>
+<p>원본 출처는 메가소마님 블로그 (<a href="http://blog.naver.com/squake/20166635140">http://blog.naver.com/squake/20166635140</a>)에 있습니다</p>
+<p>커널 컴파일 하면서 심심해서 쓰는 글입니다 ㅇㅅㅇ</p>
+<p>대부분의 내용은 make.sh를 이용하는 것으로 이것은 <a href="http://blog.naver.com/squake/20162490596">http://blog.naver.com/squake/20162490596</a> 에서 얻으실수 있습니다</p>
+<p>make.sh는 자신의 기종에 맞게 수정하셔야 합니다</p>
+<p><strong>1. 이 커널은 이제 제겁니다! 표시 만들기</strong></p>
+<p>처음 커널 만들면서 구현하려고 노력했던 건대요</p>
+<p>커널에 대한 자신의 꼬리표(?)를 집어 넣는 방법입니다</p>
+<p>의외로 간단 합니다</p>
+<p>./make,sh menuconfig진입해서 General setup으로 들어간뒤 Local Version부분에서 엔터 하시고 입력하시면 됩니다</p>
+<p>커널 정보에 나타나게 됩니다</p>
+<p><strong>2.Tiny RCU 사용방법</strong></p>
+<p>Tiny RCU가 뭘까요?…</p>
+<p><a href="http://icarus21.tistory.com/27">http://icarus21.tistory.com/27</a></p>
+<p>영어 크리;;</p>
+<p>사용 활성화 방법은</p>
+<p>General setup/RCU Subsytem/RCU Implementation/UP-only small-memory-footprint RCU</p>
+<p>이렇게 설정하시면 된다고 합니다</p>
+<p>자세한 효과는 잘 모르겠네요 …</p>
+<p><strong>3. 모듈만 빌드하기</strong></p>
+<p>모듈만 빌드할 필요가 있는지는 잘 모르겠네요…</p>
+<p>./make.sh하면 나오던대…</p>
+<p>모듈만 따로 빌드하려면 ./make.sh modules</p>
+<p>이렇게 하시면 된다고 하셨습니다</p>
+<p><strong>4. 커널 마이너 패치</strong></p>
+<p>kernel.org등의 사이트 에서 리눅스 커널 소스를 받은뒤</p>
+<p>자신의 커널소스와 버전업할 커널소스를 풀어두고 터미널에서</p>
+<p>diff -urpN linux-2.6.35.7 linux-2.6.35.8 > kernel.patch</p>
+<p>이렇게 하시면 두 버전의 차이가 자세하게 기록되어 있는 kernel.patch파일이 나오게 되는대요</p>
+<p>이걸 patch -p1 &#x3C; kernel.patch 이렇게 커널 소스에서 터미널로 치시면 패치가 적용됩니다</p>
+<p><strong>5. Log size조정으로 64kb 메모리 확보하기</strong></p>
+<p>General setup/ Kernel log buffer size가 기본으로 17으로 되어 있습니다</p>
+<p>이건 128kb을 사용하는대요 16으로 바꿔주게 된다면 64kb를 사용하므로써 램이 64kb남게 됩니다</p>
+<p>(뭐 이렇게 까지 할…)</p>
+<p><strong>6. I/O 스케줄러 변경</strong></p>
+<p>Sio와 같은 io스케줄러를 변경하려면 아래와 같이 찾아 가면 됩니다</p>
+<p>Enable the block layer/IO Schedulers</p>
+<p>그럼 커널에 추가할 스케줄러와 기본 스케줄러를 선택할수 있습니다</p>
+<p>참고로 io스케줄러의 커널소스 위치는 커널소스/block 에 위치합니다</p>
+<p><strong>7. 부팅클럭 조절하기</strong></p>
+<p>부팅때 최대 클럭을 설정할수 있습니다</p>
+<p>System Type/[ ]Set Min/Max CPU frequencies를 활성화 하게 되면 아래 나타나게 됩니다</p>
+<p>커널에서 기본 지원되는 커널만 사용가능한다고 합니다</p>
+<p>만약 800Mhz라면 800000으로 기입하면 됩니다 단위는 khz같은대 정확하진 않습니다</p>
+<p><strong>8. SLOB 활성화 하기</strong></p>
+<p>SLOB란 무엇일까요?</p>
+<p>메가소마님 말씀을 인용하면</p>
+<p>메모리 관리자, SLOB가 소형 임베디드 시스템에 더 최적화 되서 적은양의 메모리로 동작하는 것으로 알고있습니다.</p>
+<p>한마디로 더 최적화 되어 있다는것 같습니다</p>
+<p>General setup/Choose SLAB allocator/SLOB</p>
+<p>선택해 주시면 됩니다</p> </div> <!-- 태그 -->  <!-- 이전 / 다음 --> <nav class="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800 grid grid-cols-1 sm:grid-cols-2 gap-3" data-pagefind-ignore> <div> <a href="/archive/itmir/2012/34/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
+← 이전
+</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> 우분투 64Bit unpackbootimg 오류 해결법 </span> </a> </div> <div> <a href="/archive/itmir/2012/38/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all sm:text-right"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
+다음 →
+</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> Github 사용방법 </span> </a> </div> </nav> </div>  </div> </main> <footer class="border-t border-gray-100 dark:border-gray-800 mt-auto"> <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-end gap-6"> <a href="https://luminousky.com" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+luminousky.com ↗
+</a> <a href="https://github.com/itmir913" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+GitHub ↗
+</a> </div> </footer>  </body> </html>

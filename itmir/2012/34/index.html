@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="ko" class="antialiased scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="boot.img를 쪼개기 위해 unpackbootimg가 필요한데요."><title>우분투 64Bit unpackbootimg 오류 해결법 — luminousky</title><!-- 다크모드 FOUC 방지 — 렌더링 전 클래스 적용 --><script>
+      (function () {
+        var t = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (t === 'dark' || (!t && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script><!-- OG / Twitter 메타태그 --><meta property="og:type" content="website"><meta property="og:site_name" content="luminousky"><meta property="og:title" content="우분투 64Bit unpackbootimg 오류 해결법 — luminousky"><meta property="og:description" content="boot.img를 쪼개기 위해 unpackbootimg가 필요한데요."><meta property="og:url" content="https://luminousky.com/archive/itmir/2012/34/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="우분투 64Bit unpackbootimg 오류 해결법 — luminousky"><meta name="twitter:description" content="boot.img를 쪼개기 위해 unpackbootimg가 필요한데요."><link rel="canonical" href="https://luminousky.com/archive/itmir/2012/34/"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.tpnWxIaM.css"><script type="module" src="/archive/_astro/hoisted.B59K8Pw9.js"></script></head> <body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans min-h-screen flex flex-col transition-colors"> <header class="sticky top-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-black/[0.06] dark:border-white/[0.06]"> <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"> <a href="/archive/" class="text-base font-semibold tracking-tight text-gray-900 dark:text-gray-100 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+luminousky
+</a> <nav class="flex items-center gap-1"> <a href="/archive/" class="text-base font-medium text-gray-900 dark:text-gray-100 no-underline px-3 py-1.5 rounded-md bg-gray-100 dark:bg-gray-800 transition-colors">Archive</a> <a href="/archive/timeline/" class="text-base font-medium text-gray-400 dark:text-gray-500 no-underline px-3 py-1.5 rounded-md hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Timeline</a> <button id="theme-toggle" aria-label="다크 모드 전환" class="ml-1 p-2 rounded-md text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"> <!-- 라이트 모드에서 표시 (달 아이콘 → 다크로 전환) --> <svg id="icon-moon" class="w-5 h-5 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> <!-- 다크 모드에서 표시 (해 아이콘 → 라이트로 전환) --> <svg id="icon-sun" class="w-5 h-5 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> </nav> </div> </header> <main class="flex-1"> <div class="max-w-5xl mx-auto px-6 py-14">  <div class="max-w-2xl mx-auto"> <!-- 뒤로 (검색 인덱싱 제외) --> <a href="/archive/itmir/" data-pagefind-ignore class="inline-block text-base text-gray-400 mb-8 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+← ITMir
+</a> <!-- 헤더 --> <header class="mb-10" data-pagefind-ignore> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-5 text-gray-900 dark:text-gray-100"> 우분투 64Bit unpackbootimg 오류 해결법 </h1> <div class="flex flex-wrap items-center gap-3 text-base text-gray-400"> <time datetime="2012-10-19T06:18:39.000Z"> 2012년 10월 19일 </time>  <span aria-hidden="true">·</span> <span>Computer &amp; PC/Ubuntu</span>   <span aria-hidden="true">·</span> <a href="https://itmir.tistory.com/34" class="text-gray-400 underline underline-offset-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" target="_blank" rel="noopener noreferrer">
+원본 ↗
+</a>  </div> <p class="mt-4 mb-0 text-lg text-gray-500 dark:text-gray-400 leading-relaxed border-l-2 border-gray-200 dark:border-gray-700 pl-4"> boot.img를 쪼개기 위해 unpackbootimg가 필요한데요. </p> </header> <!-- 본문 (전문 검색 인덱싱 대상) --> <div class="prose prose-gray dark:prose-invert max-w-none" data-pagefind-body> <p>boot.img를 쪼개기 위해 unpackbootimg가 필요한데요.</p>
+<p>가끔 받은 파일이 64비트에서 실행할때 찾을수 없다고 합니다.</p>
+<p>저도 그래서 빡쳤구요.</p>
+<p>다음 첨부파일으로 받아 실행해 보시길 바랍니다.</p>
+<p>명령어 뒤에 ./을 붙히시는건 아시고 계시겠죠?</p>
+<p>첨부파일 출처 : <a href="http://blog.naver.com/squake/20162488857">http://blog.naver.com/squake/20162488857</a></p>
+<p>제가 받은 파일이 잘못되었다는 생각을 가지고 다른 파일을 구하니 정상적으로 잘 되네요…</p>
+<p>64비트로 빌드된 파일을 사용해야 하나 봅니다.</p>
+<p>만약 안될경우 /bin에 755퍼미션으로 옮겨 보세요~</p>
+<p>~/bin아닙니다. ;;</p>
+<p>sudo cp unpackbootimg /bin</p>
+<p>sudo chmod /bin/unpackbootimg</p>
+<p>로 넣을 수 있습니다.</p>
+<p>+추가</p>
+<p>만약 이 파일을 받아 /bin에 넣은다음에도 오류가 발생한다면, 다음 게시글을 확인해 주세요.</p>
+<p>&#x3C;/archive/itmir/2012/35></p> </div> <!-- 태그 -->  <!-- 이전 / 다음 --> <nav class="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800 grid grid-cols-1 sm:grid-cols-2 gap-3" data-pagefind-ignore> <div> <a href="/archive/itmir/2012/7/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
+← 이전
+</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> Mir Rom BRAVE is The FASTEST Speed for KT-A750K (KT미라크A) </span> </a> </div> <div> <a href="/archive/itmir/2012/36/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all sm:text-right"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
+다음 →
+</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> 커널(menuconfig)에 대한 각종 설정 / 팁 </span> </a> </div> </nav> </div>  </div> </main> <footer class="border-t border-gray-100 dark:border-gray-800 mt-auto"> <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-end gap-6"> <a href="https://luminousky.com" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+luminousky.com ↗
+</a> <a href="https://github.com/itmir913" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+GitHub ↗
+</a> </div> </footer>  </body> </html>

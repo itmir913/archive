@@ -1,10 +1,18 @@
-<!DOCTYPE html><html lang="ko" class="antialiased scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="이번에는 서비스(Service)에 대해 알아보겠습니다"><title>#23 Service (서비스)에 대해 알아보자 — luminousky</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.Cocv7yaS.css"></head> <body class="bg-white text-gray-900 font-sans min-h-screen flex flex-col"> <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-black/[0.06]"> <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"> <a href="/archive/" class="text-base font-semibold tracking-tight text-gray-900 no-underline hover:text-blue-600 transition-colors">
+<!DOCTYPE html><html lang="ko" class="antialiased scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="이번에는 서비스(Service)에 대해 알아보겠습니다"><title>#23 Service (서비스)에 대해 알아보자 — luminousky</title><!-- 다크모드 FOUC 방지 — 렌더링 전 클래스 적용 --><script>
+      (function () {
+        var t = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (t === 'dark' || (!t && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script><!-- OG / Twitter 메타태그 --><meta property="og:type" content="website"><meta property="og:site_name" content="luminousky"><meta property="og:title" content="#23 Service (서비스)에 대해 알아보자 — luminousky"><meta property="og:description" content="이번에는 서비스(Service)에 대해 알아보겠습니다"><meta property="og:url" content="https://luminousky.com/archive/itmir/2013/414/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="#23 Service (서비스)에 대해 알아보자 — luminousky"><meta name="twitter:description" content="이번에는 서비스(Service)에 대해 알아보겠습니다"><link rel="canonical" href="https://luminousky.com/archive/itmir/2013/414/"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.tpnWxIaM.css"><script type="module" src="/archive/_astro/hoisted.B59K8Pw9.js"></script></head> <body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans min-h-screen flex flex-col transition-colors"> <header class="sticky top-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-black/[0.06] dark:border-white/[0.06]"> <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"> <a href="/archive/" class="text-base font-semibold tracking-tight text-gray-900 dark:text-gray-100 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
 luminousky
-</a> <nav class="flex items-center gap-1"> <a href="/archive/" class="text-base font-medium text-gray-900 no-underline px-3 py-1.5 rounded-md bg-gray-100 transition-colors">Archive</a> <a href="/archive/timeline/" class="text-base font-medium text-gray-400 no-underline px-3 py-1.5 rounded-md hover:text-gray-900 hover:bg-gray-50 transition-colors">Timeline</a> </nav> </div> </header> <main class="flex-1"> <div class="max-w-5xl mx-auto px-6 py-14">   <div class="max-w-2xl mx-auto"> <!-- 뒤로 --> <a href="/archive/itmir/" class="inline-block text-base text-gray-400 mb-8 no-underline hover:text-blue-600 transition-colors">
+</a> <nav class="flex items-center gap-1"> <a href="/archive/" class="text-base font-medium text-gray-900 dark:text-gray-100 no-underline px-3 py-1.5 rounded-md bg-gray-100 dark:bg-gray-800 transition-colors">Archive</a> <a href="/archive/timeline/" class="text-base font-medium text-gray-400 dark:text-gray-500 no-underline px-3 py-1.5 rounded-md hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Timeline</a> <button id="theme-toggle" aria-label="다크 모드 전환" class="ml-1 p-2 rounded-md text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"> <!-- 라이트 모드에서 표시 (달 아이콘 → 다크로 전환) --> <svg id="icon-moon" class="w-5 h-5 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> <!-- 다크 모드에서 표시 (해 아이콘 → 라이트로 전환) --> <svg id="icon-sun" class="w-5 h-5 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> </nav> </div> </header> <main class="flex-1"> <div class="max-w-5xl mx-auto px-6 py-14">  <div class="max-w-2xl mx-auto"> <!-- 뒤로 (검색 인덱싱 제외) --> <a href="/archive/itmir/" data-pagefind-ignore class="inline-block text-base text-gray-400 mb-8 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
 ← ITMir
-</a> <!-- 헤더 --> <header class="mb-10"> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-5"> #23 Service (서비스)에 대해 알아보자 </h1> <div class="flex flex-wrap items-center gap-3 text-base text-gray-400"> <time datetime="2013-12-17T09:31:30.000Z"> 2013년 12월 17일 </time>  <span aria-hidden="true">·</span> <span>Android/App</span>   <span aria-hidden="true">·</span> <a href="https://itmir.tistory.com/414" class="text-gray-400 underline underline-offset-2 hover:text-blue-600 transition-colors" target="_blank" rel="noopener noreferrer">
+</a> <!-- 헤더 --> <header class="mb-10" data-pagefind-ignore> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-5 text-gray-900 dark:text-gray-100"> #23 Service (서비스)에 대해 알아보자 </h1> <div class="flex flex-wrap items-center gap-3 text-base text-gray-400"> <time datetime="2013-12-17T09:31:30.000Z"> 2013년 12월 17일 </time>  <span aria-hidden="true">·</span> <span>Android/App</span>   <span aria-hidden="true">·</span> <a href="https://itmir.tistory.com/414" class="text-gray-400 underline underline-offset-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" target="_blank" rel="noopener noreferrer">
 원본 ↗
-</a>  </div> <p class="mt-4 mb-0 text-lg text-gray-500 leading-relaxed border-l-2 border-gray-200 pl-4"> 이번에는 서비스(Service)에 대해 알아보겠습니다 </p> </header> <!-- 본문 --> <div class="prose prose-gray max-w-none"> <p>안녕하세요</p>
+</a>  </div> <p class="mt-4 mb-0 text-lg text-gray-500 dark:text-gray-400 leading-relaxed border-l-2 border-gray-200 dark:border-gray-700 pl-4"> 이번에는 서비스(Service)에 대해 알아보겠습니다 </p> </header> <!-- 본문 (전문 검색 인덱싱 대상) --> <div class="prose prose-gray dark:prose-invert max-w-none" data-pagefind-body> <p>안녕하세요</p>
 <p>이번에는 서비스(Service)에 대해 알아보겠습니다</p>
 <p>서비스는 어플을 만들때 자주 쓰이는 기능입니다</p>
 <p>빨리 서비스에 대해 언급하고 싶어서 너무 입이 간질간질 했답니다 ㅋㅋㅋㅋㅋ</p>
@@ -32,14 +40,14 @@ luminousky
 <p>서비스는 모습(화면)이 없습니다 그러므로 layout파일과 menu파일은 필요가 없으므로 삭제해 주시면 됩니다</p>
 <p>AndroidManifest.xml은 아래와 같이 수정해 줍니다</p>
 <p>&#x3C;<strong>activity</strong></p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>android:name="whdghks913.tistory.exampleservice.Service"</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>android:name="whdghks913.tistory.exampleservice.Service"</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>android:label="@string/title_activity_service" ></span></span>
 <span class="line"><span></span></span></code></pre>
 
 <p>위와 같은 모습을</p>
 <p>&#x3C;<strong>service</strong></p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>android:name="whdghks913.tistory.exampleservice.Service"</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>android:name="whdghks913.tistory.exampleservice.Service"</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>android:label="@string/title_activity_service" /></span></span>
 <span class="line"><span></span></span></code></pre>
@@ -48,14 +56,14 @@ luminousky
 <p>마지막으로 Service.java파일을 수정해 주어야 합니다</p>
 <p>일반 화면은 Activity라는것을 상속하지만 서비스는 Service를 상속해서 만들어 집니다</p>
 <p>public class Service extends Activity {</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>@Override</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>@Override</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>protected void onCreate(Bundle savedInstanceState) {</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>    super.onCreate(savedInstanceState);</span></span>
 <span class="line"><span></span></span></code></pre>
 <p>setContentView(R.layout.activity_service);</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>}</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>}</span></span>
 <span class="line"><span></span></span></code></pre>
 <p>@Override</p>
 <p>public boolean onCreateOptionsMenu(Menu menu) {</p>
@@ -67,12 +75,12 @@ luminousky
 <p>위 코드를 아래와 같이 수정해 봅시다</p>
 <p>변한 부분을 알아보기 쉽게 굵은글씨와 취소선을 사용했습니다</p>
 <p>public class MainService extends <strong>Service</strong> {</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>@Override</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>@Override</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>public void onCreate() {</span></span>
 <span class="line"><span></span></span></code></pre>
 <p><strong>super.onCreate();</strong></p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>}</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>}</span></span>
 <span class="line"><span></span></span></code></pre>
 <p><strong>@Override</strong></p>
 <p><strong>public int onStartCommand(Intent intent, int flags, int startId) {</strong></p>
@@ -107,7 +115,7 @@ luminousky
 <p>이렇게 주었습니다</p>
 <p>이제 MainActivity.java로 넘어와서 서비스를 실행하는 메소드를 각각 만들어 줍시다</p>
 <p>public void <strong>startServiceMethod</strong>(View v){</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Intent Service = new Intent(this, **MainService.class**);</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Intent Service = new Intent(this, **MainService.class**);</span></span>
 <span class="line"><span></span></span></code></pre>
 <p><strong>Service.putExtra(“FilePath”, editText1.getText().toString());</strong></p>
 <p><strong>startService(Service);</strong></p>
@@ -129,7 +137,7 @@ luminousky
 <p>(나중에 Intent에 대해 자세하게 배울예정)</p>
 <p>다음은 서비스 정지 버튼입니다</p>
 <p>public void <strong>stopServiceMethod</strong>(View v){</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Intent Service = new Intent(this, **MainService.class**);</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Intent Service = new Intent(this, **MainService.class**);</span></span>
 <span class="line"><span></span></span></code></pre>
 <p><strong>stopService(Service);</strong></p>
 <p>}</p>
@@ -164,14 +172,14 @@ luminousky
 <p>그다음 onCreate메소드 안에 아래 문구가 필요합니다</p>
 <p>music = new MediaPlayer();</p>
 <p>music.<strong>setOnCompletionListener</strong>(new OnCompletionListener() {</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>@Override</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>@Override</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>public void onCompletion(MediaPlayer mp) {</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>    // TODO Auto-generated method stub</span></span>
 <span class="line"><span></span></span></code></pre>
 <p><strong>stopSelf();</strong> // 서비스 종료</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>}</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>}</span></span>
 <span class="line"><span></span></span></code></pre>
 <p>});</p>
 <p>setOnCompletionListener이라는 처음보는 리스너가 등장합니다</p>
@@ -182,7 +190,7 @@ luminousky
 <p>FilePath = <strong>intent.getStringExtra(“FilePath”);</strong></p>
 <p><strong>File mp3File = new File(FilePath);</strong></p>
 <p>if(<strong>! mp3File.exists()</strong>){</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Toast.makeText(this, "파일이 없습니다", Toast.LENGTH_LONG).show();</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Toast.makeText(this, "파일이 없습니다", Toast.LENGTH_LONG).show();</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>stopSelf();</span></span>
 <span class="line"><span></span></span></code></pre>
@@ -204,15 +212,15 @@ luminousky
 <p>그러나 파일이 존재할경우 쓰래드를 실행합니다</p>
 <p>onStartCommand()메소드가 끝난지점 바로 아래에 추가해 주세요</p>
 <p>Runnable task = new Runnable(){</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>public void run(){</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>public void run(){</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>    try {</span></span>
 <span class="line"><span></span></span></code></pre>
 <p><strong>music.setDataSource(FilePath);</strong></p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>        music.prepare();</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>        music.prepare();</span></span>
 <span class="line"><span></span></span></code></pre>
 <p><strong>music.start();</strong></p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    } catch (Exception e) {</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    } catch (Exception e) {</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>        // TODO Auto-generated catch block</span></span>
 <span class="line"><span></span></span>
@@ -227,7 +235,7 @@ luminousky
 <p>파일이 있을경우 DataSource를 지정하고 재생을 시작합니다</p>
 <p>onDestroy()에는 아래 문구를 넣어주세요</p>
 <p>if(music.isPlaying()){</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>music.stop();</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>music.stop();</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>music.release();</span></span>
 <span class="line"><span></span></span></code></pre>
@@ -246,12 +254,12 @@ luminousky
 <h2 id="첨부파일">첨부파일</h2>
 <ul>
 <li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleService.zip">ExampleService.zip</a> <code>1.4 MB</code></li>
-</ul> </div> <!-- 태그 -->  <!-- 이전 / 다음 --> <nav class="mt-12 pt-8 border-t border-gray-100 grid grid-cols-1 sm:grid-cols-2 gap-3"> <div> <a href="/archive/itmir/2013/411/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 hover:border-blue-200 hover:bg-blue-50/40 transition-all"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
+</ul> </div> <!-- 태그 -->  <!-- 이전 / 다음 --> <nav class="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800 grid grid-cols-1 sm:grid-cols-2 gap-3" data-pagefind-ignore> <div> <a href="/archive/itmir/2013/411/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
 ← 이전
-</span> <span class="text-base font-semibold text-gray-900 group-hover:text-blue-700 transition-colors line-clamp-2 leading-snug"> 베가 시크릿 노트 MusicPlayer </span> </a> </div> <div> <a href="/archive/itmir/2013/416/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 hover:border-blue-200 hover:bg-blue-50/40 transition-all sm:text-right"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
+</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> 베가 시크릿 노트 MusicPlayer </span> </a> </div> <div> <a href="/archive/itmir/2013/416/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all sm:text-right"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
 다음 →
-</span> <span class="text-base font-semibold text-gray-900 group-hover:text-blue-700 transition-colors line-clamp-2 leading-snug"> 삼가 고인의 명복을 빕니다 </span> </a> </div> </nav> </div>  </div> </main> <footer class="border-t border-gray-100 mt-auto"> <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-end gap-6"> <a href="https://luminousky.com" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 no-underline transition-colors">
+</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> 삼가 고인의 명복을 빕니다 </span> </a> </div> </nav> </div>  </div> </main> <footer class="border-t border-gray-100 dark:border-gray-800 mt-auto"> <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-end gap-6"> <a href="https://luminousky.com" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
 luminousky.com ↗
-</a> <a href="https://github.com/itmir913" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 no-underline transition-colors">
+</a> <a href="https://github.com/itmir913" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
 GitHub ↗
-</a> </div> </footer> </body></html>
+</a> </div> </footer>  </body> </html>

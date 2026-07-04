@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="ko" class="antialiased scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="CWM Recovery를 설치하는 방법에 대해 포스팅 해보도록 하겠습니다"><title>커스텀 리커버리 (CWM)설치방법 — luminousky</title><!-- 다크모드 FOUC 방지 — 렌더링 전 클래스 적용 --><script>
+      (function () {
+        var t = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (t === 'dark' || (!t && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script><!-- OG / Twitter 메타태그 --><meta property="og:type" content="website"><meta property="og:site_name" content="luminousky"><meta property="og:title" content="커스텀 리커버리 (CWM)설치방법 — luminousky"><meta property="og:description" content="CWM Recovery를 설치하는 방법에 대해 포스팅 해보도록 하겠습니다"><meta property="og:url" content="https://luminousky.com/archive/itmir/2012/57/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="커스텀 리커버리 (CWM)설치방법 — luminousky"><meta name="twitter:description" content="CWM Recovery를 설치하는 방법에 대해 포스팅 해보도록 하겠습니다"><link rel="canonical" href="https://luminousky.com/archive/itmir/2012/57/"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.tpnWxIaM.css"><script type="module" src="/archive/_astro/hoisted.B59K8Pw9.js"></script></head> <body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans min-h-screen flex flex-col transition-colors"> <header class="sticky top-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-black/[0.06] dark:border-white/[0.06]"> <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"> <a href="/archive/" class="text-base font-semibold tracking-tight text-gray-900 dark:text-gray-100 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+luminousky
+</a> <nav class="flex items-center gap-1"> <a href="/archive/" class="text-base font-medium text-gray-900 dark:text-gray-100 no-underline px-3 py-1.5 rounded-md bg-gray-100 dark:bg-gray-800 transition-colors">Archive</a> <a href="/archive/timeline/" class="text-base font-medium text-gray-400 dark:text-gray-500 no-underline px-3 py-1.5 rounded-md hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Timeline</a> <button id="theme-toggle" aria-label="다크 모드 전환" class="ml-1 p-2 rounded-md text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"> <!-- 라이트 모드에서 표시 (달 아이콘 → 다크로 전환) --> <svg id="icon-moon" class="w-5 h-5 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> <!-- 다크 모드에서 표시 (해 아이콘 → 라이트로 전환) --> <svg id="icon-sun" class="w-5 h-5 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> </nav> </div> </header> <main class="flex-1"> <div class="max-w-5xl mx-auto px-6 py-14">  <div class="max-w-2xl mx-auto"> <!-- 뒤로 (검색 인덱싱 제외) --> <a href="/archive/itmir/" data-pagefind-ignore class="inline-block text-base text-gray-400 mb-8 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+← ITMir
+</a> <!-- 헤더 --> <header class="mb-10" data-pagefind-ignore> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-5 text-gray-900 dark:text-gray-100"> 커스텀 리커버리 (CWM)설치방법 </h1> <div class="flex flex-wrap items-center gap-3 text-base text-gray-400"> <time datetime="2012-12-25T07:35:38.000Z"> 2012년 12월 25일 </time>  <span aria-hidden="true">·</span> <span>SmartPhone/Android</span>   <span aria-hidden="true">·</span> <a href="https://itmir.tistory.com/57" class="text-gray-400 underline underline-offset-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" target="_blank" rel="noopener noreferrer">
+원본 ↗
+</a>  </div> <p class="mt-4 mb-0 text-lg text-gray-500 dark:text-gray-400 leading-relaxed border-l-2 border-gray-200 dark:border-gray-700 pl-4"> CWM Recovery를 설치하는 방법에 대해 포스팅 해보도록 하겠습니다 </p> </header> <!-- 본문 (전문 검색 인덱싱 대상) --> <div class="prose prose-gray dark:prose-invert max-w-none" data-pagefind-body> <p>CWM Recovery를 설치하는 방법에 대해 포스팅 해보도록 하겠습니다</p>
+<p>먼저 준비물이 필요한대요</p>
+<p>1). 첨부파일 (새폴더님 게시글 첨부파일 이용)</p>
+<p>2). Vega USB 드라이버</p>
+<p>3). 루트 익스플로러</p>
+<p>4). 터미널 에뮬레이터 (따로 Fastboot로 진입할수 있는 기기는 없어도 됩니다)</p>
+<p>5). Fastboot드라이버</p>
+<p>6). 기기의 recovery.img 파일</p>
+<p>이 모든것을 준비해 주시길 바랍니다</p>
+<p>그럼 시작하겠습니다</p>
+<ol>
+<li>Vega USB 드라이버 설치</li>
+</ol>
+<p><a href="http://www.vegaservice.co.kr/down/software/main.sky">이 링크</a>를 클릭하여 자신의 기기에 맞는 USB드라이버를 설치해 주세요</p>
+<p>따로 사진과 언급은 하지 않겠습니다…</p>
+<ol start="2">
+<li>루트익스플로러로 파일 삭제</li>
+</ol>
+<p>/system에 있는 boot-from-recovery.p 파일과</p>
+<p>/system/etc/install-recovery.sh파일을 제거해 주셔야 합니다</p>
+<p>파일의 이름만 바꾸셔도 되고 백업해 두셔도 됩니다</p>
+<p>이 파일들은 순정 리커버리로 되돌리는 역활을 하기 때문에 지우셔야 합니다</p>
+<ol start="3">
+<li>Fastboot모드로 재부팅</li>
+</ol>
+<p>스마트폰 자체에 fastboot로 진입할수 있는 키가 있다면 진입해 주세요</p>
+<p>만약 없다면 터미널 에뮬레이터를 열어 주신뒤 다음과 같이 입력해 주세요</p>
+<p>su</p>
+<p>reboot fastboot</p>
+<p>그럼 fastboot로 재부팅 하게 됩니다</p>
+<p>검은 화면에 SKY든 하얀화면의 SKY든 fastboot는 기기마다 모양이 조금씩 다릅니다</p>
+<p>아니면 adb-windows reboot fastboot 명령어로 진입하셔도 됩니다</p>
+<ol start="4">
+<li>컴퓨터와 연결</li>
+</ol>
+<p>이상태에서 바로 USB로 컴퓨터와 연결해 주세요</p>
+<p>윈도우7이신분들은 대부분 기기를 자동으로 인식하고 설치할겁니다</p>
+<p>만약 드라이버가 설치되지 않았다는 표시가 뜨면 fastboot드라이버를 설치해야 합니다</p>
+<p>인식되신 분들은 바로 5번으로 넘어가 주세요</p>
+<p>그리고 첨부파일의 fastboot를 압축푼뒤 기기의 recovery파일을 그 폴더에 넣어주세요</p>
+<p>fastboot드라이버를 설치하는 방법입니다 (참고: <a href="http://cafe.naver.com/skydevelopers/5870">http://cafe.naver.com/skydevelopers/5870</a>)</p>
+<p>fastboot 드라이버 설치방법</p>
+<p>첨부파일중 fastboot driver을 받아주신뒤 제어판에서 장치관리자를 들어가시면 ?Android가 있을겁니다</p>
+<p>마우스 오른쪽 클릭, 드라이버 업데이트를 눌러줍시다</p>
+<p><img  src="/archive/_astro/1.V0pNx0Ee_ZMr9Os.webp" alt="" width="375" height="277" loading="lazy" decoding="async"><br>
+이 사진은 XP의 사진으로 추정됩니다</p>
+<p>다음을 눌러주세요<br>
+<img  src="/archive/_astro/2.DivKc7LS_lsRrM.webp" alt="" width="366" height="236" loading="lazy" decoding="async"><br>
+특정 위치에서 설치를 눌러주신후<br>
+<img  src="/archive/_astro/3.B-whKCob_ZUEkkJ.webp" alt="" width="528" height="59" loading="lazy" decoding="async"><br>
+직접 찾아야 합니다<br>
+<img  src="/archive/_astro/4.3P1KEyhN_Z1BWaUW.webp" alt="" width="496" height="73" loading="lazy" decoding="async"><br>
+모든 장치 표시를 선택해 주세요<br>
+<img  src="/archive/_astro/5.CazuXtn1_ZJtSdf.webp" alt="" width="154" height="56" loading="lazy" decoding="async"><br>
+그 다음에서 디스크 있음을 눌러주신뒤<br>
+<img  src="/archive/_astro/6.BYNYuWkZ_1d0PU.webp" alt="" width="426" height="57" loading="lazy" decoding="async"><br>
+찾아보기를 눌러서<br>
+<img  src="/archive/_astro/7.CpCdbKXR_ZTpGjw.webp" alt="" width="537" height="303" loading="lazy" decoding="async"><br>
+Fastboot Drivers폴더에 들어간뒤 android_winusb를 클릭/열기 해주시면 완료됩니다<br>
+<img  src="/archive/_astro/8.Rf56Vy4z_1CgKqR.webp" alt="" width="354" height="73" loading="lazy" decoding="async"></p>
+<p>그럼 설치가 끝나게 됩니다</p>
+<p>윈도우7도 위와 비슷합니다</p>
+<p>나중에 사진을 더 추가하도록 하겠습니다</p>
+<ol start="5">
+<li>CMD열기</li>
+</ol>
+<p>시작-실행-cmd를 열어줍시다</p>
+<p>그뒤 fastboot폴더가 있는 위치로 이동해 주세요</p>
+<p>이동방법은 cd c:\fastboot</p>
+<p>위와 같은 명령어 또는</p>
+<p>압축푼 폴더를 Shift키+마우스 오른쪽키를 누르시면 여기서 명령창 열기라는 메뉴가 생기는대요 이걸로 가셔도 됩니다</p>
+<p>아무튼 폴더로 이동하시고</p>
+<p>fastboot-windows devices</p>
+<p>fastboot-windows flash recovery recovery.img</p>
+<p>를 입력하시면 됩니다</p>
+<p>waiting for device이 개속 뜨면 드라이버가 재대로 설치되지 않아서 그런겁니다</p>
+<p>Send … OK</p>
+<p>Write … OK</p>
+<p>가 뜨게되면 완료입니다</p>
+<ol start="6">
+<li>완료</li>
+</ol>
+<p>이재 리커버리로 재부팅 하세요</p>
+<p>정상적으로 뜨게되면 완료입니다 ㅎ</p>
+<p>명령어는 txt로 올려두었습니다</p>
+<p><a href="/archive/itmir/2012/27">2013/01/27 - [강좌/팁/SmartPhone 강좌] - Boot.img Recovery.img 원클릭 적용툴</a></p> </div> <!-- 태그 -->  <!-- 이전 / 다음 --> <nav class="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800 grid grid-cols-1 sm:grid-cols-2 gap-3" data-pagefind-ignore> <div> <a href="/archive/itmir/2012/52/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
+← 이전
+</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> 커널 컴파일을 위한 기본 환경 구축 스크립트 </span> </a> </div> <div> <a href="/archive/itmir/2012/58/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all sm:text-right"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
+다음 →
+</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> 어디서나 실행할 수 있게 PATH해주는 스크립트 </span> </a> </div> </nav> </div>  </div> </main> <footer class="border-t border-gray-100 dark:border-gray-800 mt-auto"> <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-end gap-6"> <a href="https://luminousky.com" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+luminousky.com ↗
+</a> <a href="https://github.com/itmir913" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+GitHub ↗
+</a> </div> </footer>  </body> </html>

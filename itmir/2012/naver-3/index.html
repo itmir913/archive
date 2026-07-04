@@ -1,10 +1,18 @@
-<!DOCTYPE html><html lang="ko" class="antialiased scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Aroma Installer aroma-config 작성법 왕초보 따라하기 강좌"><title>Aroma Installer 왕초보 따라하기 강좌 - aroma-config편 — luminousky</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.Cocv7yaS.css"></head> <body class="bg-white text-gray-900 font-sans min-h-screen flex flex-col"> <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-black/[0.06]"> <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"> <a href="/archive/" class="text-base font-semibold tracking-tight text-gray-900 no-underline hover:text-blue-600 transition-colors">
+<!DOCTYPE html><html lang="ko" class="antialiased scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Aroma Installer aroma-config 작성법 왕초보 따라하기 강좌"><title>Aroma Installer 왕초보 따라하기 강좌 - aroma-config편 — luminousky</title><!-- 다크모드 FOUC 방지 — 렌더링 전 클래스 적용 --><script>
+      (function () {
+        var t = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (t === 'dark' || (!t && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script><!-- OG / Twitter 메타태그 --><meta property="og:type" content="website"><meta property="og:site_name" content="luminousky"><meta property="og:title" content="Aroma Installer 왕초보 따라하기 강좌 - aroma-config편 — luminousky"><meta property="og:description" content="Aroma Installer aroma-config 작성법 왕초보 따라하기 강좌"><meta property="og:url" content="https://luminousky.com/archive/itmir/2012/naver-3/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Aroma Installer 왕초보 따라하기 강좌 - aroma-config편 — luminousky"><meta name="twitter:description" content="Aroma Installer aroma-config 작성법 왕초보 따라하기 강좌"><link rel="canonical" href="https://luminousky.com/archive/itmir/2012/naver-3/"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.tpnWxIaM.css"><script type="module" src="/archive/_astro/hoisted.B59K8Pw9.js"></script></head> <body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans min-h-screen flex flex-col transition-colors"> <header class="sticky top-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-black/[0.06] dark:border-white/[0.06]"> <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"> <a href="/archive/" class="text-base font-semibold tracking-tight text-gray-900 dark:text-gray-100 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
 luminousky
-</a> <nav class="flex items-center gap-1"> <a href="/archive/" class="text-base font-medium text-gray-900 no-underline px-3 py-1.5 rounded-md bg-gray-100 transition-colors">Archive</a> <a href="/archive/timeline/" class="text-base font-medium text-gray-400 no-underline px-3 py-1.5 rounded-md hover:text-gray-900 hover:bg-gray-50 transition-colors">Timeline</a> </nav> </div> </header> <main class="flex-1"> <div class="max-w-5xl mx-auto px-6 py-14">   <div class="max-w-2xl mx-auto"> <!-- 뒤로 --> <a href="/archive/itmir/" class="inline-block text-base text-gray-400 mb-8 no-underline hover:text-blue-600 transition-colors">
+</a> <nav class="flex items-center gap-1"> <a href="/archive/" class="text-base font-medium text-gray-900 dark:text-gray-100 no-underline px-3 py-1.5 rounded-md bg-gray-100 dark:bg-gray-800 transition-colors">Archive</a> <a href="/archive/timeline/" class="text-base font-medium text-gray-400 dark:text-gray-500 no-underline px-3 py-1.5 rounded-md hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Timeline</a> <button id="theme-toggle" aria-label="다크 모드 전환" class="ml-1 p-2 rounded-md text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"> <!-- 라이트 모드에서 표시 (달 아이콘 → 다크로 전환) --> <svg id="icon-moon" class="w-5 h-5 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> <!-- 다크 모드에서 표시 (해 아이콘 → 라이트로 전환) --> <svg id="icon-sun" class="w-5 h-5 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> </nav> </div> </header> <main class="flex-1"> <div class="max-w-5xl mx-auto px-6 py-14">  <div class="max-w-2xl mx-auto"> <!-- 뒤로 (검색 인덱싱 제외) --> <a href="/archive/itmir/" data-pagefind-ignore class="inline-block text-base text-gray-400 mb-8 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
 ← ITMir
-</a> <!-- 헤더 --> <header class="mb-10"> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-5"> Aroma Installer 왕초보 따라하기 강좌 - aroma-config편 </h1> <div class="flex flex-wrap items-center gap-3 text-base text-gray-400"> <time datetime="2012-08-01T15:00:00.000Z"> 2012년 8월 2일 </time>  <span aria-hidden="true">·</span> <span>Android/Build</span>   <span aria-hidden="true">·</span> <a href="https://blog.naver.com/whdghks913/20163432312" class="text-gray-400 underline underline-offset-2 hover:text-blue-600 transition-colors" target="_blank" rel="noopener noreferrer">
+</a> <!-- 헤더 --> <header class="mb-10" data-pagefind-ignore> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-5 text-gray-900 dark:text-gray-100"> Aroma Installer 왕초보 따라하기 강좌 - aroma-config편 </h1> <div class="flex flex-wrap items-center gap-3 text-base text-gray-400"> <time datetime="2012-08-01T15:00:00.000Z"> 2012년 8월 2일 </time>  <span aria-hidden="true">·</span> <span>Android/Build</span>   <span aria-hidden="true">·</span> <a href="https://blog.naver.com/whdghks913/20163432312" class="text-gray-400 underline underline-offset-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" target="_blank" rel="noopener noreferrer">
 원본 ↗
-</a>  </div> <p class="mt-4 mb-0 text-lg text-gray-500 leading-relaxed border-l-2 border-gray-200 pl-4"> Aroma Installer aroma-config 작성법 왕초보 따라하기 강좌 </p> </header> <!-- 본문 --> <div class="prose prose-gray max-w-none"> <p>아로마 인스톨러를 처음 사용하시는 롬쿠커 분들!</p>
+</a>  </div> <p class="mt-4 mb-0 text-lg text-gray-500 dark:text-gray-400 leading-relaxed border-l-2 border-gray-200 dark:border-gray-700 pl-4"> Aroma Installer aroma-config 작성법 왕초보 따라하기 강좌 </p> </header> <!-- 본문 (전문 검색 인덱싱 대상) --> <div class="prose prose-gray dark:prose-invert max-w-none" data-pagefind-body> <p>아로마 인스톨러를 처음 사용하시는 롬쿠커 분들!</p>
 <p>제 강좌 천천히 따라하시면 꼭 성공하실수 있을거라 믿고 강좌 서술해 봅니다</p>
 <p>아로마 인스톨러 원문입니다</p>
 <p><a href="http://forum.xda-developers.com/showthread.php?p=21755929">http://forum.xda-developers.com/showthread.php?p=21755929</a></p>
@@ -23,7 +31,7 @@ luminousky
 <p>이곳안에 대부분의 자료가 다 들어있습니다</p>
 <p>이참에 롬파일 설명을 하면</p>
 <p>META-INF - com - google - android ┎                            aroma ┎ fonts</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>                                                │aroma-config                   │ icons</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>                                                │aroma-config                   │ icons</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>                                                │update-binary                  │ langs</span></span>
 <span class="line"><span></span></span>
@@ -196,13 +204,13 @@ lang(“check”),</p>
 <p>textbox(
 ”&#x3C;~Log>”,</p>
 <p>처음 타이틀 부분</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"&#x3C;~ChangeLog>",</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"&#x3C;~ChangeLog>",</span></span>
 <span class="line"><span></span></span></code></pre>
 <p>약간의 설명</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"icons/log",</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"icons/log",</span></span>
 <span class="line"><span></span></span></code></pre>
 <p>아이콘 위치를 나타냅니다</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>resread("log.txt")</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>resread("log.txt")</span></span>
 <span class="line"><span></span></span></code></pre>
 <p>txt파일을 불러들어 표시합니다 한글은 UTF-8형식으로 인코딩해야 표시됩니다</p>
 <p>META-INF/com/google/android/aroma/log.txt입니다
@@ -212,19 +220,19 @@ lang(“check”),</p>
 <p>agreebox(
 ”&#x3C;~agreebox>”,</p>
 <p>제목/타이틀 부분 입니다</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"&#x3C;~agreebox1>",</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"&#x3C;~agreebox1>",</span></span>
 <span class="line"><span></span></span></code></pre>
 <p>그 위 나타날 약간의 설명입니다</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"icons/agreement",</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"icons/agreement",</span></span>
 <span class="line"><span></span></span></code></pre>
 <p>아이콘 위치입니다</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>resread("agreeboxen.txt"),</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>resread("agreeboxen.txt"),</span></span>
 <span class="line"><span></span></span></code></pre>
 <p>이것도 역시 txt파일을 불러들이며 META-INF/com/google/android/aroma/agreement.txt입니다</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"&#x3C;~agreebox.1>",</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"&#x3C;~agreebox.1>",</span></span>
 <span class="line"><span></span></span></code></pre>
 <p>위 내용에 동의하시면 체크하세요 부분 입니다</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"&#x3C;~agreebox.2>"</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"&#x3C;~agreebox.2>"</span></span>
 <span class="line"><span></span></span></code></pre>
 <p>체크를 하지 않았을경우 나타나는 경고문(?)의 내용입니다
 );</p>
@@ -250,16 +258,16 @@ reboot(“disable”); 명령어등을 통해 바로 재부팅 하게 해도 됩
 <p>checkviewbox(
 lang(“Completed”),</p>
 <p>제목</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"&#x3C;~Completed3>\n",</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"&#x3C;~Completed3>\n",</span></span>
 <span class="line"><span></span></span></code></pre>
 <p>약간의 설명</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"icons/license",</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"icons/license",</span></span>
 <span class="line"><span></span></span></code></pre>
 <p>아이콘 위치</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"&#x3C;~Completed4>",</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"&#x3C;~Completed4>",</span></span>
 <span class="line"><span></span></span></code></pre>
 <p>체크표시 옆 문구</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"1",</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"1",</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>"reboot_it"</span></span>
 <span class="line"><span></span></span></code></pre>
@@ -272,12 +280,12 @@ endif;</p>
 <p>이것을 추가해주시면 됩니다</p>
 <p>이렇게 해서 aroma-config편 강좌를 끝내게 됩니다</p>
 <p>한시간동안 타자 두들이며 쓴것입니다…;;</p>
-<p>질문 있으시면 제 능력안에서 도와드리겠습니다!!</p> </div> <!-- 태그 -->  <!-- 이전 / 다음 --> <nav class="mt-12 pt-8 border-t border-gray-100 grid grid-cols-1 sm:grid-cols-2 gap-3"> <div> <a href="/archive/itmir/2012/naver-2/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 hover:border-blue-200 hover:bg-blue-50/40 transition-all"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
+<p>질문 있으시면 제 능력안에서 도와드리겠습니다!!</p> </div> <!-- 태그 -->  <!-- 이전 / 다음 --> <nav class="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800 grid grid-cols-1 sm:grid-cols-2 gap-3" data-pagefind-ignore> <div> <a href="/archive/itmir/2012/naver-2/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
 ← 이전
-</span> <span class="text-base font-semibold text-gray-900 group-hover:text-blue-700 transition-colors line-clamp-2 leading-snug"> 부트/리커버리 파티션 찾기 </span> </a> </div> <div> <a href="/archive/itmir/2013/5/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 hover:border-blue-200 hover:bg-blue-50/40 transition-all sm:text-right"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
+</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> 부트/리커버리 파티션 찾기 </span> </a> </div> <div> <a href="/archive/itmir/2012/5/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all sm:text-right"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
 다음 →
-</span> <span class="text-base font-semibold text-gray-900 group-hover:text-blue-700 transition-colors line-clamp-2 leading-snug"> Mir Rom BETA - Apple For KT-A750K (KT 미라크A) </span> </a> </div> </nav> </div>  </div> </main> <footer class="border-t border-gray-100 mt-auto"> <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-end gap-6"> <a href="https://luminousky.com" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 no-underline transition-colors">
+</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> Mir Rom BETA - Apple For KT-A750K (KT 미라크A) </span> </a> </div> </nav> </div>  </div> </main> <footer class="border-t border-gray-100 dark:border-gray-800 mt-auto"> <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-end gap-6"> <a href="https://luminousky.com" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
 luminousky.com ↗
-</a> <a href="https://github.com/itmir913" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 no-underline transition-colors">
+</a> <a href="https://github.com/itmir913" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
 GitHub ↗
-</a> </div> </footer> </body></html>
+</a> </div> </footer>  </body> </html>

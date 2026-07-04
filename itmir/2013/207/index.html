@@ -1,18 +1,26 @@
-<!DOCTYPE html><html lang="ko" class="antialiased scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="이 글은 기초적인 우분투 지식이 있으신 분들을 위한 글입니다."><title>[Dev] 루팅용 Boot.img 만들기 강좌 — luminousky</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.Cocv7yaS.css"></head> <body class="bg-white text-gray-900 font-sans min-h-screen flex flex-col"> <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-black/[0.06]"> <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"> <a href="/archive/" class="text-base font-semibold tracking-tight text-gray-900 no-underline hover:text-blue-600 transition-colors">
+<!DOCTYPE html><html lang="ko" class="antialiased scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="이 글은 기초적인 우분투 지식이 있으신 분들을 위한 글입니다."><title>[Dev] 루팅용 Boot.img 만들기 강좌 — luminousky</title><!-- 다크모드 FOUC 방지 — 렌더링 전 클래스 적용 --><script>
+      (function () {
+        var t = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (t === 'dark' || (!t && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script><!-- OG / Twitter 메타태그 --><meta property="og:type" content="website"><meta property="og:site_name" content="luminousky"><meta property="og:title" content="[Dev] 루팅용 Boot.img 만들기 강좌 — luminousky"><meta property="og:description" content="이 글은 기초적인 우분투 지식이 있으신 분들을 위한 글입니다."><meta property="og:url" content="https://luminousky.com/archive/itmir/2013/207/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="[Dev] 루팅용 Boot.img 만들기 강좌 — luminousky"><meta name="twitter:description" content="이 글은 기초적인 우분투 지식이 있으신 분들을 위한 글입니다."><link rel="canonical" href="https://luminousky.com/archive/itmir/2013/207/"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.tpnWxIaM.css"><script type="module" src="/archive/_astro/hoisted.B59K8Pw9.js"></script></head> <body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans min-h-screen flex flex-col transition-colors"> <header class="sticky top-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-black/[0.06] dark:border-white/[0.06]"> <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"> <a href="/archive/" class="text-base font-semibold tracking-tight text-gray-900 dark:text-gray-100 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
 luminousky
-</a> <nav class="flex items-center gap-1"> <a href="/archive/" class="text-base font-medium text-gray-900 no-underline px-3 py-1.5 rounded-md bg-gray-100 transition-colors">Archive</a> <a href="/archive/timeline/" class="text-base font-medium text-gray-400 no-underline px-3 py-1.5 rounded-md hover:text-gray-900 hover:bg-gray-50 transition-colors">Timeline</a> </nav> </div> </header> <main class="flex-1"> <div class="max-w-5xl mx-auto px-6 py-14">   <div class="max-w-2xl mx-auto"> <!-- 뒤로 --> <a href="/archive/itmir/" class="inline-block text-base text-gray-400 mb-8 no-underline hover:text-blue-600 transition-colors">
+</a> <nav class="flex items-center gap-1"> <a href="/archive/" class="text-base font-medium text-gray-900 dark:text-gray-100 no-underline px-3 py-1.5 rounded-md bg-gray-100 dark:bg-gray-800 transition-colors">Archive</a> <a href="/archive/timeline/" class="text-base font-medium text-gray-400 dark:text-gray-500 no-underline px-3 py-1.5 rounded-md hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Timeline</a> <button id="theme-toggle" aria-label="다크 모드 전환" class="ml-1 p-2 rounded-md text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"> <!-- 라이트 모드에서 표시 (달 아이콘 → 다크로 전환) --> <svg id="icon-moon" class="w-5 h-5 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> <!-- 다크 모드에서 표시 (해 아이콘 → 라이트로 전환) --> <svg id="icon-sun" class="w-5 h-5 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> </nav> </div> </header> <main class="flex-1"> <div class="max-w-5xl mx-auto px-6 py-14">  <div class="max-w-2xl mx-auto"> <!-- 뒤로 (검색 인덱싱 제외) --> <a href="/archive/itmir/" data-pagefind-ignore class="inline-block text-base text-gray-400 mb-8 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
 ← ITMir
-</a> <!-- 헤더 --> <header class="mb-10"> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-5"> [Dev] 루팅용 Boot.img 만들기 강좌 </h1> <div class="flex flex-wrap items-center gap-3 text-base text-gray-400"> <time datetime="2013-05-03T09:12:38.000Z"> 2013년 5월 3일 </time>  <span aria-hidden="true">·</span> <span>Computer &amp; PC/Ubuntu</span>   <span aria-hidden="true">·</span> <a href="https://itmir.tistory.com/207" class="text-gray-400 underline underline-offset-2 hover:text-blue-600 transition-colors" target="_blank" rel="noopener noreferrer">
+</a> <!-- 헤더 --> <header class="mb-10" data-pagefind-ignore> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-5 text-gray-900 dark:text-gray-100"> [Dev] 루팅용 Boot.img 만들기 강좌 </h1> <div class="flex flex-wrap items-center gap-3 text-base text-gray-400"> <time datetime="2013-05-03T09:12:38.000Z"> 2013년 5월 3일 </time>  <span aria-hidden="true">·</span> <span>Computer &amp; PC/Ubuntu</span>   <span aria-hidden="true">·</span> <a href="https://itmir.tistory.com/207" class="text-gray-400 underline underline-offset-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" target="_blank" rel="noopener noreferrer">
 원본 ↗
-</a>  </div> <p class="mt-4 mb-0 text-lg text-gray-500 leading-relaxed border-l-2 border-gray-200 pl-4"> 이 글은 기초적인 우분투 지식이 있으신 분들을 위한 글입니다. </p> </header> <!-- 본문 --> <div class="prose prose-gray max-w-none"> <p>이 글은 기초적인 우분투 지식이 있으신 분들을 위한 글입니다.</p>
+</a>  </div> <p class="mt-4 mb-0 text-lg text-gray-500 dark:text-gray-400 leading-relaxed border-l-2 border-gray-200 dark:border-gray-700 pl-4"> 이 글은 기초적인 우분투 지식이 있으신 분들을 위한 글입니다. </p> </header> <!-- 본문 (전문 검색 인덱싱 대상) --> <div class="prose prose-gray dark:prose-invert max-w-none" data-pagefind-body> <p>이 글은 기초적인 우분투 지식이 있으신 분들을 위한 글입니다.</p>
 <p>또한 리눅스 언어를 약간 알고 있으셔야 이해하기 쉬운 글입니다. 만약 이해가 안가신다면 각주를 클릭해 주세요.</p>
 <p>이번에는 한번의 부팅으로 루팅이 되는 Boot.img를 만들어 보도록 하겠습니다.</p>
 <p>연관된글 or 먼저 읽으시면 이해에 도움이 되는 글</p>
-<p><a href="/archive/itmir/2013/48">2013/01/27 - [강좌/팁/Ubuntu 강좌] - 부트이미지(Boot.img) 분해/조립(?) 강좌</a></p>
-<p><a href="/archive/itmir/2013/34">2013/01/27 - [강좌/팁/Ubuntu 강좌] - 우분투 64Bit unpackbootimg 오류 해결법</a></p>
+<p><a href="/archive/itmir/2012/48">2013/01/27 - [강좌/팁/Ubuntu 강좌] - 부트이미지(Boot.img) 분해/조립(?) 강좌</a></p>
+<p><a href="/archive/itmir/2012/34">2013/01/27 - [강좌/팁/Ubuntu 강좌] - 우분투 64Bit unpackbootimg 오류 해결법</a></p>
 <p><a href="/archive/itmir/2013/181">2013/03/24 - [강좌/팁/Ubuntu 강좌] - mkbootimg</a></p>
-<p><a href="/archive/itmir/2013/58">2013/01/27 - [강좌/팁/Ubuntu 강좌] - 어디서나 실행할수 있게 PATH해주는 스크립트</a></p>
-<p><a href="/archive/itmir/2013/35">2013/01/27 - [강좌/팁/Ubuntu 강좌] - 64Bit 우분투에서 32Bit 바이너리/프로그램 이용하기</a></p>
+<p><a href="/archive/itmir/2012/58">2013/01/27 - [강좌/팁/Ubuntu 강좌] - 어디서나 실행할수 있게 PATH해주는 스크립트</a></p>
+<p><a href="/archive/itmir/2012/35">2013/01/27 - [강좌/팁/Ubuntu 강좌] - 64Bit 우분투에서 32Bit 바이너리/프로그램 이용하기</a></p>
 <p>위 목록은 먼저 읽어주시면 아주 도움이 많이 되실 겁니다.</p>
 <p>준비물 목록</p>
 <ol>
@@ -42,7 +50,7 @@ luminousky
 <p>init.rooting.sh에서는 Root폴더에 있는 su파일들을 /system에 넣은 뒤에 적절한 권한을 주고 재부팅 하는 명령어가 들어 있습니다.</p>
 <p>그럼 하나하나 수정해 보겠습니다.</p>
 <p>먼저 init.rc를 수정해 보겠습니다.</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>service flash_recovery /system/etc/install-recovery.sh</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>service flash_recovery /system/etc/install-recovery.sh</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>    class main</span></span>
 <span class="line"><span></span></span>
@@ -66,21 +74,21 @@ luminousky
 <p>Superuser.apk와 su는 램디스크안 Root라는 폴더를 만들어 넣어주시면 됩니다.</p>
 <p>R의 대문자 소문자를 가려야 하나? 라고 하실수 있는데요.</p>
 <p>init.rooting.sh를 열어보시면</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">#!/system/bin/sh</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">#!/system/bin/sh</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6F42C1">mount</span><span style="color:#005CC5"> -orw,remount</span><span style="color:#032F62"> /system</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">mount</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> -orw,remount</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> /system</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6F42C1">cp</span><span style="color:#032F62"> /Root/Superuser.apk</span><span style="color:#032F62"> /system/app/Superuser.apk</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">cp</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> /Root/Superuser.apk</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> /system/app/Superuser.apk</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6F42C1">cp</span><span style="color:#032F62"> /Root/su</span><span style="color:#032F62"> /system/bin/su</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">cp</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> /Root/su</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> /system/bin/su</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6F42C1">chmod</span><span style="color:#005CC5"> 644</span><span style="color:#032F62"> /system/app/Superuser.apk</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">chmod</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> 644</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> /system/app/Superuser.apk</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6F42C1">chmod</span><span style="color:#005CC5"> 06755</span><span style="color:#032F62"> /system/bin/su</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">chmod</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> 06755</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> /system/bin/su</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6F42C1">ln</span><span style="color:#005CC5"> -s</span><span style="color:#032F62"> /system/bin/su</span><span style="color:#032F62"> /system/xbin/su</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">ln</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> -s</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> /system/bin/su</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> /system/xbin/su</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6F42C1">reboot</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">reboot</span></span>
 <span class="line"></span></code></pre>
 <p>위와 같이 su와 SuperUser.apk를 /Root에서 복사하도록 설정하고 있기에 대소문자를 구분해서 정확하게 쓰셔야 합니다.</p>
 <p>이왕 소스를 올린거 소스 분석을 해보면,</p>
@@ -90,7 +98,7 @@ luminousky
 <p>마지막으로 reboot명령어로 이제 기능을 다한 루팅용 boot.img의 사용을 중단하게 하는 것 이지요.</p>
 <p>이렇게 램디스크를 수정하신다음 boot.img를 만드시면 한번의 부팅으로 루팅을 가능하게 하는 boot.img가 완성됩니다.</p>
 <p>어제 만든 Easy_Root_for_VegaRacer2툴도 위와 같은 방법으로 제작된 파일입니다.</p>
-<p>— Boot.img를 분해하고 다시 만드는 작업은 <a href="/archive/itmir/2013/48"><strong>2013/01/27 - [강좌/팁/Ubuntu 강좌] - 부트이미지(Boot.img) 분해/조립(?) 강좌</strong></a> 을 참고해 주세요 —</p>
+<p>— Boot.img를 분해하고 다시 만드는 작업은 <a href="/archive/itmir/2012/48"><strong>2013/01/27 - [강좌/팁/Ubuntu 강좌] - 부트이미지(Boot.img) 분해/조립(?) 강좌</strong></a> 을 참고해 주세요 —</p>
 <p>이제 우리가 만든 원부팅 루팅 boot.img를 fastboot boot명령어로 한번 부팅시켜 주시면.</p>
 <p>자동으로 init.rooting.sh가 실행되며 완전히 켜지기전 (reboot로) 재부팅 될겁니다.</p>
 <p>fastboot boot의 특성상 재부팅이 일어날경우 원래 boot.img로 부팅하기 때문에 우리가 만들었던 루팅용 이미지는 딱 한 번만 사용되고 이후에는 사용되지 않습니다.</p>
@@ -104,12 +112,12 @@ luminousky
 <li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/207-mkbootimg">mkbootimg</a> <code>32 KB</code></li>
 <li><a href="./files/split_bootimg.pl">split_bootimg.pl</a></li>
 <li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/207-unpackbootimg">unpackbootimg</a> <code>17 KB</code></li>
-</ul> </div> <!-- 태그 -->  <!-- 이전 / 다음 --> <nav class="mt-12 pt-8 border-t border-gray-100 grid grid-cols-1 sm:grid-cols-2 gap-3"> <div> <a href="/archive/itmir/2013/206/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 hover:border-blue-200 hover:bg-blue-50/40 transition-all"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
+</ul> </div> <!-- 태그 -->  <!-- 이전 / 다음 --> <nav class="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800 grid grid-cols-1 sm:grid-cols-2 gap-3" data-pagefind-ignore> <div> <a href="/archive/itmir/2013/206/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
 ← 이전
-</span> <span class="text-base font-semibold text-gray-900 group-hover:text-blue-700 transition-colors line-clamp-2 leading-snug"> 베가 N˚6(IM-A860S) 미니 윈도우를 적용해 보자 </span> </a> </div> <div> <a href="/archive/itmir/2013/208/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 hover:border-blue-200 hover:bg-blue-50/40 transition-all sm:text-right"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
+</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> 베가 N˚6(IM-A860S) 미니 윈도우를 적용해 보자 </span> </a> </div> <div> <a href="/archive/itmir/2013/208/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all sm:text-right"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
 다음 →
-</span> <span class="text-base font-semibold text-gray-900 group-hover:text-blue-700 transition-colors line-clamp-2 leading-snug"> 메소드, 우리가 아는것과 모르는것 </span> </a> </div> </nav> </div>  </div> </main> <footer class="border-t border-gray-100 mt-auto"> <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-end gap-6"> <a href="https://luminousky.com" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 no-underline transition-colors">
+</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> 메소드, 우리가 아는것과 모르는것 </span> </a> </div> </nav> </div>  </div> </main> <footer class="border-t border-gray-100 dark:border-gray-800 mt-auto"> <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-end gap-6"> <a href="https://luminousky.com" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
 luminousky.com ↗
-</a> <a href="https://github.com/itmir913" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 no-underline transition-colors">
+</a> <a href="https://github.com/itmir913" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
 GitHub ↗
-</a> </div> </footer> </body></html>
+</a> </div> </footer>  </body> </html>

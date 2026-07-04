@@ -1,10 +1,18 @@
-<!DOCTYPE html><html lang="ko" class="antialiased scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="이강좌가 고등학교에 등교하기전 2월에 쓰는 마지막 강좌가 될것 같습니다."><title>#29 커스텀 리스트뷰 (Custom ListView) - View Holder — luminousky</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.Cocv7yaS.css"></head> <body class="bg-white text-gray-900 font-sans min-h-screen flex flex-col"> <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-black/[0.06]"> <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"> <a href="/archive/" class="text-base font-semibold tracking-tight text-gray-900 no-underline hover:text-blue-600 transition-colors">
+<!DOCTYPE html><html lang="ko" class="antialiased scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="이강좌가 고등학교에 등교하기전 2월에 쓰는 마지막 강좌가 될것 같습니다."><title>#29 커스텀 리스트뷰 (Custom ListView) - View Holder — luminousky</title><!-- 다크모드 FOUC 방지 — 렌더링 전 클래스 적용 --><script>
+      (function () {
+        var t = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (t === 'dark' || (!t && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script><!-- OG / Twitter 메타태그 --><meta property="og:type" content="website"><meta property="og:site_name" content="luminousky"><meta property="og:title" content="#29 커스텀 리스트뷰 (Custom ListView) - View Holder — luminousky"><meta property="og:description" content="이강좌가 고등학교에 등교하기전 2월에 쓰는 마지막 강좌가 될것 같습니다."><meta property="og:url" content="https://luminousky.com/archive/itmir/2014/477/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="#29 커스텀 리스트뷰 (Custom ListView) - View Holder — luminousky"><meta name="twitter:description" content="이강좌가 고등학교에 등교하기전 2월에 쓰는 마지막 강좌가 될것 같습니다."><link rel="canonical" href="https://luminousky.com/archive/itmir/2014/477/"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.tpnWxIaM.css"><script type="module" src="/archive/_astro/hoisted.B59K8Pw9.js"></script></head> <body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans min-h-screen flex flex-col transition-colors"> <header class="sticky top-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-black/[0.06] dark:border-white/[0.06]"> <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"> <a href="/archive/" class="text-base font-semibold tracking-tight text-gray-900 dark:text-gray-100 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
 luminousky
-</a> <nav class="flex items-center gap-1"> <a href="/archive/" class="text-base font-medium text-gray-900 no-underline px-3 py-1.5 rounded-md bg-gray-100 transition-colors">Archive</a> <a href="/archive/timeline/" class="text-base font-medium text-gray-400 no-underline px-3 py-1.5 rounded-md hover:text-gray-900 hover:bg-gray-50 transition-colors">Timeline</a> </nav> </div> </header> <main class="flex-1"> <div class="max-w-5xl mx-auto px-6 py-14">   <div class="max-w-2xl mx-auto"> <!-- 뒤로 --> <a href="/archive/itmir/" class="inline-block text-base text-gray-400 mb-8 no-underline hover:text-blue-600 transition-colors">
+</a> <nav class="flex items-center gap-1"> <a href="/archive/" class="text-base font-medium text-gray-900 dark:text-gray-100 no-underline px-3 py-1.5 rounded-md bg-gray-100 dark:bg-gray-800 transition-colors">Archive</a> <a href="/archive/timeline/" class="text-base font-medium text-gray-400 dark:text-gray-500 no-underline px-3 py-1.5 rounded-md hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Timeline</a> <button id="theme-toggle" aria-label="다크 모드 전환" class="ml-1 p-2 rounded-md text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"> <!-- 라이트 모드에서 표시 (달 아이콘 → 다크로 전환) --> <svg id="icon-moon" class="w-5 h-5 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> <!-- 다크 모드에서 표시 (해 아이콘 → 라이트로 전환) --> <svg id="icon-sun" class="w-5 h-5 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> </nav> </div> </header> <main class="flex-1"> <div class="max-w-5xl mx-auto px-6 py-14">  <div class="max-w-2xl mx-auto"> <!-- 뒤로 (검색 인덱싱 제외) --> <a href="/archive/itmir/" data-pagefind-ignore class="inline-block text-base text-gray-400 mb-8 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
 ← ITMir
-</a> <!-- 헤더 --> <header class="mb-10"> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-5"> #29 커스텀 리스트뷰 (Custom ListView) - View Holder </h1> <div class="flex flex-wrap items-center gap-3 text-base text-gray-400"> <time datetime="2014-02-18T02:56:43.000Z"> 2014년 2월 18일 </time>  <span aria-hidden="true">·</span> <span>Android/App</span>   <span aria-hidden="true">·</span> <a href="https://itmir.tistory.com/477" class="text-gray-400 underline underline-offset-2 hover:text-blue-600 transition-colors" target="_blank" rel="noopener noreferrer">
+</a> <!-- 헤더 --> <header class="mb-10" data-pagefind-ignore> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-5 text-gray-900 dark:text-gray-100"> #29 커스텀 리스트뷰 (Custom ListView) - View Holder </h1> <div class="flex flex-wrap items-center gap-3 text-base text-gray-400"> <time datetime="2014-02-18T02:56:43.000Z"> 2014년 2월 18일 </time>  <span aria-hidden="true">·</span> <span>Android/App</span>   <span aria-hidden="true">·</span> <a href="https://itmir.tistory.com/477" class="text-gray-400 underline underline-offset-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" target="_blank" rel="noopener noreferrer">
 원본 ↗
-</a>  </div> <p class="mt-4 mb-0 text-lg text-gray-500 leading-relaxed border-l-2 border-gray-200 pl-4"> 이강좌가 고등학교에 등교하기전 2월에 쓰는 마지막 강좌가 될것 같습니다. </p> </header> <!-- 본문 --> <div class="prose prose-gray max-w-none"> <p>안녕하세요.</p>
+</a>  </div> <p class="mt-4 mb-0 text-lg text-gray-500 dark:text-gray-400 leading-relaxed border-l-2 border-gray-200 dark:border-gray-700 pl-4"> 이강좌가 고등학교에 등교하기전 2월에 쓰는 마지막 강좌가 될것 같습니다. </p> </header> <!-- 본문 (전문 검색 인덱싱 대상) --> <div class="prose prose-gray dark:prose-invert max-w-none" data-pagefind-body> <p>안녕하세요.</p>
 <p>이강좌가 고등학교에 등교하기전 2월에 쓰는 마지막 강좌가 될것 같습니다.</p>
 <p>벌써 29번째 강좌입니다.</p>
 <p>이번에는 그동안 배우지 못했던 리스트뷰에 대해 알아보겠습니다.</p>
@@ -39,23 +47,23 @@ luminousky
 <p>먼저 메인 레이아웃에는 ListView만 넣어주면 됩니다.</p>
 <p><img  src="/archive/_astro/1.Bs_TQhhN_Z18nflS.webp" alt="" width="424" height="255" loading="lazy" decoding="async"></p>
 <p>코드 보기</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">LinearLayout</span><span style="color:#6F42C1"> xmlns:android</span><span style="color:#24292E">=</span><span style="color:#032F62">"http://schemas.android.com/apk/res/android"</span></span>
-<span class="line"><span style="color:#6F42C1">    xmlns:tools</span><span style="color:#24292E">=</span><span style="color:#032F62">"http://schemas.android.com/tools"</span></span>
-<span class="line"><span style="color:#6F42C1">    android:paddingBottom</span><span style="color:#24292E">=</span><span style="color:#032F62">"@dimen/activity_vertical_margin"</span></span>
-<span class="line"><span style="color:#6F42C1">    android:paddingLeft</span><span style="color:#24292E">=</span><span style="color:#032F62">"@dimen/activity_horizontal_margin"</span></span>
-<span class="line"><span style="color:#6F42C1">    android:paddingRight</span><span style="color:#24292E">=</span><span style="color:#032F62">"@dimen/activity_horizontal_margin"</span></span>
-<span class="line"><span style="color:#6F42C1">    android:paddingTop</span><span style="color:#24292E">=</span><span style="color:#032F62">"@dimen/activity_vertical_margin"</span></span>
-<span class="line"><span style="color:#6F42C1">    android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"fill_parent"</span></span>
-<span class="line"><span style="color:#6F42C1">    android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"fill_parent"</span></span>
-<span class="line"><span style="color:#6F42C1">    android:orientation</span><span style="color:#24292E">=</span><span style="color:#032F62">"vertical"</span></span>
-<span class="line"><span style="color:#6F42C1">    tools:context</span><span style="color:#24292E">=</span><span style="color:#032F62">".MainActivity"</span><span style="color:#24292E"> ></span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">LinearLayout</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> xmlns:android</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"http://schemas.android.com/apk/res/android"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">    xmlns:tools</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"http://schemas.android.com/tools"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">    android:paddingBottom</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"@dimen/activity_vertical_margin"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">    android:paddingLeft</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"@dimen/activity_horizontal_margin"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">    android:paddingRight</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"@dimen/activity_horizontal_margin"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">    android:paddingTop</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"@dimen/activity_vertical_margin"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">    android:layout_width</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"fill_parent"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">    android:layout_height</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"fill_parent"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">    android:orientation</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"vertical"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">    tools:context</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">".MainActivity"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> ></span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">ListView</span></span>
-<span class="line"><span style="color:#6F42C1">        android:id</span><span style="color:#24292E">=</span><span style="color:#032F62">"@+id/mList"</span></span>
-<span class="line"><span style="color:#6F42C1">        android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"match_parent"</span></span>
-<span class="line"><span style="color:#6F42C1">        android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span><span style="color:#24292E"> /></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">ListView</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">        android:id</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"@+id/mList"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">        android:layout_width</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"match_parent"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">        android:layout_height</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"wrap_content"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> /></span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">LinearLayout</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">LinearLayout</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
 <span class="line"></span></code></pre>
 <p>이제 리스트뷰의 한 아이템에 표시될 레이아웃을 정의해야 합니다.</p>
 <p>이 레이아웃 파일의 이름은 listview_item.xml으로 합시다.</p>
@@ -63,50 +71,50 @@ luminousky
 <p>이렇게 리스트뷰의 한 아이템에는 위 그림처럼 정보가 배열될것입니다.</p>
 <p><img  src="/archive/_astro/2.S-tGf3zi_1VKC4f.webp" alt="" width="429" height="557" loading="lazy" decoding="async"></p>
 <p>코드보기</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;?</span><span style="color:#22863A">xml</span><span style="color:#6F42C1"> version</span><span style="color:#24292E">=</span><span style="color:#032F62">"1.0"</span><span style="color:#6F42C1"> encoding</span><span style="color:#24292E">=</span><span style="color:#032F62">"utf-8"</span><span style="color:#24292E">?></span></span>
-<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">LinearLayout</span><span style="color:#6F42C1"> xmlns:android</span><span style="color:#24292E">=</span><span style="color:#032F62">"http://schemas.android.com/apk/res/android"</span></span>
-<span class="line"><span style="color:#6F42C1">    android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"match_parent"</span></span>
-<span class="line"><span style="color:#6F42C1">    android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"match_parent"</span></span>
-<span class="line"><span style="color:#6F42C1">    android:orientation</span><span style="color:#24292E">=</span><span style="color:#032F62">"horizontal"</span><span style="color:#24292E"> ></span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;?</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">xml</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> version</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"1.0"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> encoding</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"utf-8"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">?></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">LinearLayout</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> xmlns:android</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"http://schemas.android.com/apk/res/android"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">    android:layout_width</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"match_parent"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">    android:layout_height</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"match_parent"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">    android:orientation</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"horizontal"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> ></span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">ImageView</span></span>
-<span class="line"><span style="color:#6F42C1">        android:id</span><span style="color:#24292E">=</span><span style="color:#032F62">"@+id/mImage"</span></span>
-<span class="line"><span style="color:#6F42C1">        android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
-<span class="line"><span style="color:#6F42C1">        android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
-<span class="line"><span style="color:#6F42C1">        android:src</span><span style="color:#24292E">=</span><span style="color:#032F62">"@drawable/ic_launcher"</span></span>
-<span class="line"><span style="color:#24292E">        /></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">ImageView</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">        android:id</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"@+id/mImage"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">        android:layout_width</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"wrap_content"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">        android:layout_height</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"wrap_content"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">        android:src</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"@drawable/ic_launcher"</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        /></span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">LinearLayout</span></span>
-<span class="line"><span style="color:#6F42C1">        android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
-<span class="line"><span style="color:#6F42C1">        android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
-<span class="line"><span style="color:#6F42C1">        android:layout_marginLeft</span><span style="color:#24292E">=</span><span style="color:#032F62">"5dp"</span></span>
-<span class="line"><span style="color:#6F42C1">        android:orientation</span><span style="color:#24292E">=</span><span style="color:#032F62">"vertical"</span><span style="color:#24292E"> ></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">LinearLayout</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">        android:layout_width</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"wrap_content"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">        android:layout_height</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"wrap_content"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">        android:layout_marginLeft</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"5dp"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">        android:orientation</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"vertical"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> ></span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#22863A">TextView</span></span>
-<span class="line"><span style="color:#6F42C1">            android:id</span><span style="color:#24292E">=</span><span style="color:#032F62">"@+id/mText"</span></span>
-<span class="line"><span style="color:#6F42C1">            android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
-<span class="line"><span style="color:#6F42C1">            android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
-<span class="line"><span style="color:#6F42C1">            android:text</span><span style="color:#24292E">=</span><span style="color:#032F62">"Text"</span></span>
-<span class="line"><span style="color:#6F42C1">            android:textAppearance</span><span style="color:#24292E">=</span><span style="color:#032F62">"?android:attr/textAppearanceLarge"</span></span>
-<span class="line"><span style="color:#24292E">            /></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">TextView</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">            android:id</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"@+id/mText"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">            android:layout_width</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"wrap_content"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">            android:layout_height</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"wrap_content"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">            android:text</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"Text"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">            android:textAppearance</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"?android:attr/textAppearanceLarge"</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">            /></span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#22863A">TextView</span></span>
-<span class="line"><span style="color:#6F42C1">            android:id</span><span style="color:#24292E">=</span><span style="color:#032F62">"@+id/mDate"</span></span>
-<span class="line"><span style="color:#6F42C1">            android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
-<span class="line"><span style="color:#6F42C1">            android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span></span>
-<span class="line"><span style="color:#6F42C1">            android:text</span><span style="color:#24292E">=</span><span style="color:#032F62">"Date"</span></span>
-<span class="line"><span style="color:#24292E">            /></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">TextView</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">            android:id</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"@+id/mDate"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">            android:layout_width</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"wrap_content"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">            android:layout_height</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"wrap_content"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">            android:text</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"Date"</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">            /></span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292E">    &#x3C;/</span><span style="color:#22863A">LinearLayout</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">LinearLayout</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">LinearLayout</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">LinearLayout</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
 <span class="line"></span></code></pre>
 <h3 id="29-4-mainactivity">29-4 MainActivity</h3>
 <p>먼저 처음에 아래를 추가해 주세요.</p>
 <p><img  src="/archive/_astro/3.CQW0gDhk_Z2dT6vB.webp" alt="" width="233" height="31" loading="lazy" decoding="async"></p>
 <p>코드 보기</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">private</span><span style="color:#24292E"> ListView mListView </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> null</span><span style="color:#24292E">;</span></span>
-<span class="line"><span style="color:#D73A49">private</span><span style="color:#24292E"> ListViewAdapter mAdapter </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> null</span><span style="color:#24292E">;</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">private</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> ListView mListView </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">private</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> ListViewAdapter mAdapter </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
 <span class="line"></span></code></pre>
 <p>그럼 ListViewAdapter에 빨간 줄이 생길겁니다.</p>
 <p>당황하지 마시고 아직 Adapter class를 작성하지 않아서 생긴 문제이므로 넘어가 주세요.</p>
@@ -114,48 +122,48 @@ luminousky
 <p>onCreate()아래에 추가해 주세요.</p>
 <p><img  src="/archive/_astro/4.B94y3Ps0_1BqsGu.webp" alt="" width="163" height="103" loading="lazy" decoding="async"></p>
 <p>코드 보기</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">private</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> ViewHolder</span><span style="color:#24292E"> {</span></span>
-<span class="line"><span style="color:#D73A49">    public</span><span style="color:#24292E"> ImageView mIcon;</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">private</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> class</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> ViewHolder</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    public</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> ImageView mIcon;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D73A49">    public</span><span style="color:#24292E"> TextView mText;</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    public</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> TextView mText;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D73A49">    public</span><span style="color:#24292E"> TextView mDate;</span></span>
-<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    public</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> TextView mDate;</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span>
 <span class="line"></span></code></pre>
 <p>설명은 아래에서 이어서 하겠습니다.</p>
 <p>이제는 어댑터를 작성해 봅시다.</p>
 <p>어댑터를 통해 리스트뷰의 한 아이템에 표시될 정보를 설정할수 있습니다.</p>
 <p><img  src="/archive/_astro/5.Bz_juIKJ_1snBK9.webp" alt="" width="416" height="437" loading="lazy" decoding="async"></p>
 <p>코드 보기</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">private</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> ListViewAdapter</span><span style="color:#D73A49"> extends</span><span style="color:#6F42C1"> BaseAdapter</span><span style="color:#24292E"> {</span></span>
-<span class="line"><span style="color:#D73A49">    private</span><span style="color:#24292E"> Context mContext </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> null</span><span style="color:#24292E">;</span></span>
-<span class="line"><span style="color:#D73A49">    private</span><span style="color:#24292E"> ArrayList&#x3C;</span><span style="color:#D73A49">ListData</span><span style="color:#24292E">> mListData </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#24292E"> ArrayList&#x3C;</span><span style="color:#D73A49">ListData</span><span style="color:#24292E">>();</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">private</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> class</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> ListViewAdapter</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> extends</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> BaseAdapter</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    private</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> Context mContext </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    private</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> ArrayList&#x3C;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">ListData</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">> mListData </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> new</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> ArrayList&#x3C;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">ListData</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">>();</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D73A49">    public</span><span style="color:#6F42C1"> ListViewAdapter</span><span style="color:#24292E">(Context </span><span style="color:#E36209">mContext</span><span style="color:#24292E">) {</span></span>
-<span class="line"><span style="color:#005CC5">        super</span><span style="color:#24292E">();</span></span>
-<span class="line"><span style="color:#005CC5">        this</span><span style="color:#24292E">.mContext </span><span style="color:#D73A49">=</span><span style="color:#24292E"> mContext;</span></span>
-<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    public</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> ListViewAdapter</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(Context </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">mContext</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">        super</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">        this</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">.mContext </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> mContext;</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    }</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Override</span></span>
-<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> int</span><span style="color:#6F42C1"> getCount</span><span style="color:#24292E">() {</span></span>
-<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> mListData.</span><span style="color:#6F42C1">size</span><span style="color:#24292E">();</span></span>
-<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    @</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">Override</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    public</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> int</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> getCount</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">() {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">        return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> mListData.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">size</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    }</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Override</span></span>
-<span class="line"><span style="color:#D73A49">    public</span><span style="color:#24292E"> Object </span><span style="color:#6F42C1">getItem</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> position</span><span style="color:#24292E">) {</span></span>
-<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> mListData.</span><span style="color:#6F42C1">get</span><span style="color:#24292E">(position);</span></span>
-<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    @</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">Override</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    public</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> Object </span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">getItem</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">int</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70"> position</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">        return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> mListData.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">get</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(position);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    }</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Override</span></span>
-<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> long</span><span style="color:#6F42C1"> getItemId</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> position</span><span style="color:#24292E">) {</span></span>
-<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> position;</span></span>
-<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    @</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">Override</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    public</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> long</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> getItemId</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">int</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70"> position</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">        return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> position;</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    }</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Override</span></span>
-<span class="line"><span style="color:#D73A49">    public</span><span style="color:#24292E"> View </span><span style="color:#6F42C1">getView</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> position</span><span style="color:#24292E">, View </span><span style="color:#E36209">convertView</span><span style="color:#24292E">, ViewGroup </span><span style="color:#E36209">parent</span><span style="color:#24292E">) {</span></span>
-<span class="line"><span style="color:#D73A49">        return</span><span style="color:#005CC5"> null</span><span style="color:#24292E">;</span></span>
-<span class="line"><span style="color:#24292E">    }</span></span>
-<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    @</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">Override</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    public</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> View </span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">getView</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">int</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70"> position</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, View </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">convertView</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, ViewGroup </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">parent</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">        return</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    }</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span>
 <span class="line"></span></code></pre>
 <p>위 코드가 어뎁터 class의 기본 뼈대입니다.</p>
 <p>이제 이 뼈대를 가지고 살을 체워나가야 합니다.</p>
@@ -169,38 +177,38 @@ luminousky
 <p>이 파일의 내용은 아래와 같습니다.</p>
 <p><img  src="/archive/_astro/6.BTHXWxU0_egEEJ.webp" alt="" width="555" height="439" loading="lazy" decoding="async"></p>
 <p>코드 보기</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> lee.whdghks913.customlistview;</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">package</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> lee.whdghks913.customlistview;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.text.Collator;</span></span>
-<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.util.Comparator;</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> java.text.Collator;</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> java.util.Comparator;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> android.graphics.drawable.Drawable;</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> android.graphics.drawable.Drawable;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> ListData</span><span style="color:#24292E"> {</span></span>
-<span class="line"><span style="color:#6A737D">    /**</span></span>
-<span class="line"><span style="color:#6A737D">     * 리스트 정보를 담고 있을 객체 생성</span></span>
-<span class="line"><span style="color:#6A737D">     */</span></span>
-<span class="line"><span style="color:#6A737D">    // 아이콘</span></span>
-<span class="line"><span style="color:#D73A49">    public</span><span style="color:#24292E"> Drawable mIcon;</span></span>
-<span class="line"><span style="color:#24292E">    </span></span>
-<span class="line"><span style="color:#6A737D">    // 제목</span></span>
-<span class="line"><span style="color:#D73A49">    public</span><span style="color:#24292E"> String mTitle;</span></span>
-<span class="line"><span style="color:#24292E">    </span></span>
-<span class="line"><span style="color:#6A737D">    // 날짜</span></span>
-<span class="line"><span style="color:#D73A49">    public</span><span style="color:#24292E"> String mDate;</span></span>
-<span class="line"><span style="color:#24292E">    </span></span>
-<span class="line"><span style="color:#6A737D">    /**</span></span>
-<span class="line"><span style="color:#6A737D">     * 알파벳 이름으로 정렬</span></span>
-<span class="line"><span style="color:#6A737D">     */</span></span>
-<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> final</span><span style="color:#24292E"> Comparator&#x3C;</span><span style="color:#D73A49">ListData</span><span style="color:#24292E">> ALPHA_COMPARATOR </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#24292E"> Comparator&#x3C;</span><span style="color:#D73A49">ListData</span><span style="color:#24292E">>() {</span></span>
-<span class="line"><span style="color:#D73A49">        private</span><span style="color:#D73A49"> final</span><span style="color:#24292E"> Collator sCollator </span><span style="color:#D73A49">=</span><span style="color:#24292E"> Collator.</span><span style="color:#6F42C1">getInstance</span><span style="color:#24292E">();</span></span>
-<span class="line"><span style="color:#24292E">        </span></span>
-<span class="line"><span style="color:#24292E">        @</span><span style="color:#D73A49">Override</span></span>
-<span class="line"><span style="color:#D73A49">        public</span><span style="color:#D73A49"> int</span><span style="color:#6F42C1"> compare</span><span style="color:#24292E">(ListData </span><span style="color:#E36209">mListDate_1</span><span style="color:#24292E">, ListData </span><span style="color:#E36209">mListDate_2</span><span style="color:#24292E">) {</span></span>
-<span class="line"><span style="color:#D73A49">            return</span><span style="color:#24292E"> sCollator.</span><span style="color:#6F42C1">compare</span><span style="color:#24292E">(mListDate_1.mTitle, mListDate_2.mTitle);</span></span>
-<span class="line"><span style="color:#24292E">        }</span></span>
-<span class="line"><span style="color:#24292E">    };</span></span>
-<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">public</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> class</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> ListData</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">    /**</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">     * 리스트 정보를 담고 있을 객체 생성</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">     */</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">    // 아이콘</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    public</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> Drawable mIcon;</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    </span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">    // 제목</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    public</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> String mTitle;</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    </span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">    // 날짜</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    public</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> String mDate;</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    </span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">    /**</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">     * 알파벳 이름으로 정렬</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">     */</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    public</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> static</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> final</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> Comparator&#x3C;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">ListData</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">> ALPHA_COMPARATOR </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> new</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> Comparator&#x3C;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">ListData</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">>() {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">        private</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> final</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> Collator sCollator </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> Collator.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">getInstance</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        </span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        @</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">Override</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">        public</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> int</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> compare</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(ListData </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">mListDate_1</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, ListData </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">mListDate_2</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">            return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> sCollator.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">compare</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(mListDate_1.mTitle, mListDate_2.mTitle);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        }</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    };</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span>
 <span class="line"></span></code></pre>
 <p>한 아이템의 정보를 담고 있을 java파일을 만들었습니다.</p>
 <p>아래에 있는 ALPHA_COMPARATOR는 리스트뷰의 아이템을 쇼트(알파벳 순서대로 정렬)하기 위한 메소드이며, AppInfo예제를 참조했습니다.</p>
@@ -208,38 +216,38 @@ luminousky
 <p>이제 getView()를 손봐줍시다.</p>
 <p><img  src="/archive/_astro/7.9sEvG_X1_ZcTrsP.webp" alt="" width="607" height="485" loading="lazy" decoding="async"></p>
 <p>코드 보기</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">@</span><span style="color:#D73A49">Override</span></span>
-<span class="line"><span style="color:#D73A49">public</span><span style="color:#24292E"> View </span><span style="color:#6F42C1">getView</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> position, View convertView, ViewGroup parent) {</span></span>
-<span class="line"><span style="color:#24292E">    ViewHolder holder;</span></span>
-<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E"> (convertView </span><span style="color:#D73A49">==</span><span style="color:#005CC5"> null</span><span style="color:#24292E">) {</span></span>
-<span class="line"><span style="color:#24292E">        holder </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> ViewHolder</span><span style="color:#24292E">();</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">@</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">Override</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">public</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> View </span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">getView</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> position, View convertView, ViewGroup parent) {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    ViewHolder holder;</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (convertView </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">==</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        holder </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> new</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> ViewHolder</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292E">        LayoutInflater inflater </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (LayoutInflater) mContext.</span><span style="color:#6F42C1">getSystemService</span><span style="color:#24292E">(Context.LAYOUT_INFLATER_SERVICE);</span></span>
-<span class="line"><span style="color:#24292E">        convertView </span><span style="color:#D73A49">=</span><span style="color:#24292E"> inflater.</span><span style="color:#6F42C1">inflate</span><span style="color:#24292E">(R.layout.listview_item, </span><span style="color:#005CC5">null</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        LayoutInflater inflater </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (LayoutInflater) mContext.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">getSystemService</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(Context.LAYOUT_INFLATER_SERVICE);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        convertView </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> inflater.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">inflate</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(R.layout.listview_item, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">null</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292E">        holder.mIcon </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (ImageView) convertView.</span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.mImage);</span></span>
-<span class="line"><span style="color:#24292E">        holder.mText </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (TextView) convertView.</span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.mText);</span></span>
-<span class="line"><span style="color:#24292E">        holder.mDate </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (TextView) convertView.</span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.mDate);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        holder.mIcon </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (ImageView) convertView.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">findViewById</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(R.id.mImage);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        holder.mText </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (TextView) convertView.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">findViewById</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(R.id.mText);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        holder.mDate </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (TextView) convertView.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">findViewById</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(R.id.mDate);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292E">        convertView.</span><span style="color:#6F42C1">setTag</span><span style="color:#24292E">(holder);</span></span>
-<span class="line"><span style="color:#24292E">    }</span><span style="color:#D73A49">else</span><span style="color:#24292E">{</span></span>
-<span class="line"><span style="color:#24292E">        holder </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (ViewHolder) convertView.</span><span style="color:#6F42C1">getTag</span><span style="color:#24292E">();</span></span>
-<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        convertView.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">setTag</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(holder);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    }</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">else</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">{</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        holder </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (ViewHolder) convertView.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">getTag</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    }</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292E">    ListData mData </span><span style="color:#D73A49">=</span><span style="color:#24292E"> mListData.</span><span style="color:#6F42C1">get</span><span style="color:#24292E">(position);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    ListData mData </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> mListData.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">get</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(position);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E"> (mData.mIcon </span><span style="color:#D73A49">!=</span><span style="color:#005CC5"> null</span><span style="color:#24292E">) {</span></span>
-<span class="line"><span style="color:#24292E">        holder.mIcon.</span><span style="color:#6F42C1">setVisibility</span><span style="color:#24292E">(View.VISIBLE);</span></span>
-<span class="line"><span style="color:#24292E">        holder.mIcon.</span><span style="color:#6F42C1">setImageDrawable</span><span style="color:#24292E">(mData.mIcon);</span></span>
-<span class="line"><span style="color:#24292E">    }</span><span style="color:#D73A49">else</span><span style="color:#24292E">{</span></span>
-<span class="line"><span style="color:#24292E">        holder.mIcon.</span><span style="color:#6F42C1">setVisibility</span><span style="color:#24292E">(View.GONE);</span></span>
-<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (mData.mIcon </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">!=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        holder.mIcon.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">setVisibility</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(View.VISIBLE);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        holder.mIcon.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">setImageDrawable</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(mData.mIcon);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    }</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">else</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">{</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        holder.mIcon.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">setVisibility</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(View.GONE);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    }</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292E">    holder.mText.</span><span style="color:#6F42C1">setText</span><span style="color:#24292E">(mData.mTitle);</span></span>
-<span class="line"><span style="color:#24292E">    holder.mDate.</span><span style="color:#6F42C1">setText</span><span style="color:#24292E">(mData.mDate);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    holder.mText.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">setText</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(mData.mTitle);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    holder.mDate.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">setText</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(mData.mDate);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D73A49">    return</span><span style="color:#24292E"> convertView;</span></span>
-<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> convertView;</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span>
 <span class="line"></span></code></pre>
 <p>4번째 줄의 if문을 봐주세요.</p>
 <p>getView는 한 아이템에 들어갈 레이아웃을 지정해 주는 메소드라고 배웠습니다.</p>
@@ -255,29 +263,29 @@ luminousky
 <p>마지막으로 Adapter에게 필수는 아니지만 사용하면서 필요한 메소드를 추가해 봅시다.</p>
 <p><img  src="/archive/_astro/8.DcDg1qRd_10qauj.webp" alt="" width="360" height="348" loading="lazy" decoding="async"></p>
 <p>코드 보기</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> addItem</span><span style="color:#24292E">(Drawable icon, String mTitle, String mDate){</span></span>
-<span class="line"><span style="color:#24292E">    ListData addInfo </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> null</span><span style="color:#24292E">;</span></span>
-<span class="line"><span style="color:#24292E">    addInfo </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> ListData</span><span style="color:#24292E">();</span></span>
-<span class="line"><span style="color:#24292E">    addInfo.mIcon </span><span style="color:#D73A49">=</span><span style="color:#24292E"> icon;</span></span>
-<span class="line"><span style="color:#24292E">    addInfo.mTitle </span><span style="color:#D73A49">=</span><span style="color:#24292E"> mTitle;</span></span>
-<span class="line"><span style="color:#24292E">    addInfo.mDate </span><span style="color:#D73A49">=</span><span style="color:#24292E"> mDate;</span></span>
-<span class="line"><span style="color:#24292E">            </span></span>
-<span class="line"><span style="color:#24292E">    mListData.</span><span style="color:#6F42C1">add</span><span style="color:#24292E">(addInfo);</span></span>
-<span class="line"><span style="color:#24292E">}</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">public</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> void</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> addItem</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(Drawable icon, String mTitle, String mDate){</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    ListData addInfo </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    addInfo </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> new</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> ListData</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    addInfo.mIcon </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> icon;</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    addInfo.mTitle </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> mTitle;</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    addInfo.mDate </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> mDate;</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">            </span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    mListData.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">add</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(addInfo);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> remove</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> position){</span></span>
-<span class="line"><span style="color:#24292E">    mListData.</span><span style="color:#6F42C1">remove</span><span style="color:#24292E">(position);</span></span>
-<span class="line"><span style="color:#6F42C1">    dataChange</span><span style="color:#24292E">();</span></span>
-<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">public</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> void</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> remove</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> position){</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    mListData.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">remove</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(position);</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">    dataChange</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> sort</span><span style="color:#24292E">(){</span></span>
-<span class="line"><span style="color:#24292E">    Collections.</span><span style="color:#6F42C1">sort</span><span style="color:#24292E">(mListData, ListData.ALPHA_COMPARATOR);</span></span>
-<span class="line"><span style="color:#6F42C1">    dataChange</span><span style="color:#24292E">();</span></span>
-<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">public</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> void</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> sort</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(){</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    Collections.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">sort</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(mListData, ListData.ALPHA_COMPARATOR);</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">    dataChange</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> dataChange</span><span style="color:#24292E">(){</span></span>
-<span class="line"><span style="color:#24292E">    mAdapter.</span><span style="color:#6F42C1">notifyDataSetChanged</span><span style="color:#24292E">();</span></span>
-<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">public</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> void</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> dataChange</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(){</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    mAdapter.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">notifyDataSetChanged</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span>
 <span class="line"></span></code></pre>
 <p>각각 사용처는 아래와 같습니다.</p>
 <p>addItem() : 아이템을 추가할때 사용합니다.</p>
@@ -288,32 +296,32 @@ luminousky
 <p>마지막으로 onCreate()메소드 안 코드를 작성합니다.</p>
 <p><img  src="/archive/_astro/9.FLpbcgsb_22gtch.webp" alt="" width="478" height="481" loading="lazy" decoding="async"></p>
 <p>코드 보기</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">mListView </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (ListView) </span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.mList);</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">mListView </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (ListView) </span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">findViewById</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(R.id.mList);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292E">mAdapter </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> ListViewAdapter</span><span style="color:#24292E">(</span><span style="color:#005CC5">this</span><span style="color:#24292E">);</span></span>
-<span class="line"><span style="color:#24292E">mListView.</span><span style="color:#6F42C1">setAdapter</span><span style="color:#24292E">(mAdapter);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">mAdapter </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> new</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> ListViewAdapter</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">this</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">mListView.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">setAdapter</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(mAdapter);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292E">mAdapter.</span><span style="color:#6F42C1">addItem</span><span style="color:#24292E">(</span><span style="color:#6F42C1">getResources</span><span style="color:#24292E">().</span><span style="color:#6F42C1">getDrawable</span><span style="color:#24292E">(R.drawable.ok),</span></span>
-<span class="line"><span style="color:#032F62">        "확인이 완료되었습니다"</span><span style="color:#24292E">,</span></span>
-<span class="line"><span style="color:#032F62">        "2014-02-18"</span><span style="color:#24292E">);</span></span>
-<span class="line"><span style="color:#24292E">mAdapter.</span><span style="color:#6F42C1">addItem</span><span style="color:#24292E">(</span><span style="color:#6F42C1">getResources</span><span style="color:#24292E">().</span><span style="color:#6F42C1">getDrawable</span><span style="color:#24292E">(R.drawable.idonknow),</span></span>
-<span class="line"><span style="color:#032F62">        "난 몰라요 ㅠㅠ"</span><span style="color:#24292E">,</span></span>
-<span class="line"><span style="color:#032F62">        "2014-02-01"</span><span style="color:#24292E">);</span></span>
-<span class="line"><span style="color:#24292E">mAdapter.</span><span style="color:#6F42C1">addItem</span><span style="color:#24292E">(</span><span style="color:#6F42C1">getResources</span><span style="color:#24292E">().</span><span style="color:#6F42C1">getDrawable</span><span style="color:#24292E">(R.drawable.supersu),</span></span>
-<span class="line"><span style="color:#032F62">        "슈퍼유저~~"</span><span style="color:#24292E">,</span></span>
-<span class="line"><span style="color:#032F62">        "2014-02-04"</span><span style="color:#24292E">);</span></span>
-<span class="line"><span style="color:#24292E">mAdapter.</span><span style="color:#6F42C1">addItem</span><span style="color:#24292E">(</span><span style="color:#005CC5">null</span><span style="color:#24292E">,</span></span>
-<span class="line"><span style="color:#032F62">        "이미지가 null이면..."</span><span style="color:#24292E">,</span></span>
-<span class="line"><span style="color:#032F62">        "2014-02-15"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">mAdapter.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">addItem</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">getResources</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">().</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">getDrawable</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(R.drawable.ok),</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">        "확인이 완료되었습니다"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">        "2014-02-18"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">mAdapter.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">addItem</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">getResources</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">().</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">getDrawable</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(R.drawable.idonknow),</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">        "난 몰라요 ㅠㅠ"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">        "2014-02-01"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">mAdapter.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">addItem</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">getResources</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">().</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">getDrawable</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(R.drawable.supersu),</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">        "슈퍼유저~~"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">        "2014-02-04"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">mAdapter.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">addItem</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">null</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">        "이미지가 null이면..."</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">        "2014-02-15"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292E">mListView.</span><span style="color:#6F42C1">setOnItemClickListener</span><span style="color:#24292E">(</span><span style="color:#D73A49">new</span><span style="color:#6F42C1"> OnItemClickListener</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">mListView.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">setOnItemClickListener</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">new</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> OnItemClickListener</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">() {</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Override</span></span>
-<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> onItemClick</span><span style="color:#24292E">(AdapterView&#x3C;</span><span style="color:#D73A49">?</span><span style="color:#24292E">> </span><span style="color:#E36209">parent</span><span style="color:#24292E">, View </span><span style="color:#E36209">v</span><span style="color:#24292E">, </span><span style="color:#D73A49">int</span><span style="color:#E36209"> position</span><span style="color:#24292E">, </span><span style="color:#D73A49">long</span><span style="color:#E36209"> id</span><span style="color:#24292E">){</span></span>
-<span class="line"><span style="color:#24292E">        ListData mData </span><span style="color:#D73A49">=</span><span style="color:#24292E"> mAdapter.mListData.</span><span style="color:#6F42C1">get</span><span style="color:#24292E">(position);</span></span>
-<span class="line"><span style="color:#24292E">        Toast.</span><span style="color:#6F42C1">makeText</span><span style="color:#24292E">(MainActivity.this, mData.mTitle, Toast.LENGTH_SHORT).</span><span style="color:#6F42C1">show</span><span style="color:#24292E">();</span></span>
-<span class="line"><span style="color:#24292E">    }</span></span>
-<span class="line"><span style="color:#24292E">});</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    @</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">Override</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    public</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> void</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> onItemClick</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(AdapterView&#x3C;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">?</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">> </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">parent</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, View </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">v</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">int</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70"> position</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">long</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70"> id</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">){</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        ListData mData </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> mAdapter.mListData.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">get</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(position);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        Toast.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">makeText</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(MainActivity.this, mData.mTitle, Toast.LENGTH_SHORT).</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">show</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    }</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">});</span></span>
 <span class="line"></span></code></pre>
 <p>아까 Adapter에 추가한 addItem()메소드를 onCreate()안에서 사용하여 아이템을 추가하였습니다.</p>
 <p>또한 리스트뷰를 터치하면 터치한 아이템의 제목이 나타나도록 하였습니다.</p>
@@ -337,12 +345,12 @@ luminousky
 <h2 id="첨부파일">첨부파일</h2>
 <ul>
 <li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/CustomListView.zip">CustomListView.zip</a> <code>564 KB</code></li>
-</ul> </div> <!-- 태그 -->  <!-- 이전 / 다음 --> <nav class="mt-12 pt-8 border-t border-gray-100 grid grid-cols-1 sm:grid-cols-2 gap-3"> <div> <a href="/archive/itmir/2014/474/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 hover:border-blue-200 hover:bg-blue-50/40 transition-all"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
+</ul> </div> <!-- 태그 -->  <!-- 이전 / 다음 --> <nav class="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800 grid grid-cols-1 sm:grid-cols-2 gap-3" data-pagefind-ignore> <div> <a href="/archive/itmir/2014/474/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
 ← 이전
-</span> <span class="text-base font-semibold text-gray-900 group-hover:text-blue-700 transition-colors line-clamp-2 leading-snug"> [Java] HTML 태그(Tag) 삭제하기 </span> </a> </div> <div> <a href="/archive/itmir/2014/478/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 hover:border-blue-200 hover:bg-blue-50/40 transition-all sm:text-right"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
+</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> [Java] HTML 태그(Tag) 삭제하기 </span> </a> </div> <div> <a href="/archive/itmir/2014/478/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all sm:text-right"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
 다음 →
-</span> <span class="text-base font-semibold text-gray-900 group-hover:text-blue-700 transition-colors line-clamp-2 leading-snug"> GCM(Google Cloud Messaging)을 사용하여 Push알림을 줘보자 - 개발자 등록편 </span> </a> </div> </nav> </div>  </div> </main> <footer class="border-t border-gray-100 mt-auto"> <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-end gap-6"> <a href="https://luminousky.com" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 no-underline transition-colors">
+</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> GCM(Google Cloud Messaging)을 사용하여 Push알림을 줘보자 - 개발자 등록편 </span> </a> </div> </nav> </div>  </div> </main> <footer class="border-t border-gray-100 dark:border-gray-800 mt-auto"> <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-end gap-6"> <a href="https://luminousky.com" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
 luminousky.com ↗
-</a> <a href="https://github.com/itmir913" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 no-underline transition-colors">
+</a> <a href="https://github.com/itmir913" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
 GitHub ↗
-</a> </div> </footer> </body></html>
+</a> </div> </footer>  </body> </html>
