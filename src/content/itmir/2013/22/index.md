@@ -30,7 +30,8 @@ original_url: "https://itmir.tistory.com/22"
 
 3. device_기기명.mk에 다음과 같은 내용을 추가합니다.
 
-# Logo.rle
+```
+Logo.rle
 
 PRODUCT_COPY_FILES += \
 
@@ -41,9 +42,14 @@ device/제조사/기기명/logo.rle:root/initlogo.rle
 # Custom Graphics
 
 BOARD_CUSTOM_GRAPHICS := ../../../device/제조사/기기명/graphics.c
+```
 
-4. make clobber을 해줍니다.
+4. `make clobber`을 해줍니다.
 
 (보드컨픽이 수정되었기 때문에 꼭 해주셔야 합니다)
 
-5. 빌드를 합니다 (make -j4 recoveryimage)
+5. 빌드를 합니다 (`make -j4 recoveryimage`)
+
+## 첨부파일
+
+- [22-recovery.img](https://github.com/itmir913/archive/releases/download/itmir-attachments/22-recovery.img) — CWM Recovery (ef32k / KT 미라크A)
