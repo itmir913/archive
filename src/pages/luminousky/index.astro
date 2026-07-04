@@ -344,7 +344,7 @@ function formatDate(d: Date) {
       return;
     }
 
-    const result = await engine.search(q);
+    const result = await engine.search(q, { filters: { section: 'luminousky' } });
     cachedResults = await Promise.all(result.results.slice(0, 30).map((r: any) => r.data()));
     filterAndRenderResults();
   }

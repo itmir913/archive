@@ -93,6 +93,7 @@ const nextParts = nextPost ? nextPost.slug.split('/') : null;
     <div class="hidden">
       <span data-pagefind-meta="date">{formatDate(post.data.date)}</span>
       {post.data.category && <span data-pagefind-meta="category">{post.data.category}</span>}
+      <span data-pagefind-filter="section:itmir"></span>
     </div>
 
     <!-- 본문 (전문 검색 인덱싱 대상) -->
