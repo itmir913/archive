@@ -13,12 +13,14 @@ for (const post of allPosts) {
 }
 const years = [...byYear.keys()].sort((a, b) => Number(b) - Number(a));
 
-// 카테고리 가나다 정렬
-const catSet = new Set<string>();
+// 카테고리 + 포스트 수
+const catCounts = new Map<string, number>();
 for (const post of allPosts) {
-  if (post.data.category) catSet.add(post.data.category);
+  if (post.data.category) {
+    catCounts.set(post.data.category, (catCounts.get(post.data.category) || 0) + 1);
+  }
 }
-const allCategories = [...catSet].sort((a, b) => a.localeCompare(b, 'ko'));
+const allCategories = [...catCounts.keys()].sort((a, b) => a.localeCompare(b, 'ko'));
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
@@ -32,12 +34,34 @@ function formatDate(d: Date) {
 ---
 
 <BaseLayout title="ITMir 아카이브">
-  <h1 class="text-2xl font-bold tracking-tight m-0 mb-1 leading-tight">
-    ITMir 아카이브
-  </h1>
-  <p class="text-base text-gray-400 m-0 mb-10">
-    itmir.tistory.com · 2012–2021 · 총 {allPosts.length}개 포스트
-  </p>
+  <!-- Hero -->
+  <div class="mb-12 pb-10 border-b border-gray-100">
+    <p class="text-base font-semibold text-blue-600 tracking-widest uppercase m-0 mb-3">
+      Chapter 1
+    </p>
+    <h1 class="text-4xl font-bold tracking-tight m-0 mb-3 leading-tight">
+      ITMir 아카이브
+    </h1>
+    <p class="text-lg text-gray-500 m-0 mb-8 max-w-xl leading-relaxed">
+      itmir.tistory.com에서 2013년부터 2021년까지 기록한 개발·리뷰·일상 블로그의 아카이브입니다.
+    </p>
+    <div class="flex flex-wrap items-center gap-6">
+      <div>
+        <div class="text-3xl font-bold text-gray-900 leading-none">{allPosts.length}</div>
+        <div class="text-base text-gray-500 mt-1">포스트</div>
+      </div>
+      <div class="w-px h-10 bg-gray-200"></div>
+      <div>
+        <div class="text-3xl font-bold text-gray-900 leading-none">{years.length}</div>
+        <div class="text-base text-gray-500 mt-1">년간</div>
+      </div>
+      <div class="w-px h-10 bg-gray-200"></div>
+      <div>
+        <div class="text-3xl font-bold text-gray-900 leading-none">{allCategories.length}</div>
+        <div class="text-base text-gray-500 mt-1">카테고리</div>
+      </div>
+    </div>
+  </div>
 
   <!-- 검색 -->
   <div class="mb-3">
@@ -46,19 +70,19 @@ function formatDate(d: Date) {
       id="search-input"
       placeholder="제목, 카테고리, 설명 검색..."
       autocomplete="off"
-      class="w-full px-3 py-2 text-base font-sans border border-gray-200 rounded-md outline-none focus:border-blue-500 transition-colors bg-white text-gray-900 placeholder-gray-400"
+      class="w-full px-4 py-2.5 text-base font-sans border border-gray-200 rounded-lg outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all bg-white text-gray-900 placeholder-gray-400"
     />
   </div>
 
   <!-- 카테고리 필터 -->
   {allCategories.length > 0 && (
-    <div class="mb-3">
+    <div class="mb-4">
       <button
         id="cat-toggle"
         type="button"
         aria-expanded="false"
         aria-controls="cat-panel"
-        class="flex items-center gap-2 text-base font-medium text-gray-500 hover:text-gray-900 transition-colors cursor-pointer select-none"
+        class="flex items-center gap-2 text-base font-medium text-gray-500 hover:text-gray-900 transition-colors cursor-pointer select-none py-1"
       >
         <span>카테고리 필터</span>
         <span id="cat-selected-label" class="text-blue-600 font-normal hidden"></span>
@@ -73,7 +97,7 @@ function formatDate(d: Date) {
         <button
           data-cat="__all__"
           type="button"
-          class="filter-cat-btn text-base px-2 py-1 rounded border border-gray-200 bg-gray-100 text-gray-500 hover:text-gray-900 hover:border-gray-400 transition-colors cursor-pointer whitespace-nowrap font-sans"
+          class="filter-cat-btn text-base px-3 py-1 rounded-full border border-gray-200 bg-gray-100 text-gray-600 hover:text-gray-900 hover:border-gray-400 transition-colors cursor-pointer whitespace-nowrap font-sans"
         >
           전체
         </button>
@@ -81,9 +105,10 @@ function formatDate(d: Date) {
           <button
             data-cat={cat}
             type="button"
-            class="filter-cat-btn text-base px-2 py-1 rounded border border-gray-200 bg-gray-50 text-gray-500 hover:text-gray-900 hover:border-gray-400 transition-colors cursor-pointer whitespace-nowrap font-sans"
+            class="filter-cat-btn text-base px-3 py-1 rounded-full border border-gray-200 bg-white text-gray-600 hover:text-gray-900 hover:border-gray-400 transition-colors cursor-pointer whitespace-nowrap font-sans"
           >
             {cat}
+            <span class="text-gray-400 ml-1">{catCounts.get(cat)}</span>
           </button>
         ))}
       </div>
@@ -102,9 +127,10 @@ function formatDate(d: Date) {
     {years.map((year) => (
       <a
         href={`#year-${year}`}
-        class="text-base font-medium text-gray-400 px-2 py-1 rounded border border-gray-200 hover:text-gray-900 hover:border-gray-400 transition-colors no-underline"
+        class="text-base font-medium text-gray-400 px-2.5 py-1 rounded-md border border-gray-200 hover:text-gray-900 hover:border-gray-400 hover:bg-gray-50 transition-colors no-underline"
       >
         {year}
+        <span class="text-gray-300 ml-1 font-normal">{byYear.get(year)!.length}</span>
       </a>
     ))}
   </nav>
@@ -113,8 +139,8 @@ function formatDate(d: Date) {
   {years.map((year) => {
     const posts = byYear.get(year)!;
     return (
-      <section id={`year-${year}`} class="mb-12 scroll-mt-14">
-        <h2 class="text-xl font-bold tracking-tight m-0 mb-3 pb-2 border-b-2 border-gray-900 flex items-baseline gap-2">
+      <section id={`year-${year}`} class="mb-12 scroll-mt-20">
+        <h2 class="text-xl font-bold tracking-tight m-0 mb-4 pb-2 border-b-2 border-gray-900 flex items-baseline gap-2">
           {year}
           <span class="text-base font-normal text-gray-400">({posts.length})</span>
         </h2>
@@ -128,24 +154,31 @@ function formatDate(d: Date) {
             ].filter(Boolean).join(' ').toLowerCase();
             return (
               <li
-                class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 py-2 border-b border-gray-100 last:border-b-0"
+                class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-5 py-3 border-b border-gray-100 last:border-b-0 group"
                 data-cat={post.data.category || ''}
                 data-search={searchText}
               >
-                <span class="sm:w-28 sm:flex-shrink-0 text-base text-gray-400 whitespace-nowrap tabular-nums">
+                <span class="sm:w-24 sm:flex-shrink-0 text-base text-gray-400 whitespace-nowrap tabular-nums pt-0.5">
                   {formatDate(post.data.date)}
                 </span>
-                <div class="flex items-center gap-2 flex-wrap">
-                  <a
-                    href={`${base}/itmir/${postYear}/${postNum}/`}
-                    class="text-base font-medium text-gray-900 hover:text-blue-600 no-underline transition-colors"
-                  >
-                    {post.data.title}
-                  </a>
-                  {post.data.category && (
-                    <span class="text-base text-gray-400 bg-gray-100 px-2 py-0.5 rounded whitespace-nowrap flex-shrink-0">
-                      {post.data.category}
-                    </span>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <a
+                      href={`${base}/itmir/${postYear}/${postNum}/`}
+                      class="text-base font-semibold text-gray-900 hover:text-blue-600 no-underline transition-colors"
+                    >
+                      {post.data.title}
+                    </a>
+                    {post.data.category && (
+                      <span class="text-base text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full whitespace-nowrap flex-shrink-0">
+                        {post.data.category}
+                      </span>
+                    )}
+                  </div>
+                  {post.data.description && (
+                    <p class="text-base text-gray-400 m-0 mt-0.5 leading-snug">
+                      {post.data.description}
+                    </p>
                   )}
                 </div>
               </li>
@@ -160,6 +193,9 @@ function formatDate(d: Date) {
 <style>
   .filter-cat-btn.active {
     @apply bg-blue-600 border-blue-600 text-white;
+  }
+  .filter-cat-btn.active span {
+    @apply text-blue-200;
   }
 </style>
 
@@ -262,7 +298,6 @@ function formatDate(d: Date) {
   readURL();
   if (searchInput) searchInput.value = query;
 
-  // URL에 카테고리가 있으면 패널 자동 열기
   if (selectedCats.size > 0) setPanelOpen(true);
 
   syncUI();

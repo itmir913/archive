@@ -4,16 +4,20 @@ import BaseLayout from '../../../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('itmir');
-  return posts.map((post) => {
+  posts.sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
+
+  return posts.map((post, index) => {
     const [year, post_num] = post.slug.split('/');
+    const prevPost = index > 0 ? posts[index - 1] : null;
+    const nextPost = index < posts.length - 1 ? posts[index + 1] : null;
     return {
       params: { year, post_num },
-      props: { post },
+      props: { post, prevPost, nextPost },
     };
   });
 }
 
-const { post } = Astro.props;
+const { post, prevPost, nextPost } = Astro.props;
 const { Content } = await post.render();
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
@@ -25,6 +29,9 @@ function formatDate(d: Date) {
     timeZone: 'Asia/Seoul',
   });
 }
+
+const prevParts = prevPost ? prevPost.slug.split('/') : null;
+const nextParts = nextPost ? nextPost.slug.split('/') : null;
 ---
 
 <BaseLayout title={post.data.title} description={post.data.description || post.data.title}>
@@ -37,7 +44,7 @@ function formatDate(d: Date) {
         ← 목록으로
       </a>
 
-      <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-3">
+      <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-4">
         {post.data.title}
       </h1>
 
@@ -46,14 +53,14 @@ function formatDate(d: Date) {
           {formatDate(post.data.date)}
         </time>
         {post.data.category && (
-          <span class="text-base text-gray-400 bg-gray-100 px-2 py-0.5 rounded">
+          <span class="text-base text-gray-500 bg-gray-100 px-2.5 py-0.5 rounded-full">
             {post.data.category}
           </span>
         )}
         {post.data.original_url && (
           <a
             href={post.data.original_url}
-            class="text-base text-gray-400 underline underline-offset-2"
+            class="text-base text-gray-400 underline underline-offset-2 hover:text-blue-600 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -63,24 +70,66 @@ function formatDate(d: Date) {
       </div>
 
       {post.data.description && (
-        <p class="mt-3 mb-0 text-base text-gray-400 leading-relaxed">
+        <p class="mt-3 mb-0 text-lg text-gray-500 leading-relaxed">
           {post.data.description}
         </p>
       )}
     </header>
 
-    <div class="prose prose-gray">
+    <div class="prose prose-gray max-w-none">
       <Content />
     </div>
 
     {post.data.tags.length > 0 && (
       <div class="flex flex-wrap gap-2 mt-8 pt-6 border-t border-gray-200">
         {post.data.tags.map((tag) => (
-          <span class="text-base text-gray-400 bg-gray-100 px-2 py-0.5 rounded">
+          <span class="text-base text-gray-500 bg-gray-100 px-2.5 py-0.5 rounded-full">
             #{tag}
           </span>
         ))}
       </div>
     )}
   </article>
+
+  <!-- Prev / Next 네비게이션 -->
+  {(prevPost || nextPost) && (
+    <nav class="mt-12 pt-8 border-t border-gray-200 grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        {prevPost && prevParts && (
+          <a
+            href={`${base}/itmir/${prevParts[0]}/${prevParts[1]}/`}
+            class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:bg-blue-50/50 transition-all"
+          >
+            <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
+              ← 이전 포스트
+            </span>
+            <span class="text-base font-semibold text-gray-900 group-hover:text-blue-700 transition-colors line-clamp-2">
+              {prevPost.data.title}
+            </span>
+            <span class="text-base text-gray-400">
+              {prevPost.data.date.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'Asia/Seoul' })}
+            </span>
+          </a>
+        )}
+      </div>
+      <div>
+        {nextPost && nextParts && (
+          <a
+            href={`${base}/itmir/${nextParts[0]}/${nextParts[1]}/`}
+            class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:bg-blue-50/50 transition-all sm:text-right"
+          >
+            <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
+              다음 포스트 →
+            </span>
+            <span class="text-base font-semibold text-gray-900 group-hover:text-blue-700 transition-colors line-clamp-2">
+              {nextPost.data.title}
+            </span>
+            <span class="text-base text-gray-400">
+              {nextPost.data.date.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'Asia/Seoul' })}
+            </span>
+          </a>
+        )}
+      </div>
+    </nav>
+  )}
 </BaseLayout>
