@@ -201,7 +201,6 @@ function formatDate(d: Date) {
   let selectedCats = new Set<string>();
   let query = '';
   let panelOpen = false;
-  let mode: 'browse' | 'search' = 'browse';
 
   // Pagefind 지연 초기화
   let pf: any = null;
@@ -209,7 +208,8 @@ function formatDate(d: Date) {
   async function getPagefind() {
     if (pfReady) return pf;
     try {
-      pf = await import(`${base}/pagefind/pagefind.js` as any);
+      // @ts-ignore — pagefind은 빌드 후 런타임에만 존재
+      pf = await import(/* @vite-ignore */ `${base}/pagefind/pagefind.js`);
       await pf.init();
       pfReady = true;
     } catch {
@@ -220,7 +220,6 @@ function formatDate(d: Date) {
   }
 
   function setMode(newMode: 'browse' | 'search') {
-    mode = newMode;
     const isSearch = newMode === 'search';
     browseView?.classList.toggle('hidden', isSearch);
     searchView?.classList.toggle('hidden', !isSearch);
@@ -285,7 +284,7 @@ function formatDate(d: Date) {
     pushURL();
   }
 
-  function renderSearchResults(results: any[], q: string) {
+  function renderSearchResults(results: any[]) {
     if (!searchResultList || !searchResultCount || !searchNoResults) return;
     if (results.length === 0) {
       searchResultList.innerHTML = '';
@@ -328,7 +327,7 @@ function formatDate(d: Date) {
 
     const result = await engine.search(q);
     const data = await Promise.all(result.results.slice(0, 30).map((r: any) => r.data()));
-    renderSearchResults(data, q);
+    renderSearchResults(data);
   }
 
   function syncUI() {
