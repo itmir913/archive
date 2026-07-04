@@ -24,7 +24,6 @@ luminousky / ITMir
 <p><img  src="/archive/_astro/1.JAc3m8gJ_19OcY6.webp" alt="" width="230" height="511" loading="lazy" decoding="async"></p>
 <p>메인 레이아웃에는 버튼 5개를 만들어 주시면 됩니다</p>
 <p>이 강좌에서 배울 애니메이션은 4가지이고, Set이라는건 두가지 이상의 효과를 동시에 사용할때 사용합니다</p>
-<p>더보기</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">LinearLayout</span><span style="color:#6F42C1"> xmlns:android</span><span style="color:#24292E">=</span><span style="color:#032F62">"http://schemas.android.com/apk/res/android"</span></span>
 <span class="line"><span style="color:#6F42C1">    xmlns:tools</span><span style="color:#24292E">=</span><span style="color:#032F62">"http://schemas.android.com/tools"</span></span>
 <span class="line"><span style="color:#6F42C1">    android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"match_parent"</span></span>
@@ -83,7 +82,6 @@ luminousky / ITMir
 <p>res/anim에는 5가지의 xml 파일을 만들꺼예요</p>
 <p>먼저 투명도를 조절하는 alpha부터 관찰해 봅시다</p>
 <p><img  src="/archive/_astro/3.0zth9p8j_Z2iQzpJ.webp" alt="" width="384" height="77" loading="lazy" decoding="async"></p>
-<p>더보기</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">&#x3C;?</span><span style="color:#24292E">xml version</span><span style="color:#D73A49">=</span><span style="color:#032F62">"1.0"</span><span style="color:#24292E"> encoding</span><span style="color:#D73A49">=</span><span style="color:#032F62">"utf-8"</span><span style="color:#D73A49">?></span></span>
 <span class="line"><span style="color:#D73A49">&#x3C;</span><span style="color:#24292E">alpha xmlns</span><span style="color:#D73A49">:</span><span style="color:#24292E">android</span><span style="color:#D73A49">=</span><span style="color:#032F62">"http://schemas.android.com/apk/res/android"</span></span>
 <span class="line"><span style="color:#24292E">    android</span><span style="color:#D73A49">:</span><span style="color:#24292E">duration</span><span style="color:#D73A49">=</span><span style="color:#032F62">"10000"</span></span>
@@ -110,7 +108,6 @@ luminousky / ITMir
 <li>android:fillAfter : 애니메이션 효과가 끝난뒤에 상태를 유지할지 결정합니다, 기본은 false</li>
 </ul>
 <p>이중 android:interpolator에 들어가는 속성에 대해 자세한 설명을 더보기 처리 해두었습니다</p>
-<p>더보기</p>
 <p>linear_interpolator : 일정하게 진행이 된다</p>
 <p>accelerate_interpolator : 점점 속도를 더해가며 빠르게 진행한다</p>
 <p>decelerate_interpolator : 점점 느리게 진행한다</p>
@@ -124,7 +121,6 @@ luminousky / ITMir
 <p>android:shareInterpolator=“false” : 하위 애니메이션에 각각 다른 interpolator를 적용할때 씁니다</p>
 <p>다음은 회전을 담당하는 rotate입니다</p>
 <p><img  src="/archive/_astro/4.D7ZFBSdA_Hz1hF.webp" alt="" width="384" height="104" loading="lazy" decoding="async"></p>
-<p>더보기</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">&#x3C;?</span><span style="color:#24292E">xml version</span><span style="color:#D73A49">=</span><span style="color:#032F62">"1.0"</span><span style="color:#24292E"> encoding</span><span style="color:#D73A49">=</span><span style="color:#032F62">"utf-8"</span><span style="color:#D73A49">?></span></span>
 <span class="line"><span style="color:#D73A49">&#x3C;</span><span style="color:#24292E">rotate xmlns</span><span style="color:#D73A49">:</span><span style="color:#24292E">android</span><span style="color:#D73A49">=</span><span style="color:#032F62">"http://schemas.android.com/apk/res/android"</span></span>
 <span class="line"><span style="color:#24292E">    android</span><span style="color:#D73A49">:</span><span style="color:#24292E">duration</span><span style="color:#D73A49">=</span><span style="color:#032F62">"10000"</span></span>
@@ -153,7 +149,6 @@ luminousky / ITMir
 <p>즉 중간을 기준으로 0도부터 360도 까지 회전한다 라는 뜻입니다</p>
 <p>3번째로 크기를 담당하는 Scale입니다</p>
 <p><img  src="/archive/_astro/5.6QiZpNTb_1tFeAK.webp" alt="" width="378" height="134" loading="lazy" decoding="async"></p>
-<p>더보기</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">&#x3C;?</span><span style="color:#24292E">xml version</span><span style="color:#D73A49">=</span><span style="color:#032F62">"1.0"</span><span style="color:#24292E"> encoding</span><span style="color:#D73A49">=</span><span style="color:#032F62">"utf-8"</span><span style="color:#D73A49">?></span></span>
 <span class="line"><span style="color:#D73A49">&#x3C;</span><span style="color:#24292E">scale xmlns</span><span style="color:#D73A49">:</span><span style="color:#24292E">android</span><span style="color:#D73A49">=</span><span style="color:#032F62">"http://schemas.android.com/apk/res/android"</span></span>
 <span class="line"><span style="color:#24292E">    android</span><span style="color:#D73A49">:</span><span style="color:#24292E">duration</span><span style="color:#D73A49">=</span><span style="color:#032F62">"2000"</span></span>
@@ -176,7 +171,6 @@ luminousky / ITMir
 </ul>
 <p>다음은 위치변경 입니다</p>
 <p><img  src="/archive/_astro/6.DWCE-xVD_ZkWc85.webp" alt="" width="398" height="122" loading="lazy" decoding="async"></p>
-<p>더보기</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">&#x3C;?</span><span style="color:#24292E">xml version</span><span style="color:#D73A49">=</span><span style="color:#032F62">"1.0"</span><span style="color:#24292E"> encoding</span><span style="color:#D73A49">=</span><span style="color:#032F62">"utf-8"</span><span style="color:#D73A49">?></span></span>
 <span class="line"><span style="color:#D73A49">&#x3C;</span><span style="color:#24292E">translate xmlns</span><span style="color:#D73A49">:</span><span style="color:#24292E">android</span><span style="color:#D73A49">=</span><span style="color:#032F62">"http://schemas.android.com/apk/res/android"</span></span>
 <span class="line"><span style="color:#24292E">    android</span><span style="color:#D73A49">:</span><span style="color:#24292E">duration</span><span style="color:#D73A49">=</span><span style="color:#032F62">"2000"</span></span>
@@ -195,7 +189,6 @@ luminousky / ITMir
 <p>이제 마지막으로 애니메이션을 묶을수 있는 Set에 대해 알아봅시다</p>
 <p>이건… 그냥 <set> </set>으로 여러 애니메이션들을 묶어주시면 됩니다 ㅋㅋㅋ</p>
 <p><img  src="/archive/_astro/7.CHwsPp_d_ZLo5xN.webp" alt="" width="374" height="528" loading="lazy" decoding="async"></p>
-<p>더보기</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">&#x3C;?</span><span style="color:#24292E">xml version</span><span style="color:#D73A49">=</span><span style="color:#032F62">"1.0"</span><span style="color:#24292E"> encoding</span><span style="color:#D73A49">=</span><span style="color:#032F62">"utf-8"</span><span style="color:#D73A49">?></span></span>
 <span class="line"><span style="color:#D73A49">&#x3C;</span><span style="color:#24292E">set xmlns</span><span style="color:#D73A49">:</span><span style="color:#24292E">android</span><span style="color:#D73A49">=</span><span style="color:#032F62">"http://schemas.android.com/apk/res/android"</span><span style="color:#D73A49"> ></span></span>
 <span class="line"></span>

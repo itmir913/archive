@@ -36,63 +36,85 @@ luminousky / ITMir
 <p><img  src="/archive/_astro/2.CWuS7GX7_Z185vOV.webp" alt="" width="351" height="264" loading="lazy" decoding="async"></p>
 <p>저는 이렇게 TextView와 SeekBar을 두었습니다</p>
 <p>밝기는 100%가 끝이기 때문에 최대값을 100으로 둡시다</p>
-<p>android:max=“100”</p>
+<p><code>android:max="100"</code></p>
 <p>SeekBar라는건 ProgressBar를 상속하고 있다고 했는데요</p>
 <p>포함한다는 의미로 받아드리면 되는대 그래서 같은 속성을 사용할수 있습니다</p>
 <p>그리고 이 예제소스에 나오는 소스는 어플의 화면 밝기만 변경, 즉 시스탬의 화면 밝기를 변경하지 않는 어플입니다</p>
 <p>이때 값이 10이하로 떨어지면 화면이 꺼져버리는데요</p>
 <p>그래서 이를 방지하기 위한 코드를 삽입할 겁니다</p>
-<p>android:progress=“10”</p>
+<p><code>android:progress="10"</code></p>
 <h3 id="15-4-java-구성하기">15-4 Java 구성하기</h3>
 <p>이제 MainActivity.java로 넘어오셔서…</p>
 <p>SeekBar와 TextView를 사용할수 있도록 소스 최상단에 추가해 봅시다</p>
 <p>(이제 부터는 이런 언급이 없어도 알아서 넣으셔야 합니다)</p>
-<p>SeekBar seekbar;</p>
-<p>TextView status;</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">SeekBar seekbar;</span></span>
+<span class="line"><span style="color:#24292E">TextView status;</span></span>
+<span class="line"></span></code></pre>
 <p>ID값을 연결해 볼까요?</p>
-<p>seekbar = (SeekBar) findViewById(R.id.seekbar);</p>
-<p>status = (TextView) findViewById(R.id.status);</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">seekbar </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (SeekBar) </span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.seekbar);</span></span>
+<span class="line"><span style="color:#24292E">status </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (TextView) </span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.status);</span></span>
+<span class="line"></span></code></pre>
 <p>xml할때 언급은 안했지만 바로 위 파란상자를 보면 id값을 수정했구나 라는걸 아셔야 합니다</p>
 <p>지금쯤 되서 모른다면 다시 처음부터 읽으셔야 합니다</p>
 <p>그다음 시크바가 변경될때마다 호출될 리스너를 연결해야 합니다</p>
-<p>seekbar.setOnSeekBarChangeListener(new SeekBar_Listener());</p>
+<p><code>seekbar.setOnSeekBarChangeListener(new SeekBar_Listener());</code></p>
 <p>위처럼 class를 새로 만들어서 리스너를 만들수 있습니다</p>
-<p>class SeekBar_Listener implements OnSeekBarChangeListener {</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    }</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    public void onStartTrackingTouch(SeekBar seekBar) {</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    }</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    public void onStopTrackingTouch(SeekBar seekBar) {</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    }</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>}</span></span>
-<span class="line"><span></span></span></code></pre>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> SeekBar_Listener</span><span style="color:#D73A49"> implements</span><span style="color:#6F42C1"> OnSeekBarChangeListener</span><span style="color:#24292E"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">        public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> onProgressChanged</span><span style="color:#24292E">(SeekBar </span><span style="color:#E36209">seekBar</span><span style="color:#24292E">, </span><span style="color:#D73A49">int</span><span style="color:#E36209"> progress</span><span style="color:#24292E">, </span><span style="color:#D73A49">boolean</span><span style="color:#E36209"> fromUser</span><span style="color:#24292E">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">        public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> onStartTrackingTouch</span><span style="color:#24292E">(SeekBar </span><span style="color:#E36209">seekBar</span><span style="color:#24292E">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">        public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> onStopTrackingTouch</span><span style="color:#24292E">(SeekBar </span><span style="color:#E36209">seekBar</span><span style="color:#24292E">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span></code></pre>
 <p>그러나 우리는 이렇게 class라는걸 따로 안만들고 setOnSeekBarChangeListener에 바로 리스너 메소드를 연결해 보겠습니다</p>
 <p>(위 하얀박스 코드를 그대로 복사하는 멍청이는 없길 설명을 똑바로 안들었단 소리입니다)</p>
-<p>seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {</p>
-<p>@Override</p>
-<p>public void onStartTrackingTouch(SeekBar seekBar) {</p>
-<p>// 메소드 이름대로 사용자가 SeekBar를 터치했을때 실행됩니다</p>
-<p>// TODO Auto-generated method stub</p>
-<p>}</p>
-<p>@Override</p>
-<p>public void onStopTrackingTouch(SeekBar seekBar) {</p>
-<p>// 메소드 이름대로 사용자가 SeekBar를 손에서 땠을때 실행됩니다</p>
-<p>// TODO Auto-generated method stub</p>
-<p>}</p>
-<p>@Override</p>
-<p>public void onProgressChanged(SeekBar seekBar, <strong>int progress</strong>,</p>
-<p>boolean fromUser) {</p>
-<p>// 메소드 이름대로 사용자가 SeekBar를 움직일때 실행됩니다</p>
-<p>// 주로 사용되는 메소드 입니다</p>
-<p>// TODO Auto-generated method stub</p>
-<p>}</p>
-<p>});</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">seekbar.</span><span style="color:#6F42C1">setOnSeekBarChangeListener</span><span style="color:#24292E">(</span><span style="color:#D73A49">new</span><span style="color:#24292E"> SeekBar.</span><span style="color:#6F42C1">OnSeekBarChangeListener</span><span style="color:#24292E">() {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">@</span><span style="color:#D73A49">Override</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> onStartTrackingTouch</span><span style="color:#24292E">(SeekBar seekBar) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 메소드 이름대로 사용자가 SeekBar를 터치했을때 실행됩니다</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// TODO Auto-generated method stub</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">@</span><span style="color:#D73A49">Override</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> onStopTrackingTouch</span><span style="color:#24292E">(SeekBar seekBar) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 메소드 이름대로 사용자가 SeekBar를 손에서 땠을때 실행됩니다</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// TODO Auto-generated method stub</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">@</span><span style="color:#D73A49">Override</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> onProgressChanged</span><span style="color:#24292E">(SeekBar seekBar, </span><span style="color:#D73A49">int</span><span style="color:#24292E"> progress,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">boolean</span><span style="color:#24292E"> fromUser) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 메소드 이름대로 사용자가 SeekBar를 움직일때 실행됩니다</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 주로 사용되는 메소드 입니다</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// TODO Auto-generated method stub</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">});</span></span>
+<span class="line"></span></code></pre>
 <p>기본적인 리스너의 형태입니다</p>
 <p>setOnSeekBarChangeListener을 연결하며 바로 작업할 내용을 지정해 주고있는데요</p>
 <p>하얀박스와 차이점은 하얀박스는 아래에서 또는 딴곳에서 리스너를 생성하고, 방금 본 소스는 리스너를 지정하며 바로 할 작업을 명시해 주는겁니다</p>
@@ -102,14 +124,17 @@ luminousky / ITMir
 <p>현재 SeekBar의 진행 정도를 표시하는 값입니다</p>
 <p>max를 100으로 지정했으니 최대로 올리면 저 값은 100이 되고 가장 아래로 바꾸면 0이 됩니다</p>
 <p>저 메소드 안에 아래 코드를 넣어보겠습니다</p>
-<p>if(progress&#x3C;10){</p>
-<p>progress=10;</p>
-<p>seekbar.setProgress(progress);</p>
-<p>}</p>
-<p>status.setText(“밝기 수준 : ” + progress);</p>
-<p>WindowManager.LayoutParams params = getWindow().getAttributes();</p>
-<p>params.screenBrightness = (float) progress / 100;</p>
-<p>getWindow().setAttributes(params);</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">if</span><span style="color:#24292E">(progress</span><span style="color:#D73A49">&#x3C;</span><span style="color:#005CC5">10</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#24292E">    progress</span><span style="color:#D73A49">=</span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    seekbar.</span><span style="color:#6F42C1">setProgress</span><span style="color:#24292E">(progress);</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">status.</span><span style="color:#6F42C1">setText</span><span style="color:#24292E">(</span><span style="color:#032F62">"밝기 수준 : "</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> progress);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">WindowManager.LayoutParams params </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> getWindow</span><span style="color:#24292E">().</span><span style="color:#6F42C1">getAttributes</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">params.screenBrightness </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (</span><span style="color:#D73A49">float</span><span style="color:#24292E">) progress </span><span style="color:#D73A49">/</span><span style="color:#005CC5"> 100</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6F42C1">getWindow</span><span style="color:#24292E">().</span><span style="color:#6F42C1">setAttributes</span><span style="color:#24292E">(params);</span></span>
+<span class="line"></span></code></pre>
 <p>간단한 코드입니다</p>
 <p>중간 Enter위까지는 모두 아는 코드죠?</p>
 <p>progress값이 10아래로 떨어지면 움직이지 못하게 설정했습니다</p>
@@ -140,9 +165,10 @@ luminousky / ITMir
 <p>onProgressChanged는 값이 변할때마다 실행되는 메소드이고, 가장 자주 쓰이는 메소드이다</p>
 </li>
 </ol>
-<p>WindowManager.LayoutParams params = getWindow().getAttributes();</p>
-<p>params.screenBrightness = (float) progress / 100;</p>
-<p>getWindow().setAttributes(params);</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">WindowManager.LayoutParams params </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> getWindow</span><span style="color:#24292E">().</span><span style="color:#6F42C1">getAttributes</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">params.screenBrightness </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (</span><span style="color:#D73A49">float</span><span style="color:#24292E">) progress </span><span style="color:#D73A49">/</span><span style="color:#005CC5"> 100</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6F42C1">getWindow</span><span style="color:#24292E">().</span><span style="color:#6F42C1">setAttributes</span><span style="color:#24292E">(params);</span></span>
+<span class="line"></span></code></pre>
 <p>위 세게의 코드는 어플의 밝기를 조절하는 코드이다(만 어플을 종료하면 원래 밝기로 돌아온다)</p>
 <p>어떠나요?</p>
 <p>간단한 SeekBar라고 해도 배울께 많습니다</p>
@@ -155,20 +181,23 @@ luminousky / ITMir
 <p>안드로이드의 화면 밝기 값은 실제로는 두가지가 있습니다</p>
 <p>이 강좌에서 배운 윈도우 매니저를 이용한 방법과 실제 화면 밝기 설정 값입니다</p>
 <p>실제 화면 밝기를 조절하는 방법은 아래와 같습니다</p>
-<uses-permission android:name="android.permission.WRITE_SETTINGS">
-<p>import android.provider.Settings;</p>
-<p>Settings.System.putInt(getContentResolver(), “screen_brightness”, 0~255);</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">uses-permission</span><span style="color:#6F42C1"> android:name</span><span style="color:#24292E">=</span><span style="color:#032F62">"android.permission.WRITE_SETTINGS"</span><span style="color:#24292E"> /></span></span>
+<span class="line"></span></code></pre>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> android.provider.Settings;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">Settings.System.</span><span style="color:#6F42C1">putInt</span><span style="color:#24292E">(</span><span style="color:#6F42C1">getContentResolver</span><span style="color:#24292E">(), </span><span style="color:#032F62">"screen_brightness"</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#D73A49">~</span><span style="color:#005CC5">255</span><span style="color:#24292E">);</span></span>
+<span class="line"></span></code></pre>
 <p>화면 밝기 설정값은 0~255로 설정할수 있습니다</p>
 <p>그러나 윈도우 매니저의 밝기 값은 0~100(%)이며, 0을 입력할경우 화면이 꺼져버립니다</p>
 <p>참고로 자동 밝기 상태인지 확인후, 자동밝기가 아닐경우 설정하는 코드는 아래와 같습니다</p>
-<p>if(Settings.System.getInt(getContentResolver(), Settings.System.SCREEN_BRIGHTNESS_MODE) != 1)</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_BRIGHTNESS_MODE, 1);</span></span>
-<span class="line"><span></span></span></code></pre>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">if</span><span style="color:#24292E">(Settings.System.</span><span style="color:#6F42C1">getInt</span><span style="color:#24292E">(</span><span style="color:#6F42C1">getContentResolver</span><span style="color:#24292E">(), Settings.System.SCREEN_BRIGHTNESS_MODE) </span><span style="color:#D73A49">!=</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">    Settings.System.</span><span style="color:#6F42C1">putInt</span><span style="color:#24292E">(</span><span style="color:#6F42C1">getContentResolver</span><span style="color:#24292E">(), Settings.System.SCREEN_BRIGHTNESS_MODE, </span><span style="color:#005CC5">1</span><span style="color:#24292E">);</span></span>
+<span class="line"></span></code></pre>
 <hr>
 <h2 id="첨부파일">첨부파일</h2>
 <ul>
 <li><a href="https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleSeekbar.zip">ExampleSeekbar.zip</a> <code>1.6 MB</code></li>
-</ul></uses-permission> </div>  </article>  </div> </main> <footer class="border-t border-gray-200 px-6 py-6 text-center"> <p class="text-base text-gray-400 m-0">
+</ul> </div>  </article>  </div> </main> <footer class="border-t border-gray-200 px-6 py-6 text-center"> <p class="text-base text-gray-400 m-0">
 Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 underline underline-offset-2">
 itmir.tistory.com
 </a>  · Archived by luminousky

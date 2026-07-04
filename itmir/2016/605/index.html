@@ -10,67 +10,125 @@ luminousky / ITMir
 <p>이 오류는 git pull으로 서버에 저장된 commit을 받아오지 않은 상태에서 push를 할 때 발생한다.</p>
 <p>아래는 오류의 전체 상황이다.</p>
 <p>입력한 명령어 부분을 굵은 글씨로 표시했다.</p>
-<p>Microsoft Windows [Version 10.0.10240]</p>
-<p>(c) 2015 Microsoft Corporation. All rights reserved.</p>
-<p><strong>C:\Users\whdghks913>cd /d D:\Android\AndroidStudio\WondangHighSchool</strong></p>
-<p><strong>D:\Android\AndroidStudio\WondangHighSchool>git status</strong></p>
-<p>On branch master</p>
-<p>Your branch is up-to-date with ‘origin/master’.</p>
-<p>Changes not staged for commit:</p>
-<p>(use “git add &#x3C;file>…” to update what will be committed)</p>
-<p>(use “git checkout — &#x3C;file>…” to discard changes in working directory)</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    modified:   build.gradle</span></span>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Microsoft Windows [Version 10.0.10240]</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>(c) 2015 Microsoft Corporation. All rights reserved.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>C:\Users\whdghks913>cd /d D:\Android\AndroidStudio\WondangHighSchool</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>D:\Android\AndroidStudio\WondangHighSchool>git status</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>On branch master</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Your branch is up-to-date with 'origin/master'.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Changes not staged for commit:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  (use "git add &#x3C;file>..." to update what will be committed)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  (use "git checkout -- &#x3C;file>..." to discard changes in working directory)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        modified:   build.gradle</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>no changes added to commit (use "git add" and/or "git commit -a")</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>D:\Android\AndroidStudio\WondangHighSchool>git add -A</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>warning: CRLF will be replaced by LF in build.gradle.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>The file will have its original line endings in your working directory.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>D:\Android\AndroidStudio\WondangHighSchool>git commit -m "Plugin is too old, please update to a more recent version, or set ANDROID_DAILY_OVERRIDE environment variable"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[master warning: CRLF will be replaced by LF in build.gradle.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>The file will have its original line endings in your working directory.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>99e0db2] Plugin is too old, please update to a more recent version, or set ANDROID_DAILY_OVERRIDE environment variable</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>warning: CRLF will be replaced by LF in build.gradle.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>The file will have its original line endings in your working directory.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> 1 file changed, 1 insertion(+), 1 deletion(-)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>D:\Android\AndroidStudio\WondangHighSchool>git push origin master</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Username for 'https://github.com':</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Password for 'https://itmir913@github.com':</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>To https://github.com/itmir913/wondanghighschool</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> ! [rejected]        master -> master (fetch first)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>error: failed to push some refs to 'https://github.com/itmir913/wondanghighschool'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>hint: Updates were rejected because the remote contains work that you do</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>hint: not have locally. This is usually caused by another repository pushing</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>hint: to the same ref. You may want to first integrate the remote changes</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>hint: (e.g., 'git pull ...') before pushing again.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>hint: See the 'Note about fast-forwards' in 'git push --help' for details.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>D:\Android\AndroidStudio\WondangHighSchool>git pull</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>remote: Counting objects: 4, done.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>remote: Compressing objects: 100% (4/4), done.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>remote: Total 4 (delta 3), reused 0 (delta 0)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Unpacking objects: 100% (4/4), done.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>From https://github.com/itmir913/wondanghighschool</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   5bb3741..6917361  master     -> origin/master</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Removing app/app.iml</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Removing WondangHighSchool.iml</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Merge made by the 'recursive' strategy.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> .gitignore            |   1 +</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> WondangHighSchool.iml |  19 ---------</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> app/app.iml           | 110 --------------------------------------------------</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> 3 files changed, 1 insertion(+), 129 deletions(-)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> delete mode 100644 WondangHighSchool.iml</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> delete mode 100644 app/app.iml</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>D:\Android\AndroidStudio\WondangHighSchool>git push origin master</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Username for 'https://github.com':</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Password for 'https://itmir913@github.com':</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Counting objects: 5, done.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Delta compression using up to 4 threads.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Compressing objects: 100% (5/5), done.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Writing objects: 100% (5/5), 648 bytes | 0 bytes/s, done.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Total 5 (delta 3), reused 0 (delta 0)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>To https://github.com/itmir913/wondanghighschool</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   6917361..8e8881a  master -> master</span></span>
 <span class="line"><span></span></span></code></pre>
-<p>no changes added to commit (use “git add” and/or “git commit -a”)</p>
-<p><strong>D:\Android\AndroidStudio\WondangHighSchool>git add -A</strong></p>
-<p>warning: CRLF will be replaced by LF in build.gradle.</p>
-<p>The file will have its original line endings in your working directory.</p>
-<p><strong>D:\Android\AndroidStudio\WondangHighSchool>git commit -m “Plugin is too old, please update to a more recent version, or set ANDROID_DAILY_OVERRIDE environment variable”</strong></p>
-<p>[master warning: CRLF will be replaced by LF in build.gradle.</p>
-<p>The file will have its original line endings in your working directory.</p>
-<p>99e0db2] Plugin is too old, please update to a more recent version, or set ANDROID_DAILY_OVERRIDE environment variable</p>
-<p>warning: CRLF will be replaced by LF in build.gradle.</p>
-<p>The file will have its original line endings in your working directory.</p>
-<p>1 file changed, 1 insertion(+), 1 deletion(-)</p>
-<p><strong>D:\Android\AndroidStudio\WondangHighSchool>git push origin master</strong></p>
-<p>Username for ‘<a href="https://github.com">https://github.com</a>’:</p>
-<p>Password for ‘<a href="https://itmir913@github.com">https://itmir913@github.com</a>’:</p>
-<p>To <a href="https://github.com/itmir913/wondanghighschool">https://github.com/itmir913/wondanghighschool</a></p>
-<p>! [rejected]        master -> master (fetch first)</p>
-<p>error: failed to push some refs to ‘<a href="https://github.com/itmir913/wondanghighschool">https://github.com/itmir913/wondanghighschool</a>’</p>
-<p>hint: Updates were rejected because the remote contains work that you do</p>
-<p>hint: not have locally. This is usually caused by another repository pushing</p>
-<p>hint: to the same ref. You may want to first integrate the remote changes</p>
-<p>hint: (e.g., ‘git pull …’) before pushing again.</p>
-<p>hint: See the ‘Note about fast-forwards’ in ‘git push —help’ for details.</p>
-<p><strong>D:\Android\AndroidStudio\WondangHighSchool>git pull</strong></p>
-<p>remote: Counting objects: 4, done.</p>
-<p>remote: Compressing objects: 100% (4/4), done.</p>
-<p>remote: Total 4 (delta 3), reused 0 (delta 0)</p>
-<p>Unpacking objects: 100% (4/4), done.</p>
-<p>From <a href="https://github.com/itmir913/wondanghighschool">https://github.com/itmir913/wondanghighschool</a></p>
-<p>5bb3741..6917361  master     -> origin/master</p>
-<p>Removing app/app.iml</p>
-<p>Removing WondangHighSchool.iml</p>
-<p>Merge made by the ‘recursive’ strategy.</p>
-<p>.gitignore            |   1 +</p>
-<p>WondangHighSchool.iml |  19 ---------</p>
-<p>app/app.iml           | 110 --------------------------------------------------</p>
-<p>3 files changed, 1 insertion(+), 129 deletions(-)</p>
-<p>delete mode 100644 WondangHighSchool.iml</p>
-<p>delete mode 100644 app/app.iml</p>
-<p><strong>D:\Android\AndroidStudio\WondangHighSchool>git push origin master</strong></p>
-<p>Username for ‘<a href="https://github.com">https://github.com</a>’:</p>
-<p>Password for ‘<a href="https://itmir913@github.com">https://itmir913@github.com</a>’:</p>
-<p>Counting objects: 5, done.</p>
-<p>Delta compression using up to 4 threads.</p>
-<p>Compressing objects: 100% (5/5), done.</p>
-<p>Writing objects: 100% (5/5), 648 bytes | 0 bytes/s, done.</p>
-<p>Total 5 (delta 3), reused 0 (delta 0)</p>
-<p>To <a href="https://github.com/itmir913/wondanghighschool">https://github.com/itmir913/wondanghighschool</a></p>
-<p>6917361..8e8881a  master -> master</p>
 <p>해결 방법</p>
-<p>git pull</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> pull</span></span>
+<span class="line"></span></code></pre>
 <p>출처 / 팁</p>
 <p>You may want to first integrate the remote changes (e.g., ‘git pull …’) before pushing again.</p> </div>  </article>  </div> </main> <footer class="border-t border-gray-200 px-6 py-6 text-center"> <p class="text-base text-gray-400 m-0">
 Originally published on  <a href="https://itmir.tistory.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 underline underline-offset-2">

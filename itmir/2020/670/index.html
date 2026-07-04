@@ -42,12 +42,18 @@ luminousky / ITMir
 <h2 id="git-config-등록">git config 등록</h2>
 <p>마지막으로 p4merge를 git에서 사용할 수 있도록 config을 등록해줘야 합니다.</p>
 <p>git bash를 열고, 아래 명령어를 입력해주세요.</p>
-<p>git config —global diff.tool p4merge</p>
-<p>git config —global difftool.p4merge.path “C:/Program Files/Perforce/p4merge.exe”</p>
-<p>git config —global difftool.prompt false</p>
-<p>git config —global merge.tool p4merge</p>
-<p>git config —global mergetool.p4merge.path “C:/Program Files/Perforce/p4merge.exe”</p>
-<p>git config —global mergetool.prompt false</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> config</span><span style="color:#005CC5"> --global</span><span style="color:#032F62"> diff.tool</span><span style="color:#032F62"> p4merge</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> config</span><span style="color:#005CC5"> --global</span><span style="color:#032F62"> difftool.p4merge.path</span><span style="color:#032F62"> "C:/Program Files/Perforce/p4merge.exe"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> config</span><span style="color:#005CC5"> --global</span><span style="color:#032F62"> difftool.prompt</span><span style="color:#005CC5"> false</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> config</span><span style="color:#005CC5"> --global</span><span style="color:#032F62"> merge.tool</span><span style="color:#032F62"> p4merge</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> config</span><span style="color:#005CC5"> --global</span><span style="color:#032F62"> mergetool.p4merge.path</span><span style="color:#032F62"> "C:/Program Files/Perforce/p4merge.exe"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> config</span><span style="color:#005CC5"> --global</span><span style="color:#032F62"> mergetool.prompt</span><span style="color:#005CC5"> false</span></span>
+<span class="line"></span></code></pre>
 <p>프로그램 설치 경로가 다르다면 자신의 환경에 맞게 바꿔서 입력합니다.</p>
 <p>위의 세 줄은 diff 툴을 p4merge로 설정한다는 config이며, 아래 세 줄은 merge 툴을 p4merge로 설정한다는 config입니다.</p>
 <p>merge 툴으로 p4merge를 사용하지 않으려면 (단순히 difftool으로만 사용하려면) 위의 세 줄만 입력해주세요.</p>
@@ -68,20 +74,24 @@ luminousky / ITMir
 <p><a href="https://winmerge.org/downloads">여기</a>를 클릭하여 WinMerge 공식 홈페이지에 방문하시면 WinMerge를 다운로드 할 수 있습니다.</p>
 <p>WinMerge를 difftool과 mergetool으로 사용하는 방법은 다음과 같습니다.</p>
 <p>위에서 살펴본 것처럼 .gitconfig 파일을 텍스트 편집기로 연 다음, 아래 파란 박스 안의 내용을 입력합니다.</p>
-<p>[diff] tool = winmerge</p>
-<p>[merge] tool = winmerge</p>
-<p>[difftool “WinMerge”]</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>cmd = "C:\\Program Files\\WinMerge\\WinMergeU.exe" -e -u -dl "Old $BASE" -dr "New $BASE" "$LOCAL" "$REMOTE"</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>trustExitCode = true</span></span>
-<span class="line"><span></span></span></code></pre>
-<p>[mergetool “WinMerge”]</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>cmd = "C:\\Program Files\\WinMerge\\WinMergeU.exe" -e -u -dl "Local" -dm "Base" -dr "Remote" "$LOCAL" "$BASE" "$REMOTE" -o "$MERGED"</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>trustExitCode = true</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>keepBackup = false</span></span>
-<span class="line"><span></span></span></code></pre>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="ini"><code><span class="line"><span style="color:#6F42C1">[diff]</span><span style="color:#D73A49"> tool</span><span style="color:#24292E"> = winmerge</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">[merge]</span><span style="color:#D73A49"> tool</span><span style="color:#24292E"> = winmerge</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">[difftool "WinMerge"]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    cmd</span><span style="color:#24292E"> = </span><span style="color:#032F62">"C:\\Program Files\\WinMerge\\WinMergeU.exe"</span><span style="color:#24292E"> -e -u -dl </span><span style="color:#032F62">"Old $BASE"</span><span style="color:#24292E"> -dr </span><span style="color:#032F62">"New $BASE"</span><span style="color:#032F62"> "$LOCAL"</span><span style="color:#032F62"> "$REMOTE"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    trustExitCode</span><span style="color:#24292E"> = true</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">[mergetool "WinMerge"]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    cmd</span><span style="color:#24292E"> = </span><span style="color:#032F62">"C:\\Program Files\\WinMerge\\WinMergeU.exe"</span><span style="color:#24292E"> -e -u -dl </span><span style="color:#032F62">"Local"</span><span style="color:#24292E"> -dm </span><span style="color:#032F62">"Base"</span><span style="color:#24292E"> -dr </span><span style="color:#032F62">"Remote"</span><span style="color:#032F62"> "$LOCAL"</span><span style="color:#032F62"> "$BASE"</span><span style="color:#032F62"> "$REMOTE"</span><span style="color:#24292E"> -o </span><span style="color:#032F62">"$MERGED"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    trustExitCode</span><span style="color:#24292E"> = true</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    keepBackup</span><span style="color:#24292E"> = false</span></span>
+<span class="line"></span></code></pre>
 <p>참고 : <a href="https://coderwall.com/p/76wmzq/winmerge-as-git-difftool-on-windows">https://coderwall.com/p/76wmzq/winmerge-as-git-difftool-on-windows</a></p>
 <p>그리하면 아래 스크린샷처럼 WinMerge를 git difftool과 git mergetool으로 사용할 수 있습니다.</p>
 <p><img  src="/archive/_astro/img_8.JHOGd85U_Z1U9ucw.webp" alt="" width="1424" height="739" loading="lazy" decoding="async"></p>
@@ -89,10 +99,14 @@ luminousky / ITMir
 <p>diff 툴 중에는 Meld라는 프로그램도 있습니다.</p>
 <p><a href="https://meldmerge.org/">여기</a>를 클릭하여 Meld 공식 홈페이지에 방문하신 다음, Meld를 다운로드 할 수 있습니다.</p>
 <p>Meld를 git difftool과 git mergetool으로 사용하는 방법은 다음과 같습니다.</p>
-<p>git config —global diff.tool meld</p>
-<p>git config —global difftool.meld.path “C:/Program Files (x86)/Meld/Meld.exe”</p>
-<p>git config —global merge.tool meld</p>
-<p>git config —global mergetool.meld.path “C:/Program Files (x86)/Meld/Meld.exe”</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> config</span><span style="color:#005CC5"> --global</span><span style="color:#032F62"> diff.tool</span><span style="color:#032F62"> meld</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> config</span><span style="color:#005CC5"> --global</span><span style="color:#032F62"> difftool.meld.path</span><span style="color:#032F62"> "C:/Program Files (x86)/Meld/Meld.exe"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> config</span><span style="color:#005CC5"> --global</span><span style="color:#032F62"> merge.tool</span><span style="color:#032F62"> meld</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> config</span><span style="color:#005CC5"> --global</span><span style="color:#032F62"> mergetool.meld.path</span><span style="color:#032F62"> "C:/Program Files (x86)/Meld/Meld.exe"</span></span>
+<span class="line"></span></code></pre>
 <p>git bash에서 위와 같은 명령어를 입력하면 Meld를 사용할 수 있습니다.</p>
 <p><img  src="/archive/_astro/img_9.Dy-9WVD0_Z1y1978.webp" alt="" width="1731" height="908" loading="lazy" decoding="async"></p>
 <p>difftool으로 Meld를 사용한 모습입니다.</p>

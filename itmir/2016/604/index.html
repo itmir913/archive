@@ -7,32 +7,38 @@ luminousky / ITMir
 </a> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-3"> Plugin is too old, please update to a more recent version, or set ANDROID_DAILY_OVERRIDE </h1> <div class="flex items-center gap-3 flex-wrap"> <time class="text-base text-gray-400" datetime="2016-01-03T10:56:56.000Z"> 2016년 1월 3일 </time> <span class="text-base text-gray-400 bg-gray-100 px-2 py-0.5 rounded"> Programming </span> <a href="https://itmir.tistory.com/604" class="text-base text-gray-400 underline underline-offset-2" target="_blank" rel="noopener noreferrer">
 원본 보기 ↗
 </a> </div> <p class="mt-3 mb-0 text-base text-gray-400 leading-relaxed"> 오류 정보Plugin is too old, please update to a more recent version, or set ANDROID_DAILY_OVERRIDE environment variable toError:Could not find… </p> </header> <div class="prose prose-gray"> <p>오류 정보</p>
-<p>Plugin is too old, please update to a more recent version, or set ANDROID_DAILY_OVERRIDE environment variable to</p>
-<p>Error:Could not find com.android.tools.build:gradle:2.0.0.</p>
-<p>Searched in the following locations:</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>file:/C:/Program Files/AndroidStudio/gradle/m2repository/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.pom</span></span>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Plugin is too old, please update to a more recent version, or set ANDROID_DAILY_OVERRIDE environment variable to</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>file:/C:/Program Files/AndroidStudio/gradle/m2repository/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.jar</span></span>
+<span class="line"><span>Error:Could not find com.android.tools.build:gradle:2.0.0.</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>https://jcenter.bintray.com/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.pom</span></span>
+<span class="line"><span>Searched in the following locations:</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>https://jcenter.bintray.com/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.jar</span></span>
-<span class="line"><span></span></span></code></pre>
-<p>Required by:</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>:ReportCard:unspecified</span></span>
+<span class="line"><span>    file:/C:/Program Files/AndroidStudio/gradle/m2repository/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.pom</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    file:/C:/Program Files/AndroidStudio/gradle/m2repository/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.jar</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    https://jcenter.bintray.com/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.pom</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    https://jcenter.bintray.com/com/android/tools/build/gradle/2.0.0/gradle-2.0.0.jar</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Required by:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    :ReportCard:unspecified</span></span>
 <span class="line"><span></span></span></code></pre>
 <p>해결 방법</p>
 <p>필자는 이 오류를 해결하기 위해 Android Studio와 SDK를 지우고 다시 깔았지만 해결이 안되었다 :)</p>
 <p>app/build.gradle 파일이 아닌(Not)</p>
 <p><app source="">/build.gradle 파일을 수정해야 한다.</app></p>
-<p>dependencies {</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>classpath 'com.android.tools.build:gradle:2.0.0-alpha1'</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>// NOTE: Do not place your application dependencies here; they belong</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>// in the individual module build.gradle files</span></span>
-<span class="line"><span></span></span></code></pre>
-<p>}</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="groovy"><code><span class="line"><span style="color:#24292E">dependencies {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    classpath </span><span style="color:#032F62">'com.android.tools.build:gradle:2.0.0-alpha1'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // NOTE: Do not place your application dependencies here; they belong</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // in the individual module build.gradle files</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
 <p>필자는 classpath의 마지막 부분이 alpha1 으로 되어 있었다.</p>
 <p>이 부분을 alpha3으로 바꿔서 해결하였다.</p>
 <p>alpha3으로 바꾼 이유는</p>

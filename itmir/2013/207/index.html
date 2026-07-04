@@ -44,16 +44,22 @@ luminousky / ITMir
 <p>init.rooting.sh에서는 Root폴더에 있는 su파일들을 /system에 넣은 뒤에 적절한 권한을 주고 재부팅 하는 명령어가 들어 있습니다.</p>
 <p>그럼 하나하나 수정해 보겠습니다.</p>
 <p>먼저 init.rc를 수정해 보겠습니다.</p>
-<p>service flash_recovery /system/etc/install-recovery.sh</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>class main</span></span>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>service flash_recovery /system/etc/install-recovery.sh</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    class main</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    oneshot</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>service rooting /init.rooting.sh</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>class main</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>user root</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>group root</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>oneshot</span></span>
 <span class="line"><span></span></span></code></pre>
-<p><strong>service rooting /init.rooting.sh</strong></p>
-<p><strong>class main</strong></p>
-<p><strong>user root</strong></p>
-<p><strong>group root</strong></p>
-<p><strong>oneshot</strong></p>
 <p>이렇게 굵게 칠해진 부분을 추가해 주세요.</p>
 <p>위치는 flash_recovery아래정도에 넣어주시면 됩니다.</p>
 <p>이 문구의 설명은 rooting이라는 서비스를 실행하는데, /(루트)에 있는 init.rooting.sh를 실행하라는 의미입니다.</p>
@@ -62,14 +68,22 @@ luminousky / ITMir
 <p>Superuser.apk와 su는 램디스크안 Root라는 폴더를 만들어 넣어주시면 됩니다.</p>
 <p>R의 대문자 소문자를 가려야 하나? 라고 하실수 있는데요.</p>
 <p>init.rooting.sh를 열어보시면</p>
-<p>#!/system/bin/sh</p>
-<p><strong>mount -orw,remount /system</strong></p>
-<p><strong>cp /Root/Superuser.apk /system/app/Superuser.apk</strong></p>
-<p><strong>cp /Root/su /system/bin/su</strong></p>
-<p><strong>chmod 644 /system/app/Superuser.apk</strong></p>
-<p><strong>chmod 06755 /system/bin/su</strong></p>
-<p><strong>ln -s /system/bin/su /system/xbin/su</strong></p>
-<p>reboot</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">#!/system/bin/sh</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">mount</span><span style="color:#005CC5"> -orw,remount</span><span style="color:#032F62"> /system</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">cp</span><span style="color:#032F62"> /Root/Superuser.apk</span><span style="color:#032F62"> /system/app/Superuser.apk</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">cp</span><span style="color:#032F62"> /Root/su</span><span style="color:#032F62"> /system/bin/su</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">chmod</span><span style="color:#005CC5"> 644</span><span style="color:#032F62"> /system/app/Superuser.apk</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">chmod</span><span style="color:#005CC5"> 06755</span><span style="color:#032F62"> /system/bin/su</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">ln</span><span style="color:#005CC5"> -s</span><span style="color:#032F62"> /system/bin/su</span><span style="color:#032F62"> /system/xbin/su</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">reboot</span></span>
+<span class="line"></span></code></pre>
 <p>위와 같이 su와 SuperUser.apk를 /Root에서 복사하도록 설정하고 있기에 대소문자를 구분해서 정확하게 쓰셔야 합니다.</p>
 <p>이왕 소스를 올린거 소스 분석을 해보면,</p>
 <p>mount구문으로 /system을 마운트 하고 있습니다.</p>

@@ -21,53 +21,66 @@ luminousky / ITMir
 <p>자 모두 설치해주시면 아래를 따라해주세요.</p>
 <p>py파일을 하나 생성해 줍시다.</p>
 <p>이름은 make.py로 해줍시다.</p>
-<p>from distutils.core import setup</p>
-<p>import py2exe</p>
-<p>setup(console=[‘컴파일할파일명.py’])</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#D73A49">from</span><span style="color:#24292E"> distutils.core </span><span style="color:#D73A49">import</span><span style="color:#24292E"> setup</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> py2exe</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">setup(</span><span style="color:#E36209">console</span><span style="color:#D73A49">=</span><span style="color:#24292E">[</span><span style="color:#032F62">'컴파일할파일명.py'</span><span style="color:#24292E">])</span></span>
+<span class="line"></span></code></pre>
 <p>내용은 위와 같이 심플합니다. ㅎㅎ</p>
 <p>저기에 있는 컴파일할파일명.py만 조절해 주세요.</p>
 <p>그다음 cmd에서</p>
-<p>C:\Python27\python.exe make.py (만들어질 이름).exe</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>C:\Python27\python.exe make.py (만들어질 이름).exe</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>그럼 dist폴더에 만들어진 exe가 존재하는데요.</p>
 <p>파일이 많습니다…</p>
 <p>하나의 exe로 만드는 방법은 아래와 같습니다.</p>
-<p>from distutils.core import setup</p>
-<p>import py2exe</p>
-<p>excludes = [</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"pywin",</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>"pywin.debugger",</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>"pywin.debugger.dbgcon",</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>"pywin.dialogs",</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>"pywin.dialogs.list",</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>"win32com.server",</span></span>
-<span class="line"><span></span></span></code></pre>
-<p>]</p>
-<p>options = {</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"bundle_files": 1,                 # create singlefile exe</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>"compressed"  : 1,                 # compress the library archive</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>"excludes"    : excludes,</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>"dll_excludes": ["w9xpopen.exe"]   # we don't need this</span></span>
-<span class="line"><span></span></span></code></pre>
-<p>}</p>
-<p>setup(</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>options = {"py2exe": options},</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>zipfile = None,</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>console = ["컴파일할파일명.py"]</span></span>
-<span class="line"><span></span></span></code></pre>
-<p>)</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#D73A49">from</span><span style="color:#24292E"> distutils.core </span><span style="color:#D73A49">import</span><span style="color:#24292E"> setup</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> py2exe</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">excludes </span><span style="color:#D73A49">=</span><span style="color:#24292E"> [</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62">    "pywin"</span><span style="color:#24292E">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62">    "pywin.debugger"</span><span style="color:#24292E">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62">    "pywin.debugger.dbgcon"</span><span style="color:#24292E">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62">    "pywin.dialogs"</span><span style="color:#24292E">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62">    "pywin.dialogs.list"</span><span style="color:#24292E">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62">    "win32com.server"</span><span style="color:#24292E">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">options </span><span style="color:#D73A49">=</span><span style="color:#24292E"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62">    "bundle_files"</span><span style="color:#24292E">: </span><span style="color:#005CC5">1</span><span style="color:#24292E">,                 </span><span style="color:#6A737D"># create singlefile exe</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62">    "compressed"</span><span style="color:#24292E">  : </span><span style="color:#005CC5">1</span><span style="color:#24292E">,                 </span><span style="color:#6A737D"># compress the library archive</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62">    "excludes"</span><span style="color:#24292E">    : excludes,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62">    "dll_excludes"</span><span style="color:#24292E">: [</span><span style="color:#032F62">"w9xpopen.exe"</span><span style="color:#24292E">]   </span><span style="color:#6A737D"># we don't need this</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">setup(</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E36209">    options</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> {</span><span style="color:#032F62">"py2exe"</span><span style="color:#24292E">: options},</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E36209">    zipfile</span><span style="color:#D73A49"> =</span><span style="color:#005CC5"> None</span><span style="color:#24292E">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E36209">    console</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> [</span><span style="color:#032F62">"컴파일할파일명.py"</span><span style="color:#24292E">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">)</span></span>
+<span class="line"></span></code></pre>
 <p>아까 만든 make.py의 내용을 위와 같이 바꿔주세요.</p>
 <p>위와 마찬가지로</p>
-<p>C:\Python27\python.exe make.py (만들어질 이름).exe</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>C:\Python27\python.exe make.py (만들어질 이름).exe</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>이렇게 입력하면 dist폴더에 한개의 exe가 생성됩니다.</p>
 <p><a href="./files/make.py">make.py</a></p>
 <p>출처 : <a href="http://huddling.tistory.com/5">http://huddling.tistory.com/5</a></p>

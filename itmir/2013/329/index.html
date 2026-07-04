@@ -32,13 +32,13 @@ luminousky / ITMir
 <p>이건 볼륨 조절할때 동그란 버튼 움직여서 이동하는 거 아시죠?</p>
 <p>그겁니다ㅋㅋ</p>
 <p>자, 막대형 프로그레스바를 추가하면 xml에 아래 코드(style)가 있습니다</p>
-<p>style=“?android:attr/progressBarStyleHorizontal”</p>
+<p><code>style="?android:attr/progressBarStyleHorizontal"</code></p>
 <p>막대형으로 사용할것이다! 라는 것으로, 지우면 동그라미형으로 변하니 절대 지우시면 안됩니다</p>
 <p>음… 넓이가 너무 작네요??</p>
 <p>늘려줍시다</p>
-<p>android:layout_width=“wrap_content”</p>
+<p><code>android:layout_width="wrap_content"</code></p>
 <p>을</p>
-<p>android:layout_width=“match_parent”</p>
+<p><code>android:layout_width="match_parent"</code></p>
 <p>으로</p>
 <p>프로그레스바(막대형)은 몇가지 추가된 xml속성이 있습니다</p>
 <p>한번 살펴보겠습니다</p>
@@ -49,34 +49,43 @@ android:progress : 현재 위치를 지정해 주는 속성</p>
 <p>그럼 추가한 프로그레스바 아래에 차례대로 EditText와 버튼을 추가해 주세요</p>
 <p><img  src="/archive/_astro/2.Dho9wGKw_Z1FMAfm.webp" alt="" width="205" height="170" loading="lazy" decoding="async"></p>
 <p>EditText의 inPutType는 number으로 지정해 주세요</p>
-<p>android:inputType=“number”</p>
+<p><code>android:inputType="number"</code></p>
 <p>또한, 일일히 OnClickListener을 지정하기 귀찮으니 버튼에는 onClick속성을 넣어줍시다 ㅎ</p>
-<p>android:onClick=“Start”</p>
+<p><code>android:onClick="Start"</code></p>
 <p>완성된 xml의 코드는 다음과 같습니</p>
-<p><progressbar android:id="@+id/progressBar1" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignparenttop="true" android:layout_centerhorizontal="true" android:max="1000" android:layout_margintop="64dp"></progressbar></p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>&#x3C;EditText  </span></span>
-<span class="line"><span>    android:id="@+id/editText1"  </span></span>
-<span class="line"><span>    android:layout_width="wrap_content"  </span></span>
-<span class="line"><span>    android:layout_height="wrap_content"  </span></span>
-<span class="line"><span>    android:layout_below="@+id/progressBar1"  </span></span>
-<span class="line"><span>    android:layout_centerHorizontal="true"  </span></span>
-<span class="line"><span>    android:layout_marginTop="14dp"  </span></span>
-<span class="line"><span>    android:inputType="number"  </span></span>
-<span class="line"><span>    android:ems="10" ></span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    &#x3C;requestFocus />  </span></span>
-<span class="line"><span>&#x3C;/EditText></span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>&#x3C;Button  </span></span>
-<span class="line"><span>    android:id="@+id/button1"  </span></span>
-<span class="line"><span>    android:layout_width="wrap_content"  </span></span>
-<span class="line"><span>    android:layout_height="wrap_content"  </span></span>
-<span class="line"><span>    android:layout_below="@+id/editText1"  </span></span>
-<span class="line"><span>    android:layout_centerHorizontal="true"  </span></span>
-<span class="line"><span>    android:layout_marginTop="18dp"  </span></span>
-<span class="line"><span>    android:onClick="Start"  </span></span>
-<span class="line"><span>    android:text="Button" /></span></span>
-<span class="line"><span></span></span></code></pre>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">ProgressBar</span><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#6F42C1">        android:id</span><span style="color:#24292E">=</span><span style="color:#032F62">"@+id/progressBar1"</span><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#6F42C1">        style</span><span style="color:#24292E">=</span><span style="color:#032F62">"?android:attr/progressBarStyleHorizontal"</span><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"match_parent"</span><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_alignParentTop</span><span style="color:#24292E">=</span><span style="color:#032F62">"true"</span><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_centerHorizontal</span><span style="color:#24292E">=</span><span style="color:#032F62">"true"</span><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#6F42C1">        android:max</span><span style="color:#24292E">=</span><span style="color:#032F62">"1000"</span><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_marginTop</span><span style="color:#24292E">=</span><span style="color:#032F62">"64dp"</span><span style="color:#24292E"> /></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">EditText</span><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#6F42C1">        android:id</span><span style="color:#24292E">=</span><span style="color:#032F62">"@+id/editText1"</span><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_below</span><span style="color:#24292E">=</span><span style="color:#032F62">"@+id/progressBar1"</span><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_centerHorizontal</span><span style="color:#24292E">=</span><span style="color:#032F62">"true"</span><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_marginTop</span><span style="color:#24292E">=</span><span style="color:#032F62">"14dp"</span><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#6F42C1">        android:inputType</span><span style="color:#24292E">=</span><span style="color:#032F62">"number"</span><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#6F42C1">        android:ems</span><span style="color:#24292E">=</span><span style="color:#032F62">"10"</span><span style="color:#24292E"> ></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#22863A">requestFocus</span><span style="color:#24292E"> />  </span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;/</span><span style="color:#22863A">EditText</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">Button</span><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#6F42C1">        android:id</span><span style="color:#24292E">=</span><span style="color:#032F62">"@+id/button1"</span><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_width</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_height</span><span style="color:#24292E">=</span><span style="color:#032F62">"wrap_content"</span><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_below</span><span style="color:#24292E">=</span><span style="color:#032F62">"@+id/editText1"</span><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_centerHorizontal</span><span style="color:#24292E">=</span><span style="color:#032F62">"true"</span><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#6F42C1">        android:layout_marginTop</span><span style="color:#24292E">=</span><span style="color:#032F62">"18dp"</span><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#6F42C1">        android:onClick</span><span style="color:#24292E">=</span><span style="color:#032F62">"Start"</span><span style="color:#24292E">  </span></span>
+<span class="line"><span style="color:#6F42C1">        android:text</span><span style="color:#24292E">=</span><span style="color:#032F62">"Button"</span><span style="color:#24292E"> /></span></span>
+<span class="line"></span></code></pre>
 <p>자, 그럼 여기서 각 역할을 설명해 보겠습니다</p>
 <p>먼저, EditText에 숫자를 입력하면 입력즉시 프로그레스바를 진행하도록 설정할겁니다</p>
 <p>그다음, 버튼을 누르면 1초마다 프로그레스바가 움직이도록 설정할겁니다</p>
@@ -84,44 +93,52 @@ android:progress : 현재 위치를 지정해 주는 속성</p>
 <p>자바로 넘어와 주세요!</p>
 <p>쓰레드를 사용할것이기 때문에 implements Runnable이라는것을 추가해 줘야 합니다</p>
 <p>아래 초록 박스의 굵은 글씨가 추가된 부분입니다</p>
-<p>public class MainActivity extends Activity <strong>implements Runnable</strong> {<br>
-<strong>ProgressBar progressBar1;<br>
-EditText editText1;<br>
-int progress=0;<br>
-Thread thread;</strong></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> MainActivity</span><span style="color:#D73A49"> extends</span><span style="color:#6F42C1"> Activity</span><span style="color:#D73A49"> implements</span><span style="color:#6F42C1"> Runnable</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">    ProgressBar progressBar1;</span></span>
+<span class="line"><span style="color:#24292E">    EditText editText1;</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> progress</span><span style="color:#D73A49">=</span><span style="color:#005CC5">0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    Thread thread;</span></span>
+<span class="line"></span></code></pre>
 <p>… 중략</p>
 <p>이 예제에서는 Thread에 대해 설명하진 않으니 일단 넘어가 주세요~</p>
 <p>그다음 onCreate안에</p>
-<p>progressBar1 = (ProgressBar) findViewById(R.id.progressBar1);</p>
-<p>editText1 = (EditText) findViewById(R.id.editText1);</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">progressBar1 </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (ProgressBar) </span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.progressBar1);</span></span>
+<span class="line"><span style="color:#24292E">editText1 </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (EditText) </span><span style="color:#6F42C1">findViewById</span><span style="color:#24292E">(R.id.editText1);</span></span>
+<span class="line"></span></code></pre>
 <p>을 추가해 줍시다</p>
 <p>그다음 그 아래에 editText의 값이 변하는 즉시 적용되게 해야 합니다</p>
 <p>똑똑한 EditText를 만들어 봅시다</p>
-<p>editText1.<strong>addTextChangedListener</strong>(new TextWatcher() {</p>
-<p>@Override<br>
-public void afterTextChanged(Editable arg0) {</p>
-<p>}</p>
-<p>@Override<br>
-public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {</p>
-<p>}</p>
-<p>@Override<br>
-public void onTextChanged(CharSequence arg0, int arg1, int arg2,<br>
-int arg3) {<br>
-// TODO Auto-generated method stub<br>
-/**<br>
-* 만약 입력한 값이 공백(없음, "")이라면 강제종료 오류가 뜨므로 이 전체를 try문으로 감싸 오류를 막습니다<br>
-*/<br>
-try {<br>
-// Integer.parseInt()는 String을 Int로 바꿔줍니다<br>
-progress = Integer.parseInt(editText1.getText().toString());<br>
-progressBar1.setProgress(progress);</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span> //setProgress는 프로그레스바의 진행정도를 지정해 줍니다, ()안에는 int형 숫자가 들어갈수 있습니다  </span></span>
-<span class="line"><span>} catch (Exception e) {  </span></span>
-<span class="line"><span>   </span></span>
-<span class="line"><span>}  </span></span>
-<span class="line"><span></span></span></code></pre>
-<p>}<br>
-});</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">editText1.</span><span style="color:#6F42C1">addTextChangedListener</span><span style="color:#24292E">(</span><span style="color:#D73A49">new</span><span style="color:#6F42C1"> TextWatcher</span><span style="color:#24292E">() {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">   @</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">   public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> afterTextChanged</span><span style="color:#24292E">(Editable </span><span style="color:#E36209">arg0</span><span style="color:#24292E">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">   }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">   @</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">   public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> beforeTextChanged</span><span style="color:#24292E">(CharSequence </span><span style="color:#E36209">arg0</span><span style="color:#24292E">, </span><span style="color:#D73A49">int</span><span style="color:#E36209"> arg1</span><span style="color:#24292E">, </span><span style="color:#D73A49">int</span><span style="color:#E36209"> arg2</span><span style="color:#24292E">, </span><span style="color:#D73A49">int</span><span style="color:#E36209"> arg3</span><span style="color:#24292E">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">   }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">   @</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">   public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> onTextChanged</span><span style="color:#24292E">(CharSequence </span><span style="color:#E36209">arg0</span><span style="color:#24292E">, </span><span style="color:#D73A49">int</span><span style="color:#E36209"> arg1</span><span style="color:#24292E">, </span><span style="color:#D73A49">int</span><span style="color:#E36209"> arg2</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#D73A49">     int</span><span style="color:#E36209"> arg3</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#6A737D">    // TODO Auto-generated method stub</span></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * 만약 입력한 값이 공백(없음, "")이라면 강제종료 오류가 뜨므로 이 전체를 try문으로 감싸 오류를 막습니다</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#D73A49">    try</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#6A737D">      // Integer.parseInt()는 String을 Int로 바꿔줍니다</span></span>
+<span class="line"><span style="color:#24292E">     progress </span><span style="color:#D73A49">=</span><span style="color:#24292E"> Integer.</span><span style="color:#6F42C1">parseInt</span><span style="color:#24292E">(editText1.</span><span style="color:#6F42C1">getText</span><span style="color:#24292E">().</span><span style="color:#6F42C1">toString</span><span style="color:#24292E">());</span></span>
+<span class="line"><span style="color:#24292E">     progressBar1.</span><span style="color:#6F42C1">setProgress</span><span style="color:#24292E">(progress);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">     //setProgress는 프로그레스바의 진행정도를 지정해 줍니다, ()안에는 int형 숫자가 들어갈수 있습니다</span></span>
+<span class="line"><span style="color:#24292E">    } </span><span style="color:#D73A49">catch</span><span style="color:#24292E"> (Exception </span><span style="color:#E36209">e</span><span style="color:#24292E">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">   }</span></span>
+<span class="line"><span style="color:#24292E">  });</span></span>
+<span class="line"></span></code></pre>
 <p>addTextChangedListener라는 것을 이용하여 구현되었는데요</p>
 <p>이것은 EditText의 내용물이 바뀔때마다 호출됩니다</p>
 <p>예를들자면 카카오톡의 비밀번호기능인데요</p>
@@ -132,29 +149,31 @@ progressBar1.setProgress(progress);</p>
 <p>그럼 위에서 말했던 기능 하나는 구현이 완료되었네요 ㅎㅎㅎ</p>
 <p>이제 나머지 한 기능도 구현해 봅시다</p>
 <p>두개의 메소드를 추가해 줘야 합니다</p>
-<p>public void Start(View v){<br>
-thread = new Thread(this);<br>
-thread.start();<br>
-}</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> Start</span><span style="color:#24292E">(View v){</span></span>
+<span class="line"><span style="color:#24292E">    thread </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> Thread</span><span style="color:#24292E">(</span><span style="color:#005CC5">this</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">    thread.</span><span style="color:#6F42C1">start</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
 <p>하나는 버튼xml에서 지정한 onClick에 필요한 메소드입니다</p>
 <p>thread라는것을 시작해 주는 소스가 보이시나요?</p>
 <p>thread.start();라는것은 아~ 드쓰레라는걸 시작하는거구나 라는것을 아실수 있으실겁니다</p>
 <p>이제 드쓰레가 시작되면 뭘 할건지를 지정해 줘야 합니다</p>
 <p>그건 run이라는 이름을 가진 메소드에서 지정해 줄수 있습니다</p>
-<p>@Override<br>
-public void run(){<br>
-progress=0;<br>
-while(progress&#x3C;100){<br>
-++progress;<br>
-progressBar1.setProgress(progress);<br>
-try {<br>
-thread.sleep(1000);<br>
-} catch (InterruptedException e) {<br>
-// TODO Auto-generated catch block<br>
-e.printStackTrace();<br>
-}<br>
-}<br>
-}</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">@</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> run</span><span style="color:#24292E">(){</span></span>
+<span class="line"><span style="color:#24292E">    progress</span><span style="color:#D73A49">=</span><span style="color:#005CC5">0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">    while</span><span style="color:#24292E">(progress</span><span style="color:#D73A49">&#x3C;</span><span style="color:#005CC5">100</span><span style="color:#24292E">){</span></span>
+<span class="line"><span style="color:#D73A49">        ++</span><span style="color:#24292E">progress;</span></span>
+<span class="line"><span style="color:#24292E">        progressBar1.</span><span style="color:#6F42C1">setProgress</span><span style="color:#24292E">(progress);</span></span>
+<span class="line"><span style="color:#D73A49">        try</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">            thread.</span><span style="color:#6F42C1">sleep</span><span style="color:#24292E">(</span><span style="color:#005CC5">1000</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">        } </span><span style="color:#D73A49">catch</span><span style="color:#24292E"> (InterruptedException </span><span style="color:#E36209">e</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#6A737D">            // TODO Auto-generated catch block</span></span>
+<span class="line"><span style="color:#24292E">            e.</span><span style="color:#6F42C1">printStackTrace</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
 <p>음… 지금쯤이면 이 코드를 보면 대충은 아실수 있지 않나요?</p>
 <p>드쓰레를 시작하면 처음에는 progress의 값을 0으로 만듭니다</p>
 <p>그다음 while반복문이 시작되는데요</p>
@@ -162,12 +181,13 @@ e.printStackTrace();<br>
 <p>++progress;는 값을 하나 늘려주는코드이고..</p>
 <p>progressBar1.setProgress(progress);는 프로그레스바를 설정하는 코드이군요 ㅎㅎ</p>
 <p>그 아래에 있는</p>
-<p>try {<br>
-thread.sleep(1000);<br>
-} catch (InterruptedException e) {<br>
-// TODO Auto-generated catch block<br>
-e.printStackTrace();<br>
-}</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49">try</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">    thread.</span><span style="color:#6F42C1">sleep</span><span style="color:#24292E">(</span><span style="color:#005CC5">1000</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">} </span><span style="color:#D73A49">catch</span><span style="color:#24292E"> (InterruptedException </span><span style="color:#E36209">e</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#6A737D">    // TODO Auto-generated catch block</span></span>
+<span class="line"><span style="color:#24292E">    e.</span><span style="color:#6F42C1">printStackTrace</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
 <p>는 이 통채가 한 세트입니다</p>
 <p>thread가 이 문구를 만나면 ()안 시간만큼 잠을 잠니다</p>
 <p>1000은 1초가 되겠죠??ㅎㅎ</p>

@@ -41,194 +41,211 @@ luminousky / ITMir
 <p>언락커를 깔고 진짜 구매한게 맞는지 검증 과정을 거치는 경우가 가장 흔한 케이스가 되겠습니다.</p>
 <p>검증 과정은 어플마다 차이다 있을 수 있습니다.</p>
 <p>일단 패키지가 설치되어 있는 지 검사하는 코드부터 알아보겠습니다.</p>
-<h1 id="oncreate메소드안에서">onCreate()메소드안에서</h1>
-<p>if (isUnlockerInstalled(“com.lee.tistory.com”)) {</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Toast.makeText(this, "설치됨", Toast.LENGTH_LONG).show();</span></span>
-<span class="line"><span></span></span></code></pre>
-<p>} else {</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Toast.makeText(this, "설치되지 않음", Toast.LENGTH_LONG).show();</span></span>
-<span class="line"><span></span></span></code></pre>
-<p>}</p>
-<p>private boolean isUnlockerInstalled(String unlockerPackageName) {</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>PackageManager pm = getPackageManager();</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>try {</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    pm.getApplicationInfo(unlockerPackageName,</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    PackageManager.GET_META_DATA);</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    return true;</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>} catch (NameNotFoundException e) {</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    return false;</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>}</span></span>
-<span class="line"><span></span></span></code></pre>
-<p>}</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#6A737D">// onCreate()메소드안에서</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">if</span><span style="color:#24292E"> (</span><span style="color:#6F42C1">isUnlockerInstalled</span><span style="color:#24292E">(</span><span style="color:#032F62">"com.lee.tistory.com"</span><span style="color:#24292E">)) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    Toast.</span><span style="color:#6F42C1">makeText</span><span style="color:#24292E">(</span><span style="color:#005CC5">this</span><span style="color:#24292E">, </span><span style="color:#032F62">"설치됨"</span><span style="color:#24292E">, Toast.LENGTH_LONG).</span><span style="color:#6F42C1">show</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">} </span><span style="color:#D73A49">else</span><span style="color:#24292E"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    Toast.</span><span style="color:#6F42C1">makeText</span><span style="color:#24292E">(</span><span style="color:#005CC5">this</span><span style="color:#24292E">, </span><span style="color:#032F62">"설치되지 않음"</span><span style="color:#24292E">, Toast.LENGTH_LONG).</span><span style="color:#6F42C1">show</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">private</span><span style="color:#D73A49"> boolean</span><span style="color:#6F42C1"> isUnlockerInstalled</span><span style="color:#24292E">(String unlockerPackageName) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    PackageManager pm </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> getPackageManager</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    try</span><span style="color:#24292E"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">        pm.</span><span style="color:#6F42C1">getApplicationInfo</span><span style="color:#24292E">(unlockerPackageName,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">        PackageManager.GET_META_DATA);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#005CC5"> true</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    } </span><span style="color:#D73A49">catch</span><span style="color:#24292E"> (NameNotFoundException </span><span style="color:#E36209">e</span><span style="color:#24292E">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#005CC5"> false</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
 <p>onCreate() 메소드 안에서 if문을 통해 isUnlockerInstalled라는 메소드를 호출합니다.</p>
 <p>저 try-catch문안에서 패키지가 설치된 게 확인되면 true반환, 만약 패키지가 없을경우 catch로 넘어와서 false가 반환됩니다.</p>
 <p>이 java코드를 smali로 보면 아래와 같습니다.</p>
-<h1 id="virtual-methods">virtual methods</h1>
-<p>.method protected onCreate(Landroid/os/Bundle;)V</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// 생략</span></span>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span># virtual methods</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>.line 17</span></span>
+<span class="line"><span>.method protected onCreate(Landroid/os/Bundle;)V</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>const-string v0, "com.lee.tistory.com"</span></span>
+<span class="line"><span>    // 생략</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>// 이 아래 코드가 언락커를 확인하는 메소드를 실행하는 부분입니다.</span></span>
+<span class="line"><span>    .line 17</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>invoke-direct {p0, v0}, Lcom/example/exampleunlocker/MainActivity;->**isUnlockerInstalled**(Ljava/lang/String;)Z</span></span>
+<span class="line"><span>    const-string v0, "com.lee.tistory.com"</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>move-result v0</span></span>
+<span class="line"><span>    // 이 아래 코드가 언락커를 확인하는 메소드를 실행하는 부분입니다.</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>// v0, 즉 반환값이 0(false)일경우 아래 설치됨 부분을 건너 뜁니다.</span></span>
+<span class="line"><span>    invoke-direct {p0, v0}, Lcom/example/exampleunlocker/MainActivity;->isUnlockerInstalled(Ljava/lang/String;)Z</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>if-eqz v0, :cond_1b</span></span>
+<span class="line"><span>    move-result v0</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>.line 18</span></span>
+<span class="line"><span>    // v0, 즉 반환값이 0(false)일경우 아래 설치됨 부분을 건너 뜁니다.</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>const-string v0, "설치됨"</span></span>
+<span class="line"><span>    if-eqz v0, :cond_1b</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;</span></span>
+<span class="line"><span>    .line 18</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>move-result-object v0</span></span>
+<span class="line"><span>    const-string v0, "설치됨"</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>invoke-virtual {v0}, Landroid/widget/Toast;->show()V</span></span>
+<span class="line"><span>    invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>.line 22</span></span>
+<span class="line"><span>    move-result-object v0</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>:goto_1a</span></span>
+<span class="line"><span>    invoke-virtual {v0}, Landroid/widget/Toast;->show()V</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>return-void</span></span>
+<span class="line"><span>    .line 22</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>.line 20</span></span>
+<span class="line"><span>    :goto_1a</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>:cond_1b</span></span>
+<span class="line"><span>    return-void</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>const-string v0, "설치되지 않음"</span></span>
+<span class="line"><span>    .line 20</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;</span></span>
+<span class="line"><span>    :cond_1b</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>move-result-object v0</span></span>
+<span class="line"><span>    const-string v0, "설치되지 않음"</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>invoke-virtual {v0}, Landroid/widget/Toast;->show()V</span></span>
+<span class="line"><span>    invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>goto :goto_1a</span></span>
+<span class="line"><span>    move-result-object v0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    invoke-virtual {v0}, Landroid/widget/Toast;->show()V</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    goto :goto_1a</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.end method</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.method private isUnlockerInstalled(Ljava/lang/String;)Z</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    .registers 5</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    .param p1, "unlockerPackageName"    # Ljava/lang/String;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    .prologue</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    .line 32</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    invoke-virtual {p0}, Lcom/example/exampleunlocker/MainActivity;->getPackageManager()Landroid/content/pm/PackageManager;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    move-result-object v1</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    .line 35</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    .local v1, "pm":Landroid/content/pm/PackageManager;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    const/16 v2, 0x80</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    .line 34</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    :try_start_6</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    invoke-virtual {v1, p1, v2}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    :try_end_9</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_6 .. :try_end_9} :catch_b</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    .line 37</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    const/4 v2, 0x1</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    .line 39</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    :goto_a</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    return v2</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    .line 38</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    :catch_b</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    move-exception v0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    .line 39</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    .local v0, "e":Landroid/content/pm/PackageManager$NameNotFoundException;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    const/4 v2, 0x0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    goto :goto_a</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.end method</span></span>
 <span class="line"><span></span></span></code></pre>
-<p>.end method</p>
-<p>.method private isUnlockerInstalled(Ljava/lang/String;)Z</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>.registers 5</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>.param p1, "unlockerPackageName"    # Ljava/lang/String;</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>.prologue</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>.line 32</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>invoke-virtual {p0}, Lcom/example/exampleunlocker/MainActivity;->getPackageManager()Landroid/content/pm/PackageManager;</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>move-result-object v1</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>.line 35</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>.local v1, "pm":Landroid/content/pm/PackageManager;</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>const/16 v2, 0x80</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>.line 34</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>:try_start_6</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>invoke-virtual {v1, p1, v2}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>:try_end_9</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>.catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_6 .. :try_end_9} :catch_b</span></span>
-<span class="line"><span></span></span></code></pre>
-<p>.line 37</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>const/4 v2, 0x1</span></span>
-<span class="line"><span></span></span></code></pre>
-<p>.line 39</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>:goto_a</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>return v2</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>.line 38</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>:catch_b</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>move-exception v0</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>.line 39</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>.local v0, "e":Landroid/content/pm/PackageManager$NameNotFoundException;</span></span>
-<span class="line"><span></span></span></code></pre>
-<p>const/4 v2, 0x0</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>goto :goto_a</span></span>
-<span class="line"><span></span></span></code></pre>
-<p>.end method</p>
 <p>아래 빨간 부분을 보시면 v2를 반환합니다.</p>
 <p>try{ } 부분에서 오류가 날 경우 catch로 넘어온다는건 java 기초 상식입니다.</p>
 <p>설치되지 않을 경우 catch로 넘어와 false를 반환하며, 설치되어 있으면 true를 반환을 하게 됩니다.</p>
 <p>그럼, return부분에 무조건 true를 반환하게 하면 됩니다.</p>
-<p>.method private isUnlockerInstalled(Ljava/lang/String;)Z</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>.registers 5</span></span>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>.method private isUnlockerInstalled(Ljava/lang/String;)Z</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>.param p1, "unlockerPackageName"    # Ljava/lang/String;</span></span>
+<span class="line"><span>    .registers 5</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>.prologue</span></span>
+<span class="line"><span>    .param p1, "unlockerPackageName"    # Ljava/lang/String;</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>.line 32</span></span>
+<span class="line"><span>    .prologue</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>invoke-virtual {p0}, Lcom/example/exampleunlocker/MainActivity;->getPackageManager()Landroid/content/pm/PackageManager;</span></span>
+<span class="line"><span>    .line 32</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>move-result-object v1</span></span>
+<span class="line"><span>    invoke-virtual {p0}, Lcom/example/exampleunlocker/MainActivity;->getPackageManager()Landroid/content/pm/PackageManager;</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>.line 35</span></span>
+<span class="line"><span>    move-result-object v1</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>.local v1, "pm":Landroid/content/pm/PackageManager;</span></span>
+<span class="line"><span>    .line 35</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>const/16 v2, 0x80</span></span>
+<span class="line"><span>    .local v1, "pm":Landroid/content/pm/PackageManager;</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>.line 34</span></span>
+<span class="line"><span>    const/16 v2, 0x80</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>:try_start_6</span></span>
+<span class="line"><span>    .line 34</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>invoke-virtual {v1, p1, v2}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;</span></span>
+<span class="line"><span>    :try_start_6</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>:try_end_9</span></span>
+<span class="line"><span>    invoke-virtual {v1, p1, v2}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>.catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_6 .. :try_end_9} :catch_b</span></span>
+<span class="line"><span>    :try_end_9</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>.line 37</span></span>
+<span class="line"><span>    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_6 .. :try_end_9} :catch_b</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    .line 37</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    const/4 v2, 0x1</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    .line 39</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    :goto_a</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>const/4 v2, 0x1</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>.line 39</span></span>
+<span class="line"><span>    return v2</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>:goto_a</span></span>
+<span class="line"><span>    .line 38</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    :catch_b</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    move-exception v0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    .line 39</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    .local v0, "e":Landroid/content/pm/PackageManager$NameNotFoundException;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    const/4 v2, 0x0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    goto :goto_a</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.end method</span></span>
 <span class="line"><span></span></span></code></pre>
-<p>const/4 v2, 0x1</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>return v2</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>.line 38</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>:catch_b</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>move-exception v0</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>.line 39</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>.local v0, "e":Landroid/content/pm/PackageManager$NameNotFoundException;</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>const/4 v2, 0x0</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>goto :goto_a</span></span>
-<span class="line"><span></span></span></code></pre>
-<p>.end method</p>
 <p>return 바로 앞에 0x1을 집어 넣어주면 끝~</p>
 <p>실행 결과를 봅시다.</p>
 <p><img  src="/archive/_astro/fail.CkpVyQnH_1lGEVc.webp" alt="" width="400" height="711" loading="lazy" decoding="async"></p>

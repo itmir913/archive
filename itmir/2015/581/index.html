@@ -13,15 +13,19 @@ luminousky / ITMir
 <p>파일 이름, 디렉터리 이름 또는 볼륨 레이블 구문이 잘못되었습니다</p>
 <p>해결 방법</p>
 <p>{project path}\build.gradle 파일을 연다음</p>
-<p>dependencies {</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>classpath 'com.android.tools.build:gradle:1.1.0'</span></span>
-<span class="line"><span></span></span></code></pre>
-<p>}</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="groovy"><code><span class="line"><span style="color:#24292E">dependencies {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    classpath </span><span style="color:#032F62">'com.android.tools.build:gradle:1.1.0'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
 <p>을</p>
-<p>dependencies {</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>classpath 'com.android.tools.build:gradle:1.1.2'</span></span>
-<span class="line"><span></span></span></code></pre>
-<p>}</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="groovy"><code><span class="line"><span style="color:#24292E">dependencies {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    classpath </span><span style="color:#032F62">'com.android.tools.build:gradle:1.1.2'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
 <p>으로 변경후 Rebuild</p>
 <p>또는 새로운 gradle 버전을 찾아 입력.</p>
 <p>(새로운 버전의 gradle을 다운로드 하기 위해 인터넷 연결 필요)</p>

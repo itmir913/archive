@@ -35,82 +35,110 @@ luminousky / ITMir
 <p>그럼 아래와 같은 스샷이 나타납니다.</p>
 <p><img  src="/archive/_astro/googlesheets_5.BvSBYynL_Z1CypEe.webp" alt="" width="881" height="357" loading="lazy" decoding="async"></p>
 <p>내용을 모두 지워주고 아래 박스의 스크립트를 붙혀넣기 해주세요</p>
-<p>var SCRIPT_PROP = PropertiesService.getScriptProperties(); // new property service</p>
-<p>// If you don’t want to expose either GET or POST methods you can comment out the appropriate function</p>
-<p>function doGet(e){</p>
-<p>return handleResponse(e);</p>
-<p>}</p>
-<p>function doPost(e){</p>
-<p>return handleResponse(e);</p>
-<p>}</p>
-<p>function handleResponse(e) {</p>
-<p>// shortly after my original solution Google announced the LockService[1]</p>
-<p>// this prevents concurrent access overwritting data</p>
-<p>// [1] <a href="http://googleappsdeveloper.blogspot.co.uk/2011/10/concurrency-and-google-apps-script.html">http://googleappsdeveloper.blogspot.co.uk/2011/10/concurrency-and-google-apps-script.html</a></p>
-<p>// we want a public lock, one that locks for all invocations</p>
-<p>var lock = LockService.getPublicLock();</p>
-<p>lock.waitLock(30000);  // wait 30 seconds before conceding defeat.</p>
-<p>try {</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>var SHEET_NAME = e.parameter["sheet_name"];</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>// next set where we write the data - you could write to multiple/alternate destinations</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>var doc = SpreadsheetApp.openById(SCRIPT_PROP.getProperty("key"));</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>var sheet = doc.getSheetByName(SHEET_NAME);</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>// we'll assume header is in row 1 but you can override with header_row in GET/POST data</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>var headRow = e.parameter.header_row || 1;</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>var nextRow = sheet.getLastRow()+1; // get next row</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>var row = [];</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>// loop through the header columns</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>for (i in headers){</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>  if (headers[i] == "Timestamp"){ // special case if you include a 'Timestamp' column</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    row.push(new Date());</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>  } else { // else use header name to get data</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    row.push(e.parameter[headers[i]]);</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>  }</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>}</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>// more efficient to set values as [][] array than individually</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>sheet.getRange(nextRow, 1, 1, row.length).setValues([row]);</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>// return json success results</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>return ContentService</span></span>
-<span class="line"><span></span></span></code></pre>
-<p>.createTextOutput(JSON.stringify({“result”:“success”, “row”: nextRow}))</p>
-<p>.setMimeType(ContentService.MimeType.JSON);</p>
-<p>} catch(e){</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// if error return this</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>return ContentService</span></span>
-<span class="line"><span></span></span></code></pre>
-<p>.createTextOutput(JSON.stringify({“result”:“error”, “error”: e}))</p>
-<p>.setMimeType(ContentService.MimeType.JSON);</p>
-<p>} finally { //release lock</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>lock.releaseLock();</span></span>
-<span class="line"><span></span></span></code></pre>
-<p>}</p>
-<p>}</p>
-<p>function setup() {</p>
-<p>var doc = SpreadsheetApp.getActiveSpreadsheet();</p>
-<p>SCRIPT_PROP.setProperty(“key”, doc.getId());</p>
-<p>}</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#D73A49">var</span><span style="color:#005CC5"> SCRIPT_PROP</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> PropertiesService.</span><span style="color:#6F42C1">getScriptProperties</span><span style="color:#24292E">(); </span><span style="color:#6A737D">// new property service</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// If you don't want to expose either GET or POST methods you can comment out the appropriate function</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">function</span><span style="color:#6F42C1"> doGet</span><span style="color:#24292E">(</span><span style="color:#E36209">e</span><span style="color:#24292E">){</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">  return</span><span style="color:#6F42C1"> handleResponse</span><span style="color:#24292E">(e);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">function</span><span style="color:#6F42C1"> doPost</span><span style="color:#24292E">(</span><span style="color:#E36209">e</span><span style="color:#24292E">){</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">  return</span><span style="color:#6F42C1"> handleResponse</span><span style="color:#24292E">(e);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">function</span><span style="color:#6F42C1"> handleResponse</span><span style="color:#24292E">(</span><span style="color:#E36209">e</span><span style="color:#24292E">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  // shortly after my original solution Google announced the LockService[1]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  // this prevents concurrent access overwritting data</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  // [1] http://googleappsdeveloper.blogspot.co.uk/2011/10/concurrency-and-google-apps-script.html</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  // we want a public lock, one that locks for all invocations</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">  var</span><span style="color:#24292E"> lock </span><span style="color:#D73A49">=</span><span style="color:#24292E"> LockService.</span><span style="color:#6F42C1">getPublicLock</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">  lock.</span><span style="color:#6F42C1">waitLock</span><span style="color:#24292E">(</span><span style="color:#005CC5">30000</span><span style="color:#24292E">);  </span><span style="color:#6A737D">// wait 30 seconds before conceding defeat.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">  try</span><span style="color:#24292E"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    var</span><span style="color:#005CC5"> SHEET_NAME</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> e.parameter[</span><span style="color:#032F62">"sheet_name"</span><span style="color:#24292E">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // next set where we write the data - you could write to multiple/alternate destinations</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    var</span><span style="color:#24292E"> doc </span><span style="color:#D73A49">=</span><span style="color:#24292E"> SpreadsheetApp.</span><span style="color:#6F42C1">openById</span><span style="color:#24292E">(</span><span style="color:#005CC5">SCRIPT_PROP</span><span style="color:#24292E">.</span><span style="color:#6F42C1">getProperty</span><span style="color:#24292E">(</span><span style="color:#032F62">"key"</span><span style="color:#24292E">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    var</span><span style="color:#24292E"> sheet </span><span style="color:#D73A49">=</span><span style="color:#24292E"> doc.</span><span style="color:#6F42C1">getSheetByName</span><span style="color:#24292E">(</span><span style="color:#005CC5">SHEET_NAME</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // we'll assume header is in row 1 but you can override with header_row in GET/POST data</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    var</span><span style="color:#24292E"> headRow </span><span style="color:#D73A49">=</span><span style="color:#24292E"> e.parameter.header_row </span><span style="color:#D73A49">||</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    var</span><span style="color:#24292E"> headers </span><span style="color:#D73A49">=</span><span style="color:#24292E"> sheet.</span><span style="color:#6F42C1">getRange</span><span style="color:#24292E">(</span><span style="color:#005CC5">1</span><span style="color:#24292E">, </span><span style="color:#005CC5">1</span><span style="color:#24292E">, </span><span style="color:#005CC5">1</span><span style="color:#24292E">, sheet.</span><span style="color:#6F42C1">getLastColumn</span><span style="color:#24292E">()).</span><span style="color:#6F42C1">getValues</span><span style="color:#24292E">()[</span><span style="color:#005CC5">0</span><span style="color:#24292E">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    var</span><span style="color:#24292E"> nextRow </span><span style="color:#D73A49">=</span><span style="color:#24292E"> sheet.</span><span style="color:#6F42C1">getLastRow</span><span style="color:#24292E">()</span><span style="color:#D73A49">+</span><span style="color:#005CC5">1</span><span style="color:#24292E">; </span><span style="color:#6A737D">// get next row</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    var</span><span style="color:#24292E"> row </span><span style="color:#D73A49">=</span><span style="color:#24292E"> [];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // loop through the header columns</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    for</span><span style="color:#24292E"> (i </span><span style="color:#D73A49">in</span><span style="color:#24292E"> headers){</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">      if</span><span style="color:#24292E"> (headers[i] </span><span style="color:#D73A49">==</span><span style="color:#032F62"> "Timestamp"</span><span style="color:#24292E">){ </span><span style="color:#6A737D">// special case if you include a 'Timestamp' column</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">        row.</span><span style="color:#6F42C1">push</span><span style="color:#24292E">(</span><span style="color:#D73A49">new</span><span style="color:#6F42C1"> Date</span><span style="color:#24292E">());</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">      } </span><span style="color:#D73A49">else</span><span style="color:#24292E"> { </span><span style="color:#6A737D">// else use header name to get data</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">        row.</span><span style="color:#6F42C1">push</span><span style="color:#24292E">(e.parameter[headers[i]]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">      }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // more efficient to set values as [][] array than individually</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    sheet.</span><span style="color:#6F42C1">getRange</span><span style="color:#24292E">(nextRow, </span><span style="color:#005CC5">1</span><span style="color:#24292E">, </span><span style="color:#005CC5">1</span><span style="color:#24292E">, row.</span><span style="color:#005CC5">length</span><span style="color:#24292E">).</span><span style="color:#6F42C1">setValues</span><span style="color:#24292E">([row]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // return json success results</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#24292E"> ContentService</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E"> .</span><span style="color:#6F42C1">createTextOutput</span><span style="color:#24292E">(</span><span style="color:#005CC5">JSON</span><span style="color:#24292E">.</span><span style="color:#6F42C1">stringify</span><span style="color:#24292E">({</span><span style="color:#032F62">"result"</span><span style="color:#24292E">:</span><span style="color:#032F62">"success"</span><span style="color:#24292E">, </span><span style="color:#032F62">"row"</span><span style="color:#24292E">: nextRow}))</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E"> .</span><span style="color:#6F42C1">setMimeType</span><span style="color:#24292E">(ContentService.MimeType.</span><span style="color:#005CC5">JSON</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">  } </span><span style="color:#D73A49">catch</span><span style="color:#24292E">(e){</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // if error return this</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#24292E"> ContentService</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E"> .</span><span style="color:#6F42C1">createTextOutput</span><span style="color:#24292E">(</span><span style="color:#005CC5">JSON</span><span style="color:#24292E">.</span><span style="color:#6F42C1">stringify</span><span style="color:#24292E">({</span><span style="color:#032F62">"result"</span><span style="color:#24292E">:</span><span style="color:#032F62">"error"</span><span style="color:#24292E">, </span><span style="color:#032F62">"error"</span><span style="color:#24292E">: e}))</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E"> .</span><span style="color:#6F42C1">setMimeType</span><span style="color:#24292E">(ContentService.MimeType.</span><span style="color:#005CC5">JSON</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">  } </span><span style="color:#D73A49">finally</span><span style="color:#24292E"> { </span><span style="color:#6A737D">//release lock</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    lock.</span><span style="color:#6F42C1">releaseLock</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">function</span><span style="color:#6F42C1"> setup</span><span style="color:#24292E">() {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">  var</span><span style="color:#24292E"> doc </span><span style="color:#D73A49">=</span><span style="color:#24292E"> SpreadsheetApp.</span><span style="color:#6F42C1">getActiveSpreadsheet</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">  SCRIPT_PROP</span><span style="color:#24292E">.</span><span style="color:#6F42C1">setProperty</span><span style="color:#24292E">(</span><span style="color:#032F62">"key"</span><span style="color:#24292E">, doc.</span><span style="color:#6F42C1">getId</span><span style="color:#24292E">());</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
 <p>기본적인 내용은 오류 제보와 차이가 없지만</p>
 <p>위 박스의 코드는 시트 이름을 정의하지 않습니다.</p>
 <p>그대신 한가지 차이점이 있다면 html post의 sheet_name을 가져옵니다.</p>

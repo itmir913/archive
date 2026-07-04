@@ -43,29 +43,47 @@ luminousky / ITMir
 <ol>
 <li>FileName_Start.sh</li>
 </ol>
-<h2 id=""></h2>
-<h1 id="if-the-file-does-not-have-script-will-make-tmp-file">If the file does not have, Script will make tmp file</h1>
-<p>if [ ! -s /tmp/aroma/FileName.prop ]; then</p>
-<h1 id="make-a-tmp-file">Make a tmp file</h1>
-<p>touch /tmp/aroma/FileName.prop</p>
-<h1 id="write-tmp-file-selected10">Write tmp file “selected.1=0”</h1>
-<p>echo “selected.1=0” > /tmp/aroma/FileName.prop</p>
-<p>fi</p>
-<p>#— End Script</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">##</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># If the file does not have, Script will make tmp file</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">if</span><span style="color:#24292E"> [ </span><span style="color:#D73A49">!</span><span style="color:#D73A49"> -s</span><span style="color:#24292E"> /tmp/aroma/FileName.prop ]; </span><span style="color:#D73A49">then</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Make a tmp file</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">touch</span><span style="color:#032F62"> /tmp/aroma/FileName.prop</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Write tmp file "selected.1=0"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">echo</span><span style="color:#032F62"> "selected.1=0"</span><span style="color:#D73A49"> ></span><span style="color:#032F62"> /tmp/aroma/FileName.prop</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">fi</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">#-- End Script</span></span>
+<span class="line"></span></code></pre>
 <p>위 코드를 보면 스크립트를 아시는 분은 모두 아실겁니다</p>
 <p>/tmp/aroma/FileName.prop가 없을경우 파일을 생성하고 비활성화 코드인 selected.1=0을 넣어줍니다</p>
 <ol start="2">
 <li>FileName_Change_1.sh</li>
 </ol>
-<h2 id="-1"></h2>
-<h1 id="script-will-change-file-nameprop">Script Will change File name.prop</h1>
-<p>if [ -s /tmp/aroma/FileName.prop ]; then</p>
-<p>cd /tmp/aroma</p>
-<p>cp FileName.prop FileName.prop.bak</p>
-<h1 id="change-selected10-into-selected11">change “selected.1=0” into “selected.1=1”</h1>
-<p>busybox sed -e ‘s/selected.1=*/selected.1=1\n#/g’ FileName.prop.bak > FileName.prop</p>
-<p>fi</p>
-<p>#— End Script</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">##</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Script Will change File name.prop</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">if</span><span style="color:#24292E"> [ </span><span style="color:#D73A49">-s</span><span style="color:#24292E"> /tmp/aroma/FileName.prop ]; </span><span style="color:#D73A49">then</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">cd</span><span style="color:#032F62"> /tmp/aroma</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">cp</span><span style="color:#032F62"> FileName.prop</span><span style="color:#032F62"> FileName.prop.bak</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># change "selected.1=0" into "selected.1=1"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">busybox</span><span style="color:#032F62"> sed</span><span style="color:#005CC5"> -e</span><span style="color:#032F62"> 's/selected.1=*/selected.1=1\n#/g'</span><span style="color:#032F62"> FileName.prop.bak</span><span style="color:#D73A49"> ></span><span style="color:#032F62"> FileName.prop</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">fi</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">#-- End Script</span></span>
+<span class="line"></span></code></pre>
 <p>처음 Start.sh가 실행되어서 비활성화 되어있는 상태입니다</p>
 <p>그러므로 값은 selected.1=0이 들어가 있습니다</p>
 <p>이 스크립트로 값을 0에서 1로 바꿔주는 역활을 하게 됩니다</p>
@@ -73,15 +91,24 @@ luminousky / ITMir
 <ol start="3">
 <li>FileName_Change_0.sh</li>
 </ol>
-<h2 id="-2"></h2>
-<h1 id="script-will-change-file-nameprop-1">Script Will change File name.prop</h1>
-<p>if [ -s /tmp/aroma/FileName.prop ]; then</p>
-<p>cd /tmp/aroma</p>
-<p>cp FileName.prop FileName.prop.bak</p>
-<h1 id="change-selected11-into-selected10">change “selected.1=1” into “selected.1=0”</h1>
-<p>busybox sed -e ‘s/selected.1=*/selected.1=0\n#/g’ FileName.prop.bak > FileName.prop</p>
-<p>fi</p>
-<p>#— End Script</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">##</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Script Will change File name.prop</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">if</span><span style="color:#24292E"> [ </span><span style="color:#D73A49">-s</span><span style="color:#24292E"> /tmp/aroma/FileName.prop ]; </span><span style="color:#D73A49">then</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">cd</span><span style="color:#032F62"> /tmp/aroma</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">cp</span><span style="color:#032F62"> FileName.prop</span><span style="color:#032F62"> FileName.prop.bak</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># change "selected.1=1" into "selected.1=0"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">busybox</span><span style="color:#032F62"> sed</span><span style="color:#005CC5"> -e</span><span style="color:#032F62"> 's/selected.1=*/selected.1=0\n#/g'</span><span style="color:#032F62"> FileName.prop.bak</span><span style="color:#D73A49"> ></span><span style="color:#032F62"> FileName.prop</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">fi</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">#-- End Script</span></span>
+<span class="line"></span></code></pre>
 <p>마지막으로 selected=1을 0으로 비활성화 하는 스크립트 입니다</p>
 <p>Change_1스크립트가 실행되면 값이 1로 변하며 활성화가 됩니다</p>
 <p>그리고 다시 터치하게 되면 이 스크립트가 실행되면서 값이 0으로 변하고 “비활성화”가 되는거죠</p>
@@ -90,12 +117,14 @@ luminousky / ITMir
 <p>또한 /tmp/aroma/Filename.prop도 사용할 이름을 변경하시면 됩니다</p>
 <p>그럼 스크립트를 aroma-config에서 실행하면 끝나게 됩니다</p>
 <p>aroma-config의 첫 부분에 아래 구문을 넣어주세요</p>
-<p>setvar(</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"resexec_retstatus",</span></span>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>setvar(</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>resexec("sh/FileName_Start.sh")</span></span>
+<span class="line"><span>    "resexec_retstatus",</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    resexec("sh/FileName_Start.sh")</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>);</span></span>
 <span class="line"><span></span></span></code></pre>
-<p>);</p>
 <p>위 구문은 아로마 인스톨러 원문에도 있던 구문입니다</p>
 <p>아로마 인스톨러에서 쉘 스크립트를 실행시키는 방법이 위 문구말고는 없는것 같더라고요..</p>
 <p>꼭 ~box(textbox, menubox)전, intset 바로 아래 등에 넣어줘야 합니다</p>
@@ -106,29 +135,32 @@ luminousky / ITMir
 <p>아무튼 위 코드를 ini_set 코드 아래쯤 넣어주시면 아로마 인스톨러가 처음 시작할때 자동으로 실행됩니다</p>
 <p>그러면서 아로마 인스톨러의 작업폴더인 /tmp/aroma에 FileName.prop가 들어가게 되며 자동으로 비활성화 코드가 들어가게 됩니다</p>
 <p>이제 메뉴 박스를 만들어 주신다음 if절로 메뉴가 선택되면 아래 구문이 실행되도록 만들어 주세요</p>
-<p>if  (prop(“FileName.prop”,“selected.1”)==“0”) then</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>setvar(</span></span>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>if  (prop("FileName.prop","selected.1")=="0") then</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>    "Adfree_enable",</span></span>
+<span class="line"><span>    setvar(</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>    resexec("sh/FileName_Change_1.sh")</span></span>
+<span class="line"><span>        "Adfree_enable",</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>);</span></span>
+<span class="line"><span>        resexec("sh/FileName_Change_1.sh")</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>alert("알림","FileName를 활성화 했습니다 - 현재 상태:활성화", "@info");</span></span>
+<span class="line"><span>    );</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    alert("알림","FileName를 활성화 했습니다 - 현재 상태:활성화", "@info");</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>else</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    setvar(</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        "Adfree_disable",</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        resexec("sh/FileName_Change_0.sh")</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    );</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    alert("알림","FileName를 비활성화 했습니다 - 현재 상태:비활성화", "@info");</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>endif;</span></span>
 <span class="line"><span></span></span></code></pre>
-<p>else</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>setvar(</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    "Adfree_disable",</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    resexec("sh/FileName_Change_0.sh")</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>);</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>alert("알림","FileName를 비활성화 했습니다 - 현재 상태:비활성화", "@info");</span></span>
-<span class="line"><span></span></span></code></pre>
-<p>endif;</p>
 <p>위 구문을 넣어 주시면 됩니다</p>
 <p>다중 if를 사용해서 구현해야 합니다</p>
 <p>메뉴가 선택될경우 위 파란 상자안 구문이 실행될수 있도록 말이죠</p>

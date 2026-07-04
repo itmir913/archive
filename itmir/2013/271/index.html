@@ -10,27 +10,30 @@ luminousky / ITMir
 <p>이것이 왜 필요한지는 모르겟습니다.. 아마 mkbootimg 바이너리 파일의 소스가 변경된듯 합니다</p>
 <p>제 기억으로는 ramdisk_offset이 있는 소스가 낡은 소스로 알고 있는대 아닐지도 모르지만 왜 cm-10.1에서는 이 소스로 mkbootimg를 만들어 사용하는지 원…</p>
 <p>아무튼 빌드하다 보면 아래와 같은 오류가 나타나며 빌드가 안됩니다</p>
-<p>Target boot image: /home/whdghks913/cm_lucid/system/out/target/product/ef46l/boot.img</p>
-<p>usage: mkbootimg</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>   --kernel &#x3C;filename></span></span>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Target boot image: /home/whdghks913/cm_lucid/system/out/target/product/ef46l/boot.img</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>   --ramdisk &#x3C;filename></span></span>
+<span class="line"><span>usage: mkbootimg</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>   [ --second &#x3C;2ndbootloader-filename> ]</span></span>
+<span class="line"><span>       --kernel &#x3C;filename></span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>   [ --cmdline &#x3C;kernel-commandline> ]</span></span>
+<span class="line"><span>       --ramdisk &#x3C;filename></span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>   [ --board &#x3C;boardname> ]</span></span>
+<span class="line"><span>       [ --second &#x3C;2ndbootloader-filename> ]</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>   [ --base &#x3C;address> ]</span></span>
+<span class="line"><span>       [ --cmdline &#x3C;kernel-commandline> ]</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>   [ --pagesize &#x3C;pagesize> ]</span></span>
+<span class="line"><span>       [ --board &#x3C;boardname> ]</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>   [ --ramdisk_offset &#x3C;address> ]</span></span>
+<span class="line"><span>       [ --base &#x3C;address> ]</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>   -o|--output &#x3C;filename></span></span>
+<span class="line"><span>       [ --pagesize &#x3C;pagesize> ]</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>       [ --ramdisk_offset &#x3C;address> ]</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>       -o|--output &#x3C;filename></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>make: *** [/home/whdghks913/cm_lucid/system/out/target/product/ef46l/boot.img] 오류 1</span></span>
 <span class="line"><span></span></span></code></pre>
-<p>make: *** [/home/whdghks913/cm_lucid/system/out/target/product/ef46l/boot.img] 오류 1</p>
 <p>어이가 없죠… 갑자기 mkbootimg의 usage가 나오다니..</p>
 <p>이건 ramdisk_offset을 지정하지 않았기 때문에 발생합니다</p>
 <p>BoardConfig.mk을 수정해야만 합니다</p>
