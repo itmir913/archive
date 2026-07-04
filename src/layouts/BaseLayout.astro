@@ -130,11 +130,32 @@ function navLink(s: 'archive' | 'timeline') {
       </div>
     </footer>
 
+    <!-- 맨 위로 버튼 -->
+    <button
+      id="back-to-top"
+      aria-label="Back to top"
+      class="fixed bottom-6 right-6 z-40 p-2.5 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 shadow-sm transition-all duration-200 opacity-0 pointer-events-none"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+      </svg>
+    </button>
+
     <script>
       const btn = document.getElementById('theme-toggle');
       btn?.addEventListener('click', () => {
         const isDark = document.documentElement.classList.toggle('dark');
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      });
+
+      const backToTop = document.getElementById('back-to-top');
+      window.addEventListener('scroll', () => {
+        const show = window.scrollY > 300;
+        backToTop?.classList.toggle('opacity-0', !show);
+        backToTop?.classList.toggle('pointer-events-none', !show);
+      }, { passive: true });
+      backToTop?.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     </script>
 
