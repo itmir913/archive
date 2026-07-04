@@ -8,7 +8,7 @@ const allPosts = await getCollection('itmir', ({ data }) => !data.draft);
 const luminouskyPosts = await getCollection('luminousky', ({ data }) => !data.draft);
 ---
 
-<BaseLayout title="Archive" pagefindIgnore>
+<BaseLayout title="Archive" description="A decade of writing, building, and learning — from 2012 to the present." pagefindIgnore>
   <!-- Hero -->
   <div class="mb-16">
     <h1 class="text-4xl font-bold tracking-tight m-0 mb-3">Archive</h1>

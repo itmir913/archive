@@ -4,6 +4,7 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  ogType?: 'website' | 'article';
   section?: 'archive' | 'timeline';
   pagefindIgnore?: boolean;
 }
@@ -11,6 +12,7 @@ interface Props {
 const {
   title,
   description = 'luminousky · 2012–',
+  ogType = 'website',
   section,
   pagefindIgnore = false,
 } = Astro.props;
@@ -47,7 +49,7 @@ function navLink(s: 'archive' | 'timeline') {
     </script>
 
     <!-- OG / Twitter 메타태그 -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="luminousky" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
