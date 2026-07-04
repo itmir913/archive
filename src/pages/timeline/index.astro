@@ -37,7 +37,6 @@ const ch2Years = timelineExtra
   .filter((y) => y.chapter === 2)
   .sort((a, b) => b.year - a.year);
 
-const totalPosts = itmir.length;
 ---
 
 <BaseLayout title="Timeline — luminousky">
@@ -161,23 +160,4 @@ const totalPosts = itmir.length;
 
   </div>
 
-  <!-- 하단 집계 -->
-  <div class="mt-16 pt-8 border-t border-gray-100 flex flex-wrap gap-8">
-    <div>
-      <div class="text-3xl font-bold text-gray-900">{totalPosts}</div>
-      <div class="text-base text-gray-500 mt-1">총 포스트</div>
-    </div>
-    <div>
-      <div class="text-3xl font-bold text-gray-900">{ch1Years.length}</div>
-      <div class="text-base text-gray-500 mt-1">Chapter 1 활동 연도</div>
-    </div>
-    <div>
-      <div class="text-3xl font-bold text-gray-900">2013</div>
-      <div class="text-base text-gray-500 mt-1">시작</div>
-    </div>
-    <div>
-      <div class="text-3xl font-bold text-violet-600">2026–</div>
-      <div class="text-base text-gray-500 mt-1">Chapter 2</div>
-    </div>
-  </div>
 </BaseLayout>
