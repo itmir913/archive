@@ -283,7 +283,9 @@ case KEY_XXX또는 case [버튼의 키코드]를 추가해 주시면 되겠죠?
 
 또한 소스를 수정하지 않고 BoardConfig.mk을 통해서 소스를 수정 할 수 있습니다
 
+```makefile
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/[제조사]/[기기명]/recovery_keys.c
+```
 
 BOARD_CUSTOM_RECOVERY_KEYMAPPING옵션으로 자신이 수정한 key.c를 사용해 주셔도 되지요~
 

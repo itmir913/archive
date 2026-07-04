@@ -60,7 +60,7 @@ Form Widgets의 아래부분에 있습니다
 
 자, 막대형 프로그레스바를 추가하면 xml에 아래 코드(style)가 있습니다
 
-style="?android:attr/progressBarStyleHorizontal"
+`style="?android:attr/progressBarStyleHorizontal"`
 
 막대형으로 사용할것이다! 라는 것으로, 지우면 동그라미형으로 변하니 절대 지우시면 안됩니다
 
@@ -68,11 +68,11 @@ style="?android:attr/progressBarStyleHorizontal"
 
 늘려줍시다
 
-android:layout_width="wrap_content"
+`android:layout_width="wrap_content"`
 
 을
 
-android:layout_width="match_parent"
+`android:layout_width="match_parent"`
 
 으로
 
@@ -93,11 +93,11 @@ android:progress : 현재 위치를 지정해 주는 속성
 
 EditText의 inPutType는 number으로 지정해 주세요
 
-android:inputType="number"
+`android:inputType="number"`
 
 또한, 일일히 OnClickListener을 지정하기 귀찮으니 버튼에는 onClick속성을 넣어줍시다 ㅎ
 
-android:onClick="Start"
+`android:onClick="Start"`
 
 완성된 xml의 코드는 다음과 같습니
 
@@ -150,11 +150,13 @@ android:onClick="Start"
 
 아래 초록 박스의 굵은 글씨가 추가된 부분입니다
 
-public class MainActivity extends Activity **implements Runnable** {  
-**ProgressBar progressBar1;  
- EditText editText1;  
- int progress=0;  
- Thread thread;**
+```java
+public class MainActivity extends Activity implements Runnable {
+    ProgressBar progressBar1;
+    EditText editText1;
+    int progress=0;
+    Thread thread;
+```
 
 ... 중략
 
@@ -162,9 +164,10 @@ public class MainActivity extends Activity **implements Runnable** {
 
 그다음 onCreate안에
 
+```java
 progressBar1 = (ProgressBar) findViewById(R.id.progressBar1);
-
 editText1 = (EditText) findViewById(R.id.editText1);
+```
 
 을 추가해 줍시다
 
@@ -172,36 +175,38 @@ editText1 = (EditText) findViewById(R.id.editText1);
 
 똑똑한 EditText를 만들어 봅시다
 
-editText1.**addTextChangedListener**(new TextWatcher() {  
-    
-   @Override  
-   public void afterTextChanged(Editable arg0) {  
-      
+```java
+editText1.addTextChangedListener(new TextWatcher() {
+
+   @Override
+   public void afterTextChanged(Editable arg0) {
+
    }
 
-   @Override  
-   public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {  
-      
+   @Override
+   public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
+
    }
 
-   @Override  
-   public void onTextChanged(CharSequence arg0, int arg1, int arg2,  
-     int arg3) {  
-    // TODO Auto-generated method stub  
-    /**  
-     \* 만약 입력한 값이 공백(없음, "")이라면 강제종료 오류가 뜨므로 이 전체를 try문으로 감싸 오류를 막습니다  
-     \*/  
-    try {  
-      // Integer.parseInt()는 String을 Int로 바꿔줍니다  
-     progress = Integer.parseInt(editText1.getText().toString());  
+   @Override
+   public void onTextChanged(CharSequence arg0, int arg1, int arg2,
+     int arg3) {
+    // TODO Auto-generated method stub
+    /**
+     * 만약 입력한 값이 공백(없음, "")이라면 강제종료 오류가 뜨므로 이 전체를 try문으로 감싸 오류를 막습니다
+     */
+    try {
+      // Integer.parseInt()는 String을 Int로 바꿔줍니다
+     progress = Integer.parseInt(editText1.getText().toString());
      progressBar1.setProgress(progress);
 
-     //setProgress는 프로그레스바의 진행정도를 지정해 줍니다, ()안에는 int형 숫자가 들어갈수 있습니다  
-    } catch (Exception e) {  
-       
-    }  
-   }  
+     //setProgress는 프로그레스바의 진행정도를 지정해 줍니다, ()안에는 int형 숫자가 들어갈수 있습니다
+    } catch (Exception e) {
+
+    }
+   }
   });
+```
 
 addTextChangedListener라는 것을 이용하여 구현되었는데요
 
@@ -223,10 +228,12 @@ afterTextChanged메소드는 글자가 바뀐후에, beforeTextChanged는 글자
 
 두개의 메소드를 추가해 줘야 합니다
 
-public void Start(View v){  
-    thread = new Thread(this);  
-    thread.start();  
- }
+```java
+public void Start(View v){
+    thread = new Thread(this);
+    thread.start();
+}
+```
 
 하나는 버튼xml에서 지정한 onClick에 필요한 메소드입니다
 
@@ -238,20 +245,22 @@ thread.start();라는것은 아~ 드쓰레라는걸 시작하는거구나 라는
 
 그건 run이라는 이름을 가진 메소드에서 지정해 줄수 있습니다
 
-@Override  
-public void run(){  
-    progress=0;  
-    while(progress<100){  
-        ++progress;  
-        progressBar1.setProgress(progress);  
-    try {  
-        thread.sleep(1000);  
-    } catch (InterruptedException e) {  
-        // TODO Auto-generated catch block  
-        e.printStackTrace();  
-    }  
-    }  
+```java
+@Override
+public void run(){
+    progress=0;
+    while(progress<100){
+        ++progress;
+        progressBar1.setProgress(progress);
+        try {
+            thread.sleep(1000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
 }
+```
 
 음... 지금쯤이면 이 코드를 보면 대충은 아실수 있지 않나요?
 
@@ -267,12 +276,14 @@ progressBar1.setProgress(progress);는 프로그레스바를 설정하는 코드
 
 그 아래에 있는
 
-try {  
-thread.sleep(1000);  
-} catch (InterruptedException e) {  
-// TODO Auto-generated catch block  
-e.printStackTrace();  
+```java
+try {
+    thread.sleep(1000);
+} catch (InterruptedException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
 }
+```
 
 는 이 통채가 한 세트입니다
 

@@ -1,7 +1,59 @@
-* text=auto
-*.sh text eol=lf
-*.pl text eol=lf
-*.py text eol=lf
+# Normalize all text files: LF in repo, LF on checkout (overrides core.autocrlf)
+* text=auto eol=lf
+
+# Markdown & docs
+*.md    text eol=lf
+*.txt   text eol=lf
+
+# Config / data
+*.yaml  text eol=lf
+*.yml   text eol=lf
+*.json  text eol=lf
+*.toml  text eol=lf
+*.ini   text eol=lf
+
+# Web / Astro
+*.astro text eol=lf
+*.html  text eol=lf
+*.css   text eol=lf
+*.js    text eol=lf
+*.ts    text eol=lf
+*.jsx   text eol=lf
+*.tsx   text eol=lf
+
+# Scripts & source
+*.sh    text eol=lf
+*.py    text eol=lf
+*.pl    text eol=lf
+*.java  text eol=lf
+*.mk    text eol=lf
 *.patch text eol=lf
-*.java text eol=lf
-*.md text eol=lf
+
+# Binary — never convert line endings or diff as text
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.pdf   binary
+*.zip   binary
+*.gz    binary
+*.7z    binary
+*.z01   binary
+*.z02   binary
+*.z03   binary
+*.z04   binary
+*.z05   binary
+*.tar   binary
+*.apk   binary
+*.exe   binary
+*.dll   binary
+*.jar   binary
+*.img   binary
+*.wav   binary
+*.mp3   binary
+*.ogg   binary
+*.xlsx  binary
+*.hwp   binary
+*.deb   binary
+*.bin   binary
