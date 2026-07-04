@@ -187,6 +187,8 @@ function formatDate(d: Date) {
 </style>
 
 <script>
+  import { getPagefind } from '../../../utils/pagefind';
+
   const searchInput = document.getElementById('search-input') as HTMLInputElement | null;
   const catBtns = document.querySelectorAll<HTMLButtonElement>('.filter-cat-btn');
   const allItems = document.querySelectorAll<HTMLLIElement>('li[data-search]');
@@ -196,7 +198,6 @@ function formatDate(d: Date) {
   const catPanel = document.getElementById('cat-panel') as HTMLElement | null;
   const catArrow = document.getElementById('cat-arrow') as HTMLElement | null;
   const catSelectedLabel = document.getElementById('cat-selected-label') as HTMLElement | null;
-  const catFilterWrap = document.getElementById('cat-filter-wrap') as HTMLElement | null;
   const yearNav = document.getElementById('year-nav') as HTMLElement | null;
   const browseView = document.getElementById('browse-view') as HTMLElement | null;
   const searchView = document.getElementById('search-view') as HTMLElement | null;
@@ -207,32 +208,15 @@ function formatDate(d: Date) {
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
   let selectedCats = new Set<string>();
+  let cachedResults: any[] = [];
   let query = '';
   let panelOpen = false;
-
-  // Pagefind 지연 초기화
-  let pf: any = null;
-  let pfReady = false;
-  async function getPagefind() {
-    if (pfReady) return pf;
-    try {
-      // @ts-ignore — pagefind은 빌드 후 런타임에만 존재
-      pf = await import(/* @vite-ignore */ `${base}/pagefind/pagefind.js`);
-      await pf.init();
-      pfReady = true;
-    } catch {
-      pfReady = false;
-      pf = null;
-    }
-    return pf;
-  }
 
   function setMode(newMode: 'browse' | 'search') {
     const isSearch = newMode === 'search';
     browseView?.classList.toggle('hidden', isSearch);
     searchView?.classList.toggle('hidden', !isSearch);
     yearNav?.classList.toggle('hidden', isSearch);
-    if (catFilterWrap) catFilterWrap.style.display = isSearch ? 'none' : '';
     if (filterStatus && isSearch) filterStatus.textContent = '';
   }
 
@@ -317,6 +301,13 @@ function formatDate(d: Date) {
     }).join('');
   }
 
+  function filterAndRenderResults() {
+    const toShow = selectedCats.size > 0
+      ? cachedResults.filter((r) => selectedCats.has(r.meta?.category || ''))
+      : cachedResults;
+    renderSearchResults(toShow);
+  }
+
   async function runSearch(q: string) {
     if (q.length < 2) {
       setMode('browse');
@@ -328,7 +319,6 @@ function formatDate(d: Date) {
 
     const engine = await getPagefind();
     if (!engine) {
-      // Pagefind 미사용 시 (개발 환경) — 제목 필터로 대체
       if (searchResultCount) searchResultCount.textContent = '';
       if (searchNoResults) {
         searchNoResults.textContent = 'Full-text search is available after build.';
@@ -338,8 +328,8 @@ function formatDate(d: Date) {
     }
 
     const result = await engine.search(q);
-    const data = await Promise.all(result.results.slice(0, 30).map((r: any) => r.data()));
-    renderSearchResults(data);
+    cachedResults = await Promise.all(result.results.slice(0, 30).map((r: any) => r.data()));
+    filterAndRenderResults();
   }
 
   function syncUI() {
@@ -367,7 +357,13 @@ function formatDate(d: Date) {
       if (c === '__all__') selectedCats.clear();
       else if (c) selectedCats.has(c) ? selectedCats.delete(c) : selectedCats.add(c);
       syncUI();
-      applyBrowseFilter();
+      if (query.length >= 2) {
+        filterAndRenderResults();
+        updateSelectedLabel();
+        pushURL();
+      } else {
+        applyBrowseFilter();
+      }
     });
   });
 

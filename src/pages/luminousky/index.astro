@@ -229,6 +229,8 @@ function formatDate(d: Date) {
 </style>
 
 <script>
+  import { getPagefind } from '../../../utils/pagefind';
+
   const searchInput = document.getElementById('search-input') as HTMLInputElement | null;
   const modeProjectBtn = document.getElementById('mode-project-btn') as HTMLButtonElement | null;
   const modeTimelineBtn = document.getElementById('mode-timeline-btn') as HTMLButtonElement | null;
@@ -250,23 +252,8 @@ function formatDate(d: Date) {
 
   let mode: 'project' | 'timeline' = 'project';
   let selectedProjs = new Set<string>();
+  let cachedResults: any[] = [];
   let query = '';
-
-  // Pagefind
-  let pf: any = null;
-  let pfReady = false;
-  async function getPagefind() {
-    if (pfReady) return pf;
-    try {
-      pf = await import(/* @vite-ignore */ `${base}/pagefind/pagefind.js`);
-      await pf.init();
-      pfReady = true;
-    } catch {
-      pfReady = false;
-      pf = null;
-    }
-    return pf;
-  }
 
   function setView(v: ViewMode) {
     const isSearch = v === 'search';
@@ -275,8 +262,8 @@ function formatDate(d: Date) {
     timelineView?.classList.toggle('hidden', isSearch || !isTimeline);
     searchView?.classList.toggle('hidden', !isSearch);
 
-    // 프로젝트 필터는 project 모드에서만
-    if (projFilters) projFilters.style.display = (isSearch || isTimeline) ? 'none' : '';
+    // 프로젝트 필터: timeline 모드에서만 숨김 (search 모드에서는 결과 필터로 사용)
+    if (projFilters) projFilters.style.display = isTimeline ? 'none' : '';
     if (filterStatus && isSearch) filterStatus.textContent = '';
   }
 
@@ -331,6 +318,13 @@ function formatDate(d: Date) {
     }).join('');
   }
 
+  function filterAndRenderResults() {
+    const toShow = selectedProjs.size > 0
+      ? cachedResults.filter((r) => selectedProjs.has(r.meta?.['project-slug'] || ''))
+      : cachedResults;
+    renderSearchResults(toShow);
+  }
+
   async function runSearch(q: string) {
     if (q.length < 2) {
       setView(mode === 'project' ? 'browse-project' : 'browse-timeline');
@@ -351,8 +345,8 @@ function formatDate(d: Date) {
     }
 
     const result = await engine.search(q);
-    const data = await Promise.all(result.results.slice(0, 30).map((r: any) => r.data()));
-    renderSearchResults(data);
+    cachedResults = await Promise.all(result.results.slice(0, 30).map((r: any) => r.data()));
+    filterAndRenderResults();
   }
 
   function readURL() {
@@ -419,7 +413,13 @@ function formatDate(d: Date) {
       const p = btn.dataset.proj;
       if (p === '__all__') selectedProjs.clear();
       else if (p) selectedProjs.has(p) ? selectedProjs.delete(p) : selectedProjs.add(p);
-      applyProjectFilter();
+      if (query.length >= 2) {
+        filterAndRenderResults();
+        syncProjUI();
+        pushURL();
+      } else {
+        applyProjectFilter();
+      }
     });
   });
 
