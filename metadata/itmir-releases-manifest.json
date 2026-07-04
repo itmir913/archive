@@ -1,9 +1,23 @@
 {
   "releases_base": "https://github.com/itmir913/archive/releases/download/itmir-attachments",
   "tag": "itmir-attachments",
-  "total_files": 194,
-  "total_bytes": 268566160,
+  "total_files": 196,
+  "total_bytes": 288423479,
   "files": [
+    {
+      "post": "22",
+      "source_path": "22\\file\\recovery.img",
+      "release_filename": "22-recovery.img",
+      "size_bytes": 4685824,
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/22-recovery.img"
+    },
+    {
+      "post": "24",
+      "source_path": "24\\file\\cm7-demo.mp4",
+      "release_filename": "24-cm7-demo.mp4",
+      "size_bytes": 15171495,
+      "url": "https://github.com/itmir913/archive/releases/download/itmir-attachments/24-cm7-demo.mp4"
+    },
     {
       "post": "39",
       "source_path": "39\\file\\zipsign.zip",
