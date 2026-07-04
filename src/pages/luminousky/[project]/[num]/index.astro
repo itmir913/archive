@@ -79,6 +79,12 @@ function postUrl(p: typeof post) {
       )}
     </header>
 
+    <!-- pagefind 메타 (검색 결과 카드용) -->
+    <div class="hidden">
+      <span data-pagefind-meta="date">{formatDate(post.data.date)}</span>
+      <span data-pagefind-meta="project">{projectName}</span>
+    </div>
+
     <div class="prose prose-gray dark:prose-invert max-w-none" data-pagefind-body>
       <Content />
     </div>
