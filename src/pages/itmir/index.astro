@@ -265,10 +265,10 @@ function formatDate(d: Date) {
   }
 
   function pushURL() {
-    const p = new URLSearchParams();
-    if (selectedCats.size > 0) p.set('cat', [...selectedCats].join(','));
-    if (query) p.set('q', query);
-    const qs = p.toString();
+    const parts: string[] = [];
+    if (selectedCats.size > 0) parts.push('cat=' + [...selectedCats].join(','));
+    if (query) parts.push('q=' + encodeURIComponent(query));
+    const qs = parts.join('&');
     history.replaceState(null, '', location.pathname + (qs ? '?' + qs : ''));
   }
 

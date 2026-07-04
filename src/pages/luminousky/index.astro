@@ -365,11 +365,11 @@ function formatDate(d: Date) {
   }
 
   function pushURL() {
-    const p = new URLSearchParams();
-    if (mode === 'timeline') p.set('mode', 'timeline');
-    if (selectedProjs.size > 0) p.set('proj', [...selectedProjs].join(','));
-    if (query) p.set('q', query);
-    const qs = p.toString();
+    const parts: string[] = [];
+    if (mode === 'timeline') parts.push('mode=timeline');
+    if (selectedProjs.size > 0) parts.push('proj=' + [...selectedProjs].join(','));
+    if (query) parts.push('q=' + encodeURIComponent(query));
+    const qs = parts.join('&');
     history.replaceState(null, '', location.pathname + (qs ? '?' + qs : ''));
   }
 
