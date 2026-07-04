@@ -23,7 +23,6 @@ py2exe가 그 주인공 인데요.
 python은 [www.python.org](http://www.python.org)에서 받을 수 있습니다.
 
 
-
 첨부로도 올려두겠습니다.
 
 또한 py2exe라는 프로그램도 설치해야 합니다.

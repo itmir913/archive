@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Img를 분해해 보자 - Linux Reader"
 date: "2013-04-24T16:55:34+09:00"
 category: "SmartPhone"

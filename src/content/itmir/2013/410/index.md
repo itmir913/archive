@@ -31,6 +31,4 @@ original_url: "https://itmir.tistory.com/410"
 [DownLoad]
 
 
-
-
 베가 시크릿 노트에서 추출한 파일 입니다

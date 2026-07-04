@@ -22,19 +22,23 @@ Could not normalize path for file 'F:\Android_Studio\onebusaway-android\onebusaw
 
 {project path}\build.gradle 파일을 연다음
 
+```groovy
 dependencies {
 
     classpath 'com.android.tools.build:gradle:1.1.0'
 
 }
+```
 
 을
 
+```groovy
 dependencies {
 
     classpath 'com.android.tools.build:gradle:1.1.2'
 
 }
+```
 
 으로 변경후 Rebuild
 

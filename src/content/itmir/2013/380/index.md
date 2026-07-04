@@ -1,4 +1,4 @@
-﻿---
+---
 title: "[APK] Vega Iron, Secret Note Music Player"
 date: "2013-11-23T00:22:33+09:00"
 category: "SmartPhone/Android"
@@ -13,7 +13,6 @@ original_url: "https://itmir.tistory.com/380"
 출처 : SDA, Update.zip
 
 Iron
-
 
 
 Note

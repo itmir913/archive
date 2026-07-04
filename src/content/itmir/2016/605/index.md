@@ -16,13 +16,14 @@ original_url: "https://itmir.tistory.com/605"
 
 입력한 명령어 부분을 굵은 글씨로 표시했다.
 
+```
 Microsoft Windows [Version 10.0.10240]
 
 (c) 2015 Microsoft Corporation. All rights reserved.
 
-**C:\Users\whdghks913>cd /d D:\Android\AndroidStudio\WondangHighSchool**
+C:\Users\whdghks913>cd /d D:\Android\AndroidStudio\WondangHighSchool
 
-**D:\Android\AndroidStudio\WondangHighSchool>git status**
+D:\Android\AndroidStudio\WondangHighSchool>git status
 
 On branch master
 
@@ -30,21 +31,21 @@ Your branch is up-to-date with 'origin/master'.
 
 Changes not staged for commit:
 
-  (use "git add \<file>..." to update what will be committed)
+  (use "git add <file>..." to update what will be committed)
 
-  (use "git checkout -- \<file>..." to discard changes in working directory)
+  (use "git checkout -- <file>..." to discard changes in working directory)
 
         modified:   build.gradle
 
 no changes added to commit (use "git add" and/or "git commit -a")
 
-**D:\Android\AndroidStudio\WondangHighSchool>git add -A**
+D:\Android\AndroidStudio\WondangHighSchool>git add -A
 
 warning: CRLF will be replaced by LF in build.gradle.
 
 The file will have its original line endings in your working directory.
 
-**D:\Android\AndroidStudio\WondangHighSchool>git commit -m "Plugin is too old, please update to a more recent version, or set ANDROID_DAILY_OVERRIDE environment variable"**
+D:\Android\AndroidStudio\WondangHighSchool>git commit -m "Plugin is too old, please update to a more recent version, or set ANDROID_DAILY_OVERRIDE environment variable"
 
 [master warning: CRLF will be replaced by LF in build.gradle.
 
@@ -58,7 +59,7 @@ The file will have its original line endings in your working directory.
 
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-**D:\Android\AndroidStudio\WondangHighSchool>git push origin master**
+D:\Android\AndroidStudio\WondangHighSchool>git push origin master
 
 Username for 'https://github.com':
 
@@ -80,7 +81,7 @@ hint: (e.g., 'git pull ...') before pushing again.
 
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
-**D:\Android\AndroidStudio\WondangHighSchool>git pull**
+D:\Android\AndroidStudio\WondangHighSchool>git pull
 
 remote: Counting objects: 4, done.
 
@@ -112,7 +113,7 @@ Merge made by the 'recursive' strategy.
 
  delete mode 100644 app/app.iml
 
-**D:\Android\AndroidStudio\WondangHighSchool>git push origin master**
+D:\Android\AndroidStudio\WondangHighSchool>git push origin master
 
 Username for 'https://github.com':
 
@@ -131,10 +132,13 @@ Total 5 (delta 3), reused 0 (delta 0)
 To https://github.com/itmir913/wondanghighschool
 
    6917361..8e8881a  master -> master
+```
 
 해결 방법
 
+```bash
 git pull
+```
 
 출처 / 팁
 

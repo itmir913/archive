@@ -66,6 +66,7 @@ original_url: "https://itmir.tistory.com/598"
 
 내용을 모두 지워주고 아래 박스의 스크립트를 붙혀넣기 해주세요
 
+```javascript
 var SCRIPT_PROP = PropertiesService.getScriptProperties(); // new property service
 
 // If you don't want to expose either GET or POST methods you can comment out the appropriate function
@@ -169,6 +170,7 @@ function setup() {
   SCRIPT_PROP.setProperty("key", doc.getId());
 
 }
+```
 
 기본적인 내용은 오류 제보와 차이가 없지만
 

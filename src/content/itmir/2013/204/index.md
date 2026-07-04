@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Fastboot 드라이버 다운로드"
 date: "2013-05-02T19:58:16+09:00"
 category: "SmartPhone/Android"

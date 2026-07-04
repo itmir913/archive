@@ -1,4 +1,4 @@
-﻿---
+---
 title: "system.img.ext4를 분해(Unpack)에서 System Dump를 추출하자"
 date: "2014-05-06T13:53:55+09:00"
 category: "SmartPhone/Android"

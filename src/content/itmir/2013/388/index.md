@@ -1,4 +1,4 @@
-﻿---
+---
 title: "[Info][APP] My Script 계산기 어플 소개"
 date: "2013-11-24T11:32:22+09:00"
 category: "Application"

@@ -1,4 +1,4 @@
-﻿---
+---
 title: "안드로이드 플래쉬 플레이어 (FlashPlayer for Android)"
 date: "2013-10-26T21:56:28+09:00"
 category: "SmartPhone/Android"

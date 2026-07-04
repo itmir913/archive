@@ -1,4 +1,4 @@
-﻿---
+---
 title: "안드로이드 스마트폰으로 CCTV를 만들자 - IP Webcam KO (한글번역버전)"
 date: "2013-07-05T21:21:12+09:00"
 category: "Application"

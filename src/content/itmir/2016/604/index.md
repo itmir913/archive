@@ -10,6 +10,7 @@ original_url: "https://itmir.tistory.com/604"
 
 오류 정보
 
+```
 Plugin is too old, please update to a more recent version, or set ANDROID_DAILY_OVERRIDE environment variable to
 
 Error:Could not find com.android.tools.build:gradle:2.0.0.
@@ -27,6 +28,7 @@ Searched in the following locations:
 Required by:
 
     :ReportCard:unspecified
+```
 
 해결 방법
 
@@ -36,6 +38,7 @@ app/build.gradle 파일이 아닌(Not)
 
 <App Source>/build.gradle 파일을 수정해야 한다.
 
+```groovy
 dependencies {
 
     classpath 'com.android.tools.build:gradle:2.0.0-alpha1'
@@ -45,6 +48,7 @@ dependencies {
     // in the individual module build.gradle files
 
 }
+```
 
 필자는 classpath의 마지막 부분이 alpha1 으로 되어 있었다.
 

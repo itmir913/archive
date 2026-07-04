@@ -110,6 +110,7 @@ seekbar.setOnSeekBarChangeListener(new SeekBar_Listener());
 
 위처럼 class를 새로 만들어서 리스너를 만들수 있습니다
 
+```java
 class SeekBar_Listener implements OnSeekBarChangeListener {
 
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -125,11 +126,13 @@ class SeekBar_Listener implements OnSeekBarChangeListener {
         }
 
     }
+```
 
 그러나 우리는 이렇게 class라는걸 따로 안만들고 setOnSeekBarChangeListener에 바로 리스너 메소드를 연결해 보겠습니다
 
 (위 하얀박스 코드를 그대로 복사하는 멍청이는 없길 설명을 똑바로 안들었단 소리입니다)
 
+```java
 seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
 @Override
@@ -154,7 +157,7 @@ public void onStopTrackingTouch(SeekBar seekBar) {
 
 @Override
 
-public void onProgressChanged(SeekBar seekBar, **int progress**,
+public void onProgressChanged(SeekBar seekBar, int progress,
 
 boolean fromUser) {
 
@@ -167,6 +170,7 @@ boolean fromUser) {
 }
 
 });
+```
 
 기본적인 리스너의 형태입니다
 

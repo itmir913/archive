@@ -20,15 +20,17 @@ original_url: "https://itmir.tistory.com/453"
 
 그다음 res="$res${scm:++}"를 찾아주세요.
 
+```bash
 # LOCALVERSION= is not specified
 
     if test "${LOCALVERSION+set}" != "set"; then
 
         scm=$(scm_version --short)
 
-**res="$res${scm:++}"**
+        res="$res${scm:++}"
 
     fi
+```
 
 저 부분을 삭제해 주시면 됩니다.
 

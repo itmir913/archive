@@ -103,7 +103,6 @@ aircrack-ng -b [bssid] [파일저장이름]
 첨부파일
 
 
-
 출처 : <http://blog.naver.com/kkh0879/70125177862>
 
 <http://blog.naver.com/skyvvv624/194565936>

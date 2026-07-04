@@ -16,6 +16,7 @@ cm10까지는 ramdisk_offset이라는것을 작성하지 않아도 그냥 빌드
 
 아무튼 빌드하다 보면 아래와 같은 오류가 나타나며 빌드가 안됩니다
 
+```
 Target boot image: /home/whdghks913/cm_lucid/system/out/target/product/ef46l/boot.img
 
 usage: mkbootimg
@@ -39,6 +40,7 @@ usage: mkbootimg
        -o|--output <filename>
 
 make: *** [/home/whdghks913/cm_lucid/system/out/target/product/ef46l/boot.img] 오류 1
+```
 
 어이가 없죠... 갑자기 mkbootimg의 usage가 나오다니..
 

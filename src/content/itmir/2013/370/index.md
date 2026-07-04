@@ -1,4 +1,4 @@
-﻿---
+---
 title: "[APK] 구글 어스 (Google Earth) v7.0.0.7386"
 date: "2013-11-02T22:21:32+09:00"
 category: "Application"

@@ -1,4 +1,4 @@
-﻿---
+---
 title: "DicePlayer v2.0.53 (wmv지원) apk"
 date: "2014-11-09T20:59:54+09:00"
 category: "Application"
@@ -23,7 +23,6 @@ original_url: "https://itmir.tistory.com/544"
 ![](./images/review_4.png)
 
 그래서 v2.1.1 업데이트 바로 전 버전인 v2.0.53 버전을 첨부해 드립니다
-
 
 
 zip분활압축 입니다

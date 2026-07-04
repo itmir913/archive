@@ -1,4 +1,4 @@
-﻿---
+---
 title: "완전 언루팅 / 완벽 비지박스 삭제 (UnRoot / Uninstall Busybox)"
 date: "2013-09-07T22:13:43+09:00"
 category: "SmartPhone/Android"

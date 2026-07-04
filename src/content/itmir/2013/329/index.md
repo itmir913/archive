@@ -101,6 +101,7 @@ android:onClick="Start"
 
 완성된 xml의 코드는 다음과 같습니
 
+```xml
 <ProgressBar  
         android:id="@+id/progressBar1"  
         style="?android:attr/progressBarStyleHorizontal"  
@@ -133,6 +134,7 @@ android:onClick="Start"
         android:layout_marginTop="18dp"  
         android:onClick="Start"  
         android:text="Button" />
+```
 
 자, 그럼 여기서 각 역할을 설명해 보겠습니다
 

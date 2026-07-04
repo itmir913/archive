@@ -11,7 +11,6 @@ original_url: "https://itmir.tistory.com/314"
 [Tmoney_inapp.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/Tmoney_inapp.apk)
 
 
-
 kt모델에서 사용가능한(skt는 모릅니다)(올레마켓에서 다운받음) 티머니를 업로드 합니다
 
 티머니를 실행하기 위한 필수 요소는

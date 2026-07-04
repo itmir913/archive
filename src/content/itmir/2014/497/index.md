@@ -55,7 +55,6 @@ java.lang.NoSuchFieldError: android.view.WindowManager$LayoutParams.oemFlags
 [oemFlags 수정 VEGAMusicPlayer.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/497-oemFlags-VEGAMusicPlayer.apk)
 
 
-
 [VEGAMusicPlayer.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/497-VEGAMusicPlayer.apk)
 
 갤럭시 S3에서 작동한 결과는 일단 "지원하지 않는 테마입니다" 라는 문구가 뜨고

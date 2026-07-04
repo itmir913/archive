@@ -1,4 +1,4 @@
-﻿---
+---
 title: "BINX를 분해해 보자!"
 date: "2013-03-09T23:03:36+09:00"
 category: "SmartPhone/Android"

@@ -16,18 +16,21 @@ original_url: "https://itmir.tistory.com/433"
 
 AndroidManifest.xml에서는 아래와 같이 설정하지만 java에서 유동적으로도 설정이 가능합니다
 
+```xml
 <intent-filter>
 
     <action android:name="android.intent.action.MAIN" />
 
-**<category android:name="android.intent.category.LAUNCHER" />**
+    <category android:name="android.intent.category.LAUNCHER" />
 
 </intent-filter>
+```
 
 아래는 예제 입니다
 
 첫번째 예제
 
+```java
 ComponentName componentToDisable =
 
     new ComponentName("com.example.app",
@@ -41,9 +44,11 @@ getPackageManager().setComponentEnabledSetting(
 PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
 
 PackageManager.DONT_KILL_APP);
+```
 
 두번째 예제
 
+```java
 PackageManager pm = getPackageManager();
 
 pm.setApplicationEnabledSetting("com.example.app",
@@ -51,6 +56,7 @@ pm.setApplicationEnabledSetting("com.example.app",
     PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
 
 PackageManager.DONT_KILL_APP);
+```
 
 자신의 어플(this)외 타 어플의 아이콘을 숨기려고 하면 퍼미션 오류가 나타납니다
 
