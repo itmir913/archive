@@ -5,6 +5,10 @@ html {
   scrollbar-color: #d1d5db transparent;
 }
 
+html.dark {
+  scrollbar-color: #4b5563 transparent;
+}
+
 /* Webkit 커스텀 스크롤바 */
 ::-webkit-scrollbar {
   width: 6px;
@@ -21,7 +25,30 @@ html {
   background-color: #9ca3af;
 }
 
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #4b5563;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: #6b7280;
+}
+
 /* Shiki 코드 블록 패딩 */
 .prose pre.astro-code {
   padding: 1rem 1.25rem;
+}
+
+/* Shiki 다크모드 — class 기반 */
+html.dark .astro-code,
+html.dark .astro-code span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+  font-style: var(--shiki-dark-font-style, inherit) !important;
+  font-weight: var(--shiki-dark-font-weight, inherit) !important;
+  text-decoration: var(--shiki-dark-text-decoration, inherit) !important;
+}
+
+/* 포스트 목록 연도 섹션 — 뷰포트 밖 렌더링 스킵 */
+.year-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
 }

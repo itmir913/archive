@@ -2,6 +2,7 @@ import typography from '@tailwindcss/typography';
 
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
@@ -58,6 +59,28 @@ export default {
             h2: {
               borderBottom: `1px solid ${theme('colors.gray[200]')}`,
               paddingBottom: '0.4rem',
+            },
+          },
+        },
+        invert: {
+          css: {
+            '--tw-prose-body': theme('colors.gray[200]'),
+            '--tw-prose-headings': theme('colors.gray[100]'),
+            '--tw-prose-links': theme('colors.blue[400]'),
+            '--tw-prose-bold': theme('colors.gray[100]'),
+            '--tw-prose-code': theme('colors.gray[100]'),
+            '--tw-prose-pre-bg': theme('colors.gray[900]'),
+            code: {
+              backgroundColor: theme('colors.gray[800]'),
+            },
+            pre: {
+              borderColor: theme('colors.gray[700]'),
+            },
+            img: {
+              borderColor: theme('colors.gray[700]'),
+            },
+            h2: {
+              borderBottomColor: theme('colors.gray[700]'),
             },
           },
         },

@@ -7,11 +7,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const allPosts = await getCollection('itmir', ({ data }) => !data.draft);
 ---
 
-<BaseLayout title="Archive">
+<BaseLayout title="Archive" pagefindIgnore>
   <!-- Hero -->
   <div class="mb-16">
     <h1 class="text-4xl font-bold tracking-tight m-0 mb-3">Archive</h1>
-    <p class="text-base text-gray-500 m-0 max-w-lg leading-relaxed">
+    <p class="text-base text-gray-500 dark:text-gray-400 m-0 max-w-lg leading-relaxed">
       A decade of writing, building, and learning — from 2012 to the present.
     </p>
   </div>
@@ -20,34 +20,34 @@ const allPosts = await getCollection('itmir', ({ data }) => !data.draft);
   <div class="grid sm:grid-cols-2 gap-4 mb-6">
     <a
       href={`${base}/itmir/`}
-      class="group block p-6 rounded-2xl border border-gray-200 hover:border-blue-200 hover:bg-blue-50/40 transition-all no-underline"
+      class="group block p-6 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all no-underline"
     >
       <p class="text-base text-blue-500 font-medium m-0 mb-1.5">Chapter 1</p>
-      <h2 class="text-xl font-bold text-gray-900 m-0 mb-3 group-hover:text-blue-700 transition-colors">
+      <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 m-0 mb-3 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">
         ITMir
       </h2>
-      <p class="text-base text-gray-500 m-0 mb-2">2012 – 2021</p>
-      <p class="text-base text-gray-400 m-0">{allPosts.length} posts</p>
+      <p class="text-base text-gray-500 dark:text-gray-400 m-0 mb-2">2012 – 2021</p>
+      <p class="text-base text-gray-400 dark:text-gray-500 m-0">{allPosts.length} posts</p>
     </a>
 
-    <div class="p-6 rounded-2xl border border-gray-100 bg-gray-50/60">
+    <div class="p-6 rounded-2xl border border-gray-100 dark:border-gray-800 bg-gray-50/60 dark:bg-gray-900/60">
       <p class="text-base text-violet-300 font-medium m-0 mb-1.5">Chapter 2</p>
-      <h2 class="text-xl font-bold text-gray-300 m-0 mb-3">luminousky</h2>
-      <p class="text-base text-gray-400 m-0 mb-2">2026 –</p>
-      <p class="text-base text-gray-300 m-0">Coming soon</p>
+      <h2 class="text-xl font-bold text-gray-300 dark:text-gray-600 m-0 mb-3">luminousky</h2>
+      <p class="text-base text-gray-400 dark:text-gray-500 m-0 mb-2">2026 –</p>
+      <p class="text-base text-gray-300 dark:text-gray-600 m-0">Coming soon</p>
     </div>
   </div>
 
   <!-- Timeline -->
   <a
     href={`${base}/timeline/`}
-    class="group flex items-center justify-between p-6 rounded-2xl border border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-all no-underline"
+    class="group flex items-center justify-between p-6 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-900 transition-all no-underline"
   >
     <div>
-      <h2 class="text-xl font-bold text-gray-900 m-0 mb-2 group-hover:text-blue-700 transition-colors">
+      <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 m-0 mb-2 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">
         Timeline
       </h2>
-      <p class="text-base text-gray-500 m-0">Key turning points, 2012 to now</p>
+      <p class="text-base text-gray-500 dark:text-gray-400 m-0">Key turning points, 2012 to now</p>
     </div>
     <span class="text-base text-gray-400 group-hover:text-blue-500 group-hover:translate-x-1 transition-all flex-shrink-0 ml-6">
       →

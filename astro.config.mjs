@@ -1,6 +1,6 @@
 import { defineConfig, passthroughImageService } from 'astro/config';
-
 import tailwind from '@astrojs/tailwind';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://luminousky.com',
@@ -14,10 +14,14 @@ export default defineConfig({
 
   markdown: {
     shikiConfig: {
-      theme: 'github-light',
+      themes: {
+        light: 'github-light',
+        dark: 'github-dark',
+      },
+      defaultColor: false,
       wrap: true,
     },
   },
 
-  integrations: [tailwind()],
+  integrations: [tailwind(), sitemap()],
 });
