@@ -1,7 +1,7 @@
 ---
 title: "화면밝기 슬라이더 추가했습니다만....."
 date: "2012-10-04T17:23:00+09:00"
-category: ""
+category: "Android/App"
 tags: []
 description: ""
 draft: false

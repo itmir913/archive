@@ -1,7 +1,7 @@
 ---
 title: "PowerAmp 좋군요 ㅎㅎ"
 date: "2013-01-09T10:56:00+09:00"
-category: ""
+category: "Application"
 tags: []
 description: ""
 draft: false

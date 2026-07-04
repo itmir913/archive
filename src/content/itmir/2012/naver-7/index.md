@@ -1,7 +1,7 @@
 ---
 title: "Github 사용방법"
 date: "2012-10-26T20:11:00+09:00"
-category: ""
+category: "Programming"
 tags: []
 description: ""
 draft: false
