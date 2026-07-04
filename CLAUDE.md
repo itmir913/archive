@@ -140,6 +140,10 @@ draft: false
 `itmir-1-1/` 폴더(별도 zip 백업)에 변환 스크립트 보관:
 `convert.py` → `compress_images.py` → `add_attachments.py` → `validate.py`
 
+## Claude Code 행동 규칙
+
+- **`preview_screenshot` 사용 금지** — 토큰 소모 과다. UI 검증은 `preview_snapshot`, `preview_inspect`, `preview_console_logs` 등 텍스트 기반 도구만 사용.
+
 ## Tailwind CSS 규칙
 
 - **최소 글씨 크기: `text-base` (1rem / 16px)**
