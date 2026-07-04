@@ -18,6 +18,14 @@ for (const post of allPosts) {
   }
 }
 
+const byYear = new Map<string, typeof allPosts>();
+for (const post of allPosts) {
+  const year = String(post.data.date.getFullYear());
+  if (!byYear.has(year)) byYear.set(year, []);
+  byYear.get(year)!.push(post);
+}
+const timelineYears = [...byYear.keys()].sort((a, b) => Number(b) - Number(a));
+
 const projectOrder = Object.keys(PROJECTS);
 const projects = [...byProject.keys()].sort((a, b) => {
   const ai = projectOrder.indexOf(a);
@@ -160,35 +168,47 @@ function formatDate(d: Date) {
 
       <!-- 시간순 뷰 -->
       <div id="timeline-view" class="hidden">
-        <ul class="list-none p-0 m-0">
-          {allPosts.map((post) => {
-            const [projSlug, num] = post.slug.split('/');
-            const displayName = projectNames.get(projSlug) ?? projSlug;
-            return (
-              <li class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-6 py-3.5 border-b border-gray-100 dark:border-gray-800 last:border-b-0">
-                <span class="sm:w-32 sm:flex-shrink-0 text-base text-gray-400 tabular-nums pt-px">
-                  {formatDate(post.data.date)}
-                </span>
-                <div class="flex-1 min-w-0">
-                  <div class="flex items-baseline gap-2.5 flex-wrap">
-                    <a
-                      href={`${base}/luminousky/${projSlug}/${num}/`}
-                      class="text-base font-semibold text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 no-underline transition-colors"
-                    >
-                      {post.data.title}
-                    </a>
-                    <span class="text-base text-violet-400 whitespace-nowrap flex-shrink-0">{displayName}</span>
-                  </div>
-                  {post.data.description && (
-                    <p class="text-base text-gray-400 m-0 mt-0.5 leading-snug">
-                      {post.data.description}
-                    </p>
-                  )}
-                </div>
-              </li>
-            );
-          })}
-        </ul>
+        {timelineYears.map((year) => {
+          const posts = byYear.get(year)!;
+          return (
+            <section class="mb-12">
+              <div class="flex items-center gap-3 mb-4">
+                <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 m-0">{year}</h2>
+                <span class="text-base text-gray-400 font-normal">{posts.length}</span>
+                <div class="flex-1 h-px bg-gray-100 dark:bg-gray-800"></div>
+              </div>
+              <ul class="list-none p-0 m-0">
+                {posts.map((post) => {
+                  const [projSlug, num] = post.slug.split('/');
+                  const displayName = projectNames.get(projSlug) ?? projSlug;
+                  return (
+                    <li class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-6 py-3.5 border-b border-gray-100 dark:border-gray-800 last:border-b-0">
+                      <span class="sm:w-32 sm:flex-shrink-0 text-base text-gray-400 tabular-nums pt-px">
+                        {formatDate(post.data.date)}
+                      </span>
+                      <div class="flex-1 min-w-0">
+                        <div class="flex items-baseline gap-2.5 flex-wrap">
+                          <a
+                            href={`${base}/luminousky/${projSlug}/${num}/`}
+                            class="text-base font-semibold text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 no-underline transition-colors"
+                          >
+                            {post.data.title}
+                          </a>
+                          <span class="text-base text-violet-400 whitespace-nowrap flex-shrink-0">{displayName}</span>
+                        </div>
+                        {post.data.description && (
+                          <p class="text-base text-gray-400 m-0 mt-0.5 leading-snug">
+                            {post.data.description}
+                          </p>
+                        )}
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
+          );
+        })}
       </div>
 
       <!-- Search 뷰: Pagefind 결과 -->
