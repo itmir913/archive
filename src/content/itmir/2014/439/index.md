@@ -1,4 +1,4 @@
----
+﻿---
 title: "리나로(linaro) 툴체인으로 빌드하기"
 date: "2014-01-20T19:04:25+09:00"
 category: "Android/Kernel"
@@ -40,7 +40,7 @@ linaro툴체인을 이용하여 빌드하는 방법입니다.
 
 **2. Linaro툴체인 설치하기**
 
-이전글 : [[Kernel] - 커널 컴파일을 위한 기본 설정 구축하기](/archive/itmir/2013/51)
+이전글 : [[Kernel] - 커널 컴파일을 위한 기본 설정 구축하기](/archive/itmir/2012/51)
 
 에서 arm-eabi툴체인을 설치하지 말고 linaro툴체인을 설치하면 됩니다.
 

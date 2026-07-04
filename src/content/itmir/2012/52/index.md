@@ -1,4 +1,4 @@
----
+﻿---
 title: "커널 컴파일을 위한 기본 환경 구축 스크립트"
 date: "2012-12-25T16:23:00+09:00"
 category: "Android/Kernel"
@@ -26,7 +26,7 @@ original_url: "https://itmir.tistory.com/52"
 
 급하게 만든거라 잘될지는 모르겠네요... ㅋㅋㅋ
 
-[2013/01/27 - [강좌/팁/Kernel/Build 강좌] - 커널 컴파일을 위한 기본 설정 구축하기](/archive/itmir/2013/51)
+[2013/01/27 - [강좌/팁/Kernel/Build 강좌] - 커널 컴파일을 위한 기본 설정 구축하기](/archive/itmir/2012/51)
 
 [kernel 구축.sh](./files/kernel 구축.sh)
 

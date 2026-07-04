@@ -1,4 +1,4 @@
----
+﻿---
 title: "우분투 64Bit unpackbootimg 오류 해결법"
 date: "2012-10-19T15:18:39+09:00"
 category: "Computer & PC/Ubuntu"
@@ -38,4 +38,4 @@ sudo chmod /bin/unpackbootimg
 
 만약 이 파일을 받아 /bin에 넣은다음에도 오류가 발생한다면, 다음 게시글을 확인해 주세요.
 
-</archive/itmir/2013/35>
+</archive/itmir/2012/35>

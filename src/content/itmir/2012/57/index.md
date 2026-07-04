@@ -1,4 +1,4 @@
----
+﻿---
 title: "커스텀 리커버리 (CWM)설치방법"
 date: "2012-12-25T16:35:38+09:00"
 category: "SmartPhone/Android"
@@ -140,4 +140,4 @@ Write ... OK
 
 명령어는 txt로 올려두었습니다
 
-[2013/01/27 - [강좌/팁/SmartPhone 강좌] - Boot.img Recovery.img 원클릭 적용툴](/archive/itmir/2013/27)
+[2013/01/27 - [강좌/팁/SmartPhone 강좌] - Boot.img Recovery.img 원클릭 적용툴](/archive/itmir/2012/27)

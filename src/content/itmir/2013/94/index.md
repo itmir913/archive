@@ -1,4 +1,4 @@
----
+﻿---
 title: "나도 CM7 포팅해 보자 - CWM을 포팅해보자"
 date: "2013-01-28T19:32:56+09:00"
 category: "Android/Build"
@@ -166,7 +166,7 @@ EX) repo sync -j4
 
 그럼 쭉쭉 받게 됩니다
 
-아마 많이 끊길탠대요 /archive/itmir/2013/33 이 게시글을 살펴주시면 감사드리겠습니다
+아마 많이 끊길탠대요 /archive/itmir/2012/33 이 게시글을 살펴주시면 감사드리겠습니다
 
 단 repo로 받게되면 몇몇 기기정보가 누락되어 받아집니다
 
@@ -204,7 +204,7 @@ sudo chmod 777 /bin/unpackbootimg
 
 또한 자바를 깔으셔야 오류가 덜난다고 합니다
 
-/archive/itmir/2013/51
+/archive/itmir/2012/51
 
 이글의 중간부분쯤 java설치부분을 따라해 주시고
 
@@ -218,7 +218,7 @@ http://deviantcj.tistory.com/373
 
 그다음 cwm을 포팅할 기기의 순정 boot.img와 순정recovery.img를 준비해 주세요
 
-(adb로 추출하는 방법이 /archive/itmir/2013/91 에 간략하게 기록되어 있군요)
+(adb로 추출하는 방법이 /archive/itmir/2012/91 에 간략하게 기록되어 있군요)
 
 넥서스S의 경우 이미 구글의 드라이버 sh바이너리 지원이 끊긴 기종이라 CM에서 벤더를 함께 제공하지 않으면
 
@@ -328,7 +328,7 @@ build/tools/device/mkvendor.sh 제조사 기기명 ~/android/boot.img
 
 이것은 순정 recovery.img를 뜯어 주시면 램디스크 파일안 etc/recovery.fastab에 있습니다...
 
-뜯는 방법은 /archive/itmir/2013/48를 참고해 주시면 됩니다
+뜯는 방법은 /archive/itmir/2012/48를 참고해 주시면 됩니다
 
 본문에 추가하면 길이가 너무 길어지므로 추가하지 못하는점 이해해 주세요...
 
@@ -432,6 +432,6 @@ Recovery.img를 빌드하며 발생하는 몇몇 오류 해결법
 
 빌드하며 발생하는 오류는 구글링 해서 답을 얻으시면 됩니다
 
-제가 격은 빌드 오류는 /archive/itmir/2013/41 에 모두 정리해 두었으니 참고 하시면 될듯 합니다 ㅎㅎ
+제가 격은 빌드 오류는 /archive/itmir/2012/41 에 모두 정리해 두었으니 참고 하시면 될듯 합니다 ㅎㅎ
 
 #포팅 #CWM포팅 #cm7포팅 #cm7 #cwm #리커버리 #리커버리 포팅 #큼칠 포팅 #cm7 포팅 #cm7 vhxld #cwm 포팅 #포팅방법

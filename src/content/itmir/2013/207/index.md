@@ -1,4 +1,4 @@
----
+﻿---
 title: "[Dev] 루팅용 Boot.img 만들기 강좌"
 date: "2013-05-03T18:12:38+09:00"
 category: "Computer & PC/Ubuntu"
@@ -16,15 +16,15 @@ original_url: "https://itmir.tistory.com/207"
 
 연관된글 or 먼저 읽으시면 이해에 도움이 되는 글
 
-[2013/01/27 - [강좌/팁/Ubuntu 강좌] - 부트이미지(Boot.img) 분해/조립(?) 강좌](/archive/itmir/2013/48)
+[2013/01/27 - [강좌/팁/Ubuntu 강좌] - 부트이미지(Boot.img) 분해/조립(?) 강좌](/archive/itmir/2012/48)
 
-[2013/01/27 - [강좌/팁/Ubuntu 강좌] - 우분투 64Bit unpackbootimg 오류 해결법](/archive/itmir/2013/34)
+[2013/01/27 - [강좌/팁/Ubuntu 강좌] - 우분투 64Bit unpackbootimg 오류 해결법](/archive/itmir/2012/34)
 
 [2013/03/24 - [강좌/팁/Ubuntu 강좌] - mkbootimg](/archive/itmir/2013/181)
 
-[2013/01/27 - [강좌/팁/Ubuntu 강좌] - 어디서나 실행할수 있게 PATH해주는 스크립트](/archive/itmir/2013/58)
+[2013/01/27 - [강좌/팁/Ubuntu 강좌] - 어디서나 실행할수 있게 PATH해주는 스크립트](/archive/itmir/2012/58)
 
-[2013/01/27 - [강좌/팁/Ubuntu 강좌] - 64Bit 우분투에서 32Bit 바이너리/프로그램 이용하기](/archive/itmir/2013/35)
+[2013/01/27 - [강좌/팁/Ubuntu 강좌] - 64Bit 우분투에서 32Bit 바이너리/프로그램 이용하기](/archive/itmir/2012/35)
 
 위 목록은 먼저 읽어주시면 아주 도움이 많이 되실 겁니다.
 
@@ -144,7 +144,7 @@ mount구문으로 /system을 마운트 하고 있습니다.
 
 어제 만든 Easy_Root_for_VegaRacer2툴도 위와 같은 방법으로 제작된 파일입니다.
 
--- Boot.img를 분해하고 다시 만드는 작업은 [**2013/01/27 - [강좌/팁/Ubuntu 강좌] - 부트이미지(Boot.img) 분해/조립(?) 강좌**](/archive/itmir/2013/48) 을 참고해 주세요 --
+-- Boot.img를 분해하고 다시 만드는 작업은 [**2013/01/27 - [강좌/팁/Ubuntu 강좌] - 부트이미지(Boot.img) 분해/조립(?) 강좌**](/archive/itmir/2012/48) 을 참고해 주세요 --
 
 이제 우리가 만든 원부팅 루팅 boot.img를 fastboot boot명령어로 한번 부팅시켜 주시면.
 

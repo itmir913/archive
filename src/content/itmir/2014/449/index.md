@@ -1,4 +1,4 @@
----
+﻿---
 title: "커널(Kernel) 개발 환경 구축하기"
 date: "2014-01-26T12:06:52+09:00"
 category: "Android/Kernel"
@@ -142,7 +142,7 @@ make cleaner
 
 make clean
 
-참조 : /archive/itmir/2013/51
+참조 : /archive/itmir/2012/51
 
 /archive/itmir/2013/220
 

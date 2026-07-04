@@ -1,4 +1,4 @@
----
+﻿---
 title: "[Git] 이클립스와 Git 연동하여 사용하기"
 date: "2014-02-08T16:21:03+09:00"
 category: "Android/App"
@@ -18,7 +18,7 @@ original_url: "https://itmir.tistory.com/461"
 
 이에 관해서는 전에 2개의 git사이트를 소개한적이 있으므로 링크로 대신하겠습니다
 
-[[Computer/PC] - Github 사용방법](/archive/itmir/2013/38)
+[[Computer/PC] - Github 사용방법](/archive/itmir/2012/38)
 
 [[Computer/PC] - Git 사용 방법](/archive/itmir/2013/192)
 

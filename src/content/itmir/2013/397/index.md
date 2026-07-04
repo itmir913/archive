@@ -1,4 +1,4 @@
----
+﻿---
 title: "[Site] Bitbucket, 무료 git 사이트"
 date: "2013-12-01T17:38:00+09:00"
 category: "Computer & PC"
@@ -14,7 +14,7 @@ original_url: "https://itmir.tistory.com/397"
 
 [github에 branch를 새로 생성하여 소스를 올려보자](/archive/itmir/2013/193)
 
-[Github 사용방법](/archive/itmir/2013/38)
+[Github 사용방법](/archive/itmir/2012/38)
 
 그런대, github의 최대 단점은 비공개 프로젝트를 만들수 없다라는 점입니다.
 

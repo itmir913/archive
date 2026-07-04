@@ -1,4 +1,4 @@
----
+﻿---
 title: "부트이미지(Boot.img) 분해/조립(?) 강좌"
 date: "2012-12-21T16:13:02+09:00"
 category: "Computer & PC/Ubuntu"
@@ -128,7 +128,7 @@ make-boot파일이 완성되었습니다!
 
 [2013/03/24 - [강좌/팁/Ubuntu 강좌] - mkbootimg](/archive/itmir/2013/181)
 
-[2013/01/27 - [강좌/팁/Ubuntu 강좌] - 우분투 64Bit unpackbootimg 오류 해결법](/archive/itmir/2013/34)
+[2013/01/27 - [강좌/팁/Ubuntu 강좌] - 우분투 64Bit unpackbootimg 오류 해결법](/archive/itmir/2012/34)
 
 ---
 
