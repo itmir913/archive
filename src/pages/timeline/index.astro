@@ -11,34 +11,21 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <p class="text-base text-gray-400 m-0">2012 –</p>
   </div>
 
-  <div class="relative">
-    <!-- 수직선 -->
-    <div class="absolute left-0 top-2 bottom-0 w-px bg-gray-100 hidden sm:block" aria-hidden="true"></div>
+  <ol class="list-none p-0 m-0 divide-y divide-gray-100">
+    {timeline.map((entry) => (
+      <li class="py-12 grid grid-cols-1 sm:grid-cols-[10rem_1fr] gap-2 sm:gap-12">
+        <!-- 왼쪽: 연도 -->
+        <div class="sm:pt-1.5">
+          <p class="text-base font-semibold text-gray-400 tracking-wide m-0">{entry.year}</p>
+        </div>
 
-    <ol class="list-none p-0 m-0 space-y-16">
-      {timeline.map((entry) => (
-        <li class="relative sm:pl-10">
-          <!-- 점 -->
-          <div class="absolute left-0 top-2 w-2 h-2 rounded-full bg-gray-300 -translate-x-[3px] hidden sm:block" aria-hidden="true"></div>
-
-          <!-- 연도 -->
-          <p class="text-base font-semibold text-gray-400 tracking-wide m-0 mb-2">{entry.year}</p>
-
-          <!-- 제목 -->
+        <!-- 오른쪽: 내용 -->
+        <div>
           <h2 class="text-2xl font-bold tracking-tight text-gray-900 m-0 mb-4">{entry.title}</h2>
+          <p class="text-base text-gray-600 leading-relaxed m-0 mb-4">{entry.description}</p>
+          <p class="text-base text-gray-400 leading-relaxed m-0 mb-4 italic">{entry.whatChanged}</p>
+          <p class="text-base text-gray-400 m-0 mb-5">{entry.keywords.join(' · ')}</p>
 
-          <!-- 설명 -->
-          <p class="text-base text-gray-600 leading-relaxed m-0 mb-5 max-w-2xl">{entry.description}</p>
-
-          <!-- 변화 -->
-          <p class="text-base text-gray-400 leading-relaxed m-0 mb-5 max-w-2xl italic">{entry.whatChanged}</p>
-
-          <!-- 키워드 -->
-          <p class="text-base text-gray-400 m-0 mb-5">
-            {entry.keywords.join(' · ')}
-          </p>
-
-          <!-- 대표 포스트 -->
           {entry.posts.length > 0 && (
             <ul class="list-none p-0 m-0 space-y-1">
               {entry.posts.map((post) => (
@@ -55,8 +42,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               ))}
             </ul>
           )}
-        </li>
-      ))}
-    </ol>
-  </div>
+        </div>
+      </li>
+    ))}
+  </ol>
 </BaseLayout>
