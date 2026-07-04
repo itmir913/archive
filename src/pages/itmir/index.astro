@@ -103,11 +103,11 @@ function formatDate(d: Date) {
   <p id="filter-status" aria-live="polite" class="text-base text-gray-400 mt-3 mb-2 empty:hidden"></p>
 
   <!-- 연도 점프: 포스트 목록의 목차, browse 모드에서만 표시 -->
-  <nav id="year-nav" aria-label="Jump to year" class="flex flex-wrap gap-x-5 gap-y-1 mb-8 mt-4">
+  <nav id="year-nav" aria-label="Jump to year" class="flex flex-wrap gap-2 mb-8 mt-4">
     {years.map((year) => (
       <a
         href={`#year-${year}`}
-        class="text-base text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors no-underline"
+        class="text-base px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:border-gray-400 dark:hover:border-gray-500 transition-colors no-underline whitespace-nowrap"
       >
         {year}
       </a>
