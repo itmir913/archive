@@ -63,41 +63,23 @@ function formatDate(d: Date) {
     </div>
 
     {allCategories.length > 0 && (
-      <div id="cat-filter-wrap" class="px-4 py-3 border-t border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-800/50 flex flex-wrap items-center gap-2">
+      <div id="cat-filter-wrap" class="px-4 py-3 border-t border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-800/50 flex flex-wrap gap-1.5">
         <button
-          id="cat-toggle"
+          data-cat="__all__"
           type="button"
-          aria-expanded="false"
-          aria-controls="cat-panel"
-          class="flex items-center gap-1.5 text-base px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors cursor-pointer select-none whitespace-nowrap"
+          class="filter-cat-btn text-base px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:border-gray-400 dark:hover:border-gray-500 transition-colors cursor-pointer whitespace-nowrap"
         >
-          <span>Category</span>
-          <span id="cat-selected-label" class="text-blue-500 hidden"></span>
-          <span id="cat-arrow" aria-hidden="true">▾</span>
+          All
         </button>
-        <div
-          id="cat-panel"
-          role="group"
-          aria-label="Category filter"
-          class="hidden flex-wrap gap-1.5 mt-2.5"
-        >
+        {allCategories.map((cat) => (
           <button
-            data-cat="__all__"
+            data-cat={cat}
             type="button"
             class="filter-cat-btn text-base px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:border-gray-400 dark:hover:border-gray-500 transition-colors cursor-pointer whitespace-nowrap"
           >
-            All
+            {cat} <span class="text-gray-300 dark:text-gray-600">{catCounts.get(cat)}</span>
           </button>
-          {allCategories.map((cat) => (
-            <button
-              data-cat={cat}
-              type="button"
-              class="filter-cat-btn text-base px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:border-gray-400 dark:hover:border-gray-500 transition-colors cursor-pointer whitespace-nowrap"
-            >
-              {cat} <span class="text-gray-300 dark:text-gray-600">{catCounts.get(cat)}</span>
-            </button>
-          ))}
-        </div>
+        ))}
       </div>
     )}
 
@@ -197,10 +179,6 @@ function formatDate(d: Date) {
   const allItems = document.querySelectorAll<HTMLLIElement>('li[data-search]');
   const yearSections = document.querySelectorAll<HTMLElement>('section[id^="year-"]');
   const filterStatus = document.getElementById('filter-status');
-  const catToggle = document.getElementById('cat-toggle') as HTMLButtonElement | null;
-  const catPanel = document.getElementById('cat-panel') as HTMLElement | null;
-  const catArrow = document.getElementById('cat-arrow') as HTMLElement | null;
-  const catSelectedLabel = document.getElementById('cat-selected-label') as HTMLElement | null;
   const yearNav = document.getElementById('year-nav') as HTMLElement | null;
   const browseView = document.getElementById('browse-view') as HTMLElement | null;
   const searchView = document.getElementById('search-view') as HTMLElement | null;
@@ -208,12 +186,11 @@ function formatDate(d: Date) {
   const searchResultCount = document.getElementById('search-result-count') as HTMLElement | null;
   const searchNoResults = document.getElementById('search-no-results') as HTMLElement | null;
 
-  const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+  const base = (import.meta as any).env.BASE_URL.replace(/\/$/, '');
 
   let selectedCats = new Set<string>();
   let cachedResults: any[] = [];
   let query = '';
-  let panelOpen = false;
 
   function setMode(newMode: 'browse' | 'search') {
     const isSearch = newMode === 'search';
@@ -221,27 +198,6 @@ function formatDate(d: Date) {
     searchView?.classList.toggle('hidden', !isSearch);
     yearNav?.classList.toggle('hidden', isSearch);
     if (filterStatus && isSearch) filterStatus.textContent = '';
-  }
-
-  function setPanelOpen(open: boolean) {
-    panelOpen = open;
-    if (catPanel) {
-      catPanel.classList.toggle('hidden', !open);
-      catPanel.classList.toggle('flex', open);
-    }
-    if (catArrow) catArrow.textContent = open ? '▴' : '▾';
-    if (catToggle) catToggle.setAttribute('aria-expanded', String(open));
-  }
-
-  function updateSelectedLabel() {
-    if (!catSelectedLabel) return;
-    if (selectedCats.size === 0) {
-      catSelectedLabel.textContent = '';
-      catSelectedLabel.classList.add('hidden');
-    } else {
-      catSelectedLabel.textContent = `(${selectedCats.size} selected)`;
-      catSelectedLabel.classList.remove('hidden');
-    }
   }
 
   function readURL() {
@@ -259,13 +215,19 @@ function formatDate(d: Date) {
     history.replaceState(null, '', location.pathname + (qs ? '?' + qs : ''));
   }
 
+  function syncUI() {
+    catBtns.forEach((btn) => {
+      const c = btn.dataset.cat;
+      btn.classList.toggle('active', c === '__all__' ? selectedCats.size === 0 : selectedCats.has(c!));
+    });
+  }
+
   function applyBrowseFilter() {
     let visible = 0;
     allItems.forEach((li) => {
       const catMatch = selectedCats.size === 0 || selectedCats.has(li.dataset.cat || '');
-      const show = catMatch;
-      li.style.display = show ? '' : 'none';
-      if (show) visible++;
+      li.style.display = catMatch ? '' : 'none';
+      if (catMatch) visible++;
     });
     yearSections.forEach((sec) => {
       const any = Array.from(sec.querySelectorAll<HTMLLIElement>('li[data-search]')).some(
@@ -273,9 +235,8 @@ function formatDate(d: Date) {
       );
       sec.style.display = any ? '' : 'none';
     });
-    const filtered = selectedCats.size > 0;
-    if (filterStatus) filterStatus.textContent = filtered ? `${visible} shown` : '';
-    updateSelectedLabel();
+    if (filterStatus) filterStatus.textContent = selectedCats.size > 0 ? `${visible} shown` : '';
+    syncUI();
     pushURL();
   }
 
@@ -335,16 +296,9 @@ function formatDate(d: Date) {
     filterAndRenderResults();
   }
 
-  function syncUI() {
-    catBtns.forEach((btn) => {
-      const c = btn.dataset.cat;
-      btn.classList.toggle('active', c === '__all__' ? selectedCats.size === 0 : selectedCats.has(c!));
-    });
-  }
-
+  // Init
   readURL();
   if (searchInput) searchInput.value = query;
-  if (selectedCats.size > 0) setPanelOpen(true);
   syncUI();
 
   if (query.length >= 2) {
@@ -353,7 +307,6 @@ function formatDate(d: Date) {
     applyBrowseFilter();
   }
 
-  catToggle?.addEventListener('click', () => setPanelOpen(!panelOpen));
   catBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       const c = btn.dataset.cat;
@@ -362,7 +315,6 @@ function formatDate(d: Date) {
       syncUI();
       if (query.length >= 2) {
         filterAndRenderResults();
-        updateSelectedLabel();
         pushURL();
       } else {
         applyBrowseFilter();
