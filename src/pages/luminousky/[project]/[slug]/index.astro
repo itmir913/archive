@@ -8,13 +8,13 @@ export async function getStaticPaths() {
   posts.sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
 
   return posts.map((post) => {
-    const [project, num] = post.slug.split('/');
+    const [project, slug] = post.slug.split('/');
 
     const projectPosts = posts.filter((p) => p.slug.split('/')[0] === project);
     const idx = projectPosts.findIndex((p) => p.slug === post.slug);
 
     return {
-      params: { project, num },
+      params: { project, slug },
       props: {
         post,
         prevPost: idx > 0 ? projectPosts[idx - 1] : null,
@@ -40,8 +40,8 @@ function formatDate(d: Date) {
 }
 
 function postUrl(p: typeof post) {
-  const [proj, n] = p.slug.split('/');
-  return `${base}/luminousky/${proj}/${n}/`;
+  const [proj, slug] = p.slug.split('/');
+  return `${base}/luminousky/${proj}/${slug}/`;
 }
 ---
 

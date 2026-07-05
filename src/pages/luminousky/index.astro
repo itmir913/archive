@@ -148,7 +148,7 @@ function formatDate(d: Date) {
               </div>
               <ul class="list-none p-0 m-0">
                 {posts.map((post, i) => {
-                  const [projSlug, num] = post.slug.split('/');
+                  const [projSlug, slug] = post.slug.split('/');
                   return (
                     <li
                       class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-6 py-3.5 border-b border-gray-100 dark:border-gray-800 last:border-b-0"
@@ -159,7 +159,7 @@ function formatDate(d: Date) {
                       </span>
                       <div class="flex-1 min-w-0">
                         <a
-                          href={`${base}/luminousky/${projSlug}/${num}/`}
+                          href={`${base}/luminousky/${projSlug}/${slug}/`}
                           class="text-base font-semibold text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 no-underline transition-colors"
                         >
                           {post.data.title}
@@ -201,7 +201,7 @@ function formatDate(d: Date) {
               </div>
               <ul class="list-none p-0 m-0">
                 {posts.map((post) => {
-                  const [projSlug, num] = post.slug.split('/');
+                  const [projSlug, slug] = post.slug.split('/');
                   const displayName = projectNames.get(projSlug) ?? projSlug;
                   return (
                     <li class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-6 py-3.5 border-b border-gray-100 dark:border-gray-800 last:border-b-0">
@@ -211,7 +211,7 @@ function formatDate(d: Date) {
                       <div class="flex-1 min-w-0">
                         <div class="flex items-baseline gap-2.5 flex-wrap">
                           <a
-                            href={`${base}/luminousky/${projSlug}/${num}/`}
+                            href={`${base}/luminousky/${projSlug}/${slug}/`}
                             class="text-base font-semibold text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 no-underline transition-colors"
                           >
                             {post.data.title}
