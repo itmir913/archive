@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="ko" class="antialiased scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="왜 만들었고, Tauri + Rust + Vue + SQLite를 선택한 이유"><title>All-in-One 학교생활기록부 에디터 — 개요와 기술 스택 선택 — luminousky</title><!-- 다크모드 FOUC 방지 — 렌더링 전 클래스 적용 --><script>
+      (function () {
+        var t = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (t === 'dark' || (!t && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script><!-- OG / Twitter 메타태그 --><meta property="og:type" content="article"><meta property="og:site_name" content="luminousky"><meta property="og:title" content="All-in-One 학교생활기록부 에디터 — 개요와 기술 스택 선택 — luminousky"><meta property="og:description" content="왜 만들었고, Tauri + Rust + Vue + SQLite를 선택한 이유"><meta property="og:url" content="https://luminousky.com/archive/luminousky/school-record-app/school-record-editor-overview/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="All-in-One 학교생활기록부 에디터 — 개요와 기술 스택 선택 — luminousky"><meta name="twitter:description" content="왜 만들었고, Tauri + Rust + Vue + SQLite를 선택한 이유"><link rel="canonical" href="https://luminousky.com/archive/luminousky/school-record-app/school-record-editor-overview/"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.ChQ6QvNq.css"><script type="module" src="/archive/_astro/hoisted.CVcv2i_h.js"></script></head> <body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans min-h-screen flex flex-col transition-colors"> <header class="sticky top-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-black/[0.06] dark:border-white/[0.06]"> <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"> <a href="/archive/" class="text-base font-semibold tracking-tight text-gray-900 dark:text-gray-100 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+luminousky · archive
+</a> <nav class="flex items-center gap-1"> <a href="/archive/" class="text-base font-medium text-gray-900 dark:text-gray-100 no-underline px-3 py-1.5 rounded-md bg-gray-100 dark:bg-gray-800 transition-colors">Archive</a> <a href="/archive/timeline/" class="text-base font-medium text-gray-400 dark:text-gray-500 no-underline px-3 py-1.5 rounded-md hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Timeline</a> <button id="theme-toggle" aria-label="Toggle dark mode" class="ml-1 p-2 rounded-md text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"> <!-- 라이트 모드에서 표시 (달 아이콘 → 다크로 전환) --> <svg id="icon-moon" class="w-5 h-5 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> <!-- 다크 모드에서 표시 (해 아이콘 → 라이트로 전환) --> <svg id="icon-sun" class="w-5 h-5 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> </nav> </div> </header> <main class="flex-1"> <div class="max-w-5xl mx-auto px-6 py-14">  <div> <a href="/archive/luminousky/" data-pagefind-ignore class="inline-block text-base text-gray-400 mb-8 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+← luminousky
+</a> <header class="mb-10" data-pagefind-ignore> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-5 text-gray-900 dark:text-gray-100"> All-in-One 학교생활기록부 에디터 — 개요와 기술 스택 선택 </h1> <div class="flex flex-wrap items-center gap-3 text-base text-gray-400"> <time datetime="2026-03-31T15:00:00.000Z"> April 1, 2026 </time> <span aria-hidden="true">·</span> <span class="text-violet-500">School Record Editor</span> </div> <p class="mt-4 mb-0 text-lg text-gray-500 dark:text-gray-400 leading-relaxed border-l-2 border-gray-200 dark:border-gray-700 pl-4"> 왜 만들었고, Tauri + Rust + Vue + SQLite를 선택한 이유 </p> </header> <!-- pagefind 메타 (검색 결과 카드용) --> <div class="hidden"> <span data-pagefind-meta="date">April 1, 2026</span> <span data-pagefind-meta="project">School Record Editor</span> <span data-pagefind-meta="project-slug">school-record-app</span> <span data-pagefind-filter="section:luminousky"></span> </div> <div class="prose prose-gray dark:prose-invert max-w-none" data-pagefind-body> <h2 id="왜-만들었나">왜 만들었나</h2>
+<p>학교에서 생활기록부(생기부)를 작성할 때, 여러 학생의 활동 기록을 일관성 있게 관리하고 내보내는 일이 생각보다 복잡하다. 특히 특정 단어를 일괄 치환하거나, 유의어가 중복되지 않았는지 검사하거나, 글자 수 제한을 지키면서 내용을 정리하는 작업은 반복적이고 오류가 생기기 쉽다.</p>
+<p>기존에는 엑셀이나 메모장 수준의 도구를 쓰거나, 나이스(NEIS) 시스템에서 직접 편집하면서 불편함을 감수했다. 이 불편함을 해결하기 위해 오프라인 데스크탑 앱으로 만들기로 했다.</p>
+<h2 id="핵심-기능-목표">핵심 기능 목표</h2>
+<ul>
+<li><strong>학생·영역·활동 관리</strong>: 프로젝트 단위로 학생 목록과 평가 영역/활동을 구성</li>
+<li><strong>기록 편집</strong>: 학생별 활동 기록을 셀 단위로 편집, 이력 보관</li>
+<li><strong>치환 규칙</strong>: 정규식 포함 일괄 치환, 기본 규칙 내장</li>
+<li><strong>유의어 검사</strong>: 유의어 그룹 관리, 원본 텍스트에서 유의어 위치 하이라이트</li>
+<li><strong>내보내기</strong>: 글자 수 제한 확인, 면책 안내 포함 출력</li>
+<li><strong>스냅샷</strong>: 작업 중간 상태 저장 및 복원</li>
+<li><strong>암호화</strong>: 학생 이름·기록 등 민감 데이터 선택적 암호화</li>
+</ul>
+<h2 id="기술-스택-선택">기술 스택 선택</h2>
+<h3 id="tauri-rust-백엔드--웹프론트엔드">Tauri (Rust 백엔드 + 웹프론트엔드)</h3>
+<p>Electron 대신 Tauri를 선택한 이유는 하나다: <strong>번들 크기와 메모리 사용량</strong>. Electron은 Chromium과 Node.js를 통째로 들고 다니는 반면, Tauri는 OS의 WebView를 사용하고 백엔드만 Rust로 컴파일한다. 교사 업무용 도구인 만큼 학교 PC에 부담 없이 설치될 수 있어야 했다.</p>
+<h3 id="rust">Rust</h3>
+<p>백엔드 언어로 Rust를 선택한 것은 타입 안전성과 테스트 편의성 때문이다. 치환 엔진처럼 순수 함수로 추출할 수 있는 로직은 단위 테스트로 완전히 검증하고 싶었다. Rust의 <code>cargo test</code>는 이 목적에 이상적이다.</p>
+<h3 id="vue-3--tailwind-css">Vue 3 + Tailwind CSS</h3>
+<p>프론트엔드는 Vue 3로 구성했다. 섹션(Section)과 모달(Modal) 구분이 명확하고, Pinia 스토어를 통해 백엔드 invoke 호출을 캡슐화하는 구조를 잡았다. 컴포넌트가 Tauri invoke를 직접 호출하지 않고 반드시 스토어를 경유하는 것이 원칙이다.</p>
+<h3 id="sqlite">SQLite</h3>
+<p>프로젝트 파일 형식으로 SQLite를 선택했다. 단일 <code>.db</code> 파일로 관리되므로 이동과 백업이 간단하고, 트랜잭션 지원으로 데이터 무결성을 보장할 수 있다. 나중에 암호화를 도입할 때도 DB 전체 암호화(SQLCipher) 대신 필드 단위 암호화를 선택하게 되는 결정적 요인이 된다.</p>
+<h2 id="앱-구조-개요">앱 구조 개요</h2>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>프로젝트 파일 (.db)</span></span>
+<span class="line"><span>├── Student       학생 목록</span></span>
+<span class="line"><span>├── Area          평가 영역</span></span>
+<span class="line"><span>├── Activity      활동 항목</span></span>
+<span class="line"><span>├── ActivityRecord 기록 (학생 × 활동)</span></span>
+<span class="line"><span>├── ActivityRecordHistory 기록 이력</span></span>
+<span class="line"><span>├── Snapshot      스냅샷</span></span>
+<span class="line"><span>├── ReplaceRule   치환 규칙</span></span>
+<span class="line"><span>├── SynonymGroup  유의어 그룹</span></span>
+<span class="line"><span>├── SynonymItem   유의어 단어</span></span>
+<span class="line"><span>└── APP_CONFIGS   앱 설정 (암호화 salt 등)</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>프론트엔드는 섹션 단위로 분리된다: 학생(Student), 영역(Area), 활동(Activity), 기록(Record), 검사(Inspect), 치환(Replace), 내보내기(Export), 체크리스트(Checklist), 설정(Settings), 개요(Overview).</p>
+<p>다음 글에서는 Rust 백엔드의 모듈 구조와 테스트 전략을 다룬다.</p> </div> <nav class="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800 grid grid-cols-1 sm:grid-cols-2 gap-3" data-pagefind-ignore> <div>  </div> <div> <a href="/archive/luminousky/school-record-app/rust-backend-module-split-unit-testing/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all sm:text-right"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">Next →</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> Rust 백엔드 모듈 분리와 단위 테스트 전략 </span> </a> </div> </nav> </div>  </div> </main> <footer class="border-t border-gray-100 dark:border-gray-800 mt-auto"> <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-end gap-6"> <a href="https://luminousky.com" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+luminousky.com ↗
+</a> <a href="https://github.com/itmir913" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+GitHub ↗
+</a> </div> </footer> <!-- 맨 위로 버튼 --> <button id="back-to-top" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 p-2.5 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 shadow-sm transition-all duration-200 opacity-0 pointer-events-none"> <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path> </svg> </button>  </body> </html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="ko" class="antialiased scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="외부 서버 없이 Google Apps Script만으로 구축한 입시 PDF 키워드 검색 웹앱, 그리고 Docker 독립 서버 버전"><title>입시자료 통합검색 — Google Drive Boolean 검색 시스템 — luminousky</title><!-- 다크모드 FOUC 방지 — 렌더링 전 클래스 적용 --><script>
+      (function () {
+        var t = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (t === 'dark' || (!t && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script><!-- OG / Twitter 메타태그 --><meta property="og:type" content="article"><meta property="og:site_name" content="luminousky"><meta property="og:title" content="입시자료 통합검색 — Google Drive Boolean 검색 시스템 — luminousky"><meta property="og:description" content="외부 서버 없이 Google Apps Script만으로 구축한 입시 PDF 키워드 검색 웹앱, 그리고 Docker 독립 서버 버전"><meta property="og:url" content="https://luminousky.com/archive/luminousky/teacher-utility-kit/college-admission-search-google-drive-boolean/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="입시자료 통합검색 — Google Drive Boolean 검색 시스템 — luminousky"><meta name="twitter:description" content="외부 서버 없이 Google Apps Script만으로 구축한 입시 PDF 키워드 검색 웹앱, 그리고 Docker 독립 서버 버전"><link rel="canonical" href="https://luminousky.com/archive/luminousky/teacher-utility-kit/college-admission-search-google-drive-boolean/"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.ChQ6QvNq.css"><script type="module" src="/archive/_astro/hoisted.CVcv2i_h.js"></script></head> <body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans min-h-screen flex flex-col transition-colors"> <header class="sticky top-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-black/[0.06] dark:border-white/[0.06]"> <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"> <a href="/archive/" class="text-base font-semibold tracking-tight text-gray-900 dark:text-gray-100 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+luminousky · archive
+</a> <nav class="flex items-center gap-1"> <a href="/archive/" class="text-base font-medium text-gray-900 dark:text-gray-100 no-underline px-3 py-1.5 rounded-md bg-gray-100 dark:bg-gray-800 transition-colors">Archive</a> <a href="/archive/timeline/" class="text-base font-medium text-gray-400 dark:text-gray-500 no-underline px-3 py-1.5 rounded-md hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Timeline</a> <button id="theme-toggle" aria-label="Toggle dark mode" class="ml-1 p-2 rounded-md text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"> <!-- 라이트 모드에서 표시 (달 아이콘 → 다크로 전환) --> <svg id="icon-moon" class="w-5 h-5 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> <!-- 다크 모드에서 표시 (해 아이콘 → 라이트로 전환) --> <svg id="icon-sun" class="w-5 h-5 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> </nav> </div> </header> <main class="flex-1"> <div class="max-w-5xl mx-auto px-6 py-14">  <div> <a href="/archive/luminousky/" data-pagefind-ignore class="inline-block text-base text-gray-400 mb-8 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+← luminousky
+</a> <header class="mb-10" data-pagefind-ignore> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-5 text-gray-900 dark:text-gray-100"> 입시자료 통합검색 — Google Drive Boolean 검색 시스템 </h1> <div class="flex flex-wrap items-center gap-3 text-base text-gray-400"> <time datetime="2026-03-31T15:00:00.000Z"> April 1, 2026 </time> <span aria-hidden="true">·</span> <span class="text-violet-500">Teacher Utility Kit</span> </div> <p class="mt-4 mb-0 text-lg text-gray-500 dark:text-gray-400 leading-relaxed border-l-2 border-gray-200 dark:border-gray-700 pl-4"> 외부 서버 없이 Google Apps Script만으로 구축한 입시 PDF 키워드 검색 웹앱, 그리고 Docker 독립 서버 버전 </p> </header> <!-- pagefind 메타 (검색 결과 카드용) --> <div class="hidden"> <span data-pagefind-meta="date">April 1, 2026</span> <span data-pagefind-meta="project">Teacher Utility Kit</span> <span data-pagefind-meta="project-slug">teacher-utility-kit</span> <span data-pagefind-filter="section:luminousky"></span> </div> <div class="prose prose-gray dark:prose-invert max-w-none" data-pagefind-body> <h2 id="배경">배경</h2>
+<p>학교에는 입시 관련 PDF가 수백 개 쌓인다. 대학별 모집요강, 전형 안내, 면접 자료 등이 Google Drive 공유 폴더에 올라오는데, 특정 키워드로 어떤 파일이 있는지 빠르게 찾을 방법이 없었다. Google Drive 검색은 파일명만 보거나 전체 텍스트 검색이 부정확했다.</p>
+<p>요구사항:</p>
+<ul>
+<li>외부 서버·회원가입 없이 Google Workspace for Education만으로 구축</li>
+<li>학교 교사라면 누구나 링크 하나로 접근</li>
+</ul>
+<p>두 가지 버전을 만들었다. GAS(Google Apps Script) 버전은 서버 없이 구동되고, Docker(Node.js+Express+SQLite) 버전은 OAuth2 기반 독립 서버다.</p>
+<h2 id="핵심-기능-boolean-검색-파서">핵심 기능: Boolean 검색 파서</h2>
+<p>단순 키워드 검색이 아닌 <code>AND / OR / NOT</code> 연산자를 지원한다.</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>논술 AND 면접          → 두 키워드 모두 포함한 파일</span></span>
+<span class="line"><span>(인문계 OR 자연계) AND 서울대</span></span>
+<span class="line"><span>논술 NOT 면접         → 논술은 있지만 면접은 없는 파일</span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="파서-구현">파서 구현</h3>
+<p><code>tokenize()</code> → <code>BooleanParser.parse()</code> → <code>evaluate()</code> 3단계 파이프라인으로 처리한다.</p>
+<p><strong>tokenize</strong>: <code>|||</code> 구분자 방식. <code>AND/OR/NOT</code>과 괄호 앞뒤에 <code>|||</code>를 삽입해서 split한다. 공백 포함 키워드(<code>서울 대학교</code>)를 하나의 토큰으로 보존하는 것이 핵심이다.</p>
+<p><strong>BooleanParser</strong>: ES5 생성자+prototype 방식. 우선순위는 <code>NOT > AND > OR</code>. 닫는 괄호가 없어도 자동 보완한다.</p>
+<p><strong>evaluate</strong>: 집합 연산. AND는 단락평가(왼쪽 empty면 Drive API 호출 생략), NOT은 <code>getAllFileIds() - evaluate(operand)</code> 차집합이다.</p>
+<h2 id="캐시-구조">캐시 구조</h2>
+<p>GAS의 CacheService는 키당 100KB 제한이 있어 직접 청크 분할을 구현했다.</p>
+<ul>
+<li><strong>메타데이터 캐시</strong>: 30,000자 단위로 분할. 키: <code>meta_chunk_0</code>, <code>meta_chunk_1</code>, …</li>
+<li><strong>키워드 캐시</strong>: 동일 청크 방식. 키: <code>kw_{keyword}_0</code>, <code>kw_{keyword}_1</code>, …</li>
+</ul>
+<p>한글은 JS UTF-16 기준 1자 = 1 코드 유닛이므로 30,000자 분할이 안전하다.</p>
+<h2 id="트리거-스케줄-gas">트리거 스케줄 (GAS)</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>시각</th><th>함수</th></tr></thead><tbody><tr><td>02:00</td><td><code>rebuildMetadataIndex</code> — BFS로 Drive 전체 재색인</td></tr><tr><td>02:30 / 07:30 / 12:30 / 17:30</td><td><code>warmCache</code> — 상위 100개 키워드 사전 캐싱</td></tr><tr><td>03:00</td><td><code>purgeStaleKeywords</code> — 3일 미검색 키워드 삭제</td></tr></tbody></table>
+<h2 id="12차-검증까지의-여정">12차 검증까지의 여정</h2>
+<p>초기 구현 후 12차례 검증 세션을 거쳤다. 주요 수정 내역:</p>
+<ul>
+<li><strong>NOT 연산자 버그</strong>: <code>getAllFileIds()</code> 차집합으로 수정</li>
+<li><strong>Drive API 인젝션</strong>: 작은따옴표, 큰따옴표 이스케이프 추가</li>
+<li><strong>청크 사이즈</strong>: 한글 멀티바이트를 고려해 90,000자 → 30,000자로 감소</li>
+<li><strong>경쟁 조건</strong>: <code>rebuildMetadataIndex</code>와 정기 트리거 간 <code>LockService.tryLock(0)</code> 추가</li>
+<li><strong>XSS 패턴</strong>: <code>onclick="window.open('${url}')"</code> → <code>data-url</code> 속성 방식으로 교체</li>
+</ul>
+<p>마지막 검증에서 <code>testBooleanParser</code> 64개, <code>testDriveIntegration</code> 8개 전원 통과.</p> </div> <nav class="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800 grid grid-cols-1 sm:grid-cols-2 gap-3" data-pagefind-ignore> <div>  </div> <div> <a href="/archive/luminousky/teacher-utility-kit/teacher-training-docx-generator/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all sm:text-right"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">Next →</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> 교원 연수·학습지 자료 — docx 자동생성 시스템 </span> </a> </div> </nav> </div>  </div> </main> <footer class="border-t border-gray-100 dark:border-gray-800 mt-auto"> <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-end gap-6"> <a href="https://luminousky.com" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+luminousky.com ↗
+</a> <a href="https://github.com/itmir913" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+GitHub ↗
+</a> </div> </footer> <!-- 맨 위로 버튼 --> <button id="back-to-top" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 p-2.5 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 shadow-sm transition-all duration-200 opacity-0 pointer-events-none"> <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path> </svg> </button>  </body> </html>
