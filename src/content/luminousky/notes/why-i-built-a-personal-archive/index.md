@@ -110,6 +110,31 @@ This is a deliberate choice. A technical blog from 2013 reflects 2013-era thinki
 
 ---
 
+## URL Structure: Slug-Based Routing
+
+`/luminousky/` posts use slug-based URLs: `/luminousky/{project}/{slug}/`.
+
+The initial implementation used numeric IDs (`/1/`, `/2/`). These were replaced with descriptive slugs during early development, before any external links existed.
+
+**Why slugs for `/luminousky/` but not `/itmir/`**
+
+`/itmir/` post numbers are the original Tistory post IDs (e.g., `/itmir/2013/300/`). Changing them would break any surviving external links and corrupt the historical record. Numeric IDs there are load-bearing.
+
+`/luminousky/` is new content with no prior URL surface. The audience is external — these are technical notes written for sharing. A URL should carry enough signal to be readable out of context. `/luminousky/school-record-app/field-level-encryption-aes256gcm-pbkdf2/` is self-describing; `/luminousky/school-record-app/5/` is not.
+
+**Why now**
+
+The switch was made at 16 posts with zero known external links. Migration cost: rename 16 directories. This window closes as soon as posts get shared or indexed.
+
+**Slug rules**
+
+- Lowercase, words separated by hyphens
+- No special characters (`.`, `()`, `/`, etc.)
+- ASCII only — Korean titles get an English translation, not romanization or percent-encoding
+- Directory name = slug (Astro routes by folder path, so the directory name *is* the URL)
+
+---
+
 ## Decision Summary
 
 **What changed?** Ten years of blog posts moved from a third-party platform into a version-controlled, self-hosted static archive.
