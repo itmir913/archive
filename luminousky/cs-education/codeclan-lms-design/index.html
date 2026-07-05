@@ -59,8 +59,8 @@ luminousky · archive
 
 
 
-<table><thead><tr><th>레이어</th><th>기술</th><th>선택 이유</th></tr></thead><tbody><tr><td>데스크탑 앱</td><td>Tauri 2.0</td><td>트레이 상주, 닫기→숨김, Windows 단일 배포</td></tr><tr><td>백엔드</td><td>Rust + Axum</td><td>Axum 0.0.0.0:8080으로 학내망 접근 허용</td></tr><tr><td>DB</td><td>SQLite WAL</td><td>단일 파일, max_connections=1 단일 writer 큐</td></tr><tr><td>프론트엔드</td><td>Vue 3 + Vite + TypeScript + Pinia</td><td>Rust 바이너리에 임베드</td></tr><tr><td>���타일</td><td>Tailwind CSS v4</td><td>@tailwindcss/vite</td></tr><tr><td>국제화</td><td>vue-i18n</td><td>한국어 하드코딩 금지, <code>$t('key')</code> 필수</td></tr><tr><td>채점 엔진</td><td>DMOJ wbox</td><td>포터블 Python/GCC/Java</td></tr></tbody></table>
-<p>SQLite WAL 모드 + <code>max_connections=1</code>��� 단일 writer 직렬화를 강제해서 동시 채점 요청에서도 DB 충돌이 없도록 한다.</p>
+<table><thead><tr><th>레이어</th><th>기술</th><th>선택 이유</th></tr></thead><tbody><tr><td>데스크탑 앱</td><td>Tauri 2.0</td><td>트레이 상주, 닫기→숨김, Windows 단일 배포</td></tr><tr><td>백엔드</td><td>Rust + Axum</td><td>Axum 0.0.0.0:8080으로 학내망 접근 허용</td></tr><tr><td>DB</td><td>SQLite WAL</td><td>단일 파일, max_connections=1 단일 writer 큐</td></tr><tr><td>프론트엔드</td><td>Vue 3 + Vite + TypeScript + Pinia</td><td>Rust 바이너리에 임베드</td></tr><tr><td>스타일</td><td>Tailwind CSS v4</td><td>@tailwindcss/vite</td></tr><tr><td>국제화</td><td>vue-i18n</td><td>한국어 하드코딩 금지, <code>$t('key')</code> 필수</td></tr><tr><td>채점 엔진</td><td>DMOJ wbox</td><td>포터블 Python/GCC/Java</td></tr></tbody></table>
+<p>SQLite WAL 모드 + <code>max_connections=1</code>으로 단일 writer 직렬화를 강제해서 동시 채점 요청에서도 DB 충돌이 없도록 한다.</p>
 <h2 id="도메인-모델">도메인 모델</h2>
 <pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>classes (수업: 과목+분반 조합)</span></span>
 <span class="line"><span>  └─ teacher_id</span></span>
@@ -82,7 +82,7 @@ luminousky · archive
 Phase 2: Windows Job Object로 메모리/CPU 사용량 제한.</p>
 <h2 id="구현-현황">구현 현황</h2>
 <p>목업 10개(<code>docs/mockups/01~10_*.html</code>)가 완성된 상태에서 <code>dev</code> 브랜치 단계별 구현 중이다. 목업을 먼저 완성하고 백엔드/프론트를 구현하는 순서를 지킨다.</p>
-<p><code>master</code> 브랜치에는 Phase 0~9 구현체가 있���, <code>dev</code> 브랜치에서 전면 재설계 중이다. 핵심 변경은 <code>divisions</code> 기반 → <code>classes</code> 기반으로의 도메�� 모델 재정립이다.</p>
+<p><code>master</code> 브랜치에는 Phase 0~9 구현체가 있고, <code>dev</code> 브랜치에서 전면 재설계 중이다. 핵심 변경은 <code>divisions</code> 기반 → <code>classes</code> 기반으로의 도메인 모델 재정립이다.</p>
 <p>완료된 단계:</p>
 <ul>
 <li>0~1단계: Tauri+Axum 뼈대, 초기 설정 화면</li>
