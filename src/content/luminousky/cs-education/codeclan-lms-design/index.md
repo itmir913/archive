@@ -19,11 +19,11 @@ draft: false
 | 백엔드 | Rust + Axum | Axum 0.0.0.0:8080으로 학내망 접근 허용 |
 | DB | SQLite WAL | 단일 파일, max_connections=1 단일 writer 큐 |
 | 프론트엔드 | Vue 3 + Vite + TypeScript + Pinia | Rust 바이너리에 임베드 |
-| ���타일 | Tailwind CSS v4 | @tailwindcss/vite |
+| 스타일 | Tailwind CSS v4 | @tailwindcss/vite |
 | 국제화 | vue-i18n | 한국어 하드코딩 금지, `$t('key')` 필수 |
 | 채점 엔진 | DMOJ wbox | 포터블 Python/GCC/Java |
 
-SQLite WAL 모드 + `max_connections=1`��� 단일 writer 직렬화를 강제해서 동시 채점 요청에서도 DB 충돌이 없도록 한다.
+SQLite WAL 모드 + `max_connections=1`으로 단일 writer 직렬화를 강제해서 동시 채점 요청에서도 DB 충돌이 없도록 한다.
 
 ## 도메인 모델
 
@@ -55,7 +55,7 @@ Phase 2: Windows Job Object로 메모리/CPU 사용량 제한.
 
 목업 10개(`docs/mockups/01~10_*.html`)가 완성된 상태에서 `dev` 브랜치 단계별 구현 중이다. 목업을 먼저 완성하고 백엔드/프론트를 구현하는 순서를 지킨다.
 
-`master` 브랜치에는 Phase 0~9 구현체가 있���, `dev` 브랜치에서 전면 재설계 중이다. 핵심 변경은 `divisions` 기반 → `classes` 기반으로의 도메�� 모델 재정립이다.
+`master` 브랜치에는 Phase 0~9 구현체가 있고, `dev` 브랜치에서 전면 재설계 중이다. 핵심 변경은 `divisions` 기반 → `classes` 기반으로의 도메인 모델 재정립이다.
 
 완료된 단계:
 - 0~1단계: Tauri+Axum 뼈대, 초기 설정 화면
