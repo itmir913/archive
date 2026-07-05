@@ -1,6 +1,6 @@
 ﻿---
 title: "Why I Built a Personal Archive — and Why Astro + GitHub Pages"
-date: "2026-07-04T00:00:00+09:00"
+date: "2026-07-01T00:00:00+09:00"
 description: "The reasoning behind preserving a decade of engineering work, and the technology decisions that made it viable."
 draft: false
 ---
