@@ -1,3 +1,9 @@
+/* iOS Safari: input focus 시 auto-zoom 방지 — font-size < 16px이면 확대됨 */
+/* 접근성 "텍스트 크기 조절" 설정 시 1rem이 16px 미만이 될 수 있으므로 고정값으로 보장 */
+input, select, textarea {
+  font-size: 16px;
+}
+
 html {
   scroll-behavior: smooth;
   overflow-y: scroll; /* 스크롤바 항상 표시 — 레이아웃 흔들림 방지 */

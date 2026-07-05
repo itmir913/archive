@@ -5,9 +5,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 const allPosts = await getCollection('itmir', ({ data }) => !data.draft);
 allPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
+const kstYear = (d: Date) =>
+  new Intl.DateTimeFormat('en-US', { year: 'numeric', timeZone: 'Asia/Seoul' }).format(d);
+
 const byYear = new Map<string, typeof allPosts>();
 for (const post of allPosts) {
-  const year = String(post.data.date.getFullYear());
+  const year = kstYear(post.data.date);
   if (!byYear.has(year)) byYear.set(year, []);
   byYear.get(year)!.push(post);
 }
