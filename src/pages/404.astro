@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout title="페이지를 찾을 수 없습니다" pagefindIgnore={true}>
+  <div class="flex flex-col items-center justify-center py-20 text-center">
+    <p class="text-base text-gray-400 dark:text-gray-500" id="redirect-msg">
+      잘못된 주소입니다. 올바른 페이지로 이동 중입니다…
+    </p>
+    <p class="mt-6 text-base">
+      자동으로 이동되지 않는다면
+      <a href={`${base}/`} class="text-blue-600 dark:text-blue-400 underline underline-offset-2">
+        여기를 클릭하세요
+      </a>
+    </p>
+  </div>
+</BaseLayout>
+
+<script is:inline>
+  (function () {
+    var path = window.location.pathname;
+    var segments = path.split('/').filter(Boolean);
+    var archiveIdx = segments.indexOf('archive');
+    var validSections = ['itmir', 'luminousky', 'timeline'];
+
+    var redirectTo = '/archive/';
+    if (archiveIdx !== -1 && archiveIdx + 1 < segments.length) {
+      var section = segments[archiveIdx + 1];
+      if (validSections.indexOf(section) !== -1) {
+        redirectTo = '/archive/' + section + '/';
+      }
+    }
+
+    window.location.replace(redirectTo);
+  })();
+</script>
