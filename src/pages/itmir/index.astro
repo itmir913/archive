@@ -121,11 +121,11 @@ function formatDate(d: Date) {
               ].filter(Boolean).join(' ').toLowerCase();
               return (
                 <li
-                  class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-6 py-3.5 border-b border-gray-100 dark:border-gray-800 last:border-b-0"
+                  class="sm:flex sm:flex-row sm:items-start sm:gap-6 py-3.5 border-b border-gray-100 dark:border-gray-800 last:border-b-0"
                   data-cat={post.data.category || ''}
                   data-search={searchText}
                 >
-                  <span class="sm:w-20 sm:flex-shrink-0 text-base text-gray-400 tabular-nums pt-px">
+                  <span class="hidden sm:block sm:w-20 sm:flex-shrink-0 text-base text-gray-400 tabular-nums pt-px">
                     {formatDate(post.data.date)}
                   </span>
                   <div class="flex-1 min-w-0">
@@ -137,11 +137,15 @@ function formatDate(d: Date) {
                         {post.data.title}
                       </a>
                       {post.data.category && (
-                        <span class="text-base text-gray-400 whitespace-nowrap flex-shrink-0">
+                        <span class="hidden sm:inline text-base text-gray-400 whitespace-nowrap flex-shrink-0">
                           {post.data.category}
                         </span>
                       )}
                     </div>
+                    <p class="sm:hidden text-base text-gray-400 m-0 mt-1 tabular-nums leading-snug">
+                      <span>{formatDate(post.data.date)}</span>
+                      {post.data.category && <span> · {post.data.category}</span>}
+                    </p>
                     {post.data.description && (
                       <p class="text-base text-gray-400 m-0 mt-0.5 leading-snug">
                         {post.data.description}
