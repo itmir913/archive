@@ -1,4 +1,4 @@
----
+﻿---
 title: "티스토리 오류 제보하기 버튼 만들기 - 구글 스프레드 시트 사용"
 date: "2015-01-05T15:54:51+09:00"
 category: "Tistory"
@@ -280,7 +280,7 @@ function setup() {
 </div>
 
 <div style="clear:both" />
-`
+```
 
 그다음 skin.html의 </body>부분에 아래 코드를 넣어주시되, 하늘색으로 표시한 부분에는 위에서 복사한 URL을 넣어주세요.
 
@@ -346,6 +346,7 @@ function sendComment (){
 
 마지막으로 style.css에 아래 코드를 넣어주세요.
 
+```css
 #sendComment {
 
   width:140px;
@@ -385,6 +386,7 @@ function sendComment (){
   margin-left:65px;
 
 }
+```
 
 그러면 모든 작업이 끝납니다.
 

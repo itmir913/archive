@@ -1,4 +1,4 @@
----
+﻿---
 title: "CM7 WIFI Fix가 안됩니다.."
 date: "2013-01-23T14:50:45+09:00"
 category: "Android/Build"
@@ -18,6 +18,7 @@ original_url: "https://itmir.tistory.com/25"
 
 **boardconfig**
 
+```makefile
 BOARD_USES_QCOM_HARDWARE := true
 
 BOARD_USES_QCOM_LIBS := true
@@ -43,9 +44,11 @@ WIFI_DRIVER_FW_STA_PATH := "/system/etc/wl/bcm43291.bin"
 WIFI_DRIVER_FW_AP_PATH := "/system/etc/wl/bcm43291_apsta.bin"
 
 WIFI_DRIVER_FW_P2P_PATH := "/system/etc/wl/bcm43291_p2p.bin"
+```
 
 **device_ef32k.mk**
 
+```makefile
 PRODUCT_COPY_FILES += \
 
 device/pantech/ef32k/add/bin/pppd:system/bin/pppd \
@@ -53,9 +56,11 @@ device/pantech/ef32k/add/bin/pppd:system/bin/pppd \
 device/pantech/ef32k/add/bin/qrngd:system/bin/qrngd \
 
 device/pantech/ef32k/add/bin/qrngtest:system/bin/qrngtest
+```
 
 **system.prop**
 
+```
 wifi.interface=wlan0
 
 ro.product.boardnswver=7x27 V1.46
@@ -67,9 +72,11 @@ ro.product.baseband_ver_hidden=S0832146a
 ro.product.checksum=
 
 ro.carrier=KT-KOR
+```
 
 **ef32k-vendor-blobs.mk**
 
+```makefile
 # Modules
 
 PRODUCT_COPY_FILES += \
@@ -103,6 +110,7 @@ vendor/pantech/ef32k/proprietary/etc/wl/bcm43291_p2p.bin:system/etc/wl/bcm43291_
 vendor/pantech/ef32k/proprietary/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
 
 vendor/pantech/ef32k/proprietary/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf
+```
 
 다음과 같은 문구를 굵게 표시된 파일에 추가했습니다
 
@@ -112,6 +120,7 @@ vendor/pantech/ef32k/proprietary/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd
 
 부팅이 되지 않으며 다음과 같은 로그켓을 남기고 있습니다
 
+```
 D/dalvikvm( 124): DexOpt: --- BEGIN 'core.jar' (bootstrap=1) ---
 
 D/dalvikvm( 168): Ignoring duplicate verify attempt on Ljava/lang/Object;
@@ -135,6 +144,7 @@ E/JNIHelp ( 227): Native registration unable to find class 'android/debug/JNITes
 E/AndroidRuntime( 227): Unable to register all android natives
 
 I/Netd ( 230): Netd 1.0 starting
+```
 
 어떤분의 말씀으로 libmedia_jni.so를 전에 빌드한 so로 교체를 한뒤
 
@@ -146,11 +156,13 @@ I/Netd ( 230): Netd 1.0 starting
 
 그런대 와이파이를 키면 오류가 뜨며 로그켓에는 다음과 같이 오류가 나타납니다
 
+```
 E/WifiService( 180): Failed to load Wi-Fi driver.
 
 D/SettingsAppWidgetProvider( 345): Widget is from a previous version... Let's update
 
 D/SettingsAppWidgetProvider( 345): No instances yet... Wait for at least one instance to exist before adding global settings
+```
 
 로그를 보면 Failed to load Wi-Fi driver. 즉 wifi 드라이버를 불러오지 못하여 발생하는 문제라 생각됩니다
 
@@ -162,6 +174,7 @@ D/SettingsAppWidgetProvider( 345): No instances yet... Wait for at least one ins
 
 로그켓을 보면
 
+```
 --------- beginning of /dev/log/main
 
 I/cm ( 82): Welcome to Android 2.3.7 / CyanogenMod-7-20130122-UNOFFICIAL-ef32k
@@ -199,6 +212,7 @@ W/Vold ( 119): Ignoring unknown switch 'MSM72K_UDC'
 D/Vold ( 119): USB connected
 
 D/Vold ( 119): Share method ums now available
+```
 
 으로 그렇게 의심스러운 부분은 없는것 같습니다..
 

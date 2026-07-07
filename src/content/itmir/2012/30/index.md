@@ -36,10 +36,12 @@ login을 하게 되면 Add Rom이 생기는대 여기서 롬을 생성(?)하면 
 
 빌드프롭 아무데나
 
+```
 otaupdater.otaid=OTA의 ID알아서 입력
 
 otaupdater.otatime=업데이트 날자 입력  
 otaupdater.otaver=버전 입력
+```
 
 추가해 주세요~
 

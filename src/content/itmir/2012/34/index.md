@@ -28,9 +28,9 @@ boot.img를 쪼개기 위해 unpackbootimg가 필요한데요.
 
 ~/bin아닙니다. ;;
 
-sudo cp unpackbootimg /bin
+`sudo cp unpackbootimg /bin`
 
-sudo chmod /bin/unpackbootimg
+`sudo chmod /bin/unpackbootimg`
 
 로 넣을 수 있습니다.
 

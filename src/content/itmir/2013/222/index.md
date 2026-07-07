@@ -70,6 +70,7 @@ cm10.1부터는 BOARD_MKBOOTIMG_ARGS을 사용해야 합니다
 
 BOARD_MKBOOTIMG_ARGS의 값부분에는 ramdisk_offset이 들어가야 하는대요 이 부분은 디벨로이드에 자료가 있더라고요 참고하시길..
 
+```makefile
 WIFI_DRIVER_MODULE_NAME          := wlan  
 WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wlan.ko"  
 WPA_SUPPLICANT_VERSION           := VER_0_8_X  
@@ -79,16 +80,19 @@ BOARD_WLAN_DEVICE                := qcwcn
 WIFI_DRIVER_FW_PATH_STA          := "sta"  
 WIFI_DRIVER_FW_PATH_AP           := "ap"  
 WIFI_DRIVER_FW_PATH_P2P          := "p2p"
+```
 
 이 부분은 모두 WIFI관련 선언입니다
 
 모듈의 이름과 kernel컴파일시 나오는 wifi모듈의 위치, 무선랜의 칩셋등을 정의해 주고 있습니다
 
+```makefile
 TARGET_PREBUILT_KERNEL := device/pantech/ef46l/kernel  
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 
 PRODUCT_COPY_FILES += \  
     $(LOCAL_KERNEL):kernel \
+```
 
 이 부분은 kernel을 빌드한 커널, 즉 zImage로 사용하며, 이것을 out/tatget/product/(기기명)으로 이동시켜주는 역할을 합니다
 
@@ -201,6 +205,7 @@ system/etc/media_profiles.xml입니다
 
 PRODUCT_COPY_FILES += \  
     device/pantech/ef46l/configs/media_profiles.xml:system/etc/media_profiles.xml
+```
 
 이렇게 구성해 주면 됩니다
 

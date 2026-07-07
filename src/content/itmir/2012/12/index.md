@@ -10,7 +10,7 @@ original_url: "https://itmir.tistory.com/12"
 
 후후! 겨후 완성했습니다아아아아아아~
 
-그런대 assert(getprop("ro.product.device") == "a750k" || getprop("ro.build.product") == "a750k" || getprop("ro.product.board") == "a750k");
+그런대 `assert(getprop("ro.product.device") == "a750k" || getprop("ro.build.product") == "a750k" || getprop("ro.product.board") == "a750k");`
 
 이거땜에 설치에러 뿡뿡 ㅋㅋ
 

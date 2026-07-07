@@ -10,6 +10,7 @@ original_url: "https://itmir.tistory.com/389"
 
 Preference를 백업하기 위한 코드 입니다
 
+```java
 private boolean saveSharedPreferencesToFile(File dst) {
 
     boolean res = false;
@@ -143,5 +144,6 @@ private boolean loadSharedPreferencesFromFile(File src) {
     return res;
 
 }
+```
 
 출처 : <http://stackoverflow.com/questions/10864462/how-can-i-backup-sharedpreferences-to-sd-card>

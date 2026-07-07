@@ -1,4 +1,4 @@
----
+﻿---
 title: "#19 어플에서 진동을 사용하는 2가지 방법"
 date: "2013-10-28T19:21:48+09:00"
 category: "Android/App"
@@ -68,6 +68,7 @@ vibrate는 두가지 소스가 있죠
 
 버튼 2개만 만들어 주시고 각각 버튼에 다른 onClick속성을 주시길 바랍니다
 
+```xml
 <Button
 
     android:id="@+id/button1"
@@ -103,6 +104,7 @@ vibrate는 두가지 소스가 있죠
     android:onClick="Vibrator_pattern"
 
     android:text="패턴 진동" />
+```
 
 (그대로 따라하지 말라고 빨간색으로 했습니다 직접 짜는 연습을 하세요)
 

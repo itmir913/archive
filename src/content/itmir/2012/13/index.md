@@ -10,13 +10,13 @@ original_url: "https://itmir.tistory.com/13"
 
 수단과 방법을 가리지 않고 로그를 뽑아보고 있습니다
 
-1. adb logcat을 이용한 방법
+1. `adb logcat`을 이용한 방법
 
 먼저 adb를 준비합니다
 
 이건 이미 컴에 깔려있고...
 
-부팅될때 바로 adb devices로 체크 해 보았다
+부팅될때 바로 `adb devices`로 체크 해 보았다
 
 ![](./images/캡처.png)
 
@@ -26,9 +26,11 @@ original_url: "https://itmir.tistory.com/13"
 
 log.txt는...
 
+```
 \* daemon not running. starting it now on port 5037 \*
 
 \* daemon started successfully \*
+```
 
 와우 ㅋㅋㅋㅋ
 
@@ -36,9 +38,11 @@ log.txt는...
 
 2. cwm에서의 로그켓 뽑기 시도
 
-cwm진입상태에서 adb logcat > log.txt를 시도하면 lot.txt에는
+cwm진입상태에서 `adb logcat > log.txt`를 시도하면 lot.txt에는
 
+```
 /sbin/sh: exec: line 1: logcat: not found
+```
 
 이런 로그가 발생한다...
 
@@ -48,6 +52,7 @@ cwm진입상태에서 adb logcat > log.txt를 시도하면 lot.txt에는
 
 cwm의 어드벤스드에 들어가면 로그 기능이 있는대 그거 해보니
 
+```
 ro.baseband=msm
 
 ro.bootloader=unknown
@@ -69,6 +74,7 @@ I:Skipping execution of extendedcommand, file not found...
 mtd: successfully wrote block at c7de400000000
 
 I:Set boot command ""
+```
 
 ![](./images/SANY0047.jpg)
 
@@ -87,7 +93,7 @@ I:Set boot command ""
 sdcard/clockworkmod에 로그가 있다고 하더라고요
 
 뽑아 왔습니다~
-
+```
 Starting recovery on Mon Sep  3 08:59:55 2012
 
 framebuffer: fd 4 (320 x 480)
@@ -291,6 +297,7 @@ I:Skipping execution of extendedcommand, file not found...
 mtd: successfully wrote block at c7de400000000
 
 I:Set boot command ""
+```
 
 ?
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: "Logcat(로그켓)에 대한 모든 것"
 date: "2014-09-13T10:22:57+09:00"
 category: "SmartPhone/Android"
@@ -48,13 +48,17 @@ adb에 대해서와 다운로드는 아래 링크에서 얻을수 있습니다
 
 [[SmartPhone] - 안드로이드의 LOG을 확인하자 - adb logcat / LogcatFilter.exe](/archive/itmir/2013/61)
 
+```
 adb logcat
+```
 
 이런 명령어를 입력하면 로크켓이 cmd창에 나타납니다
 
 이를 txt파일에 저장하려면 >를 이용해서 가능합니다
 
+```
 adb logcat > log.txt
+```
 
 아래는 스크린샷 입니다
 
@@ -88,6 +92,7 @@ adb logcat > log.txt
 
 adb logcat > log.txt로 저장하면 어떻게 뜨는지 봅시다
 
+```
 E/AndroidRuntime(26805): FATAL EXCEPTION: main
 
 E/AndroidRuntime(26805): java.lang.IllegalStateException: Could not execute method of the activity
@@ -191,6 +196,7 @@ E/AndroidRuntime(26330): at android.util.Log.d(Log.java:155)
 E/AndroidRuntime(26330): at com.example.examplelogcat.MainActivity.nullError(MainActivity.java:20)
 
 E/AndroidRuntime(26330): ... 14 more
+```
 
 이클립스와 비슷한 모양을 하고 있고, 원인을 알수 있습니다
 

@@ -66,7 +66,7 @@ Create a free account를 눌러 계정을 만드세요.
 
 터미널을 실행하신후.
 
-**sudo apt-get install git-core**
+`sudo apt-get install git-core`
 
 을 입력하세요.
 
@@ -74,19 +74,19 @@ git을 설치합니다.
 
 그다음 (커널소스를 풀어놓으신후) 자신이 github에 등록할 소스가 있는 폴더로 이동하세요.
 
-**cd ~/바탕화면/경로**
+`cd ~/바탕화면/경로`
 
 아마 이렇게 되겠죠?
 
 그다음 입력해 주세요.
 
-**git init**
+`git init`
 
 .git이라는 폴더를 생성하게 됩니다.
 
 이것은 이 폴더를 Github의 작업폴더로 사용하겠다는 뜻이 됩니다.
 
-그다음 (커널 소스등을 넣으신뒤) **git status** 을 입력해 주세요.
+그다음 (커널 소스등을 넣으신뒤) `git status` 을 입력해 주세요.
 
 현재 상태를 확인하게 됩니다
 
@@ -94,7 +94,7 @@ git을 설치합니다.
 
 이제 등록해야 합니다.
 
-**git add .**
+`git add .`
 
 add뒤 파일을 지정하면 그 파일만, .(점)을 쓰면 모든 파일이 해당하게 됩니다.
 
@@ -110,7 +110,7 @@ commit 하면 HEAD로 확정지어지게 됩니다.
 
 이제 확정 지어야 하는데요.
 
-**git commit -m "커밋 문구"**
+`git commit -m "커밋 문구"`
 
 이렇게 commit하시면 됩니다.
 
@@ -118,7 +118,7 @@ commit 하면 HEAD로 확정지어지게 됩니다.
 
 그럼 한눈에 알아볼수 있을것 입니다.
 
-이제 우리는 git status하면 아무 것도 commit 할 것이 없다고 나타나게 됩니다.
+이제 우리는 `git status`하면 아무 것도 commit 할 것이 없다고 나타나게 됩니다.
 
 마지막으로 push하게 되면 서버에 저장되게 됩니다.
 
@@ -130,19 +130,19 @@ commit 하면 HEAD로 확정지어지게 됩니다.
 
 아까 복사해둔 <https://github.com/itmir913/Mir-kernel.git>을 가져와 주세요.
 
-**git remote add origin (아까 복사해둔 주소)**
+`git remote add origin (아까 복사해둔 주소)`
 
 이렇게 입력해주면 서버의 주소를 가지고 있는 origin이라는 remote를 생성하게 됩니다.
 
 예를 들면 제경우
 
-git remote add origin https://github.com/itmir913/Mir-kernel.git
+`git remote add origin https://github.com/itmir913/Mir-kernel.git`
 
 이렇게 말이죠 ㅎㅎ
 
 이제 마지막으로 우리의 사랑스러운 Github서버에 등록해 볼까요?
 
-**git push origin master**
+`git push origin master`
 
 이렇게 되면 HEAD에 저장된 내용을 origin을 통해 원격 서버(github)에 저장하게 됩니다.
 
@@ -152,7 +152,7 @@ git remote add origin https://github.com/itmir913/Mir-kernel.git
 
 오류 뜨시는 분은
 
-**git push origin +master**
+`git push origin +master`
 
 이렇게 입력해보세요.
 
