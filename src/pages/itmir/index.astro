@@ -83,28 +83,36 @@ function formatDate(d: Date) {
       </div>
     )}
 
+    <!-- 연도 필터 -->
+    <div id="year-filter-wrap" class="px-4 py-3 border-t border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-800/50 flex flex-wrap gap-1.5">
+      <button
+        data-year="__all__"
+        type="button"
+        class="filter-year-btn text-base px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:border-gray-400 dark:hover:border-gray-500 transition-colors cursor-pointer whitespace-nowrap"
+      >
+        All
+      </button>
+      {years.map((year) => (
+        <button
+          data-year={year}
+          type="button"
+          class="filter-year-btn text-base px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:border-gray-400 dark:hover:border-gray-500 transition-colors cursor-pointer whitespace-nowrap"
+        >
+          {year}
+        </button>
+      ))}
+    </div>
+
   </div>
 
   <p id="filter-status" aria-live="polite" class="text-base text-gray-400 mt-3 mb-2 empty:hidden"></p>
-
-  <!-- 연도 점프: 포스트 목록의 목차, browse 모드에서만 표시 -->
-  <nav id="year-nav" aria-label="Jump to year" class="flex flex-wrap gap-2 mb-8 mt-4">
-    {years.map((year) => (
-      <a
-        href={`#year-${year}`}
-        class="text-base px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:border-gray-400 dark:hover:border-gray-500 transition-colors no-underline whitespace-nowrap"
-      >
-        {year}
-      </a>
-    ))}
-  </nav>
 
   <!-- Browse 뷰: 연도별 포스트 목록 -->
   <div id="browse-view">
     {years.map((year) => {
       const posts = byYear.get(year)!;
       return (
-        <section id={`year-${year}`} class="year-section mb-12 scroll-mt-20">
+        <section class="year-section mb-12">
           <div class="flex items-center gap-3 mb-4">
             <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 m-0">{year}</h2>
             <span class="text-base text-gray-400 font-normal">{posts.length}</span>
@@ -124,6 +132,7 @@ function formatDate(d: Date) {
                   class="sm:flex sm:flex-row sm:items-start sm:gap-6 py-3.5 border-b border-gray-100 dark:border-gray-800 last:border-b-0"
                   data-cat={post.data.category || ''}
                   data-search={searchText}
+                  data-year={kstYear(post.data.date)}
                 >
                   <span class="hidden sm:block sm:w-20 sm:flex-shrink-0 text-base text-gray-400 tabular-nums pt-px">
                     {formatDate(post.data.date)}
@@ -170,7 +179,8 @@ function formatDate(d: Date) {
 </BaseLayout>
 
 <style>
-  .filter-cat-btn.active {
+  .filter-cat-btn.active,
+  .filter-year-btn.active {
     @apply bg-blue-600 border-blue-600 text-white;
   }
 </style>
@@ -180,10 +190,10 @@ function formatDate(d: Date) {
 
   const searchInput = document.getElementById('search-input') as HTMLInputElement | null;
   const catBtns = document.querySelectorAll<HTMLButtonElement>('.filter-cat-btn');
+  const yearBtns = document.querySelectorAll<HTMLButtonElement>('.filter-year-btn');
   const allItems = document.querySelectorAll<HTMLLIElement>('li[data-search]');
-  const yearSections = document.querySelectorAll<HTMLElement>('section[id^="year-"]');
+  const yearSections = document.querySelectorAll<HTMLElement>('section.year-section');
   const filterStatus = document.getElementById('filter-status');
-  const yearNav = document.getElementById('year-nav') as HTMLElement | null;
   const browseView = document.getElementById('browse-view') as HTMLElement | null;
   const searchView = document.getElementById('search-view') as HTMLElement | null;
   const searchResultList = document.getElementById('search-result-list') as HTMLElement | null;
@@ -193,6 +203,7 @@ function formatDate(d: Date) {
   const base = (import.meta as any).env.BASE_URL.replace(/\/$/, '');
 
   let selectedCats = new Set<string>();
+  let selectedYears = new Set<string>();
   let cachedResults: any[] = [];
   let query = '';
 
@@ -200,7 +211,6 @@ function formatDate(d: Date) {
     const isSearch = newMode === 'search';
     browseView?.classList.toggle('hidden', isSearch);
     searchView?.classList.toggle('hidden', !isSearch);
-    yearNav?.classList.toggle('hidden', isSearch);
     if (filterStatus && isSearch) filterStatus.textContent = '';
   }
 
@@ -208,12 +218,15 @@ function formatDate(d: Date) {
     const p = new URLSearchParams(window.location.search);
     const c = p.get('cat');
     if (c) selectedCats = new Set(c.split(',').filter(Boolean));
+    const y = p.get('year');
+    if (y) selectedYears = new Set(y.split(',').filter(Boolean));
     query = p.get('q') || '';
   }
 
   function pushURL() {
     const parts: string[] = [];
     if (selectedCats.size > 0) parts.push('cat=' + [...selectedCats].join(','));
+    if (selectedYears.size > 0) parts.push('year=' + [...selectedYears].join(','));
     if (query) parts.push('q=' + encodeURIComponent(query));
     const qs = parts.join('&');
     history.replaceState(null, '', location.pathname + (qs ? '?' + qs : ''));
@@ -224,14 +237,19 @@ function formatDate(d: Date) {
       const c = btn.dataset.cat;
       btn.classList.toggle('active', c === '__all__' ? selectedCats.size === 0 : selectedCats.has(c!));
     });
+    yearBtns.forEach((btn) => {
+      const y = btn.dataset.year;
+      btn.classList.toggle('active', y === '__all__' ? selectedYears.size === 0 : selectedYears.has(y!));
+    });
   }
 
   function applyBrowseFilter() {
     let visible = 0;
     allItems.forEach((li) => {
       const catMatch = selectedCats.size === 0 || selectedCats.has(li.dataset.cat || '');
-      li.style.display = catMatch ? '' : 'none';
-      if (catMatch) visible++;
+      const yearMatch = selectedYears.size === 0 || selectedYears.has(li.dataset.year || '');
+      li.style.display = catMatch && yearMatch ? '' : 'none';
+      if (catMatch && yearMatch) visible++;
     });
     yearSections.forEach((sec) => {
       const any = Array.from(sec.querySelectorAll<HTMLLIElement>('li[data-search]')).some(
@@ -239,9 +257,15 @@ function formatDate(d: Date) {
       );
       sec.style.display = any ? '' : 'none';
     });
-    if (filterStatus) filterStatus.textContent = selectedCats.size > 0 ? `${visible} shown` : '';
+    const hasFilter = selectedCats.size > 0 || selectedYears.size > 0;
+    if (filterStatus) filterStatus.textContent = hasFilter ? `${visible} shown` : '';
     syncUI();
     pushURL();
+  }
+
+  function getYearFromUrl(url: string): string {
+    const match = url.match(/\/itmir\/(\d{4})\//);
+    return match ? match[1] : '';
   }
 
   function renderSearchResults(results: any[]) {
@@ -270,9 +294,12 @@ function formatDate(d: Date) {
   }
 
   function filterAndRenderResults() {
-    const toShow = selectedCats.size > 0
+    let toShow = selectedCats.size > 0
       ? cachedResults.filter((r) => selectedCats.has(r.meta?.category || ''))
-      : cachedResults;
+      : [...cachedResults];
+    if (selectedYears.size > 0) {
+      toShow = toShow.filter((r) => selectedYears.has(getYearFromUrl(r.url)));
+    }
     renderSearchResults(toShow);
   }
 
@@ -316,6 +343,21 @@ function formatDate(d: Date) {
       const c = btn.dataset.cat;
       if (c === '__all__') selectedCats.clear();
       else if (c) selectedCats.has(c) ? selectedCats.delete(c) : selectedCats.add(c);
+      syncUI();
+      if (query.length >= 2) {
+        filterAndRenderResults();
+        pushURL();
+      } else {
+        applyBrowseFilter();
+      }
+    });
+  });
+
+  yearBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const y = btn.dataset.year;
+      if (y === '__all__') selectedYears.clear();
+      else if (y) selectedYears.has(y) ? selectedYears.delete(y) : selectedYears.add(y);
       syncUI();
       if (query.length >= 2) {
         filterAndRenderResults();
