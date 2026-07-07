@@ -17,97 +17,171 @@ Original ↗
 <p>역시 WIFI가 안되기에 Wifi를 픽스하려 합니다만 아무리 해도 오류가 뜨기에 질문드립니다</p>
 <p>먼저 부팅성공이후 제가 cm7소스에 추가한 내용입니다</p>
 <p><strong>boardconfig</strong></p>
-<p>BOARD_USES_QCOM_HARDWARE := true</p>
-<p>BOARD_USES_QCOM_LIBS := true</p>
-<p>BOARD_USES_QCOM_LIBRPC := true</p>
-<p>BOARD_HAVE_BLUETOOTH := true</p>
-<p>#BOARD_HAVE_BLUETOOTH_BCM := true</p>
-<p>WIFI_DRIVER_MODULE_NAME := bcm4329</p>
-<p>WIFI_DRIVER_MODULE_PATH := /system/lib/modules/wlan.ko</p>
-<p>BOARD_WPA_SUPPLICANT_DRIVER := WEXT</p>
-<p>BOARD_WLAN_DEVICE := bcm4329</p>
-<p>WIFI_DRIVER_MODULE_ARG := “firmware_path=/system/etc/wl/bcm43291.bin nvram_path=/system/etc/wl/nvram.txt”</p>
-<p>WIFI_DRIVER_FW_STA_PATH := “/system/etc/wl/bcm43291.bin”</p>
-<p>WIFI_DRIVER_FW_AP_PATH := “/system/etc/wl/bcm43291_apsta.bin”</p>
-<p>WIFI_DRIVER_FW_P2P_PATH := “/system/etc/wl/bcm43291_p2p.bin”</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="makefile"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">BOARD_USES_QCOM_HARDWARE := true</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">BOARD_USES_QCOM_LIBS := true</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">BOARD_USES_QCOM_LIBRPC := true</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">BOARD_HAVE_BLUETOOTH := true</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">#BOARD_HAVE_BLUETOOTH_BCM := true</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">WIFI_DRIVER_MODULE_NAME := bcm4329</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">WIFI_DRIVER_MODULE_PATH := /system/lib/modules/wlan.ko</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">BOARD_WPA_SUPPLICANT_DRIVER := WEXT</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">BOARD_WLAN_DEVICE := bcm4329</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/etc/wl/bcm43291.bin nvram_path=/system/etc/wl/nvram.txt"</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">WIFI_DRIVER_FW_STA_PATH := "/system/etc/wl/bcm43291.bin"</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">WIFI_DRIVER_FW_AP_PATH := "/system/etc/wl/bcm43291_apsta.bin"</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">WIFI_DRIVER_FW_P2P_PATH := "/system/etc/wl/bcm43291_p2p.bin"</span></span>
+<span class="line"></span></code></pre>
 <p><strong>device_ef32k.mk</strong></p>
-<p>PRODUCT_COPY_FILES += \</p>
-<p>device/pantech/ef32k/add/bin/pppd:system/bin/pppd \</p>
-<p>device/pantech/ef32k/add/bin/qrngd:system/bin/qrngd \</p>
-<p>device/pantech/ef32k/add/bin/qrngtest:system/bin/qrngtest</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="makefile"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">PRODUCT_COPY_FILES += </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">\</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">device/pantech/ef32k/add/bin/pppd:system/bin/pppd </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">\</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">device/pantech/ef32k/add/bin/qrngd:system/bin/qrngd </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">\</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">device/pantech/ef32k/add/bin/qrngtest:system/bin/qrngtest</span></span>
+<span class="line"></span></code></pre>
 <p><strong>system.prop</strong></p>
-<p>wifi.interface=wlan0</p>
-<p>ro.product.boardnswver=7x27 V1.46</p>
-<p>ro.product.baseband_ver=S0832146</p>
-<p>ro.product.baseband_ver_hidden=S0832146a</p>
-<p>ro.product.checksum=</p>
-<p>ro.carrier=KT-KOR</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>wifi.interface=wlan0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.product.boardnswver=7x27 V1.46</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.product.baseband_ver=S0832146</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.product.baseband_ver_hidden=S0832146a</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.product.checksum=</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.carrier=KT-KOR</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>ef32k-vendor-blobs.mk</strong></p>
-<h1 id="modules">Modules</h1>
-<p>PRODUCT_COPY_FILES += \</p>
-<p>vendor/pantech/ef32k/proprietary/lib/modules/libra.ko:system/lib/modules/libra.ko \</p>
-<p>vendor/pantech/ef32k/proprietary/lib/modules/librasdioif.ko:system/lib/modules/librasdioif.ko \</p>
-<p>vendor/pantech/ef32k/proprietary/lib/modules/wlan.ko:system/lib/modules/wlan.ko</p>
-<h1 id="wifi">Wifi</h1>
-<p>PRODUCT_COPY_FILES += \</p>
-<p>vendor/pantech/ef32k/proprietary/etc/wl/nvram.txt:system/etc/wl/nvram.txt \</p>
-<p>vendor/pantech/ef32k/proprietary/etc/wl/bcm4329_apsta.bin:system/etc/wl/bcm4329_apsta.bin \</p>
-<p>vendor/pantech/ef32k/proprietary/etc/wl/bcm4329.bin:system/etc/wl/bcm4329.bin \</p>
-<p>vendor/pantech/ef32k/proprietary/etc/wl/bcm4329_mfg.bin:system/etc/wl/bcm4329_mfg.bin \</p>
-<p>vendor/pantech/ef32k/proprietary/etc/wl/bcm43291.bin:system/etc/wl/bcm43291.bin \</p>
-<p>vendor/pantech/ef32k/proprietary/etc/wl/bcm43291_apsta.bin:system/etc/wl/bcm43291_apsta.bin \</p>
-<p>vendor/pantech/ef32k/proprietary/etc/wl/bcm43291_mfg.bin:system/etc/wl/bcm43291_mfg.bin \</p>
-<p>vendor/pantech/ef32k/proprietary/etc/wl/bcm43291_p2p.bin:system/etc/wl/bcm43291_p2p.bin \</p>
-<p>vendor/pantech/ef32k/proprietary/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \</p>
-<p>vendor/pantech/ef32k/proprietary/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="makefile"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># Modules</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">PRODUCT_COPY_FILES += </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">\</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">vendor/pantech/ef32k/proprietary/lib/modules/libra.ko:system/lib/modules/libra.ko </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">\</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">vendor/pantech/ef32k/proprietary/lib/modules/librasdioif.ko:system/lib/modules/librasdioif.ko </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">\</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">vendor/pantech/ef32k/proprietary/lib/modules/wlan.ko:system/lib/modules/wlan.ko</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># Wifi</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">PRODUCT_COPY_FILES += </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">\</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">vendor/pantech/ef32k/proprietary/etc/wl/nvram.txt:system/etc/wl/nvram.txt </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">\</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">vendor/pantech/ef32k/proprietary/etc/wl/bcm4329_apsta.bin:system/etc/wl/bcm4329_apsta.bin </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">\</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">vendor/pantech/ef32k/proprietary/etc/wl/bcm4329.bin:system/etc/wl/bcm4329.bin </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">\</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">vendor/pantech/ef32k/proprietary/etc/wl/bcm4329_mfg.bin:system/etc/wl/bcm4329_mfg.bin </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">\</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">vendor/pantech/ef32k/proprietary/etc/wl/bcm43291.bin:system/etc/wl/bcm43291.bin </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">\</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">vendor/pantech/ef32k/proprietary/etc/wl/bcm43291_apsta.bin:system/etc/wl/bcm43291_apsta.bin </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">\</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">vendor/pantech/ef32k/proprietary/etc/wl/bcm43291_mfg.bin:system/etc/wl/bcm43291_mfg.bin </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">\</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">vendor/pantech/ef32k/proprietary/etc/wl/bcm43291_p2p.bin:system/etc/wl/bcm43291_p2p.bin </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">\</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">vendor/pantech/ef32k/proprietary/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">\</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">vendor/pantech/ef32k/proprietary/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf</span></span>
+<span class="line"></span></code></pre>
 <p>다음과 같은 문구를 굵게 표시된 파일에 추가했습니다</p>
 <p>또한 copy file의 경우 각 위치에 맞게 파일도 추가하였습니다</p>
 <p>그다음 빌드를 했더니</p>
 <p>부팅이 되지 않으며 다음과 같은 로그켓을 남기고 있습니다</p>
-<p>D/dalvikvm( 124): DexOpt: --- BEGIN ‘core.jar’ (bootstrap=1) ---</p>
-<p>D/dalvikvm( 168): Ignoring duplicate verify attempt on Ljava/lang/Object;</p>
-<p>D/dalvikvm( 168): Ignoring duplicate verify attempt on Ljava/lang/Class;</p>
-<p>D/dalvikvm( 168): DexOpt: load 232ms, verify+opt 2228ms</p>
-<p>D/AndroidRuntime( 227):</p>
-<p>D/AndroidRuntime( 227): >>>>>> AndroidRuntime START com.android.internal.os.ZygoteInit &#x3C;&#x3C;&#x3C;&#x3C;&#x3C;&#x3C;</p>
-<p>I/AndroidRuntime( 227): Heap size: -Xmx48m</p>
-<p>D/AndroidRuntime( 227): CheckJNI is OFF</p>
-<p>D/dalvikvm( 227): Unable to process classpath element ‘/system/framework/framework.jar’</p>
-<p>E/JNIHelp ( 227): Native registration unable to find class ‘android/debug/JNITest’</p>
-<p>E/AndroidRuntime( 227): Unable to register all android natives</p>
-<p>I/Netd ( 230): Netd 1.0 starting</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>D/dalvikvm( 124): DexOpt: --- BEGIN 'core.jar' (bootstrap=1) ---</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>D/dalvikvm( 168): Ignoring duplicate verify attempt on Ljava/lang/Object;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>D/dalvikvm( 168): Ignoring duplicate verify attempt on Ljava/lang/Class;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>D/dalvikvm( 168): DexOpt: load 232ms, verify+opt 2228ms</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>D/AndroidRuntime( 227):</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>D/AndroidRuntime( 227): >>>>>> AndroidRuntime START com.android.internal.os.ZygoteInit &#x3C;&#x3C;&#x3C;&#x3C;&#x3C;&#x3C;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>I/AndroidRuntime( 227): Heap size: -Xmx48m</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>D/AndroidRuntime( 227): CheckJNI is OFF</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>D/dalvikvm( 227): Unable to process classpath element '/system/framework/framework.jar'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/JNIHelp ( 227): Native registration unable to find class 'android/debug/JNITest'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime( 227): Unable to register all android natives</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>I/Netd ( 230): Netd 1.0 starting</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>어떤분의 말씀으로 libmedia_jni.so를 전에 빌드한 so로 교체를 한뒤</p>
 <p>로그켓을 봐서 libcameraservice.so, libcamera.so, libOlaEngine.so이 세개의 파일을 순정에서 가져와서 집어넣었더니 부팅이 되었습니다</p>
 <p>위와 같은 작업을 하여 wifi가 픽스되었을것이라 생각하였습니다</p>
 <p>터미널에서 lsmod를 칠경우 wlan이 한줄로 나타나고 있습니다</p>
 <p>그런대 와이파이를 키면 오류가 뜨며 로그켓에는 다음과 같이 오류가 나타납니다</p>
-<p>E/WifiService( 180): Failed to load Wi-Fi driver.</p>
-<p>D/SettingsAppWidgetProvider( 345): Widget is from a previous version… Let’s update</p>
-<p>D/SettingsAppWidgetProvider( 345): No instances yet… Wait for at least one instance to exist before adding global settings</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>E/WifiService( 180): Failed to load Wi-Fi driver.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>D/SettingsAppWidgetProvider( 345): Widget is from a previous version... Let's update</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>D/SettingsAppWidgetProvider( 345): No instances yet... Wait for at least one instance to exist before adding global settings</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>로그를 보면 Failed to load Wi-Fi driver. 즉 wifi 드라이버를 불러오지 못하여 발생하는 문제라 생각됩니다</p>
 <p>저보다 먼저 cm7을 포팅하신 사람님과 호호님의 말씀으로는 libhardware_legacy.so의 문제라 생각된다 하셨습니다</p>
 <p>이 파일을 헥스 에디터로 열어보니 넣지도 않은 tiap_drv.ko를 읽는 부분이 있었습니다</p>
 <p>그래서 그 부분을 지우고 저장한다음 기기에 집어넣었습니다 그러나 부팅이 되지 않습니다</p>
 <p>로그켓을 보면</p>
-<p>--------- beginning of /dev/log/main</p>
-<p>I/cm ( 82): Welcome to Android 2.3.7 / CyanogenMod-7-20130122-UNOFFICIAL-ef32k</p>
-<p>I/cm ( 83): _</p>
-<p>I/cm ( 84): __ __ _ ___ _ _ __ ___ __ _ _ _ _ __ __))</p>
-<p>I/cm ( 85): ((_ (/’((<em>( ((( ((</em>)((<em>( ((’((( ((`1( ((</em>)((_(</p>
-<p>I/cm ( 86): )) _))</p>
-<p>I/cm ( 87):</p>
-<p>I/run-parts( 77): mount: mounting /data/local/download on /cache/download failed: No such file or directory</p>
-<p>I/DEBUG ( 121): debuggerd: Jan 22 2013 16:58:05</p>
-<p>--------- beginning of /dev/log/system</p>
-<p>I/Vold ( 119): Vold 2.1 (the revenge) firing up</p>
-<p>E/ ( 126): [sky]sky_localdb reader start!!</p>
-<p>D/Vold ( 119): Volume sdcard state changing -1 (Initializing) -> 0 (No-Media)</p>
-<p>D/Vold ( 119): Volume sdcard state changing 0 (No-Media) -> 2 (Pending)</p>
-<p>D/Vold ( 119): Volume sdcard state changing 2 (Pending) -> 1 (Idle-Unmounted)</p>
-<p>W/Vold ( 119): Ignoring unknown switch ‘usb_mass_storage’</p>
-<p>W/Vold ( 119): Ignoring unknown switch ‘MSM72K_UDC’</p>
-<p>D/Vold ( 119): USB connected</p>
-<p>D/Vold ( 119): Share method ums now available</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>--------- beginning of /dev/log/main</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>I/cm ( 82): Welcome to Android 2.3.7 / CyanogenMod-7-20130122-UNOFFICIAL-ef32k</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>I/cm ( 83): _</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>I/cm ( 84): __ __ _ ___ _ _ __ ___ __ _ _ _ _ __ __))</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>I/cm ( 85): ((_ (/'((_( ((( ((_)((_( (('((( ((`1( ((_)((_(</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>I/cm ( 86): )) _))</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>I/cm ( 87):</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>I/run-parts( 77): mount: mounting /data/local/download on /cache/download failed: No such file or directory</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>I/DEBUG ( 121): debuggerd: Jan 22 2013 16:58:05</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>--------- beginning of /dev/log/system</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>I/Vold ( 119): Vold 2.1 (the revenge) firing up</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/ ( 126): [sky]sky_localdb reader start!!</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>D/Vold ( 119): Volume sdcard state changing -1 (Initializing) -> 0 (No-Media)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>D/Vold ( 119): Volume sdcard state changing 0 (No-Media) -> 2 (Pending)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>D/Vold ( 119): Volume sdcard state changing 2 (Pending) -> 1 (Idle-Unmounted)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>W/Vold ( 119): Ignoring unknown switch 'usb_mass_storage'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>W/Vold ( 119): Ignoring unknown switch 'MSM72K_UDC'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>D/Vold ( 119): USB connected</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>D/Vold ( 119): Share method ums now available</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>으로 그렇게 의심스러운 부분은 없는것 같습니다..</p>
 <p>여기서 /data/local/download on /cache/download failed: No such file or directory는 정상 부팅시에도 있었던 구문이기 때문입니다</p>
 <p>수정하지 않은 libhardware_legacy.so을 첨부하겠습니다</p>

@@ -32,31 +32,47 @@ Original ↗
 <p>그다음 터미널을 열어주시면 됩니다</p>
 <p>이제 버전에 따라 각각 명령어를 입력해 주세요</p>
 <p>(1) 우분투 10.10~11.10버전 분들이 공통으로 입력하셔야 하는 구문</p>
-<p>$ sudo apt-get install git-core gnupg flex bison gperf build-essential \</p>
-<p>zip curl zlib1g-dev libc6-dev lib32ncurses5-dev ia32-libs \</p>
-<p>x11proto-core-dev libx11-dev lib32readline5-dev lib32z-dev \</p>
-<p>libgl1-mesa-dev g++-multilib mingw32 tofrodos python-markdown \</p>
-<p>libxml2-utils xsltproc</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> apt-get</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> install</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> git-core</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> gnupg</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> flex</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> bison</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> gperf</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> build-essential</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> \</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">  zip</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> curl</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> zlib1g-dev</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> libc6-dev</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> lib32ncurses5-dev</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> ia32-libs</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> \</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">  x11proto-core-dev</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> libx11-dev</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> lib32readline5-dev</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> lib32z-dev</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> \</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">  libgl1-mesa-dev</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> g++-multilib</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> mingw32</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> tofrodos</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> python-markdown</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> \</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">  libxml2-utils</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> xsltproc</span></span>
+<span class="line"></span></code></pre>
 <p>(2) 우분투 10.10 을 쓰시고 계시면 다음을 추가로 입력해 주세요</p>
 <p>$ sudo ln -s /usr/lib32/mesa/libGL.so.1 /usr/lib32/mesa/libGL.so</p>
 <p>(3) 우분투 11.10 사용하시고 계시면 위 명령어와 다음을 추가로 입력해 주세요</p>
 <p>$ sudo apt-get install libx11-dev:i386</p>
 <p>(4) 우분투 12.10을 이용하시고 계신다면 위 명령어는 필요없고 아래 명령어를 입력해 주세요</p>
-<p>$ sudo apt-get install git-core gnupg flex bison gperf build-essential \</p>
-<p>zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev \</p>
-<p>libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386 \</p>
-<p>libgl1-mesa-dev g++-multilib mingw32 openjdk-6-jdk tofrodos \</p>
-<p>python-markdown libxml2-utils xsltproc zlib1g-dev:i386</p>
-<p>$ sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/i386-linux-gnu/libGL.so</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> apt-get</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> install</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> git-core</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> gnupg</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> flex</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> bison</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> gperf</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> build-essential</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> \</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">  zip</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> curl</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> libc6-dev</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> libncurses5-dev:i386</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> x11proto-core-dev</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> \</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">  libx11-dev:i386</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> libreadline6-dev:i386</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> libgl1-mesa-glx:i386</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> \</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">  libgl1-mesa-dev</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> g++-multilib</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> mingw32</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> openjdk-6-jdk</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> tofrodos</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> \</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">  python-markdown</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> libxml2-utils</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> xsltproc</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> zlib1g-dev:i386</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">$</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> ln</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> -s</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> /usr/lib/i386-linux-gnu/mesa/libGL.so.1</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> /usr/lib/i386-linux-gnu/libGL.so</span></span>
+<span class="line"></span></code></pre>
 <p><strong>2. Repo를 다운받아 소스를 다운받기 위한 준비를 하자!</strong></p>
 <p>이제 소스를 다운받아야 하는대요</p>
 <p>우리가 cm의 소스등을 받기위해 repo라는 것을 사용합니다</p>
 <p>위와 마찬가지로 터미널에 입력해 주시면 됩니다</p>
-<p>mkdir -p ~/bin</p>
-<p>export PATH=$PATH:~/bin</p>
-<p>cd ~/bin</p>
-<p>curl <a href="https://dl-ssl.google.com/dl/googlesource/git-repo/repo">https://dl-ssl.google.com/dl/googlesource/git-repo/repo</a> > ~/bin/repo</p>
-<p>chmod a+x ~/bin/repo</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">mkdir</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> -p</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> ~/bin</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">export</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> PATH</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">$PATH:</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">~</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">/bin</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">cd</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> ~/bin</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">curl</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> https://dl-ssl.google.com/dl/googlesource/git-repo/repo</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> ></span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> ~/bin/repo</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">chmod</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> a+x</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> ~/bin/repo</span></span>
+<span class="line"></span></code></pre>
 <p>그럼 /home/(사용자 계정명)/bin/repo가 생기게 됩니다</p>
 <p>이제 소스를 받을 폴더를 만들어 줘야 겠지요?</p>
 <p>대부분의 사람들이 ~/android/system이라는 폴더에 소스를 받게 됩니다</p>
@@ -138,24 +154,36 @@ Original ↗
 <p>(git clone명령어의 경우</p>
 <p>git clone 허브주소 -b 브랜치이름</p>
 <p>의 구조로 구성되어 있습니다)</p>
-<p>git clone git://github.com/TheMuppets/proprietary_vendor_akm.git -b cm-10.1</p>
-<p>git clone git://github.com/TheMuppets/proprietary_vendor_broadcom.git -b cm-10.1</p>
-<p>git clone git://github.com/TheMuppets/proprietary_vendor_imgtec.git -b cm-10.1</p>
-<p>git clone git://github.com/TheMuppets/proprietary_vendor_nxp.git -b cm-10.1</p>
-<p>git clone git://github.com/TheMuppets/proprietary_vendor_samsung.git -b cm-10.1</p>
-<p>git clone git://github.com/TheMuppets/proprietary_vendor_widevine.git -b cm-10.1</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">git</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> clone</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> git://github.com/TheMuppets/proprietary_vendor_akm.git</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> -b</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> cm-10.1</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">git</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> clone</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> git://github.com/TheMuppets/proprietary_vendor_broadcom.git</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> -b</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> cm-10.1</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">git</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> clone</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> git://github.com/TheMuppets/proprietary_vendor_imgtec.git</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> -b</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> cm-10.1</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">git</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> clone</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> git://github.com/TheMuppets/proprietary_vendor_nxp.git</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> -b</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> cm-10.1</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">git</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> clone</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> git://github.com/TheMuppets/proprietary_vendor_samsung.git</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> -b</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> cm-10.1</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">git</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> clone</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> git://github.com/TheMuppets/proprietary_vendor_widevine.git</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> -b</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> cm-10.1</span></span>
+<span class="line"></span></code></pre>
 <p>허브에서 벤더를 차례대로 다운받았습니다.</p>
 <p>ls를 쳐 보면 허브 이름과 동일한 폴더들이 다운되었을 겁니다.</p>
 <ol start="3">
 <li>폴더명 변경</li>
 </ol>
 <p>mv명령을 활용하여 폴더명을 바꿔줍니다.</p>
-<p>mv proprietary_vendor_akm akm</p>
-<p>mv proprietary_vendor_broadcom broadcom</p>
-<p>mv proprietary_vendor_imgtec imgtec</p>
-<p>mv proprietary_vendor_nxp nxp</p>
-<p>mv proprietary_vendor_samsung samsung</p>
-<p>mv proprietary_vendor_widevine widevine</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">mv</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> proprietary_vendor_akm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> akm</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">mv</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> proprietary_vendor_broadcom</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> broadcom</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">mv</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> proprietary_vendor_imgtec</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> imgtec</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">mv</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> proprietary_vendor_nxp</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> nxp</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">mv</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> proprietary_vendor_samsung</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> samsung</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">mv</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> proprietary_vendor_widevine</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> widevine</span></span>
+<span class="line"></span></code></pre>
 <p>[출처] #10. 최신의 디바이스 벤더소스를 다운받아보자.</p>
 <p><strong>5. 언제 빌드하지? - 벤더생성</strong></p>
 <p>이제 자신의 폰에 맞게 디바이스 소스를 생성해 주어야 합니다</p>
@@ -181,14 +209,22 @@ Original ↗
 <p>뜯는 방법은 /archive/itmir/2012/48를 참고해 주시면 됩니다</p>
 <p>본문에 추가하면 길이가 너무 길어지므로 추가하지 못하는점 이해해 주세요…</p>
 <p>recovery.fstab을 수정하셨으면 boardconfig.mk를 열어주세요</p>
-<p>BOARD_KERNEL_BASE := 0x10000000</p>
-<p>BOARD_KERNEL_PAGESIZE := 2048</p>
-<h1 id="fix-this-up-by-examining-procmtd-on-a-running-device">fix this up by examining /proc/mtd on a running device</h1>
-<p>BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00800000</p>
-<p>BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x1400000</p>
-<p>BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x22400000</p>
-<p>BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x105c0000</p>
-<p>BOARD_FLASH_BLOCK_SIZE := 131072</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="makefile"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">BOARD_KERNEL_BASE := 0x10000000</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">BOARD_KERNEL_PAGESIZE := 2048</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># fix this up by examining /proc/mtd on a running device</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00800000</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x1400000</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x22400000</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x105c0000</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">BOARD_FLASH_BLOCK_SIZE := 131072</span></span>
+<span class="line"></span></code></pre>
 <p>위와 같은 구문을 보실수 있습니다</p>
 <p>이제 이것을 기기에 맞게 수정하시면 됩니다</p>
 <p>adb shell cat /proc/mtd 또는 터미널 에뮬레이터 어플에서</p>

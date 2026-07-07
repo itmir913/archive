@@ -17,15 +17,20 @@ Original ↗
 <p>티스토리에는 <a href="http://whdghks913.blog.me/20166024812">http://whdghks913.blog.me/20166024812</a>게시글을 따로 포스팅 하지 않았습니다</p>
 <p>앞으로의 내용추가는 이 게시글 에서 갱신하도록 하겠습니다</p>
 <p>대부분의 해결은 능력자 분들의 말씀을 인용한것입니다 인용시 그 분:말씀 이렇게 작성하였습니다</p>
-<p><strong>CM빌드 오류</strong></p>
+<h2 id="cm빌드-오류">CM빌드 오류</h2>
 <p><strong>brunch, make clobber 오류</strong></p>
-<p>make clobber치면</p>
-<p>build/core/product_config.mk:196: *** _nic.PRODUCTS.[[vendor/cyanogen/products/cyanogen_sunfire.mk]]: “device/motorola/sunfire/sunfire.mk” does not exist. 멈춤.</p>
-<p><strong>brunch a750k</strong></p>
-<p>No command ‘brunch’ found, did you mean:</p>
-<p>Command ‘branch’ from package ‘rheolef’ (universe)</p>
-<p>brunch: command not found</p>
-<p>도라도라 : . build/envsetup.sh 한뒤에 brunch a750k 를 실행하세요</p>
+<p><code>make clobber</code> 치면</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>build/core/product_config.mk:196: *** _nic.PRODUCTS.[[vendor/cyanogen/products/cyanogen_sunfire.mk]]: "device/motorola/sunfire/sunfire.mk" does not exist. 멈춤.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>**brunch a750k**</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>No command 'brunch' found, did you mean:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Command 'branch' from package 'rheolef' (universe)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>brunch: command not found</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>도라도라 : <code>. build/envsetup.sh</code> 한뒤에 <code>brunch a750k</code> 를 실행하세요</p>
 <p>호호 : 파일 추가는 하셨는지</p>
 <p>Vendor/cyanogen 에서 h를 수정해야하고</p>
 <p>Vendor/cyanogem/product 에서 cyanogen_기기명.mk를 작성하시고 androidproduct.mk 도 수정해야합니다</p>
@@ -33,10 +38,14 @@ Original ↗
 <p>vendorsetup.sh수정은 add_lunch_combo cyanogen_a750k - eng</p>
 <p>Target device명을 device/회사명 안에 기기명과 같게해야할겁니다</p>
 <p>부가 설명: brunch a750k를 하기전 파일을 추가해야 한다</p>
-<p>Vendor/cyanogen/vendorsetup.sh,</p>
-<p>Vendor/cyanogem/product/cyanogen_기기명.mk</p>
-<p>Vendor/cyanogem/product/androidproduct.mk</p>
-<p>Target device는 cyanogen_기기명.mk의 디바이스 부분이다</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Vendor/cyanogen/vendorsetup.sh,</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Vendor/cyanogem/product/cyanogen_기기명.mk</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Vendor/cyanogem/product/androidproduct.mk</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Target device는 cyanogen_기기명.mk의 디바이스 부분이다</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><strong>libaudio을 만들규칙이 없습니다;;</strong></p>
 <p>target Strip: libeffects (out/target/product/a750k/obj/lib/libeffects.so)</p>
 <p>make: *** <code>out/target/product/a750k/obj/SHARED_LIBRARIES/libaudioflinger_intermediates/LINKED/libaudioflinger.so'에서 필요로 하는  타겟 </code>out/target/product/a750k/obj/lib/libaudio.so’를 만들 규칙이 없습니다.  멈춤.</p>

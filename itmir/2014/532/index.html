@@ -32,10 +32,12 @@ Original ↗
 <p>adb라는 프로그램이 필요합니다</p>
 <p>adb에 대해서와 다운로드는 아래 링크에서 얻을수 있습니다</p>
 <p><a href="/archive/itmir/2013/61">[SmartPhone] - 안드로이드의 LOG을 확인하자 - adb logcat / LogcatFilter.exe</a></p>
-<p>adb logcat</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>adb logcat</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>이런 명령어를 입력하면 로크켓이 cmd창에 나타납니다</p>
 <p>이를 txt파일에 저장하려면 >를 이용해서 가능합니다</p>
-<p>adb logcat > log.txt</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>adb logcat > log.txt</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>아래는 스크린샷 입니다</p>
 <p><img  src="/archive/_astro/cmd.Dc-RKnFu_2elx2q.webp" alt="" width="677" height="202" loading="lazy" decoding="async"></p>
 <p>바탕화면의 log.txt라는 파일에 로그켓이 저장됩니다</p>
@@ -52,58 +54,110 @@ Original ↗
 <p>요건 null이 떠서 생긴 문제입니다</p>
 <p>이렇게 java파일의 어느부분에서 오류가 뜨는지, 그 원인은 무엇인지도 알수 있습니다</p>
 <p>adb logcat > log.txt로 저장하면 어떻게 뜨는지 봅시다</p>
-<p>E/AndroidRuntime(26805): FATAL EXCEPTION: main</p>
-<p>E/AndroidRuntime(26805): java.lang.IllegalStateException: Could not execute method of the activity</p>
-<p>E/AndroidRuntime(26805): at android.view.View$1.onClick(View.java:3838)</p>
-<p>E/AndroidRuntime(26805): at android.view.View.performClick(View.java:4475)</p>
-<p>E/AndroidRuntime(26805): at android.view.View$PerformClick.run(View.java:18786)</p>
-<p>E/AndroidRuntime(26805): at android.os.Handler.handleCallback(Handler.java:730)</p>
-<p>E/AndroidRuntime(26805): at android.os.Handler.dispatchMessage(Handler.java:92)</p>
-<p>E/AndroidRuntime(26805): at android.os.Looper.loop(Looper.java:176)</p>
-<p>E/AndroidRuntime(26805): at android.app.ActivityThread.main(ActivityThread.java:5455)</p>
-<p>E/AndroidRuntime(26805): at java.lang.reflect.Method.invokeNative(Native Method)</p>
-<p>E/AndroidRuntime(26805): at java.lang.reflect.Method.invoke(Method.java:525)</p>
-<p>E/AndroidRuntime(26805): at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:1209)</p>
-<p>E/AndroidRuntime(26805): at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1025)</p>
-<p>E/AndroidRuntime(26805): at dalvik.system.NativeStart.main(Native Method)</p>
-<p>E/AndroidRuntime(26805): Caused by: java.lang.reflect.InvocationTargetException</p>
-<p>E/AndroidRuntime(26805): at java.lang.reflect.Method.invokeNative(Native Method)</p>
-<p>E/AndroidRuntime(26805): at java.lang.reflect.Method.invoke(Method.java:525)</p>
-<p>E/AndroidRuntime(26805): at android.view.View$1.onClick(View.java:3833)</p>
-<p>E/AndroidRuntime(26805): … 11 more</p>
-<p>E/AndroidRuntime(26805): Caused by: android.content.ActivityNotFoundException: Unable to find explicit activity class {com.example.examplelogcat/com.example.examplelogcat.ErrorActivity}; have you declared this activity in your AndroidManifest.xml?</p>
-<p>E/AndroidRuntime(26805): at android.app.Instrumentation.checkStartActivityResult(Instrumentation.java:1645)</p>
-<p>E/AndroidRuntime(26805): at android.app.Instrumentation.execStartActivity(Instrumentation.java:1441)</p>
-<p>E/AndroidRuntime(26805): at android.app.Activity.startActivityForResult(Activity.java:3464)</p>
-<p>E/AndroidRuntime(26805): at android.app.Activity.startActivityForResult(Activity.java:3425)</p>
-<p>E/AndroidRuntime(26805): at android.app.Activity.startActivity(Activity.java:3661)</p>
-<p>E/AndroidRuntime(26805): at android.app.Activity.startActivity(Activity.java:3629)</p>
-<p>E/AndroidRuntime(26805): at com.example.examplelogcat.MainActivity.activityError(MainActivity.java:24)</p>
-<p>E/AndroidRuntime(26805): … 14 more</p>
-<p>E/AndroidRuntime(26330): FATAL EXCEPTION: main</p>
-<p>E/AndroidRuntime(26330): java.lang.IllegalStateException: Could not execute method of the activity</p>
-<p>E/AndroidRuntime(26330): at android.view.View$1.onClick(View.java:3838)</p>
-<p>E/AndroidRuntime(26330): at android.view.View.performClick(View.java:4475)</p>
-<p>E/AndroidRuntime(26330): at android.view.View$PerformClick.run(View.java:18786)</p>
-<p>E/AndroidRuntime(26330): at android.os.Handler.handleCallback(Handler.java:730)</p>
-<p>E/AndroidRuntime(26330): at android.os.Handler.dispatchMessage(Handler.java:92)</p>
-<p>E/AndroidRuntime(26330): at android.os.Looper.loop(Looper.java:176)</p>
-<p>E/AndroidRuntime(26330): at android.app.ActivityThread.main(ActivityThread.java:5455)</p>
-<p>E/AndroidRuntime(26330): at java.lang.reflect.Method.invokeNative(Native Method)</p>
-<p>E/AndroidRuntime(26330): at java.lang.reflect.Method.invoke(Method.java:525)</p>
-<p>E/AndroidRuntime(26330): at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:1209)</p>
-<p>E/AndroidRuntime(26330): at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1025)</p>
-<p>E/AndroidRuntime(26330): at dalvik.system.NativeStart.main(Native Method)</p>
-<p>E/AndroidRuntime(26330): Caused by: java.lang.reflect.InvocationTargetException</p>
-<p>E/AndroidRuntime(26330): at java.lang.reflect.Method.invokeNative(Native Method)</p>
-<p>E/AndroidRuntime(26330): at java.lang.reflect.Method.invoke(Method.java:525)</p>
-<p>E/AndroidRuntime(26330): at android.view.View$1.onClick(View.java:3833)</p>
-<p>E/AndroidRuntime(26330): … 11 more</p>
-<p>E/AndroidRuntime(26330): Caused by: java.lang.NullPointerException: println needs a message</p>
-<p>E/AndroidRuntime(26330): at android.util.Log.println_native(Native Method)</p>
-<p>E/AndroidRuntime(26330): at android.util.Log.d(Log.java:155)</p>
-<p>E/AndroidRuntime(26330): at com.example.examplelogcat.MainActivity.nullError(MainActivity.java:20)</p>
-<p>E/AndroidRuntime(26330): … 14 more</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>E/AndroidRuntime(26805): FATAL EXCEPTION: main</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): java.lang.IllegalStateException: Could not execute method of the activity</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): at android.view.View$1.onClick(View.java:3838)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): at android.view.View.performClick(View.java:4475)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): at android.view.View$PerformClick.run(View.java:18786)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): at android.os.Handler.handleCallback(Handler.java:730)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): at android.os.Handler.dispatchMessage(Handler.java:92)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): at android.os.Looper.loop(Looper.java:176)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): at android.app.ActivityThread.main(ActivityThread.java:5455)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): at java.lang.reflect.Method.invokeNative(Native Method)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): at java.lang.reflect.Method.invoke(Method.java:525)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:1209)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1025)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): at dalvik.system.NativeStart.main(Native Method)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): Caused by: java.lang.reflect.InvocationTargetException</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): at java.lang.reflect.Method.invokeNative(Native Method)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): at java.lang.reflect.Method.invoke(Method.java:525)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): at android.view.View$1.onClick(View.java:3833)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): ... 11 more</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): Caused by: android.content.ActivityNotFoundException: Unable to find explicit activity class {com.example.examplelogcat/com.example.examplelogcat.ErrorActivity}; have you declared this activity in your AndroidManifest.xml?</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): at android.app.Instrumentation.checkStartActivityResult(Instrumentation.java:1645)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): at android.app.Instrumentation.execStartActivity(Instrumentation.java:1441)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): at android.app.Activity.startActivityForResult(Activity.java:3464)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): at android.app.Activity.startActivityForResult(Activity.java:3425)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): at android.app.Activity.startActivity(Activity.java:3661)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): at android.app.Activity.startActivity(Activity.java:3629)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): at com.example.examplelogcat.MainActivity.activityError(MainActivity.java:24)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26805): ... 14 more</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26330): FATAL EXCEPTION: main</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26330): java.lang.IllegalStateException: Could not execute method of the activity</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26330): at android.view.View$1.onClick(View.java:3838)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26330): at android.view.View.performClick(View.java:4475)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26330): at android.view.View$PerformClick.run(View.java:18786)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26330): at android.os.Handler.handleCallback(Handler.java:730)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26330): at android.os.Handler.dispatchMessage(Handler.java:92)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26330): at android.os.Looper.loop(Looper.java:176)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26330): at android.app.ActivityThread.main(ActivityThread.java:5455)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26330): at java.lang.reflect.Method.invokeNative(Native Method)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26330): at java.lang.reflect.Method.invoke(Method.java:525)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26330): at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:1209)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26330): at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1025)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26330): at dalvik.system.NativeStart.main(Native Method)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26330): Caused by: java.lang.reflect.InvocationTargetException</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26330): at java.lang.reflect.Method.invokeNative(Native Method)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26330): at java.lang.reflect.Method.invoke(Method.java:525)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26330): at android.view.View$1.onClick(View.java:3833)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26330): ... 11 more</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26330): Caused by: java.lang.NullPointerException: println needs a message</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26330): at android.util.Log.println_native(Native Method)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26330): at android.util.Log.d(Log.java:155)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26330): at com.example.examplelogcat.MainActivity.nullError(MainActivity.java:20)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>E/AndroidRuntime(26330): ... 14 more</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>이클립스와 비슷한 모양을 하고 있고, 원인을 알수 있습니다</p>
 <p>어플이 강제종료 오류가 떴을떄 E/AndroidRuntime부분의 로그켓을 확인한다면 원인과 위치를 알수 있고 해결방법을 검색해서 찾을수 있습니다</p>
 <p>정말 유용한 디버그입니다 꼭 숙지해 주세요</p> </div> <!-- 태그 -->  <!-- 이전 / 다음 / 목록 --> <nav class="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800 grid grid-cols-1 sm:grid-cols-7 sm:items-stretch gap-3" data-pagefind-ignore> <div class="sm:col-span-3 sm:order-1"> <a href="/archive/itmir/2014/530/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all h-full"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">

@@ -14,41 +14,55 @@ luminousky · archive
 Original ↗
 </a>  </div> <p class="mt-4 mb-0 text-lg text-gray-500 dark:text-gray-400 leading-relaxed border-l-2 border-gray-200 dark:border-gray-700 pl-4"> 수단과 방법을 가리지 않고 로그를 뽑아보고 있습니다 </p> </header> <!-- pagefind 메타 (검색 결과 카드용) --> <div class="hidden"> <span data-pagefind-meta="date">September 3, 2012</span> <span data-pagefind-meta="category">Android/Build</span> <span data-pagefind-filter="section:itmir"></span> </div> <!-- 본문 (전문 검색 인덱싱 대상) --> <div class="prose prose-gray dark:prose-invert max-w-none" data-pagefind-body> <p>수단과 방법을 가리지 않고 로그를 뽑아보고 있습니다</p>
 <ol>
-<li>adb logcat을 이용한 방법</li>
+<li><code>adb logcat</code>을 이용한 방법</li>
 </ol>
 <p>먼저 adb를 준비합니다</p>
 <p>이건 이미 컴에 깔려있고…</p>
-<p>부팅될때 바로 adb devices로 체크 해 보았다</p>
+<p>부팅될때 바로 <code>adb devices</code>로 체크 해 보았다</p>
 <p><img  src="/archive/_astro/%EC%BA%A1%EC%B2%98.rGqWuY4Z_Z2upR2x.webp" alt="" width="262" height="197" loading="lazy" decoding="async"></p>
 <p>이걸 보시면 devices라고 뜨는거 보이시죠?</p>
 <p>이게 리커버리 들어가는 부분에서 멈출때 나오는 부분입니다</p>
 <p>log.txt는…</p>
-<p>* daemon not running. starting it now on port 5037 *</p>
-<p>* daemon started successfully *</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>\* daemon not running. starting it now on port 5037 \*</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>\* daemon started successfully \*</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>와우 ㅋㅋㅋㅋ</p>
 <p>아무리 시도해도 log.txt에는 아무런 로그가 담기지 않는다…</p>
 <ol start="2">
 <li>cwm에서의 로그켓 뽑기 시도</li>
 </ol>
-<p>cwm진입상태에서 adb logcat > log.txt를 시도하면 lot.txt에는</p>
-<p>/sbin/sh: exec: line 1: logcat: not found</p>
+<p>cwm진입상태에서 <code>adb logcat > log.txt</code>를 시도하면 lot.txt에는</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/sbin/sh: exec: line 1: logcat: not found</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>이런 로그가 발생한다…</p>
 <p>이게 뭔 뜻일까요?</p>
 <ol start="3">
 <li>cwm기능중 Show log기능을 사용한다</li>
 </ol>
 <p>cwm의 어드벤스드에 들어가면 로그 기능이 있는대 그거 해보니</p>
-<p>ro.baseband=msm</p>
-<p>ro.bootloader=unknown</p>
-<p>ro.hardware=qcom</p>
-<p>ro.revision=0</p>
-<p>ro.emmc=0</p>
-<p>init.svc.recovery=running</p>
-<p>init.svc.adbd=running</p>
-<p>I:Checking for extendedcommand…</p>
-<p>I:Skipping execution of extendedcommand, file not found…</p>
-<p>mtd: successfully wrote block at c7de400000000</p>
-<p>I:Set boot command ""</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>ro.baseband=msm</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.bootloader=unknown</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.hardware=qcom</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.revision=0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.emmc=0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>init.svc.recovery=running</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>init.svc.adbd=running</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>I:Checking for extendedcommand...</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>I:Skipping execution of extendedcommand, file not found...</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>mtd: successfully wrote block at c7de400000000</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>I:Set boot command ""</span></span>
+<span class="line"><span></span></span></code></pre>
 <p><img  src="/archive/_astro/SANY0047.CRta9Tbt_1UiAxr.webp" alt="" width="550" height="411" loading="lazy" decoding="async"></p>
 <p>이런것이 화면에 나타난다;;</p>
 <p>이게 무슨뜻 일까요?</p>
@@ -60,108 +74,210 @@ Original ↗
 <p>어드벤스트에 있는 기능인 리포트 에러를 했더니</p>
 <p>sdcard/clockworkmod에 로그가 있다고 하더라고요</p>
 <p>뽑아 왔습니다~</p>
-<p>Starting recovery on Mon Sep  3 08:59:55 2012</p>
-<p>framebuffer: fd 4 (320 x 480)</p>
-<p>CWM-Recovery v5.0.2.7by wpcnan.com wannan</p>
-<p>recovery filesystem table</p>
-<p>=========================</p>
-<p>0 /tmp ramdisk (null) (null)</p>
-<p>1 /boot mtd boot (null)</p>
-<p>2 /cache yaffs2 cache (null)</p>
-<p>3 /data yaffs2 userdata (null)</p>
-<p>4 /misc mtd misc (null)</p>
-<p>5 /recovery mtd recovery (null)</p>
-<p>6 /sdcard vfat /dev/block/mmcblk0p1 /dev/block/mmcblk0</p>
-<p>7 /system yaffs2 system (null)</p>
-<p>W:Unable to get recovery.fstab info for /sd-ext during fstab generation!</p>
-<p>I:Completed outputting fstab.</p>
-<p>I:Processing arguments.</p>
-<p>mtd: successfully wrote block at c7de400000000</p>
-<p>I:Set boot command “boot-recovery”</p>
-<p>I:Checking arguments.</p>
-<p>I:device_recovery_start()</p>
-<p>Command: “/sbin/recovery”</p>
-<p>ro.secure=0</p>
-<p>ro.allow.mock.location=1</p>
-<p>ro.debuggable=1</p>
-<p>persist.service.adb.enable=1</p>
-<p>ro.build.id=GINGERBREAD</p>
-<p>ro.build.display.id=GINGERBREAD</p>
-<p>ro.build.version.incremental=eng.p11387.20111006.122319</p>
-<p>ro.build.version.sdk=10</p>
-<p>ro.build.version.codename=REL</p>
-<p>ro.build.version.release=2.3.3</p>
-<p>ro.build.date=Thu Oct  6 12:24:05 KST 2011</p>
-<p>ro.build.date.utc=1317871445</p>
-<p>ro.build.type=user</p>
-<p>ro.build.user=p11387</p>
-<p>ro.build.host=bs200</p>
-<p>ro.build.tags=release-keys</p>
-<p>ro.product.model=IM-A740S</p>
-<p>ro.product.brand=SKY</p>
-<p>ro.product.name=sky-ef31s</p>
-<p>ro.product.device=ef31s</p>
-<p>ro.product.board=7x27</p>
-<p>ro.product.cpu.abi=armeabi</p>
-<p>ro.product.manufacturer=PANTECH</p>
-<p>ro.product.locale.language=ko</p>
-<p>ro.product.locale.region=KR</p>
-<p>ro.wifi.channels=</p>
-<p>ro.board.platform=msm7k</p>
-<p>ro.product.boardnswver=7x27 V1.78</p>
-<p>ro.product.baseband_ver=S0210178</p>
-<p>ro.product.baseband_ver_hidden=S0210178a</p>
-<p>ro.product.checksum=</p>
-<p>ro.carrier=SKT-KOR</p>
-<p>ro.build.product=ef31s</p>
-<p>ro.build.description=sky-ef31s-user 2.3.3 GINGERBREAD eng.p11387.20111006.122319 release-keys</p>
-<p>ro.build.fingerprint=SKY/sky-ef31s/ef31s:2.3.3/GINGERBREAD/eng.p11387.20111006.122319:user/release-keys</p>
-<p>rild.libpath=/system/lib/libril-qc-1.so</p>
-<p>rild.libargs=-d /dev/smd0</p>
-<p>persist.rild.nitz_plmn=</p>
-<p>persist.rild.nitz_long_ons_0=</p>
-<p>persist.rild.nitz_long_ons_1=</p>
-<p>persist.rild.nitz_long_ons_2=</p>
-<p>persist.rild.nitz_long_ons_3=</p>
-<p>persist.rild.nitz_short_ons_0=</p>
-<p>persist.rild.nitz_short_ons_1=</p>
-<p>persist.rild.nitz_short_ons_2=</p>
-<p>persist.rild.nitz_short_ons_3=</p>
-<p>ril.subscription.types=NV,RUIM</p>
-<p>DEVICE_PROVISIONED=1</p>
-<p>debug.sf.hw=1</p>
-<p>debug.composition.type=mdp</p>
-<p>media.stagefright.enable-player=true</p>
-<p>media.stagefright.enable-meta=false</p>
-<p>media.stagefright.enable-scan=false</p>
-<p>media.stagefright.enable-http=true</p>
-<p>ro.opengles.version=131072</p>
-<p>ro.use_data_netmgrd=false</p>
-<p>ro.bluetooth.remote.autoconnect=true</p>
-<p>ro.sf.lcd_density=160</p>
-<p>dalvik.vm.heapsize=48m</p>
-<p>ro.setupwizard.mode=OPTIONAL</p>
-<p>ro.com.google.gmsversion=2.3_r3</p>
-<p>ro.config.notification_sound=OnTheHunt.ogg</p>
-<p>ro.config.alarm_alert=Alarm_Classic.ogg</p>
-<p>ro.com.google.clientidbase=android-skt-kr</p>
-<p>net.bt.name=Android</p>
-<p>net.change=net.bt.name</p>
-<p>dalvik.vm.stack-trace-file=/data/anr/traces.txt</p>
-<p>ro.factorytest=0</p>
-<p>ro.serialno=</p>
-<p>ro.bootmode=unknown</p>
-<p>ro.baseband=msm</p>
-<p>ro.bootloader=unknown</p>
-<p>ro.hardware=qcom</p>
-<p>ro.revision=0</p>
-<p>ro.emmc=0</p>
-<p>init.svc.recovery=running</p>
-<p>init.svc.adbd=running</p>
-<p>I:Checking for extendedcommand…</p>
-<p>I:Skipping execution of extendedcommand, file not found…</p>
-<p>mtd: successfully wrote block at c7de400000000</p>
-<p>I:Set boot command ""</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Starting recovery on Mon Sep  3 08:59:55 2012</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>framebuffer: fd 4 (320 x 480)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>CWM-Recovery v5.0.2.7by wpcnan.com wannan</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>recovery filesystem table</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>=========================</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  0 /tmp ramdisk (null) (null)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  1 /boot mtd boot (null)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  2 /cache yaffs2 cache (null)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  3 /data yaffs2 userdata (null)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  4 /misc mtd misc (null)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  5 /recovery mtd recovery (null)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  6 /sdcard vfat /dev/block/mmcblk0p1 /dev/block/mmcblk0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  7 /system yaffs2 system (null)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>W:Unable to get recovery.fstab info for /sd-ext during fstab generation!</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>I:Completed outputting fstab.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>I:Processing arguments.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>mtd: successfully wrote block at c7de400000000</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>I:Set boot command "boot-recovery"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>I:Checking arguments.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>I:device_recovery_start()</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Command: "/sbin/recovery"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.secure=0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.allow.mock.location=1</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.debuggable=1</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>persist.service.adb.enable=1</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.build.id=GINGERBREAD</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.build.display.id=GINGERBREAD</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.build.version.incremental=eng.p11387.20111006.122319</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.build.version.sdk=10</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.build.version.codename=REL</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.build.version.release=2.3.3</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.build.date=Thu Oct  6 12:24:05 KST 2011</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.build.date.utc=1317871445</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.build.type=user</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.build.user=p11387</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.build.host=bs200</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.build.tags=release-keys</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.product.model=IM-A740S</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.product.brand=SKY</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.product.name=sky-ef31s</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.product.device=ef31s</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.product.board=7x27</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.product.cpu.abi=armeabi</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.product.manufacturer=PANTECH</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.product.locale.language=ko</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.product.locale.region=KR</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.wifi.channels=</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.board.platform=msm7k</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.product.boardnswver=7x27 V1.78</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.product.baseband_ver=S0210178</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.product.baseband_ver_hidden=S0210178a</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.product.checksum=</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.carrier=SKT-KOR</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.build.product=ef31s</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.build.description=sky-ef31s-user 2.3.3 GINGERBREAD eng.p11387.20111006.122319 release-keys</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.build.fingerprint=SKY/sky-ef31s/ef31s:2.3.3/GINGERBREAD/eng.p11387.20111006.122319:user/release-keys</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>rild.libpath=/system/lib/libril-qc-1.so</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>rild.libargs=-d /dev/smd0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>persist.rild.nitz_plmn=</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>persist.rild.nitz_long_ons_0=</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>persist.rild.nitz_long_ons_1=</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>persist.rild.nitz_long_ons_2=</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>persist.rild.nitz_long_ons_3=</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>persist.rild.nitz_short_ons_0=</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>persist.rild.nitz_short_ons_1=</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>persist.rild.nitz_short_ons_2=</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>persist.rild.nitz_short_ons_3=</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ril.subscription.types=NV,RUIM</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>DEVICE_PROVISIONED=1</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>debug.sf.hw=1</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>debug.composition.type=mdp</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>media.stagefright.enable-player=true</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>media.stagefright.enable-meta=false</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>media.stagefright.enable-scan=false</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>media.stagefright.enable-http=true</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.opengles.version=131072</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.use_data_netmgrd=false</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.bluetooth.remote.autoconnect=true</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.sf.lcd_density=160</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>dalvik.vm.heapsize=48m</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.setupwizard.mode=OPTIONAL</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.com.google.gmsversion=2.3_r3</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.config.notification_sound=OnTheHunt.ogg</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.config.alarm_alert=Alarm_Classic.ogg</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.com.google.clientidbase=android-skt-kr</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>net.bt.name=Android</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>net.change=net.bt.name</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>dalvik.vm.stack-trace-file=/data/anr/traces.txt</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.factorytest=0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.serialno=</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.bootmode=unknown</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.baseband=msm</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.bootloader=unknown</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.hardware=qcom</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.revision=0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ro.emmc=0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>init.svc.recovery=running</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>init.svc.adbd=running</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>I:Checking for extendedcommand...</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>I:Skipping execution of extendedcommand, file not found...</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>mtd: successfully wrote block at c7de400000000</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>I:Set boot command ""</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>?</p>
 <p>이게 뭔가요?</p>
 <p>아까 Show log에 있던 내용도 있고…</p>

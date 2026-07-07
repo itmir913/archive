@@ -45,21 +45,24 @@ Original ↗
 <p>여기서 중요한건 cm10까지만 해도 BOARD_FORCE_RAMDISK_ADDRESS으로 사용되었습니다만</p>
 <p>cm10.1부터는 BOARD_MKBOOTIMG_ARGS을 사용해야 합니다</p>
 <p>BOARD_MKBOOTIMG_ARGS의 값부분에는 ramdisk_offset이 들어가야 하는대요 이 부분은 디벨로이드에 자료가 있더라고요 참고하시길..</p>
-<p>WIFI_DRIVER_MODULE_NAME          := wlan<br>
-WIFI_DRIVER_MODULE_PATH          := “/system/lib/modules/wlan.ko”<br>
-WPA_SUPPLICANT_VERSION           := VER_0_8_X<br>
-BOARD_WPA_SUPPLICANT_DRIVER      := NL80211<br>
-BOARD_HOSTAPD_DRIVER             := NL80211<br>
-BOARD_WLAN_DEVICE                := qcwcn<br>
-WIFI_DRIVER_FW_PATH_STA          := “sta”<br>
-WIFI_DRIVER_FW_PATH_AP           := “ap”<br>
-WIFI_DRIVER_FW_PATH_P2P          := “p2p”</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="makefile"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">WIFI_DRIVER_MODULE_NAME          := wlan  </span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wlan.ko"  </span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">WPA_SUPPLICANT_VERSION           := VER_0_8_X  </span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">BOARD_WPA_SUPPLICANT_DRIVER      := NL80211  </span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">BOARD_HOSTAPD_DRIVER             := NL80211  </span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">BOARD_WLAN_DEVICE                := qcwcn  </span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">WIFI_DRIVER_FW_PATH_STA          := "sta"  </span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">WIFI_DRIVER_FW_PATH_AP           := "ap"  </span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">WIFI_DRIVER_FW_PATH_P2P          := "p2p"</span></span>
+<span class="line"></span></code></pre>
 <p>이 부분은 모두 WIFI관련 선언입니다</p>
 <p>모듈의 이름과 kernel컴파일시 나오는 wifi모듈의 위치, 무선랜의 칩셋등을 정의해 주고 있습니다</p>
-<p>TARGET_PREBUILT_KERNEL := device/pantech/ef46l/kernel<br>
-LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)</p>
-<p>PRODUCT_COPY_FILES += \<br>
-$(LOCAL_KERNEL):kernel \</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="makefile"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">TARGET_PREBUILT_KERNEL := device/pantech/ef46l/kernel  </span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">LOCAL_KERNEL := </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">$(</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">TARGET_PREBUILT_KERNEL</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">PRODUCT_COPY_FILES += \  </span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    $(</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">LOCAL_KERNEL</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">)</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:kernel </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">\</span></span>
+<span class="line"></span></code></pre>
 <p>이 부분은 kernel을 빌드한 커널, 즉 zImage로 사용하며, 이것을 out/tatget/product/(기기명)으로 이동시켜주는 역할을 합니다</p>
 <p>이 부분이 없을경우 “Boot.img에 필요한 Kernel이 없습니다” 오류가 나타나게 될것입니다</p>
 <pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="makefile"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">TARGET\_USERIMAGES\_USE\_EXT4 := true</span></span>
@@ -127,12 +130,18 @@ $(LOCAL_DIR)/device_ef46l.mk</p>
 <p>즉 이걸 조합해 보면</p>
 <p>PRODUCT_COPY_FILES += \<br>
 device/pantech/ef46l/configs/media_profiles.xml:system/etc/media_profiles.xml</p>
-<p>이렇게 구성해 주면 됩니다</p>
-<p>(복사할 파일의 위치)에서 중요한건 system/etc등의 경로를 지정해야 합니다</p>
-<p>(복사할 파일의 위치) 앞에 “out/tatget/product/(기기명)/“이 생략 되어 있다고 생각하시면 됩니다</p>
-<p>저 구문을 짧게 줄여보면</p>
-<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="makefile"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">PRODUCT\_COPY\_FILES += device/common/gps/gps.conf\_AS:system/etc/gps.conf</span></span>
-<span class="line"></span></code></pre>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span></span></span>
+<span class="line"><span>이렇게 구성해 주면 됩니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>(복사할 파일의 위치)에서 중요한건 system/etc등의 경로를 지정해야 합니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>(복사할 파일의 위치) 앞에 "out/tatget/product/(기기명)/"이 생략 되어 있다고 생각하시면 됩니다</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>저 구문을 짧게 줄여보면</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>```makefile</span></span>
+<span class="line"><span>PRODUCT\_COPY\_FILES += device/common/gps/gps.conf\_AS:system/etc/gps.conf</span></span>
+<span class="line"><span></span></span></code></pre>
 <p>이렇게도 작성할수 있습니다</p>
 <p>이 문구는 common에서 gps.conf를 가져와라 라는 hPa님 소스안에 있는 구문입니다</p>
 <pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="makefile"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">FRAMEWORKS\_BASE\_SUBDIRS += ../../</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">$(</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">LOCAL\_PATH</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">)</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">/ril/</span></span>

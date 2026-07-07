@@ -15,15 +15,23 @@ Original ↗
 </a>  </div> <p class="mt-4 mb-0 text-lg text-gray-500 dark:text-gray-400 leading-relaxed border-l-2 border-gray-200 dark:border-gray-700 pl-4"> unpackbootimg오류등 우분투 64비트버전에서 32비트의 응응 프로그램을 사용하기가 어렵습니다. </p> </header> <!-- pagefind 메타 (검색 결과 카드용) --> <div class="hidden"> <span data-pagefind-meta="date">December 25, 2012</span> <span data-pagefind-meta="category">Computer &amp; PC/Ubuntu</span> <span data-pagefind-filter="section:itmir"></span> </div> <!-- 본문 (전문 검색 인덱싱 대상) --> <div class="prose prose-gray dark:prose-invert max-w-none" data-pagefind-body> <p>unpackbootimg오류등 우분투 64비트버전에서 32비트의 응응 프로그램을 사용하기가 어렵습니다.</p>
 <p>그렇다고 64비트로 설치한것을 다시 32비트로 내려오기도 힘든 상황이죠…</p>
 <p>이럴 때 다음을 설치하여 사용할 수 있습니다.</p>
-<p>ia32-libs</p>
-<p>lib32asound2</p>
-<p>lib32gcc1</p>
-<p>lib32ncurses5</p>
-<p>lib32nss-mdns</p>
-<p>lib32stdc++6</p>
-<p>lib32z1</p>
-<p>libc6-i386</p>
-<p>위 목록을 sudo apt-get install으로 각각 설치할수도 있습니다만,</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>ia32-libs</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>lib32asound2</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>lib32gcc1</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>lib32ncurses5</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>lib32nss-mdns</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>lib32stdc++6</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>lib32z1</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>libc6-i386</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>위 목록을 <code>sudo apt-get install</code>으로 각각 설치할수도 있습니다만,</p>
 <p>한번에 설치할수 있는 스크립트를 올려드릴테니</p>
 <p>다운받으셔서 터미널로 실행을 하시면 sudo비번을 친뒤 자동으로 설치하게 됩니다.</p>
 <p>그후 unpackbootimg등의 32비트 바이너리도 정상적으로 값이 나왔습니다.</p>

@@ -13,135 +13,140 @@ luminousky · archive
 </a> <!-- 헤더 --> <header class="mb-10" data-pagefind-ignore> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-5 text-gray-900 dark:text-gray-100"> Preference (프리퍼런스) 데이터 백업 복원 하기 </h1> <div class="flex flex-wrap items-center gap-3 text-base text-gray-400"> <time datetime="2013-11-24T05:01:04.000Z"> November 24, 2013 </time>  <span aria-hidden="true">·</span> <span>Android/App</span>   <span aria-hidden="true">·</span> <a href="https://itmir.tistory.com/389" class="text-gray-400 underline underline-offset-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" target="_blank" rel="noopener noreferrer">
 Original ↗
 </a>  </div> <p class="mt-4 mb-0 text-lg text-gray-500 dark:text-gray-400 leading-relaxed border-l-2 border-gray-200 dark:border-gray-700 pl-4"> Android Preference 데이터를 파일로 백업하고 복원하는 코드를 정리했습니다. </p> </header> <!-- pagefind 메타 (검색 결과 카드용) --> <div class="hidden"> <span data-pagefind-meta="date">November 24, 2013</span> <span data-pagefind-meta="category">Android/App</span> <span data-pagefind-filter="section:itmir"></span> </div> <!-- 본문 (전문 검색 인덱싱 대상) --> <div class="prose prose-gray dark:prose-invert max-w-none" data-pagefind-body> <p>Preference를 백업하기 위한 코드 입니다</p>
-<p>private boolean saveSharedPreferencesToFile(File dst) {</p>
-<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>boolean res = false;</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>ObjectOutputStream output = null;</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>try {</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    output = new ObjectOutputStream(new FileOutputStream(dst));</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    SharedPreferences pref =</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>                        getSharedPreferences(prefName, MODE_PRIVATE);</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    output.writeObject(pref.getAll());</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    res = true;</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>} catch (FileNotFoundException e) {</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    e.printStackTrace();</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>} catch (IOException e) {</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    e.printStackTrace();</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>}finally {</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    try {</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>        if (output != null) {</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>            output.flush();</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>            output.close();</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>        }</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    } catch (IOException ex) {</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>        ex.printStackTrace();</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    }</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>}</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>return res;</span></span>
-<span class="line"><span></span></span></code></pre>
-<p>}</p>
-<p>@SuppressWarnings({ “unchecked” })</p>
-<p>private boolean loadSharedPreferencesFromFile(File src) {</p>
-<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>boolean res = false;</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>ObjectInputStream input = null;</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>try {</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    input = new ObjectInputStream(new FileInputStream(src));</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>        Editor prefEdit = getSharedPreferences(prefName, MODE_PRIVATE).edit();</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>        prefEdit.clear();</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>        Map&#x3C;String, ?> entries = (Map&#x3C;String, ?>) input.readObject();</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>        for (Entry&#x3C;String, ?> entry : entries.entrySet()) {</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>            Object v = entry.getValue();</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>            String key = entry.getKey();</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>            if (v instanceof Boolean)</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>                prefEdit.putBoolean(key, ((Boolean) v).booleanValue());</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>            else if (v instanceof Float)</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>                prefEdit.putFloat(key, ((Float) v).floatValue());</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>            else if (v instanceof Integer)</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>                prefEdit.putInt(key, ((Integer) v).intValue());</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>            else if (v instanceof Long)</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>                prefEdit.putLong(key, ((Long) v).longValue());</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>            else if (v instanceof String)</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>                prefEdit.putString(key, ((String) v));</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>        }</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>        prefEdit.commit();</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    res = true;</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>} catch (FileNotFoundException e) {</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    e.printStackTrace();</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>} catch (IOException e) {</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    e.printStackTrace();</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>} catch (ClassNotFoundException e) {</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    e.printStackTrace();</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>}finally {</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    try {</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>        if (input != null) {</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>            input.close();</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>        }</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    } catch (IOException ex) {</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>        ex.printStackTrace();</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    }</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>}</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>return res;</span></span>
-<span class="line"><span></span></span></code></pre>
-<p>}</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">private</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> boolean</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> saveSharedPreferencesToFile</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(File dst) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    boolean</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> res </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> false</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    ObjectOutputStream output </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    try</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        output </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> new</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> ObjectOutputStream</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">new</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> FileOutputStream</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(dst));</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        SharedPreferences pref </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">                            getSharedPreferences</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(prefName, MODE_PRIVATE);</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        output.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">writeObject</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(pref.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">getAll</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">());</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        res </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> true</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">catch</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (FileNotFoundException </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">e</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        e.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">printStackTrace</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">catch</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (IOException </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">e</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        e.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">printStackTrace</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    }</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">finally</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">        try</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">            if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (output </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">!=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">                output.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">flush</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">                output.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">close</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">catch</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (IOException </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">ex</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">            ex.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">printStackTrace</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> res;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">@</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">SuppressWarnings</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">({ </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"unchecked"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> })</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">private</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> boolean</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> loadSharedPreferencesFromFile</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(File src) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    boolean</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> res </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> false</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    ObjectInputStream input </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    try</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        input </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> new</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> ObjectInputStream</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">new</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> FileInputStream</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(src));</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">            Editor prefEdit </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> getSharedPreferences</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(prefName, MODE_PRIVATE).</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">edit</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">            prefEdit.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">clear</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">            Map&#x3C;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">String</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">?</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">> entries </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (Map</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">&#x3C;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">String, </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">?></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) input.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">readObject</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">            for</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (Entry&#x3C;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">String</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">?</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">> entry </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> entries.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">entrySet</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">()) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">                Object v </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> entry.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">getValue</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">                String key </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> entry.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">getKey</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">                if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (v </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">instanceof</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> Boolean)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">                    prefEdit.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">putBoolean</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(key, ((Boolean) v).</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">booleanValue</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">());</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">                else</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (v </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">instanceof</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> Float)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">                    prefEdit.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">putFloat</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(key, ((Float) v).</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">floatValue</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">());</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">                else</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (v </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">instanceof</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> Integer)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">                    prefEdit.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">putInt</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(key, ((Integer) v).</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">intValue</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">());</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">                else</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (v </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">instanceof</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> Long)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">                    prefEdit.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">putLong</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(key, ((Long) v).</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">longValue</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">());</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">                else</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (v </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">instanceof</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> String)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">                    prefEdit.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">putString</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(key, ((String) v));</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">            prefEdit.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">commit</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        res </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> true</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">catch</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (FileNotFoundException </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">e</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        e.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">printStackTrace</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">catch</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (IOException </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">e</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        e.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">printStackTrace</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">catch</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (ClassNotFoundException </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">e</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        e.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">printStackTrace</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    }</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">finally</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">        try</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">            if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (input </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">!=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">                input.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">close</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">catch</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (IOException </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">ex</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">            ex.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">printStackTrace</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> res;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
 <p>출처 : <a href="http://stackoverflow.com/questions/10864462/how-can-i-backup-sharedpreferences-to-sd-card">http://stackoverflow.com/questions/10864462/how-can-i-backup-sharedpreferences-to-sd-card</a></p> </div> <!-- 태그 -->  <!-- 이전 / 다음 / 목록 --> <nav class="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800 grid grid-cols-1 sm:grid-cols-7 sm:items-stretch gap-3" data-pagefind-ignore> <div class="sm:col-span-3 sm:order-1"> <a href="/archive/itmir/2013/388/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all h-full"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
 ← Prev
 </span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> [Info][APP] My Script 계산기 어플 소개 </span> </a> </div> <div class="sm:col-span-3 sm:order-3"> <a href="/archive/itmir/2013/390/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all sm:text-right h-full"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">
