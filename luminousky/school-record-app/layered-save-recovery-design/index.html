@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="ko" class="antialiased scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="자동저장·셀 히스토리·스냅샷·백업 파일이 각자 다른 역할을 맡는 구조, DB 복구를 앱 외부에 맡긴 이유"><title>저장과 복구의 계층 설계 — 4중 안전망과 외부 복구 원칙 — luminousky</title><!-- 다크모드 FOUC 방지 — 렌더링 전 클래스 적용 --><script>
+      (function () {
+        var t = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (t === 'dark' || (!t && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script><!-- OG / Twitter 메타태그 --><meta property="og:type" content="article"><meta property="og:site_name" content="luminousky"><meta property="og:title" content="저장과 복구의 계층 설계 — 4중 안전망과 외부 복구 원칙 — luminousky"><meta property="og:description" content="자동저장·셀 히스토리·스냅샷·백업 파일이 각자 다른 역할을 맡는 구조, DB 복구를 앱 외부에 맡긴 이유"><meta property="og:url" content="https://luminousky.com/archive/luminousky/school-record-app/layered-save-recovery-design/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="저장과 복구의 계층 설계 — 4중 안전망과 외부 복구 원칙 — luminousky"><meta name="twitter:description" content="자동저장·셀 히스토리·스냅샷·백업 파일이 각자 다른 역할을 맡는 구조, DB 복구를 앱 외부에 맡긴 이유"><link rel="canonical" href="https://luminousky.com/archive/luminousky/school-record-app/layered-save-recovery-design/"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.Ds3_7TYY.css"><script type="module" src="/archive/_astro/hoisted.CVcv2i_h.js"></script></head> <body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans min-h-screen flex flex-col transition-colors"> <header class="sticky top-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-black/[0.06] dark:border-white/[0.06]"> <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"> <a href="/archive/" class="text-base font-semibold tracking-tight text-gray-900 dark:text-gray-100 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+luminousky · archive
+</a> <nav class="flex items-center gap-1"> <a href="/archive/" class="text-base font-medium text-gray-900 dark:text-gray-100 no-underline px-3 py-1.5 rounded-md bg-gray-100 dark:bg-gray-800 transition-colors">Archive</a> <a href="/archive/timeline/" class="text-base font-medium text-gray-400 dark:text-gray-500 no-underline px-3 py-1.5 rounded-md hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Timeline</a> <button id="theme-toggle" aria-label="Toggle dark mode" class="ml-1 p-2 rounded-md text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"> <!-- 라이트 모드에서 표시 (달 아이콘 → 다크로 전환) --> <svg id="icon-moon" class="w-5 h-5 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> <!-- 다크 모드에서 표시 (해 아이콘 → 라이트로 전환) --> <svg id="icon-sun" class="w-5 h-5 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> </nav> </div> </header> <main class="flex-1"> <div class="max-w-5xl mx-auto px-6 py-14">  <div> <a href="/archive/luminousky/" data-pagefind-ignore class="inline-block text-base text-gray-400 mb-8 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+← luminousky
+</a> <header class="mb-10" data-pagefind-ignore> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-5 text-gray-900 dark:text-gray-100"> 저장과 복구의 계층 설계 — 4중 안전망과 외부 복구 원칙 </h1> <div class="flex flex-wrap items-center gap-3 text-base text-gray-400"> <time datetime="2026-07-08T16:00:00.000Z"> July 9, 2026 </time> <span aria-hidden="true">·</span> <span class="text-violet-500">School Record Editor</span> </div> <p class="mt-4 mb-0 text-lg text-gray-500 dark:text-gray-400 leading-relaxed border-l-2 border-gray-200 dark:border-gray-700 pl-4"> 자동저장·셀 히스토리·스냅샷·백업 파일이 각자 다른 역할을 맡는 구조, DB 복구를 앱 외부에 맡긴 이유 </p> </header> <!-- pagefind 메타 (검색 결과 카드용) --> <div class="hidden"> <span data-pagefind-meta="date">July 9, 2026</span> <span data-pagefind-meta="project">School Record Editor</span> <span data-pagefind-meta="project-slug">school-record-app</span> <span data-pagefind-filter="section:luminousky"></span> </div> <div class="prose prose-gray dark:prose-invert max-w-none" data-pagefind-body> <h2 id="왜-저장이-복잡해야-하나">왜 저장이 복잡해야 하나</h2>
+<p>학기말 생기부 마감 상황에서 데이터를 잃는 것은 재앙이다. 교사 입장에서 “방금 수정한 내용이 사라졌다”와 “열흘 전 상태로 돌아가고 싶다”는 완전히 다른 상황이다. 그 두 상황을 같은 기능으로 해결할 수 없다.</p>
+<p>이 프로젝트는 저장과 복구를 네 개의 독립된 레이어로 구성했다. 각 레이어는 서로 다른 실패 상황을 다룬다.</p>
+<h2 id="4개-레이어와-역할">4개 레이어와 역할</h2>
+<h3 id="1-자동저장-auto-save">1. 자동저장 (Auto-save)</h3>
+<p>타이핑 1초 후 자동으로 SQLite에 기록된다. 저장 버튼이 없다.</p>
+<p>이 레이어가 해결하는 것은 유실 방지다. 앱이 갑자기 닫히거나 PC가 꺼져도 마지막 타이핑에서 1초 이내의 내용만 잃는다.</p>
+<p>저장 버튼을 없앤 부수 효과가 있다. “저장했나?”를 생각하지 않아도 된다. 교사가 내용에만 집중할 수 있는 심리 상태를 만든다. 기능이 아닌 심리를 설계한 결정이다. 이 결정사항은 프로그램 배포 후 가장 인기 있는 기능 중 하나가 되었다.</p>
+<h3 id="2-셀-단위-히스토리-cell-history">2. 셀 단위 히스토리 (Cell History)</h3>
+<p>특정 셀을 명시적으로 저장하면 이전 버전들이 누적된다. 셀마다 독립된 히스토리가 있다.</p>
+<p>이 레이어가 해결하는 것은 단일 셀 단위의 “이전 문장 복구”다. “어제 작성했던 더 좋은 문장이 있었는데”를 다시 꺼낼 수 있다. 스냅샷보다 세밀하고, 자동저장보다 의도적이다.</p>
+<p>엑셀로 작업할 때 “최종_진짜최종_수정본2.xlsx”를 만들어가던 패턴을 시스템이 대신한다.</p>
+<h3 id="3-타임머신-스냅샷-snapshot">3. 타임머신 스냅샷 (Snapshot)</h3>
+<p>4중 저장 구조에서 가장 핵심적인 레이어다. “오늘 대규모 수정을 시작하기 전 전체 상태로 돌아가고 싶다”를 해결하는 것이 목표이며, 이 도구의 버전 관리 기능 자체라고 봐도 된다.</p>
+<p><strong>파일 복사 방식의 문제</strong></p>
+<p>가장 단순한 구현은 스냅샷을 찍을 때마다 <code>.db</code> 파일을 통째로 복사해 보관하는 것이다. 직관적이지만 문제가 있다.</p>
+<ul>
+<li>공간: 스냅샷 N개 = DB 크기 × N. 파일 하나가 수 MB라면 스냅샷 10개만으로 수십 MB가 늘어난다.</li>
+<li>속도: 찍을 때마다 파일 전체를 디스크에 쓴다. 기록이 많아질수록 점점 느려진다.</li>
+<li>복원: 파일을 교체하는 방식이라 복원 중 실패하면 현재 상태까지 날아갈 수 있다.</li>
+</ul>
+<p>이 구현은 DB 파일을 전혀 복사하지 않는다.</p>
+<p><strong>Git에서 가져온 아이디어, 선형 히스토리로 재설계</strong></p>
+<p>Git은 커밋을 “변경된 파일 전체의 스냅샷”으로 저장하면서도 공간을 낭비하지 않는다. 핵심은 콘텐츠 주소 기반 객체 저장소 — 같은 내용이면 같은 해시, 다른 커밋이어도 같은 blob 객체를 가리킨다. 브랜치와 머지를 지원하기 위해 DAG(유향 비순환 그래프) 구조를 쓴다.</p>
+<p>생기부 편집에는 브랜치가 없다. 수정은 항상 선형으로 이루어진다. DAG가 필요 없다는 뜻이다. 이 제약 덕분에 구조를 크게 단순화할 수 있었다.</p>
+<ul>
+<li>Git 커밋 ≈ <code>Snapshot</code> 행 (시점을 가리키는 포인터)</li>
+<li>Git blob ≈ <code>ActivityRecordHistory</code> 행 (특정 시점의 셀 내용)</li>
+<li>Git tree 조립 ≈ 타임스탬프 범위 쿼리 (<code>changed_at &#x3C;= snapshot_at</code>)</li>
+<li>브랜치 없음 → 단일 타임라인 → 쿼리로 충분</li>
+</ul>
+<p><code>Snapshot</code> 테이블 자체는 타임스탬프와 메모만 저장한다. 실제 데이터는 <code>ActivityRecordHistory</code>에 있다.</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Snapshot 테이블</span></span>
+<span class="line"><span>┌────┬──────────┬─────────────────────┐</span></span>
+<span class="line"><span>│ id │ memo     │ created_at          │</span></span>
+<span class="line"><span>├────┼──────────┼─────────────────────┤</span></span>
+<span class="line"><span>│  1 │ "수정 전"│ 2026-06-01 09:00:00 │</span></span>
+<span class="line"><span>│  2 │ NULL     │ 2026-06-03 14:30:00 │</span></span>
+<span class="line"><span>└────┴──────────┴─────────────────────┘</span></span>
+<span class="line"><span></span></span></code></pre>
+<p><strong>생성: 변경된 셀만 히스토리에 추가</strong></p>
+<p>스냅샷을 찍으면 두 단계가 순서대로 실행된다.</p>
+<ol>
+<li>현재 <code>ActivityRecord</code> 전체를 <code>ActivityRecordHistory</code>에 밀어 넣는다. <code>ActivityRecord.updated_at</code>을 <code>changed_at</code>으로 사용한다. 단, 같은 <code>(activity_record_id, changed_at)</code> 조합이 이미 존재하면 삽입하지 않는다.</li>
+</ol>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sql"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">INSERT INTO</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> ActivityRecordHistory (activity_record_id, content, changed_at, note)</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">SELECT</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> r</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">id</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">r</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">content</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">r</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">updated_at</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">NULL</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">FROM</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> ActivityRecord r</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">WHERE</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> NOT</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> EXISTS</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    SELECT</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> 1</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> FROM</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> ActivityRecordHistory h</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    WHERE</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> h</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">activity_record_id</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> r</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">id</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">      AND</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> h</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">changed_at</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> r</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">updated_at</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"></span></code></pre>
+<ol start="2">
+<li><code>Snapshot</code> 테이블에 <code>datetime('now')</code>를 <code>created_at</code>으로 행을 삽입한다.</li>
+</ol>
+<p>중복 제거 조건(<code>NOT EXISTS</code>)이 Git의 콘텐츠 주소 방식과 같은 역할을 한다. 두 스냅샷 사이에 수정되지 않은 셀은 히스토리 행이 새로 생기지 않는다. 변경이 전혀 없었다면 저장 비용이 0이다. 스냅샷을 10개 찍어도, 그 사이에 수정한 셀만큼만 히스토리가 늘어난다.</p>
+<p>이 특성이 사용자 행동을 바꾼다. 스냅샷을 “아낄” 이유가 없어진다. 시간이 걸리지도 않고, 디스크를 낭비하지도 않으므로 교사가 심리적 부담 없이 언제든 찍을 수 있다. 설계가 올바를 때 사용자는 도구를 사용하는 방식 자체를 바꾼다.</p>
+<p><strong>복원: 타임스탬프 기준 시간 역 쿼리</strong></p>
+<p>복원은 <code>Snapshot.created_at</code>을 기준으로 각 셀의 “그 시점 직전 최신 버전”을 찾아 덮어쓰는 것이다.</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sql"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">UPDATE</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> ActivityRecord </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">SET</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  content </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> COALESCE</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    (</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">SELECT</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> h</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">content</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">     FROM</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> ActivityRecordHistory h</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">     WHERE</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> h</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">activity_record_id</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> ActivityRecord</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">id</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">       AND</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> h</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">changed_at</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> &#x3C;=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> :snapshot_at     </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">-- 스냅샷 시점 이전만</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">     ORDER BY</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> h</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">changed_at</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> DESC</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> LIMIT</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> 1</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">),   </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">-- 그 중 가장 최근</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    ''</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">                                      -- 해당 시점 이전 히스토리 없으면 빈 문자열</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  )</span></span>
+<span class="line"></span></code></pre>
+<p>스냅샷 시점 이후에만 히스토리가 존재하는 셀 — 스냅샷을 찍은 뒤에 새로 생성된 셀 — 은 서브쿼리가 <code>NULL</code>을 반환하고 <code>COALESCE</code>에 의해 <code>''</code>(빈 문자열)로 초기화된다. “스냅샷 당시에는 이 셀이 없었다”는 사실을 빈 문자열로 표현하는 것이다. 별도로 삭제하거나 마킹하지 않아도 되고, 쿼리 하나로 “시점 이전 최신값 또는 빈 문자열”을 일관되게 처리한다.</p>
+<p><strong>공간 효율 정리</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>방식</th><th>스냅샷 N개의 저장 비용</th></tr></thead><tbody><tr><td>파일 복사</td><td>O(N × DB 크기)</td></tr><tr><td>이 구현</td><td>O(스냅샷 사이 변경된 셀 수 합계)</td></tr></tbody></table>
+<p>변경이 없으면 비용이 없다. 변경이 많아도 변경된 셀의 텍스트 크기만큼만 늘어난다. 파일 전체를 박제하는 방식과 달리 불변 부분을 중복 저장하지 않는다.</p>
+<h3 id="4-dbbackup-자동-생성">4. .db.backup 자동 생성</h3>
+<p>앱이 DB를 열 때마다 <code>.db</code> 파일을 복사해 <code>.db.backup</code>으로 저장한다. 최후의 방어선이다.</p>
+<p>이 레이어가 해결하는 것은 DB 파일 자체의 손상이다. 위 세 레이어는 모두 DB가 정상적으로 열릴 수 있다는 것을 전제한다. DB 파일이 손상되면 앱 자체가 열리지 않는다. 이때 <code>.db.backup</code> 파일을 <code>.db</code>로 이름을 바꿔서 복구한다.</p>
+<h2 id="레이어-간-역할-비중복">레이어 간 역할 비중복</h2>
+<p>중요한 것은 네 레이어가 역할이 겹치지 않는다는 것이다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>레이어</th><th>복구 대상</th><th>복구 단위</th><th>발동 조건</th></tr></thead><tbody><tr><td>자동저장</td><td>유실</td><td>실시간</td><td>항상 자동</td></tr><tr><td>셀 히스토리</td><td>수정 취소</td><td>셀 하나</td><td>명시적 저장 시</td></tr><tr><td>스냅샷</td><td>전체 롤백</td><td>DB 전체</td><td>사용자 요청</td></tr><tr><td>.db.backup</td><td>DB 손상</td><td>DB 파일</td><td>앱 실행 시 자동</td></tr></tbody></table>
+<p>자동저장이 있다고 스냅샷이 필요 없는 것이 아니다. 스냅샷이 있다고 .db.backup이 필요 없는 것도 아니다. 각자 다른 실패 시나리오를 다룬다.</p>
+<p>이 구조를 설계할 때 “어떤 기능을 추가할까”가 아니라 “어떤 상황에서 교사가 데이터를 잃는가”를 먼저 나열했다. 상황별로 레이어를 매핑했다.</p>
+<h2 id="db-복구를-앱-외부로-설계한-이유">DB 복구를 앱 외부로 설계한 이유</h2>
+<p><code>.db.backup</code> 복구를 앱 내부 UI로 제공하지 않았다. 사용자는 파일 탐색기에서 파일 이름을 직접 바꿔야 한다.</p>
+<p>처음에는 이것이 아쉬운 점처럼 보인다. 교사 대상 도구에서 파일 탐색기 조작을 요구하는 것은 진입 장벽이다.</p>
+<p>그런데 다른 방향에서 보면 이 결정이 맞다.</p>
+<p>DB 파일이 손상됐다는 것은 앱이 그 파일을 열 수 없다는 것이다. 앱이 파일을 열지 못하는 상황에서 앱 UI를 통해 복구를 시도하면, 앱이 손상된 파일을 열려다 실패하면서 그 과정에 백업 파일까지 덮어쓰는 최악의 시나리오가 생긴다.</p>
+<p><strong>손상된 도구로 자기 자신을 고치면 안 된다.</strong> 복구 작업은 도구 밖에서 이루어져야 한다. 불편해 보이지만 더 안전한 방향이다.</p>
+<p>같은 원칙이 다른 곳에도 적용된다. 백업 파일을 앱 내부 저장소가 아니라 사용자가 직접 접근할 수 있는 같은 폴더에 두는 것도 마찬가지다. 앱이 완전히 제거되거나 동작하지 않아도 데이터는 살아남는다.</p>
+<h2 id="github-actions--releases--랜딩-페이지-배포">GitHub Actions → Releases → 랜딩 페이지 배포</h2>
+<p>저장과 직접적인 관련은 없지만, 같은 “장기 지속 가능성” 관점에서 배포 구조도 짚을 만하다.</p>
+<p>배포 인프라 비용은 0원이다.</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>코드 푸시 (태그)</span></span>
+<span class="line"><span>    ↓</span></span>
+<span class="line"><span>GitHub Actions (Windows + macOS 크로스 빌드)</span></span>
+<span class="line"><span>    ↓</span></span>
+<span class="line"><span>GitHub Releases (빌드 결과물 자동 업로드)</span></span>
+<span class="line"><span>    ↓</span></span>
+<span class="line"><span>랜딩 페이지 (GitHub API → 다운로드 버튼 자동 갱신)</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>버전이 올라가면 태그를 푸시한다. 나머지는 자동이다. 교사는 GitHub을 거치지 않고 랜딩 페이지의 버튼 하나로 받는다. 버전이 바뀌어도 랜딩 페이지 HTML을 수정하지 않아도 된다.</p>
+<p>API 응답 실패 시에는 <code>/releases/latest</code>로 자동 폴백된다. 최악의 경우에도 사용자는 GitHub Releases 페이지로 이동해 직접 받을 수 있다.</p>
+<p>포터블(설치 없는) 버전을 별도로 제공하는 것도 학교 환경을 고려한 결정이다. 망분리 PC나 설치 권한이 없는 환경에서 USB에 담아 실행할 수 있다.</p> </div> <!-- 이전 / 다음 / 목록 --> <nav class="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800 grid grid-cols-1 sm:grid-cols-7 sm:items-stretch gap-3" data-pagefind-ignore> <div class="sm:col-span-3 sm:order-1"> <a href="/archive/luminousky/school-record-app/design-from-principles/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all h-full"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">← Prev</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> 원칙에서 역산하는 설계 — IDE 철학, 프라이버시, 자동화의 경계 </span> </a> </div> <div class="sm:col-span-3 sm:order-3">  </div> <div class="sm:col-span-1 sm:order-2"> <a href="/archive/luminousky/" class="w-full h-full flex items-center justify-center text-base text-gray-500 dark:text-gray-400 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all">
+목록
+</a> </div> </nav> </div>  </div> </main> <footer class="border-t border-gray-100 dark:border-gray-800 mt-auto"> <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-end gap-6"> <a href="https://luminousky.com" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+luminousky.com ↗
+</a> <a href="https://github.com/itmir913" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+GitHub ↗
+</a> </div> </footer> <!-- 맨 위로 버튼 --> <button id="back-to-top" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 p-2.5 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 shadow-sm transition-all duration-200 opacity-0 pointer-events-none"> <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path> </svg> </button>  </body> </html>

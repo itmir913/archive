@@ -1,0 +1,157 @@
+<!DOCTYPE html><html lang="ko" class="antialiased scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="PRAGMA user_version, 단계별 트랜잭션, foreign_keys IIFE 복구, TooNew 감지, 복호화 → 마이그레이션 순서"><title>SQLite 스키마 버전 관리와 마이그레이션 패턴 — luminousky</title><!-- 다크모드 FOUC 방지 — 렌더링 전 클래스 적용 --><script>
+      (function () {
+        var t = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (t === 'dark' || (!t && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script><!-- OG / Twitter 메타태그 --><meta property="og:type" content="article"><meta property="og:site_name" content="luminousky"><meta property="og:title" content="SQLite 스키마 버전 관리와 마이그레이션 패턴 — luminousky"><meta property="og:description" content="PRAGMA user_version, 단계별 트랜잭션, foreign_keys IIFE 복구, TooNew 감지, 복호화 → 마이그레이션 순서"><meta property="og:url" content="https://luminousky.com/archive/luminousky/school-record-app/sqlite-schema-versioning-migration/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="SQLite 스키마 버전 관리와 마이그레이션 패턴 — luminousky"><meta name="twitter:description" content="PRAGMA user_version, 단계별 트랜잭션, foreign_keys IIFE 복구, TooNew 감지, 복호화 → 마이그레이션 순서"><link rel="canonical" href="https://luminousky.com/archive/luminousky/school-record-app/sqlite-schema-versioning-migration/"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.Ds3_7TYY.css"><script type="module" src="/archive/_astro/hoisted.CVcv2i_h.js"></script></head> <body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans min-h-screen flex flex-col transition-colors"> <header class="sticky top-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-black/[0.06] dark:border-white/[0.06]"> <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"> <a href="/archive/" class="text-base font-semibold tracking-tight text-gray-900 dark:text-gray-100 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+luminousky · archive
+</a> <nav class="flex items-center gap-1"> <a href="/archive/" class="text-base font-medium text-gray-900 dark:text-gray-100 no-underline px-3 py-1.5 rounded-md bg-gray-100 dark:bg-gray-800 transition-colors">Archive</a> <a href="/archive/timeline/" class="text-base font-medium text-gray-400 dark:text-gray-500 no-underline px-3 py-1.5 rounded-md hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Timeline</a> <button id="theme-toggle" aria-label="Toggle dark mode" class="ml-1 p-2 rounded-md text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"> <!-- 라이트 모드에서 표시 (달 아이콘 → 다크로 전환) --> <svg id="icon-moon" class="w-5 h-5 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> <!-- 다크 모드에서 표시 (해 아이콘 → 라이트로 전환) --> <svg id="icon-sun" class="w-5 h-5 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> </nav> </div> </header> <main class="flex-1"> <div class="max-w-5xl mx-auto px-6 py-14">  <div> <a href="/archive/luminousky/" data-pagefind-ignore class="inline-block text-base text-gray-400 mb-8 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+← luminousky
+</a> <header class="mb-10" data-pagefind-ignore> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-5 text-gray-900 dark:text-gray-100"> SQLite 스키마 버전 관리와 마이그레이션 패턴 </h1> <div class="flex flex-wrap items-center gap-3 text-base text-gray-400"> <time datetime="2026-04-20T13:32:33.000Z"> April 20, 2026 </time> <span aria-hidden="true">·</span> <span class="text-violet-500">School Record Editor</span> </div> <p class="mt-4 mb-0 text-lg text-gray-500 dark:text-gray-400 leading-relaxed border-l-2 border-gray-200 dark:border-gray-700 pl-4"> PRAGMA user_version, 단계별 트랜잭션, foreign_keys IIFE 복구, TooNew 감지, 복호화 → 마이그레이션 순서 </p> </header> <!-- pagefind 메타 (검색 결과 카드용) --> <div class="hidden"> <span data-pagefind-meta="date">April 20, 2026</span> <span data-pagefind-meta="project">School Record Editor</span> <span data-pagefind-meta="project-slug">school-record-app</span> <span data-pagefind-filter="section:luminousky"></span> </div> <div class="prose prose-gray dark:prose-invert max-w-none" data-pagefind-body> <h2 id="왜-버전-관리가-필요한가">왜 버전 관리가 필요한가</h2>
+<p>SQLite 스키마를 한 번 배포하고 나면 바꾸기 어렵다. 이미 사용자 로컬에 깔린 DB 파일에 새 컬럼을 추가하려면 <code>ALTER TABLE</code>이 필요하고, 그것이 안전하게 적용됐는지 검증해야 한다.</p>
+<p>School Record App은 초기부터 이 문제를 의식했다. 첫 번째 커밋 이후 얼마 지나지 않아 “데이터베이스 버전관리 및 마이그레이션 대비 코드 작성”이라는 커밋이 올라왔다. 기능이 하나도 없는 상태에서 마이그레이션 뼈대를 먼저 만들었다.</p>
+<h2 id="pragma-user_version">PRAGMA user_version</h2>
+<p>SQLite에는 별도 테이블 없이 스키마 버전을 저장하는 내장 메커니즘이 있다.</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sql"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">-- 읽기</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">PRAGMA user_version;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">-- 쓰기 (트랜잭션 내부에서 사용 가능)</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">PRAGMA user_version </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> 1</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span></code></pre>
+<p><code>user_version</code>은 DB 파일 헤더에 저장되는 32비트 정수다. 별도 테이블이 필요 없고, 파일을 열자마자 읽을 수 있다. Rust에서는 <code>pragma_update(None, "user_version", v)</code>로 쓰고, <code>query_row("PRAGMA user_version", [], |r| r.get(0))</code>로 읽는다.</p>
+<p>앱 코드에는 <code>SCHEMA_VERSION</code> 상수를 하나 두고, “현재 앱이 지원하는 최신 스키마 버전”을 나타낸다. DB의 <code>user_version</code>이 이 값보다 낮으면 마이그레이션이 필요한 상태다.</p>
+<h2 id="migrations-배열">MIGRATIONS 배열</h2>
+<p>버전 이행 경로를 배열로 관리한다. 인덱스 <code>i</code>의 항목이 “버전 <code>i</code> → 버전 <code>i+1</code>”로 올리는 SQL이다.</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="rust"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">pub</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> SCHEMA_VERSION</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> u32</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> 1</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> MIGRATIONS</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> &#x26;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">[</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">&#x26;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">str</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">] </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> &#x26;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">[</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    ""</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">// v0 → v1</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">];</span></span>
+<span class="line"></span></code></pre>
+<p>v0 → v1이 빈 문자열인 이유가 있다. 최초 스키마 생성 SQL이 전부 <code>IF NOT EXISTS</code>로 작성되어 있기 때문이다. “버전 도입 이전 DB”(user_version = 0인 기존 파일)는 이미 모든 테이블이 있으므로, v1으로 승격하는 SQL이 별도로 필요 없다.</p>
+<p>나중에 컬럼을 추가하거나 테이블을 변경하려면 <code>SCHEMA_VERSION</code>을 2로 올리고, <code>MIGRATIONS[1]</code>에 <code>ALTER TABLE ...</code> SQL을 넣는다. 기존 사용자 DB는 v0이나 v1에서 순차적으로 v2까지 올라온다.</p>
+<h2 id="단계별-트랜잭션과-foreign_key_check">단계별 트랜잭션과 foreign_key_check</h2>
+<p>마이그레이션은 한 번에 끝까지 실행하지 않는다. 각 버전 이행을 개별 트랜잭션으로 감싼다.</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="rust"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">pub</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> fn</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> migrate</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(conn</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> &#x26;mut</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> Connection</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, from</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> u32</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">-></span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> Result</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;()> {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    conn</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">execute_batch</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"PRAGMA foreign_keys = OFF;"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">?</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    let</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> result</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> Result</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;()> </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">||</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">        for</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> v </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">in</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> from</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">..</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">SCHEMA_VERSION</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">            let</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> sql </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> MIGRATIONS</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">get</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(v </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">as</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> usize</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">...</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">            let</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> tx </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> conn</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">transaction</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">()</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">?</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;  </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">// 트랜잭션 시작</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">            if</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> !</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">sql</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">is_empty</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">() {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">                tx</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">execute_batch</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(sql)</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">?</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">            }</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">            tx</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">pragma_update</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">None</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"user_version"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, v </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">+</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> 1</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">?</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">            // 커밋 전 외래키 무결성 검증</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">            let</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> mut</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> stmt </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> tx</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">prepare</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"PRAGMA foreign_key_check;"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">?</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">            if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> stmt</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">exists</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">([])</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">?</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">                return</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> Err</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">...</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">); </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">// 위반 발견 → ROLLBACK</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">            tx</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">commit</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">()</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">?</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        }</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">        Ok</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(())</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    })();</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">    // 성공·실패 모두 복구</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    let</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> fk_result </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> conn</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">execute_batch</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"PRAGMA foreign_keys = ON;"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    result</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">and</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(fk_result)</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<p><code>tx.commit()</code>이 호출되기 전에 <code>tx</code>가 스코프를 벗어나면 rusqlite가 자동으로 <code>ROLLBACK</code>을 실행한다. 즉, 중간에 에러가 나도 해당 단계 전체가 되돌아간다.</p>
+<p>각 단계를 커밋하기 전에 <code>PRAGMA foreign_key_check</code>를 실행한다. 위반 행이 하나라도 있으면 에러를 반환해 자동 롤백시킨다. 외래키 무결성은 DB 레벨에서 보장해야 한다 — 애플리케이션 코드만 믿어서는 안 된다.</p>
+<h2 id="foreign_keys의-까다로운-제약">foreign_keys의 까다로운 제약</h2>
+<p><code>PRAGMA foreign_keys</code>는 <strong>열린 트랜잭션이 없을 때만 변경할 수 있다</strong>. 이것이 SQLite 공식 문서가 권고하는 사항이다.</p>
+<p>마이그레이션 중에는 외래키를 끄고 싶지만(<code>OFF</code>), 그러려면 트랜잭션 바깥에서 설정해야 한다. 그리고 마이그레이션이 끝나면 반드시 <code>ON</code>으로 복구해야 한다.</p>
+<p>IIFE(<code>(|| { ... })()</code>) 패턴을 쓰는 이유가 여기 있다. 클로저 안에서 에러가 나면 <code>?</code>로 조기 종료되지만, 클로저 실행이 끝난 뒤에는 반드시 <code>foreign_keys = ON</code> 복구 코드가 실행된다. 에러 경로에서 <code>foreign_keys = OFF</code> 상태로 conn이 남는 버그를 방지한다.</p>
+<p>실제로 이 복구를 빠뜨렸던 버그가 있었다 — 마이그레이션 실패 시 conn이 <code>foreign_keys = OFF</code> 상태로 남아 이후 모든 INSERT가 외래키 검사를 건너뛰었다.</p>
+<h2 id="toonew-미래에서-온-db">TooNew: 미래에서 온 DB</h2>
+<p>DB 버전이 앱 버전보다 <strong>높으면</strong> 마이그레이션이 불가능하다. 이 경우는 에러로 처리한다.</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="rust"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">pub</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> enum</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> OpenError</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">    Db</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">rusqlite</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">::</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">Error</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">),</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">    TooNew</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> { db_version</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> u32</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, app_version</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> u32</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<p>에러 메시지도 명확하게: “이 파일은 더 최신 버전의 앱에서 생성되었습니다. 앱을 업데이트해주세요.” 사용자가 더 새로운 앱으로 파일을 저장하고, 이전 앱에서 다시 열려는 상황이다. 조용히 무시하거나 손상된 상태로 열면 안 된다.</p>
+<h2 id="open과-migrate의-분리">open과 migrate의 분리</h2>
+<p><code>open_existing</code>은 버전 확인만 한다. 실제 마이그레이션은 별도 커맨드(<code>migrate_schema</code>)로 분리되어 있고, UI에서 명시적으로 호출한다.</p>
+<p>이 분리에는 이유가 있다. 파일을 열 때 자동으로 마이그레이션을 실행하면:</p>
+<ul>
+<li>사용자가 모르는 사이에 스키마가 바뀐다</li>
+<li>마이그레이션 전에 백업을 만들 기회가 없다</li>
+<li>실패 시 파일이 망가진 채로 남을 수 있다</li>
+</ul>
+<p>분리하면 “마이그레이션이 필요합니다” 다이얼로그를 띄우고, 사용자 동의 후 백업을 만든 뒤 마이그레이션을 실행하는 흐름을 구성할 수 있다.</p>
+<h2 id="복호화--마이그레이션-순서">복호화 → 마이그레이션 순서</h2>
+<p>암호화 기능을 추가한 뒤 심각한 순서 버그가 있었다. 암호화가 활성화된 DB를 열 때 코드 흐름이:</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>파일 열기 → 마이그레이션 → 복호화</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>였다. 마이그레이션 SQL이 <code>nonce_b64:ciphertext_b64</code> 형태의 암호화 텍스트를 평문처럼 처리하는 문제였다. 만약 마이그레이션이 텍스트 컬럼을 조작하는 종류였다면 데이터가 손상됐을 것이다.</p>
+<p>올바른 순서는:</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>파일 열기 → 복호화 → 마이그레이션</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>데이터에 접근하기 전에 항상 복호화가 먼저여야 한다. 이 버그는 실제로 커밋 <code>bd8af7c</code>에서 수정됐다.</p>
+<p>비슷한 맥락으로, 백업을 복호화 전에 만들면 암호화된 파일이 백업된다. 이것이 의도인지 아닌지에 따라 달라지지만, <strong>데이터 파이프라인의 각 단계가 이전 단계의 결과물을 전제로 한다는 원칙</strong>을 의식해야 한다.</p>
+<h2 id="sqlite-트리거의-함정">SQLite 트리거의 함정</h2>
+<p>초기 구현에 <code>trg_record_history</code> 트리거가 있었다. 레코드가 업데이트될 때 자동으로 히스토리를 기록하는 트리거였다.</p>
+<p>이 트리거를 결국 제거했다. 이유는 <strong>신규 DB와 업그레이드 DB 사이에 동작이 달랐기</strong> 때문이다.</p>
+<ul>
+<li>신규 DB: 트리거가 <code>CREATE TABLE</code>과 함께 처음부터 존재</li>
+<li>업그레이드 DB: v0 → v1 마이그레이션은 빈 문자열 → 트리거가 없음</li>
+</ul>
+<p>마이그레이션 SQL에 트리거 생성 코드를 추가하면 업그레이드 DB에도 트리거를 심을 수 있다. 하지만 “신규 DB의 트리거 행동”과 “레거시 DB에서 마이그레이션으로 추가된 트리거 행동”이 완전히 같다고 보장하기 어렵다. 애플리케이션 코드에서 히스토리를 명시적으로 기록하는 방식이 예측 가능성 면에서 더 낫다.</p>
+<h2 id="정리">정리</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>결정</th><th>이유</th></tr></thead><tbody><tr><td><code>PRAGMA user_version</code></td><td>별도 테이블 불필요, DB 헤더에 즉시 접근</td></tr><tr><td>단계별 트랜잭션</td><td>중간 실패 시 해당 단계만 롤백, DB 일관성 유지</td></tr><tr><td><code>foreign_key_check</code></td><td>각 단계 커밋 전 외래키 무결성 검증</td></tr><tr><td>IIFE로 <code>foreign_keys</code> 복구</td><td>에러 경로에서도 반드시 <code>ON</code> 복구 보장</td></tr><tr><td>TooNew 에러</td><td>미래 DB를 조용히 열지 않음</td></tr><tr><td>open/migrate 분리</td><td>백업 기회 확보, 사용자 동의 흐름</td></tr><tr><td>복호화 → 마이그레이션</td><td>암호화 텍스트에 마이그레이션 SQL 적용 방지</td></tr><tr><td>트리거 제거</td><td>신규/업그레이드 DB 간 동작 일관성 확보</td></tr></tbody></table> </div> <!-- 이전 / 다음 / 목록 --> <nav class="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800 grid grid-cols-1 sm:grid-cols-7 sm:items-stretch gap-3" data-pagefind-ignore> <div class="sm:col-span-3 sm:order-1"> <a href="/archive/luminousky/school-record-app/school-record-editor-overview/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all h-full"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">← Prev</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> All-in-One 학교생활기록부 에디터 — 개요와 기술 스택 선택 </span> </a> </div> <div class="sm:col-span-3 sm:order-3"> <a href="/archive/luminousky/school-record-app/rust-backend-module-split-unit-testing/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all sm:text-right h-full"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">Next →</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> Rust 백엔드 모듈 분리와 단위 테스트 전략 </span> </a> </div> <div class="sm:col-span-1 sm:order-2"> <a href="/archive/luminousky/" class="w-full h-full flex items-center justify-center text-base text-gray-500 dark:text-gray-400 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all">
+목록
+</a> </div> </nav> </div>  </div> </main> <footer class="border-t border-gray-100 dark:border-gray-800 mt-auto"> <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-end gap-6"> <a href="https://luminousky.com" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+luminousky.com ↗
+</a> <a href="https://github.com/itmir913" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+GitHub ↗
+</a> </div> </footer> <!-- 맨 위로 버튼 --> <button id="back-to-top" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 p-2.5 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 shadow-sm transition-all duration-200 opacity-0 pointer-events-none"> <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path> </svg> </button>  </body> </html>
