@@ -1,3 +1,9 @@
+---
+title: "CLAUDE.md — Chapter 2 Writing Guidelines"
+date: "2026-01-01T00:00:00+09:00"
+draft: true
+---
+
 # luminousky Chapter 2 포스트 작성 지침
 
 이 CLAUDE.md는 `src/content/luminousky/` 디렉토리 전용이다.
