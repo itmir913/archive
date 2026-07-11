@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="ko" class="antialiased scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="인공지능기초 수업에서 쓸 한국어 시뮬레이터가 없어서 직접 만들었다 — 16개 구현"><title>인공지능 시뮬레이터 직접 구현 — 한국어 자료 부재와 사이트 폐쇄 — luminousky</title><!-- 다크모드 FOUC 방지 — 렌더링 전 클래스 적용 --><script>
+      (function () {
+        var t = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (t === 'dark' || (!t && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script><!-- OG / Twitter 메타태그 --><meta property="og:type" content="article"><meta property="og:site_name" content="luminousky"><meta property="og:title" content="인공지능 시뮬레이터 직접 구현 — 한국어 자료 부재와 사이트 폐쇄 — luminousky"><meta property="og:description" content="인공지능기초 수업에서 쓸 한국어 시뮬레이터가 없어서 직접 만들었다 — 16개 구현"><meta property="og:url" content="https://luminousky.com/archive/luminousky/cs-education/ai-simulator-implementation/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="인공지능 시뮬레이터 직접 구현 — 한국어 자료 부재와 사이트 폐쇄 — luminousky"><meta name="twitter:description" content="인공지능기초 수업에서 쓸 한국어 시뮬레이터가 없어서 직접 만들었다 — 16개 구현"><link rel="canonical" href="https://luminousky.com/archive/luminousky/cs-education/ai-simulator-implementation/"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.D1rHOD7u.css"><script type="module" src="/archive/_astro/hoisted.CVcv2i_h.js"></script></head> <body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans min-h-screen flex flex-col transition-colors"> <header class="sticky top-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-black/[0.06] dark:border-white/[0.06]"> <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"> <a href="/archive/" class="text-base font-semibold tracking-tight text-gray-900 dark:text-gray-100 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+luminousky · archive
+</a> <nav class="flex items-center gap-1"> <a href="/archive/" class="text-base font-medium text-gray-900 dark:text-gray-100 no-underline px-3 py-1.5 rounded-md bg-gray-100 dark:bg-gray-800 transition-colors">Archive</a> <a href="/archive/timeline/" class="text-base font-medium text-gray-400 dark:text-gray-500 no-underline px-3 py-1.5 rounded-md hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Timeline</a> <button id="theme-toggle" aria-label="Toggle dark mode" class="ml-1 p-2 rounded-md text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"> <!-- 라이트 모드에서 표시 (달 아이콘 → 다크로 전환) --> <svg id="icon-moon" class="w-5 h-5 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> <!-- 다크 모드에서 표시 (해 아이콘 → 라이트로 전환) --> <svg id="icon-sun" class="w-5 h-5 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> </nav> </div> </header> <main class="flex-1"> <div class="max-w-5xl mx-auto px-6 py-14">  <div> <a href="/archive/luminousky/" data-pagefind-ignore class="inline-block text-base text-gray-400 mb-8 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+← luminousky
+</a> <header class="mb-10" data-pagefind-ignore> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-5 text-gray-900 dark:text-gray-100"> 인공지능 시뮬레이터 직접 구현 — 한국어 자료 부재와 사이트 폐쇄 </h1> <div class="flex flex-wrap items-center gap-3 text-base text-gray-400"> <time datetime="2026-07-11T15:00:00.000Z"> July 12, 2026 </time> <span aria-hidden="true">·</span> <span class="text-violet-500">CS Education</span> </div> <p class="mt-4 mb-0 text-lg text-gray-500 dark:text-gray-400 leading-relaxed border-l-2 border-gray-200 dark:border-gray-700 pl-4"> 인공지능기초 수업에서 쓸 한국어 시뮬레이터가 없어서 직접 만들었다 — 16개 구현 </p> </header> <!-- pagefind 메타 (검색 결과 카드용) --> <div class="hidden"> <span data-pagefind-meta="date">July 12, 2026</span> <span data-pagefind-meta="project">CS Education</span> <span data-pagefind-meta="project-slug">cs-education</span> <span data-pagefind-filter="section:luminousky"></span> </div> <div class="prose prose-gray dark:prose-invert max-w-none" data-pagefind-body> <h2 id="배경">배경</h2>
+<p>인공지능기초 수업에서 알고리즘 동작을 시각적으로 보여줄 시뮬레이터가 필요했다. 탐색 알고리즘이 어떻게 경로를 찾는지, k-NN이 어떤 기준으로 분류하는지, 강화학습 에이전트가 어떻게 학습하는지는 설명만으로는 부족하다.</p>
+<p>기존에 있는 자료를 찾아봤다.</p>
+<p><strong>한국어 시뮬레이터가 거의 없다.</strong> 있더라도 파편화되어 있고, 영어권 자료는 수업에 바로 쓰기 어렵다. 몇 년 전 발견한 시뮬레이터 사이트가 어느 순간 운영 중단된 경험도 있었다. 외부 사이트에 의존하면 언제 사라질지 알 수 없다.</p>
+<p>직접 만드는 편이 낫다는 결론을 내렸다.</p>
+<h2 id="구현-범위">구현 범위</h2>
+<p><code>_Visual_Assets/simulator/ai/</code> 에 현재 16개의 시뮬레이터가 있다.</p>
+<p><strong>탐색 (Search)</strong></p>
+<ul>
+<li>BFS / DFS (<code>search-bfs-dfs.html</code>)</li>
+<li>휴리스틱 탐색 (<code>search-heuristic.html</code>)</li>
+<li>8-퍼즐 (<code>search-8-puzzle.html</code>)</li>
+<li>N-Queen (<code>search-n-queen.html</code>)</li>
+<li>Wumpus World (<code>wumpus-world.html</code>)</li>
+</ul>
+<p><strong>지도학습 (Supervised)</strong></p>
+<ul>
+<li>선형 회귀 (<code>supervised-linear-regression.html</code>)</li>
+<li>다항 회귀 (<code>supervised-polynomial-regression.html</code>)</li>
+<li>로지스틱 회귀 (<code>supervised-logistic-regression.html</code>)</li>
+<li>k-NN (<code>supervised-k-nn.html</code>)</li>
+<li>결정 트리 (<code>supervised-decision-tree.html</code>)</li>
+<li>SVM (<code>supervised-svm.html</code>)</li>
+</ul>
+<p><strong>비지도학습 (Unsupervised)</strong></p>
+<ul>
+<li>k-Means (<code>unsupervised-k-means.html</code>)</li>
+</ul>
+<p><strong>강화학습 (Reinforcement)</strong></p>
+<ul>
+<li>GridWorld (<code>reinforcement-gridworld.html</code>)</li>
+<li>Multi-Armed Bandit (<code>reinforcement-multi-armed-bandit.html</code>)</li>
+</ul>
+<p><strong>딥러닝 / 컴퓨터비전</strong></p>
+<ul>
+<li>딥러닝 (<code>deep-learning.html</code>)</li>
+<li>컴퓨터비전 — ml5.js 기반 (<code>computer-vision-ml5.html</code>)</li>
+</ul>
+<h2 id="기술-선택">기술 선택</h2>
+<p>모든 시뮬레이터는 외부 서버 없이 브라우저 단독으로 동작하는 단일 HTML 파일이다. CDN이 끊기거나 사이트가 사라지는 문제를 직접 경험했기 때문에, 의존성을 최소화했다. 강의노트와 마찬가지로 GitHub Pages로 제공한다.</p> </div> <!-- 이전 / 다음 / 목록 --> <nav class="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800 grid grid-cols-1 sm:grid-cols-7 sm:items-stretch gap-3" data-pagefind-ignore> <div class="sm:col-span-3 sm:order-1"> <a href="/archive/luminousky/cs-education/codeclan-lms-design/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all h-full"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">← Prev</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> CodeClan LMS — 학내망 전용 LMS + 온라인 저지 시스템 설계 </span> </a> </div> <div class="sm:col-span-3 sm:order-3"> <a href="/archive/luminousky/cs-education/lecture-notes-github-pages/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all sm:text-right h-full"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">Next →</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> HTML 강의노트를 시작한 이유 — PPT에서 웹으로 </span> </a> </div> <div class="sm:col-span-1 sm:order-2"> <a href="/archive/luminousky/" class="w-full h-full flex items-center justify-center text-base text-gray-500 dark:text-gray-400 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all">
+목록
+</a> </div> </nav> </div>  </div> </main> <footer class="border-t border-gray-100 dark:border-gray-800 mt-auto"> <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-end gap-6"> <a href="https://luminousky.com" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+luminousky.com ↗
+</a> <a href="https://github.com/itmir913" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+GitHub ↗
+</a> </div> </footer> <!-- 맨 위로 버튼 --> <button id="back-to-top" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 p-2.5 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 shadow-sm transition-all duration-200 opacity-0 pointer-events-none"> <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path> </svg> </button>  </body> </html>

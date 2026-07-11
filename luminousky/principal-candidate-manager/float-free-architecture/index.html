@@ -41,7 +41,7 @@ luminousky · archive
 <h2 id="fail-fast-정책">Fail-Fast 정책</h2>
 <p>대입 추천 시스템의 특성상 silent fallback을 전면 금지한다. <code>unwrap_or(0)</code>, <code>unwrap_or_default()</code>, <code>unwrap_or_else(|| ...)</code> 패턴은 즉시 <code>Err</code> 반환으로 교체한다.</p>
 <p>예상치 못한 상태에서 0점이나 기본값으로 계산을 계속하는 것보다 에러를 즉시 노출하는 것이 안전하다. 추천 결과가 틀리는 것이 시스템 오류보다 훨씬 나쁜 결과다.</p>
-<p>허용 목록(<code>feedback_silent_fallback_allowed.md</code>)에 24곳의 예외를 명시하고, 새 예외는 반드시 이 파일을 먼저 업데이트하도록 했다.</p>
+<p>허용 목록(<code>silent_fallback_allowed.md</code>)에 24곳의 예외를 명시하고, 새 예외는 반드시 이 파일을 먼저 업데이트하도록 했다.</p>
 <h2 id="db-트리거로-closed-라운드-보호">DB 트리거로 CLOSED 라운드 보호</h2>
 <p>CLOSED 상태의 라운드 데이터는 삭제·수정이 불가능해야 한다. 미들웨어 검사만으로는 버그나 직접 DB 접근을 막을 수 없다. SQLite 트리거로 DB 수준에서 차단한다.</p>
 <p>유일한 예외: <code>applications.abandoned: 0 → 1</code> 업데이트. 포기 처리만 허용한다.</p>

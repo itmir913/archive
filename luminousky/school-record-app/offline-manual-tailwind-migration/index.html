@@ -18,7 +18,7 @@ luminousky · archive
 <li><strong>PDF 인쇄(Ctrl+P) 지원</strong> — 교사가 종이 매뉴얼로 출력할 수 있어야 한다</li>
 <li><strong>앱 내 별도 창으로 열기</strong> — 외부 브라우저 없이 앱에서 직접 열어야 한다</li>
 </ul>
-<p>Tauri의 <code>WebviewWindow</code>가 Chromium 기반이므로 Ctrl+P가 기본 지원된다. <code>WebviewWindow('manual', { url: '/manual/index.html' })</code>로 별도 창을 띄우는 방식을 선택했다.</p>
+<p>Tauri의 <code>WebviewWindow</code>가 Chromium 기반이므로 Ctrl+P가 기본 지원된다. <code>WebviewWindow('manual', { url: '/manual.html' })</code>로 별도 창을 띄우는 방식을 선택했다.</p>
 <h3 id="vite-mpa-구성">Vite MPA 구성</h3>
 <p>매뉴얼 HTML을 Vite의 두 번째 entry point로 등록했다:</p>
 <pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="js"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">// vite.config.js</span></span>
@@ -26,7 +26,7 @@ luminousky · archive
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">  rollupOptions</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: {</span></span>
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">    input</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: {</span></span>
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">      main</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">resolve</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"index.html"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">),</span></span>
-<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">      manual</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">resolve</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"manual/index.html"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">),</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">      manual</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">resolve</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"manual.html"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">),</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    },</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  },</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">},</span></span>
@@ -37,7 +37,7 @@ luminousky · archive
 <h3 id="배경-css-변수--tailwind-유틸리티">배경: CSS 변수 → Tailwind 유틸리티</h3>
 <p>4월의 CSS 리팩토링에서 <code>--clr-bg-base</code> 같은 CSS 변수를 도입했다. 이것으로 색상 관리는 됐지만, 다크/라이트 테마 전환을 지원하려면 모든 하드코딩 hex와 rgba를 변수 기반으로 바꿔야 했다. 그렇다면 여기서 한 발 더 나아가 scoped CSS 전체를 Tailwind 유틸리티로 대체하기로 했다.</p>
 <h3 id="css-변수--tailwind-브릿지-설계">CSS 변수 → Tailwind 브릿지 설계</h3>
-<p>17개 런타임 CSS 변수를 <code>@theme inline</code>으로 Tailwind에 연결했다:</p>
+<p>16개 런타임 CSS 변수를 <code>@theme inline</code>으로 Tailwind에 연결했다:</p>
 <pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="css"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">/* style.css */</span></span>
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">:root</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
 <span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">  --c-base</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">#080b14</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
@@ -47,7 +47,7 @@ luminousky · archive
 <span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">  /* ... */</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">[</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">data-theme</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"light"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">] {</span></span>
-<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">  --c-base</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">#f8fafc</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">  --c-base</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">#f3f1ed</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
 <span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">  /* ... */</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span>
 <span class="line"></span></code></pre>
