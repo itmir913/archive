@@ -90,3 +90,8 @@ html.dark .astro-code span {
 .prose code {
   word-break: break-word;
 }
+
+/* 검색 결과 excerpt의 긴 URL·해시 overflow 방지 — Pagefind <mark> 태그 포함 */
+#search-result-list {
+  overflow-wrap: anywhere;
+}
