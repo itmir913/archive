@@ -15,7 +15,7 @@ draft: false
 - **PDF 인쇄(Ctrl+P) 지원** — 교사가 종이 매뉴얼로 출력할 수 있어야 한다
 - **앱 내 별도 창으로 열기** — 외부 브라우저 없이 앱에서 직접 열어야 한다
 
-Tauri의 `WebviewWindow`가 Chromium 기반이므로 Ctrl+P가 기본 지원된다. `WebviewWindow('manual', { url: '/manual/index.html' })`로 별도 창을 띄우는 방식을 선택했다.
+Tauri의 `WebviewWindow`가 Chromium 기반이므로 Ctrl+P가 기본 지원된다. `WebviewWindow('manual', { url: '/manual.html' })`로 별도 창을 띄우는 방식을 선택했다.
 
 ### Vite MPA 구성
 
@@ -27,7 +27,7 @@ build: {
   rollupOptions: {
     input: {
       main: resolve("index.html"),
-      manual: resolve("manual/index.html"),
+      manual: resolve("manual.html"),
     },
   },
 },
@@ -45,7 +45,7 @@ build: {
 
 ### CSS 변수 → Tailwind 브릿지 설계
 
-17개 런타임 CSS 변수를 `@theme inline`으로 Tailwind에 연결했다:
+16개 런타임 CSS 변수를 `@theme inline`으로 Tailwind에 연결했다:
 
 ```css
 /* style.css */
@@ -57,7 +57,7 @@ build: {
   /* ... */
 }
 [data-theme="light"] {
-  --c-base: #f8fafc;
+  --c-base: #f3f1ed;
   /* ... */
 }
 ```

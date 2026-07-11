@@ -62,4 +62,4 @@ GAS의 CacheService는 키당 100KB 제한이 있어 직접 청크 분할을 구
 - **경쟁 조건**: `rebuildMetadataIndex`와 정기 트리거 간 `LockService.tryLock(0)` 추가
 - **XSS 패턴**: `onclick="window.open('${url}')"` → `data-url` 속성 방식으로 교체
 
-마지막 검증에서 `testBooleanParser` 64개, `testDriveIntegration` 8개 전원 통과.
+마지막 검증에서 `testBooleanParser` 24개, `testDriveIntegration` 8개 전원 통과.
