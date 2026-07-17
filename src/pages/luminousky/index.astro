@@ -4,7 +4,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { PROJECTS } from '../../data/luminousky-projects';
 
 const allPosts = await getCollection('luminousky', ({ data }) => !data.draft);
-allPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+allPosts.sort((a, b) => {
+  const dateDiff = b.data.date.getTime() - a.data.date.getTime();
+  if (dateDiff !== 0) return dateDiff;
+  return a.data.title.localeCompare(b.data.title, 'ko');
+});
 
 const byProject = new Map<string, typeof allPosts>();
 const projectNames = new Map<string, string>();
