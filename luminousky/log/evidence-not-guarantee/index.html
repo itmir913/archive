@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="ko" class="antialiased scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="릴리즈 확신을 확인받으려 했을 때 확언 대신 문장이 교정된 경험, 그리고 검증 도구가 판단을 대신하지 않는다는 것에 대한 기록"><title>보장하지 않는다 — 공학적 증거와 법적 안전성 사이에서 — luminousky</title><!-- 다크모드 FOUC 방지 — 렌더링 전 클래스 적용 --><script>
+      (function () {
+        var t = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (t === 'dark' || (!t && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script><!-- OG / Twitter 메타태그 --><meta property="og:type" content="article"><meta property="og:site_name" content="luminousky"><meta property="og:title" content="보장하지 않는다 — 공학적 증거와 법적 안전성 사이에서 — luminousky"><meta property="og:description" content="릴리즈 확신을 확인받으려 했을 때 확언 대신 문장이 교정된 경험, 그리고 검증 도구가 판단을 대신하지 않는다는 것에 대한 기록"><meta property="og:url" content="https://luminousky.com/archive/luminousky/log/evidence-not-guarantee/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="보장하지 않는다 — 공학적 증거와 법적 안전성 사이에서 — luminousky"><meta name="twitter:description" content="릴리즈 확신을 확인받으려 했을 때 확언 대신 문장이 교정된 경험, 그리고 검증 도구가 판단을 대신하지 않는다는 것에 대한 기록"><link rel="canonical" href="https://luminousky.com/archive/luminousky/log/evidence-not-guarantee/"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.D1rHOD7u.css"><script type="module" src="/archive/_astro/hoisted.CVcv2i_h.js"></script></head> <body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans min-h-screen flex flex-col transition-colors"> <header class="sticky top-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-black/[0.06] dark:border-white/[0.06]"> <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"> <a href="/archive/" class="text-base font-semibold tracking-tight text-gray-900 dark:text-gray-100 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+luminousky · archive
+</a> <nav class="flex items-center gap-1"> <a href="/archive/" class="text-base font-medium text-gray-900 dark:text-gray-100 no-underline px-3 py-1.5 rounded-md bg-gray-100 dark:bg-gray-800 transition-colors">Archive</a> <a href="/archive/timeline/" class="text-base font-medium text-gray-400 dark:text-gray-500 no-underline px-3 py-1.5 rounded-md hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Timeline</a> <button id="theme-toggle" aria-label="Toggle dark mode" class="ml-1 p-2 rounded-md text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"> <!-- 라이트 모드에서 표시 (달 아이콘 → 다크로 전환) --> <svg id="icon-moon" class="w-5 h-5 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> <!-- 다크 모드에서 표시 (해 아이콘 → 라이트로 전환) --> <svg id="icon-sun" class="w-5 h-5 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> </nav> </div> </header> <main class="flex-1"> <div class="max-w-5xl mx-auto px-6 py-14">  <div> <a href="/archive/luminousky/" data-pagefind-ignore class="inline-block text-base text-gray-400 mb-8 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+← luminousky
+</a> <header class="mb-10" data-pagefind-ignore> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-5 text-gray-900 dark:text-gray-100"> 보장하지 않는다 — 공학적 증거와 법적 안전성 사이에서 </h1> <div class="flex flex-wrap items-center gap-3 text-base text-gray-400"> <time datetime="2026-07-23T14:00:00.000Z"> July 23, 2026 </time> <span aria-hidden="true">·</span> <span class="text-violet-500">Dev Log</span> </div> <p class="mt-4 mb-0 text-lg text-gray-500 dark:text-gray-400 leading-relaxed border-l-2 border-gray-200 dark:border-gray-700 pl-4"> 릴리즈 확신을 확인받으려 했을 때 확언 대신 문장이 교정된 경험, 그리고 검증 도구가 판단을 대신하지 않는다는 것에 대한 기록 </p> </header> <!-- pagefind 메타 (검색 결과 카드용) --> <div class="hidden"> <span data-pagefind-meta="date">July 23, 2026</span> <span data-pagefind-meta="project">Dev Log</span> <span data-pagefind-meta="project-slug">log</span> <span data-pagefind-filter="section:luminousky"></span> </div> <div class="prose prose-gray dark:prose-invert max-w-none" data-pagefind-body> <h2 id="확신의-문장을-확인받고-싶었다">확신의 문장을 확인받고 싶었다</h2>
+<p>릴리즈를 앞두고 한 문장을 확인받으려 했다. “입력이나 설정 오류가 없다면 이 시스템의
+모든 과정이 정확하게 구현되어 있음을 테스트로 보장한다.” 이것이 곧 공개 릴리즈
+가능 여부의 판단 지점이라고 생각했다.</p>
+<h2 id="문장이-한-단어씩-교정됐다">문장이 한 단어씩 교정됐다</h2>
+<p>그 문장은 그대로 확언되지 않았다. 대신 한 단어씩 교정됐다.</p>
+<p>“모든 과정”은 “검증한 범위”로. “보장한다”는 “강하게 뒷받침된다”로. “법적 안전성”은
+“공학적 증거이지 법적 안전성의 인증이 아니다”로. 변이 검사는 “주입한 변형을
+검출한다”를 보이는 것이지 “모든 결함이 없다”를 보이는 것이 아니며, 어떤 유한한 테스트
+스위트도 “모든 경계조건 처리”를 수학적으로 보장하지는 못한다 — 그것은 형식 검증의
+영역이다.</p>
+<p>처음에는 더 단정적인 문장을 기대했다. 판단 근거로 삼을 깔끔한 결론이 필요했기
+때문이다.</p>
+<h2 id="과장하지-않는-것이-결과물이었다">과장하지 않는 것이 결과물이었다</h2>
+<p>돌이켜 보면, 릴리즈와 그에 따른 책임이 걸린 자리에서 과장하지 않는 것 자체가
+결과물이었다. “전부 보장된다”는 답을 받았다면, 나는 그 문장을 근거로 실제보다 큰
+확신을 안고 릴리즈했을 것이다. 문제가 생긴 뒤 “테스트가 보장한다고 했다”고 말할 수는
+있어도, 그 문장은 실제로 아무것도 지켜주지 못한다.</p>
+<p>과장의 더 큰 위험은 타인을 오도하는 쪽이 아니라 스스로를 오도하는 쪽에 있다. 학생들의
+진학에 영향을 주는 도구에서, 검증 근거보다 앞선 확신은 그 자체가 위험 요소다. 문장이
+교정된 것은 그 지점을 넘지 않게 한 것이다.</p>
+<h2 id="이후">이후</h2>
+<p>이제 두 문장을 구분해서 쓴다. “이 로직이 규칙대로 동작한다는 근거가 있다”와 “이
+시스템이 안전하다”는 다른 문장이다. 앞의 것은 테스트와 변이 검사가 뒷받침한다. 뒤의
+것은 그 근거를 바탕으로 사람이 내리는 판단이며, 도구가 대신 서명할 수 있는 문장이
+아니다.</p>
+<p>검증 도구가 하는 일은 “괜찮다”고 말해주는 것이 아니라, 무엇이 검증됐고 무엇이 검증
+밖인지 구분해 주고 마지막 판단을 사람에게 돌려주는 것이었다.</p> </div> <!-- 이전 / 다음 / 목록 --> <nav class="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800 grid grid-cols-1 sm:grid-cols-7 sm:items-stretch gap-3" data-pagefind-ignore> <div class="sm:col-span-3 sm:order-1"> <a href="/archive/luminousky/log/luminousky-brand-origin/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all h-full"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">← Prev</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> luminousky — 닉네임의 기원과 도메인 </span> </a> </div> <div class="sm:col-span-3 sm:order-3">  </div> <div class="sm:col-span-1 sm:order-2"> <a href="/archive/luminousky/" class="w-full h-full flex items-center justify-center text-base text-gray-500 dark:text-gray-400 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all">
+목록
+</a> </div> </nav> </div>  </div> </main> <footer class="border-t border-gray-100 dark:border-gray-800 mt-auto"> <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-end gap-6"> <a href="https://luminousky.com" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+luminousky.com ↗
+</a> <a href="https://github.com/itmir913" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+GitHub ↗
+</a> </div> </footer> <!-- 맨 위로 버튼 --> <button id="back-to-top" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 p-2.5 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 shadow-sm transition-all duration-200 opacity-0 pointer-events-none"> <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path> </svg> </button>  </body> </html>

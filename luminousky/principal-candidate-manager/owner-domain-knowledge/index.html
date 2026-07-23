@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="ko" class="antialiased scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="소유자 판단 라운드에서 하위 세션과 오케스트레이터가 도달한 결론을 내가 세 번 뒤집었다. 각 순간의 판단 근거와 왜 도메인 지식이 결정적이었는지"><title>학교장추천자 선발 관리 시스템 — AI 오케스트레이터를 세 번 뒤집은 순간들 — luminousky</title><!-- 다크모드 FOUC 방지 — 렌더링 전 클래스 적용 --><script>
+      (function () {
+        var t = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (t === 'dark' || (!t && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script><!-- OG / Twitter 메타태그 --><meta property="og:type" content="article"><meta property="og:site_name" content="luminousky"><meta property="og:title" content="학교장추천자 선발 관리 시스템 — AI 오케스트레이터를 세 번 뒤집은 순간들 — luminousky"><meta property="og:description" content="소유자 판단 라운드에서 하위 세션과 오케스트레이터가 도달한 결론을 내가 세 번 뒤집었다. 각 순간의 판단 근거와 왜 도메인 지식이 결정적이었는지"><meta property="og:url" content="https://luminousky.com/archive/luminousky/principal-candidate-manager/owner-domain-knowledge/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="학교장추천자 선발 관리 시스템 — AI 오케스트레이터를 세 번 뒤집은 순간들 — luminousky"><meta name="twitter:description" content="소유자 판단 라운드에서 하위 세션과 오케스트레이터가 도달한 결론을 내가 세 번 뒤집었다. 각 순간의 판단 근거와 왜 도메인 지식이 결정적이었는지"><link rel="canonical" href="https://luminousky.com/archive/luminousky/principal-candidate-manager/owner-domain-knowledge/"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"><link rel="stylesheet" href="/archive/_astro/index.D1rHOD7u.css"><script type="module" src="/archive/_astro/hoisted.CVcv2i_h.js"></script></head> <body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans min-h-screen flex flex-col transition-colors"> <header class="sticky top-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-black/[0.06] dark:border-white/[0.06]"> <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"> <a href="/archive/" class="text-base font-semibold tracking-tight text-gray-900 dark:text-gray-100 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+luminousky · archive
+</a> <nav class="flex items-center gap-1"> <a href="/archive/" class="text-base font-medium text-gray-900 dark:text-gray-100 no-underline px-3 py-1.5 rounded-md bg-gray-100 dark:bg-gray-800 transition-colors">Archive</a> <a href="/archive/timeline/" class="text-base font-medium text-gray-400 dark:text-gray-500 no-underline px-3 py-1.5 rounded-md hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Timeline</a> <button id="theme-toggle" aria-label="Toggle dark mode" class="ml-1 p-2 rounded-md text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"> <!-- 라이트 모드에서 표시 (달 아이콘 → 다크로 전환) --> <svg id="icon-moon" class="w-5 h-5 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> <!-- 다크 모드에서 표시 (해 아이콘 → 라이트로 전환) --> <svg id="icon-sun" class="w-5 h-5 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> </nav> </div> </header> <main class="flex-1"> <div class="max-w-5xl mx-auto px-6 py-14">  <div> <a href="/archive/luminousky/" data-pagefind-ignore class="inline-block text-base text-gray-400 mb-8 no-underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+← luminousky
+</a> <header class="mb-10" data-pagefind-ignore> <h1 class="text-3xl font-bold leading-tight tracking-tight m-0 mb-5 text-gray-900 dark:text-gray-100"> 학교장추천자 선발 관리 시스템 — AI 오케스트레이터를 세 번 뒤집은 순간들 </h1> <div class="flex flex-wrap items-center gap-3 text-base text-gray-400"> <time datetime="2026-07-21T07:00:00.000Z"> July 21, 2026 </time> <span aria-hidden="true">·</span> <span class="text-violet-500">Principal Candidate Manager</span> </div> <p class="mt-4 mb-0 text-lg text-gray-500 dark:text-gray-400 leading-relaxed border-l-2 border-gray-200 dark:border-gray-700 pl-4"> 소유자 판단 라운드에서 하위 세션과 오케스트레이터가 도달한 결론을 내가 세 번 뒤집었다. 각 순간의 판단 근거와 왜 도메인 지식이 결정적이었는지 </p> </header> <!-- pagefind 메타 (검색 결과 카드용) --> <div class="hidden"> <span data-pagefind-meta="date">July 21, 2026</span> <span data-pagefind-meta="project">Principal Candidate Manager</span> <span data-pagefind-meta="project-slug">principal-candidate-manager</span> <span data-pagefind-filter="section:luminousky"></span> </div> <div class="prose prose-gray dark:prose-invert max-w-none" data-pagefind-body> <h2 id="세-번의-개입">세 번의 개입</h2>
+<p>2차 감사가 끝나고 소유자 판단 라운드를 열었다. 하위 세션(Sonnet 5)에게 오케스트레이터
+추천 없이 7개 항목에 대한 독립 권고안을 받았다. 그 결과가 도착한 뒤 내 첨언을
+붙였다.</p>
+<p>7건 중 3자가 완전 수렴한 것이 3건, 내가 오케스트레이터와 하위 세션 둘 다를 뒤집은
+것이 3건이었다. 각각 뒤집은 이유가 달랐고, 각각 남길 만한 교훈이 있다.</p>
+<h2 id="첫-번째--버그로-오판된-것이-실제로는-의도된-설계였다">첫 번째 — 버그로 오판된 것이 실제로는 의도된 설계였다</h2>
+<h3 id="상황">상황</h3>
+<p>Excel 임포트에서 COMPOSITE 전형요소는 트랙별 값을 지원한다. 파일에 “대학명”과
+“모집단위명” 두 열이 있으면 트랙별 저장, 없거나 셀만 비어 있으면 공통 테이블 저장.</p>
+<p>B 감사(Opus 4.7)가 이걸 문제로 봤다. “열 자체가 파일에 없는 경우 조용히 공통
+테이블로 강등된다. 담당자가 SIMPLE 템플릿을 재사용하거나 실수로 열을 지우면 트랙별
+값을 의도했더라도 공통값으로 저장되고 200 응답이 온다.” 심각도 낮음-중간.</p>
+<p>소유자 라운드에서 Sonnet 5가 이 항목의 재판정을 받았다. 3a(<code>require_cols</code>로 열 강제)
+방향을 제시했다. 오케스트레이터도 같은 방향에 동의했다.</p>
+<h3 id="내가-뒤집은-판단">내가 뒤집은 판단</h3>
+<p>내 첨언은 한 줄이었다. “COMPOSITE 열에서 대학명이나 모집단위 없으면 공통으로
+fall back하는건 의도한 설계가 맞아.”</p>
+<p>이 판단이 가능했던 이유는 내가 실제 운영 워크플로를 알고 있었기 때문이다. 담당자가
+“이 area는 트랙 무관하게 공통값”으로 결정해 두 열을 생략하는 경우가 실제로 있다.
+프론트가 항상 올바른 템플릿을 제공하기 때문에 SIMPLE 템플릿을 재사용하는 실수는
+사실상 발생하지 않는다.</p>
+<p><code>require_cols</code> 강제로 갔다면 이 워크플로가 깨졌을 것이다. 담당자는 두 열을 채우기
+위해 트랙마다 같은 값을 반복 입력해야 했을 것이다.</p>
+<h3 id="하위-세션이-정직하게-짚어둔-부분">하위 세션이 정직하게 짚어둔 부분</h3>
+<p>Sonnet 5가 이 재판정에서 “자신 없는 부분”으로 다음을 정직하게 명시해두었다.</p>
+<blockquote>
+<p>정말로 담당자가 “이 COMPOSITE area는 전부 공통값”이라는 의도로 열 자체를 생략하는
+워크플로가 실무에 존재한다면 (3a)는 그 사용성을 깨뜨린다. 이 점은 실제 운영
+관행은 코드만으로 확정할 수 없다.</p>
+</blockquote>
+<p>이 표시가 결정적이었다. 만약 하위 세션이 “3a로 확실히 가면 된다”고 단정했다면
+오케스트레이터도 나도 그 확신에 밀렸을 것이다. 판단 보류를 정답으로 인정하는
+방법론적 지시가 실제 사고를 막았다.</p>
+<p>문서만 정정하면 되는 일이었다. <code>08_excel_import.md</code>의 “COMPOSITE 추가 헤더” 표현이
+필수처럼 읽혔던 것이 원인이었다. “COMPOSITE 선택 헤더”로 바꾸고 fallback이 지원됨을
+명시했다.</p>
+<h2 id="두-번째--표준-관행을-벗어난-대안">두 번째 — 표준 관행을 벗어난 대안</h2>
+<h3 id="상황-1">상황</h3>
+<p>담임 로그인에 brute-force 방어가 없다는 것이 감사에서 짚였다. 담임 비밀번호 최소
+4자, 반 목록을 무인증으로 노출하는 API, 무제한 시도. 학교 내부망이라도 학생이 자기
+담임 계정을 노릴 수 있는 구조였다.</p>
+<p>Sonnet 5가 재판정에서 class_id별 임계값 잠금(5회 실패 → 15분 잠금) + 인메모리 저장을
+제안했다. 표준 rate-limit 패턴에 정확히 부합했다. 오케스트레이터도 이 방향을 선호했다.</p>
+<h3 id="내가-제안한-대안">내가 제안한 대안</h3>
+<p>첨언에 다른 접근을 넣었다.</p>
+<blockquote>
+<p>담임 로그인 rate limit는 사실 구현이 복잡할 수 있다. 그런데, 애초에 backend가
+지수적 백오프 방식으로 로그인을 시도할수록 대기 시간을 늘려서 즉시 반환-0.5초-
+1초-2초-3초-5초… 이렇게 대기하도록 진행하는게 낫지 않아?</p>
+</blockquote>
+<p>지수 백오프였다. 응답 자체를 지연시키는 방식.</p>
+<h3 id="왜-이-접근을-제안했나">왜 이 접근을 제안했나</h3>
+<p>임계값 잠금 방식이 갖는 부작용들이 이 시스템 컨텍스트에서 문제가 될 거라고 봤다.</p>
+<p>첫째, 잠금 상태를 관리해야 한다. <code>class_id → (attempts, locked_until)</code> 두 값이
+필요하고, “당신은 잠겼다” 알림 UI도 필요하다. 관리자가 잠금 해제하는 관리 화면까지
+가면 부담이 더 커진다.</p>
+<p>둘째, 같은 반 학생들이 우연히 여러 번 오입력하면 담임 본인도 잠긴다. 성적 처리
+시즌에 이런 사고가 나면 담임이 시스템 관리자에게 전화해야 한다.</p>
+<p>셋째, 정상 담임이 비번을 잊어 여러 번 시도하는 상황에서도 잠금이 걸린다. 이 시스템은
+학교 내부망에서 하루 몇 번 쓰는 정도라, 정상 사용자의 첫 실수에 대한 UX 부담을
+낮추는 것이 중요했다.</p>
+<p>지수 백오프는 이 부작용이 전부 없다. attempt counter 하나만 있으면 되고, 잠금 상태
+자체가 없어서 UI도 필요 없다. 정상 사용자의 첫 실패는 즉시 응답이다. 방어 강도로
+보면 5초 캡에서 초당 0.2회로 제한하니 4자리 비번이라도 브루트포스가 실질적으로
+불가능하다. LAN 학교 규모라 tokio sleep 태스크 자원도 문제 없다.</p>
+<h3 id="관행이-컨텍스트에-안-맞는다는-감각">관행이 컨텍스트에 안 맞는다는 감각</h3>
+<p>Fable 메타 검토도 이 판단에 동의했다. 이후 오케스트레이터가 자기 지적 목록에
+“표준 패턴 관행에 갇힌다”를 추가했다.</p>
+<p>내가 지수 백오프를 떠올릴 수 있었던 이유가 특별하지는 않다. 이 시스템의 실제 사용
+환경(수십 명, LAN, 하루 몇 번, 우호적 사용자)을 아니까 다른 접근이 자연스러웠던
+것뿐이다. 그런데 하위 세션과 오케스트레이터는 이 컨텍스트에도 불구하고 표준 패턴을
+기본값으로 놓고 있었다.</p>
+<p>AI가 학습한 표준 패턴은 강력한 도구지만, 학습 분포의 다수 케이스(다중 사용자 SaaS,
+익명 공격자, 대규모 트래픽)가 이 시스템의 소수 케이스에 그대로 적용되지는 않는다.
+이 감각이 소유자 개입의 자리다.</p>
+<h2 id="세-번째--감사가-다루지-않은-필드">세 번째 — 감사가 다루지 않은 필드</h2>
+<h3 id="상황-2">상황</h3>
+<p>백업 다운로드와 비밀번호 변경에 audit log가 없다는 것이 감사에서 짚였다. 소유자
+라운드에서 audit log 추가 방향이 확인됐다. Sonnet 5가 새 <code>AuditAction</code> variant
+3종을 추가하는 방향을 제시했고, 오케스트레이터가 동의했다.</p>
+<h3 id="내-첨언">내 첨언</h3>
+<p>간단했다.</p>
+<blockquote>
+<p>DB 백업 다운로드 감사도 추가해야 한다. 그런데, 이 경우에는 해당 클라이언트의
+아이피 주소까지 감사 기록에 넣어야 할 것 같다. 비번 변경도 아이피 주소까지
+감사 기록에 넣으면 좋을 듯.</p>
+</blockquote>
+<h3 id="하위-세션과-오케스트레이터가-놓친-것">하위 세션과 오케스트레이터가 놓친 것</h3>
+<p>audit log를 추가한다는 방향까지는 셋이 같았다. 하지만 <strong>어떤 필드를 기록할지</strong>는
+논의 대상이 아니었다. 하위 세션도 오케스트레이터도 IP 필드를 언급조차 하지 않았다.</p>
+<p>내가 IP를 짚은 이유는 사고 대응 관점에서 결정적이라고 봤기 때문이다. 백업 파일은
+전교생 개인정보 전량 반출이고, 비번 변경은 계정 탈취 공격의 전형적 첫 행동이다.
+사고가 났을 때 “언제 누가”뿐 아니라 “어느 단말에서” 정보가 있어야 원인 추적이 된다.</p>
+<p>학교 내부망은 대개 사설 IP지만, 학교 IT 담당자가 어느 컴퓨터(교무실 워크스테이션
+vs 담임 개인 노트북 vs 학생용 공용 컴퓨터)인지 특정할 수 있는 최소 단서가 IP다.
+이건 실제 사고 대응 사이클을 경험해봐야 알 수 있는 축이다.</p>
+<h3 id="이-사건이-남긴-것">이 사건이 남긴 것</h3>
+<p>Fable 메타 검토가 나중에 이걸 자기 지적으로 승격시켰다. “코드 감사 프레임에 갇혀
+제품·비즈니스 관점 결여.” 세션 프롬프트 축이 “정확성·트랜잭션·인증·임포트·계산”
+코드 축으로만 구성되어 있어, 사고 대응·운영성 같은 요소가 프레임 밖이었다는 지적.</p>
+<p>내가 IP를 짚지 않았다면 audit log는 형식은 갖췄지만 실용성은 없는 상태로 릴리즈될
+뻔했다. 사고가 나야 아쉬워졌을 것이다.</p>
+<h2 id="세-사건이-공유하는-것">세 사건이 공유하는 것</h2>
+<p><strong>첫째, 의도된 설계 vs 코드 결함의 구분은 도메인 소유자만 확정 가능하다.</strong> 코드는
+“이런 경로가 있다”만 보여주지 의도를 말하지 않는다.</p>
+<p><strong>둘째, 관행이 맞지 않는 컨텍스트가 있다는 감각은 실제 사용 환경을 아는 사람에게서
+나온다.</strong> AI는 학습한 패턴을 그 자체로 옳다고 여기는 경향이 있다.</p>
+<p><strong>셋째, 감사의 프레임 자체(무엇을 검토 축으로 삼는가)를 소유자가 흔들어야 하는 지점이
+있다.</strong> 이번 프로젝트에서 audit log의 실용성 축, 로그인 방어의 UX 축, 임포트의 사용성
+축 모두 내가 짚어서 확장되었다.</p>
+<p>이래서 도메인 소유자가 감사 라운드에 반드시 판단자로 참여해야 하는 것이다. 이걸
+가능하게 하는 구조를 처음부터 방법론에 넣어두어야, 사후에 “그때 짚었어야 했는데”가
+반복되지 않는다. 앵커링 없는 3자 비교 구조가 이 목적을 위한 장치였다.</p> </div> <!-- 이전 / 다음 / 목록 --> <nav class="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800 grid grid-cols-1 sm:grid-cols-7 sm:items-stretch gap-3" data-pagefind-ignore> <div class="sm:col-span-3 sm:order-1"> <a href="/archive/luminousky/principal-candidate-manager/preview-confirm-equivalence/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all h-full"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">← Prev</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> 학교장추천자 선발 관리 시스템 — 낮음 판정을 심각으로 뒤집은 순간 </span> </a> </div> <div class="sm:col-span-3 sm:order-3"> <a href="/archive/luminousky/principal-candidate-manager/context-redefinition/" class="group flex flex-col gap-1 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all sm:text-right h-full"> <span class="text-base text-gray-400 group-hover:text-blue-500 transition-colors">Next →</span> <span class="text-base font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors line-clamp-2 leading-snug"> 학교장추천자 선발 관리 시스템 — Fable의 판정 프레임을 재정의한 순간 </span> </a> </div> <div class="sm:col-span-1 sm:order-2"> <a href="/archive/luminousky/" class="w-full h-full flex items-center justify-center text-base text-gray-500 dark:text-gray-400 no-underline p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50/40 dark:hover:bg-blue-950/40 transition-all">
+목록
+</a> </div> </nav> </div>  </div> </main> <footer class="border-t border-gray-100 dark:border-gray-800 mt-auto"> <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-end gap-6"> <a href="https://luminousky.com" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+luminousky.com ↗
+</a> <a href="https://github.com/itmir913" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 no-underline transition-colors">
+GitHub ↗
+</a> </div> </footer> <!-- 맨 위로 버튼 --> <button id="back-to-top" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 p-2.5 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 shadow-sm transition-all duration-200 opacity-0 pointer-events-none"> <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path> </svg> </button>  </body> </html>
