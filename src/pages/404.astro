@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<BaseLayout title="페이지를 찾을 수 없습니다" pagefindIgnore={true}>
+<BaseLayout title="페이지를 찾을 수 없습니다" pagefindIgnore={true} noindex>
   <div class="flex flex-col items-center justify-center py-20 text-center">
     <p class="text-base text-gray-400 dark:text-gray-500" id="redirect-msg">
       잘못된 주소입니다. 올바른 페이지로 이동 중입니다…
