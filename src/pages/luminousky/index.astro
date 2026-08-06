@@ -444,7 +444,7 @@ function formatDate(d: Date) {
 
   if (query.length >= 2) {
     runSearch(query);
-  } else if (mode === 'timeline') {
+  } else if ((mode as string) === 'timeline') {
     setView('browse-timeline');
   } else {
     setView('browse-project');
