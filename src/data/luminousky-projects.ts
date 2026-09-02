@@ -5,4 +5,5 @@ export const PROJECTS: Record<string, string> = {
   'school-record-app': 'School Record Editor',
   'principal-candidate-manager': 'Principal Candidate Manager',
   'gfpc': 'GFPC Programming Challenge',
+  'ml-playgrounds': 'ML Playgrounds',
 };
