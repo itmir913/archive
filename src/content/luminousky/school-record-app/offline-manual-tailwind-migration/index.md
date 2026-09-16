@@ -76,7 +76,7 @@ build: {
 
 ### 결과
 
-24개 Vue 파일 전체를 마이그레이션했다. scoped CSS가 완전히 제거된 파일이 대부분이고, 나머지 파일도 pseudo-element(`::after`, `::placeholder`)나 복잡한 동적 선택자처럼 Tailwind로 표현할 수 없는 1~4줄만 남겼다.
+24개 Vue 파일 전체를 마이그레이션했다. scoped CSS가 완전히 제거된 파일이 대부분이고, 나머지 파일도 pseudo-element(`::after`, `::placeholder`)나 복잡한 동적 선택자처럼 Tailwind로 표현할 수 없는 1-4줄만 남겼다.
 
 ---
 

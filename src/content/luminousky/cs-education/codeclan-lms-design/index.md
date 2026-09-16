@@ -55,7 +55,7 @@ Phase 2: Windows Job Object로 메모리/CPU 사용량 제한.
 
 목업 10개(`docs/mockups/01~10_*.html`)가 완성된 상태에서 `dev` 브랜치 단계별 구현 중이다. 목업을 먼저 완성하고 백엔드/프론트를 구현하는 순서를 지킨다.
 
-`master` 브랜치에는 Phase 0~9 구현체가 있고, `dev` 브랜치에서 전면 재설계 중이다. 핵심 변경은 `divisions` 기반 → `classes` 기반으로의 도메인 모델 재정립이다.
+`master` 브랜치에는 Phase 0-9 구현체가 있고, `dev` 브랜치에서 전면 재설계 중이다. 핵심 변경은 `divisions` 기반 → `classes` 기반으로의 도메인 모델 재정립이다.
 
 완료된 단계:
 - 0-1단계: Tauri+Axum 뼈대, 초기 설정 화면
