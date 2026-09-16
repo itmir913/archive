@@ -2,7 +2,7 @@
 title: "UPX를 비활성화하고 42분 후에 스택을 폐기했다 — PyInstaller에서 Tauri로"
 date: "2026-09-16T00:00:00+09:00"
 description: "다른 학교 교사가 전송한 오류 화면 한 장에서 시작해 당일 밤에 PyQt6를 제거하기까지, 미봉책을 포기하기까지 소요된 42분에 관하여"
-draft: true
+draft: false
 ---
 
 ## 내 PC에서는 정상 동작했다
