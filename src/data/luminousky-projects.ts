@@ -13,7 +13,7 @@ export const PROJECTS: Record<string, Project> = {
   'principal-candidate-manager': { name: 'PCM', alias: '학교장추천' },
   'gfpc': { name: 'GFPC', alias: 'GFPC 대회' },
   'ml-playgrounds': { name: 'ML Playgrounds', alias: 'ML 플레이그라운드' },
-  'goe-navi': { name: 'goe-navi', alias: '수시 내비' },
+  'goe-navi': { name: 'goe-navi', alias: '수시 나비' },
 };
 
 /** 정식 표시 이름. 등록되지 않은 slug는 fallback을 거쳐 slug 자체를 반환한다. */
