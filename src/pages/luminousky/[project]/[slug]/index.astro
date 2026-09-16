@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
-import { PROJECTS } from '../../../../data/luminousky-projects';
+import { projectName } from '../../../../data/luminousky-projects';
 
 export async function getStaticPaths() {
   const posts = await getCollection('luminousky', ({ data }) => !data.draft);
@@ -28,7 +28,7 @@ const { post, prevPost, nextPost } = Astro.props;
 const { Content } = await post.render();
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const projectSlug = post.slug.split('/')[0];
-const projectName = PROJECTS[projectSlug] ?? post.data.project ?? projectSlug;
+const displayName = projectName(projectSlug, post.data.project);
 
 function formatDate(d: Date) {
   return d.toLocaleDateString('en-US', {
@@ -71,7 +71,7 @@ function postUrl(p: typeof post) {
           {formatDate(post.data.date)}
         </time>
         <span aria-hidden="true">·</span>
-        <span class="text-violet-500">{projectName}</span>
+        <span class="text-violet-500">{displayName}</span>
       </div>
       {post.data.description && (
         <p class="mt-4 mb-0 text-lg text-gray-500 dark:text-gray-400 leading-relaxed border-l-2 border-gray-200 dark:border-gray-700 pl-4">
@@ -83,7 +83,7 @@ function postUrl(p: typeof post) {
     <!-- pagefind 메타 (검색 결과 카드용) -->
     <div class="hidden">
       <span data-pagefind-meta="date">{formatDate(post.data.date)}</span>
-      <span data-pagefind-meta="project">{projectName}</span>
+      <span data-pagefind-meta="project">{displayName}</span>
       <span data-pagefind-meta="project-slug">{projectSlug}</span>
       <span data-pagefind-filter="section:luminousky"></span>
     </div>
