@@ -70,7 +70,7 @@ Snapshot 테이블
 
 스냅샷을 찍으면 두 단계가 순서대로 실행된다.
 
-1. 현재 `ActivityRecord` 전체를 `ActivityRecordHistory`에 밀어 넣는다. `ActivityRecord.updated_at`을 `changed_at`으로 사용한다. 단, 같은 `(activity_record_id, changed_at)` 조합이 이미 존재하면 삽입하지 않는다.
+1. 현재 `ActivityRecord` 전체를 `ActivityRecordHistory`에 삽입한다. `ActivityRecord.updated_at`을 `changed_at`으로 사용한다. 단, 같은 `(activity_record_id, changed_at)` 조합이 이미 존재하면 삽입하지 않는다.
 
 ```sql
 INSERT INTO ActivityRecordHistory (activity_record_id, content, changed_at, note)
@@ -153,7 +153,7 @@ DB 파일이 손상됐다는 것은 앱이 그 파일을 열 수 없다는 것�
 
 ## GitHub Actions → Releases → 랜딩 페이지 배포
 
-저장과 직접적인 관련은 없지만, 같은 "장기 지속 가능성" 관점에서 배포 구조도 짚을 만하다.
+저장과 직접적인 관련은 없지만, 같은 "장기 지속 가능성" 관점에서 배포 구조도 언급할 만하다.
 
 배포 인프라 비용은 0원이다.
 

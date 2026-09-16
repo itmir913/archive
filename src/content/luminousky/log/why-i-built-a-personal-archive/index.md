@@ -100,7 +100,7 @@ This is a deliberate choice. A technical blog from 2013 reflects 2013-era thinki
 
 ## Lessons Learned
 
-**Full-text search is non-negotiable for large archives.** With 657 posts, navigation by year or category alone is insufficient. Pagefind's static index approach was the right call — it requires no backend and generates a ~2MB index for the full corpus.
+**Full-text search is non-negotiable for large archives.** With 657 posts, navigation by year or category alone is insufficient. Pagefind's static index approach was the right call — it requires no backend and generates an approximately 2MB index for the full corpus.
 
 **Content-as-code is the right ownership model.** The entire archive is a Git repository. Every post is a Markdown file. Adding, editing, or reverting content is a standard git workflow. No admin panel, no database migration, no vendor lock-in.
 

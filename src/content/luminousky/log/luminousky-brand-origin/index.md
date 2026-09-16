@@ -21,7 +21,7 @@ itmir는 **IT + Mir**다. 당시 닉네임이 Mir(Miru)였고, 블로그 이름�
 
 아쉬웠다. 한 달 차이였다.
 
-대안을 생각했다. `luminous_ky`로 GitHub 아이디를 바꿀까. 그런데 itmir913으로 이미 쌓인 것들이 많았다. 어차피 luminousky를 GitHub에서 쓸 수 없다면, itmir913을 그대로 유지하는 편이 낫다고 결론 냈다. 닉네임은 luminousky로 쓰되, GitHub 아이디는 itmir913으로 남기기로 했다.
+대안을 생각했다. `luminous_ky`로 GitHub 아이디를 바꿀까. 그런데 itmir913으로 이미 축적된 것이 많았다. 어차피 luminousky를 GitHub에서 쓸 수 없다면, itmir913을 그대로 유지하는 편이 낫다고 결론지었다. 닉네임은 luminousky로 쓰되, GitHub 아이디는 itmir913으로 남기기로 했다.
 
 ## itmir와 luminousky
 

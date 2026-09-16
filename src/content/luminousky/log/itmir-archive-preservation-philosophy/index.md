@@ -1,7 +1,7 @@
 ﻿---
 title: "ITMir 아카이브 — 보존 철학과 Astro 기반 아키텍처"
 date: "2026-07-04T00:00:00+09:00"
-description: "2013~2021년 ITMir 블로그 포스트를 정적 사이트로 영구 보존하기까지"
+description: "2013-2021년 ITMir 블로그 포스트를 정적 사이트로 영구 보존하기까지"
 draft: false
 ---
 

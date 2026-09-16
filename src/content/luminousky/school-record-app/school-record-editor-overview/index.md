@@ -33,7 +33,7 @@ Electron 대신 Tauri를 선택한 이유는 하나다: **번들 크기와 메�
 
 ### Vue 3 + Tailwind CSS
 
-프론트엔드는 Vue 3로 구성했다. 섹션(Section)과 모달(Modal) 구분이 명확하고, Pinia 스토어를 통해 백엔드 invoke 호출을 캡슐화하는 구조를 잡았다. 컴포넌트가 Tauri invoke를 직접 호출하지 않고 반드시 스토어를 경유하는 것이 원칙이다.
+프론트엔드는 Vue 3로 구성했다. 섹션(Section)과 모달(Modal) 구분이 명확하고, Pinia 스토어를 통해 백엔드 invoke 호출을 캡슐화하는 구조로 설계했다. 컴포넌트가 Tauri invoke를 직접 호출하지 않고 반드시 스토어를 경유하는 것이 원칙이다.
 
 ### SQLite
 

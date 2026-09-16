@@ -7,7 +7,7 @@ draft: false
 
 ## 문제: 2,156줄짜리 main.rs
 
-초기에는 Tauri 관례대로 모든 커맨드를 `main.rs` 하나에 몰아넣었다. 기능을 빠르게 붙이다 보니 파일이 2,156줄까지 불어났다. 특정 커맨드를 찾으려면 파일 전체를 훑어야 했고, 테스트를 작성하려면 Tauri 커맨드 래퍼까지 함께 테스트해야 했다.
+초기에는 Tauri 관례대로 모든 커맨드를 `main.rs` 하나에 몰아넣었다. 기능을 빠르게 추가하다 보니 파일이 2,156줄까지 증가했다. 특정 커맨드를 탐색하려면 파일 전체를 검토해야 했고, 테스트를 작성하려면 Tauri 커맨드 래퍼까지 함께 테스트해야 했다.
 
 근본 문제는 **비즈니스 로직과 Tauri 커맨드 래퍼가 뒤섞여 있다는 것**이었다. Tauri 커맨드(`#[tauri::command]`)는 State를 받고 결과를 `Result<T, String>`으로 반환하는 얇은 레이어여야 하는데, 실제 로직까지 담고 있었다.
 
@@ -33,7 +33,7 @@ pub fn get_areas_impl(conn: &Connection) -> Result<Vec<Area>, rusqlite::Error> {
 
 ```
 src-tauri/src/
-├── main.rs          — main() + 모듈 선언만 (~55줄)
+├── main.rs          — main() + 모듈 선언만 (약 55줄)
 ├── db.rs            — DB 초기화, 마이그레이션
 ├── state.rs         — DbState, CryptoState 등 공유 상태
 ├── types.rs         — Serialize/Deserialize 구조체 21개

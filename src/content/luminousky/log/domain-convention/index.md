@@ -20,7 +20,7 @@ luminousky.com 도메인은 두 계층으로 분리해 운영한다.
 
 설계보다 연결이 먼저였다.
 
-`luminousky.com` 루트 도메인을 GitHub Pages용 `github.io` 레포지토리와 연결한 것이 출발점이다. GitHub Pages는 레포지토리 하나를 루트 도메인에 연결하면 그 하위 경로 전체(`luminousky.com/*`)가 해당 레포지토리의 정적 배포로 서비스된다. 루트 도메인 자체가 GitHub Pages에 묶인 순간, `luminousky.com/*`는 자연스럽게 정적 호스팅 영역이 되었다.
+`luminousky.com` 루트 도메인을 GitHub Pages용 `github.io` 레포지토리와 연결한 것이 출발점이다. GitHub Pages는 레포지토리 하나를 루트 도메인에 연결하면 그 하위 경로 전체(`luminousky.com/*`)가 해당 레포지토리의 정적 배포로 서비스된다. 루트 도메인 자체가 GitHub Pages에 연결된 순간, `luminousky.com/*`는 자연스럽게 정적 호스팅 영역이 되었다.
 
 동적 서비스가 필요해졌을 때, 루트 경로는 이미 GitHub Pages가 점유하고 있었다. 선택지는 서브도메인뿐이었고, Docker 기반 서버를 `*.luminousky.com`에 연결하는 것으로 정리되었다.
 

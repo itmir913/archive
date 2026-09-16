@@ -37,7 +37,7 @@ classes (수업: 과목+분반 조합)
             └─ submissions
             └─ submission_drafts
 
-problems (문항, 전역 공유, type 1~5)
+problems (문항, 전역 공유, type 1-5)
 attendance_records (출석 스냅샷)
 auth_tokens (교사 쿠키 세션, 12시간)
 ```
@@ -58,7 +58,7 @@ Phase 2: Windows Job Object로 메모리/CPU 사용량 제한.
 `master` 브랜치에는 Phase 0~9 구현체가 있고, `dev` 브랜치에서 전면 재설계 중이다. 핵심 변경은 `divisions` 기반 → `classes` 기반으로의 도메인 모델 재정립이다.
 
 완료된 단계:
-- 0~1단계: Tauri+Axum 뼈대, 초기 설정 화면
+- 0-1단계: Tauri+Axum 뼈대, 초기 설정 화면
 - 2단계: 교사/학생 인증 (argon2, 쿠키 세션)
 - 3단계: 교사 홈, 어드민 뷰, 학생 홈, 설정
 - 4단계: 수업 상세(ClassDetailView), 학생 관리
