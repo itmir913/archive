@@ -159,12 +159,8 @@ edittext = (EditText) findViewById(R.id.editText1);
 button = (Button) findViewById(R.id.button1);
 button.setOnClickListener(new View.OnClickListener() { // 한 버튼만 OnClickListener를 연결합니다
        public void onClick(View v) { //버튼을 눌렀을때 어떤 작업을 할지 선언합니다
-        ```java
-String inPutText = edittext.getText().toString();
-```
-        ```java
-Toast.makeText(MainActivity.this, inPutText, Toast.LENGTH_SHORT).show();
-```
+        String inPutText = edittext.getText().toString();
+        Toast.makeText(MainActivity.this, inPutText, Toast.LENGTH_SHORT).show();
        }});
 ```
 
@@ -202,9 +198,7 @@ Toast.makeText(MainActivity.this, inPutText, Toast.LENGTH_SHORT).show();
 
 여기서 아래에 있는 토스트는 다음시간쯤 더 자세히 배우니 여기서는 그렇구나 하고 넘어가 주세요
 
-위에 있는 ```java
-String inPutText = edittext.getText().toString();
-```은 여기서 꼭 짚고 갈겁니다
+위에 있는 `String inPutText = edittext.getText().toString();`은 여기서 꼭 짚고 갈겁니다
 
 자바에서(사실 대부분의 언어가) 변수를 지정하는 방법은 다음과 같습니다
 

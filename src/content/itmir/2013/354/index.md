@@ -76,19 +76,15 @@ Layouts이라는 폴더를 열어 RelativeLayout을 바로 체크박스 아래�
 
 추가하자 마자 코드를 보면 다음과 같습니다
 
+```xml
 <RelativeLayout
-
     android:layout_width="wrap_content"
-
     android:layout_height="wrap_content"
-
     android:layout_below="@+id/checkBox1"
-
     android:layout_centerHorizontal="true"
-
     android:layout_marginTop="28dp" >
-
 </RelativeLayout>
+```
 
 잘 추가되었습니다. ㅎㅎ
 
@@ -106,37 +102,25 @@ android:id="@+id/Layout"
 
 만들어진 코드는 아래와 같습니다
 
+```xml
 <CheckBox
-
     android:id="@+id/checkBox1"
-
     android:layout_width="wrap_content"
-
     android:layout_height="wrap_content"
-
     android:layout_alignParentTop="true"
-
     android:layout_centerHorizontal="true"
-
     android:layout_marginTop="45dp"
-
     android:text="체크하시면 나타납니다" />
 
 <RelativeLayout
-
     android:id="@+id/Layout"
-
     android:layout_width="match_parent"
-
     android:layout_height="match_parent"
-
     android:layout_below="@+id/checkBox1"
-
     android:layout_centerHorizontal="true"
-
     android:layout_marginTop="28dp" >
-
 </RelativeLayout>
+```
 
 ![](./images/4.jpg)
 
@@ -180,21 +164,16 @@ A. 체크박스는 여러개를 선택할수 있습니다
 
 처음 라디오 그룹을 지정할때의 코드입니다
 
+```xml
 <RadioGroup
-
     android:id="@+id/Radiogroup"
-
     android:layout_width="wrap_content"
-
     android:layout_height="wrap_content"
-
     android:layout_below="@+id/toggleButton1"
-
     android:layout_centerHorizontal="true"
-
-**android:orientation="vertical"**
-
-**android:padding="5dp"**>
+    android:orientation="vertical"
+    android:padding="5dp">
+```
 
 id값 주고있고... 특별한건 일단 두개 말곤 눈에 안틔죠?
 
@@ -212,31 +191,22 @@ android:padding은 여백입니다
 
 그다음!!
 
+```xml
 <RadioButton
-
         android:id="@+id/radioButton1"
-
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
-
         android:layout_marginTop="27dp"
-
         android:text="남자" />
 
     <RadioButton
-
         android:id="@+id/radioButton2"
-
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
-
         android:layout_alignLeft="@+id/radioButton1"
-
         android:layout_below="@+id/radioButton1"
-
         android:text="여자" />
+```
 
 요놈들은 뭐...
 
@@ -264,13 +234,12 @@ android:padding은 여백입니다
 
 뭘 사용할건지 정의를 해야죠~
 
+```java
 CheckBox checkBox1;
-
 RelativeLayout Layout;
-
 ToggleButton toggleButton1;
-
 RadioGroup Radiogroup;
+```
 
 뭔지 대충 아시죠??ㅋㅋ
 
@@ -278,13 +247,12 @@ RadioGroup Radiogroup;
 
 그다음에 id값을 연결해 봅시다
 
+```java
 checkBox1 = (CheckBox) findViewById(R.id.checkBox1);
-
 Layout = (RelativeLayout) findViewById(R.id.Layout);
-
 toggleButton1 = (ToggleButton) findViewById(R.id.toggleButton1);
-
 Radiogroup = (RadioGroup) findViewById(R.id.Radiogroup);
+```
 
 음음 여기까진 모두 따라 오시고 계시죠?
 
@@ -292,7 +260,9 @@ Radiogroup = (RadioGroup) findViewById(R.id.Radiogroup);
 
 그다음 Layout을 일단 안보이게 해야 합니다
 
+```java
 Layout.setVisibility(View.GONE);
+```
 
 쉬운거 끝~!
 
@@ -302,25 +272,18 @@ Layout.setVisibility(View.GONE);
 
 체크가 변경될때마다 리스너를 이용하여 레이아웃을 안보이게/보이게 만들어 봅시다
 
-checkBox1.**setOnCheckedChangeListener**(new CompoundButton.OnCheckedChangeListener() {
-
+```java
+checkBox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 @Override
-
-public void **onCheckedChanged**(CompoundButton buttonView, boolean isChecked) {
-
+public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 // TODO Auto-generated method stub
-
-**if(isChecked****)**
-
-**Layout.setVisibility(View.VISIBLE);**
-
-**else**
-
-**Layout.setVisibility(View.GONE);**
-
+if(isChecked)
+Layout.setVisibility(View.VISIBLE);
+else
+Layout.setVisibility(View.GONE);
 }
-
 });
+```
 
 (색 바꿔봤어요 ㅎㅎ, 그리고 **PC버전**으로 봐주세요 되도록)
 
@@ -354,25 +317,18 @@ A. 우리는 리스너로 바로 연결해서 onCheckedChanged가 호출될때 b
 
 그다음 토글버튼 해봅시다
 
+```java
 toggleButton1.setOnClickListener(new OnClickListener() {
-
 @Override
-
 public void onClick(View v) {
-
 // TODO Auto-generated method stub
-
 if(toggleButton1.isChecked())
-
 Toast.makeText(MainActivity.this, "토글버튼 체크됨", Toast.LENGTH_SHORT).show();
-
 else
-
 Toast.makeText(MainActivity.this, "토글버튼 체크 해제", Toast.LENGTH_SHORT).show();
-
 }
-
 });
+```
 
 이건 뭐...
 
@@ -386,33 +342,22 @@ Toast.makeText(MainActivity.this, "토글버튼 체크 해제", Toast.LENGTH_SHO
 
 마지막 라디오 버튼관련 소스입니다
 
-Radiogroup.**setOnCheckedChangeListener**(new OnCheckedChangeListener() {
-
+```java
+Radiogroup.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 @Override
-
-public void **onCheckedChanged**(RadioGroup group, **int checkedId**) {
-
+public void onCheckedChanged(RadioGroup group, int checkedId) {
 // TODO Auto-generated method stub
-
 switch (checkedId){
-
 case R.id.radioButton1:
-
 Toast.makeText(MainActivity.this, "당신은 남자군요", Toast.LENGTH_SHORT).show();
-
 break;
-
 case R.id.radioButton2:
-
 Toast.makeText(MainActivity.this, "당신은 여자군요", Toast.LENGTH_SHORT).show();
-
 break;
-
 }
-
 }
-
 });
+```
 
 라디오 버튼을 감싸고 있던 라디오 그룹 기억 나시나 모르겠네요 ㅎ
 

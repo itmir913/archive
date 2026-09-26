@@ -64,9 +64,10 @@ original_url: "https://itmir.tistory.com/358"
 
 먼저 첫번째 메소드의 맨 위에 아래 소스가 필요합니다
 
+```java
 LayoutInflater inflater = (LayoutInflater)getSystemService(this.LAYOUT_INFLATER_SERVICE);
-
-View view = inflater.inflate(**R.layout.activity_alert1**, null);
+View view = inflater.inflate(R.layout.activity_alert1, null);
+```
 
 [소스 3-1] LayoutInflater를 이용한 코드
 
@@ -94,18 +95,20 @@ View view = inflater.inflate(**R.layout.activity_alert1**, null);
 
 그다음 소스는 아래와 같습니다
 
+```java
 AlertDialog.Builder alert = new AlertDialog.Builder(this);
 
-alert.setTitle("알림");  
-alert.setPositiveButton("확인", new DialogInterface.OnClickListener() {  
-    @Override  
-    public void onClick(DialogInterface dialog, int which) {  
-        dialog.dismiss();  
-    }  
-});  
-alert.setNegativeButton("취소", null);  
-alert.**setView(view);**  
+alert.setTitle("알림");
+alert.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+    @Override
+    public void onClick(DialogInterface dialog, int which) {
+        dialog.dismiss();
+    }
+});
+alert.setNegativeButton("취소", null);
+alert.setView(view);
 alert.show();
+```
 
 [소스 3-2] setView를 사용한 알림 소스
 
@@ -119,20 +122,22 @@ View를 적용할수 있는 setView()메소드 잘 기억해 두세요!
 
 완성 코드
 
-LayoutInflater inflater = (LayoutInflater)getSystemService(this.LAYOUT_INFLATER_SERVICE);  
-  View view = inflater.inflate(R.layout.activity_alert1, null);  
-    
-  AlertDialog.Builder alert = new AlertDialog.Builder(this);  
-  alert.setTitle("알림");  
-  alert.setPositiveButton("확인", new DialogInterface.OnClickListener() {  
-      @Override  
-      public void onClick(DialogInterface dialog, int which) {  
-      dialog.dismiss();  
-      }  
-  });  
-  alert.setNegativeButton("취소", null);  
-  alert.setView(view);  
+```java
+LayoutInflater inflater = (LayoutInflater)getSystemService(this.LAYOUT_INFLATER_SERVICE);
+  View view = inflater.inflate(R.layout.activity_alert1, null);
+
+  AlertDialog.Builder alert = new AlertDialog.Builder(this);
+  alert.setTitle("알림");
+  alert.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+      @Override
+      public void onClick(DialogInterface dialog, int which) {
+      dialog.dismiss();
+      }
+  });
+  alert.setNegativeButton("취소", null);
+  alert.setView(view);
   alert.show();
+```
 
 ### 17-4 커스텀 알림에 리스트 추가하기 - 1
 
@@ -140,25 +145,27 @@ LayoutInflater inflater = (LayoutInflater)getSystemService(this.LAYOUT_INFLATER_
 
 그리고 이번에는 알림 코드의 단축형(?)을 사용해 보겠습니다
 
-new AlertDialog.Builder(this)  
-.setTitle("알림")  
-**.setItems(R.array.Like,  
-    new DialogInterface.OnClickListener(){  
-    public void onClick(DialogInterface dialog, int which){  
-        String[] Like = getResources().getStringArray(R.array.Like);  
-        Toast.makeText(MainActivity.this, "가장 좋아하는것은: " + Like[which], Toast.LENGTH_SHORT).show();**
+```java
+new AlertDialog.Builder(this)
+.setTitle("알림")
+.setItems(R.array.Like,
+    new DialogInterface.OnClickListener(){
+    public void onClick(DialogInterface dialog, int which){
+        String[] Like = getResources().getStringArray(R.array.Like);
+        Toast.makeText(MainActivity.this, "가장 좋아하는것은: " + Like[which], Toast.LENGTH_SHORT).show();
 
-**dialog.dismiss();  
-    }  
-})**
+dialog.dismiss();
+    }
+})
 
-.setPositiveButton("확인", new DialogInterface.OnClickListener(){  
-    @Override  
-    public void onClick(DialogInterface dialog, int which) {  
-        dialog.dismiss();  
-    }  
-})  
+.setPositiveButton("확인", new DialogInterface.OnClickListener(){
+    @Override
+    public void onClick(DialogInterface dialog, int which) {
+        dialog.dismiss();
+    }
+})
 .show();
+```
 
 [소스 4-1] 터치하면 창이 닫히는 리스트 알림 소스
 
@@ -222,23 +229,25 @@ String[]란? 자바 상식이 필요한데요 문자 배열을 저장하는 변�
 
 작동 코드
 
-new AlertDialog.Builder(this)  
-  .setTitle("알림")  
-  .setItems(R.array.Like,  
-   new DialogInterface.OnClickListener(){  
-   public void onClick(DialogInterface dialog, int which){  
-    String[] Like = getResources().getStringArray(R.array.Like);  
-    Toast.makeText(MainActivity.this, "가장 좋아하는것은: " + Like[which], Toast.LENGTH_SHORT).show();  
-    dialog.dismiss();  
-   }  
-  })  
-  .setPositiveButton("확인", new DialogInterface.OnClickListener(){  
-   @Override  
-   public void onClick(DialogInterface dialog, int which) {  
-    dialog.dismiss();  
-   }  
-  })  
+```java
+new AlertDialog.Builder(this)
+  .setTitle("알림")
+  .setItems(R.array.Like,
+   new DialogInterface.OnClickListener(){
+   public void onClick(DialogInterface dialog, int which){
+    String[] Like = getResources().getStringArray(R.array.Like);
+    Toast.makeText(MainActivity.this, "가장 좋아하는것은: " + Like[which], Toast.LENGTH_SHORT).show();
+    dialog.dismiss();
+   }
+  })
+  .setPositiveButton("확인", new DialogInterface.OnClickListener(){
+   @Override
+   public void onClick(DialogInterface dialog, int which) {
+    dialog.dismiss();
+   }
+  })
   .show();
+```
 
 ### 17-5 커스텀 알림에 리스트 추가하기 - 2
 
@@ -246,26 +255,30 @@ new AlertDialog.Builder(this)
 
 아무튼 이번에는 [그림 2-3]을 구현해 보겠습니다
 
-**int Choose = 0;**
+```java
+int Choose = 0;
+```
 
 ...
 
-new AlertDialog.Builder(this)  
-.setTitle("알림")  
-**.setSingleChoiceItems(R.array.Like, Choose,  
- new DialogInterface.OnClickListener(){  
- public void onClick(DialogInterface dialog, int which){**     **Choose=which;  
- }  
-})**  
-.setPositiveButton("확인",new DialogInterface.OnClickListener(){  
- public void onClick(DialogInterface dialog, int whichButton){  
-     **String[] Like = getResources().getStringArray(R.array.Like);**  
-     Toast.makeText(MainActivity.this, "가장 좋아하는것은: "+**Like[Choose]**, Toast.LENGTH_SHORT).show();  
-     dialog.dismiss();  
- }  
-})  
-.setNegativeButton("취소",null)  
+```java
+new AlertDialog.Builder(this)
+.setTitle("알림")
+.setSingleChoiceItems(R.array.Like, Choose,
+ new DialogInterface.OnClickListener(){
+ public void onClick(DialogInterface dialog, int which){     Choose=which;
+ }
+})
+.setPositiveButton("확인",new DialogInterface.OnClickListener(){
+ public void onClick(DialogInterface dialog, int whichButton){
+     String[] Like = getResources().getStringArray(R.array.Like);
+     Toast.makeText(MainActivity.this, "가장 좋아하는것은: "+Like[Choose], Toast.LENGTH_SHORT).show();
+     dialog.dismiss();
+ }
+})
+.setNegativeButton("취소",null)
 .show();
+```
 
 [소스 5-1] 라디오 버튼이 있는 리스트 알림 띄우기
 
@@ -289,31 +302,35 @@ new AlertDialog.Builder(this)
 
 그러므로 지금 이해가 안된다면 꼭 이해하려 하지 마세요
 
-**boolean[]** MultChoose = {false, false, false, false, false}
+```java
+boolean[] MultChoose = {false, false, false, false, false}
+```
 
 ...
 
-new AlertDialog.Builder(this)  
-  .setTitle("알림")  
-  .setMultiChoiceItems(R.array.Like, MultChoose,  
-   new DialogInterface.OnMultiChoiceClickListener() {  
-   public void onClick(DialogInterface dialog, **int which**, **boolean isChecked**) {  
-    MultChoose[which]=**isChecked**;  
-    }  
-   })  
-  .setPositiveButton("확인",new DialogInterface.OnClickListener() {  
-   public void onClick(DialogInterface dialog, int whichButton) {  
-    **String[]** foods = getResources().getStringArray(R.array.Like);  
-    String string= "가장 좋아하는것은: ";  
-    for(int i=0; i<MultChoose.length;i++){  
-     **if(MultChoose[i]){  
-      string += foods[i] + ", ";  
-     }**    }  
-    Toast.makeText(MainActivity.this, string, Toast.LENGTH_SHORT).show();  
-   }  
-  })  
-  .setNegativeButton("취소",null)  
+```java
+new AlertDialog.Builder(this)
+  .setTitle("알림")
+  .setMultiChoiceItems(R.array.Like, MultChoose,
+   new DialogInterface.OnMultiChoiceClickListener() {
+   public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+    MultChoose[which]=isChecked;
+    }
+   })
+  .setPositiveButton("확인",new DialogInterface.OnClickListener() {
+   public void onClick(DialogInterface dialog, int whichButton) {
+    String[] foods = getResources().getStringArray(R.array.Like);
+    String string= "가장 좋아하는것은: ";
+    for(int i=0; i<MultChoose.length;i++){
+     if(MultChoose[i]){
+      string += foods[i] + ", ";
+     }    }
+    Toast.makeText(MainActivity.this, string, Toast.LENGTH_SHORT).show();
+   }
+  })
+  .setNegativeButton("취소",null)
   .show();
+```
 
 [소스 6-1] 체크 박스가 있는 리스트 알림 띄우기
 
@@ -331,7 +348,9 @@ new AlertDialog.Builder(this)
 
 즉 which가 2고 isChecked가 true가 되면
 
-boolean[] MultChoose = {false, **true**, false, false, false};
+```java
+boolean[] MultChoose = {false, true, false, false, false};
+```
 
 로 변하게 됩니다
 

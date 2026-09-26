@@ -328,7 +328,7 @@ C:\Program Files\baidu\BaiduYunGuanjia
 
 ~~BaiduCloud_5.1.1(SPAPA).apk~~ *(파일 없음)*
 
-*** 대용량 클라우드 서비스**
+**\* 대용량 클라우드 서비스**
 
 **바이두 무료 대용량 클라우드 서비소개 :  <http://spapa1004.tistory.com/51>**
 

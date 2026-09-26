@@ -12,6 +12,7 @@ original_url: "https://itmir.tistory.com/328"
 
 한번 띄워 볼까요?
 
+```java
 private void showNotify(Context context) {
 
 NotificationManager nm = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
@@ -30,13 +31,14 @@ PendingIntent contentIntent = PendingIntent.getActivity(context, 0, new Intent(c
 
 // MainActivity.class는 알림을 터치하면 이동할 액티비티이다
 
-notification.setLatestEventInfo(context, **"제목", "내용"**, contentIntent);
+notification.setLatestEventInfo(context, "제목", "내용", contentIntent);
 
 nm.notify(1234, notification);
 
 // 1234는 알림을 구분할 상수이고, 알림을 지울때 이 상수가 필요하다
 
 }
+```
 
 이 메소드를 실행하면 됩니다
 

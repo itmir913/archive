@@ -54,8 +54,9 @@ fragment같이 context를 상속하고 있다면 Context같은것을 넣어주�
 
 -상속을 어떻게 알수 있나요?
 
-`java
+```java
 public class MainActivity extends Activity {
+```
 
 이걸 보면 밑줄이 있죠? extends가 상속한다는 뜻입니다
 
@@ -67,7 +68,7 @@ this다음 쉼표(,)뒤에는 토스트 메세지가 들어갑니다
 
 R.string.(스트링 이름)을 쓸때는
 
-``java
+```java
 Toast.makeText(this, R.string.toast,Toast.LENGTH_SHORT).show();
 ```
 
@@ -105,10 +106,10 @@ rand의 자세한 내용은 [2013/08/14 - [미르의 개발 이야기/Java 배�
 
 우리는 아래 코드만 알면 됩니다
 
-`java
+```java
 num = ((int)(Math.random() * 9));
 num++;
-`
+```
 
 이게 랜덤의 숫자를 구하는 가장 최소한의 두줄입니다 ㅎㅎㅎㅎㅎㅎㅎㅎ 제가 직접 짰어요
 
@@ -122,7 +123,7 @@ num++;
 
 먼저 activity_main.xml의 코드 내용입니다
 
-``xml
+```xml
 <Button  
  android:id="@+id/button1"  
  android:layout_width="80sp"  
@@ -219,8 +220,10 @@ num++;
 
 왜냐, 메소드를 이용한 방법도 알아야 하고 listener을 사용하면 ID값을 찾고 일일히 listener을 연결해야 합니다
 
+```java
 public class MainActivity extends Activity {  
  +int num;
+```
 
 여기서
 
@@ -228,6 +231,7 @@ int num;을 추가해 주세요
 
 그다음 메소드를 하나 추가할건데요 이번 어플에서는 onCreate를 건들지 않습니다
 
+```java
 public void ClickMethod(View v){  
  num = ((int)(Math.random() * 9));  
  num++;  
@@ -270,7 +274,7 @@ public void ClickMethod(View v){
  break;  
  }  
  }
-`
+```
 
 이 코드를 통채로 넣어버리면 됩니다
 

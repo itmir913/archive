@@ -206,7 +206,7 @@ original_url: "https://itmir.tistory.com/338"
 
 **업데이트버전(1.6.0.360) 한글화 앱 :   [TencentCloud_1.6.0.360(SPAPA).apk](http://spapa1004.tistory.com/attachment/cfile3.uf@236BAA345245B17E185402.apk)**
 
-*** 대용량 클라우드 서비스**
+**\* 대용량 클라우드 서비스**
 
 **바이두 무료 대용량 클라우드 서비소개 :  <http://spapa1004.tistory.com/51>**
 
@@ -240,7 +240,7 @@ original_url: "https://itmir.tistory.com/338"
 
 **업데이트버전(1.6.0.360) 한글화 앱 :   [TencentCloud_1.6.0.360(SPAPA).apk](http://spapa1004.tistory.com/attachment/cfile3.uf@236BAA345245B17E185402.apk)**
 
-*** 대용량 클라우드 서비스**
+**\* 대용량 클라우드 서비스**
 
 **바이두 무료 대용량 클라우드 서비소개 :  <http://spapa1004.tistory.com/51>**
 
