@@ -30,13 +30,13 @@ original_url: "https://itmir.tistory.com/646"
 
 3) 모자이크 하지 않은 데이터는 제가 임의로 입력한 데이터입니다.
 
-4) 상세한 설명을 포스팅했습니다 : </archive/itmir/2018/647>
+4) 상세한 설명을 포스팅했습니다 : [/archive/itmir/2018/647](/archive/itmir/2018/647)
 
 ### 다운로드
 
-[정시 점수 공개 (2018.01.11).xlsx](https://github.com/itmir913/archive/releases/download/itmir-attachments/646-2018.01.11.xlsx).xlsx)
+[정시 점수 공개 (2018.01.11).xlsx](https://github.com/itmir913/archive/releases/download/itmir-attachments/646-2018.01.11.xlsx)
 
-파일이 업데이트 될 경우, </archive/itmir/2018/646>에서 확인해주세요.
+파일이 업데이트 될 경우, [/archive/itmir/2018/646](/archive/itmir/2018/646)에서 확인해주세요.
 
 ### 표본 데이터 넣기
 

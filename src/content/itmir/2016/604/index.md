@@ -36,7 +36,7 @@ Required by:
 
 app/build.gradle 파일이 아닌(Not)
 
-<App Source>/build.gradle 파일을 수정해야 한다.
+`<App Source>`/build.gradle 파일을 수정해야 한다.
 
 ```groovy
 dependencies {
