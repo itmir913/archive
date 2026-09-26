@@ -14,7 +14,7 @@ original_url: "https://itmir.tistory.com/275"
 
 관련 강좌로 Sleepy님의 강좌([강좌1](http://cafe.naver.com/develoid/165665), [강좌2](http://cafe.naver.com/develoid/141594))가 있지만 약간 이해가 안되는 바람에 다시 작성합니다.
 
-누가봐도 이해할수 있도록 작성해 보겠습니다~만 제 필력이 딸리는 바람에 이해가 안되는게 있다면 덧글로 질문해 주세요~
+누가봐도 이해할수 있도록 작성해 보겠습니다\~만 제 필력이 딸리는 바람에 이해가 안되는게 있다면 덧글로 질문해 주세요\~
 
 필자는 베가레이서2에게 cm10.1버프를 내려보고 싶어 이미 존재하는 hPa님의 cm10소스를 가지고 cm10.1을 빌드해본 경험이 있습니다.
 
@@ -56,20 +56,20 @@ ramdisk_offset값을 구해 --ramdisk_offset의 형식으로 넣어줘야만 합
 
 빌드하시다 보면 overlay부분에서 오류가 발생합니다.
 
-영어를 해석하다 보면 <add-recource>를 사용하라는 메모가 나타납니다.
+영어를 해석하다 보면 `<add-resource>`를 사용하라는 메모가 나타납니다.
 
 오류 내용을 확인해 보겠습니다.
 
 target Export Resources: framework-res (/home/whdghks913/cluster/system/out/target/common/obj/APPS/framework-res_intermediates/package-export.apk)  
-device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:30: **error: Resource at config_networkLocationProviderPackageName appears in overlay but not in the base package; use <add-resource> to add.**  
-device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:33: **error: Resource at config_geocodeProviderPackageName appears in overlay but not in the base package; use <add-resource> to add.**  
-device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:40: **error: Resource at config_autoBrightnessButtonKeyboard appears in overlay but not in the base package; use <add-resource> to add.**  
+device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:30: **error: Resource at config_networkLocationProviderPackageName appears in overlay but not in the base package; use `<add-resource>` to add.**  
+device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:33: **error: Resource at config_geocodeProviderPackageName appears in overlay but not in the base package; use `<add-resource>` to add.**  
+device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:40: **error: Resource at config_autoBrightnessButtonKeyboard appears in overlay but not in the base package; use `<add-resource>` to add.**  
 make: *** [/home/whdghks913/cluster/system/out/target/common/obj/APPS/framework-res_intermediates/package-export.apk] 오류 1  
 make: *** 파일 `/home/whdghks913/cluster/system/out/target/common/obj/APPS/framework-res_intermediates/package-export.apk'을(를) 지웁니다
 
 자 굵고 큰 글씨를 봅시다.
 
-친절하게 <add-resource>를 사용하라는 말이 뜹니다.
+친절하게 `<add-resource>`를 사용하라는 말이 뜹니다.
 
 그럼 이 add-resource를 사용해 봅시다.
 
@@ -77,7 +77,7 @@ make: *** 파일 `/home/whdghks913/cluster/system/out/target/common/obj/APPS/fra
 
 그다음 오류가 난 줄 위에 아래 구문을 넣어주세요.
 
-<add-resource type="string" name="오류난 overlay의 구문 이름"></add-resource>
+`<add-resource type="string" name="오류난 overlay의 구문 이름"></add-resource>`
 
 위 형식으로 넣어주시면 됩니다.
 
@@ -85,15 +85,15 @@ make: *** 파일 `/home/whdghks913/cluster/system/out/target/common/obj/APPS/fra
 
 예를 들어 볼까요?
 
-<bool name="config_hardwareAccelerated">true</bool>
+`<bool name="config_hardwareAccelerated">true</bool>`
 
 이 구문에서 오류가 났습니다 그럼 해결해 봅시다.
 
-<add-resource type="bool" name="config_hardwareAccelerated"></add-resource>
+`<add-resource type="bool" name="config_hardwareAccelerated"></add-resource>`
 
 이렇게 해결해 주시면 됩니다.
 
-참조 : [2013/03/24 - [강좌/팁/빌드 오류 해결] - Overlay의 문제, <add-resource>를 사용해 해결하자](http://whdghks913.tistory.com/182)
+참조 : [2013/03/24 - [강좌/팁/빌드 오류 해결] - Overlay의 문제, `<add-resource>`를 사용해 해결하자](http://whdghks913.tistory.com/182)
 
 **4. bluetooth 관련 오류**
 

@@ -109,8 +109,8 @@ Blank Activity를 눌러주시고 다음을 눌러줍시다
 
 이미 MainActivity는 있으니
 
-이름을 **ButtonActivity.java (각주: +2014-03-02 수정 : 자바에서 상속 관련때문에 Button과 같은 이름의 java파일을 만들수 없습니다
-예) Service.java, Button.java등의 파일을 만드시면 원하는 동작을 만드실수가 없어요)**으로 해주세요
+이름을 <strong>ButtonActivity.java (각주: +2014-03-02 수정 : 자바에서 상속 관련때문에 Button과 같은 이름의 java파일을 만들수 없습니다
+예) Service.java, Button.java등의 파일을 만드시면 원하는 동작을 만드실수가 없어요)</strong>으로 해주세요
 
 정상적으로 액티비티가 만들어 졌습니다~ ㅎㅎ
 

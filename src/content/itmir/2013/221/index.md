@@ -193,7 +193,7 @@ cd device/(제조사)/(기기명)로 터미널로 진입하신다음 기기를 U
 
 ```bash
 ./extract-files.sh
-`````n
+```
 을 입력하여 필요한 파일을 기기에서 pull하게 해주세요
 
 제가 사용하는 넥서스S의 경우 구글의 sh드라이버 지원이 끊겼습니다...
@@ -212,27 +212,27 @@ git clone은 아래와 같은 구조로 이루어져 있습니다
 
 ```bash
 git clone (가져올 repo주소) -b (가져올 브런치 이름)
-`````n
+```
 그럼 아래 박스를 입력하여 벤터를 가져와 봅시다
 
 ```bash
-git clone git://github.com/TheMuppets/proprietary\_vendor\_akm.git -b cm-10.1
-git clone git://github.com/TheMuppets/proprietary\_vendor\_broadcom.git -b cm-10.1
-git clone git://github.com/TheMuppets/proprietary\_vendor\_imgtec.git -b cm-10.1
-git clone git://github.com/TheMuppets/proprietary\_vendor\_nxp.git -b cm-10.1
-git clone git://github.com/TheMuppets/proprietary\_vendor\_samsung.git -b cm-10.1
-git clone git://github.com/TheMuppets/proprietary\_vendor\_widevine.git -b cm-10.1
-`````n
+git clone git://github.com/TheMuppets/proprietary_vendor_akm.git -b cm-10.1
+git clone git://github.com/TheMuppets/proprietary_vendor_broadcom.git -b cm-10.1
+git clone git://github.com/TheMuppets/proprietary_vendor_imgtec.git -b cm-10.1
+git clone git://github.com/TheMuppets/proprietary_vendor_nxp.git -b cm-10.1
+git clone git://github.com/TheMuppets/proprietary_vendor_samsung.git -b cm-10.1
+git clone git://github.com/TheMuppets/proprietary_vendor_widevine.git -b cm-10.1
+```
 이제 다운받은 폴더의 이름을 변경하여 봅시다
 
 ```bash
-mv proprietary\_vendor\_akm akm
-mv proprietary\_vendor\_broadcom broadcom
-mv proprietary\_vendor\_imgtec imgtec
-mv proprietary\_vendor\_nxp nxp
-mv proprietary\_vendor\_samsung samsung
-mv proprietary\_vendor\_widevine widevine
-`````
+mv proprietary_vendor_akm akm
+mv proprietary_vendor_broadcom broadcom
+mv proprietary_vendor_imgtec imgtec
+mv proprietary_vendor_nxp nxp
+mv proprietary_vendor_samsung samsung
+mv proprietary_vendor_widevine widevine
+```
 
 mv명령어는 파일을 이동할때 쓰이지만 파일명 또는 폴더명을 변경할때도 사용됩니다
 
@@ -294,7 +294,8 @@ BoardConfig.mk, device_(코드네임).mk등의 파일을 생성해야 합니다
 
 ```bash
 build/tools/device/mkvendor.sh
-`````으로 디바이스 소스의 기초를 생성할 수 있습니다
+```
+으로 디바이스 소스의 기초를 생성할 수 있습니다
 
 순정 boot.img가 필요합니다
 
@@ -320,7 +321,7 @@ cmdline등과 각종 Config설정을 BoardConfig.mk에 넣어주고 필요한 �
 
 ```bash
 . build/envsetup.sh
-lunch full\_(기기명)-eng 또는 lunch cm\_(기기명)-eng
+lunch full_(기기명)-eng 또는 lunch cm_(기기명)-eng
 brunch (기기명)
 `````
 

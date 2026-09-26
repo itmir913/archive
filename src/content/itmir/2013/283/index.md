@@ -531,7 +531,7 @@ button1 = (Button) view.findViewById(R.id.button1);
 <activity .. android:uiOptions="splitActionBarWhenNarrow" ..></activity>
 `````
 
-이 빨간 문구를 AndroidManifest.xml의 <activity> 부분에 넣어주세요.
+이 빨간 문구를 AndroidManifest.xml의 `<activity>` 부분에 넣어주세요.
 
 API 14보다 낮을경우, 이 구문은 무시됩니다.
 

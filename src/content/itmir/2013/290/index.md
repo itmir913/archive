@@ -153,9 +153,9 @@ OK 누르면 완료됩니다
 
 그럼 이제 어플에 추가하고 바꿔볼까요?
 
--<string name="hello_world">Hello world!</string>
+-`<string name="hello_world">Hello world!</string>`
 
-+<string name="hello_world">미르의 안드로이드 정복기!</string>
++`<string name="hello_world">미르의 안드로이드 정복기!</string>`
 
 -는 제거, +는 추가란 뜻으로 git써보신적 있으시다면 바로 아실겁니다. ㅎㅎ
 
