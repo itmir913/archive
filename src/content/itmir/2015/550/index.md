@@ -80,129 +80,70 @@ A1부터 C1까지를 각각 Timestamp, path, memo로 체워주세요.
 
 저기있는 function myFunction() { } 을 모두 지우고 아래 내용을 복사해서 넣어주세요.
 
+```javascript
 //  1. Enter sheet name where data is to be written below
-
-var SHEET_NAME = "**시트1**";
-
+var SHEET_NAME = "시트1";
 //  2. Run > setup
-
 //
-
 //  3. Publish > Deploy as web app
-
 //    - enter Project Version name and click 'Save New Version'
-
 //    - set security level and enable service (most likely execute as 'me' and access 'anyone, even anonymously)
-
 //
-
 //  4. Copy the 'Current web app URL' and post this in your form/script action
-
 //
-
 //  5. Insert column names on your destination sheet matching the parameter names of the data you are passing in (exactly matching case)
-
 var SCRIPT_PROP = PropertiesService.getScriptProperties(); // new property service
-
 // If you don't want to expose either GET or POST methods you can comment out the appropriate function
-
 function doGet(e){
-
   return handleResponse(e);
-
 }
-
 function doPost(e){
-
   return handleResponse(e);
-
 }
-
 function handleResponse(e) {
-
   // shortly after my original solution Google announced the LockService[1]
-
   // this prevents concurrent access overwritting data
-
   // [1] http://googleappsdeveloper.blogspot.co.uk/2011/10/concurrency-and-google-apps-script.html
-
   // we want a public lock, one that locks for all invocations
-
   var lock = LockService.getPublicLock();
-
   lock.waitLock(30000);  // wait 30 seconds before conceding defeat.
-
   try {
-
     // next set where we write the data - you could write to multiple/alternate destinations
-
     var doc = SpreadsheetApp.openById(SCRIPT_PROP.getProperty("key"));
-
     var sheet = doc.getSheetByName(SHEET_NAME);
-
     // we'll assume header is in row 1 but you can override with header_row in GET/POST data
-
     var headRow = e.parameter.header_row || 1;
-
     var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
-
     var nextRow = sheet.getLastRow()+1; // get next row
-
     var row = [];
-
     // loop through the header columns
-
     for (i in headers){
-
       if (headers[i] == "Timestamp"){ // special case if you include a 'Timestamp' column
-
         row.push(new Date());
-
       } else { // else use header name to get data
-
         row.push(e.parameter[headers[i]]);
-
       }
-
     }
-
     // more efficient to set values as [][] array than individually
-
     sheet.getRange(nextRow, 1, 1, row.length).setValues([row]);
-
     // return json success results
-
     return ContentService
-
           .createTextOutput(JSON.stringify({"result":"success", "row": nextRow}))
-
           .setMimeType(ContentService.MimeType.JSON);
-
   } catch(e){
-
     // if error return this
-
     return ContentService
-
           .createTextOutput(JSON.stringify({"result":"error", "error": e}))
-
           .setMimeType(ContentService.MimeType.JSON);
-
   } finally { //release lock
-
     lock.releaseLock();
-
   }
-
 }
-
 function setup() {
-
     var doc = SpreadsheetApp.getActiveSpreadsheet();
-
     SCRIPT_PROP.setProperty("key", doc.getId());
-
 }
+```
 
 맨위에 있는 시트1은 오류를 기록할 시트의 이름입니다.
 
@@ -240,7 +181,7 @@ function setup() {
 
 앱을 실행할 사용자는 '나'
 
-웹에 액세스할 수 있는 사용자는 **누구나(익명 사용자 포함)**으로 꼭 바꿔주세요.
+웹에 액세스할 수 있는 사용자는 <strong>누구나(익명 사용자 포함)</strong>으로 꼭 바꿔주세요.
 
 ![](./images/googlesheets_11.png)
 
@@ -282,67 +223,42 @@ function setup() {
 <div style="clear:both" />
 ```
 
-그다음 skin.html의 </body>부분에 아래 코드를 넣어주시되, 하늘색으로 표시한 부분에는 위에서 복사한 URL을 넣어주세요.
+그다음 skin.html의 `</body>`부분에 아래 코드를 넣어주시되, 하늘색으로 표시한 부분에는 위에서 복사한 URL을 넣어주세요.
 
 참고로 맨 위의 첫 줄은 jquery입니다.
 
 이미 jquery가 적용된 블로그의 경우 맨 윗 줄은 생략하셔야 합니다.
 
+```html
 <script>
-
 //오류제보하기 - http://nubiz.tistory.com/551
-
 $("#sendComment>p").click(function(){
-
   $("#sendComment>div").toggle(300);
-
 });
-
 function sendComment (){
-
-  $("#sendComment \*").attr("disabled","");
-
+  $("#sendComment *").attr("disabled","");
   var errors = []
-
   $("#sendComment :checkbox:checked").each(function(i){
-
     errors[i] = $(this).val();
-
   });
-
   var comment = $("#sendComment textarea").val();
-
   $.ajax({
-
-    url: "**https://script.google.com/macros/s/###############################/exec**",
-
+    url: "https://script.google.com/macros/s/###############################/exec",
     data: {
-
       path: decodeURIComponent(location.pathname),
-
       memo: errors+" / "+comment
-
     },
-
     type: "POST",
-
     success:function(){
-
       alert("빠른 시일 내에 검토해보겠습니다.\n감사합니다.");
-
       $("#sendComment :disabled").removeAttr("disabled");
-
       $("#sendComment textarea").val('');
-
       $("#sendComment :checkbox").prop("checked",false);
-
     }
-
   });
-
 }
-
 </script>
+```
 
 마지막으로 style.css에 아래 코드를 넣어주세요.
 

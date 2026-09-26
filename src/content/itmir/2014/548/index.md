@@ -113,7 +113,7 @@ original_url: "https://itmir.tistory.com/548"
 
 화면에 뷰를 추가하기 위한 권한을 추가해 줍시다
 
-<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+`<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />`
 
 ### 서비스 생성하기
 
@@ -133,9 +133,9 @@ AlwaysTopServiceNotTouch.java - 서비스 생성 (링크 참조해서 생성하�
 
 [AndroidManifest.xml] : 코드 추가
 
-<service android:name="itmir.tistory.examplewindowview.AlwaysTopServiceNotTouch" />
+`<service android:name="itmir.tistory.examplewindowview.AlwaysTopServiceNotTouch" />`
 
-<service android:name="itmir.tistory.examplewindowview.AlwaysTopServiceTouch" />
+`<service android:name="itmir.tistory.examplewindowview.AlwaysTopServiceTouch" />`
 
 [MainActivity.java] : 메소드 추가
 

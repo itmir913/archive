@@ -60,9 +60,9 @@ v1.0 2014-09-07
 
 - res/drawable-(모든폴더) 속 각각의 shadow.png
 
-- res/values/attrs.xml : <declare-styleable name="FloatingActionButton">부분
+- res/values/attrs.xml : `<declare-styleable name="FloatingActionButton">`부분
 
-- res/values/dimens.xml : <!-- FloatingActionButton --> 아래부분
+- res/values/dimens.xml : `<!-- FloatingActionButton -->` 아래부분
 
 ### How To Use?
 

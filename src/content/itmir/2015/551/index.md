@@ -375,11 +375,11 @@ meta-data의 android:resource에는 아까 res/xml에 정의한 파일 이름을
 
 AndroidManifest.xml에 정의된 Activity에는 아래 인탠트 필터를 넣어주세요
 
-> <intent-filter>
+> `<intent-filter>`
 >
 >     <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
 >
-> </intent-filter>
+> `</intent-filter>`
 
 이제 중요한게 남았는데요
 
