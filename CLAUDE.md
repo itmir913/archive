@@ -92,7 +92,7 @@ Releases ↔ content 참조 일치 점검은 `pwsh scripts/check-releases.ps1` �
 
 - **아카이브 변환 완료**: 657개 포스트, 이미지 fullsize 원본으로 정리 완료
 - **GitHub Releases 업로드 완료**: 196개 파일 (275 MB)
-- **Astro 사이트 구축 완료 + 배포 완료**: luminousky.com/archive, push시 자동 반영
+- **Astro 사이트 구축 완료 + 배포 완료**: luminousky.com/archive, 배포는 수동 실행(push로는 반영되지 않음)
 - **Git**: GPG 서명, main 브랜치
 
 ## 빌드 및 배포 구조
@@ -100,16 +100,18 @@ Releases ↔ content 참조 일치 점검은 `pwsh scripts/check-releases.ps1` �
 **main 브랜치에는 소스코드만 있다. `dist/`는 `.gitignore`에 포함되어 커밋되지 않는다.**
 
 ```
-main 브랜치         →  GitHub Actions (.github/workflows/deploy.yml)
-  소스코드만            npm ci
-  dist/ 없음           npm run build
-                          └─ astro build        → dist/archive/ 생성
-                          └─ pagefind --site dist/archive
-                                                → dist/archive/pagefind/ 생성 (전문검색 인덱스)
-                       publish_dir: ./dist  →  gh-pages 브랜치
-                                               luminousky.com/archive/
+main 브랜치         →  GitHub Actions (.github/workflows/deploy.yml, workflow_dispatch 수동 실행)
+  소스코드만            test:   npm ci → npm test (astro check)
+  dist/ 없음           build:  npm ci → npm run build
+                                 └─ astro build        → dist/ 생성
+                                 └─ pagefind --site dist
+                                                       → dist/pagefind/ 생성 (전문검색 인덱스)
+                               upload-pages-artifact (./dist)
+                       deploy: deploy-pages  →  luminousky.com/archive/
 ```
 
+- **배포는 수동으로만 한다.** `main`에 push해도 배포되지 않는다. Actions 탭에서 워크플로를 직접 실행하거나 `gh workflow run deploy.yml --ref main`
+- 배포 실행도 push와 마찬가지로 사용자가 명시적으로 요청할 때만 한다
 - `npm run build`를 로컬에서 실행해도 되지만, 생성된 `dist/`는 커밋하지 않는다
 - pagefind 전문검색 인덱스는 빌드 시 자동 생성됨 — 별도 관리 불필요
 - 개발 서버(`npm run dev`)에서는 pagefind 인덱스가 없으므로 전문검색 비활성 상태
