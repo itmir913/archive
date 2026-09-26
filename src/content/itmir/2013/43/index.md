@@ -40,7 +40,7 @@ http://files.ucloud.com/pf/D348246_86_132651546(횟수 초과)
 
 횟수가 모두 지난 링크는 파괴/파일삭제를 하며 다시 생성하지 않습니다
 
-연관 : </archive/itmir/2012/42>
+연관 : [/archive/itmir/2012/42](/archive/itmir/2012/42)
 
 압축풀기 명령어 : tar -xvzf 압축파일명.tar.gz
 

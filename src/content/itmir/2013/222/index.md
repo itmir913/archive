@@ -262,6 +262,6 @@ overlay란? 정확한 개념까지는 잘 모르나 framework-res등의 xml설�
 
 <https://github.com/itmir913/android_device_pantech_ef46l/>
 
-</archive/itmir/2013/197>
+[/archive/itmir/2013/197](/archive/itmir/2013/197)
 
-</archive/itmir/2012/41>
+[/archive/itmir/2012/41](/archive/itmir/2012/41)

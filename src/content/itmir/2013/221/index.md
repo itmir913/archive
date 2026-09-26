@@ -351,4 +351,4 @@ brunch (기기명)으로 빌드할때는 lunch를 하지 않아도 됩니다 자
 
 <https://github.com/CyanogenMod>
 
-</archive/itmir/2013/94>
+[/archive/itmir/2013/94](/archive/itmir/2013/94)

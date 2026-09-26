@@ -102,7 +102,7 @@ original_url: "https://itmir.tistory.com/6"
 
 **Q. cwm은 어떻게 설치하나요?**
 
-**A.****/archive/itmir/2013/22**
+**A.[/archive/itmir/2013/22](/archive/itmir/2013/22)**
 
 **이곳에서 첨부되어 있는 모든것을 받아주세요.**
 
