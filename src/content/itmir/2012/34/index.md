@@ -38,4 +38,4 @@ boot.img를 쪼개기 위해 unpackbootimg가 필요한데요.
 
 만약 이 파일을 받아 /bin에 넣은다음에도 오류가 발생한다면, 다음 게시글을 확인해 주세요.
 
-</archive/itmir/2012/35>
+[/archive/itmir/2012/35](/archive/itmir/2012/35)

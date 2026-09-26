@@ -24,7 +24,8 @@ adb가 안되니 방법이 없을듯 했으나 cwm으로 들어가
 
 뭐가 필요하다는 뜻같기도 한데, 무슨뜻인지 아시는분 꼭좀 알려주시면 감사하겠습니다.
 
-```\n--------- beginning of /dev/log/main
+```
+--------- beginning of /dev/log/main
 
 I/pixelflinger(   75): Needs: n=0x03545404 p=0x00000077 t0=0x00000000 t1=0x00000000
 

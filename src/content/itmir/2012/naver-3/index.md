@@ -105,7 +105,7 @@ splash(
   #-- Duration 2000ms / 2 seconds
     2000,
 
-  #-- <AROMA Resource Dir>/sample.png
+  #-- `<AROMA Resource Dir>`/sample.png
     "sample"
 );
 
@@ -117,7 +117,7 @@ anisplash(
   #-- Number of Loop
     4,
 
-  #-- Frame 1 [ Image, duration in millisecond ]. <AROMA Resource Dir>/splash/a[1..6].png
+  #-- Frame 1 [ Image, duration in millisecond ]. `<AROMA Resource Dir>`/splash/a[1..6].png
     "splash/a1", 500,
     "splash/a2", 30,
     "splash/a3", 30,

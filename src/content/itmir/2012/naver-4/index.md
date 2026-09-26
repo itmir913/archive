@@ -18,13 +18,13 @@ androidproduct.m 도 수정해야합니다Cyanogen_기기명.mk는 다른 파일
 
 Target device는 cyanogen_기기명.mk의 디바이스 부분이다libaudio을 만들규칙이 없습니다;;
 
-target Strip: libeffects (out/target/product/a750k/obj/lib/libeffects.so)make:  `out/target/product/a750k/obj/SHARED_LIBRARIES/libaudioflinger_intermediates/LINKED/libaudioflinger.so'에서 필요로 하는  타겟 `out/target/product/a750k/obj/lib/libaudio.so'를 만들 규칙이 없습니다.  멈춤.열씸히 빌드하고 있었는대 libaudio.so를 만들규칙이 없습니다 ㄷㄷ호호 : libaudio.so라는 파일을 해당경로에 가져다 놔도 되고Boardconfig.mk에 BOARD_USES_GENERIC_AUDIO:= true 라는 구문을 추가해주세요out/target/product/a750k/obj/SHARED_LIBRARIES/libaudioflinger_intermediates이경로폴더를 삭제했습니다libaudioflinger.so생성됬내요 ㅎ
+target Strip: libeffects (out/target/product/a750k/obj/lib/libeffects.so)``make:  `out/target/product/a750k/obj/SHARED_LIBRARIES/libaudioflinger_intermediates/LINKED/libaudioflinger.so'에서 필요로 하는  타겟 `out/target/product/a750k/obj/lib/libaudio.so'를 만들 규칙이 없습니다.  멈춤.``열씸히 빌드하고 있었는대 libaudio.so를 만들규칙이 없습니다 ㄷㄷ호호 : libaudio.so라는 파일을 해당경로에 가져다 놔도 되고Boardconfig.mk에 BOARD_USES_GENERIC_AUDIO:= true 라는 구문을 추가해주세요out/target/product/a750k/obj/SHARED_LIBRARIES/libaudioflinger_intermediates이경로폴더를 삭제했습니다libaudioflinger.so생성됬내요 ㅎ
 
-libcamera.so을 만들규칙이 없습니다;;make:  `out/target/product/ef32k/obj/SHARED_LIBRARIES/libcameraservice_intermediates/LINKED/libcameraservice.so'에서 필요로 하는  타겟 `out/target/product/ef32k/obj/lib/libcamera.so'를 만들 규칙이 없습니다.  멈춤.검색, 참고자료SDA: http://cafe.naver.com/skydevelopers/96508호호 : USE_CAMERA_STUB:= true을 추가해 주시면 됩니다램디스크 부분 (init부분)호호 : Init를 강제로 넣지 않는이상 자동으로 init가 빌드됩니다;;;;;INit는 미르님이 넣지않는이상 자동으로 빌드되구요Init.rc도 넣지않으면 알아서 던져주는데 그거 빼와서 원래 init.rc랑 섞어야합니다
+libcamera.so을 만들규칙이 없습니다;;``make:  `out/target/product/ef32k/obj/SHARED_LIBRARIES/libcameraservice_intermediates/LINKED/libcameraservice.so'에서 필요로 하는  타겟 `out/target/product/ef32k/obj/lib/libcamera.so'를 만들 규칙이 없습니다.  멈춤.``검색, 참고자료SDA: http://cafe.naver.com/skydevelopers/96508호호 : USE_CAMERA_STUB:= true을 추가해 주시면 됩니다램디스크 부분 (init부분)호호 : Init를 강제로 넣지 않는이상 자동으로 init가 빌드됩니다;;;;;INit는 미르님이 넣지않는이상 자동으로 빌드되구요Init.rc도 넣지않으면 알아서 던져주는데 그거 빼와서 원래 init.rc랑 섞어야합니다
 
 복사 명령어PRODUCT_COPY_FILES := \ device/pantech/a750k/init.rc:root/init.rc \이정도겠네요
 
-롬 매니저 오류잘가다가 오류;;make:  `out/target/product/a750k/system/app/RomManager.apk'에서 필요로 하는 타겟 `vendor/cyanogen/proprietary/RomManager.apk'를 만들 규칙이 없습니다. 멈춤.는 뭘까요?
+롬 매니저 오류잘가다가 오류;;``make:  `out/target/product/a750k/system/app/RomManager.apk'에서 필요로 하는 타겟 `vendor/cyanogen/proprietary/RomManager.apk'를 만들 규칙이 없습니다. 멈춤.``는 뭘까요?
 
 호호 : 저 위오류는 vendor/cyanogen에 gotuprommanager(이름이....여튼rommanager라고 되있는 파일있을겁니다)그걸 실행시켜주시면 해결됩니다벤더 수정후 오류make clobber
 

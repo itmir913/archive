@@ -34,33 +34,33 @@ apk manager로 디컴파일 해줍시다
 
 2. res/vaules 에 들어가서 strings.xml를 엽니다
 
-<string name="settings_ics_radio">WIRELESS & NETWORKS</string>
+`<string name="settings_ics_radio">WIRELESS & NETWORKS</string>`
 
-<string name="settings_radio_more">More...</string>
+`<string name="settings_radio_more">More...</string>`
 
-<string name="settings_ics_device">DEVICE</string>
+`<string name="settings_ics_device">DEVICE</string>`
 
-<string name="settings_ics_personal">PERSONAL</string>
+`<string name="settings_ics_personal">PERSONAL</string>`
 
-<string name="settings_ics_system_cap">SYSTEM</string>
+`<string name="settings_ics_system_cap">SYSTEM</string>`
 
-<string name="settings_battery">Battery</string>
+`<string name="settings_battery">Battery</string>`
 
 이것을 추가하세요
 
 vaules-ko에도 들어가서 strings.xml를 엽니다
 
-<string name="settings_ics_radio">무선 및 네트워크</string>
+`<string name="settings_ics_radio">무선 및 네트워크</string>`
 
-<string name="settings_radio_more">더보기...</string>
+`<string name="settings_radio_more">더보기...</string>`
 
-<string name="settings_ics_device">디바이스</string>
+`<string name="settings_ics_device">디바이스</string>`
 
-<string name="settings_ics_personal">개인</string>
+`<string name="settings_ics_personal">개인</string>`
 
-<string name="settings_ics_system_cap">시스템</string>
+`<string name="settings_ics_system_cap">시스템</string>`
 
-<string name="settings_battery">배터리</string>
+`<string name="settings_battery">배터리</string>`
 
 이 두개의 공통점에서 string name은 마음대로 하셔도 됩니다만 수정하실때 모두 같아야만 합니다
 
@@ -72,7 +72,7 @@ vaules-ko에도 들어가서 strings.xml를 엽니다
 
 이제 좀 중요합니다 Settings.xml을 열어주세요 (잘못하면 설정어플 맛이 갑니다)
 
-<com.android.settings.IconPreferenceScreen android:title="타이틀 string값" android:key="call_settings" settings:icon="사용될 사진"> <intent android:targetPackage="com.android.settings" android:action="android.intent.action.MAIN" android:targetClass="명령" /> </com.android.settings.IconPreferenceScreen>
+`<com.android.settings.IconPreferenceScreen android:title="타이틀 string값" android:key="call_settings" settings:icon="사용될 사진"> <intent android:targetPackage="com.android.settings" android:action="android.intent.action.MAIN" android:targetClass="명령" /> </com.android.settings.IconPreferenceScreen>`
 
 이것이 한 구분선 입니다
 
@@ -106,7 +106,7 @@ Wi-Fi: com.android.settings.wifi.WifiSettings
 
 이제는 구분선을 넣는 방법을 설명하겠습니다
 
-<PreferenceCategory android:title="@string/값" />
+`<PreferenceCategory android:title="@string/값" />`
 
 위 구문을 넣어주시면 됩니다
 

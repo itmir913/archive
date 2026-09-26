@@ -27,9 +27,9 @@ original_url: "https://itmir.tistory.com/13"
 log.txt는...
 
 ```
-\* daemon not running. starting it now on port 5037 \*
+* daemon not running. starting it now on port 5037 *
 
-\* daemon started successfully \*
+* daemon started successfully *
 ```
 
 와우 ㅋㅋㅋㅋ

@@ -66,7 +66,7 @@ Target device는 cyanogen_기기명.mk의 디바이스 부분이다
 
 target Strip: libeffects (out/target/product/a750k/obj/lib/libeffects.so)
 
-make: *** `out/target/product/a750k/obj/SHARED_LIBRARIES/libaudioflinger_intermediates/LINKED/libaudioflinger.so'에서 필요로 하는  타겟 `out/target/product/a750k/obj/lib/libaudio.so'를 만들 규칙이 없습니다.  멈춤.
+``make: *** `out/target/product/a750k/obj/SHARED_LIBRARIES/libaudioflinger_intermediates/LINKED/libaudioflinger.so'에서 필요로 하는  타겟 `out/target/product/a750k/obj/lib/libaudio.so'를 만들 규칙이 없습니다.  멈춤.``
 
 호호 : libaudio.so라는 파일을 해당경로에 가져다 놔도 되고
 
@@ -78,7 +78,7 @@ Boardconfig.mk에 BOARD_USES_GENERIC_AUDIO:= true 라는 구문을 추가해주�
 
 **libcamera.so을 만들규칙이 없습니다**
 
-make: *** `out/target/product/ef32k/obj/SHARED_LIBRARIES/libcameraservice_intermediates/LINKED/libcameraservice.so'에서 필요로 하는  타겟 `out/target/product/ef32k/obj/lib/libcamera.so'를 만들 규칙이 없습니다.  멈춤.
+``make: *** `out/target/product/ef32k/obj/SHARED_LIBRARIES/libcameraservice_intermediates/LINKED/libcameraservice.so'에서 필요로 하는  타겟 `out/target/product/ef32k/obj/lib/libcamera.so'를 만들 규칙이 없습니다.  멈춤.``
 
 검색, 참고자료SDA: <http://cafe.naver.com/skydevelopers/96508>
 
@@ -114,7 +114,7 @@ PRODUCT_COPY_FILES := \
 
 잘가다가 오류;;
 
-make: *** `out/target/product/a750k/system/app/RomManager.apk'에서 필요로 하는 타겟 `vendor/cyanogen/proprietary/RomManager.apk'를 만들 규칙이 없습니다. 멈춤.
+``make: *** `out/target/product/a750k/system/app/RomManager.apk'에서 필요로 하는 타겟 `vendor/cyanogen/proprietary/RomManager.apk'를 만들 규칙이 없습니다. 멈춤.``
 
 는 뭘까요?
 
@@ -230,7 +230,7 @@ make: *** [out/host/linux-x86/obj/EXECUTABLES/emulator_intermediates/Android/Mai
 
 sudo apt-get install libx11-dev
 
-**CSSPropertyNames.h 혹은****CSSPropertyNames.h 오류**
+**CSSPropertyNames.h 혹은CSSPropertyNames.h 오류**
 
 make: *** [out/target/product/generic/obj/STATIC_LIBRARIES/libwebcore_intermediates/WebCore/css/CSSPropertyNames.h] Error 25
 
@@ -258,25 +258,25 @@ BOARD_NEEDS_CUTILS_LOG := true
 
 target Export Resources: framework-res (/home/whdghks913/cluster/system/out/target/common/obj/APPS/framework-res_intermediates/package-export.apk)
 
-device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:30: error: Resource at config_networkLocationProviderPackageName appears in overlay but not in the base package; use **<add-resource>** to add.  
-device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:33: error: Resource at config_geocodeProviderPackageName appears in overlay but not in the base package; use **<add-resource>** to add.  
-device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:40: error: Resource at config_autoBrightnessButtonKeyboard appears in overlay but not in the base package; use **<add-resource>** to add.  
+device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:30: error: Resource at config_networkLocationProviderPackageName appears in overlay but not in the base package; use **`<add-resource>`** to add.  
+device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:33: error: Resource at config_geocodeProviderPackageName appears in overlay but not in the base package; use **`<add-resource>`** to add.  
+device/pantech/ef46l/overlay/frameworks/base/core/res/res/values/config.xml:40: error: Resource at config_autoBrightnessButtonKeyboard appears in overlay but not in the base package; use **`<add-resource>`** to add.  
 make: *** [/home/whdghks913/cluster/system/out/target/common/obj/APPS/framework-res_intermediates/package-export.apk] 오류 1  
 make: *** 파일 `/home/whdghks913/cluster/system/out/target/common/obj/APPS/framework-res_intermediates/package-export.apk'을(를) 지웁니다
 
 cm10→cm10.1에서 체험한 문제입니다
 
-표시된 내용을 보면 <add-resource>를 추가해 해결할 수 있습니다
+표시된 내용을 보면 `<add-resource>`를 추가해 해결할 수 있습니다
 
 String위에 아래 구문을 추가하세요
 
-<add-resource type="string" name="오류난 overlay의 구문 이름"></add-resource>
+`<add-resource type="string" name="오류난 overlay의 구문 이름"></add-resource>`
 
 예를 들면
 
-<String name="testoverlay">가 문제가 있다면
+`<String name="testoverlay">`가 문제가 있다면
 
-<add-resource type="string" name="testoverlay"></add-resource>를 추가해 주시면 됩니다
+`<add-resource type="string" name="testoverlay"></add-resource>`를 추가해 주시면 됩니다
 
 출처: <http://cafe.naver.com/develoid/165665>
 
@@ -436,7 +436,7 @@ RECOVERY_GRAPHICS_USE_LINELENGTH := true
 
 3. device_기기명.mk에 다음과 같은 내용을 추가합니다
 
-# Logo.rle
+`# Logo.rle`
 
 PRODUCT_COPY_FILES += \
 
@@ -446,7 +446,7 @@ device/제조사/기기명/logo.rle:root/initlogo.rle
 
 아래 문구는 BoardConfig.mk에 추가합니다
 
-# Custom Graphics
+`# Custom Graphics`
 
 BOARD_CUSTOM_GRAPHICS := ../../../device/제조사/기기명/graphics.c
 
@@ -480,7 +480,7 @@ sudo apt-get install libncurses5-dev
 
 error: Multiple substitutions specified in non-positional format; did you mean to add the formatted="false" attribute?
 
-error: Found tag </item> where </plurals> is expected
+error: Found tag `</item>` where `</plurals>` is expected
 
 이 컴파일 오류는 $으로 해결이 가능합니다
 

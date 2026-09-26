@@ -46,7 +46,7 @@ repo명령어를 이용해 개속 시도하지만 오류가 뜨는건 안비밀;
 
 +추가
 
-소스를 모두 다운받으면 ~/android/system폴더에 위치하게 됩니다~
+소스를 모두 다운받으면 \~/android/system폴더에 위치하게 됩니다\~
 
 참고 사이트 : <http://blog.naver.com/dlgns1357?Redirect=Log&logNo=80157523357>
 
