@@ -41,11 +41,11 @@ original_url: "https://itmir.tistory.com/111"
 이 파일을 받아주시길 바랍니다
 
 ```javascript
-document.writeln('google\_ad\_client = "[클라이언트 코드]";');  
-document.writeln('/\* [광고 이름] \*/');  
-document.writeln('google\_ad\_slot = "[광고 슬롯]";');  
-document.writeln('google\_ad\_width = [광고 넓이];');  
-document.writeln('google\_ad\_height = [광고 높이];')
+document.writeln('google_ad_client = "[클라이언트 코드]";');  
+document.writeln('/* [광고 이름] */');  
+document.writeln('google_ad_slot = "[광고 슬롯]";');  
+document.writeln('google_ad_width = [광고 넓이];');  
+document.writeln('google_ad_height = [광고 높이];')
 ```
 
 위 내용은 AdsenseM.js의 내용중 일부입니다

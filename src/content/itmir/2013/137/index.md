@@ -26,7 +26,9 @@ original_url: "https://itmir.tistory.com/137"
 
 방법은 간단합니다 ㅋㅋ
 
+```php
 <?php if (substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')) ob_start("ob_gzhandler"); else ob_start(); ?>
+```
 
 위 코드를 복사한다음
 
