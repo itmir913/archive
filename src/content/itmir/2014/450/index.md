@@ -102,7 +102,7 @@ CyanogenMod와 비슷하지요
 
 예를들어 넥서스s의 경우 4.1.2의 manifest를 보면
 
-<project path="device/samsung/crespo" name="device/samsung/crespo" />
+`<project path="device/samsung/crespo" name="device/samsung/crespo" />`
 
 <https://android.googlesource.com/platform/manifest/+/refs/heads/android-4.1.2_r2.1/default.xml>
 

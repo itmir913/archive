@@ -47,7 +47,7 @@ String[] home = getHomeLauncher();
 
 for(int i=0 ; i<home.length ; i++ ){
 
-    if(home[i].equals(**packageName**)){
+    if(home[i].equals(packageName)){
 
         // 이 어플이 홈런처 일경우 실행됨
 

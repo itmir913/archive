@@ -58,7 +58,7 @@ SKY설정에서 On, Off를 하는 베가 키패드 진동설정은 아마도 설
 
 강제종료 오류와 일부 기능을 수정하였습니다
 
-참고 : </archive/itmir/2014/426>
+참고 : [/archive/itmir/2014/426](/archive/itmir/2014/426)
 
 [20140104-VEGAIME.apk](https://github.com/itmir913/archive/releases/download/itmir-attachments/425-20140104-VEGAIME.apk)
 

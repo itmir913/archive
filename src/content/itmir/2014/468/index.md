@@ -28,7 +28,7 @@ original_url: "https://itmir.tistory.com/468"
 
 그래야 이 어플을 설치하기 전에 아 인터넷에 접속할수 있구나 라는걸 사용자에게 알릴수가 있답니다
 
-<uses-permission android:name="android.permission.INTERNET" />
+`<uses-permission android:name="android.permission.INTERNET" />`
 
 ### 28-2 레이아웃을 만들어 보자
 
@@ -520,11 +520,11 @@ public class MainActivity extends Activity {
 
         /**
 
-         \* 홈페이지 아이콘이 변경되었을때 호출됩니다
+         * 홈페이지 아이콘이 변경되었을때 호출됩니다
 
-         \* icon은 홈페이지 아이콘
+         * icon은 홈페이지 아이콘
 
-         \*/
+         */
 
         @Override
 
@@ -536,11 +536,11 @@ public class MainActivity extends Activity {
 
         /**
 
-         \* 홈페이지의 제목에 변경이 있을때 호출됩니다
+         * 홈페이지의 제목에 변경이 있을때 호출됩니다
 
-         \* title은 <title>타이틀</title> 에서 "타이틀" 입니다
+         * title은 <title>타이틀</title> 에서 "타이틀" 입니다
 
-         \*/
+         */
 
         @Override
 
@@ -552,9 +552,9 @@ public class MainActivity extends Activity {
 
         /**
 
-         \* 자바스크립트 경고(알림)를 표시할지 여부
+         * 자바스크립트 경고(알림)를 표시할지 여부
 
-         \*/
+         */
 
         @Override
 
@@ -568,9 +568,9 @@ public class MainActivity extends Activity {
 
         /**
 
-         \* 자바스크립트의 확인 대화상자를 표시할지 여부
+         * 자바스크립트의 확인 대화상자를 표시할지 여부
 
-         \*/
+         */
 
         @Override
 

@@ -116,7 +116,7 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 
   -Wno-format-security \
 
-**-Wno-unused-but-set-variable \**
+**-Wno-unused-but-set-variable \\**
 
   -fno-delete-null-pointer-checks
 
@@ -150,7 +150,7 @@ KBUILD_CFLAGS   := -Wundef -Wstrict-prototypes -Wno-trigraphs \
 
   -Wno-unused-but-set-variable \
 
-  -fno-delete-null-pointer-checks **\**
+  -fno-delete-null-pointer-checks **\\**
 
 **$(call cc-disable-warning,uninitialized,)**
 

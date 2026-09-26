@@ -38,11 +38,11 @@ original_url: "https://itmir.tistory.com/458"
 
 AndroidManifest.xml에 아래 권한을 추가해주세요
 
-<uses-permission android:name="android.permission.SEND_SMS" />
+`<uses-permission android:name="android.permission.SEND_SMS" />`
 
-<uses-permission android:name="android.permission.RECEIVE_SMS" />
+`<uses-permission android:name="android.permission.RECEIVE_SMS" />`
 
-<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+`<uses-permission android:name="android.permission.READ_PHONE_STATE" />`
 
 ### 27-2 Main Layout
 
@@ -389,7 +389,7 @@ originText.setText(originSmsText);
 
 액티비티를 만들었으므로 AndroidManifest.xml에 추가해 줍시다
 
-<activity android:name="whdghks913.tistory.examplesendsms.ShowSMSActivity" />
+`<activity android:name="whdghks913.tistory.examplesendsms.ShowSMSActivity" />`
 
 이제 완성입니다~~
 
