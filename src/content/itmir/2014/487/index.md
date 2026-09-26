@@ -58,7 +58,7 @@ o 대회시간 : 2시간
 
 o 문제구성 : 수리퀴즈, 관련수학, 자료구조, 알고리즘 등
 
-   ※ 프로그램 관련문제는 **Linux 내장 표준C/C++**을 기준으로 IOI 출제기준에 준하여 출제
+   ※ 프로그램 관련문제는 <strong>Linux 내장 표준C/C++</strong>을 기준으로 IOI 출제기준에 준하여 출제
 
    ※ 문제구성 비율은 출제위원회에서 최종 결정
 
@@ -146,7 +146,7 @@ o 시상내역 : 국무총리상 1명, 미래창조과학부장관상 12명, 한
 
 [2014 KOI 운영계획.hwp](https://github.com/itmir913/archive/releases/download/itmir-attachments/487-2014-KOI-plan.hwp)
 
-[제31회 한국정보올림피아드 세부계획 (홈페이지게시용).hwp](https://github.com/itmir913/archive/releases/download/itmir-attachments/487-KOI31-schedule.hwp).hwp)
+[제31회 한국정보올림피아드 세부계획 (홈페이지게시용).hwp](https://github.com/itmir913/archive/releases/download/itmir-attachments/487-KOI31-schedule.hwp)
 
 <https://docs.google.com/file/d/0B2t_9XLUrUKEcVRhWVhKTDZvYX>
 

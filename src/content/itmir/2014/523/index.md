@@ -71,7 +71,7 @@ Resource Type을 Preference로 바꿔준다음 PreferenceScreen을 선택해주�
 </PreferenceScreen>
 ```
 
-기본적으로 <PreferenceScreen>가 밖에 있습니다
+기본적으로 `<PreferenceScreen>`가 밖에 있습니다
 
 뭐뭐를 추가할수 있는지 확인해 봅시다
 
@@ -168,25 +168,19 @@ array는 커스텀 알림때 배운 내용입니다
 
 파일 만들어 주세요
 
+```xml
 <string-array name="userNameOpen">
-
     <item>항상 공개</item>
-
     <item>친구에게만</item>
-
     <item>비공개</item>
-
 </string-array>
 
 <string-array name="userNameOpen_values">
-
     <item>1</item>
-
     <item>0</item>
-
     <item>-1</item>
-
 </string-array>
+```
 
 위에서 써둔대로 android:entries는 리스트에 표시될 값을 말합니다
 
@@ -307,7 +301,7 @@ RingtonePreference는 실제 어플에서는 잘 안쓰지만 알림음을 설�
 
 위에서 본거보다는 코드구성이 쉽습니다
 
-<Preference>안에 <intent>가 있는데요
+`<Preference>`안에 `<intent>`가 있는데요
 
 이는 각각
 
@@ -361,43 +355,31 @@ SettingActivity를 이클립스를 통해 만들면 onCreate()가 아니라 onPo
 
 아래는 기본적으로 추가해주시면 됩니다
 
+```xml
 <activity
-
     android:name="whdghks913.tistory.examplepreferenceactivity.SettingsActivity"
-
-android:label="@string/action_settings" >
-
+    android:label="@string/action_settings" >
 </activity>
 
 <item
-
     android:id="@+id/action_settings"
-
     android:orderInCategory="100"
-
     android:showAsAction="ifRoom"
-
     android:icon="@android:drawable/ic_menu_manage"
-
     android:title="@string/action_settings"/>
+```
 
+```java
 @Override
-
 public boolean onOptionsItemSelected(MenuItem item) {
-
-int itemId = item.getItemId();
-
+    int itemId = item.getItemId();
     if (itemId == R.id.action_settings) {
-
         Intent SettingActivity = new Intent(this, SettingsActivity.class);
-
         startActivity(SettingActivity);
-
     }
-
     return super.onOptionsItemSelected(item);
-
 }
+```
 
 ### 최근 앱의 설정에는 선택한 항목이 Summary에 표시되요
 

@@ -22,7 +22,7 @@ https://open.neis.go.kr/portal/data/dataset/searchDatasetPage.do
 
 오래된 이 글보다 아래 가이드 글을 참고해주세요!
 
-</archive/itmir/2015/579>
+[/archive/itmir/2015/579](/archive/itmir/2015/579)
 
 <https://github.com/itmir913/wondanghighschool>
 
@@ -86,7 +86,7 @@ https://open.neis.go.kr/portal/data/dataset/searchDatasetPage.do
 
 함께 추가해 주셔야 합니다
 
-**네트워크 작업이므로 Thread 또는** **AsyncTask****를 사용해 주세요**
+**네트워크 작업이므로 Thread 또는** **AsyncTask를 사용해 주세요**
 
 Toast님께서 AsyncTask를 사용하라고 하셨습니다
 
@@ -104,9 +104,10 @@ Thread를 사용하면 핸들러까지 사용하지만, AsyncTask에서는 이 �
 
 당연한 사실..!
 
+```xml
 <uses-permission android:name="android.permission.INTERNET" />
-
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+```
 
 이거 두개는 필수로 넣어주셔야 합니다
 
@@ -296,7 +297,7 @@ String[] lunch = MealLibrary.getMealNew("ice.go.kr", "E100001786", "4", "04", "2
 
 String[]에 index값 0에 일요일 점심이, 1에 월요일 ... 6에 토요일 점심 목록이 나타납니다
 
-긊식이 존재하지 않을경우 null이 들어있습니다
+급식이 존재하지 않을경우 null이 들어있습니다
 
 for문등으로 String[]에 들어있는 급식 목록을 원하는 리스트에 뿌려주시면 됩니다
 

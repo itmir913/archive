@@ -46,7 +46,7 @@ Dropdown, FixedTabs + Swipe, Scroll Tab 3개의 예제를 만들었습니다
 
 activity_main.xml에서
 
-<android.support.v4.view.PagerTitleStrip>의
+`<android.support.v4.view.PagerTitleStrip>`의
 
 android:layout_gravity="top"
 

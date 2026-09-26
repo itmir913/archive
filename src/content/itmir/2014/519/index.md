@@ -64,13 +64,12 @@ device drivers - staging drivers - Qualcomm Athernos Prima Wlan Module
 
 또는 직접 defconfig을 수정해도 됩니다.
 
+```
 #
-
 # Qualcomm Atheros Prima WLAN module
-
 #
-
 CONFIG_PRIMA_WLAN=m
+```
 
 ### 모듈 용량 줄이기
 

@@ -57,7 +57,7 @@ MarketVersionChecker mChecker = new MarketVersionChecker();
 - getMarketVersion(String packageName)
 - getMarketVersionFast(String packageName)
 
-버전을 가져올 packageName을 전달해주면 WIFI에서 약 0.5~2초, 3G에서 약 1~3~4초 정도 소요되는것으로 나타났습니다
+버전을 가져올 packageName을 전달해주면 WIFI에서 약 0.5\~2초, 3G에서 약 1\~3\~4초 정도 소요되는것으로 나타났습니다
 
 메소드 이름에서도 알수있지만 아래에 있는 Fast가 붙은 메소드가 속도면에서 빠른것으로 확인됬습니다
 
@@ -65,9 +65,9 @@ MarketVersionChecker mChecker = new MarketVersionChecker();
 
 속도 실험 결과
 
-getMarketVersion : Wi-Fi에서 1초~4초, 3G에서 2~4.5초
+getMarketVersion : Wi-Fi에서 1초\~4초, 3G에서 2\~4.5초
 
-getMarketVersionFast : Wi-Fi에서 0.6초~1.5초, 3G에서 1~3초
+getMarketVersionFast : Wi-Fi에서 0.6초\~1.5초, 3G에서 1\~3초
 
 ### 출처
 
