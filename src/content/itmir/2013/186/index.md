@@ -20,7 +20,7 @@ original_url: "https://itmir.tistory.com/186"
 
 collect2: ld returned 1 exit status
 
-make: *** [/home/whdghks913/cm-10.1/system/out/target/product/ef46l/obj/EXECUTABLES/hostapd_intermediates/LINKED/hostapd] 오류 1
+`make: *** [/home/whdghks913/cm-10.1/system/out/target/product/ef46l/obj/EXECUTABLES/hostapd_intermediates/LINKED/hostapd] 오류 1`
 
 이런 오류가 뜨며 빌드가 진행 되지 않았습니다.
 

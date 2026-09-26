@@ -38,7 +38,7 @@ original_url: "https://itmir.tistory.com/193"
 
 git status로 상태를 확인해 봤을 때,
 
-# On branch [만든 branch 이름]
+`# On branch [만든 branch 이름]`
 
 이렇게 나타나야 합니다.
 

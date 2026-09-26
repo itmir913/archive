@@ -12,7 +12,7 @@ original_url: "https://itmir.tistory.com/167"
 
 제가 저번 switch배울 때 반복문 이라는 용어를 사용했는지 모르겠습니다.
 
-엄밀하게 따지면 ( if~else  ==  switch )  !=  ( while  ==  for  ==  do~while ) 이렇게 나눌 수 있습니다.
+엄밀하게 따지면 ( if\~else  ==  switch )  !=  ( while  ==  for  ==  do\~while ) 이렇게 나눌 수 있습니다.
 
 이 연산자들( !=, == )은 전에 배운 것 이므로 한번 보시면 뜻을 딱 아셔야 합니다. ㅎㅎ 아시겠죠? 뜻이 생각이 안 나시면 다시 전전전 강좌로..
 

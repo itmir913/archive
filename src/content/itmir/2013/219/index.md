@@ -8,7 +8,9 @@ draft: false
 original_url: "https://itmir.tistory.com/219"
 ---
 
+```
 make: *** `/home/whdghks913/cluster/system/out/target/common/obj/APPS/Apollo_intermediates/classes-full-debug.jar'에서 필요로 하는 타겟 `/home/whdghks913/cluster/system/out/target/common/obj/JAVA_LIBRARIES/android_stubs_current_intermediates/javalib.jar'를 만들 규칙이 없습니다. 멈춤.
+```
 
 이상하게 cluster을 빌드하면 이런 오류가 나는군요
 
