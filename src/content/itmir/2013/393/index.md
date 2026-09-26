@@ -256,7 +256,7 @@ String PW = input_PW.getText().toString();
 
 }else{
 
-*//**editor.remove("ID");*
+*// editor.remove("ID");*
 
 *// editor.remove("PW");*
 

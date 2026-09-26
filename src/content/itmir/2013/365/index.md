@@ -58,7 +58,7 @@ vibrate는 두가지 소스가 있죠
 
 또하나는 진동에 패턴을 주는 방법입니다
 
-예를들면 윙~ ..... 위이이이잉~ .... 윙~
+예를들면 윙\~ ..... 위이이이잉\~ .... 윙\~
 
 이런씩으로 말이죠
 
@@ -279,7 +279,7 @@ Log.d("pattern index", "0:"+pattern[0]+" 1:"+pattern[1]+" 2:"+pattern[2]+" 3:"+p
 
 마지막으로 Androidmanifest.xml에 아래 권한을 추가해 주세요
 
-<uses-permission android:name="android.permission.VIBRATE" />
+`<uses-permission android:name="android.permission.VIBRATE" />`
 
 자! 이제 끝났습니다~
 

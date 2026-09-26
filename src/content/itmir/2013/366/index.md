@@ -54,7 +54,7 @@ UI구성, 즉 xml은 언급없이 지나갈수 있습니다
 
 위에서 메인 쓰레드만 UI변경이 가능하다고 했습니다
 
-우리가 만든 쓰레드에서는 UI변경이 불가능, 즉 **화면을 바꾸는 어떠한 일도 할수 없****습니다 (각주: setText같이 화면을 표시하는 UI를 변경하는 것이 서브 쓰레드로는 불가능 합니다)**
+우리가 만든 쓰레드에서는 UI변경이 불가능, 즉 **화면을 바꾸는 어떠한 일도 할수 없습니다 (각주: setText같이 화면을 표시하는 UI를 변경하는 것이 서브 쓰레드로는 불가능 합니다)**
 
 그래서 등장한것이 핸들러 입니다
 
@@ -101,7 +101,7 @@ UI구성, 즉 xml은 언급없이 지나갈수 있습니다
 
     <requestFocus />
 
-</EditText>
+`</EditText>`
 
 <Button
 
@@ -274,11 +274,11 @@ final Handler handler = new MyHandler(this);
 
 private static class MyHandler extends Handler {
 
-private final WeakReference<MainActivity> mActivity;
+`private final WeakReference<MainActivity> mActivity;`
 
 public MyHandler(MainActivity activity) {
 
- mActivity = new WeakReference<MainActivity>(activity);
+` mActivity = new WeakReference<MainActivity>(activity);`
 
 }
 

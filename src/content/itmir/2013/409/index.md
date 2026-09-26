@@ -86,7 +86,7 @@ R.menu.main이라는 코드를 통해 res/menu/main.xml에 있는 코드를 읽�
 
 먼저 일반 메뉴의 xml 구현방식 입니다
 
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+`<menu xmlns:android="http://schemas.android.com/apk/res/android" >`
 
     <item
 
@@ -98,7 +98,7 @@ R.menu.main이라는 코드를 통해 res/menu/main.xml에 있는 코드를 읽�
 
         android:title="일반 메뉴"/>
 
-</menu>
+`</menu>`
 
 메뉴를 구성하는 xml은 맨 처음에 Menu라는 태그로 감싸게 됩니다
 
@@ -190,7 +190,7 @@ collapseActionView는 정보가 부족하여 아직은 저도 모르겠습니다
 
     android:title="서브메뉴 1" >
 
-**<menu>**
+`<menu>`
 
         <item
 
@@ -212,9 +212,9 @@ collapseActionView는 정보가 부족하여 아직은 저도 모르겠습니다
 
             android:title="서브 메뉴 3"/>
 
-**</menu>**
+`</menu>`
 
-</item>
+`</item>`
 
 서브메뉴는 아이탬 태그안에 다시 menu태그를 넣어 만든것으로
 

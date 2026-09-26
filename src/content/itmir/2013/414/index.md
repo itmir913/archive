@@ -68,7 +68,7 @@ AndroidManifest.xml은 아래와 같이 수정해 줍니다
 
     android:label="@string/title_activity_service" >
 
-</activity>
+`</activity>`
 
 위와 같은 모습을
 
@@ -350,7 +350,7 @@ intent.getStringExtra("FilePath");은 이렇게 집어넣은 String을 가져오
 
 나중에 배울기회가 있을겁니다
 
-지금은 이것보다 아래에 있는 **if(! mp3File.exists())**이 더 중요합니다
+지금은 이것보다 아래에 있는 <strong>if(! mp3File.exists())</strong>이 더 중요합니다
 
 if(! mp3File.exists())
 
