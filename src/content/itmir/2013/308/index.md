@@ -144,7 +144,9 @@ tint : 이미지위에 덫붙힐 색을 설정하는 겁니다 #AARRGGBB로 하�
 
 그다음 java로 넘어가주세요~
 
+```java
 public class MainActivity extends Activity {
+```
 
 밑에 아래를 추가해 주세요
 

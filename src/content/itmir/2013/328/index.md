@@ -46,6 +46,8 @@ nm.notify(1234, notification);
 
 지울때는
 
+```java
 nm.cancel(1234);
+```
 
 여기서 1234는 알림을 구분할 상수 입니다

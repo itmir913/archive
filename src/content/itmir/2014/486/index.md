@@ -291,7 +291,9 @@ EX) year = "2014", month = "03", day = "16"
 
 ### (3) 사용 예제
 
+```java
 String[] lunch = MealLibrary.getMealNew("ice.go.kr", "E100001786", "4", "04", "2");
+```
 
 인천의 한 고등학교 점심을 가져오는 구문입니다
 

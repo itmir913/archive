@@ -36,13 +36,17 @@ Version : v1.0, 2014-01-14
 
 Necessary import
 
+```java
 import com.whdghks913.xor.SecurityXOR;
+```
 
 Xor.jar library를 사용하기 위한 선언
 
 Declaration to use the Xor.jar library
 
+```java
 SecurityXOR securityXOR = new SecurityXOR();
+```
 
 사용할수 있는 메소드
 

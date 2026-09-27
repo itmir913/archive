@@ -135,9 +135,10 @@ AsyncTask<doInBackground()의 변수 종류, onProgressUpdate()에서 사용할 
 
 아래에서 언급할 거지만
 
+```java
 MyAsyncTask mProcessTask = new MyAsyncTask();
-
 mProcessTask.execute(10);
+```
 
 이렇게 실행한다면 첫번째는 Integer가 되겠죠?
 

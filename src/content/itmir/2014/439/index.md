@@ -160,11 +160,15 @@ error: lvalue required as left operand of assignment
 
 문제된 파일 s5p_stda_grp.c을 열어주세요.
 
+```c
 ((struct fb_var_screeninfo) (s5ptv_status.fb->var)).bits_per_pixel = ((struct fb_var_screeninfo) (fb->var)).bits_per_pixel;
+```
 
 위 줄을 아래로 바꿔주세요.
 
+```c
 (s5ptv_status.fb->var).bits_per_pixel = (fb->var).bits_per_pixel;
+```
 
 error: arch/arm/boot/compressed/piggy.lzo.o: Unknown CPU architecture
 

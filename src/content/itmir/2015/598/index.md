@@ -234,9 +234,10 @@ title과 message는 post를 보낼때 데이터 구분값이라 생각하시면 
 
 좀 말이 애매한데
 
+```java
 Intent.putExtra("title", myTitle);
-
 Intent.putExtra("message", myMessage);
+```
 
 이런 식이다 라고 생각하시면 됩니다.
 

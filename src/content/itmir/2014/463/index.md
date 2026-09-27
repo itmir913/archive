@@ -50,79 +50,45 @@ PowerAmp(파워앰프)는 난공불락의 철벽처럼 그 보안을 뚫는것�
 
 --개발자용 메모
 
+```smali
 invoke-virtual {v0, v3, v4}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
-
 move-result-object v0
-
-iget-object v0, v0, Landroid/content/pm/PackageInfo;->**signatures**:[Landroid/content/pm/Signature;
-
+iget-object v0, v0, Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;
 // 이부분이 signature을 가져오는 부분이예요
-
 array-length v3, v0
-
 if-lez v3, :cond_c
-
 const/4 v3, 0x0
-
 aget-object v0, v0, v3
-
 invoke-virtual {v0}, Landroid/content/pm/Signature;->toByteArray()[B
-
 move-result-object v5
-
 const/4 v0, 0x5
-
 sget-object v3, Lcom/maxmpz/audioplayer/Application;->ah:[B
-
 array-length v6, v3
-
 move v3, v0
-
 move v0, v2
-
 :goto_0
-
 if-ge v0, v6, :cond_c
-
 add-int/lit8 v4, v3, 0x1
-
 aget-byte v3, v5, v3
-
 sget-object v7, Lcom/maxmpz/audioplayer/Application;->ah:[B
-
 aget-byte v7, v7, v0
-
 :try_end_0
-
 .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
 if-eq v3, v7, :cond_b
-
 move v0, v2
-
 :goto_1
-
 if-nez v0, :cond_1
-
 // smali의 if문법에 따르면 not equals zero (0이 아니면) cond_1(아래부분)으로 넘어갑니다
-
 // 이부분에서 true(0이 아니다)가 나와서 아래 "?컙"을 패스해야 되요!!
-
-**if-eqz v0, :cond_1**
-
+if-eqz v0, :cond_1
 // equals zero(0이면) 을 추가해 0이든 0이 아니든 cond_1으로 넘어가게 만듭니다
-
 sput-boolean v1, Lcom/maxmpz/audioplayer/Application;->0xF1:Z
-
-**invoke-static {p0}, Lcom/maxmpz/audioplayer/Application;->?컙(Landroid/content/Context;)V**
-
+invoke-static {p0}, Lcom/maxmpz/audioplayer/Application;->?컙(Landroid/content/Context;)V
 // 이부분이 실행되면 Sorry~ 가 뜨며 앱이 종료되요
-
 .line 723
-
 :cond_1
-
 invoke-virtual {p0}, Lcom/maxmpz/audioplayer/Application;->?컙()V
+```
 
 완벽한 보안은 없네요...;
 

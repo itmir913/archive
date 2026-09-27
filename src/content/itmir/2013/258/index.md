@@ -16,4 +16,6 @@ document.oncontextmenu = function anonymous() { alert('마우스 오른쪽 버�
 
 아래는 드레그를 방지하는 HTML 소스 입니다
 
+```javascript
 document.onselectstart = function anonymous() { return false } ;
+```

@@ -50,7 +50,9 @@ static으로 선언하지 않았습니다
 
 그래서 new 선언후 사용해야 합니다
 
+```java
 MarketVersionChecker mChecker = new MarketVersionChecker();
+```
 
 마켓 버전을 가져오는 API는 두가지 방법이 있습니다
 
