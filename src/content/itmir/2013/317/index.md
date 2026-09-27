@@ -66,14 +66,12 @@ private void setClickSpan()
 }
 ```
 
+```java
 private void setSpan()
-
 {
-
   Spannable span = (Spannable) textView.getText();
-
 span.setSpan(clickSpan, start, end, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-
 }
+```
 
 출처 : <http://colib.tistory.com/4>

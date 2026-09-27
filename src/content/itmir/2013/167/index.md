@@ -66,15 +66,13 @@ class while1
 
 이번엔 do~while 반복문에 대해 살펴보겠습니다.
 
-> do
->
-> {
->
-> System.out.println("현재 변수 M의 값은 "+M+"입니다");
->
-> ++M;
->
-> )while(M<1)
+```java
+do
+{
+System.out.println("현재 변수 M의 값은 "+M+"입니다");
+++M;
+)while(M<1)
+```
 
 이런 구조를 지니고 있습니다.
 
@@ -104,13 +102,12 @@ while과 같은 색을 사용해 구분하기 쉬울 겁니다. ㅎㅎ
 
 for문은 while문의 단축형이라 생각하시면 아주 쉽습니다.
 
-> for( int M=3 ; M<7 ; M++ )
->
-> {
->
->   System.out.println("현재 변수 M의 값은 "+M+"입니다");
->
-> }
+```java
+for( int M=3 ; M<7 ; M++ )
+{
+  System.out.println("현재 변수 M의 값은 "+M+"입니다");
+}
+```
 
 for문은 간단합니다.
 

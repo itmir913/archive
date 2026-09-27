@@ -155,7 +155,7 @@ MainActivity.java를 모두 첨부하기에는 글이 너무 길어지므로 필
 
 - mPullRefreshListView.getLoadingLayoutProxy() : 오버스크롤시 나타나는 로딩중 Layout을 ILoadingLayout으로 반환합니다
 
-EX) ILoadingLayout loadingLayout = mPullRefreshListView.getLoadingLayoutProxy();
+EX) `ILoadingLayout loadingLayout = mPullRefreshListView.getLoadingLayoutProxy();`
 
 ILoadingLayout을 수정해서 아이콘, 로딩중 String을 변경할수 있습니다
 
@@ -179,23 +179,17 @@ getLoadingLayoutProxy()말고 deprecated된 메소드도 있어요
 
 @deprecated된 메소드이므로 참고만 하시고 위에서 설명드린 방법을 사용하시길 바랍니다
 
+```java
 mPullRefreshListView.setLoadingDrawable(drawable);
-
 mPullRefreshListView.setLoadingDrawable(drawable, mode);
-
 mPullRefreshListView.setLastUpdatedLabel(label);
-
 mPullRefreshListView.setPullLabel(pullLabel);
-
 mPullRefreshListView.setPullLabel(pullLabel, mode);
-
 mPullRefreshListView.setRefreshingLabel(refreshingLabel);
-
 mPullRefreshListView.setRefreshingLabel(refreshingLabel, mode);
-
 mPullRefreshListView.setReleaseLabel(releaseLabel);
-
 mPullRefreshListView.setReleaseLabel(releaseLabel, mode);
+```
 
 그런대요 새로고침을 위에서만 할수 있을까요?
 

@@ -116,13 +116,17 @@ vibrate는 두가지 소스가 있죠
 
 처음에 정의할 소스는 한줄입니다
 
+```java
 Vibrator vide;
+```
 
 Vibrator는 안드로이드에서 진동을 담당하는 객체입니다 (객체라 하는게 맞나요?)
 
 onCreate() 메소드 안에는 다음 한줄을 추가해 주세요
 
+```java
 vide = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+```
 
 진동은 시스탬 서비스의 한 종류 이므로 이렇게 바로 불러오는 것만으로도 바로 사용이 가능합니다
 
@@ -132,9 +136,10 @@ vide = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
 첫번째 일반 진동버튼에 정의된 onClick은 Vibrator_basic이므로 메소드 이름을 Vibrator_basic으로 만들어 봅시다
 
+```java
 public void Vibrator_basic(View v){
-
 }
+```
 
 10번 초반강좌에서 배웠던 방법, Button의 onClick사용은 너무 자주 쓰이니 꼭 숙지해 주세요
 
@@ -142,7 +147,9 @@ public void Vibrator_basic(View v){
 
 저 메소드 안에다가 "한줄만" 추가해 봅시다
 
+```java
 vide.vibrate(1000);
+```
 
 자, 일반 진동버튼 구현이 끝났습니다 ?!?!?!?!?!?!
 
@@ -176,15 +183,17 @@ A. 20번대나 30번대 강좌에서 배울예정인 알람(일정 시간후에 
 
 그다음 두번째 버튼의 onClick은 Vibrator_pattern입니다 그러므로 이름이 Vibrator_pattern인 메소드를 만들어 봅시다
 
+```java
 public void Vibrator_pattern(View v){
-
 }
+```
 
 이 메소드에는 두줄만 들어가면 끝입니다
 
+```java
 long[] pattern = { 0, 500, 200, 400, 100 };
-
 vide.vibrate(pattern, -1);
+```
 
 엌ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 너무 간단하죠?
 
@@ -267,7 +276,9 @@ index값을 가져오는 방법은 []안에 가져올 값을 넣으면 됩니다
 
 로그로 확인해 볼까요?
 
+```java
 Log.d("pattern index", "0:"+pattern[0]+" 1:"+pattern[1]+" 2:"+pattern[2]+" 3:"+pattern[3]+" 4:"+pattern[4]);
+```
 
 ![](./images/3.jpg)
 

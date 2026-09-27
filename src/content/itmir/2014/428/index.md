@@ -70,69 +70,44 @@ pro, license, proversion, inapp등 유료를 나타내는 단어로 검색합니
 
 smali언어를 보기 싫어 java로 보면 아래와 같더군요.
 
+```java
 public static boolean a()
-
   {
-
     try
-
     {
-
       Bundle localBundle = n.a(3, "angeloid.dreamnarae.v3", "inapp", null);
-
       int i1 = localBundle.getInt("RESPONSE_CODE");
-
       ArrayList localArrayList = null;
-
       if (i1 == 0)
-
         localArrayList = localBundle.getStringArrayList("INAPP_PURCHASE_ITEM_LIST");
-
       if ((i1 == 0) && (localArrayList.size() > 0))
-
       {
-
         boolean bool = ((String)localArrayList.get(0)).equals("angel_unlock");
-
         if (bool)
-
-**return true;**
-
+          return true;
       }
-
     }
-
     catch (RemoteException localRemoteException)
-
     {
-
     }
-
-**return false;**
-
+    return false;
   }
+```
 
 smali는 아래와 같습니다.
 
+```smali
 .method public static a()Z
-
     .locals 7
-
     .prologue
-
     const/4 v0, 0x0
-
     const/4 v1, 0x0
-
     .line 179
-
     :try_start_0
-
     sget-object v2, Langeloid/dreamnarae/v3/main/MainActivity;->n:Lcom/a/a/a/a;
-
     -- 모두 생략 --
-
 .end method
+```
 
 그래서 그냥 아래처럼 코드를 바꿔버리면 무조건 true가 반환됩니다.
 
@@ -160,55 +135,36 @@ smali는 아래와 같습니다.
 
 그다음 검색해보면 smali/angeloid/dreamnarae/v3/tweak/Angel_Biling.java에도 있는거 같아서 아래처럼 수정합니다.
 
+```java
 public void a()
-
   {
-
     try
-
     {
-
       startIntentSenderForResult(((PendingIntent)a.a(3, getPackageName(), "angel_unlock", "inapp", null).getParcelable("BUY_INTENT")).getIntentSender(), 1001, new Intent(), Integer.valueOf(0).intValue(), Integer.valueOf(0).intValue(), Integer.valueOf(0).intValue());
-
       return;
-
     }
-
     catch (Exception localException)
-
     {
-
     }
-
   }
+```
 
-`# virtual methods`
-
+```smali
+# virtual methods
 .method public a()V
-
     .locals 7
-
     .prologue
-
     .line 132
-
 return-void
-
     :try_start_0
-
     const-string v3, "angel"
-
     .line 133
-
     sget-object v0, Langeloid/dreamnarae/v3/tweak/Angel_Biling;->a:Lcom/a/a/a/a;
-
     const/4 v1, 0x3
-
     invoke-virtual {p0}, Langeloid/dreamnarae/v3/tweak/Angel_Biling;->getPackageName()Ljava/lang/String;
-
     -- 생략 --
-
 .end method
+```
 
 아래부분을 실행하지 말고 그냥 리턴해버리면 끝;
 

@@ -139,15 +139,13 @@ API 사용방법 열기
 
 **사용할수 있는 상수**
 
+```java
 public static final int Color_BLUE = -13388315;
-
 public static final int Color_PURPLE = -5609780;
-
 public static final int Color_GREEN = -6697984;
-
 public static final int Color_ORANGE = -17613;
-
 public static final int Color_RED = -48060;
+```
 
 각각 색상값을 의미하며, FloatingActionButton.Color_XX로 사용가능합니다
 

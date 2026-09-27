@@ -389,27 +389,24 @@ onCreate()에서 위젯 id를 전달받는데요
 
 끝날때 이 id를 리턴해줘야 합니다
 
-> Bundle mExtras = getIntent().getExtras();
->
-> if (mExtras != null) {
->
->     mAppWidgetId = mExtras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID,
->
->     AppWidgetManager.INVALID_APPWIDGET_ID);
->
-> }
+```java
+Bundle mExtras = getIntent().getExtras();
+if (mExtras != null) {
+    mAppWidgetId = mExtras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID,
+    AppWidgetManager.INVALID_APPWIDGET_ID);
+}
+```
 
 onCreate()안에서 위젯 id를 가져오는 소스입니다
 
 그다음에 끝날때(적용 버튼을 누르면) 이 id를 다시 전달해야 합니다
 
-> Intent resultValue = new Intent();
->
-> resultValue.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, mAppWidgetId);
->
-> setResult(RESULT_OK, resultValue);
->
-> finish();
+```java
+Intent resultValue = new Intent();
+resultValue.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, mAppWidgetId);
+setResult(RESULT_OK, resultValue);
+finish();
+```
 
 이부분만 주의해주시면 됩니다~
 

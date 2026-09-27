@@ -46,9 +46,10 @@ original_url: "https://itmir.tistory.com/160"
 
 그럼 +는 무시되거나 연산이 안되는 주석 같은 연산자는 아닐까요?
 
-> short m1=6;
->
-> short m2=+m1;
+```java
+short m1=6;
+short m2=+m1;
+```
 
 위 코드를 컴파일 하면 에러가 발생합니다.
 
@@ -94,11 +95,11 @@ prefix연산자는 피 연산자 앞에 오는데요.
 
 그런대 postfix는 그 행이 끝난 다음 값이 적용이 됩니다.
 
-> int number1=10, number2, number3;
->
-> number2=--number1
->
-> number3=number1--
+```java
+int number1=10, number2, number3;
+number2=--number1
+number3=number1--
+```
 
 이런 구문이 있다고 합니다.
 

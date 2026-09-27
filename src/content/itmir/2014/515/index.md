@@ -322,131 +322,79 @@ http://blog.naver.com/jolangma/150115948509
 
 현재 안드로이드에서 지원해주고 있는 tween animation 관련 class는 아래와 같습니다.
 
+```java
 // 투명도 관련 클래스
-
 // 0.0(완전투명) ~ 1.0(완전불투명) 의 값이 사용됩니다.
-
 AlphaAnimation ani = new AlphaAnimation(float fromAlpha, float toAlpha);
-
 view.startAnimation(ani);
-
 // 확대/축소 관련 클래스
-
 ScaleAnimation ani =
-
     // 0.0 ~ 1.0(원래 크기) 의 값이 사용됩니다.
-
     new ScaleAnimation (float fromX, float toX, float fromY, float toY) ;
-
     // 중심점은 animation되는 이미지의 절대 좌표를 사용합니다.
-
     // x = 0 이면 left edge, y = 0이면 top edge 를 가리킵니다.
-
     new ScaleAnimation (float fromX, float toX, float fromY, float toY, float pivotX, float pivotY);
-
     // Type에 사용되는 것은 아래와 같습니다.
-
     // Animation.ABSOLUTE, Animation.RELATIVE_TO_SELF, Animation.RELATIVE_TO_PARENT
-
     // Value에는 Type이 absolute일 때 scale되는 이미지의 절대 좌표이가 사용되고
-
     // 나머지 Type에서는 0.0(0%) ~ 1.0(100%)의 값을 사용하는 퍼센트를 사용합니다.
-
     new ScaleAnimation (float fromX, float toX, float fromY, float toY,
-
                                int pivotXType, float pivotXValue, int pivotYType, float pivotYValue) ;
-
 view.startAnimation(ani);
-
 // 이동(위치) 관련 클래스
-
 TranslateAnimation ani =
-
     // 절대 좌표를 사용합니다.
-
     new TranslateAnimation(float fromXDelta, float toXDelta, float fromYDelta, float toYDelta);
-
     // Type에 사용되는 것은 아래와 같습니다.
-
     // Animation.ABSOLUTE, Animation.RELATIVE_TO_SELF, Animation.RELATIVE_TO_PARENT
-
     // Value에는 Type이 absolute일 때 scale되는 이미지의 절대 좌표이가 사용되고
-
     // 나머지 Type에서는 0.0(0%) ~ 1.0(100%)의 값을 사용하는 퍼센트를 사용합니다.
-
     new TranslateAnimation(int fromXType, float fromXValue, int toXType, float toXValue,
-
                                        int fromYType, float fromYValue, int toYType, float toYValue);
-
 view.startAnimation(ani);
-
 // 회전 관련 클래스
-
 RotateAnimation ani =
-
     // 기본 중심점은 (0, 0) 입니다.
-
     new RotateAnimation (float fromDegrees, float toDegrees);
-
     // 중심점은 animation되는 이미지의 절대 좌표를 사용합니다.
-
     // x = 0 이면 left edge, y = 0이면 top edge 를 가리킵니다.
-
     new RotateAnimation (float fromDegrees, float toDegrees, float pivotX, float pivotY);
-
     // Type에 사용되는 것은 아래와 같습니다.
-
     // Animation.ABSOLUTE, Animation.RELATIVE_TO_SELF, Animation.RELATIVE_TO_PARENT
-
     // Value에는 Type이 absolute일 때 scale되는 이미지의 절대 좌표이가 사용되고
-
     // 나머지 Type에서는 0.0(0%) ~ 1.0(100%)의 값을 사용하는 퍼센트를 사용합니다.
-
     new RotateAnimation (float fromDegrees, float toDegrees,
-
                                 int pivotXType, float pivotXValue, int pivotYType, float pivotYValue);
-
 view.startAnimation(ani);
+```
 
 그리고 위의 애니메이션 중 하나 이상의 애니메이션을 함께 적용하고자 할 때 사용하는 클래스입니다.
 
+```java
 // Interpolator(보간기) : 복잡한 곡선의 근사가공
-
 // true : AnimationSet의 보간기 사용, false : set에 추가된 각 Animation의 보간기 사용
-
 AnimationSet ani = new AnimationSet(boolean shareInterpolator);
-
 aniSet.addAnimation(aniTranslate);
-
 aniSet.addAnimation(aniScale);
-
 view.startAnimation(ani);
+```
 
 유용한 리스너를 사용하면 편합니다.
 
+```java
 // 애니메이션 리스너를 연결합니다.
-
 ani.setAnimationListener(new Animation.AnimationListener() {
-
 public void onAnimationStart(Animation animation) {
-
     // Auto-generated method stub
-
 }
-
 public void onAnimationEnd(Animation animation) {
-
     // Auto-generated method stub
-
 }
-
 public void onAnimationRepeat(Animation animation) {
-
     // Auto-generated method stub
-
 }
-
 });
+```
 
 [ExampleTweenAnimation.zip](https://github.com/itmir913/archive/releases/download/itmir-attachments/ExampleTweenAnimation.zip)
 

@@ -12,9 +12,10 @@ original_url: "https://itmir.tistory.com/153"
 
 우리들은 전 강좌에서 상수를 사용했습니다.
 
-> int no1=7777;
->
-> ini no2=4+5;
+```java
+int no1=7777;
+ini no2=4+5;
+```
 
 전 강좌에서 자주 본 구문들입니다.
 
@@ -52,7 +53,9 @@ original_url: "https://itmir.tistory.com/153"
 
 만약 int형에 저 숫자를 넣게 되면 바로 오류가 발생하며 프로그램이 중지될 것입니다.
 
-> long number=10000000000;
+```java
+long number=10000000000;
+```
 
 이렇게 변수 선언을 하면 정상적으로 컴파일이 될까요?
 
@@ -64,7 +67,9 @@ original_url: "https://itmir.tistory.com/153"
 
 이런 이유로 '이 숫자를 long형 변수에 넣을 것 이다'라는 별도의 문구를 넣어줘야 합니다.
 
-> long number=10000000000L;
+```java
+long number=10000000000L;
+```
 
 이렇게 숫자 마지막에 접미사 L을 넣어주시면 컴파일 에러가 발생하지 않습니다.
 
@@ -72,7 +77,9 @@ original_url: "https://itmir.tistory.com/153"
 
 마찬가지로 float변수에도 위와 같은 문제가 발생하게 됩니다.
 
-> float number=5.73;
+```java
+float number=5.73;
+```
 
 이런 구문이 있는 java파일을 컴파일 해보면 또 문제가 발생합니다.
 
@@ -80,7 +87,9 @@ original_url: "https://itmir.tistory.com/153"
 
 이 경우에도 java는 무조건 실수는 double으로 표현하려 하기 때문에 오류가 발생하는 것 입니다.
 
-> float number=5.73F;
+```java
+float number=5.73F;
+```
 
 이렇게 float변수에도 마지막에 F를 넣어서 이 실수를 float에 넣겠다는 표시를 해야만 오류가 없이 진행됩니다.
 

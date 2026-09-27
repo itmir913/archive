@@ -113,13 +113,12 @@ System.out.println은 우리가 표현하고자 하는 문구를 출력합니다
 
 이제 마지막으로 System.out.println에 대해 좀 더 알아보도록 하겠습니다.
 
-> System.out.println(2);
->
-> System.out.println(7.77);
->
-> System.out.println("6+5="+8);
->
-> System.out.println(8+2);
+```java
+System.out.println(2);
+System.out.println(7.77);
+System.out.println("6+5="+8);
+System.out.println(8+2);
+```
 
 위 구문을 컴파일해서 실행시키면,
 

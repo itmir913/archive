@@ -66,9 +66,9 @@ original_url: "https://itmir.tistory.com/5"
 
 2. 미라크a를 루팅하신후 루익이든 뭘로 시스탬 폴더에 들어가서
 
-boot-from-recovery.p 파일과 install-recovery.sh을 삭제합니다
+`boot-from-recovery.p` 파일과 `install-recovery.sh`을 삭제합니다
 
-위치는 /system과 /system/etc입니다
+위치는 `/system`과 `/system/etc`입니다
 
 3. 그다음 cmd를 실행해야 합니다
 
@@ -80,13 +80,12 @@ boot-from-recovery.p 파일과 install-recovery.sh을 삭제합니다
 
 평균 4번정도 치시면 됩니다
 
+```bash
 cd..
-
 cd..
-
 cd..
-
 cd..
+```
 
 이정도면 될겁니다
 
@@ -108,11 +107,11 @@ cd adb를 쳐줍시다
 
 6. 이제 진짜 설치입니다
 
-fastboot devices
+`fastboot devices`
 
 이 명령어 칠때 ?가 나오면 됩니다
 
-fastboot flash recovery recovery.img
+`fastboot flash recovery recovery.img`
 
 을 쳐서 OK가 나오면 배터리 뺀뒤 재부팅 해주세요
 
@@ -125,10 +124,6 @@ fastboot flash recovery recovery.img
 이방법 질문 금지 입니다
 
 Apple ROM 설치 영상
-
-----------------------------------------------------
-
-----------------------------------------------------
 
 롬 다운방법
 
@@ -144,7 +139,7 @@ Apple ROM 설치 영상
 
 처음 블로그에서 명령어를 찾아 입력하라 할탠대
 
-MirRom
+`MirRom`
 
 을 입력하시면 됩니다
 
@@ -152,7 +147,7 @@ MirRom
 
 보안코드는
 
-##AppleMIRRom_code_
+`##AppleMIRRom_code_`
 
 입니다
 

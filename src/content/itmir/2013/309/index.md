@@ -48,19 +48,19 @@ int로 형변환을 하면 됩니다.
 
 자바 식으로 세우자면,
 
-> double rand = Math.random();
->
-> rand = rand * 10;
->
-> int num = (int)rand;
->
-> num++;
->
-> 간단히 줄여보면
->
-> int num= ((int)(Math.random() * 10));
->
-> num++;
+```java
+double rand = Math.random();
+rand = rand * 10;
+int num = (int)rand;
+num++;
+```
+
+간단히 줄여보면
+
+```java
+int num= ((int)(Math.random() * 10));
+num++;
+```
 
 이렇게 하면 작동하지 않을까요??ㅎㅎ
 
@@ -68,7 +68,9 @@ int로 형변환을 하면 됩니다.
 
 작동하는군요. ㅎㅎ
 
-> import java.util.Random;
+```java
+import java.util.Random;
+```
 
 를 해야 합니다.
 

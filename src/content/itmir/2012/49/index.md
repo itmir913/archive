@@ -54,20 +54,15 @@ Fix 방법은 다음과 같습니다.
 
 CM9 소스의 hardware/libhardware_legacy/wifi.c에 마지막 줄에
 
-> int wifi_load_mfg_driver()
->
-> {
->
->     return 0;
->
-> }
->
-> int wifi_unload_mfg_driver()
->
-> {
->
->     return 0;
->
-> }
+```c
+int wifi_load_mfg_driver()
+{
+    return 0;
+}
+int wifi_unload_mfg_driver()
+{
+    return 0;
+}
+```
 
 추가 및 libhardware_legacy.so 빌드

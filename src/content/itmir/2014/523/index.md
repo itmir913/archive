@@ -305,13 +305,12 @@ RingtonePreference는 실제 어플에서는 잘 안쓰지만 알림음을 설�
 
 이는 각각
 
+```java
 startActivity(new Intent(this, MadeBy.class));
-
 Uri uri = Uri.parse("mailto:whdghks913@naver.com");
-
 Intent it = new Intent(Intent.ACTION_SENDTO, uri);
-
 startActivity(it);
+```
 
 였습니다
 
@@ -441,7 +440,9 @@ private void setOnPreferenceChange(Preference mPreference) {
 
 PreferenceActivity에서는 findPreference(String)으로 Preference를 찾을수 있습니다
 
+```java
 addPreferencesFromResource(R.xml.pref_settings);
+```
 
 아래에 아래 3개의 코드를 넣어주세요
 

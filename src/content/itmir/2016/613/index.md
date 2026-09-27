@@ -56,7 +56,9 @@ mClient.execute(postRequest);
 
 1번째 줄의 URL을 전 글에서 얻으신 url으로 바꿔주시면 되고, 값을 넣어주는 코드는 아래와 같습니다.
 
+```java
 nameValue.add(new BasicNameValuePair("NAME", VALUE));
+```
 
 NAME 부분은 전 강좌에서 말씀드렸던 것 처럼 시트의 맨 첫번째 라인을 말합니다.
 
@@ -97,7 +99,9 @@ nameValue.add(new BasicNameValuePair("message", "강좌가 늦어서 죄송합�
 
 ### 주의점
 
+```java
 nameValue.add(new BasicNameValuePair("sheet_name", "시트1"));
+```
 
 시트1과 관련된 내용입니다.
 
@@ -137,9 +141,11 @@ nameValue.add(new BasicNameValuePair("sheet_name", "시트1"));
 
 이런식으로 말이죠.
 
-> var SHEET_NAME = e.parameter["sheet_name"];
->
-> ...
+```javascript
+var SHEET_NAME = e.parameter["sheet_name"];
+...
+```
+
 >
 > 그대신 한가지 차이점이 있다면 html post의 sheet_name을 가져옵니다.
 >
@@ -208,7 +214,9 @@ else 이하는 말 안해도 아실꺼라 믿습니다.
 
 7번째 줄의
 
+```java
 (new HttpTask()).execute(String.valueOf(position), String.valueOf(rate), null);
+```
 
 이부분은 position값과 rate값을 String으로 형 변환하여 execute메소드에 넣어주고 있는데요.
 
@@ -297,7 +305,9 @@ doInBackground() 메소드도 try-catch로 묶여있는 부분은 전부 위에�
 
 그러니 63번째 줄만 설명하겠습니다. (태블릿 배터리가 없어서요)
 
+```java
 BapTool.todayPostStar(getApplicationContext(), value);
+```
 
 이 것도 간단합니다.
 

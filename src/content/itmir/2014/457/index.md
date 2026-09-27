@@ -85,7 +85,9 @@ nm.notify(1234, notification);
 
 라인 2번을 자세히 보시면
 
+```java
 Notification notification = new Notification(icon, tickerText, when);
+```
 
 이런 형식으로 되어 있습니다
 
@@ -122,7 +124,9 @@ Notification notification = new Notification(icon, tickerText, when);
 
 그 아래 7번째는 아래와 같습니다
 
+```java
 notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
+```
 
 - context : context객체, this (Context에 대해 이해하려면 골치아파요)
 - contentTitle : 상단바 알림 제목

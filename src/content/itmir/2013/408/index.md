@@ -102,87 +102,49 @@ original_url: "https://itmir.tistory.com/408"
 
 라이센스 체크 부분이 어디인지 발견했으면, 이제 수정해 봅시다.
 
+```smali
 .method public onCreate(Landroid/os/Bundle;)V
-
     // 윗부분 코드 생략
-
     .line 65
-
     :cond_0
-
-    sget-object v4, Landroid/os/Build;->**MODEL**:Ljava/lang/String;
-
-    // **[01] 부분**
-
+    sget-object v4, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    // [01] 부분
     // 기기명을 가져오는 부분
-
     const/4 v5, 0x2
-
     invoke-virtual {v4, v6, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
     move-result-object v2
-
     .line 67
-
     .local v2, "modelName":Ljava/lang/String;
-
     const-string v4, "IM"
-
-    invoke-virtual {v2, v4}, Ljava/lang/String;->**equals**(Ljava/lang/Object;)Z
-
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
     move-result v4
-
-**if-nez v4, :cond_2**
-
-    // **[02] 부분**
-
+    if-nez v4, :cond_2
+    // [02] 부분
     // 정상적이면 cond_2로 점프해서 어플 종료 부분을 건너뜁니다
-
-.line 69
-
-    const v4, **0x7f0b01cd**
-
+    .line 69
+    const v4, 0x7f0b01cd
     // 아까 찾은 어플 종료 토스트 문구
-
     invoke-static {p0, v4, v7}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
-
     move-result-object v4
-
     invoke-virtual {v4}, Landroid/widget/Toast;->show()V
-
-    // **[03] 부분**
-
+    // [03] 부분
     // 토스트 알림을 띄웁니다
-
     .line 70
-
     invoke-virtual {p0}, Lcom/pantech/app/skypen_extend/page/SkyPenLauncher;->finish()V
-
-    // **[04] 부분**
-
+    // [04] 부분
     // 어플을 종료합니다
-
     .line 105
-
     :cond_1
-
     :goto_0
-
     return-void
-
     .line 74
-
-**:cond_2**
-
-    // **[05] 부분**
-
+    :cond_2
+    // [05] 부분
     // 이 부분으로 넘어와야 어플이 정상 실행됩니다
-
     sget-boolean v4, Lcom/pantech/app/skypen_extend/SkyPenFeature;->USE_MARKET:Z
-
     // 아래 코드 생략
-
 .end method
+```
 
 위 코드는 onCreate메소드 안에 있는 코드입니다.
 
@@ -202,7 +164,9 @@ onCreate는 어플이 실행될때(자세하게는 액티비티가 실행될 때
 
 smali문법을 잠시 확인해 보면,
 
+```smali
 if-nez v0, :cond_0
+```
 
 v0 값이 0이 아니라면 cond_0 으로 넘어간다.
 
@@ -212,7 +176,9 @@ v0, v1....이 smali에서 순서대로 붙는 변수 이름이라는것을 생�
 
 cond_0으로 점프한다는 것을 생각하면,
 
+```smali
 if-nez v4, :cond_2
+```
 
 이 문구가 정말 중요하다는 것을 알 수 있습니다.
 
@@ -226,73 +192,47 @@ if-nez v4, :cond_2
 
 전자의 경우 잘 맟춰가며 지워버리면 되고, 후자의 경우 if-nez의 반대인 if-eqz을 추가하면 됩니다. (smali의 if를 살펴볼려면 맨 아래로 스크롤하세요.)
 
+```smali
 .method public onCreate(Landroid/os/Bundle;)V
-
  // 윗부분 코드 생략
-
     .line 65
-
     :cond_0
-
     sget-object v4, Landroid/os/Build;->MODEL:Ljava/lang/String;
-
     const/4 v5, 0x2
-
     invoke-virtual {v4, v6, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
     move-result-object v2
-
     .line 67
-
     .local v2, "modelName":Ljava/lang/String;
-
     const-string v4, "IM"
-
     invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
     move-result v4
-
     if-nez v4, :cond_2
-
-if-eqz v4, :cond_2
-
+    if-eqz v4, :cond_2
     .line 69
-
     const v4, 0x7f0b01cd
-
     invoke-static {p0, v4, v7}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
-
     move-result-object v4
-
     invoke-virtual {v4}, Landroid/widget/Toast;->show()V
-
     .line 70
-
     invoke-virtual {p0}, Lcom/pantech/app/skypen_extend/page/SkyPenLauncher;->finish()V
-
     .line 105
-
     :cond_1
-
     :goto_0
-
     return-void
-
     .line 74
-
     :cond_2
-
     sget-boolean v4, Lcom/pantech/app/skypen_extend/SkyPenFeature;->USE_MARKET:Z
-
     // 아래 코드 생략
-
 .end method
+```
 
 제일 간단하게 한 문구를 추가해서 0이든 0이 아니든 cond_2로 점프할수 있도록 수정하면 됩니다.
 
 if를 지우고 goto를 사용하여 어떤 경우든 통과되도록 작업해도 될거라 예상합니다.
 
+```smali
 goto :cond_2
+```
 
 이렇게 점프 방법을 알아봤습니다.
 
@@ -318,71 +258,41 @@ java로 짠 앱을 디컴파일 해보면 java의 if-else가 smali에서 if-nez�
 
 먼저 java소스코드를 보겠습니다.
 
+```java
 public class MainActivity extends Activity {
-
     EditText editText;
-
     Button button;
-
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
-
         editText = (EditText) findViewById(R.id.editText);
-
         button = (Button) findViewById(R.id.button);
-
         button.setOnClickListener(new OnClickListener() {
-
         @Override
-
         public void onClick(View v) {
-
                 // TODO Auto-generated method stub
-
-**String inputText = editText.getText().toString();**
-
+                String inputText = editText.getText().toString();
                 // [01] 부분 : editText에 입력한 값을 가져옵니다
-
-**Boolean license = SerialCheck(inputText);**
-
+                Boolean license = SerialCheck(inputText);
                 // [02] 부분 : SerialCheck메소드를 호출하여 반환되는 값을 저장합니다
-
-                if(**! license**){
-
+                if(! license){
                         Toast.makeText(MainActivity.this, "잘못된 키", Toast.LENGTH_SHORT).show();
-
-**finish();**
-
+                        finish();
                 }else{
-
                         Toast.makeText(MainActivity.this, "정상 키", Toast.LENGTH_LONG).show();
-
                 }
-
         }
-
     });
-
     }
-
     public boolean SerialCheck(String inputText){
-
-**if(inputText.equals("미르의 IT 정복기"))**
-
-**return true;**
-
+        if(inputText.equals("미르의 IT 정복기"))
+        return true;
             // [03] 부분 : 입력한 값이 맞을경우 true를 반환합니다
-
-**return false;**
-
+            return false;
     }
-
 }
+```
 
 이 예제를 잘 분석해 봅시다.
 
@@ -406,133 +316,77 @@ smali를 보겠습니다.
 
 **MainActivity$1.smali**
 
+```smali
 .method public onClick(Landroid/view/View;)V
-
     // 윗부분 코드 생략
-
     invoke-virtual {v2}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
     move-result-object v2
-
     invoke-interface {v2}, Landroid/text/Editable;->toString()Ljava/lang/String;
-
     move-result-object v0
-
     .line 29
-
     .local v0, "inputText":Ljava/lang/String;
-
     iget-object v2, p0, Lwhdghks913/tistory/exampleserial/MainActivity$1;->this$0:Lwhdghks913/tistory/exampleserial/MainActivity;
-
-    invoke-virtual {v2, v0}, Lwhdghks913/tistory/exampleserial/MainActivity;->**SerialCheck(Ljava/lang/String;)**Z
-
+    invoke-virtual {v2, v0}, Lwhdghks913/tistory/exampleserial/MainActivity;->SerialCheck(Ljava/lang/String;)Z
     // [01] 부분 : 시리얼 체크 메소드를 호출하는 부분입니다
-
     move-result v2
-
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
     move-result-object v1
-
     .line 30
-
     .local v1, "license":Ljava/lang/Boolean;
-
     invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
     move-result v2
-
-**if-nez v2, :cond_0**
-
+    if-nez v2, :cond_0
     .line 31
-
     iget-object v2, p0, Lwhdghks913/tistory/exampleserial/MainActivity$1;->this$0:Lwhdghks913/tistory/exampleserial/MainActivity;
-
     const-string v3, "\uc798\ubabb\ub41c \ud0a4"
-
     const/4 v4, 0x0
-
     invoke-static {v2, v3, v4}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-
     move-result-object v2
-
     invoke-virtual {v2}, Landroid/widget/Toast;->show()V
-
     .line 32
-
     iget-object v2, p0, Lwhdghks913/tistory/exampleserial/MainActivity$1;->this$0:Lwhdghks913/tistory/exampleserial/MainActivity;
-
-**invoke-virtual {v2}, Lwhdghks913/tistory/exampleserial/MainActivity;->finish()V**
-
+    invoke-virtual {v2}, Lwhdghks913/tistory/exampleserial/MainActivity;->finish()V
     // [02] 부분 : 시리얼 키가 안맞을경우 종료하는 부분
-
     .line 36
-
     :goto_0
-
     return-void
-
     .line 34
-
     :cond_0
-
     iget-object v2, p0, Lwhdghks913/tistory/exampleserial/MainActivity$1;->this$0:Lwhdghks913/tistory/exampleserial/MainActivity;
-
     const-string v3, "\uc815\uc0c1 \ud0a4"
-
     const/4 v4, 0x1
-
     invoke-static {v2, v3, v4}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-
     move-result-object v2
-
     invoke-virtual {v2}, Landroid/widget/Toast;->show()V
-
     goto :goto_0
-
 .end method
+```
 
 ---
 
 **MainActivity.smali**
 
+```smali
 .method public SerialCheck(Ljava/lang/String;)Z
-
     .locals 1
-
     .param p1, "inputText"    # Ljava/lang/String;
-
     .prologue
-
     .line 41
-
     const-string v0, "\ubbf8\ub974\uc758 IT \uc815\ubcf5\uae30"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->**equals**(Ljava/lang/Object;)Z
-
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
     move-result v0
-
-**if-eqz v0, :cond_0**
-
+if-eqz v0, :cond_0
     .line 42
-
-**const/4 v0, 0x1**
-
+    const/4 v0, 0x1
     .line 43
-
     :goto_0
-
     return v0
-
     :cond_0
-
-**const/4 v0, 0x0**
-
+    const/4 v0, 0x0
     // [03] 부분 : true또는 false를 반환하는 부분
-
     goto :goto_0
-
 .end method
+```
 
 [01] 부분을 봐주세요.
 
@@ -560,41 +414,26 @@ const/4 v0, 0x1으로 true가 반환됩니다.
 
 const/4 v0, 0x0을 const/4 v0, 0x1으로 바꿔주면 어떤 경우든지 true가 반환될겁니다.
 
+```smali
 .method public SerialCheck(Ljava/lang/String;)Z
-
     .locals 1
-
     .param p1, "inputText"    # Ljava/lang/String;
-
     .prologue
-
     .line 41
-
     const-string v0, "\ubbf8\ub974\uc758 IT \uc815\ubcf5\uae30"
-
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
     move-result v0
-
     if-eqz v0, :cond_0
-
     .line 42
-
     const/4 v0, 0x1
-
     .line 43
-
     :goto_0
-
     return v0
-
     :cond_0
-
-const/4 v0, 0x1
-
+    const/4 v0, 0x1
     goto :goto_0
-
 .end method
+```
 
 정말 되는지 확인해 봅시다.
 
@@ -626,33 +465,46 @@ Error key라고 입력해도 정상 키가 나타나는 것을 확인할 수 있
 
 해당 메소드에서 변수의 마지막이 v4고 찍어보고 싶은 값이 v2라면
 
+```smali
 const-string v5, "tag"
-
 invoke-static {v5, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+```
 
 [참고] smali if문법
 
+```smali
 if-eqz v0, :cond_0
+```
 
 v0이 0이면 cond_0으로 넘어간다.
 
+```smali
 if-nez v0, :cond_0
+```
 
 v0이 0이 아니라면 cond_0으로 넘어간다.
 
+```smali
 if-eq v0, v1, :cond_0
+```
 
 v0과 v1이 같으면 cond_0로 넘어간다.
 
+```smali
 if-ne v0, v1, :cond_0
+```
 
 v0과 v1이 같지 않다면 cond_0으로 넘어간다.
 
+```smali
 if-ge v0, v1, :cond_0
+```
 
 v0이 v1보다 크거나 같으면 cond_0으로 넘어간다.
 
+```smali
 if-le v0, v1, :cond_0
+```
 
 v0이 v1보다 작거나 같으면 cond_0으로 넘어간다.
 

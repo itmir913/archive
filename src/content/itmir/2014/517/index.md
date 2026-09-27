@@ -54,7 +54,9 @@ style.css파일에서 .imageblock 을 찾아주세요.
 
 두번째는 첫번째 줄 코드 설명입니다.
 
+```css
 box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.5);
+```
 
 0px x축 그림자의 길이 입니다. (양수는 오른쪽 음수는 왼쪽입니다)
 
@@ -76,21 +78,20 @@ css를 잘 모르시는 분들을 위해 기존 코드와 수정한 코드를 �
 
 [기존 코드]
 
+```css
 .imageblock {
-
     margin: 5px 0;
-
 }
+```
 
 [수정된 코드]
 
+```css
 .imageblock {
-
     margin: 5px 0;
-
-**box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.5);**
-
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.5);
 }
+```
 
 중괄호 안에 위에서 올려드린 코드 한 줄만 추가해주시면 됩니다.
 

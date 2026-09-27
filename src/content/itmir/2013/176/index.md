@@ -24,7 +24,9 @@ original_url: "https://itmir.tistory.com/176"
 
 먼저 처음 부분입니다.
 
-> import java.lang.Math;
+```java
+import java.lang.Math;
+```
 
 맨날 지겹게 보는 public static void String([] args)는 지금은 이해하기 힘든 부부도 있으므로 생략하겠습니다.
 
@@ -42,11 +44,11 @@ improt는 처음보는 명령어 입니다.
 
 이제 다음을 봅시다.
 
-> System.out.println("Root 225를 구해보겠습니다");
->
-> double Root225=Math.sqrt(225);
->
-> System.out.println("Root 225는 "+Root225+"입니다");
+```java
+System.out.println("Root 225를 구해보겠습니다");
+double Root225=Math.sqrt(225);
+System.out.println("Root 225는 "+Root225+"입니다");
+```
 
 보시면 루트를 사용하고 있습니다.
 
@@ -60,11 +62,11 @@ improt는 처음보는 명령어 입니다.
 
 만약 float에 넣고 싶다면 명시적 형변환 표시를 해줘야 합니다.
 
-> System.out.println("소숫점을 제거해 보겠습니다");
->
-> int Root=(int)Root225;
->
-> System.out.println("소숫점을 제거한 값은 "+Root+"입니다");
+```java
+System.out.println("소숫점을 제거해 보겠습니다");
+int Root=(int)Root225;
+System.out.println("소숫점을 제거한 값은 "+Root+"입니다");
+```
 
 여기서 명시적 형 변환을 해주고 있습니다.
 
@@ -76,11 +78,11 @@ improt는 처음보는 명령어 입니다.
 
 이번에는 char을 사용해 보겠습니다.
 
-> System.out.println("루트 225를 기호로 표시해 보겠습니다");
->
-> char root='√';
->
-> System.out.println(root+"225");
+```java
+System.out.println("루트 225를 기호로 표시해 보겠습니다");
+char root='√';
+System.out.println(root+"225");
+```
 
 설마 루트기호 √가 들어갈줄은 몰랐는데요. 들어갑니다. ㅋㅋㅋ
 
@@ -90,11 +92,11 @@ improt는 처음보는 명령어 입니다.
 
 이번엔 e표기법을 사용한 예를 보겠습니다.
 
-> System.out.println("e표기법을 사용하여 10의제곱을 해봅시다");
->
-> int square=(int)16e2;
->
-> System.out.println("16 X (10의 2제곱 즉 100)은? "+square);
+```java
+System.out.println("e표기법을 사용하여 10의제곱을 해봅시다");
+int square=(int)16e2;
+System.out.println("16 X (10의 2제곱 즉 100)은? "+square);
+```
 
 까먹으셨을수도 있는데, e표기법은 10의 제곱을 나타냅니다.
 

@@ -24,43 +24,27 @@ system/etc/wifi/wpa_supplicant.conf
 
 이 파일을 수정하면 되는것!
 
-> #SKT T WiFi Zone
->
-> network={
->
->     ssid="T wifi zone_secure"
->
->     key_mgmt=WPA-EAP IEEE8021X
->
->     eap=AKA
->
->     priority=2
->
-> }
->
-> network={
->
->     ssid="T wifi zone"
->
->     key_mgmt=NONE
->
->     priority=1
->
-> }
->
-> #KT Olleh WiFi Zone
->
-> network={
->
->     ssid="ollehWiFi"
->
->     key_mgmt=WPA-EAP IEEE8021X
->
->     eap=AKA
->
->     priority=1
->
-> }
+```
+#SKT T WiFi Zone
+network={
+    ssid="T wifi zone_secure"
+    key_mgmt=WPA-EAP IEEE8021X
+    eap=AKA
+    priority=2
+}
+network={
+    ssid="T wifi zone"
+    key_mgmt=NONE
+    priority=1
+}
+#KT Olleh WiFi Zone
+network={
+    ssid="ollehWiFi"
+    key_mgmt=WPA-EAP IEEE8021X
+    eap=AKA
+    priority=1
+}
+```
 
 이 구문을 넣고 재부팅하게 되시면 기본 프로파일에 들어와 있을겁니다 ㅎㅎ
 

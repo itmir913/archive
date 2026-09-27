@@ -14,11 +14,11 @@ original_url: "https://itmir.tistory.com/156"
 
 간단한 예를 들어 설명해 보도록 하겠습니다.
 
-> short mir1=7;
->
-> short mir2=6;
->
-> short mir=mir1+mir2;
+```java
+short mir1=7;
+short mir2=6;
+short mir=mir1+mir2;
+```
 
 이런 코드가 있습니다.
 
@@ -96,7 +96,9 @@ java에서는 두 가지의 형 변환이 존재하는데요.
 
 그럼 언제 자동으로 형변환이 이루어 질까요?
 
-> double number=60;
+```java
+double number=60;
+```
 
 위 구문을 보면 60은 int형 실수 입니다.
 
@@ -124,7 +126,9 @@ java에서는 두 가지의 형 변환이 존재하는데요.
 
 한번 조금의 소스를 보며 응용해 보도록 하겠습니다.
 
-> double num=20+3.2f;
+```java
+double num=20+3.2f;
+```
 
 이런 코드가 있습니다.
 
@@ -146,9 +150,10 @@ num변수에 값을 저장하기 위해 20+3.2f를 계산해야 합니다.
 
 이제는 우리가 임의적으로 형 변환을 하는 방법에 대해 알아보겠습니다.
 
-> long num=9999999999999L;
->
-> int mir=(int)num;
+```java
+long num=9999999999999L;
+int mir=(int)num;
+```
 
 위 코드를 보면 long형 변수 num을 int형 변수 mir에 저장하라는 뜻이 됩니다.
 
@@ -162,9 +167,10 @@ num변수에 값을 저장하기 위해 20+3.2f를 계산해야 합니다.
 
 반대로 int형을 long으로 형변환 하려면,
 
+```java
 int num=84;
-
 long num2=(long)num;
+```
 
 이렇게 코드를 짜주시면 되지요.
 

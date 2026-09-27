@@ -89,9 +89,10 @@ if문으로 입력되지 않았을경우, Toast를 띄우도록 하고 있습니
 
 sendSMS메소드를 살펴보기 전에 먼저 문자를 보내는 API부터 알아볼께요
 
+```java
 SmsManager mSmsManager = SmsManager.getDefault();
-
 mSmsManager.sendTextMessage(destinationAddress, scAddress, text, sentIntent, deliveryIntent);
+```
 
 이 두개의 코드만 이해한다면 오늘 강의의 목표를 모두 마스터한것입니다
 
@@ -161,9 +162,10 @@ public void sendSMS(String smsNumber, String smsText){
 
 두번째~세번째 줄의 PendingIntent에 대해 따로 때어내어 설명하도록 하겠습니다
 
+```java
 PendingIntent sentIntent = PendingIntent.getBroadcast(this, 0, new Intent("SMS_SENT_ACTION"), 0);
-
 PendingIntent deliveredIntent = PendingIntent.getBroadcast(this, 0, new Intent("SMS_DELIVERED_ACTION"), 0);
+```
 
 각각 위에서부터 문자 전송, 문자 수신에 관련하여 sendTextMessage()에 넘겨줄 값들입니다
 

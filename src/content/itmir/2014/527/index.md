@@ -72,15 +72,18 @@ IsLibrary를 모르시는 분께서는 [[Development/App] - FadingActionBar를 �
 
 스크롤이 가능한 스크롤뷰와 리스트뷰를 정식 지원하는것 같습니다
 
+```java
 PoppyViewHelper mPoppyViewHelper = new PoppyViewHelper(this, PoppyViewPosition.TOP);
-
 View poppyView = mPoppyViewHelper.createPoppyViewOnScrollView(R.id.(View의 ID), R.layout.(poppyview가 정의된 xml이름);
+```
 
 이렇게 두줄을 작성해 주시면 됩니다
 
 잠시 첫번째 줄을 말씀드리면
 
+```java
 mPoppyViewHelper = new PoppyViewHelper(this, PoppyViewPosition.TOP);
+```
 
 이줄에서 PoppyViewPosition.TOP은 넣어줘도 되고 없어도 됩니다
 

@@ -86,19 +86,15 @@ R.menu.main이라는 코드를 통해 res/menu/main.xml에 있는 코드를 읽�
 
 먼저 일반 메뉴의 xml 구현방식 입니다
 
-`<menu xmlns:android="http://schemas.android.com/apk/res/android" >`
-
+```xml
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <item
-
         android:id="@+id/SimpleMenu"
-
-**android:orderInCategory**="1"
-
-**android:showAsAction**="never"
-
+        android:orderInCategory="1"
+        android:showAsAction="never"
         android:title="일반 메뉴"/>
-
-`</menu>`
+</menu>
+```
 
 메뉴를 구성하는 xml은 맨 처음에 Menu라는 태그로 감싸게 됩니다
 
@@ -134,17 +130,14 @@ collapseActionView는 정보가 부족하여 아직은 저도 모르겠습니다
 
 그 다음으로 선택 메뉴의 구현 방식입니다
 
+```xml
 <item
-
     android:id="@+id/clickAbleMenu"
-
     android:orderInCategory="2"
-
     android:showAsAction="never"
-
-**android:checkable="true"**
-
+    android:checkable="true"
     android:title="선택 메뉴"/>
+```
 
 일반 메뉴와 달라진것이 있다면 android:checkable입니다
 
@@ -162,17 +155,14 @@ collapseActionView는 정보가 부족하여 아직은 저도 모르겠습니다
 
 그 방법을 살펴보겠습니다
 
+```xml
 <item
-
     android:id="@+id/IconMenu"
-
     android:orderInCategory="3"
-
-    android:showAsAction="**ifRoom**"
-
-**android:icon**="@drawable/ic_launcher"
-
+    android:showAsAction="ifRoom"
+    android:icon="@drawable/ic_launcher"
     android:title="아이콘 메뉴"/>
+```
 
 볼게 없습니다
 
@@ -180,41 +170,26 @@ collapseActionView는 정보가 부족하여 아직은 저도 모르겠습니다
 
 마지막은 서브 메뉴 입니다
 
+```xml
 <item
-
     android:id="@+id/subMenu_1"
-
     android:orderInCategory="4"
-
     android:showAsAction="never"
-
     android:title="서브메뉴 1" >
-
-`<menu>`
-
+<menu>
         <item
-
             android:id="@+id/subMenu_2"
-
             android:orderInCategory="5"
-
             android:showAsAction="never"
-
             android:title="서브 메뉴 2"/>
-
         <item
-
             android:id="@+id/subMenu_3"
-
             android:orderInCategory="6"
-
             android:showAsAction="never"
-
             android:title="서브 메뉴 3"/>
-
-`</menu>`
-
-`</item>`
+</menu>
+</item>
+```
 
 서브메뉴는 아이탬 태그안에 다시 menu태그를 넣어 만든것으로
 
@@ -228,7 +203,9 @@ collapseActionView는 정보가 부족하여 아직은 저도 모르겠습니다
 
 유동적으로 자바코드를 이용해서 메뉴를 추가해야 하는 경우가 있습니다 이때는 add메소드를 사용합니다
 
+```java
 Menu.add(groupId, itemId, order, title)
+```
 
 groupId : 그룹 ID를 지정하며, Menu에서 사용할수 있는 그룹 옵션을 사용할때 쓰입니다
 
@@ -238,7 +215,7 @@ order : item의 순서이며, android:orderInCategory와 같습니다
 
 title : item의 Title입니다
 
-예) menu.add(0, 7777, 1, "Java Add Menu");
+예) `menu.add(0, 7777, 1, "Java Add Menu");`
 
 ### 22-7 메뉴를 눌렀을때 작업 처리
 
@@ -246,13 +223,12 @@ title : item의 Title입니다
 
 아래에 기본 형태가 있습니다
 
+```java
 @Override
-
 public boolean onMenuItemSelected(int featureId, MenuItem item) {
-
     return super.onMenuItemSelected(featureId, item);
-
 }
+```
 
 저 메소드안에 처리할 명령어들을 담아야 하는데요
 
@@ -280,53 +256,32 @@ item.isCheckable() : 현재 체크가 가능한지 여부를 반환합니다
 
 저 문구와 if문을 이용해서 터치된 아이탬의 id값을 얻어 실행할 작업을 구분하면 됩니다
 
-if(item.getItemId()==R.id.**SimpleMenu**){
-
+```java
+if(item.getItemId()==R.id.SimpleMenu){
     Toast.makeText(this, "기본 메뉴가 터치되었습니다", Toast.LENGTH_SHORT).show();
-
 }
-
-if(item.getItemId()==R.id.**clickAbleMenu**){
-
-    if(**item.isChecked()**){
-
-**item.setChecked(false);**
-
+if(item.getItemId()==R.id.clickAbleMenu){
+    if(item.isChecked()){
+        item.setChecked(false);
         Toast.makeText(this, "체크가 해제되었습니다", Toast.LENGTH_SHORT).show();
-
     }else{
-
-**item.setChecked(true);**
-
+        item.setChecked(true);
         Toast.makeText(this, "체크 되었습니다", Toast.LENGTH_SHORT).show();
-
     }
-
 }
-
-if(item.getItemId()==R.id.**IconMenu**){
-
+if(item.getItemId()==R.id.IconMenu){
     Toast.makeText(this, "아이콘 메뉴가 터치되었습니다", Toast.LENGTH_SHORT).show();
-
 }
-
-if(item.getItemId()==R.id.**subMenu_2**){
-
+if(item.getItemId()==R.id.subMenu_2){
     Toast.makeText(this, "서브메뉴 2가 터치되었습니다", Toast.LENGTH_SHORT).show();
-
 }
-
-if(item.getItemId()==R.id.**subMenu_3**){
-
+if(item.getItemId()==R.id.subMenu_3){
     Toast.makeText(this, "서브메뉴 3이 터치되었습니다", Toast.LENGTH_SHORT).show();
-
 }
-
-if(item.getItemId()==R.id.**actionBarMenu**){
-
+if(item.getItemId()==R.id.actionBarMenu){
     Toast.makeText(this, "액션바 메뉴가 터치되었습니다", Toast.LENGTH_SHORT).show();
-
 }
+```
 
 제 나름대로 소스를 구성하였습니다
 

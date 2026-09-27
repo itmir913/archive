@@ -139,17 +139,14 @@ AlwaysTopServiceNotTouch.java - 서비스 생성 (링크 참조해서 생성하�
 
 [MainActivity.java] : 메소드 추가
 
+```java
 public void mStart(View v) {
-
     startService(new Intent(this, AlwaysTopServiceNotTouch.class));
-
 }
-
 public void mStop(View v) {
-
     stopService(new Intent(this, AlwaysTopServiceNotTouch.class));
-
 }
+```
 
 ### AlwaysTopServiceNotTouch 서비스를 봐주세요
 
@@ -161,9 +158,10 @@ public void mStop(View v) {
 
 모식도(?)입니다
 
+```java
 private View mView;
-
 private WindowManager mManager;
+```
 
 화면에 최상단 뷰를 추가하기 위해서 WindowMananger를 사용할겁니다
 

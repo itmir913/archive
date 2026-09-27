@@ -62,11 +62,15 @@ Crouton.zip파일안 HelperOpen폴더에 CroutonHelper.java파일이 포함되�
 
 먼저 이 Helper를 사용하기 위해서는 import가 필요합니다
 
+```java
 import com.tistory.whdghks913.croutonhelper.CroutonHelper;
+```
 
 그다음 Helper를 정의해야 합니다
 
+```java
 CroutonHelper mHelper = new CroutonHelper(this);
+```
 
 그뒤 개발자가 mHelper를 사용하여 Text, TextSize등을 설정할수 있습니다
 
@@ -252,7 +256,9 @@ mHelper.show()
 
 - 설정한 Crouton을 표시합니다
 
+```java
 mHelper.clearCroutonsForActivity();
+```
 
 - 남아있는 Crouton 메세지를 모두 지웁니다, show()를 호출하기 전에 이 메소드를 호출하시는걸 추천드립니다
 

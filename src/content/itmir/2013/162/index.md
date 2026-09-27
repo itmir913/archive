@@ -26,21 +26,16 @@ java에서도 이런 if구문을 제공하고 있습니다.
 
 먼저 if구문의 기본 뼈대를 설명하겠습니다.
 
-> if(true 또는 false)
->
-> {
->
->   /* 괄호 값이 true일경우 실행되는 영역 */
->
-> }
->
-> else
->
-> {
->
->   /* 괄호 값이 false일경우 실행되는 영역 */
->
-> }
+```java
+if(true 또는 false)
+{
+  /* 괄호 값이 true일경우 실행되는 영역 */
+}
+else
+{
+  /* 괄호 값이 false일경우 실행되는 영역 */
+}
+```
 
 이런 구조를 지니고 있습니다.
 
@@ -118,9 +113,10 @@ n1==n2가 false이므로 SCE에 의해 n1>n2는 연산 되지 않을 것 이라�
 
 피 연산자가 3개인 유일한 연산자입니다.
 
-> int number1=20, number2=30, whyis;
->
-> whyis=(number1>number2)?number1:number2;
+```java
+int number1=20, number2=30, whyis;
+whyis=(number1>number2)?number1:number2;
+```
 
 자 여길 보시면 ?와 :을 사용한 모습을 보실 수 있습니다.
 

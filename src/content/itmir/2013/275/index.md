@@ -109,51 +109,36 @@ NO BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR, using only generic configuration
 
 내용
 
+```c
 /*
-
-\* Copyright (C) 2012 The Android Open Source Project
-
-\*
-
-\* Licensed under the Apache License, Version 2.0 (the "License");
-
-\* you may not use this file except in compliance with the License.
-
-\* You may obtain a copy of the License at
-
-\*
-
-\* http://www.apache.org/licenses/LICENSE-2.0
-
-\*
-
-\* Unless required by applicable law or agreed to in writing, software
-
-\* distributed under the License is distributed on an "AS IS" BASIS,
-
-\* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-
-\* See the License for the specific language governing permissions and
-
-\* limitations under the License.
-
-\*/
-
+* Copyright (C) 2012 The Android Open Source Project
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 #ifndef _BDROID_BUILDCFG_H
-
 #define _BDROID_BUILDCFG_H
-
 #define BTM_DEF_LOCAL_NAME "SGH-I727"
-
 #define BTA_DISABLE_DELAY 1000 /* in milliseconds */
-
 #endif
+```
 
 hPa님의 말씀에 따르면 #define BTM_DEF_LOCAL_NAME "SGH-I727"는 bluetooth를 실행했을때 기기명을 결정하는 것이고, 아래는 딜레이 라고 합니다 처음 실행했을때의 기기명은 원하는 것으로 바꿔줘야겠죠?
 
 그다음 BoardConfig.mk에 추가해 줍시다.
 
+```makefile
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/(제조사)/(기기명)/bluetooth
+```
 
 이제 오류는 나지 않을겁니다.
 
@@ -165,7 +150,9 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/(제조사)/(기기명)/bl
 
 cm10까지만 해도 ril관련 java파일을 아래 구문으로 처리할수 있었습니다.
 
+```makefile
 FRAMEWORKS_BASE_SUBDIRS += ../../$(LOCAL_PATH)/ril/
+```
 
 -device.mk안
 

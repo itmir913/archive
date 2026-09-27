@@ -302,10 +302,12 @@ make: *** [/home/whdghks913/cm-10.1/system/out/target/product/ef46l/obj/EXECUTAB
 
 이 사이트에서 제시하고 있는
 
+```makefile
 CONFIG_DRIVER_NL80211 := true
-
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB        := lib_driver_cmd_bcmdhd  
 BOARD_HOSTAPD_PRIVATE_LIB               := lib_driver_cmd_bcmdhd  
+```
+
 이 문구를 BoardConfig.mk에 추가한다음 빌드해 보면
 
 NOTICE-TARGET-STATIC_LIBRARIES-lib_driver_cmd_bcmdhd을 만들 규칙이 없다고 나타납니다
@@ -362,21 +364,16 @@ include/linux/msm_mdp.h을 열어주셨으면 아래를 찾아주세요
 
 이게 없다면 아래 문장을 추가해 주시고 있다면 보충해 주세요
 
+```c
 struct msmfb_overlay_data {
-
          uint32_t id;
-
          struct msmfb_data data;
-
          uint32_t version_key;
-
          struct msmfb_data plane1_data;
-
          struct msmfb_data plane2_data;
-
          struct msmfb_data dst_data;
-
 };
+```
 
 <http://forum.cyanogenmod.org/topic/70073-building-cm-101-422/>
 
@@ -388,15 +385,17 @@ struct msmfb_overlay_data {
 
 오류가 뜨는 파일인 fb_priv.h을 열어
 
+```c
 struct mdp_buf_fence fence;
-
 struct mdp_display_commit commit;
+```
 
 이 두개를 추가해 주시고 필요로 하는 h파일을 include할수 있도록 아래도 추가해 주세요
 
+```c
 #include <linux/fb.h>
-
 #include <linux/msm_mdp.h>
+```
 
 모두 추가했는대도 문제가 발생한다면 현재 include하고 있는 폴더를 잠시 주석처리해 둔다음 빌드하시면 정상적으로 됩니다
 
