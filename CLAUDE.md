@@ -153,6 +153,7 @@ draft: true
 
 - **preview 도구 일체 사용 금지** — 토큰 소모 과다. `preview_screenshot`, `preview_snapshot`, `preview_inspect`, `preview_eval`, `preview_network` 등 모두 금지. 서버 에러 확인이 필요하면 `preview_logs` (서버 사이드 로그) 만 허용. 코드 편집 결과는 코드를 읽어서 판단하고, 시각적 검증을 위해 브라우저를 열지 않는다.
 - **push 금지** — `git push`는 사용자가 명시적으로 요청할 때만 실행한다. 커밋 후 자동으로 push하지 않는다.
+- **셸 힙독 금지** — Bash 도구에서 `<<EOF` 같은 힙독을 쓰지 않는다. 힙독은 백슬래시를 조용히 먹어 코드·정규식이 어긋난다. 파일은 Write/Edit 도구로 쓰고, 여러 줄을 셸로 넘겨야 하면 파일로 쓴 뒤 경로를 넘긴다(`git commit -F <파일>`). `.claude/hooks/no-heredoc.mjs`가 PreToolUse 훅으로 막는다.
 
 ### Tailwind CSS 규칙
 
