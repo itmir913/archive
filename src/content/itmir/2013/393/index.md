@@ -68,11 +68,15 @@ Preference를 사용하는 방법은 두가지정도 있는데요
 
 먼저 정의하는 방법입니다
 
+```java
 SharedPreferences setting;
+```
 
 그다음 기록할 파일을 불러옵니다
 
+```java
 setting = getSharedPreferences("setting", 0);
+```
 
 이때 앞에 있는 setting은 기록할 xml의 이름입니다
 
@@ -106,15 +110,13 @@ A. 주로 사용하는 방식을 굵은 표시 했습니다
 
 마지막으로 설정값을 가져오는 방법입니다
 
+```java
 setting.getBoolean(key, defValue);
-
 setting.getFloat(key, defValue);
-
 setting.getInt(key, defValue);
-
 setting.getLong(key, defValue);
-
 setting.getString(key, defValue);
+```
 
 자료의 타입마다 다른 명령으로 가져와야 합니다
 
@@ -134,25 +136,27 @@ setting.getString(key, defValue);
 
 그래서 저장, 즉 기록을 위해 또 하나 editor라는 것을 정의해야 합니다
 
+```java
 SharedPreferences.Editor editor;
+```
 
 이번에는 Editor라는것이 붙었습니다
 
+```java
 editor= setting.edit();
+```
 
 이렇게 editor로 사용할때는 이미 정의한 SharedPreferences에 ".edit()"를 붙혀 이Preference의 에디터 역할을 할것이다 라고 해주시면 됩니다
 
 사용방법은 아래와 같습니다
 
+```java
 editor.putBoolean(arg0, arg1);
-
 editor.putFloat(key, value);
-
 editor.putInt(key, value);
-
 editor.putLong(key, value);
-
 editor.putString(key, value);
+```
 
 로딩과 마찬가지로 Boolean, Float, Int, Long, String이라는 형을 기록할 수 있습니다
 
@@ -206,13 +210,12 @@ editor.putString(key, value);
 
 처음에는 아래와 같은 코드가 필요합니다
 
+```java
 EditText input_ID, input_PW;
-
 CheckBox Auto_LogIn;
-
 SharedPreferences setting;
-
 SharedPreferences.Editor editor;
+```
 
 여기까지는 매번 같은 구조입니다
 
@@ -232,45 +235,28 @@ Auto_LogIn = (CheckBox) findViewById(R.id.Auto_LogIn);
 
 그다음에 CheckBox를 선택할때마다 호출할 리스너를 만들어 주세요
 
+```java
 Auto_LogIn.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-
 @Override
-
 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
 // TODO Auto-generated method stub
-
 if(isChecked){
-
 String ID = input_ID.getText().toString();
-
 String PW = input_PW.getText().toString();
-
-**editor.putString("ID", ID);**
-
-**editor.putString("PW", PW);**
-
-**editor.putBoolean("Auto_Login_enabled", true);**
-
-**editor.commit();**
-
+editor.putString("ID", ID);
+editor.putString("PW", PW);
+editor.putBoolean("Auto_Login_enabled", true);
+editor.commit();
 }else{
-
-*// editor.remove("ID");*
-
-*// editor.remove("PW");*
-
-*// editor.remove("Auto_Login_enabled");*
-
-**editor.clear();**
-
-**editor.commit();**
-
+// editor.remove("ID");
+// editor.remove("PW");
+// editor.remove("Auto_Login_enabled");
+editor.clear();
+editor.commit();
 }
-
 }
-
 });
+```
 
 항상 만든 리스너이지만 이번에도 새로운 코드가 추가되었습니다
 

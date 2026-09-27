@@ -134,23 +134,17 @@ ACTION_TIME_TICK
 
 이름은 Broadcast.java입니다
 
+```java
 import android.content.BroadcastReceiver;
-
 import android.content.Context;
-
 import android.content.Intent;
-
-public class Broadcast extends **BroadcastReceiver** {
-
+public class Broadcast extends BroadcastReceiver {
     @Override
-
-    public void **onReceive**(Context context, Intent intent) {
-
+    public void onReceive(Context context, Intent intent) {
     // 수신한 액션을 이 onReceive메소드에서 처리하게 됩니다
-
     }
-
 }
+```
 
 달랑 메소드 하나만 있습니다
 
@@ -158,35 +152,28 @@ public class Broadcast extends **BroadcastReceiver** {
 
 액션이 하나라면 문제가 없지만 2개이상일때는 각각 구분해야 할 필요가 있습니다
 
+```java
 intent.getAction()
+```
 
 으로 어떤 액션인지 알수 있습니다
 
 예를들어 화면 on, off, 부팅 완료, sms수신의 경우
 
-if (**Intent.ACTION_BOOT_COMPLETED**.equals(intent.getAction())){
-
+```java
+if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())){
     // 부팅완료
-
 }
-
-if (**Intent.ACTION_SCREEN_ON** == intent.getAction()) {
-
+if (Intent.ACTION_SCREEN_ON == intent.getAction()) {
     // 화면 켜짐
-
 }
-
-if (**Intent.ACTION_SCREEN_OFF** == intent.getAction()) {
-
+if (Intent.ACTION_SCREEN_OFF == intent.getAction()) {
     // 화면 꺼짐
-
 }
-
-if (**"android.provider.Telephony.SMS_RECEIVED"**.equals(intent.getAction())) {
-
+if ("android.provider.Telephony.SMS_RECEIVED".equals(intent.getAction())) {
     // sms 수신
-
 }
+```
 
 이렇게 if문을 통해 구현해 주시면 됩니다 (이때 ==이나 equals나 상관이 없다고합니다만 잘 모르겠네요)
 
@@ -196,13 +183,12 @@ if (**"android.provider.Telephony.SMS_RECEIVED"**.equals(intent.getAction())) {
 
 로그를 찍어서 한번 잘 작동하는지 보겠습니다
 
+```java
 Log.d("onReceive()","부팅완료");
-
 Log.d("onReceive()","스크린 ON");
-
 Log.d("onReceive()","스크린 OFF");
-
 Log.d("onReceive()","문자가 수신되었습니다");
+```
 
 각각 if문안에 넣어주세요
 
@@ -212,7 +198,9 @@ Log.d("onReceive()","문자가 수신되었습니다");
 
 참고로 우선순위가 낮은 브로드캐스트리시버가 수신을 못하게 하는 방법은
 
+```java
 abortBroadcast();
+```
 
 를 사용하시면 됩니다
 
@@ -280,17 +268,14 @@ Button이나 TextView처럼 추가해 주시면 됩니다
 
 그다음 onCreate()에는
 
-**IntentFilter intentFilter** = new IntentFilter(**Intent.ACTION_SCREEN_ON**);
-
-intentFilter.**addAction**(**Intent.ACTION_SCREEN_OFF**);
-
+```java
+IntentFilter intentFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
+intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
 intentFilter.addAction(Intent.ACTION_BOOT_COMPLETED);
-
 intentFilter.addAction("android.provider.Telephony.SMS_RECEIVED");
-
-**registerReceiver**(myReceiver, intentFilter);
-
+registerReceiver(myReceiver, intentFilter);
 Log.d("onCreate()","브로드캐스트리시버 등록됨");
+```
 
 를 입력해 봅시다
 
@@ -298,17 +283,14 @@ IntentFilter를 통해 액션을 등록한다음, registerReceiver()로 리시�
 
 마지막으로 어플을 종료할때 호출되는 onDestroy()메소드를 만들어 액티비티가 종료되면 등록을 해제합시다
 
+```java
 @Override
-
 protected void onDestroy() {
-
     super.onDestroy();
-
-**unregisterReceiver(myReceiver);**
-
+unregisterReceiver(myReceiver);
     Log.d("onDestory()","브로드캐스트리시버 해제됨");
-
 }
+```
 
 unregisterReceiver()로 등록을 해제할수 있습니다
 
@@ -318,37 +300,24 @@ unregisterReceiver()로 등록을 해제할수 있습니다
 
 아래는 문자 내용을 수신하는 코드입니다
 
+```java
 // SMS 메시지를 파싱합니다.
-
 Bundle bundle = intent.getExtras();
-
 Object messages[] = (Object[])bundle.get("pdus");
-
 SmsMessage smsMessage[] = new SmsMessage[messages.length];
-
 for(int i = 0; i < messages.length; i++) {
-
     // PDU 포맷으로 되어 있는 메시지를 복원합니다.
-
     smsMessage[i] = SmsMessage.createFromPdu((byte[])messages[i]);
-
 }
-
 // SMS 수신 시간 확인
-
 Date curDate = new Date(smsMessage[0].getTimestampMillis());
-
 Log.d("문자 수신 시간", curDate.toString());
-
 // SMS 발신 번호 확인
-
 String origNumber = smsMessage[0].getOriginatingAddress();
-
 // SMS 메시지 확인
-
 String message = smsMessage[0].getMessageBody().toString();
-
 Log.d("문자 내용", "발신자 : "+origNumber+", 내용 : " + message);
+```
 
 그러나 아직 어려우므로 이해하지 말고 그렇구나 하고 넘어갑시다 ㅎ
 

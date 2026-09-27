@@ -62,37 +62,24 @@ A. 암묵적인 약속이랄까... 그런겁니다(?)
 
 점점 강좌가 나갈수록 레이아웃은 간단해 집니다
 
+```xml
 <Button
-
     android:id="@+id/button1"
-
     android:layout_width="wrap_content"
-
     android:layout_height="wrap_content"
-
     android:layout_alignParentTop="true"
-
     android:layout_centerHorizontal="true"
-
     android:layout_marginTop="50dp"
-
-**android:onClick="button"**
-
+    android:onClick="button"
     android:text="@string/start" />
-
 <SeekBar
-
     android:id="@+id/seekBar1"
-
     android:layout_width="match_parent"
-
     android:layout_height="wrap_content"
-
     android:layout_alignParentLeft="true"
-
     android:layout_below="@+id/button1"
-
     android:layout_marginTop="30dp" />
+```
 
 모두 한번 배운 내용이므로 언급없이 진행하겠습니다
 
@@ -106,17 +93,18 @@ A. 암묵적인 약속이랄까... 그런겁니다(?)
 
 먼저 우리가 필요한것들 정의해야 겠죠 맨날 하던거 처럼?
 
+```java
 Button button;
-
 SeekBar seekbar;
-
 MediaPlayer music;
+```
 
 그다음 onCreate메소드 안 내용물들입니다
 
+```java
 music = MediaPlayer.create(this, R.raw.konan);
-
 music.setLooping(true);
+```
 
 맨 처음에는 MusicPlayer부터 정의해 봅시다
 
@@ -128,9 +116,10 @@ music.setLooping(true);
 
 true는 무한반복, false는 무한반복 안함의 뜻으로 저는 true로 설정했습니다
 
+```java
 button = (Button) findViewById(R.id.button1);
-
 seekbar = (SeekBar) findViewById(R.id.seekBar1);
+```
 
 이건 지겹게 봐서 아실거고...ㅋㅋㅋ
 
@@ -138,41 +127,26 @@ seekbar = (SeekBar) findViewById(R.id.seekBar1);
 
 이 예제에서는 SeekBar를 움직이면 재생 위치가 변하게 만들 예정입니다
 
+```java
 seekbar.setMax(music.getDuration());
-
 seekbar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
-
 @Override
-
 public void onStopTrackingTouch(SeekBar seekBar) {
-
 // TODO Auto-generated method stub
-
 }
-
 @Override
-
 public void onStartTrackingTouch(SeekBar seekBar) {
-
 // TODO Auto-generated method stub
-
 }
-
 @Override
-
 public void onProgressChanged(SeekBar seekBar, int progress,
-
 boolean fromUser) {
-
 // TODO Auto-generated method stub
-
 if(fromUser)
-
 music.seekTo(progress);
-
 }
-
 });
+```
 
 먼저 seekbar.setMax(music.getDuration()); 이부분을 봅시다
 
@@ -194,9 +168,10 @@ onProgressChanged()메소드가 실행될때 세번째로 값이 넘어오는 fr
 
 아래 코드를 봅시다
 
+```java
 if(fromUser)
-
 music.seekTo(progress);
+```
 
 이것을 보면 사용자가 SeekBar를 움직였을때만 if가 실행되게 되었습니다
 
@@ -208,47 +183,29 @@ music.seekTo(progress);
 
 이제 위에서 버튼에 주었던 android:onClick과 맞는 메소드를 만들어야 겠죠??
 
+```java
 public void button(View v){
-
-if(**music.isPlaying()**){
-
+if(music.isPlaying()){
 // 재생중이면 실행될 작업 (정지)
-
 music.stop();
-
 try {
-
 music.prepare();
-
 } catch (IllegalStateException e) {
-
 e.printStackTrace();
-
 } catch (IOException e) {
-
 e.printStackTrace();
-
 }
-
 music.seekTo(0);
-
 button.setText(R.string.start);
-
 seekbar.setProgress(0);
-
 }else{
-
 // 재생중이 아니면 실행될 작업 (재생)
-
 music.start();
-
 button.setText(R.string.stop);
-
 Thread();
-
 }
-
 }
+```
 
 자, 먼저 music.isPlaying()를 봅시다
 
@@ -268,51 +225,31 @@ Thread();
 
 아직 정의하지 않았으므로 만들어 봅시다
 
+```java
 public void Thread(){
-
 Runnable task = new Runnable(){
-
 public void run(){
-
 /**
-
-\* while문을 돌려서 음악이 실행중일때 게속 돌아가게 합니다
-
-\*/
-
+* while문을 돌려서 음악이 실행중일때 게속 돌아가게 합니다
+*/
 while(music.isPlaying()){
-
 try {
-
 Thread.sleep(1000);
-
 } catch (InterruptedException e) {
-
 // TODO Auto-generated catch block
-
 e.printStackTrace();
-
 }
-
 /**
-
-\* music.getCurrentPosition()은 현재 음악 재생 위치를 가져오는 구문 입니다
-
-\*/
-
+* music.getCurrentPosition()은 현재 음악 재생 위치를 가져오는 구문 입니다
+*/
 seekbar.setProgress(music.getCurrentPosition());
-
 }
-
 }
-
 };
-
 Thread thread = new Thread(task);
-
 thread.start();
-
 }
+```
 
 대부분 위에서 언급된것인대...
 

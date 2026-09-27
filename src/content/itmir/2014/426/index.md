@@ -76,25 +76,21 @@ ps. 이번 수정은 조금 어려웠어요 ㅠㅠ
 
 -2014-05-04 킷캣 최신 버전으로 업데이트 되었습니다
 
-/archive/itmir/2014/493
+[/archive/itmir/2014/493](/archive/itmir/2014/493)
 
 -개발자용 메모
 
 처음에 넥서스S에서 나타났던 오류 입니다
 
+```
 D/dalvikvm( 3612): Trying to load lib /data/app-lib/com.pantech.inputmethod.skyime-1/libjni_skyime.so 0x4222f900
-
 D/dalvikvm( 3612): Shared lib '/data/app-lib/com.pantech.inputmethod.skyime-1/libjni_skyime.so' already loaded in same CL 0x4222f900
-
-E/dalvikvm( 3612): dlopen("/system/lib/libdhwr.so") failed: **Cannot load library**: load_library(linker.cpp:771): library "**/system/lib/libdhwr.so**" **not found**
-
+E/dalvikvm( 3612): dlopen("/system/lib/libdhwr.so") failed: Cannot load library: load_library(linker.cpp:771): library "**/system/lib/libdhwr.so" not found
 E/AndroidRuntime( 3612): FATAL EXCEPTION: main
-
-E/AndroidRuntime( 3612): **java.lang.UnsatisfiedLinkError: Cannot load library: load_library(linker.cpp:771): library "/system/lib/libdhwr.so" not found**
-
+E/AndroidRuntime( 3612): java.lang.UnsatisfiedLinkError: Cannot load library: load_library(linker.cpp:771): library "/system/lib/libdhwr.so" not found
 E/AndroidRuntime( 3612): at java.lang.Runtime.load(Runtime.java:340)
-
 E/AndroidRuntime( 3612): at java.lang.System.load(System.java:507)
+```
 
 여기서 /system/lib/libdhwr.so 보이시나요?
 
@@ -146,13 +142,12 @@ System.load() : 절대 경로로 찾음, 파일위치가 필요
 
 저 굵은 부분 코드를 smali로 보면 아래와 같습니다
 
+```smali
 const-string v1, "jni_skyime"
-
-invoke-static {v1}, Ljava/lang/System;->**loadLibrary**(Ljava/lang/String;)V
-
+invoke-static {v1}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 const-string v1, "/data/data/com.pantech.inputmethod.skyime/lib/libjni_skyime.so"
-
-invoke-static {v1}, Ljava/lang/System;->**load**(Ljava/lang/String;)V
+invoke-static {v1}, Ljava/lang/System;->load(Ljava/lang/String;)V
+```
 
 참고로 저 메소드를 호출하는 곳은
 
@@ -164,79 +159,49 @@ com/pantech/inputmethod/skyime/BinaryDictionary
 
 그다음 libdhwr.so를 검색하면 com/diotek/dhwr/DHWR.smali에서 찾을수 있습니다
 
+```java
 static{
-
-    String str = **GetLibraryPath**("4.00");
-
-**if (str != null)**
-
-**System.load(str);**
-
+    String str = GetLibraryPath("4.00");
+if (str != null)
+System.load(str);
 while (true){
-
         DTYPE_NONE = BIT_FLAG(0);
-
         DTYPE_MULTI_CHARS = BIT_FLAG(1);
-
 생략
-
         mResult = new Result();
-
-**return;**
-
-**System.loadLibrary("dhwr");**
-
+return;
+System.loadLibrary("dhwr");
         // 리턴하면 그 아래에 있는 코드는 쓸모가 없죠...
-
 }
-
 }
+```
 
 ....
 
+```java
 public static String GetLibraryPath(String paramString){
-
     if (new File("/data/data/com.diotek.dhwr.addon/lib/libdhwr.so").exists());
-
 label135:
-
 while (true)
-
    try{
-
             FileInputStream localFileInputStream = new FileInputStream("/data/data/com.diotek.dhwr.addon/lib/libdhwrex.so");
-
             byte[] arrayOfByte = new byte[localFileInputStream.available()];
-
             localFileInputStream.read(arrayOfByte, 0, arrayOfByte.length);
-
             String[] arrayOfString = new String(arrayOfByte, "ascii").split("\\.");
-
             if (arrayOfString.length != 3)
-
    break label135;
-
             if (paramString.compareTo(arrayOfString[0] + "." + arrayOfString[1]) != 0){
-
    break label135;
-
                 localFileInputStream.close();
-
-**return "/system/lib/libdhwr.so";**
-
+return "/system/lib/libdhwr.so";
 }
-
 Integer.parseInt(arrayOfString[2]);
-
 continue;
-
 }catch (Exception localException){
-
    continue;
-
 }
-
 }
+```
 
 초반부분쯤 GetLibraryPath()메소드를 호출하고 그게 null값이 아니라면 System.load();를 하고 있어요
 
@@ -248,15 +213,17 @@ continue;
 
 그래서 강종 오류가 떴던거 같습니다
 
+```smali
 const-string v1, "dhwr"
-
 invoke-static {v1}, Ljava/lang/System;->load(Ljava/lang/String;)V
+```
 
 를
 
+```smali
 const-string v1, "dhwr"
-
 invoke-static {v1}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
+```
 
 로 바꿔줍니다
 

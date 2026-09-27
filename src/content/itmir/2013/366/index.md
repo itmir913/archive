@@ -85,55 +85,33 @@ UI구성, 즉 xml은 언급없이 지나갈수 있습니다
 
 (사실 매번 강좌쓸때마다 예제를 어떻게 만들까를 강좌 쓰면서 생각하지요 -_-)
 
+```xml
 <EditText
-
     android:id="@+id/EditText"
-
     android:layout_width="match_parent"
-
     android:layout_height="wrap_content"
-
     android:layout_alignParentTop="true"
-
     android:layout_centerHorizontal="true"
-
     android:inputType="number" >
-
     <requestFocus />
-
-`</EditText>`
-
+</EditText>
 <Button
-
     android:id="@+id/Button"
-
     android:layout_width="wrap_content"
-
     android:layout_height="wrap_content"
-
     android:layout_below="@+id/EditText"
-
     android:layout_centerHorizontal="true"
-
     android:onClick="Button_Click"
-
     android:text="입력하시고 터치하세요" />
-
 <TextView
-
     android:id="@+id/Count_TextView"
-
     android:layout_width="wrap_content"
-
     android:layout_height="wrap_content"
-
     android:layout_below="@+id/Button"
-
     android:layout_centerHorizontal="true"
-
     android:layout_marginTop="30dp"
-
     android:textSize="50dp" />
+```
 
 저는 이렇게 짰습니다 ㅎㅎ
 
@@ -141,13 +119,12 @@ UI구성, 즉 xml은 언급없이 지나갈수 있습니다
 
 먼저 맨날 하던거 해봅시다
 
+```java
 EditText EditText;
-
 TextView Count_TextView;
-
 Button Button;
-
 int inputNumber;
+```
 
 마지막 int inputNumber은 입력한 숫자를 저장할 변수를 설정하는 것입니다 입력한 값을 저장하기 위한 코드입니다
 
@@ -171,11 +148,11 @@ int inputNumber;
 
 자 이제 id값을 연결해 봅시다
 
+```java
 EditText = (EditText) findViewById(R.id.EditText);
-
 Count_TextView = (TextView) findViewById(R.id.Count_TextView);
-
 Button = (Button) findViewById(R.id.Button);
+```
 
 마지막으로 버튼을 눌렀을때 어떤 작업을 할지 메소드를 만들어 줘야합니다
 
@@ -187,9 +164,10 @@ Button = (Button) findViewById(R.id.Button);
 
 **Part 1**
 
+```java
 String input = EditText.getText().toString();
-
 Count_TextView.setText(input);
+```
 
 메소드의 처음은 EditText에 입력한 값을 가져오고 TextView에 적용하는 코드를 구현했습니다
 
@@ -197,13 +175,12 @@ Count_TextView.setText(input);
 
 **Part 2**
 
+```java
 if(input.equals("")){
-
 Toast.makeText(this, "공백입니다", Toast.LENGTH_SHORT).show();
-
 }else{
-
 }
+```
 
 equals를 이용해 만약, 입력한것이 공백("")일경우 토스트 알림을 띄우도록 했습니다
 
@@ -211,17 +188,14 @@ Part 3부터는 저부분의 else{}안에 들어가는 코드들 입니다
 
 **Part 3**
 
+```java
 inputNumber = Integer.parseInt(input);
-
 if(inputNumber==0){
-
 Toast.makeText(this, "0은 입력할수 없습니다", Toast.LENGTH_SHORT).show();
-
 return;
-
 }
-
 Button.setEnabled(false);
+```
 
 공백이 아닐경우(뭐라도 입력한경우) String값을 int로 변환합니다
 
@@ -237,90 +211,55 @@ Button.setEnabled(false);
 
 아래에서 위로 훓터봐 주세요
 
+```java
 final Handler handler = new Handler(){
-
 @Override
-
 public void handleMessage(Message msg){
-
-if(**msg.what (각주: 전달받은 Message를 통해 what, arg1등의 값을 얻을수 있습니다)**==1){
-
+if(msg.what (각주: 전달받은 Message를 통해 what, arg1등의 값을 얻을수 있습니다)==1){
 Log.d("What Number : ", "What is 1");
-
 }else if(msg.what==2){
-
 Log.d("What Number : ", "What is 2");
-
 }
-
 Count_TextView.setText(""+inputNumber);
-
 if(inputNumber==0){
-
 Toast.makeText(MainActivity.this, "카운트가 완료되었습니다", Toast.LENGTH_SHORT).show();
-
 Button.setEnabled(true);
-
 }
-
 }
-
 }; (각주: 메모리 릭을 발생시킬수 있는 코드로 이 방법을 추천하지 않는다고 합니다
 나중에 코드를 새로 만들어서 예제를 고치고 수정할 예정입니다)
+```
 
 메모리 릭 발생 오류 수정
 
+```java
 final Handler handler = new MyHandler(this);
-
 private static class MyHandler extends Handler {
-
-`private final WeakReference<MainActivity> mActivity;`
-
+private final WeakReference<MainActivity> mActivity;
 public MyHandler(MainActivity activity) {
-
-` mActivity = new WeakReference<MainActivity>(activity);`
-
+ mActivity = new WeakReference<MainActivity>(activity);
 }
-
 @Override
-
 public void handleMessage(Message msg) {
-
 MainActivity activity = mActivity.get();
-
    if (activity != null) {
-
 /**
-
-\* 넘겨받은 what값을 이용해 실행할 작업을 분류합니다
-
-\*/
-
+* 넘겨받은 what값을 이용해 실행할 작업을 분류합니다
+*/
 if(msg.what==1){
-
 Log.d("What Number : ", "What is 1");
-
 }else if(msg.what==2){
-
 Log.d("What Number : ", "What is 2");
-
 }
-
 activity.Count_TextView.setText(""+activity.inputNumber);
-
 if(activity.inputNumber==0){
-
 Toast.makeText(activity, "카운트가 완료되었습니다", Toast.LENGTH_SHORT).show();
-
 activity.Button.setEnabled(true);
-
 }
-
 }
-
 }
-
 }
+```
 
 메모리 릭 발생 오류를 수정한 코드
 
@@ -340,33 +279,22 @@ what의 값에 따라 어떤 행동을 할것인지 정해주면 됩니다
 
 지금은 예제이므로 로그를 띄워 확인해 보는 작업을 해보았습니다
 
+```java
 Runnable task = new Runnable(){
-
 public void run(){
-
 while(inputNumber > 0){
-
 try {
-
 Thread.sleep(1000);
-
 } catch (InterruptedException e) {}
-
 --inputNumber;
-
-**handler.sendEmptyMessage(1);**
-
-**Message message= Message.obtain();**
-
-**message.what = 2;**
-
-**handler.sendMessage(message);**
-
+handler.sendEmptyMessage(1);
+Message message= Message.obtain();
+message.what = 2;
+handler.sendMessage(message);
 }
-
 }
-
 };
+```
 
 이 부분은 Runnable을 정의하는 부분입니다
 
@@ -388,9 +316,10 @@ Thread.sleep(1000);부분은 try-catch로 묶여 있습니다
 
 sendEmptyMessage()아래에는 Message객체를 이용한 핸들러 메세지 전달법도 설명하고 있습니다
 
+```java
 Thread thread = new Thread(task);
-
 thread.start();
+```
 
 위 예제는 메모리 릭을 발생시킬수 있습니다
 
@@ -408,21 +337,16 @@ thread.start();
 
 아래의 코드를 생각해보자
 
+```java
 public class SampleActivity extends Activity {
-
   private final Handler mLeakyHandler = new Handler() {
-
     @Override
-
     public void handleMessage(Message msg) {
-
       // ...
-
     }
-
   }
-
 }
+```
 
 위의 코드는 괜찮아 보일지 몰라도 상당한 양의 메모리 릭을 발생시킬 수 있다.
 
@@ -436,43 +360,27 @@ public class SampleActivity extends Activity {
 
 그래서 메모리 릭은 어디서 발생하는가?
 
+```java
 public class SampleActivity extends Activity {
-
   private final Handler mLeakyHandler = new Handler() {
-
     @Override
-
     public void handleMessage(Message msg) {
-
       // ...
-
     }
-
   }
-
   @Override
-
   protected void onCreate(Bundle savedInstanceState) {
-
     super.onCreate(savedInstanceState);
-
     // Post a message and delay its execution for 10 minutes.
-
     mLeakyHandler.postDelayed(new Runnable() {
-
       @Override
-
       public void run() { }
-
     }, 600000);
-
     // Go back to the previous Activity.
-
     finish();
-
   }
-
 }
+```
 
 위의 코드에서는 Activity가 종료되더라도, Delayed Message는 처리되기 전까지 메인 쓰레드의 메시지 큐에 10분간 남아있을 것이다.
 
@@ -486,77 +394,44 @@ public class SampleActivity extends Activity {
 
 만약 Handler 내부에서 Activity의 method를 호출해야 할 경우 Activity의 WeakReference를 갖도록 한다.
 
+```java
 public class SampleActivity extends Activity {
-
   /**
-
-   \* Instances of static inner classes do not hold an implicit
-
-   \* reference to their outer class.
-
-   \*/
-
+   * Instances of static inner classes do not hold an implicit
+   * reference to their outer class.
+   */
     private static class MyHandler extends Handler {
-
     private final WeakReference<SampleActivity> mActivity;
-
     public MyHandler(SampleActivity activity) {
-
       mActivity = new WeakReference<SampleActivity>(activity);
-
     }
-
     @Override
-
     public void handleMessage(Message msg) {
-
       SampleActivity activity = mActivity.get();
-
       if (activity != null) {
-
         // ...
-
       }
-
     }
-
   }
-
   private final MyHandler mHandler = new MyHandler(this);
-
   /**
-
-   \* Instances of anonymous classes do not hold an implicit
-
-   \* reference to their outer class when they are "static".
-
-   \*/
-
+   * Instances of anonymous classes do not hold an implicit
+   * reference to their outer class when they are "static".
+   */
   private static final Runnable sRunnable = new Runnable() {
-
       @Override
-
       public void run() { }
-
   };
-
   @Override
-
   protected void onCreate(Bundle savedInstanceState) {
-
     super.onCreate(savedInstanceState);
-
     // Post a message and delay its execution for 10 minutes.
-
     mHandler.postDelayed(sRunnable, 600000);
-
     // Go back to the previous Activity.
-
     finish();
-
   }
-
 }
+```
 
 static inner class와 non-static inner class는 큰 차이가 없는 것 같지만, 실제로는 모든 Android 개발자들이 이해해야 하는 중요한 부분이다.
 
@@ -599,8 +474,6 @@ static inner class와 non-static inner class는 큰 차이가 없는 것 같지�
 20번대 강좌에서는 알림(진행중같은거)띄우기, 서비스 사용하기, 부팅시 자동실행, 설정값 저장같은
 
 정말 어플개발에 꼭 필요한 지식을 배울려고 합니다 ㅎㅎ
-
-br />
 
 그리고 문자입력창 옆에 있는 길이 확인란 있죠? 50/140 뭐 이런거..
 

@@ -62,21 +62,20 @@ original_url: "https://itmir.tistory.com/414"
 
 AndroidManifest.xml은 아래와 같이 수정해 줍니다
 
-<**activity**
-
+```xml
+<activity
     android:name="whdghks913.tistory.exampleservice.Service"
-
     android:label="@string/title_activity_service" >
-
-`</activity>`
+</activity>
+```
 
 위와 같은 모습을
 
-<**service**
-
+```xml
+<service
     android:name="whdghks913.tistory.exampleservice.Service"
-
     android:label="@string/title_activity_service" />
+```
 
 이렇게 바꿔주세요
 
@@ -86,31 +85,21 @@ AndroidManifest.xml은 아래와 같이 수정해 줍니다
 
 일반 화면은 Activity라는것을 상속하지만 서비스는 Service를 상속해서 만들어 집니다
 
+```java
 public class Service extends Activity {
-
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-
 setContentView(R.layout.activity_service);
-
     }
-
 @Override
-
 public boolean onCreateOptionsMenu(Menu menu) {
-
 // Inflate the menu; this adds items to the action bar if it is present.
-
 getMenuInflater().inflate(R.menu.service, menu);
-
 return true;
-
 }
-
 }
+```
 
 위 코드를 아래와 같이 수정해 봅시다
 
@@ -182,23 +171,22 @@ xml파일은 따로 올리지 않겠습니다 ㅎ
 
 저는 각각의 버튼의 onClick옵션을
 
+```xml
 android:onClick="startServiceMethod"
-
 android:onClick="stopServiceMethod"
+```
 
 이렇게 주었습니다
 
 이제 MainActivity.java로 넘어와서 서비스를 실행하는 메소드를 각각 만들어 줍시다
 
-public void **startServiceMethod**(View v){
-
-    Intent Service = new Intent(this, **MainService.class**);
-
-**Service.putExtra("FilePath", editText1.getText().toString());**
-
-**startService(Service);**
-
+```java
+public void startServiceMethod(View v){
+    Intent Service = new Intent(this, MainService.class);
+Service.putExtra("FilePath", editText1.getText().toString());
+startService(Service);
 }
+```
 
 서비스 시작 버튼에 연결된 메소드에는 위와 같이 코드를 작성해 줍니다
 
@@ -232,29 +220,29 @@ Intent Service = new Intent(this, (실행할 서비스 이름).class);
 
 다음은 서비스 정지 버튼입니다
 
-public void **stopServiceMethod**(View v){
-
-    Intent Service = new Intent(this, **MainService.class**);
-
-**stopService(Service);**
-
+```java
+public void stopServiceMethod(View v){
+    Intent Service = new Intent(this, MainService.class);
+stopService(Service);
 }
+```
 
 서비스 시작과 다른게 하나 뿐입니다
 
+```java
 startService()
-
 stopService()
+```
 
 꼭 익혀두세요~
 
 마지막으로 EditText처리를 해줘야 합니다
 
+```java
 EditText editText1;
-
 ...
-
 editText1 = (EditText) findViewById(R.id.editText1);
+```
 
 ### 23-4 서비스로 어떤 예제를 만드나요?
 
@@ -292,27 +280,23 @@ onCreate() → onStartCommand() → Service Running → onDestroy()
 
 처음에 아래 문구를 추가해 주세요
 
+```java
 MediaPlayer music;
-
 String FilePath;
+```
 
 그다음 onCreate메소드 안에 아래 문구가 필요합니다
 
+```java
 music = new MediaPlayer();
-
-music.**setOnCompletionListener**(new OnCompletionListener() {
-
+music.setOnCompletionListener(new OnCompletionListener() {
     @Override
-
     public void onCompletion(MediaPlayer mp) {
-
         // TODO Auto-generated method stub
-
-**stopSelf();** // 서비스 종료
-
+stopSelf(); // 서비스 종료
     }
-
 });
+```
 
 setOnCompletionListener이라는 처음보는 리스너가 등장합니다
 
@@ -324,21 +308,16 @@ setOnCompletionListener이라는 처음보는 리스너가 등장합니다
 
 onStartCommand()안에는 아래 문구를 넣어주세요
 
-FilePath = **intent.getStringExtra("FilePath");**
-
-**File mp3File = new File(FilePath);**
-
-if(**! mp3File.exists()**){
-
+```java
+FilePath = intent.getStringExtra("FilePath");
+File mp3File = new File(FilePath);
+if(! mp3File.exists()){
     Toast.makeText(this, "파일이 없습니다", Toast.LENGTH_LONG).show();
-
     stopSelf();
-
 }else{
-
 new Thread(task).start();
-
 }
+```
 
 처음보는 문구들도 많이 있네요 ㅋ
 
@@ -352,7 +331,9 @@ intent.getStringExtra("FilePath");은 이렇게 집어넣은 String을 가져오
 
 지금은 이것보다 아래에 있는 <strong>if(! mp3File.exists())</strong>이 더 중요합니다
 
+```java
 if(! mp3File.exists())
+```
 
 mp3File.exists()은 얻은 파일의 경로가 존재할경우 true, 없을경우 false를 반환합니다
 
@@ -368,29 +349,20 @@ mp3File.exists()은 얻은 파일의 경로가 존재할경우 true, 없을경�
 
 onStartCommand()메소드가 끝난지점 바로 아래에 추가해 주세요
 
+```java
 Runnable task = new Runnable(){
-
     public void run(){
-
         try {
-
-**music.setDataSource(FilePath);**
-
+music.setDataSource(FilePath);
             music.prepare();
-
-**music.start();**
-
+music.start();
         } catch (Exception e) {
-
             // TODO Auto-generated catch block
-
             e.printStackTrace();
-
         }
-
     }
-
 };
+```
 
 위 구문은 쓰레드와 소리 재생 강좌가 합쳐졌다는 의의가 있습니다
 
@@ -398,13 +370,12 @@ Runnable task = new Runnable(){
 
 onDestroy()에는 아래 문구를 넣어주세요
 
+```java
 if(music.isPlaying()){
-
     music.stop();
-
     music.release();
-
 }
+```
 
 서비스가 종료될때 재생을 중단합니다
 
