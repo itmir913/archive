@@ -40,7 +40,12 @@ function navLink(s: 'archive' | 'timeline') {
     {noindex && <meta name="robots" content="noindex, follow" />}
     <title>{fullTitle}</title>
 
-    <!-- 다크모드 FOUC 방지 — 렌더링 전 클래스 적용 -->
+    <!-- 다크모드 FOUC 방지 — 외부 CSS 로드 전에도 캔버스 색과 color-scheme을 사이트 테마에 맞춘다
+         (선언이 없으면 브라우저가 OS 테마를 따라 첫 페인트를 칠해 검정→흰색 플래시가 생긴다) -->
+    <style is:inline>
+      html { color-scheme: light; background-color: #fff; }
+      html.dark { color-scheme: dark; background-color: #030712; }
+    </style>
     <script is:inline>
       (function () {
         var t = localStorage.getItem('theme');
