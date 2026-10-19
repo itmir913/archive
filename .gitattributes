@@ -57,3 +57,4 @@
 *.hwp   binary
 *.deb   binary
 *.bin   binary
+.githooks/** text eol=lf
